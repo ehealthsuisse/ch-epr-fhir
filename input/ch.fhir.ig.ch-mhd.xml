@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="ch.fhir.ig.ch-mhd"/>
+  <text>
+    <status value="additional"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      Implementation Guide for the Mobile access to Health Documents (MHD) Profile for the Swiss EPR
+    </div>
+  </text>
+  <url value="http://fhir.ch/ig/ch-mhd/ImplementationGuide/ch.fhir.ig.ch-mhd"/>
+  <version value="0.1.0"/>
+  <name value="CH_MHD"/>
+  <title value="CH-MHD"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2020-04-08"/>
+  <publisher value="eHealth Suisse"/>
+  <contact>
+    <name value="eHealth Suisse"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.e-health-suisse.ch"/>
+    </telecom>
+  </contact>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="CH"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="CC-BY-SA-4.0"/>
+  <packageId value="ch.fhir.ig.ch-mhd"/>
+  <license value="CC-BY-SA-4.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="chcore">
+    <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
+    <packageId value="ch.fhir.ig.ch-core"/>
+    <version value="current"/>
+  </dependsOn>
+  <dependsOn id="cheprterm">
+    <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
+    <packageId value="ch.fhir.ig.ch-epr-term"/>
+    <version value="current"/>
+  </dependsOn>
+  <definition>
+    <!-- References to examples -->
+    <resource>
+      <reference>
+        <reference value="Patient/FranzMuster"/>
+      </reference>
+      <name value="FranzMuster"/>
+      <description value="Example for Patient"/>
+      <exampleCanonical value="StructureDefinition/ch-mhd-patient"/>
+    </resource>
+
+    <!-- References to structure definitions -->
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-mhd-patient"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+
+    <!-- pages, parameters -->
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="profiles.html"/>
+        <title value="Profiles"/>
+        <generation value="html"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="releaselabel"/>
+      <value value="CI build"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages" />
+      <value value="input/pages"/>
+    </parameter>
+    <parameter>
+      <code value="copyrightyear"/>
+      <value value="2020+"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>
