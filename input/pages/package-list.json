@@ -1,21 +1,21 @@
 {
-  "package-id": "ch.fhir.ig.ch-mhd",
-  "title": "CH-MHD (R4)",
-  "introduction": "Implementation Guide for the Mobile access to Health Documents (MHD) Profile for the Swiss EPR",
-  "canonical": "http://fhir.ch/ig/ch-mhd",
+  "package-id": "ch.fhir.ig.ch-epr-mhealth",
+  "title": "CH-epr-mhealth (R4)",
+  "introduction": "Implementation Guide for the Mobile access to Health Documents (epr-mhealth) Profile for the Swiss EPR",
+  "canonical": "http://fhir.ch/ig/ch-epr-mhealth",
   "list": [
     {
       "version": "current",
       "date": "n/a",
       "desc": "Continuous Integration Build (latest in version control)",
-      "path": "http://fhir.ch/ig/ch-mhd/index.html",
+      "path": "http://fhir.ch/ig/ch-epr-mhealth/index.html",
       "status": "ci-build"
     },
     {
       "version": "dev",
       "date": "n/a",
       "desc": "Continuous Integration Build (latest in version control)",
-      "path": "http://build.fhir.org/ig/ch-mhd/index.html",
+      "path": "http://build.fhir.org/ig/ch-epr-mhealth/index.html",
       "status": "ci-build"
     }
   ]

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="ch.fhir.ig.ch-mhd"/>
+  <id value="ch.fhir.ig.ch-epr-mhealth"/>
   <text>
     <status value="additional"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
-      Implementation Guide for the Mobile access to Health Documents (MHD) Profile for the Swiss EPR
+      Implementation Guide for the Mobile access to Health Documents (epr-mhealth) Profile for the Swiss EPR
     </div>
   </text>
-  <url value="http://fhir.ch/ig/ch-mhd/ImplementationGuide/ch.fhir.ig.ch-mhd"/>
+  <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
   <version value="0.1.0"/>
-  <name value="CH_MHD"/>
-  <title value="CH-MHD"/>
+  <name value="CH_epr-mhealth"/>
+  <title value="CH-epr-mhealth"/>
   <status value="active"/>
   <experimental value="false"/>
   <date value="2020-04-08"/>
@@ -30,7 +30,7 @@
     </coding>
   </jurisdiction>
   <copyright value="CC-BY-SA-4.0"/>
-  <packageId value="ch.fhir.ig.ch-mhd"/>
+  <packageId value="ch.fhir.ig.ch-epr-mhealth"/>
   <license value="CC-BY-SA-4.0"/>
   <fhirVersion value="4.0.1"/>
   <dependsOn id="chcore">
@@ -51,13 +51,13 @@
       </reference>
       <name value="FranzMuster"/>
       <description value="Example for Patient"/>
-      <exampleCanonical value="StructureDefinition/ch-mhd-patient"/>
+      <exampleCanonical value="StructureDefinition/ch-epr-mhealth-patient"/>
     </resource>
 
     <!-- References to structure definitions -->
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-mhd-patient"/>
+        <reference value="StructureDefinition/ch-epr-mhealth-patient"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
