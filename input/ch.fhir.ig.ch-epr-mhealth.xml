@@ -10,7 +10,7 @@
   </text>
   <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
   <version value="0.1.0"/>
-  <name value="CH_epr-mhealth"/>
+  <name value="CHEprMhealth"/>
   <title value="CH-epr-mhealth"/>
   <status value="active"/>
   <experimental value="false"/>
@@ -47,17 +47,17 @@
     <!-- References to examples -->
     <resource>
       <reference>
-        <reference value="Patient/FranzMuster"/>
+        <reference value="Patient/PatientPrimFeed"/>
       </reference>
-      <name value="FranzMuster"/>
-      <description value="Example for Patient"/>
-      <exampleCanonical value="StructureDefinition/ch-epr-mhealth-patient"/>
+      <name value="PatientPrimFeed"/>
+      <description value="Example for a Feed of a patient"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-prim-patient"/>
     </resource>
 
     <!-- References to structure definitions -->
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-epr-mhealth-patient"/>
+        <reference value="StructureDefinition/ch-prim-patient"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
