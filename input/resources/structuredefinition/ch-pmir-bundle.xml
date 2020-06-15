@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ch-pmir-bundle" />
+  <text>
+    <status value="additional" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+StructureDefinition for Bundle resource constraints in the ch-epr-mhealth Implementatin guide </div>
+  </text>
+  <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle" />
+  <name value="IHE_PMIR_Bundle_CH" />
+  <title value="CH:PMIR Bundle Message" />
+  <status value="draft" />
+  <date value="2020-06-15" />
+  <publisher value="eHealth Suisse"/>
+  <contact>
+    <name value="eHealth Suisse"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.e-health-suisse.ch"/>
+    </telecom>
+  </contact>
+  <description value="See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)" />
+  <purpose value="Added constraints for the Bundle resource for PMIR." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Bundle" />
+  <baseDefinition value="http://ihe.net/fhir/StructureDefinition/IHE.PMIR.Bundle" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Bundle">
+      <path value="Bundle"/>
+      <min value="0"/>
+      <max value="*"/>
+      <constraint>
+        <key value="ch-prim-bdl-1"/>
+        <severity value="error"/>
+        <human value="Patient resoures in the bundle must conform to the ch-pmir-patient restrictions"/>
+        <expression value="entry.resource.entry.all(resource.conformsTo('http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient'))"/>
+      </constraint>
+    </element>
+  </differential>
+</StructureDefinition>
