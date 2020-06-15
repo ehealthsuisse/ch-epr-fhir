@@ -10,7 +10,7 @@
           "id": "1",
           "eventUri": "urn:ihe:iti:pmir:2019:patient-feed",
           "source": {
-            "endpoint": "http://example.com/patientSource",
+            "endpoint": "http://example.com/patientSource"
           },
           "focus": [
             {
@@ -41,7 +41,10 @@
               "request": {
                 "method": "POST",
                 "url": "Patient"
-              }
+              }, 
+              "response": {
+                "status": "200"
+              }  
             }
           ]
         }

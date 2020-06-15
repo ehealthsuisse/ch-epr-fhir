@@ -53,11 +53,54 @@
       <description value="Example for a Feed of a patient"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
     </resource>
-
+    <resource>
+      <reference>
+        <reference value="Bundle/BundlePmirFeed"/>
+      </reference>
+      <name value="BundlePmirFeed"/>
+      <description value="Example for a PMIR Feed"/>
+      <exampleCanonical value="http://ihe.net/fhir/StructureDefinition/IHE.PMIR.Bundle"/> 
+    </resource>
     <!-- References to structure definitions -->
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-pmir-patient"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.PMIR.Bundle"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.PMIR.BundleHistory"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.PMIR.MessageHeader"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.PMIR.Patient.Merge"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.PMIR.Patient.RelatedPerson"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.PMIR.Subscription"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
