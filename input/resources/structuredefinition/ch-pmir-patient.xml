@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="ch-prim-patient"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-prim-patient"/>
+    <id value="ch-pmir-patient"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
     <version value="0.1.0"/>
-    <name value="CHPrimPatient"/>
+    <name value="CHPmirPatient"/>
     <title value="CH EPR mhealth Patient Profile for IHE PRIM"/>
     <status value="draft"/>
     <date value="2020-04-08"/>

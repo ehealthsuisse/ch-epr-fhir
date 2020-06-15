@@ -47,17 +47,17 @@
     <!-- References to examples -->
     <resource>
       <reference>
-        <reference value="Patient/PatientPrimFeed"/>
+        <reference value="Patient/PatientPmirFeed"/>
       </reference>
-      <name value="PatientPrimFeed"/>
+      <name value="PatientPmirFeed"/>
       <description value="Example for a Feed of a patient"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-prim-patient"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
     </resource>
 
     <!-- References to structure definitions -->
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-prim-patient"/>
+        <reference value="StructureDefinition/ch-pmir-patient"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
