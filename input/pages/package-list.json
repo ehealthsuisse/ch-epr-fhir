@@ -1,6 +1,6 @@
 {
   "package-id": "ch.fhir.ig.ch-epr-mhealth",
-  "title": "CH-epr-mhealth (R4)",
+  "title": "CH EPR mHealth (R4)",
   "introduction": "Implementation Guide for the Mobile access to Health Documents (epr-mhealth) Profile for the Swiss EPR",
   "canonical": "http://fhir.ch/ig/ch-epr-mhealth",
   "list": [

@@ -11,7 +11,7 @@
   <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
   <version value="0.1.0"/>
   <name value="CHEprMhealth"/>
-  <title value="CH-epr-mhealth"/>
+  <title value="CH EPR mHealth"/>
   <status value="active"/>
   <experimental value="false"/>
   <date value="2020-04-08"/>

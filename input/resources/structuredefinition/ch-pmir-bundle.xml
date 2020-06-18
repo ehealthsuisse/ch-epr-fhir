@@ -4,11 +4,11 @@
   <text>
     <status value="additional" />
     <div xmlns="http://www.w3.org/1999/xhtml">
-StructureDefinition for Bundle resource constraints in the ch-epr-mhealth Implementatin guide </div>
+StructureDefinition for Bundle resource constraints in the CH EPR mHealth Implementation Guide </div>
   </text>
   <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle" />
   <name value="IHE_PMIR_Bundle_CH" />
-  <title value="CH:PMIR Bundle Message" />
+  <title value="CH PMIR Bundle Message" />
   <status value="draft" />
   <date value="2020-06-15" />
   <publisher value="eHealth Suisse"/>
