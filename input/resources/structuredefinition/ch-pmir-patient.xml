@@ -4,7 +4,7 @@
     <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
     <version value="0.1.0"/>
     <name value="CHPmirPatient"/>
-    <title value="CH EPR mhealth Patient Profile for IHE PRIM"/>
+    <title value="CH EPR mhealth Patient Profile for IHE PMIR"/>
     <status value="draft"/>
     <date value="2020-04-08"/>
     <publisher value="eHealth Suisse"/>
