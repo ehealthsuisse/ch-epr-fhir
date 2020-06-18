@@ -59,7 +59,7 @@
       </reference>
       <name value="BundlePmirFeed"/>
       <description value="Example for a PMIR Feed"/>
-      <exampleCanonical value="StructureDefinition/ch-pmir-bundle"/> 
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle"/> 
     </resource>
     <!-- References to structure definitions -->
     <resource>
