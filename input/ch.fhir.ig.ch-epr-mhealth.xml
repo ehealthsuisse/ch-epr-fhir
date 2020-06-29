@@ -50,7 +50,7 @@
         <reference value="Patient/PatientPmirFeed"/>
       </reference>
       <name value="PatientPmirFeed"/>
-      <description value="Example for a Feed of a patient"/>
+      <description value="Example PMIR patient feed"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
     </resource>
     <resource>
@@ -58,8 +58,32 @@
         <reference value="Bundle/BundlePmirFeed"/>
       </reference>
       <name value="BundlePmirFeed"/>
-      <description value="Example for a PMIR Feed"/>
+      <description value="Example Bundle for a PMIR Feed"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle"/> 
+    </resource>
+    <resource>
+      <reference>
+        <reference value="DocumentReference/2-7-DocRefMedicationCard"/>
+      </reference>
+      <name value="Document Reference for MedicationCard"/>
+      <description value="Example DocumentReference for a MedicationCard"/>
+      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/> 
+    </resource>
+    <resource>
+      <reference>
+        <reference value="DocumentManifest/2-7-DocManMedicationCard"/>
+      </reference>
+      <name value="DocumentManifest for MedicationCard"/>
+      <description value="Example DocumentManifest for a MedicationCard"/>
+      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/DocumentManifest"/> 
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/2-7-BundleProvideDocument"/>
+      </reference>
+      <name value="MH Provide Document Bundle for MedicationCard"/>
+      <description value="MH Provide Document Bundle for MedicationCard"/>
+      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/> 
     </resource>
     <!-- References to structure definitions -->
     <resource>
