@@ -59,7 +59,7 @@
       </reference>
       <name value="BundlePmirFeed"/>
       <description value="Example Bundle for a PMIR Feed"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle"/> 
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle"/>
     </resource>
     <resource>
       <reference>
@@ -67,7 +67,7 @@
       </reference>
       <name value="Document Reference for MedicationCard"/>
       <description value="Example DocumentReference for a MedicationCard"/>
-      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/> 
+      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/>
     </resource>
     <resource>
       <reference>
@@ -75,7 +75,7 @@
       </reference>
       <name value="DocumentManifest for MedicationCard"/>
       <description value="Example DocumentManifest for a MedicationCard"/>
-      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/DocumentManifest"/> 
+      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/DocumentManifest"/>
     </resource>
     <resource>
       <reference>
@@ -83,7 +83,7 @@
       </reference>
       <name value="MH Provide Document Bundle for MedicationCard"/>
       <description value="MH Provide Document Bundle for MedicationCard"/>
-      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/> 
+      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
     </resource>
     <!-- References to structure definitions -->
     <resource>
@@ -136,7 +136,7 @@
       <exampleBoolean value="false"/>
     </resource>
 
-    <!-- pages, parameters -->
+    <!-- pages -->
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>
@@ -147,11 +147,43 @@
         <generation value="markdown"/>
       </page>
       <page>
+        <nameUrl value="iti-83.html"/>
+        <title value="Mobile Patient Identifier Crossreference Query [ITI-83]"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="iti-93.html"/>
+        <title value="Mobile Patient Identity Feed [ITI-93]"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="iti-65.html"/>
+        <title value="Provide Document Bundle [ITI-65]"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="iti-66.html"/>
+        <title value="Find Document Manifest [ITI-66]"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="iti-67.html"/>
+        <title value="Find Document References [ITI-67]"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="iti-68.html"/>
+        <title value="Retrieve Document [ITI-68]"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
         <nameUrl value="profiles.html"/>
         <title value="Profiles"/>
         <generation value="html"/>
       </page>
     </page>
+
+    <!-- parameters -->
     <parameter>
       <code value="releaselabel"/>
       <value value="CI build"/>

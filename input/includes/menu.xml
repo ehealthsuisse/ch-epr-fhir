@@ -1,5 +1,36 @@
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="profiles.html">Profiles</a></li>
-  <li><a href="artifacts.html">Artifacts</a></li>
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Transactions<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="iti-83.html">Mobile Patient Identifier Cross-reference Query [ITI-83]</a>
+      </li>
+      <li>
+        <a href="iti-93.html">Mobile Patient Identity Feed [ITI-93]</a>
+      </li>
+      <li>
+        <a href="iti-65.html">Provide Document Bundle [ITI-65]</a>
+      </li>
+      <li>
+        <a href="iti-66.html">Find Document Manifest [ITI-66]</a>
+      </li>
+      <li>
+        <a href="iti-67.html">Find Document References [ITI-67]</a>
+      </li>
+      <li>
+        <a href="iti-68.html">Retrieve Document [ITI-68]</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="profiles.html">Profiles</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
 </ul>
