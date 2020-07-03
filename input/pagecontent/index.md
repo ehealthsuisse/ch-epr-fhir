@@ -11,8 +11,8 @@ and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.
 
 #### Terminology
 
-The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, 
-“RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in
+The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, 
+*RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in
 [[RFC2119](https://www.ietf.org/rfc/rfc2119.txt)].
 
 #### Scope of precisions
