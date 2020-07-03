@@ -81,8 +81,8 @@
       <reference>
         <reference value="Bundle/2-7-BundleProvideDocument"/>
       </reference>
-      <name value="MH Provide Document Bundle for MedicationCard"/>
-      <description value="MH Provide Document Bundle for MedicationCard"/>
+      <name value="MHD Provide Document Bundle for MedicationCard"/>
+      <description value="MHD Provide Document Bundle for MedicationCard"/>
       <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
     </resource>
     <!-- References to structure definitions -->
