@@ -1,0 +1,16 @@
+@startuml
+
+title MHD Actor Diagram for [ITI-65]
+
+participant source as "Document\nSource"
+participant recipient as "Document\nRecipient"
+
+source -> recipient : Provide Document Bundle Request Message
+activate source
+activate recipient
+
+recipient -> source: Provide Document Bundle Response Message
+deactivate recipient
+deactivate source
+
+@enduml 
