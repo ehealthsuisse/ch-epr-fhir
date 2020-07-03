@@ -1,0 +1,16 @@
+@startuml
+
+title PRIM Actor Diagram for [ITI-83]
+
+participant consumer as "Patient Identifier Cross-\nreference Consumer"
+participant manager as "Patient Identity Manager"
+
+consumer -> manager : Get Corresponding Identifiers
+activate consumer
+activate manager
+
+manager -> consumer: Response
+deactivate manager
+deactivate consumer
+
+@enduml 
