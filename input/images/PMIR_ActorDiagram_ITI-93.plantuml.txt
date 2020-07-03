@@ -1,6 +1,6 @@
 @startuml
 
-title PMIR Interaction Diagram for [ITI-93]
+title PMIR Actor Diagram for [ITI-93]
 
 participant supplier as "Supplier"
 participant consumer as "Consumer"

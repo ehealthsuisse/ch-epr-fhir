@@ -17,7 +17,7 @@ Approved CP 1198-01 PMIR – Clarify Patient Identity Manager return in merge/de
 
 ### Messages
 
-{% include img.html img="PMIR_InteractionDiagram_ITI-93.plantuml.png" width="40%" %}
+{% include img.html img="PMIR_ActorDiagram_ITI-93.plantuml.png" width="40%" %}
 
 ### Trigger Events
 
