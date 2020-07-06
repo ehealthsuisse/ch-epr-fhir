@@ -55,6 +55,13 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Parameters/ParametersPmirCrossreferenceQuery"/>
+      </reference>
+      <name value="ParametersPmirCrossreferenceQuery"/>
+      <description value="Example Response PMIR Mobile Patient Identifier Corss-reference Query"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Bundle/BundlePmirFeed"/>
       </reference>
       <name value="BundlePmirFeed"/>

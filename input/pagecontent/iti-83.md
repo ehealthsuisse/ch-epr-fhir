@@ -61,27 +61,8 @@ community where the Assigning Authority is oid 5.6.7 and the MPI-PID and EPR-SPI
 GET [base]/Patient/$ihe-pix?sourceIdentifier=urn:oid:1.2.3|123&targetSystem=urn:oid:5.6.7&targetSystem=urn:oid:2.16.756.5.30.1.127.3.10.3
 ```
 
-```
-{
-    "resourceType": "Parameters",
-    "parameter": [
-        {
-            "name": "targetIdentifier",
-            "valueIdentifier": {
-                "system": "urn:oid:5.6.7",
-                "value": "value of MPI-PID"
-            }
-        },
-        {
-            "name": "targetIdentifier",
-            "valueIdentifier": {
-                "system": "urn:oid:2.16.756.5.30.1.127.3.10.3",
-                "value": "value of EPR-SPID"
-            }
-        }
-    ]
-}
-```
+See Response [Parameters PMIR Cross-reference Query](Parameters-ParametersPmirCrossreferenceQuery.html)
+
 
 ### Security Consideration
 
