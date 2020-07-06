@@ -9,7 +9,7 @@ GET [base]/DocumentManifest?patient.identifier=urn:oid:2.999|11111111 HTTP/1.1
 Accept: application/fhir+json
 ```
 
-See [Document Manifest](DocumentManifest-2-7-DocManMedicationCard.html)
+See [DocumentManifest example](DocumentManifest-2-7-DocManMedicationCard.html) as response to the Find Document Manifest request.
 
 ### Security Consideration
 

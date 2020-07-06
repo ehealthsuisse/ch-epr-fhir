@@ -37,7 +37,7 @@ have been defined for the Swiss EPR additional metadata on the DocumentManifest:
 
 ### Message Example
 
-See [MHD Provide Document Bundle](Bundle-2-7-BundleProvideDocument.html).
+See [Bundle example](Bundle-2-7-BundleProvideDocument.html) for the Provide Document Bundle Request.
 
 ### Security Consideration
 

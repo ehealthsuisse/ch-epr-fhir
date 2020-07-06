@@ -28,7 +28,7 @@ merged, or deleted.
 
 The same message semantic apply as in 3.93.4.1.2 Message Semantics of the CP-ITI-1197.
 
-The patient data (see [example](Patient-PatientPmirFeed.html)) shall be conformant to the CH-PMIR Patient profile with the canonical url
+The patient data (see [Patient example](Patient-PatientPmirFeed.html)) shall be conformant to the CH-PMIR Patient profile with the canonical url
 [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient](StructureDefinition-ch-pmir-patient.html). 
 If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID 
 as an identifier MAY be added. The birthname can be added with the ISO 21090 qualifier extension, the religion MUST
@@ -41,7 +41,7 @@ the patient in the community.
 
 ### Message Example
 
-See [Bundle PMIR Feed](Bundle-BundlePmirFeed.html).
+See [Bundle example](Bundle-BundlePmirFeed.html) for the Mobile Patient Identity Feed Request.
 
 ### Security Consideration
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
