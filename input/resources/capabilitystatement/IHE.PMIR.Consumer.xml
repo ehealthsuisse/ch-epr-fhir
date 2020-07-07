@@ -1,0 +1,36 @@
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+    <id value="IHE.PMIR.Consumer"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/IHE.PMIR.Consumer" />
+    <name value="IHE_PMIR_Consumer" />
+    <title value="PMIR Patient Identifier Cross-Reference Consumer (client)" />
+    <status value="draft" />
+    <date value="2020-07-07" />
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description value="CapabilityStatement for Consumer Actor PMIR Patient Identifier Cross-reference Consumer (client)." />
+    <kind value="requirements" />
+    <fhirVersion value="4.0.1" />
+    <format value="application/fhir+xml" />
+    <format value="application/fhir+json" />
+    <rest>
+        <mode value="client" />
+        <documentation value="PMIR client queries the Patient Identifier Crossreference Manager for the MPI-PID and EPR-SPID." />
+        <security>
+            <cors value="false" />
+            <description value="TLS SHALL be used" />
+        </security>
+        <resource>
+            <type value="Patient" />
+            <operation>
+                <name value="$ihe-pix"/>
+                <definition value="http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/IHE.PIXm.pix"/>
+            </operation>
+        </resource>
+    </rest>
+</CapabilityStatement>

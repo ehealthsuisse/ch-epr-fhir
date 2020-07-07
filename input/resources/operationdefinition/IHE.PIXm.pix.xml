@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <OperationDefinition xmlns="http://hl7.org/fhir">
     <id value="IHE.PIXm.pix"/>
-    <url value="http://ihe.net/fhir/ihe.pixm.fhir/OperationDefinition/IHE.PIXm.pix"/>
-    <version value="2.0.0"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/IHE.PIXm.pix"/>
     <name value="IHE_PIXm_pix" />
     <title value="Find patient matches using IHE-PIXm Profile"/>
     <status value="draft"/>
     <kind value="operation"/>
-    <date value="2019-07-05"/>
-    <publisher value="Integrating the Healthcare Enterprise (IHE)"/>
+    <date value="2020-07-07"/>
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
     <description value="Find patient matches using IHE-PIXm Profile"/>
     <code value="ihe-pix"/>
     <resource value="Patient"/>
