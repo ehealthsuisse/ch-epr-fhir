@@ -151,20 +151,20 @@
     <!-- IHE FHIR Operation Defintions -->
     <resource>
       <reference>
-        <reference value="OperationDefinition/IHE.PIXm.pix"/>
+        <reference value="OperationDefinition/CH.PMIR"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
     <!-- IHE FHIR Capability Statements -->
     <resource>
       <reference>
-        <reference value="CapabilityStatement/IHE.PMIR.Consumer"/>
+        <reference value="CapabilityStatement/CH.PMIR.Consumer"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="CapabilityStatement/IHE.PMIR.Manager"/>
+        <reference value="CapabilityStatement/CH.PMIR.Manager"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>

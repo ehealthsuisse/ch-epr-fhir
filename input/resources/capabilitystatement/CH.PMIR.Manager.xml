@@ -1,7 +1,7 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-    <id value="IHE.PMIR.Manager"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/IHE.PMIR.Manager" />
-    <name value="IHE_PMIR_Manager" />
+    <id value="CH.PMIR.Manager"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PMIR.Manager" />
+    <name value="CH_PMIR_Manager" />
     <title value="PMIR Patient Identity Manager (server)" />
     <status value="draft" />
     <date value="2020-07-07" />
@@ -29,7 +29,7 @@
             <type value="Patient" />
             <operation>
                 <name value="$ihe-pix"/>
-                <definition value="http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/IHE.PIXm.pix"/>
+                <definition value="http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/CH.PMIR"/>
             </operation>
         </resource>
     </rest>

@@ -53,7 +53,7 @@ GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]{&targetSystem=[uri]}{&_form
 If the targetSystem is not restricted to the Assigning authority of the community and/or the EPR-SPID the
 error Target Domain not recognized (3.83.4.2.2.4) SHALL be returned.
 
-See the corresponding [OperationDefinition](OperationDefinition-IHE.PIXm.pix.html).
+See the corresponding [OperationDefinition](OperationDefinition-CH.PMIR.html).
 
 ### Message Example
 Message response for a patient with a local id of 123 by AssigningAuthority oid 1.2.3 which resides in a
