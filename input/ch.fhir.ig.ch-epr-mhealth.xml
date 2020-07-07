@@ -196,6 +196,11 @@
         <generation value="html"/>
       </page>
       <page>
+        <nameUrl value="capstatements.html"/>
+        <title value="Capability Statements"/>
+        <generation value="html"/>
+      </page>
+      <page>
         <nameUrl value="operations.html"/>
         <title value="Operations"/>
         <generation value="html"/>
