@@ -168,6 +168,12 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.MHD.DocumentSource"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
 
     <!-- pages -->
     <page>

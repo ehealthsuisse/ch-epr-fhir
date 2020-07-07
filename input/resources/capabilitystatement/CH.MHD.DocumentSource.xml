@@ -1,0 +1,33 @@
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+    <id value="CH.MHD.DocumentSource"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentSource" />
+    <name value="CH_MHD_DocumentSource" />
+    <title value="MHD Document Source (client)" />
+    <status value="draft" />
+    <date value="2020-07-07" />
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description value="CapabilityStatement for Actor MHD Document Source (client)." />
+    <kind value="requirements" />
+    <fhirVersion value="4.0.1" />
+    <format value="application/fhir+xml" />
+    <format value="application/fhir+json" />
+    <rest>
+        <mode value="client" />
+        <documentation value="MHD client sends documents and metadata to the Document Recipient." />
+        <security>
+            <cors value="false" />
+            <description value="TLS SHALL be used" />
+        </security>
+        <interaction>
+            <code value="transaction"/>
+            <documentation value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.MHD.ProvideDocumentBundle"/>
+        </interaction>
+    </rest>
+</CapabilityStatement>
