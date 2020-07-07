@@ -36,7 +36,6 @@
         <element id="Patient.extension:religion">
             <path value="Patient.extension" />
             <sliceName value="religion" />
-            <short value="Religion of patient"/>
             <min value="0"/>
             <max value="0"/>
             <type>
@@ -46,25 +45,30 @@
         </element>
         <element id="Patient.identifier">
             <path value="Patient.identifier"/>
+            <slicing>
+                <discriminator>
+                    <type value="pattern" />
+                    <path value="$this" />
+                </discriminator>
+                <rules value="open" />
+            </slicing>
             <min value="1"/>
-        </element>  
+        </element>
         <element id="Patient.identifier:EPR-SPID">
             <path value="Patient.identifier"/>
             <sliceName value="EPR-SPID"/>
             <min value="0"/>
             <max value="1"/>
-        </element> 
+        </element>
         <element id="Patient.identifier:AHVN13">
             <path value="Patient.identifier"/>
             <sliceName value="AHVN13"/>
             <min value="0"/>
             <max value="0"/>
-        </element>  
+        </element>
         <element id="Patient.identifier:LocalPid">
             <path value="Patient.identifier" />
             <sliceName value="LocalPid" />
-            <short value="Local patient identifiers" />
-            <definition value="Local patient identifiers" />
             <min value="0" />
             <max value="*" />
             <patternIdentifier>
@@ -78,20 +82,37 @@
         </element>
         <element id="Patient.name">
             <path value="Patient.name"/>
+            <slicing>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="$this"/>
+                </discriminator>
+                <rules value="open" />
+            </slicing>
+            <min value="1"/>
+        </element>
+        <element id="Patient.name:CHCoreHumanName">
+            <path value="Patient.name"/>
+            <sliceName value="CHCoreHumanName" />
             <short value="A name associated with the patient"/>
-            <definition value="A name associated with the individual."/>
-            <comment value="The birthname is added  with the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR"/>
             <min value="1"/>
             <max value="*"/>
-            <base>
-                <path value="Patient.name"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
             <type>
                 <code value="HumanName"/>
                 <profile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-humanname" />
             </type>
-        </element>    
+        </element>
+        <element id="Patient.name:BirthName">
+            <path value="Patient.name"/>
+            <sliceName value="BirthName" />
+            <short value="The birthname of the patient"/>
+            <comment value="The birthname is added  with the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="HumanName"/>
+                <profile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-humanname-birthname" />
+            </type>
+        </element>
     </differential>
 </StructureDefinition>

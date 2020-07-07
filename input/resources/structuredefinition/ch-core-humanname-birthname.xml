@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="ch-core-humanname-birthname"/>
+    <url value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-humanname-birthname"/>
+    <version value="0.1.0"/>
+    <name value="CHCoreHumanNameBirthName"/>
+    <title value="BirthName"/>
+    <status value="draft"/>
+    <date value="2020-07-07T00:00:00+10:00"/>
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description value="The birthname with the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR"/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="CH"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1" />
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <type value="HumanName"/>
+    <baseDefinition value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-humanname"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="HumanName">
+            <path value="HumanName"/>
+        </element>
+        <element id="HumanName.family">
+            <path value="HumanName.family"/>
+            <short value="The birthname of the patient"/>
+            <min value="1"/>
+        </element>
+        <element id="HumanName.family.extension">
+            <path value="HumanName.family.extension" />
+            <slicing>
+                <discriminator>
+                    <type value="value" />
+                    <path value="url" />
+                </discriminator>
+                <rules value="open" />
+            </slicing>
+        </element>
+        <element id="HumanName.family.extension:iso21090-EN-qualifier">
+            <path value="HumanName.family.extension" />
+            <sliceName value="iso21090-EN-qualifier" />
+            <short value="BR (Birth)"/>
+            <min value="1"/>
+            <max value="1" />
+            <type>
+                <code value="Extension" />
+                <profile value="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier" />
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

@@ -105,6 +105,12 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-core-humanname-birthname"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
     <!-- imported ihe fhir Structure Defintions -->
     <resource>
       <reference>
@@ -142,10 +148,23 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    <!-- imported ihe fhir Operation Defintions -->
+    <!-- IHE FHIR Operation Defintions -->
     <resource>
       <reference>
         <reference value="OperationDefinition/IHE.PIXm.pix"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <!-- IHE FHIR Capability Statements -->
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/IHE.PMIR.Consumer"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/IHE.PMIR.Manager"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
