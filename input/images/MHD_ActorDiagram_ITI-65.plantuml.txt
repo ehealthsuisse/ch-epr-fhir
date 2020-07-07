@@ -1,6 +1,6 @@
 @startuml
 
-title MHD Actor Diagram for [ITI-65]
+title Interaction Diagram for [ITI-65]
 
 participant source as "Document\nSource"
 participant recipient as "Document\nRecipient"
