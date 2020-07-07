@@ -142,6 +142,13 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
+    <!-- imported ihe fhir Operation Defintions -->
+    <resource>
+      <reference>
+        <reference value="OperationDefinition/IHE.PIXm.pix"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
 
     <!-- pages -->
     <page>
@@ -186,6 +193,11 @@
       <page>
         <nameUrl value="profiles.html"/>
         <title value="Profiles"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="operations.html"/>
+        <title value="Operations"/>
         <generation value="html"/>
       </page>
     </page>

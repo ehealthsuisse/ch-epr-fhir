@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+    <id value="IHE.PIXm.pix"/>
+    <url value="http://ihe.net/fhir/ihe.pixm.fhir/OperationDefinition/IHE.PIXm.pix"/>
+    <version value="2.0.0"/>
+    <name value="IHE_PIXm_pix" />
+    <title value="Find patient matches using IHE-PIXm Profile"/>
+    <status value="draft"/>
+    <kind value="operation"/>
+    <date value="2019-07-05"/>
+    <publisher value="Integrating the Healthcare Enterprise (IHE)"/>
+    <code value="ihe-pix"/>
+    <resource value="Patient"/>
+    <system value="false"/>
+    <type value="true"/>
+    <instance value="false"/>
+    <parameter>
+        <name value="sourceIdentifier"/>
+        <use value="in"/>
+        <min value="1"/>
+        <max value="1"/>
+        <documentation value="The Patient identifier search parameter that will be used by the Patient Identifier Cross-reference Manager to find cross matching identifiers associated with the Patient Resource. See Section 3.83.4.1.2.1"/>
+        <type value="string"/>
+        <searchType value="token" />
+    </parameter>
+    <parameter>
+        <name value="targetSystem"/>
+        <use value="in"/>
+        <min value="1"/>
+        <max value="2"/>
+        <documentation value="The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section 3.83.4.1.2.2."/>
+        <type value="string" />
+        <searchType value="uri"/>
+    </parameter>
+    <parameter>
+        <name value="_format"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <documentation value="The requested format of the response from the mime-type value set. See ITI TF-2x: Appendix Z.6"/>
+        <type value="string"/>
+        <searchType value="token" />
+    </parameter>
+    <parameter>
+        <name value="targetIdentifier"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="2"/>
+        <documentation value="The identifier found. Constraints to include the assigning authority as specified in ITI TF-2x: Appendix E.3"/>
+        <type value="Identifier"/>
+    </parameter>
+</OperationDefinition> 
