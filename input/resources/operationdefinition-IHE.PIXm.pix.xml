@@ -10,6 +10,7 @@
     <kind value="operation"/>
     <date value="2019-07-05"/>
     <publisher value="Integrating the Healthcare Enterprise (IHE)"/>
+    <description value="Find patient matches using IHE-PIXm Profile"/>
     <code value="ihe-pix"/>
     <resource value="Patient"/>
     <system value="false"/>
