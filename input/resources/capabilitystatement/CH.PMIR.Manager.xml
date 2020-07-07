@@ -13,7 +13,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="CapabilityStatement for Manager Actor PMIR Patient Identity Manager (server)." />
+    <description value="CapabilityStatement for Actor PMIR Patient Identity Manager (server)." />
     <kind value="requirements" />
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
