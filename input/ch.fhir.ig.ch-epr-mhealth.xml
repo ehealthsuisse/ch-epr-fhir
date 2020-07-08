@@ -180,6 +180,12 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.MHD.DocumentConsumer"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
 
     <!-- pages -->
     <page>
