@@ -5,7 +5,7 @@ Cross-reference Query.
 The Mobile Patient Identifier Cross-reference Query is used by an app in the Swiss EPR to query with the
 local identifier the MPI and get the corresponding MPI-PID and the EPR-SPID identifier for the patient.
 
-### Use Case Roles
+### Actor Roles
 **Actor:** Patient Identifier Cross-reference Consumer   
 **Role:** Queries the Patient Identifier Cross-reference Manager for the MPI-PID and EPR-SPID.   
 **Actor:** Patient Identity Manager   

@@ -6,7 +6,7 @@ Health Documents”.
 
 In the Swiss EPR the transaction is used by the MHD Document Source to store documents in the EPR.
 
-### Use Case Roles
+### Actor Roles
 
 **Actor:** Document Source   
 **Role:** Sends documents and metadata to the Document Recipient.   
