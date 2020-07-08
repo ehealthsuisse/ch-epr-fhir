@@ -3,7 +3,7 @@
     <url value="http://ihe.net/fhir/ITI.MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"/>
     <version value="3.1.1"/>
     <name value="MinimalProvideDocumentBundle"/>
-    <title value="MHD Minimal Provide Document Bundle"/>
+    <title value="IHE MHD Minimal Provide Document Bundle"/>
     <status value="active"/>
     <date value="2020-02-01T00:00:00+00:00"/>
     <publisher value="Integrating the Healthcare Enterprise (IHE)"/>

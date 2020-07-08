@@ -39,7 +39,7 @@ GET [base]/DocumentReference?patient.identifier=urn:oid:2.999|11111111 HTTP/1.1
 Accept: application/fhir+json
 ```
 
-See [DocumentReference example](DocumentReference-2-7-DocRefMedicationCard.html) as response to the Find Document Reference request.
+See [DocumentReference example](DocumentReference-2-7-DocRefMedicationCard.html) (and the corresponding [profile](StructureDefinition-ch-mhd-minimal-documentreference.html)) as response to the Find Document Reference request.
 
 ### Security Consideration
 

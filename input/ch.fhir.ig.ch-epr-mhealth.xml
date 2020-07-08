@@ -74,7 +74,7 @@
       </reference>
       <name value="Document Reference for MedicationCard"/>
       <description value="Example DocumentReference for a MedicationCard"/>
-      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-minimal-documentreference"/>
     </resource>
     <resource>
       <reference>
@@ -101,6 +101,12 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ch-mhd-minimal-documentreference"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ch-mhd-minimal-providebundle"/>
       </reference>
       <exampleBoolean value="false"/>
@@ -120,6 +126,12 @@
     
     
     <!-- imported ihe fhir Structure Defintions -->
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.Minimal.DocumentReference"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/IHE.MHD.Minimal.ProvideBundle"/>

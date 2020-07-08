@@ -92,7 +92,7 @@
         <!-- ITI-67 Find Document References -->
         <resource>
             <type value="DocumentReference"/>
-            <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.MHD.FindDocumentReference"/>
+            <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-minimal-documentreference"/>
             <interaction>
                 <code value="read"/>
             </interaction>
