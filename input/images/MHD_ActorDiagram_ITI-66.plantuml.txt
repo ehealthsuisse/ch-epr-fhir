@@ -1,0 +1,16 @@
+@startuml
+
+title Interaction Diagram for [ITI-66]
+
+participant consumer as "Document\nConsumer"
+participant responder as "Document\nResponder"
+
+consumer -> responder: Find Document Manifests Request Message
+activate consumer
+activate responder
+
+responder -> consumer: Find Document Manifests Response Message
+deactivate responder
+deactivate consumer
+
+@enduml 
