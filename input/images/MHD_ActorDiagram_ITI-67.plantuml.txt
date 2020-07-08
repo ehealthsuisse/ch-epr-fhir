@@ -1,0 +1,16 @@
+@startuml
+
+title Interaction Diagram for [ITI-67]
+
+participant consumer as "Document\nConsumer"
+participant responder as "Document\nResponder"
+
+consumer -> responder: Find Document References Request Message
+activate consumer
+activate responder
+
+responder -> consumer: Find Document References Response Message
+deactivate responder
+deactivate consumer
+
+@enduml 
