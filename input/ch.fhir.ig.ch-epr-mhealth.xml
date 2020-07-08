@@ -192,6 +192,18 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.mHealth.App"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.mHealth.MobileAccessGateway"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
 
     <!-- pages -->
     <page>

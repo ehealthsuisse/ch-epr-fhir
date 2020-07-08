@@ -1,0 +1,27 @@
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+    <id value="CH.mHealth.MobileAccessGateway"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.mHealth.MobileAccessGateway" />
+    <name value="CH_mHealth_MobileAccessGateway" />
+    <title value="mHealth: Mobile Access Gateway (server)" />
+    <status value="draft" />
+    <date value="2020-07-08" />
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description value="CapabilityStatement for mHealth MobileAccessGateway (server)." />
+    <kind value="requirements" />
+    <instantiates value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PMIR.Manager"/>
+    <instantiates value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentRecipient"/>
+    <instantiates value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentResponder"/>
+    <fhirVersion value="4.0.1" />
+    <format value="application/fhir+xml" />
+    <format value="application/fhir+json" />
+    <rest>
+        <mode value="server" />
+    </rest>
+</CapabilityStatement>
