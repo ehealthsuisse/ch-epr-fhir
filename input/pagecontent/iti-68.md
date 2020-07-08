@@ -1,4 +1,4 @@
-Their are no additional requirements for the Swiss EPR extension for the Swiss EPR of the Retrieve Document
+There are **no additional requirements** for the Swiss EPR extension for the Swiss EPR of the Retrieve Document
 [ITI-68] transaction defined in the MHD Profile which is published in the IHE ITI Trial Implementation
 “Mobile Access to Health Documents”.
 
