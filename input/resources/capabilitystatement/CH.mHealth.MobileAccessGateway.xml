@@ -15,9 +15,9 @@
     </contact>
     <description value="CapabilityStatement for mHealth MobileAccessGateway (server)." />
     <kind value="requirements" />
-    <instantiates value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PMIR.Manager"/>
-    <instantiates value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentRecipient"/>
-    <instantiates value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentResponder"/>
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PMIR.Manager"/>
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentRecipient"/>
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentResponder"/>
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
     <format value="application/fhir+json" />

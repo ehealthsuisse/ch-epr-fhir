@@ -15,10 +15,10 @@
     </contact>
     <description value="CapabilityStatement for mHealth App (client)." />
     <kind value="requirements" />
-    <instantiates value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PMIR.Consumer"/>
-    <instantiates value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PMIR.Source"/>
-    <instantiates value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentSource"/>
-    <instantiates value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentConsumer"/>
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PMIR.Consumer"/>
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PMIR.Source"/>
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentSource"/>
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentConsumer"/>
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
     <format value="application/fhir+json" />
