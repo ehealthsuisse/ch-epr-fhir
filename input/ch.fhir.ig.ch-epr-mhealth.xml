@@ -127,12 +127,6 @@
     <!-- imported ihe fhir Structure Defintions -->
     <resource>
       <reference>
-        <reference value="StructureDefinition/IHE.MHD.Minimal.DocumentReference"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/IHE.PMIR.Bundle"/>
       </reference>
       <exampleBoolean value="false"/>
