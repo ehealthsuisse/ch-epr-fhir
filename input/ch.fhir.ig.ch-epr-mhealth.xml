@@ -184,19 +184,7 @@
     <!-- IHE FHIR Capability Statements -->
     <resource>
       <reference>
-        <reference value="CapabilityStatement/CH.PMIR.Consumer"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.PMIR.Manager"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.MHD.DocumentSource"/>
+        <reference value="CapabilityStatement/CH.MHD.DocumentConsumer"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -208,13 +196,13 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CapabilityStatement/CH.MHD.DocumentConsumer"/>
+        <reference value="CapabilityStatement/CH.MHD.DocumentResponder"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="CapabilityStatement/CH.MHD.DocumentResponder"/>
+        <reference value="CapabilityStatement/CH.MHD.DocumentSource"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -230,7 +218,25 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.PMIR.Consumer"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.PMIR.Manager"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.PMIR.Source"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    
     <!-- pages -->
     <page>
       <nameUrl value="toc.html"/>
