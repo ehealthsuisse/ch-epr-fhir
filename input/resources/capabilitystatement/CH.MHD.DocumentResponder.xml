@@ -201,7 +201,7 @@
         </resource>
         <!-- ITI-68 Retrieve Document -->
         <resource>
-            <type value="Binary"/>
+            <type value="Bundle"/>
             <interaction>
                 <code value="read"/>
             </interaction>
