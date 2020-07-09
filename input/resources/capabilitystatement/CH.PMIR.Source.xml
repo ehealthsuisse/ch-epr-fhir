@@ -20,7 +20,7 @@
     <format value="application/fhir+json" />
     <rest>
         <mode value="client" />
-        <documentation value="PMIR client registers data of a specific patient in the Patient Identity Manager." />
+        <documentation value="PMIR client registers data of a specific patient in the Patient Identity Manager [ITI-93]." />
         <security>
             <cors value="false" />
             <description value="TLS SHALL be used" />

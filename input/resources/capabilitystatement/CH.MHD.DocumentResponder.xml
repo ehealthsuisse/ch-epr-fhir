@@ -20,6 +20,9 @@
     <format value="application/fhir+json" />
     <rest>
         <mode value="server" />
+        <documentation value="MHD server returns DocumentManifest Resources that match the search criteria provided by the Document Consumer [ITI-66]. 
+        MHD server returns DocumentReference Resources that match the search criteria provided by the Document Consumer [ITI-67].
+        MHD server serves the document to the Document Consumer [ITI-68]." />
         <security>
             <cors value="false" />
             <description value="TLS SHALL be used" />

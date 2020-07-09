@@ -20,7 +20,7 @@
     <format value="application/fhir+json" />
     <rest>
         <mode value="client" />
-        <documentation value="MHD client sends documents and metadata to the Document Recipient." />
+        <documentation value="MHD client sends documents and metadata to the Document Recipient [ITI-65]." />
         <security>
             <cors value="false" />
             <description value="TLS SHALL be used" />

@@ -20,7 +20,7 @@
     <format value="application/fhir+json" />
     <rest>
         <mode value="client" />
-        <documentation value="PMIR client queries the Patient Identifier Crossreference Manager for the MPI-PID and EPR-SPID." />
+        <documentation value="PMIR client queries the Patient Identifier Crossreference Manager for the MPI-PID and EPR-SPID [ITI-83]." />
         <security>
             <cors value="false" />
             <description value="TLS SHALL be used" />
