@@ -2,7 +2,7 @@
     "id": "2-7-BundleProvideDocument",
     "meta": {
         "profile": [
-            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-minimal-providebundle"
+            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"
         ]
     },
     "resourceType": "Bundle",

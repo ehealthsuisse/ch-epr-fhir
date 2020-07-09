@@ -90,7 +90,7 @@
       </reference>
       <name value="MHD Provide Document Bundle for MedicationCard"/>
       <description value="MHD Provide Document Bundle for MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-minimal-providebundle"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
     </resource>
     <!-- References to structure definitions -->
     <resource>
@@ -107,7 +107,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-mhd-minimal-providebundle"/>
+        <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -124,17 +124,10 @@
       <exampleBoolean value="false"/>
     </resource>
     
-    
     <!-- imported ihe fhir Structure Defintions -->
     <resource>
       <reference>
         <reference value="StructureDefinition/IHE.MHD.Minimal.DocumentReference"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.MHD.Minimal.ProvideBundle"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>

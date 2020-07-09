@@ -27,7 +27,7 @@
         </security>
         <interaction>
             <code value="transaction"/>
-            <documentation value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-minimal-providebundle"/>
+            <documentation value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
         </interaction>
     </rest>
 </CapabilityStatement>
