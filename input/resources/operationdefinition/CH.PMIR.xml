@@ -3,7 +3,7 @@
     <id value="CH.PMIR"/>
     <url value="http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/CH.PMIR"/>
     <name value="CH_PMIR" />
-    <title value="Find patient matches using IHE-PIXm Profile"/>
+    <title value="Find patient matches using IHE-PMIR Profile"/>
     <status value="draft"/>
     <kind value="operation"/>
     <date value="2020-07-07"/>
@@ -15,7 +15,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="Find patient matches using IHE-PIXm Profile"/>
+    <description value="Find patient matches using IHE-PMIR Profile"/>
     <code value="ihe-pix"/>
     <resource value="Patient"/>
     <system value="false"/>
