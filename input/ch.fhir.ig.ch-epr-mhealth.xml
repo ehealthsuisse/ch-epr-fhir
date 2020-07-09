@@ -74,7 +74,7 @@
       </reference>
       <name value="Document Reference for MedicationCard"/>
       <description value="Example DocumentReference for a MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-minimal-documentreference"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
     </resource>
     <resource>
       <reference>
@@ -101,7 +101,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-mhd-minimal-documentreference"/>
+        <reference value="StructureDefinition/ch-mhd-documentreference-comprehensive"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
