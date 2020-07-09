@@ -1,0 +1,38 @@
+@host = http://test.ahdis.ch/fhir
+
+### ITI-83 Request (PMIR: Mobile Patient Identifier Cross-reference Query)
+GET {{host}}/Patient/$ihe-pix?sourceIdentifier=urn:oid:1.2.3.4|0815&targetSystem=urn:oid:1.2.3.4.6 HTTP/1.1
+Accept: application/fhir+json
+
+
+### ITI-93 Request (PMIR: Mobile Patient Identity Feed)
+POST {{host}}/$process-message HTTP/1.1
+Accept: application/fhir+json
+Content-Type: application/fhir+json
+
+< ./input/examples/bundle/BundlePmirFeed.json
+
+
+### ITI-65 Request (MHD: Provide Document Bundle)
+POST {{host}} HTTP/1.1
+Accept: application/fhir+json
+Content-Type: application/fhir+json
+
+< ./input/examples/bundle/2-7-BundleProvideDocument.json
+
+
+### ITI-66 Request (MHD: Find Document Manifests)
+GET {{host}}/DocumentManifest?status=current&patient.identifier=urn:oid:2.999|11111111 HTTP/1.1
+Accept: application/fhir+json
+Content-Type: application/fhir+json
+
+
+### ITI-67 Request (MHD: Find Document References PMP)
+GET {{host}}/DocumentReference?status=current&patient.identifier=urn:oid:2.999.756.42.2|12345678 HTTP/1.1
+Accept: application/fhir+json
+Content-Type: application/fhir+json
+
+
+### ITI-68 Request (MHD: Retrieve Document)
+GET http://localhost:9091/camel/xdsretrieve?uniqueId=7fba239a-f518-11e9-802a-5aa538984bd8&repositoryUniqueId=2.999.756.42.1
+Accept: application/fhir+json

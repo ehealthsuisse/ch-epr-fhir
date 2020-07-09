@@ -1,6 +1,11 @@
 {
     "resourceType": "Parameters",
     "id": "ParametersPmirCrossreferenceQuery",
+    "meta": {
+        "profile": [
+            "http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/CH.PMIR"
+        ]
+    },
     "parameter": [
         {
             "name": "targetIdentifier",
