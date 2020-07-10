@@ -8,3 +8,4 @@ The Implementation Guide contains no examples for this data type profile
 
 # All important examples are integrated in the IG
 The Implementation Guide contains no examples for this profile
+The Implementation Guide contains no explicitly linked examples for this profile

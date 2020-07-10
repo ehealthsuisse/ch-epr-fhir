@@ -31,7 +31,7 @@
     <differential>
         <element id="Patient">
             <path value="Patient"/>
-            <short value="CH EPR mHealth Patient"/>
+            <short value="CH PMIR Patient"/>
         </element>
         <element id="Patient.extension:religion">
             <path value="Patient.extension" />

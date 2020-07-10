@@ -31,6 +31,7 @@
     <differential>
         <element id="HumanName">
             <path value="HumanName"/>
+            <short value="BirthName"/>
         </element>
         <element id="HumanName.family">
             <path value="HumanName.family"/>

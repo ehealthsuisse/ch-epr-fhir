@@ -23,6 +23,10 @@
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
     <derivation value="constraint"/>
     <differential>
+        <element id="Bundle">
+            <path value="Bundle"/>
+            <short value="CH MHD Provide Comphrensive Document Bundle"/>
+        </element>
         <!-- bundle meta profile must have at-least iti-65 -->
         <element id="Bundle.meta.profile.slice">
             <path value="Bundle.meta.profile" />
@@ -94,7 +98,8 @@
             <min value="1" />
             <type>
                 <code value="Resource" />
-                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentmanifest-comprehensive" />
+                <!--<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />-->
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest" />
             </type>
         </element>
         <element id="Bundle.entry:DocumentManifest.request">
@@ -125,7 +130,8 @@
             <min value="1" />
             <type>
                 <code value="Resource" />
-                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive" />
+                <!--<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />-->
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference" />
             </type>
         </element>
         <element id="Bundle.entry:DocumentReference.request">
