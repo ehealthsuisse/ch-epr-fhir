@@ -162,7 +162,8 @@
             <min value="1" />
             <type>
                 <code value="Resource" />
-                <profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
+                <!--<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />-->
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-list" />
             </type>
         </element>
         <element id="Bundle.entry:List.request">

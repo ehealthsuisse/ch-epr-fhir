@@ -107,6 +107,12 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ch-mhd-comprehensive-list"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ch-mhd-provide-comprehensive-documentreference"/>
       </reference>
       <exampleBoolean value="false"/>
