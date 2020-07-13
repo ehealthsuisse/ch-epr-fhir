@@ -72,7 +72,7 @@
         </element>
         <element id="DocumentManifest.author">
             <path value="DocumentManifest.author" />
-            <comment value="Contained resource of type Practitioner or Organization with:&#xD;&#xA;* authorInstitution: Organization&#xD;&#xA;For Practionioner, also with:&#xD;&#xA;* authorPerson: Practitioner.identifier and Practitioner.name&#xD;&#xA;* authorRole:—Not supported in STU3&#xD;&#xA;* authorSpecialty: Practitioner.qualification&#xD;&#xA;* authorTelecommunication: Practitioner.telecom" />
+            <comment value="Contained resource of type Practitioner or Organization with:&#xD;&#xA;* authorInstitution: Organization&#xD;&#xA;For Practitioner, also with:&#xD;&#xA;* authorPerson: Practitioner.identifier and Practitioner.name&#xD;&#xA;* authorRole:—Not supported in STU3&#xD;&#xA;* authorSpecialty: Practitioner.qualification&#xD;&#xA;* authorTelecommunication: Practitioner.telecom" />
             <type>
                 <code value="Reference" />
                 <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-practitioner" />
