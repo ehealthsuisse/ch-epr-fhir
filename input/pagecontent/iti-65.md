@@ -1,4 +1,4 @@
-This section describes the additional requirements for the Swiss EPR of the Provide Document Bundle [ITI-
+This section describes the **additional requirements** for the Swiss EPR of the Provide Document Bundle [ITI-
 65] transaction defined in the MHD Profile published in the IHE ITI Trial Implementation “Mobile Access to
 Health Documents”.
 

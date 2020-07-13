@@ -43,7 +43,7 @@
             <sliceName value="iti-65"/>
             <min value="1"/>
             <max value="1"/>
-            <fixedCanonical value="http://ihe.net/fhir/tag/iti-65" />
+            <fixedCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive" />
         </element>
         <!-- comprehensie bundle must NOT say it is a minimal bundle -->
         <!-- TODO how do I test that minimal is not defined?
@@ -143,7 +143,7 @@
             <fixedCode value="POST" />
         </element>
 
-        <!-- List 0..* -->
+        <!-- List 0..*
         <element id="Bundle.entry:List">
             <path value="Bundle.entry" />
             <sliceName value="List" />
@@ -162,7 +162,7 @@
             <min value="1" />
             <type>
                 <code value="Resource" />
-                <!--<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />-->
+                <profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
                 <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-list" />
             </type>
         </element>
@@ -174,6 +174,7 @@
             <path value="Bundle.entry.request.method" />
             <fixedCode value="POST" />
         </element>
+        -->
 
         <!-- Binary 0..* -->
         <element id="Bundle.entry:Binary">

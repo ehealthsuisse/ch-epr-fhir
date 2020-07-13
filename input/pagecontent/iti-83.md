@@ -1,4 +1,4 @@
-This section documents additional requirements in the Swiss EPR context on the Mobile Patient Identifier
+This section documents **additional requirements** in the Swiss EPR context on the Mobile Patient Identifier
 Cross-reference Query.
 
 ### Scope

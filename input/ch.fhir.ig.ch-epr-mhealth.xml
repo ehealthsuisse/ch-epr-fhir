@@ -74,7 +74,7 @@
       </reference>
       <name value="Document Reference for MedicationCard"/>
       <description value="Example DocumentReference for a MedicationCard"/>
-      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/DocumentReference"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference"/>
     </resource>
     <resource>
       <reference>
@@ -82,7 +82,7 @@
       </reference>
       <name value="DocumentManifest for MedicationCard"/>
       <description value="Example DocumentManifest for a MedicationCard"/>
-      <exampleCanonical value="http://hl7.org/fhir/StructureDefinition/DocumentManifest"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
     </resource>
     <resource>
       <reference>
@@ -105,12 +105,12 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    <resource>
+    <!--<resource>
       <reference>
         <reference value="StructureDefinition/ch-mhd-comprehensive-list"/>
       </reference>
       <exampleBoolean value="false"/>
-    </resource>
+    </resource>-->
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-mhd-provide-comprehensive-documentreference"/>

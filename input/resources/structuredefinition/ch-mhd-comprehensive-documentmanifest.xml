@@ -46,6 +46,7 @@
 			<comment value="approved -&gt; status=current" />
 			<!-- manditory by FHIR core -->
 		</element>
+        <!-- CH EPR Term ValueSet -->
         <element id="DocumentManifest.type">
             <path value="DocumentManifest.type" />
             <min value="1" />
@@ -89,8 +90,8 @@
 			<type>
 				<code value="Reference" />
 				<targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference" />
-				<targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-list" />
-				<!--<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
+				<!--<targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-list" />
+				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
 				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />-->
 				<aggregation value="referenced" />
 				<aggregation value="bundled" />
