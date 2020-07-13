@@ -55,6 +55,7 @@
         <element id="DocumentReference.category">
 			<path value="DocumentReference.category" />
             <min value="1" />
+            <max value="1" />
 			<mustSupport value="true" />
 		</element>
         <element id="DocumentReference.subject">
@@ -64,6 +65,8 @@
             <type>
                 <code value="Reference" />
                 <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient" />
+                <aggregation value="referenced" />
+				<aggregation value="bundled" />
             </type>
             <mustSupport value="true" />
         </element>
