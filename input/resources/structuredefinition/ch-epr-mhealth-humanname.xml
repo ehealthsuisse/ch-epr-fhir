@@ -35,7 +35,7 @@
                 <key value="ch-epr-mhealth-1"/>
                 <severity value="error"/>
                 <human value="For birth name (iso21090-EN-qualifier BR) use slice 'name:BirthName'"/>
-                <expression value="family.extension.where(url='http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier' and valueCode='BR').exists()"/>
+                <expression value="family.extension.where(url='http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier' and valueCode='BR').exists()=false"/>
             </constraint>
         </element>
     </differential>
