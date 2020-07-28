@@ -143,39 +143,6 @@
             <fixedCode value="POST" />
         </element>
 
-        <!-- List 0..*
-        <element id="Bundle.entry:List">
-            <path value="Bundle.entry" />
-            <sliceName value="List" />
-            <short value="List" />
-            <definition value="Folder(s) defined or updated in the bundle."/>
-            <alias value="Folder"/>
-            <min value="0"/>
-            <max value="*"/>
-        </element>
-        <element id="Bundle.entry:List.fullUrl">
-            <path value="Bundle.entry.fullUrl" />
-            <min value="1" />
-        </element>
-        <element id="Bundle.entry:List.resource">
-            <path value="Bundle.entry.resource" />
-            <min value="1" />
-            <type>
-                <code value="Resource" />
-                <profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.List" />
-                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-list" />
-            </type>
-        </element>
-        <element id="Bundle.entry:List.request">
-            <path value="Bundle.entry.request" />
-            <min value="1" />
-        </element>
-        <element id="Bundle.entry:List.request.method">
-            <path value="Bundle.entry.request.method" />
-            <fixedCode value="POST" />
-        </element>
-        -->
-
         <!-- Binary 0..* -->
         <element id="Bundle.entry:Binary">
             <path value="Bundle.entry" />

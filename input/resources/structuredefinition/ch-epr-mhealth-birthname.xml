@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="ch-core-humanname-birthname"/>
-    <url value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-humanname-birthname"/>
+    <id value="ch-epr-mhealth-birthname"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-epr-mhealth-birthname"/>
     <version value="0.1.0"/>
-    <name value="CHCoreHumanNameBirthName"/>
-    <title value="BirthName"/>
+    <name value="ChEprMHealthBirthName"/>
+    <title value="CH EPR mHealth BirthName"/>
     <status value="draft"/>
     <date value="2020-07-07T00:00:00+10:00"/>
     <publisher value="eHealth Suisse"/>
@@ -45,19 +45,27 @@
                     <type value="value" />
                     <path value="url" />
                 </discriminator>
-                <rules value="open" />
+                <rules value="closed" />
             </slicing>
+            <min value="1"/>
+            <max value="1" />
         </element>
         <element id="HumanName.family.extension:iso21090-EN-qualifier">
             <path value="HumanName.family.extension" />
             <sliceName value="iso21090-EN-qualifier" />
-            <short value="BR (Birth)"/>
             <min value="1"/>
             <max value="1" />
             <type>
                 <code value="Extension" />
                 <profile value="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier" />
             </type>
+        </element>
+        <element id="HumanName.family.extension:iso21090-EN-qualifier.valueCode">
+            <path value="HumanName.family.extension.valueCode" />
+            <short value="BR (Birth)"/>
+            <min value="1"/>
+            <max value="1" />
+            <fixedCode value="BR"/>
         </element>
     </differential>
 </StructureDefinition>

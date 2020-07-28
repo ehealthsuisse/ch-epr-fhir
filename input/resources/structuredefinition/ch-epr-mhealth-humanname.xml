@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="ch-epr-mhealth-humanname"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-epr-mhealth-humanname"/>
+    <version value="0.1.0"/>
+    <name value="ChEprMHealthHumanName"/>
+    <title value="CH EPR mHealth HumanName"/>
+    <status value="draft"/>
+    <date value="2020-07-27T00:00:00+10:00"/>
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description value="The humanname WITHOUT the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR"/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="CH"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1" />
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <type value="HumanName"/>
+    <baseDefinition value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-humanname"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="HumanName">
+            <path value="HumanName"/>
+            <constraint>
+                <key value="ch-epr-mhealth-1"/>
+                <severity value="error"/>
+                <human value="For birth name (iso21090-EN-qualifier BR) use slice 'name:BirthName'"/>
+                <expression value="family.extension.where(url='http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier' and valueCode='BR').exists()"/>
+            </constraint>
+        </element>
+    </differential>
+</StructureDefinition>

@@ -91,15 +91,15 @@
             </slicing>
             <min value="1"/>
         </element>
-        <element id="Patient.name:CHCoreHumanName">
+        <element id="Patient.name:HumanName">
             <path value="Patient.name"/>
-            <sliceName value="CHCoreHumanName" />
+            <sliceName value="HumanName" />
             <short value="A name associated with the patient"/>
             <min value="1"/>
             <max value="*"/>
             <type>
                 <code value="HumanName"/>
-                <profile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-humanname" />
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-epr-mhealth-humanname" />
             </type>
         </element>
         <element id="Patient.name:BirthName">
@@ -111,7 +111,7 @@
             <max value="1"/>
             <type>
                 <code value="HumanName"/>
-                <profile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-humanname-birthname" />
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-epr-mhealth-birthname" />
             </type>
         </element>
     </differential>

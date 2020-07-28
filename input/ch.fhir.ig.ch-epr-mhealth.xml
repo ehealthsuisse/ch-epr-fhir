@@ -95,7 +95,13 @@
     <!-- References to structure definitions -->
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-core-humanname-birthname"/>
+        <reference value="StructureDefinition/ch-epr-mhealth-birthname"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-epr-mhealth-humanname"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -105,12 +111,6 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    <!--<resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-comprehensive-list"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>-->
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-mhd-provide-comprehensive-documentreference"/>
