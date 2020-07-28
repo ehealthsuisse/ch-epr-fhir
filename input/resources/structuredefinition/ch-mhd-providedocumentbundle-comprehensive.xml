@@ -27,34 +27,7 @@
             <path value="Bundle"/>
             <short value="CH MHD Provide Comphrensive Document Bundle"/>
         </element>
-        <!-- bundle meta profile must have at-least iti-65 -->
-        <element id="Bundle.meta.profile.slice">
-            <path value="Bundle.meta.profile" />
-            <slicing>
-                <discriminator>
-                    <type value="value" />
-                    <path value="$this" />
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-        </element>
-        <element id="Bundle.meta.profile.iti">
-            <path value="Bundle.meta.profile"/>
-            <sliceName value="iti-65"/>
-            <min value="1"/>
-            <max value="1"/>
-            <fixedCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive" />
-        </element>
-        <!-- comprehensie bundle must NOT say it is a minimal bundle -->
-        <!-- TODO how do I test that minimal is not defined?
-		<element id="Bundle.meta.profile.profile">
-			<path value="Bundle.meta.profile"/>
-			<sliceName value="ProvideDocumentBundleMinimal"/>
-			<min value="1"/>
-			<max value="1"/>
-			<fixedCanonical value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Minimal" />
-		</element>-->
-
+        
         <!-- transaction type of a Bundle -->
         <element id="Bundle.type">
             <path value="Bundle.type" />
