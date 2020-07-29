@@ -55,6 +55,14 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Patient/FranzMusterNeedsAbsoluteUrl"/>
+      </reference>
+      <name value="FranzMusterNeedsAbsoluteUrl"/>
+      <description value="Example Patient"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Parameters/ParametersPmirCrossreferenceQuery"/>
       </reference>
       <name value="ParametersPmirCrossreferenceQuery"/>
