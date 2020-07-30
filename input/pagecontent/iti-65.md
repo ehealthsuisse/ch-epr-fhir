@@ -30,10 +30,17 @@ Recipient.
 
 ### Message Semantics
 The same message semantics as for 3.66.4.1.2 Message Semantics applies. In addition the following extensions
-have been defined for the Swiss EPR additional metadata on the DocumentManifest:
+have been defined for the Swiss EPR additional metadata:
 
-* SubmissionSet.Author.AuthorRole (Annex 5.1 1.2.2)
-* DeletionStatus (Annex 5.1 1.2.2)
+* [SubmissionSet.Author.AuthorRole](#submissionsetauthorauthorrole) (Annex 5.1 1.2.4) on the DocumentManifest
+* [DeletionStatus](#deletionstatus) (Annex 5.1 1.2.4) on the DocumentReference
+
+#### SubmissionSet.Author.AuthorRole   
+The required metadata about the AuthorRole of the Author is represented in the DocumentManifest using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole](StructureDefinition-ch-ext-author-authorrole.html). The values are definded in the ValueSet [SubmissionSet.Author.AuthorRole](http://fhir.ch/ig/ch-epr-term/ValueSet/SubmissionSet.Author.AuthorRole).
+
+#### DeletionStatus   
+The optional metadata about the DeletionStatus of the document is represented in the DocumentReference using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus](StructureDefinition-ch-ext-deletionstatus.html). The values are defined int the ValueSet [ch-ehealth-valueset-deletionstatus](ValueSet-ch-ehealth-valueset-deletionstatus.html).
+
 
 ### Message Example
 
