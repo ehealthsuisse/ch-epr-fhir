@@ -33,6 +33,27 @@
 				<map value="SubmissionSet.comment" />
 			</mapping>
 		</element>
+        <element id="DocumentManifest.extension">
+            <path value="DocumentManifest.extension" />
+            <slicing>
+                <discriminator>
+                    <type value="value" />
+                    <path value="url" />
+                </discriminator>
+                <rules value="open" />
+            </slicing>
+        </element>
+        <element id="DocumentManifest.extension:authorAuthorRole">
+            <path value="DocumentManifest.extension" />
+            <sliceName value="authorAuthorRole" />
+            <short value="Author role of the author of the document"/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension" />
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole" />
+            </type>
+        </element>
         <element id="DocumentManifest.masterIdentifier">
             <path value="DocumentManifest.masterIdentifier" />
             <min value="1" />

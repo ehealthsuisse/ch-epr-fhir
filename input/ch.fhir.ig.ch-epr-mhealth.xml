@@ -115,6 +115,18 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ch-ext-author-authorrole"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-ext-deletionstatus"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
       </reference>
       <exampleBoolean value="false"/>
@@ -249,7 +261,21 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    
+    <!-- code systems -->
+    <resource>
+      <reference>
+        <reference value="CodeSystem/ch-ehealth-codesystem-deletionstatus"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <!-- value sets -->
+    <resource>
+      <reference>
+        <reference value="ValueSet/ch-ehealth-valueset-deletionstatus"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+
     <!-- pages -->
     <page>
       <nameUrl value="toc.html"/>
@@ -293,6 +319,16 @@
       <page>
         <nameUrl value="profiles.html"/>
         <title value="Profiles"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="extensions.html"/>
+        <title value="Extensions"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="terminology.html"/>
+        <title value="Terminology"/>
         <generation value="html"/>
       </page>
       <page>

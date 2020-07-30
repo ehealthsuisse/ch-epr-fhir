@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="ch-ext-deletionstatus"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus"/>
+    <version value="0.1.0"/>
+    <name value="ChExtDeletionStatus"/>
+    <title value="CH Extension Deletion Status"/>
+    <status value="draft"/>
+    <date value="2020-07-29"/>
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description value="Extension Deletion Status for DocumentReference"/>
+    <fhirVersion value="4.0.1" />
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="DocumentReference"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="Extension Deletion Status"/>
+            <definition value="Extension"/>
+        </element>
+        <element id="Extension.extension">
+            <path value="Extension.extension"/>
+            <max value="0"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <type>
+                <code value="uri"/>
+            </type>
+            <fixedUri value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus"/>
+        </element>
+        <element id="Extension.valueCoding">
+            <path value="Extension.valueCoding"/>
+            <short value="Value of extension"/>
+            <min value="1"/>
+            <type>
+                <code value="Coding"/>
+            </type>
+            <binding>
+                <strength value="required"/>
+                <valueSet value="http://fhir.ch/ig/ch-epr-mhealth/ValueSet/ch-ehealth-valueset-deletionstatus"/>
+            </binding>
+        </element>
+    </differential>
+</StructureDefinition> 

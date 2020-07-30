@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+    <id value="ch-ehealth-valueset-deletionstatus"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/ValueSet/ch-ehealth-valueset-deletionstatus"/>
+    <version value="0.1.0"/>
+    <name value="CHEhealthValuesetDeletionStatus"/>
+    <title value="ch-ehealth-valueset-deletionstatus"/>
+    <status value="draft"/>
+    <publisher value="eHealth Suisse"/>
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description value="Additional metadata about deletion status on the DocumentReference"/>
+    <immutable value="false"/>
+    <compose>
+        <include>
+            <system value="http://fhir.ch/ig/ch-epr-mhealth/CodeSysteme/ch-ehealth-codesystem-deletionstatus"/>
+            <concept>
+                <code value="deletionNotRequested"/>
+            </concept>
+            <concept>
+                <code value="deletionRequested"/>
+            </concept>
+            <concept>
+                <code value="deletionProhibited"/>
+            </concept>
+        </include>
+    </compose>
+</ValueSet>
