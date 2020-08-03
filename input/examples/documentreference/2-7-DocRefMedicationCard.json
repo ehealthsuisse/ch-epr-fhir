@@ -6,6 +6,27 @@
             "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference"
         ]
     },
+    "contained": [
+        {
+            "resourceType": "Patient",
+            "id": "1",
+            "identifier": [
+                {
+                    "use": "usual",
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                                "code": "MR"
+                            }
+                        ]
+                    },
+                    "system": "urn:oid:2.16.756.888888.3.1",
+                    "value": "8734"
+                }
+            ]
+        }
+    ],
     "extension": [
         {
             "url": "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus",
@@ -100,6 +121,9 @@
                     "display": "General medicine (qualifier value)"
                 }
             ]
+        },
+        "sourcePatientInfo": {
+            "reference": "#1"
         }
     }
 }

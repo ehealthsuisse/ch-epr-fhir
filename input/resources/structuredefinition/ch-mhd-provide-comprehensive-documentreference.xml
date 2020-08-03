@@ -237,6 +237,8 @@
         <element id="DocumentReference.context.sourcePatientInfo">
             <path value="DocumentReference.context.sourcePatientInfo" />
             <comment value="Contained Patient resource with Patient.identifier.use element set to ‘usual’.&#xD;&#xA;&#xD;&#xA;Indicates that the data within the XDS document entry be represented as a contained resource. See Section 4.5.4.4.7" />
+            <!-- ITI TF-3 specifies the Metadata DocumentEntry.sourcePatientId for XDS as required (p. 112). The FHIR representation of sourcePatientId and sourcePatientInfo is sourcePatientInfo (MHD p. 54). -->
+            <min value="1"/>
             <type>
                 <code value="Reference" />
                 <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient" />
