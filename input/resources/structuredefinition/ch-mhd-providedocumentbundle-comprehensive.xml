@@ -27,6 +27,28 @@
             <path value="Bundle"/>
             <short value="CH MHD Provide Comphrensive Document Bundle"/>
         </element>
+        <element id="Bundle.meta">
+            <path value="Bundle.meta"/>
+            <min value="1"/>
+        </element>
+        <element id="Bundle.meta.profile.slice">
+			<path value="Bundle.meta.profile" />
+			<slicing>
+				<discriminator>
+					<type value="value" />
+					<path value="$this" />
+				</discriminator>
+				<rules value="open"/>
+			</slicing>
+            <min value="1"/>
+		</element>
+		<element id="Bundle.meta.profile:comprehensiveMetadata">
+			<path value="Bundle.meta.profile"/>
+			<sliceName value="comprehensiveMetadata"/>
+			<min value="1"/>
+			<max value="1"/>
+			<fixedCanonical value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle" />
+		</element>
         
         <!-- transaction type of a Bundle -->
         <element id="Bundle.type">

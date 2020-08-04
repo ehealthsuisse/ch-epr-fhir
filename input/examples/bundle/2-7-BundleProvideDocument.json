@@ -2,10 +2,11 @@
     "resourceType": "Bundle",
     "id": "2-7-BundleProvideDocument",
     "meta": {
-        "profile": [
-            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"
-        ]
-    },
+		"profile": [
+			"http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive",
+			"http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle"
+		]
+	},
     "type": "transaction",
     "entry": [
         {
