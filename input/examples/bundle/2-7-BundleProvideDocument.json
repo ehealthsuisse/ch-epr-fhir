@@ -169,7 +169,7 @@
                             "contentType": "text/xml",
                             "language": "de-CH",
                             "url": "urn:uuid:d8d1fe44-07e9-4a84-985f-fde97d77d54b",
-                            "creation": "2020-06-29T11:58:00+00:00"
+                            "creation": "2020-06-29T11:58:00.000+00:00"
                         },
                         "format": {
                             "system": "urn:oid:1.3.6.1.4.1.19376.1.2.3",
