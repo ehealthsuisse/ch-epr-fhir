@@ -114,5 +114,14 @@
                 <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-epr-mhealth-birthname" />
             </type>
         </element>
+        <element id="Patient.managingOrganization">
+            <path value="Patient.managingOrganization"/>
+            <short value="Provider organization of the patient"/>
+            <comment value="ITI TF-2b: The Patient Identity Manager from PMIR MAY be grouped with the PIXV3 Patient Identifier Cross-reference Consumer to proxy the Mobile Patient Identifier Crossreference Query [ITI-83] to the PIXV3 Query [ITI-45] transactions, thus acting as a proxy to the Patient Identifier Cross-reference Manager that wants to enable RESTful query to its data."/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-provider-organization" />
+            </type>
+        </element>
     </differential>
 </StructureDefinition>

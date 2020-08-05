@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="ch-pmir-provider-organization"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-provider-organization"/>
+    <version value="0.1.0"/>
+    <name value="CHPmirProviderOrganization"/>
+    <title value="CH EPR mHealth Provider Organization Profile for IHE PMIR"/>
+    <status value="draft"/>
+    <date value="2020-08-04"/>
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description value="Organization"/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="CH"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Organization"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Organization"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Organization">
+            <path value="Organization"/>
+            <short value="CH PMIR Provider Organization"/>
+            <constraint>
+                <key value="ch-epr-mhealth-org-1"/>
+                <severity value="error"/>
+                <human value="The organization SHALL have at least one of telecom, address, or contact person to be present."/>
+                <expression value="(telecom.count() + address.count() + contact.name.count()) > 0"/>
+                <xpath value="count(f:telecom | f:address | f:contact.name) > 0"/>
+            </constraint>
+        </element>
+        <element id="Organization.identifier">
+            <path value="Organization.identifier"/>
+            <min value="1"/>
+        </element>
+    </differential>
+</StructureDefinition>
+
+<!--y an id attribute, and at least one of address, telecommunications address, or contact person to be  present. 
+The id attribute SHALL have only a root, expressed as an ISO OID.-->

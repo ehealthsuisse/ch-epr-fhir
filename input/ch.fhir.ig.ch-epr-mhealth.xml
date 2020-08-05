@@ -63,6 +63,14 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Organization/GruppenpraxisCH"/>
+      </reference>
+      <name value="GruppenpraxisCH"/>
+      <description value="Example Organization"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-provider-organization"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Parameters/ParametersPmirCrossreferenceQuery"/>
       </reference>
       <name value="ParametersPmirCrossreferenceQuery"/>
@@ -158,6 +166,12 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-pmir-patient"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-pmir-provider-organization"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
