@@ -64,6 +64,7 @@
         </element>
         <element id="DocumentManifest.status">
 			<path value="DocumentManifest.status" />
+            <short value="current"/>
 			<comment value="approved -&gt; status=current" />
 			<!-- manditory by FHIR core -->
 		</element>
@@ -78,7 +79,7 @@
         </element>
         <element id="DocumentManifest.subject">
             <path value="DocumentManifest.subject" />
-            <comment value="Not a contained resource. URL Points to an existing Patient resource representing Affinity Domain Patient" />
+            <comment value="Not a contained resource. URL Points to an existing Patient resource representing Affinity Domain Patient." />
             <min value="1" />
             <type>
 				<code value="Reference" />
@@ -115,9 +116,6 @@
 			<type>
 				<code value="Reference" />
 				<targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference" />
-				<!--<targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-list" />
-				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference" />
-				<targetProfile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Minimal.List" />-->
 				<aggregation value="referenced" />
 				<aggregation value="bundled" />
 			</type>
