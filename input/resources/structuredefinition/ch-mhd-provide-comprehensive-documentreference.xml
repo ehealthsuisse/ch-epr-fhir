@@ -60,12 +60,13 @@
         </element>
         <element id="DocumentReference.status">
             <path value="DocumentReference.status" />
-            <comment value="approved -&gt; status=current&#xD;&#xA;deprecated -&gt; status=superseded" />
+            <short value="current | superseded"/>
+            <comment value="approved -&gt; status=current, deprecated -&gt; status=superseded" />
             <!-- manditory by FHIR core -->
         </element>
         <element id="DocumentReference.docStatus">
             <path value="DocumentReference.docStatus" />
-            <comment value="These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers&#xD;&#xA;should be robust to these elements holding values" />
+            <comment value="These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values." />
             <max value="0" />
         </element>
         <element id="DocumentReference.type">
@@ -98,11 +99,15 @@
         </element>
         <element id="DocumentReference.author">
             <path value="DocumentReference.author" />
-            <comment value="Contained resource of type Practitioner with:&#xD;&#xA;* authorInstitution: Organization&#xD;&#xA;* authorPerson: Practitioner.identifier and Practitioner.name&#xD;&#xA;* authorSpecialty: Practitioner.qualification&#xD;&#xA;* authorTelecommunication: Practitioner.telecom" />
+            <comment value="Contained resource." />
             <type>
                 <code value="Reference" />
                 <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-practitioner" />
+                <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-practitionerrole" />
                 <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-organization" />
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+                <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient" />
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
                 <aggregation value="contained" />
             </type>
             <mustSupport value="true" />
@@ -187,7 +192,6 @@
         </element>
         <element id="DocumentReference.content.attachment.creation">
             <path value="DocumentReference.content.attachment.creation" />
-            <!-- TBD: not contained in example 2-7-BundleProvideDocument -->
             <min value="1" />
             <mustSupport value="false" />
         </element>
@@ -195,16 +199,10 @@
             <path value="DocumentReference.content.format" />
             <min value="1" />
             <mustSupport value="true" />
-            <!--<binding>
-				<extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-					<valueString value="DocumentFormat" />
-				</extension>
-				<strength value="preferred" />
-				<valueSet value="http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode" />
-			</binding>-->
         </element>
         <element id="DocumentReference.context">
             <path value="DocumentReference.context" />
+            <min value="1" />
             <mustSupport value="false" />
         </element>
         <element id="DocumentReference.context.encounter">
