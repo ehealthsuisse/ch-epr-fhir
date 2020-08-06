@@ -251,5 +251,10 @@
             <comment value="May be filled with URL pointers to Resources or Identifiers found in referenceIdList" />
             <mustSupport value="false" />
         </element>
+        <element id="DocumentReference.context.related.identifier">
+            <path value="DocumentReference.context.related.identifier" />
+            <comment value="Requirements on XDS-I.b (Swiss context): When a Imaging Document Source provides a document to the Document Repository, it must provide the StudyInstanceUID, found in the to be registered KOS object, in the referenceIdList (urn:ihe:iti:xds:2013:referenceIdList) attribute of the documentEntry metadata." />
+            <mustSupport value="false" />
+        </element>
     </differential>
 </StructureDefinition>
