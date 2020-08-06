@@ -109,11 +109,11 @@
         </element>
         <element id="DocumentReference.authenticator">
             <path value="DocumentReference.authenticator" />
-            <comment value="Contained resource " />
+            <comment value="Contained resource. Document Sharing Metadata: DocumentEntry.legalAuthenticator represents a participant within an authorInstituion who has legally authenticated or attested the document. Datatype XCN (describes a person with an identifier)." />
             <type>
                 <code value="Reference" />
                 <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-practitioner" />
-                <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-organization" />
+                <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-practitionerrole" />
                 <aggregation value="contained" />
             </type>
             <mustSupport value="false" />
