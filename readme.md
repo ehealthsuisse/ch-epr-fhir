@@ -22,7 +22,7 @@ The IHE profiles are imported from https://github.com/IHE/fhir.
    * structuredefinition-IHE.PMIR.Subscription.request
 
 #### CH EPR mHealth Structure Definitions
-* structuredefinition-ch-pmir-bundle is derived from IHE.PMIR.Bundle
+* structuredefinition-ch-pmir-bundle **is derived from** IHE.PMIR.Bundle
    * structuredefinition-ch-pmir-patient
       * structuredefinition-ch-epr-mhealth-humanname
       * structuredefinition-ch-epr-mhealth-birthname
@@ -44,12 +44,12 @@ The IHE profiles are imported from https://github.com/IHE/ITI.MHD ([FHIR IG (CI 
 
 
 #### CH EPR mHealth Structure Definitions
-* structuredefinition-ch-mhd-providedocumentbundle-comprehensive is adapted from IHE.MHD.ProvideDocumentBundle.Comprehensive
-   * structuredefinition-ch-mhd-comprehensive-documentmanifest is adapted from IHE.MHD.Comprehensive.DocumentManifest
+* structuredefinition-ch-mhd-providedocumentbundle-comprehensive **is adapted from** IHE.MHD.ProvideDocumentBundle.Comprehensive
+   * structuredefinition-ch-mhd-comprehensive-documentmanifest **is adapted from** IHE.MHD.Comprehensive.DocumentManifest
       * structuredefinition-ch-ext-author-authorrole
-   * structuredefinition-ch-mhd-provide-comprehensive-documentreference is adapted from IHE.MHD.Provide.Comprehensive.DocumentReference
+   * structuredefinition-ch-mhd-provide-comprehensive-documentreference **is adapted from** IHE.MHD.Provide.Comprehensive.DocumentReference
       * structuredefinition-ch-ext-deletionstatus
-      * structuredefinition-ch-mhd-query-comprehensive-documentreference is adapted from IHE.MHD.Query.Comprehensive.DocumentReference
+      * structuredefinition-ch-mhd-query-comprehensive-documentreference **is adapted from** IHE.MHD.Query.Comprehensive.DocumentReference
 
 
 
