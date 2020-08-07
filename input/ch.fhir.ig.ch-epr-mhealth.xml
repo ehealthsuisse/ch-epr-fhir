@@ -213,6 +213,61 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.PMIR.Subscription.request"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.Comprehensive.List"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.Minimal.DocumentManifest"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.Minimal.List"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.Provide.Minimal.DocumentReference"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.Query.Comprehensive.DocumentReference"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+
     <!-- IHE FHIR Operation Defintions -->
     <resource>
       <reference>
