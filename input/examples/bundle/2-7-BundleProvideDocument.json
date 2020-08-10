@@ -59,9 +59,8 @@
                         }
                     ]
                 },
-                // it should be an absolute URL
                 "subject": {
-                    "reference": "Patient/FranzMusterNeedsAbsoluteUrl"
+                    "reference": "http://example.org/Patient/FranzMusterNeedsAbsoluteUrl"
                 },
                 "content": [
                     {
