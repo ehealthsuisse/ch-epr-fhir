@@ -145,9 +145,8 @@
                         ]
                     }
                 ],
-                // it should be an absolute URL
                 "subject": {
-                    "reference": "Patient/FranzMusterNeedsAbsoluteUrl"
+                    "reference": "http://example.org/Patient/FranzMusterNeedsAbsoluteUrl"
                 },
                 "date": "2020-06-29T11:58:00+00:00",
                 "description": "2-7-MedicationCard",
