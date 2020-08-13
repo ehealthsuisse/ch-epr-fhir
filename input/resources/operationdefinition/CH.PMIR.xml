@@ -56,4 +56,12 @@
         <documentation value="The identifier found. Constraints to include the assigning authority as specified in ITI TF-2x: Appendix E.3"/>
         <type value="Identifier"/>
     </parameter>
+    <parameter>
+        <name value="targetId"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <documentation value="The URL of the Patient Resource"/>
+        <type value="Reference"/>
+    </parameter>
 </OperationDefinition> 

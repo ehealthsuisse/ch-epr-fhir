@@ -49,6 +49,7 @@ GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]{&targetSystem=[uri]}{&_form
 | --- | --- | --- | --- |
 | **FHIR Parameters Resource** ||||
 | targetIdentifier | **0..2** | Identifier | The identifier found. Constraints to include the assigning authority as specified in ITI TF-2x: Appendix E.3. |
+| targetId | **0..1** | Reference(Patient) | The URL of the Patient Resource |
 
 If the targetSystem is not restricted to the Assigning authority of the community and/or the EPR-SPID the
 error Target Domain not recognized (3.83.4.2.2.4) SHALL be returned.
