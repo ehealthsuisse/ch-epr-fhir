@@ -19,7 +19,7 @@
         {
             "name": "targetId",
             "valueReference": {
-                "reference": "URL of the Patient Resource"
+                "reference": "http://example.org/Patient/FranzMusterNeedsAbsoluteUrl"
             }
         }
     ]
