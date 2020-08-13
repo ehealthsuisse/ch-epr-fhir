@@ -12,7 +12,7 @@ The profiles of the FHIR implementation guide CH EPR mHealth are derived from ex
 ### PMIR
 
 #### IHE Structure Definitions
-The IHE profiles are imported from https://github.com/IHE/fhir.
+The IHE profiles are **imported** from https://github.com/IHE/fhir (as of Aug 13, 2020).
 * structuredefinition-IHE.PMIR.Bundle
    * structuredefinition-IHE.PMIR.MessageHeader
    * structuredefinition-IHE.PMIR.BundleHistory   
@@ -22,7 +22,7 @@ The IHE profiles are imported from https://github.com/IHE/fhir.
    * structuredefinition-IHE.PMIR.Subscription.request
 
 #### CH EPR mHealth Structure Definitions
-* structuredefinition-ch-pmir-bundle **is derived from** IHE.PMIR.Bundle
+   * structuredefinition-ch-pmir-bundle **is derived from** (`baseDefinition`) IHE.PMIR.Bundle
    * structuredefinition-ch-pmir-patient
       * structuredefinition-ch-epr-mhealth-humanname
       * structuredefinition-ch-epr-mhealth-birthname
@@ -32,7 +32,7 @@ The IHE profiles are imported from https://github.com/IHE/fhir.
 ### MHD
 
 #### IHE Structure Definitions
-The IHE profiles are imported from https://github.com/IHE/ITI.MHD ([FHIR IG (CI Build)](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/index.html)).
+The IHE profiles are imported from https://github.com/IHE/ITI.MHD ([FHIR IG (CI Build)](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/index.html)) (as of Aug 7, 2020).
 
 * IHE.MHD.ProvideDocumentBundle.Comprehensive 
    * IHE.MHD.Comprehensive.List
@@ -44,16 +44,9 @@ The IHE profiles are imported from https://github.com/IHE/ITI.MHD ([FHIR IG (CI 
 
 
 #### CH EPR mHealth Structure Definitions
-* structuredefinition-ch-mhd-providedocumentbundle-comprehensive **is adapted from** IHE.MHD.ProvideDocumentBundle.Comprehensive
-   * structuredefinition-ch-mhd-comprehensive-documentmanifest **is adapted from** IHE.MHD.Comprehensive.DocumentManifest
+* structuredefinition-ch-mhd-providedocumentbundle-comprehensive **is copied from** IHE.MHD.ProvideDocumentBundle.Comprehensive **and adapted to Swiss requirements** 
+   * structuredefinition-ch-mhd-comprehensive-documentmanifest **is copied from** IHE.MHD.Comprehensive.DocumentManifest **and adapted to Swiss requirements**
       * structuredefinition-ch-ext-author-authorrole
-   * structuredefinition-ch-mhd-provide-comprehensive-documentreference **is adapted from** IHE.MHD.Provide.Comprehensive.DocumentReference
+   * structuredefinition-ch-mhd-provide-comprehensive-documentreference **is copied from** IHE.MHD.Provide.Comprehensive.DocumentReference **and adapted to Swiss requirements**
       * structuredefinition-ch-ext-deletionstatus
-      * structuredefinition-ch-mhd-query-comprehensive-documentreference **is adapted from** IHE.MHD.Query.Comprehensive.DocumentReference
-
-
-
-
-
-
-
+      * structuredefinition-ch-mhd-query-comprehensive-documentreference **is copied from** IHE.MHD.Query.Comprehensive.DocumentReference **and adapted to Swiss requirements**
