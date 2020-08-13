@@ -29,8 +29,11 @@ This method is invoked when the Document Source needs to submit one or more docu
 Recipient.
 
 ### Message Semantics
-The same message semantics as for 3.66.4.1.2 Message Semantics applies. In addition the following extensions
-have been defined for the Swiss EPR additional metadata:
+The same message semantics as for 3.65.4.1.2 Message Semantics applies. The FHIR `Bundle.meta.profile` shall have the following value:   
+
+`http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle`
+
+In addition the following extensions have been defined for the Swiss EPR additional metadata:
 
 * [SubmissionSet.Author.AuthorRole](#submissionsetauthorauthorrole) (Annex 5.1 1.2.4) on the DocumentManifest
 * [DeletionStatus](#deletionstatus) (Annex 5.1 1.2.4) on the DocumentReference
