@@ -70,6 +70,7 @@
                 <!-- TODO: This should be closed, but because of the warnings on DocumentReference not being found I need to leave it open -->
                 <rules value="open" />
             </slicing>
+            <min value="2"/>
         </element>
 
         <!-- Patient 0..1 - didn't include as it is not typically included in comprehensive mode as comprehensive is mostly used with XDS-on-FHIR -->
