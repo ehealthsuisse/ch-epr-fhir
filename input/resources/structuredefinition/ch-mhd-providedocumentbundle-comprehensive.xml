@@ -26,6 +26,12 @@
         <element id="Bundle">
             <path value="Bundle"/>
             <short value="CH MHD Provide Comphrensive Document Bundle"/>
+            <constraint>
+                <key value="ch-mhd"/>
+                <severity value="warning"/>
+                <human value="The resource is not conform to the MHD profile from https://github.com/IHE/ITI.MHD"/>
+                <expression value="conformsTo('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive')"/>
+            </constraint>
         </element>
         <element id="Bundle.meta">
             <path value="Bundle.meta"/>

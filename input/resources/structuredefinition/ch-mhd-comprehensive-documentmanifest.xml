@@ -25,6 +25,12 @@
         <element id="DocumentManifest">
             <path value="DocumentManifest"/>
             <short value="CH MHD Comprehensive DocumentManifest (SubmissionSet)"/>
+            <constraint>
+                <key value="ch-mhd"/>
+                <severity value="warning"/>
+                <human value="The resource is not conform to the MHD profile from https://github.com/IHE/ITI.MHD"/>
+                <expression value="conformsTo('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest')"/>
+            </constraint>
         </element>
         <element id="DocumentManifest.text">
 			<path value="DocumentManifest.text" />

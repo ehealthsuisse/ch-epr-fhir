@@ -3,7 +3,8 @@
     "id": "2-7-DocRefMedicationCard",
     "meta": {
         "profile": [
-            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference"
+            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference",
+            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Comprehensive.DocumentReference"
         ]
     },
     "contained": [

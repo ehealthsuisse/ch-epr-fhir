@@ -3,7 +3,8 @@
     "id": "2-7-DocManMedicationCard",
     "meta": {
         "profile": [
-            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest"
+            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest",
+            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"
         ]
     },
     "extension": [

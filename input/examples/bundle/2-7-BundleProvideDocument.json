@@ -4,7 +4,8 @@
     "meta": {
 		"profile": [
 			"http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive",
-			"http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle"
+            "http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle",
+            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive"
 		]
 	},
     "type": "transaction",
@@ -27,7 +28,8 @@
                 "resourceType": "DocumentManifest",
                 "meta": {
                     "profile": [
-                        "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest"
+                        "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest",
+                        "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"
                     ]
                 },
                 "extension": [
@@ -81,7 +83,8 @@
                 "resourceType": "DocumentReference",
                 "meta": {
                     "profile": [
-                        "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference"
+                        "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference",
+                        "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference"
                     ]
                 },
                 "contained": [

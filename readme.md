@@ -50,3 +50,9 @@ The IHE profiles are imported from https://github.com/IHE/ITI.MHD ([FHIR IG (CI 
    * structuredefinition-ch-mhd-provide-comprehensive-documentreference **is copied from** IHE.MHD.Provide.Comprehensive.DocumentReference **and adapted to Swiss requirements**
       * structuredefinition-ch-ext-deletionstatus
       * structuredefinition-ch-mhd-query-comprehensive-documentreference **is copied from** IHE.MHD.Query.Comprehensive.DocumentReference **and adapted to Swiss requirements**
+
+#### Validation
+To support **conformance** to the IHE Profiles, the following validation mechanisms are added in this Implementation Guide:
+
+* The examples are validated against both profiles (CH EPR mHealth, IHE) (listed in meta.profile)
+* The profiles (CH EPR mHealth) check the conformity to the corresponding IHE profile using constraints (conformsTo)

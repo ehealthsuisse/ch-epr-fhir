@@ -25,6 +25,12 @@
         <element id="DocumentReference">
             <path value="DocumentReference"/>
             <short value="CH MHD Provide Comprehensive DocumentReference"/>
+            <constraint>
+                <key value="ch-mhd"/>
+                <severity value="warning"/>
+                <human value="The resource is not conform to the MHD profile from https://github.com/IHE/ITI.MHD"/>
+                <expression value="conformsTo('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference')"/>
+            </constraint>
         </element>
         <element id="DocumentReference.extension">
             <path value="DocumentReference.extension" />
