@@ -36,12 +36,12 @@
   <dependsOn id="chcore">
     <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
     <packageId value="ch.fhir.ig.ch-core"/>
-    <version value="current"/>
+    <version value="1.0.0"/>
   </dependsOn>
   <dependsOn id="cheprterm">
     <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
     <packageId value="ch.fhir.ig.ch-epr-term"/>
-    <version value="current"/>
+    <version value="2.0.4"/>
   </dependsOn>
   <definition>
     <!-- References to examples -->
