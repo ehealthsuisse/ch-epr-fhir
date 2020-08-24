@@ -30,7 +30,7 @@
                 <key value="ch-mhd"/>
                 <severity value="warning"/>
                 <human value="The resource is not conform to the MHD profile from https://github.com/IHE/ITI.MHD"/>
-                <expression value="conformsTo('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive')"/>
+                <expression value="conformsTo('http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle')"/>
             </constraint>
         </element>
         <element id="Bundle.meta">

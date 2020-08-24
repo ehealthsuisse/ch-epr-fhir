@@ -153,6 +153,12 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/IHE-MHD-Provide-Comprehensive-DocumentBundle"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ch-mhd-query-comprehensive-documentreference"/>
       </reference>
       <exampleBoolean value="false"/>
@@ -425,6 +431,10 @@
     <parameter>
       <code value="copyrightyear"/>
       <value value="2020+"/>
+    </parameter>
+    <parameter>
+      <code value="special-url"/>
+      <value value="http://ihe.net/fhir/"/>
     </parameter>
   </definition>
 </ImplementationGuide>

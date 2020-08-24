@@ -4,9 +4,6 @@
 Code System URI 'urn:oid:1.3.6.1.4.1.19376.1.2.3' is unknown so the code cannot be validated
 ValueSet http://ihe.net/fhir/ihe.formatcode.fhir/ValueSet/formatcode not found by validator
 
-# Required element (meta.profile) for the Provide Document Bundle [ITI-65] transaction
-Profile reference 'http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle' could not be resolved, so has not been checked
-
 # The data type example is integrated in the example of the resource that uses the data type
 The Implementation Guide contains no examples for this data type profile
 
