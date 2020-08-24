@@ -26,7 +26,7 @@
       "version": "0.1.0",
       "date": "2020-08-18",
       "desc": "eHealth Suisse DSTU 1",
-      "path": "http://fhir.ch/ig/ch-epr-mhealth",
+      "path": "http://fhir.ch/ig/ch-epr-mhealth/0.1.0",
       "status": "trial-use",
       "sequence" : "DSTU 1",
       "fhirversion": "4.0.1"
