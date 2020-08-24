@@ -58,7 +58,7 @@
             <sliceName value="iti-65"/>
             <min value="1"/>
             <max value="1"/>
-            <fixedCanonical value="http://ihe.net/fhir/tag/iti-65" />
+            <fixedCanonical value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle" />
         </element>
         <!-- comprehensie bundle must NOT say it is a minimal bundle -->
         <!-- TODO how do I test that minimal is not defined?
