@@ -43,7 +43,7 @@
     <derivation value="constraint" />
     <differential>
         <!-- bundle meta profile must have at-least iti-65 -->
-        <element id="Bundle.meta.profile.slice">
+        <element id="Bundle.meta.profile">
             <path value="Bundle.meta.profile" />
             <slicing>
                 <discriminator>
@@ -53,7 +53,7 @@
                 <rules value="open"/>
             </slicing>
         </element>
-        <element id="Bundle.meta.profile.iti">
+        <element id="Bundle.meta.profile:iti-65">
             <path value="Bundle.meta.profile"/>
             <sliceName value="iti-65"/>
             <min value="1"/>
