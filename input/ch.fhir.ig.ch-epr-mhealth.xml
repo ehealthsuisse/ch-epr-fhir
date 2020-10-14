@@ -108,6 +108,22 @@
       <description value="MHD Provide Document Bundle for MedicationCard"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/Bundle-FindDocumentManifests"/>
+      </reference>
+      <name value="MHD Find Document Manifests"/>
+      <description value="MHD Find Document Manifests - Bundle as Response"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest-bundle"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/Bundle-FindDocumentReferences"/>
+      </reference>
+      <name value="MHD Find Document References"/>
+      <description value="MHD Find Document References - Bundle as Response"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference-bundle"/>
+    </resource>
     <!-- References to structure definitions -->
     <resource>
       <reference>
@@ -130,6 +146,12 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-ext-deletionstatus"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-mhd-comprehensive-documentmanifest-bundle"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -159,6 +181,12 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ch-mhd-query-comprehensive-documentreference-bundle"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ch-mhd-query-comprehensive-documentreference"/>
       </reference>
       <exampleBoolean value="false"/>
@@ -178,6 +206,18 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-pmir-provider-organization"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest.Bundle"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.MHD.Query.Comprehensive.DocumentReference.Bundle"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>

@@ -24,19 +24,20 @@ Accept: application/fhir+json
 Content-Type: application/fhir+json
 
 < ./MAG-002_BundleProvideDocument.json
+    ### Response: MAG-002_Response-ITI-65.json
 
 
 ### ITI-66 Request (MHD: Find Document Manifests)
 GET {{host}}/DocumentManifest?status=current&patient.identifier=urn:oid:1.3.6.1.4.1.21367.2017.2.5.83|MAG-002 HTTP/1.1
 Accept: application/fhir+json
 Content-Type: application/fhir+json
-
+    ### Response: MAG-002_Response-ITI-66.json
 
 ### ITI-67 Request (MHD: Find Document References)
 GET {{host}}/DocumentReference?status=current&patient.identifier=urn:oid:1.3.6.1.4.1.21367.2017.2.5.83|MAG-002 HTTP/1.1
 Accept: application/fhir+json
 Content-Type: application/fhir+json
-
+    ### Response: MAG-002_Response-ITI-67.json
 
 ### ITI-68 Request (MHD: Retrieve Document -> Medication Card document (CDA))
     ### DocumentReference.content.attachment.url from Find Document Reference

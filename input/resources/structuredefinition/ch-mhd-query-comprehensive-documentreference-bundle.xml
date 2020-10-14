@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="ch-mhd-query-comprehensive-documentreference-bundle"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference-bundle"/>
+    <name value="IHE_MHD_Query_Comprehensive_DocumentReference_Bundle_CH"/>
+    <title value="CH MHD Query Comprehensive DocumentReference Bundle"/>
+    <status value="draft"/>
+    <date value="2020-10-14"/>
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description value="IHE MHD Profile on DocumentReference (DocumentEntry) in a Bundle from a Query with Comprehensive Metadata (aka XDS-on-FHIR)."/>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Bundle"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Bundle">
+            <path value="Bundle"/>
+        </element>
+        <element id="Bundle.type">
+            <path value="Bundle.type"/>
+            <fixedCode value="searchset"/>
+        </element>
+        <element id="Bundle.total">
+            <path value="Bundle.total"/>
+            <min value="1"/>
+        </element>
+        <element id="Bundle.link">
+            <path value="Bundle.link"/>
+        </element>
+        <element id="Bundle.link.relation">
+            <path value="Bundle.link.relation"/>
+        </element>
+        <element id="Bundle.link.url">
+            <path value="Bundle.link.url"/>
+        </element>
+        <element id="Bundle.entry">
+			<path value="Bundle.entry" />
+			<slicing>
+				<discriminator>
+					<type value="profile" />
+					<path value="resource" />
+				</discriminator>
+				<rules value="open" />
+			</slicing>
+		</element>
+		<element id="Bundle.entry:DocumentManifest">
+			<path value="Bundle.entry"/>
+			<sliceName value="DocumentManifest"/>
+			<short value="DocumentManifest"/>
+		</element>
+		<element id="Bundle.entry:DocumentManifest.resource">
+			<path value="Bundle.entry.resource"/>
+            <min value="1"/>
+			<type>
+				<code value="Resource" />
+				<profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference" />
+			</type>
+		</element>
+    </differential>
+</StructureDefinition>

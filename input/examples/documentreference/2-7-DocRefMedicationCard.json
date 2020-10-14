@@ -69,10 +69,7 @@
         }
     ],
     "subject": {
-        "identifier": {
-            "system": "urn:oid:1.3.6.1.4.1.21367.13.20.3000",
-            "value": "IHEBLUE-2611"
-        }
+        "reference": "http://example.org/Patient/FranzMusterNeedsAbsoluteUrl"
     },
     "date": "2020-06-29T11:58:00.000+00:00",
     "description": "2-7-MedicationCard",
@@ -92,9 +89,7 @@
             "attachment": {
                 "contentType": "text/xml",
                 "language": "de-CH",
-                "url": "http://test.fhir.ch/camel/xdsretrieve?uniqueId=1.3.6.1.4.1.12559.11.13.2.1.2951&repositoryUniqueId=1.1.4567332.1.2",
-                "size": 309219,
-                "hash": "YzY3ZDg2MTVmNjA2MzlkMTdkMzM2NGIwNDRhYzkxMzk2ZmQ4NDllOQ==",
+                "url": "urn:uuid:d8d1fe44-07e9-4a84-985f-fde97d77d54b",
                 "creation": "2020-06-29T11:58:00+00:00"
             },
             "format": {
