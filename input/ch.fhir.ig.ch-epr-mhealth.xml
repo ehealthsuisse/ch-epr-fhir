@@ -9,12 +9,12 @@
     </div>
   </text>
   <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
-  <version value="0.1.1"/>
+  <version value="0.1.2"/>
   <name value="CHEprMhealth"/>
   <title value="CH EPR mHealth (R4)"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2020-08-24"/>
+  <date value="2020-10-14"/>
   <publisher value="eHealth Suisse"/>
   <contact>
     <name value="eHealth Suisse"/>
