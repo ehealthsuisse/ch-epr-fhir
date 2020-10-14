@@ -1,7 +1,196 @@
-<div xmlns="http://www.w3.org/1999/xhtml" 
+<div xmlns="http://www.w3.org/1999/xhtml"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
-  
-  <div>
+
+  <!--<div>
     {% include list-profiles.xhtml %}
+  </div>-->
+
+  <h3>Mobile Patient Identity Feed [ITI-93]</h3>
+
+  <h4>Swiss Profiles</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="StructureDefinition-ch-pmir-bundle.html">CH PMIR Bundle Message</a>
+        <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
+        <ul>
+          <li>
+            <a href="StructureDefinition-ch-pmir-patient.html">CH EPR mHealth Patient Profile for IHE PMIR</a>
+            <p>Patient</p>
+            <ul>
+              <li>
+                <a href="StructureDefinition-ch-pmir-provider-organization.html">CH EPR mHealth Provider Organization Profile for IHE PMIR</a>
+                <p>Organization</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
+
+  <h4>IHE Profiles</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="StructureDefinition-IHE.PMIR.Bundle.html">IHE PMIR Bundle Message</a>
+        <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
+        <ul>
+          <li>
+            <a href="StructureDefinition-IHE.PMIR.MessageHeader.html">IHE PMIR MessageHeader</a>
+            <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
+          </li>
+          <li>
+            <a href="StructureDefinition-IHE.PMIR.BundleHistory.html">IHE PMIR Bundle History</a>
+            <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="StructureDefinition-IHE.PMIR.Patient.Merge.html">IHE PMIR Patient Merge</a>
+        <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
+      </li>
+      <li>
+        <a href="StructureDefinition-IHE.PMIR.Patient.RelatedPerson.html">IHE PMIR Patient Related Person</a>
+        <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
+      </li>
+      <li>
+        <a href="StructureDefinition-IHE.PMIR.Subscription.html">IHE PMIR Subscription</a>
+        <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
+        <ul>
+          <li>
+            <a href="StructureDefinition-IHE.PMIR.Subscription.request.html">IHE PMIR Subscription request</a>
+            <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+
+  <h3>Provide Document Bundle [ITI-65]</h3>
+
+  <h4>Swiss Profiles</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="StructureDefinition-ch-mhd-providedocumentbundle-comprehensive.html">CH MHD Provide Comphrensive Document Bundle</a>
+        <p>IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata.</p>
+        <ul>
+          <li>
+            <a href="StructureDefinition-IHE-MHD-Provide-Comprehensive-DocumentBundle.html">IHE_MHD_Provide_Comprehensive_DocumentBundle</a>
+            <p>IHE_MHD_Provide_Comprehensive_DocumentBundle, define URL to resolve profile in Bundle.meta.profile</p>
+          </li>
+          <li>
+            <a href="StructureDefinition-ch-mhd-comprehensive-documentmanifest.html">CH MHD Comprehensive DocumentManifest (SubmissionSet)</a>
+            <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet).</p>
+          </li>
+          <li>
+            <a href="StructureDefinition-ch-mhd-provide-comprehensive-documentreference.html">CH MHD Provide Comprehensive DocumentReference</a>
+            <p>IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Comprehensive (aka XDS-on-FHIR) Metadata.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <h4>IHE Profiles</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="StructureDefinition-IHE.MHD.ProvideDocumentBundle.Comprehensive.html">Provide Comphrensive Document Bundle</a>
+        <p>IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata.</p>
+        <ul>
+          <li>
+            <a href="StructureDefinition-IHE.MHD.Comprehensive.List.html">Comprehensive List (Folder)</a>
+            <p>IHE MHD Profile on List with Comprehensive Metadata (Folder).</p>
+            <ul>
+              <li>
+                <a href="StructureDefinition-IHE.MHD.Minimal.List.html">Minimal List Folder</a>
+                <p>IHE MHD Profile on List with Minimal Metadata (Folder).</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="StructureDefinition-IHE.MHD.Provide.Comprehensive.DocumentReference.html">Provide Comprehensive DocumentReference</a>
+            <p>IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Comprehensive (aka XDS-on-FHIR) Metadata.</p>
+            <ul>
+              <li>
+                <a href="StructureDefinition-IHE.MHD.Provide.Minimal.DocumentReference.html">Provide Minimal DocumentReference</a>
+                <p>IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Minimal Metadata.</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="StructureDefinition-IHE.MHD.Comprehensive.DocumentManifest.html">Comprehensive DocumentManifest (SubmissionSet)</a>
+            <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet).</p>
+            <ul>
+              <li>
+                <a href="StructureDefinition-IHE.MHD.Minimal.DocumentManifest.html">Minimal DocumentManifest (SubmissionSet)</a>
+                <p>IHE MHD Profile on DocumentManifest for Minimal Metadata (SubmissionSet).</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+
+  <h3>Find Document Manifest [ITI-66]</h3>
+  <h4>Swiss Profiles</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="StructureDefinition-ch-mhd-comprehensive-documentmanifest-bundle.html">CH MHD Comprehensive DocumentManifest (SubmissionSet) Bundle</a>
+        <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet) in a Bundle.</p>
+      </li>
+    </ul>
+  </div>
+
+  <h4>Referencing IHE Profiles</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="StructureDefinition-IHE.MHD.Comprehensive.DocumentManifest.Bundle.html">Comprehensive DocumentManifest (SubmissionSet) Bundle</a>
+        <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet) in a Bundle.</p>
+      </li>
+    </ul>
+  </div>
+
+
+  <h3>Find Document Reference [ITI-67]</h3>
+
+  <h4>Swiss Profiles</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="StructureDefinition-ch-mhd-query-comprehensive-documentreference-bundle.html">CH MHD Query Comprehensive DocumentReference Bundle</a>
+        <p>IHE MHD Profile on DocumentReference (DocumentEntry) in a Bundle from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
+        <ul>
+          <li>
+            <a href="StructureDefinition-ch-mhd-query-comprehensive-documentreference.html">CH MHD Query Comprehensive DocumentReference</a>
+            <p>IHE MHD Profile on DocumentReference (DocumentEntry) from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <h4>Referencing IHE Profiles</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="StructureDefinition-IHE.MHD.Query.Comprehensive.DocumentReference.Bundle.html">Query Comprehensive DocumentReference Bundle</a>
+        <p>IHE MHD Profile on DocumentReference (DocumentEntry) in a Bundle from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
+        <ul>
+          <li>
+            <a href="StructureDefinition-IHE.MHD.Query.Comprehensive.DocumentReference.html">Query Comprehensive DocumentReference</a>
+            <p>IHE MHD Profile on DocumentReference (DocumentEntry) from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
 </div>
