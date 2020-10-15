@@ -49,11 +49,6 @@
                 {
                   "resourceType": "Organization",
                   "id": "org1",
-                  "meta": {
-                    "profile": [
-                      "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-provider-organization"
-                    ]
-                  },
                   "identifier": [
                     {
                       "system": "urn:oid:2.51.1.3",

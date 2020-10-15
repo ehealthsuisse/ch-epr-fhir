@@ -20,12 +20,6 @@
       "fullUrl": "urn:uuid:50383ae5-49e5-4dea-b0e6-660cb9e7b91f",
       "resource": {
         "resourceType": "DocumentReference",
-        "meta": {
-          "profile": [
-            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference",
-            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference"
-          ]
-        },
         "contained": [
           {
             "resourceType": "Patient",
