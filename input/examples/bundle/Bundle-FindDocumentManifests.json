@@ -20,12 +20,6 @@
       "fullUrl": "urn:uuid:68a928c0-df48-4743-a291-bfb0609bbddc",
       "resource": {
         "resourceType": "DocumentManifest",
-        "meta": {
-          "profile": [
-            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest",
-            "http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"
-          ]
-        },
         "extension": [
           {
             "url": "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole",
@@ -60,7 +54,7 @@
         },
         "content": [
           {
-            "reference": "urn:uuid:50383ae5-49e5-4dea-b0e6-660cb9e7b91f"
+            "reference": "http://example.org/DocumentReference/50383ae5-49e5-4dea-b0e6-660cb9e7b91f"
           }
         ],
         "created": "2020-06-29T12:01:30+00:00",
