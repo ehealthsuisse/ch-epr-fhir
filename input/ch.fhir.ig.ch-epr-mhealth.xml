@@ -44,7 +44,8 @@
     <version value="2.0.4"/>
   </dependsOn>
   <definition>
-    <!-- References to examples -->
+
+    <!-- examples -->
     <resource>
       <reference>
         <reference value="Patient/PatientPmirFeed"/>
@@ -124,7 +125,9 @@
       <description value="MHD Find Document References - Bundle as Response"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference-bundle"/>
     </resource>
-    <!-- References to structure definitions -->
+
+
+    <!-- CH EPR mHealth structure definitions -->
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-epr-mhealth-birthname"/>
@@ -222,7 +225,7 @@
       <exampleBoolean value="false"/>
     </resource>
     
-    <!-- imported ihe fhir Structure Defintions -->
+    <!-- imported IHE FHIR Structure Defintions -->
     <resource>
       <reference>
         <reference value="StructureDefinition/IHE.PMIR.Bundle"/>
@@ -314,14 +317,25 @@
       <exampleBoolean value="false"/>
     </resource>
 
-    <!-- IHE FHIR Operation Defintions -->
+
+    <!-- CH EPR mHealth  Operation Defintions -->
     <resource>
       <reference>
         <reference value="OperationDefinition/CH.PMIR"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    <!-- IHE FHIR Capability Statements -->
+
+    <!-- imported IHE FHIR Operation Defintions -->
+    <resource>
+      <reference>
+        <reference value="OperationDefinition/IHE.PIXm.pix"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+
+
+    <!-- CH EPR mHealth Capability Statements -->
     <resource>
       <reference>
         <reference value="CapabilityStatement/CH.MHD.DocumentConsumer"/>
@@ -376,14 +390,17 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    <!-- code systems -->
+
+
+    <!-- CH EPR mHealth Code Systems -->
     <resource>
       <reference>
         <reference value="CodeSystem/ch-ehealth-codesystem-deletionstatus"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    <!-- value sets -->
+
+    <!-- CH EPR mHealth Value Sets -->
     <resource>
       <reference>
         <reference value="ValueSet/ch-ehealth-valueset-deletionstatus"/>
@@ -391,7 +408,8 @@
       <exampleBoolean value="false"/>
     </resource>
 
-    <!-- pages -->
+
+    <!-- IG Pages -->
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>
@@ -458,7 +476,8 @@
       </page>
     </page>
 
-    <!-- parameters -->
+
+    <!-- IG Parameters -->
     <parameter>
       <code value="releaselabel"/>
       <value value="CI build"/>
