@@ -1,35 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-    <id value="CH.MHD.DocumentConsumer"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentConsumer" />
-    <name value="CH_MHD_DocumentConsumer" />
-    <title value="MHD Document Consumer (client)" />
-    <status value="draft" />
-    <date value="2020-07-08" />
-    <publisher value="eHealth Suisse"/>
+    <id value="IHE.MHD.DocumentConsumer"/>
+    <text>
+        <status value="additional" />
+        <div xmlns="http://www.w3.org/1999/xhtml">
+	This CapabilityStatement describes the Document Consumer actor in the  
+    IHE <a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 3.1</a> Profile. 
+	The IHE MHD Profile text is Normative, this conformance resource is Informative.
+        </div>
+    </text>
+    <url value="http://ihe.net/fhir/CapabilityStatement/IHE.MHD.DocumentConsumer" />
+    <name value="IHE_MHD_DocumentConsumer" />
+    <title value="IHE ITI Mobile access to Health Documents (MHD) - Document Consumer (client)" />
+    <status value="active" />
+    <experimental value="false" />
+    <date value="2019-07-05" />
+    <publisher value="IHE" />
     <contact>
-        <name value="eHealth Suisse"/>
+        <name value="IHE"/>
         <telecom>
             <system value="url"/>
-            <value value="https://www.e-health-suisse.ch"/>
+            <value value="http://ihe.net"/>
         </telecom>
     </contact>
-    <description value="CapabilityStatement for Actor MHD Document Consumer (client)." />
+    <contact>
+        <name value="John Moehrke" />
+        <telecom>
+            <system value="email" />
+            <value value="JohnMoehrke@gmail.com" />
+        </telecom>
+    </contact>
+    <description value="This CapabilityStatement describes the Document Consumer actor in the IHE Mobile access to Health Documents (MHD) Rev. 3.1 Profile. See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD). The IHE MHD Profile text is Normative, this conformance resource is Informative." />
+
+    <copyright value="IHE http://www.ihe.net/Governance/#Intellectual_Property"/>
     <kind value="requirements" />
-    <fhirVersion value="4.0.1" />
+    <fhirVersion value="4.0.0" />
     <format value="application/fhir+xml" />
     <format value="application/fhir+json" />
     <rest>
-        <mode value="client" />
-        <documentation value="MHD client requests a list of DocumentManifest Resources, matching the supplied set of criteria, from the Document Responder [ITI-66]. 
-        MHD client requests a list of DocumentReference Resources, matching the supplied set of criteria, from the Document Responder [ITI-67].
-        MHD client requests a document from the Document Responder [ITI-68]." />
-        <security>
-            <cors value="false" />
-            <description value="TLS SHALL be used" />
-        </security>
+        <mode value="client"/>
         <resource>
             <type value="DocumentReference"/>
-            <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference"/>
+            <profile value="http://ihe.net/fhir/StructureDefinition/IHE.MHD.Query.Minimal.DocumentReference"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -38,12 +50,14 @@
             </interaction>
             <searchParam>
                 <name value="_id"/>
+                <!--<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-_id"/>-->
                 <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
                 <type value="token"/>
                 <documentation value="Logical id of this artifact"/>
             </searchParam>
             <searchParam>
                 <name value="_lastUpdated"/>
+                <!--<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-_lastUpdated"/>-->
                 <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
                 <type value="date"/>
                 <documentation value="When the resource version last changed"/>
@@ -86,12 +100,14 @@
             </searchParam>
             <searchParam>
                 <name value="identifier"/>
+                <!--<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-identifier"/>-->
                 <definition value="http://hl7.org/fhir/SearchParameter/clinical-identifier"/>
                 <type value="token"/>
                 <documentation value="The identifier for this DocumentReference"/>
             </searchParam>
             <searchParam>
                 <name value="patient"/>
+                <!--<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-patient"/>-->
                 <definition value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
                 <type value="reference"/>
                 <documentation value="Who/what is the subject of the document"/>
@@ -128,15 +144,15 @@
             </searchParam>
             <searchParam>
                 <name value="type"/>
+                <!--<definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-type"/>-->
                 <definition value="http://hl7.org/fhir/SearchParameter/clinical-type"/>
                 <type value="token"/>
                 <documentation value="Kind of document (LOINC if possible)"/>
             </searchParam>
         </resource>
-
         <resource>
             <type value="DocumentManifest"/>
-            <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
+            <profile value="http://ihe.net/fhir/StructureDefinition/IHE.MHD.Minimal.DocumentManifest"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -145,6 +161,7 @@
             </interaction>
             <searchParam>
                 <name value="_lastUpdated"/>
+                <!--<definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-_lastUpdated"/>-->
                 <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
                 <type value="date"/>
                 <documentation value="When the resource version last changed"/>
@@ -163,6 +180,7 @@
             </searchParam>
             <searchParam>
                 <name value="patient"/>
+                <!--<definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-patient"/>-->
                 <definition value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
                 <type value="reference"/>
                 <documentation value="The subject of the set of documents"/>
@@ -187,21 +205,28 @@
             </searchParam>
             <searchParam>
                 <name value="type"/>
+                <!--<definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-type"/>-->
                 <definition value="http://hl7.org/fhir/SearchParameter/clinical-type"/>
                 <type value="token"/>
                 <documentation value="Kind of document set"/>
             </searchParam>
         </resource>
+        <resource>
+            <type value="List"/>
+            <profile value="http://ihe.net/fhir/StructureDefinition/IHE.MHD.List"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
 
+        </resource>
         <resource>
             <type value="Binary"/>
             <interaction>
                 <code value="read"/>
             </interaction>
         </resource>
-
         <interaction>
-            <code value="search-system"/>
+            <code value="search-system" />
         </interaction>
     </rest>
 </CapabilityStatement>

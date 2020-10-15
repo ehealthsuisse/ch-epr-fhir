@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <OperationDefinition xmlns="http://hl7.org/fhir">
     <id value="IHE.PIXm.pix"/>
-
     <text>
         <status value="generated"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
             <h2> Mobile Patient Identifier Cross-Reference Query</h2>
             <p> OPERATION: Find patient matches using IHE PIXm Profile</p>
             <p> The official URL for this operation definition is: </p>
-            <pre> http://ihe.net/fhir/OperationDefinition/IHE_PIXm_pix</pre>
+            <pre> http://profiles.ihe.net/fhir/ihe.pixm.fhir/OperationDefinition/IHE_PIXm_pix</pre>
             <div>
                 <p> A Master Patient Index (
                     <a href="http://en.wikipedia.org/wiki/Enterprise_master_patient_index">MPI</a>  ) is a service used to manage patient identification in a context where multiple patient
@@ -134,7 +132,7 @@
     <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
         <valueCode value="trial-use"/>
     </extension>
-    <url value="http://ihe.net/fhir/OperationDefinition/IHE_PIXm_pix"/>
+    <url value="http://profiles.ihe.net/fhir/ihe.pixm.fhir/OperationDefinition/IHE.PIXm.pix"/>
     <version value="2.0.0"/>
     <name value="IHE_PIXm_pix" />
     <title value="Find patient matches using IHE-PIXm Profile"/>

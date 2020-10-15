@@ -27,91 +27,8 @@
             <cors value="false" />
             <description value="TLS SHALL be used" />
         </security>
-        <!-- ITI-66 Find Document Manifests -->
-        <resource>
-            <type value="DocumentManifest"/>
-            <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
-            <interaction>
-                <code value="read"/>
-            </interaction>
-            <interaction>
-                <code value="search-type"/>
-            </interaction>
-            <searchParam>
-                <name value="_id"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/Resource-id"/>
-                <type value="token"/>
-                <documentation value="Logical id of this artifact"/>
-            </searchParam>
-            <searchParam>
-                <name value="_lastUpdated"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
-                <type value="date"/>
-                <documentation value="When the resource version last changed"/>
-            </searchParam>
-            <searchParam>
-                <name value="patient"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
-                <type value="reference"/>
-                <documentation value="The subject of the set of documents"/>
-            </searchParam>
-            <searchParam>
-                <name value="patient.identifier"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/Patient-identifier"/>
-                <type value="token"/>
-                <documentation value="A patient identifier"/>
-            </searchParam>
-            <searchParam>
-                <name value="created"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-created"/>
-                <type value="date"/>
-                <documentation value="When this document manifest created"/>
-            </searchParam>
-            <searchParam>
-                <name value="author"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-author"/>
-                <type value="reference"/>
-                <documentation value="Who and/or what authored the DocumentManifest"/>
-            </searchParam>
-            <searchParam>
-                <name value="author.given"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/individual-given"/>
-                <type value="string"/>
-                <documentation value="A portion of the given name"/>
-            </searchParam>
-            <searchParam>
-                <name value="author.family"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/individual-family"/>
-                <type value="string"/>
-                <documentation value="A portion of the family name"/>
-            </searchParam>
-            <searchParam>
-                <name value="identifier"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/clinical-identifier"/>
-                <type value="token"/>
-                <documentation value="Unique Identifier for the set of documents"/>
-            </searchParam>
-            <searchParam>
-                <name value="status"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-status"/>
-                <type value="token"/>
-                <documentation value="current | superseded | entered-in-error"/>
-            </searchParam>
-            <searchParam>
-                <name value="type"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/clinical-type"/>
-                <type value="token"/>
-                <documentation value="Kind of document set"/>
-            </searchParam>
-            <searchParam>
-                <name value="source"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-source"/>
-                <type value="uri"/>
-                <documentation value="The source system/application/software"/>
-            </searchParam>
-        </resource>
-
-        <!-- ITI-67 Find Document References -->
+        
+        <!-- SearchParameter Registry: https://www.hl7.org/fhir/searchparameter-registry.html -->
         <resource>
             <type value="DocumentReference"/>
             <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference"/>
@@ -134,52 +51,10 @@
                 <documentation value="When the resource version last changed"/>
             </searchParam>
             <searchParam>
-                <name value="patient"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
-                <type value="reference"/>
-                <documentation value="Who/what is the subject of the document"/>
-            </searchParam>
-            <searchParam>
-                <name value="patient.identifier"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/Patient-identifier"/>
-                <type value="token"/>
-                <documentation value="A patient identifier"/>
-            </searchParam>
-            <searchParam>
-                <name value="status"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-status"/>
-                <type value="token"/>
-                <documentation value="current | superseded | entered-in-error"/>
-            </searchParam>
-            <searchParam>
-                <name value="identifier"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/clinical-identifier"/>
-                <type value="token"/>
-                <documentation value="Master Version Specific Identifier"/>
-            </searchParam>
-            <searchParam>
-                <name value="date"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-date"/>
-                <type value="date"/>
-                <documentation value="When this document reference was created"/>
-            </searchParam>
-            <searchParam>
                 <name value="author"/>
                 <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-author"/>
                 <type value="reference"/>
                 <documentation value="Who and/or what authored the document"/>
-            </searchParam>
-            <searchParam>
-                <name value="author.given"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/individual-given"/>
-                <type value="string"/>
-                <documentation value="A portion of the given name"/>
-            </searchParam>
-            <searchParam>
-                <name value="author.family"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/individual-family"/>
-                <type value="string"/>
-                <documentation value="A portion of the family name"/>
             </searchParam>
             <searchParam>
                 <name value="category"/>
@@ -188,22 +63,10 @@
                 <documentation value="Categorization of document"/>
             </searchParam>
             <searchParam>
-                <name value="type"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/clinical-type"/>
+                <name value="event"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-event"/>
                 <type value="token"/>
-                <documentation value="Kind of document (LOINC if possible)"/>
-            </searchParam>
-            <searchParam>
-                <name value="setting"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-setting"/>
-                <type value="token"/>
-                <documentation value="Additional details about where the content was created (e.g. clinical specialty)"/>
-            </searchParam>
-            <searchParam>
-                <name value="period"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-period"/>
-                <type value="date"/>
-                <documentation value="Time of service that is being documented"/>
+                <documentation value="Main clinical acts documented"/>
             </searchParam>
             <searchParam>
                 <name value="facility"/>
@@ -212,10 +75,40 @@
                 <documentation value="Kind of facility where patient was seen"/>
             </searchParam>
             <searchParam>
-                <name value="event"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-event"/>
+                <name value="format"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-format"/>
                 <type value="token"/>
-                <documentation value="Main clinical acts documented"/>
+                <documentation value="Format/content rules for the document"/>
+            </searchParam>
+            <searchParam>
+                <name value="date"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-date"/>
+                <type value="date"/>
+                <documentation value="When this document reference was created"/>
+            </searchParam>
+            <searchParam>
+                <name value="identifier"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/clinical-identifier"/>
+                <type value="token"/>
+                <documentation value="The identifier for this DocumentReference"/>
+            </searchParam>
+            <searchParam>
+                <name value="patient"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
+                <type value="reference"/>
+                <documentation value="Who/what is the subject of the document"/>
+            </searchParam>
+            <searchParam>
+                <name value="period"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-period"/>
+                <type value="date"/>
+                <documentation value="Time of service that is being documented"/>
+            </searchParam>
+            <searchParam>
+                <name value="related"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-related"/>
+                <type value="reference"/>
+                <documentation value="Related Resource"/>
             </searchParam>
             <searchParam>
                 <name value="security-label"/>
@@ -224,20 +117,84 @@
                 <documentation value="Document security-tags"/>
             </searchParam>
             <searchParam>
-                <name value="format"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-format"/>
+                <name value="setting"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-setting"/>
                 <type value="token"/>
-                <documentation value="Format/content rules for the document"/>
+                <documentation value="Additional details about where the content was created (e.g. clinical specialty)"/>
             </searchParam>
             <searchParam>
-                <name value="related"/>
-                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-related"/>
-                <type value="reference"/>
-                <documentation value="Related identifiers or resources"/>
+                <name value="status"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-status"/>
+                <type value="token"/>
+                <documentation value="current | superseded | entered-in-error"/>
+            </searchParam>
+            <searchParam>
+                <name value="type"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/clinical-type"/>
+                <type value="token"/>
+                <documentation value="Kind of document (LOINC if possible)"/>
             </searchParam>
         </resource>
 
-        <!-- ITI-68 Retrieve Document -->
+        <resource>
+            <type value="DocumentManifest"/>
+            <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+            <searchParam>
+                <name value="_lastUpdated"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"/>
+                <type value="date"/>
+                <documentation value="When the resource version last changed"/>
+            </searchParam>
+            <searchParam>
+                <name value="author"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-author"/>
+                <type value="reference"/>
+                <documentation value="Who and/or what authored the manifest"/>
+            </searchParam>
+            <searchParam>
+                <name value="created"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-created"/>
+                <type value="date"/>
+                <documentation value="When this document manifest created"/>
+            </searchParam>
+            <searchParam>
+                <name value="patient"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/clinical-patient"/>
+                <type value="reference"/>
+                <documentation value="The subject of the set of documents"/>
+            </searchParam>
+            <searchParam>
+                <name value="recipient"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-recipient"/>
+                <type value="reference"/>
+                <documentation value="Intended to get notified about this set of documents"/>
+            </searchParam>
+            <searchParam>
+                <name value="source"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-source"/>
+                <type value="uri"/>
+                <documentation value="The source system/application/software"/>
+            </searchParam>
+            <searchParam>
+                <name value="status"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/DocumentManifest-status"/>
+                <type value="token"/>
+                <documentation value="current | superseded | entered-in-error"/>
+            </searchParam>
+            <searchParam>
+                <name value="type"/>
+                <definition value="http://hl7.org/fhir/SearchParameter/clinical-type"/>
+                <type value="token"/>
+                <documentation value="Kind of document set"/>
+            </searchParam>
+        </resource>
+        
         <resource>
             <type value="Binary"/>
             <interaction>
@@ -248,5 +205,6 @@
         <interaction>
             <code value="search-system"/>
         </interaction>
+
     </rest>
 </CapabilityStatement>

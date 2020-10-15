@@ -1,7 +1,100 @@
-<div xmlns="http://www.w3.org/1999/xhtml" 
+<div xmlns="http://www.w3.org/1999/xhtml"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
-  
-  <div>
+
+  <!--<div>
     {% include list-capabilitystatements.xhtml %}
+  </div>-->
+
+  <h3>mHealth: App (Client)</h3>
+
+  <h4>Swiss Capability Statements</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="CapabilityStatement-CH.mHealth.App.html">mHealth: App (client)</a>
+        <p>CapabilityStatement for mHealth App (client).</p>
+        <ul>
+          <li>
+            <a href="CapabilityStatement-CH.PMIR.Consumer.html">PMIR Patient Identifier Cross-Reference Consumer (client)</a>
+            <p>CapabilityStatement for Actor PMIR Patient Identifier Cross-reference Consumer (client).</p>
+          </li>
+          <li>
+            <a href="CapabilityStatement-CH.PMIR.Source.html">PMIR Patient Identity Source (client)</a>
+            <p>CapabilityStatement for Actor PMIR Patient Identity Source (client).</p>
+          </li>
+          <li>
+            <a href="CapabilityStatement-CH.MHD.DocumentSource.html">MHD Document Source (client)</a>
+            <p>CapabilityStatement for Actor MHD Document Source (client).</p>
+          </li>
+          <li>
+            <a href="CapabilityStatement-CH.MHD.DocumentConsumer.html">MHD Document Consumer (client)</a>
+            <p>CapabilityStatement for Actor MHD Document Consumer (client).</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <h4>IHE Capability Statements</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="CapabilityStatement-IHE.PIXm.Consumer.html">IHE ITI Patient Identity Cross-Reference for Mobile (PIXm) - Consumer (client)</a>
+        <p>CapabilityStatement for Consumer Actor in the IHE IT Infrastructure Technical Framework Supplement IHE PIXm. See http://wiki.ihe.net/index.php/PIXm. The IHE Profile text is Normative, this conformance resource is Informative.</p>
+      </li>
+      <li>
+        <a href="CapabilityStatement-IHE.MHD.DocumentSource.html">IHE ITI Mobile access to Health Documents (MHD) - Document Source (publisher)</a>
+        <p>This CapabilityStatement describes the Document Source actor in the IHE Mobile access to Health Documents (MHD) Rev. 2.3 Profile. See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD). The IHE MHD Profile text is Normative, this conformance resource is Informative.</p>
+      </li>
+      <li>
+        <a href="CapabilityStatement-IHE.MHD.DocumentConsumer.html">IHE ITI Mobile access to Health Documents (MHD) - Document Consumer (client)</a>
+        <p>This CapabilityStatement describes the Document Consumer actor in the IHE Mobile access to Health Documents (MHD) Rev. 3.1 Profile. See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD). The IHE MHD Profile text is Normative, this conformance resource is Informative.</p>
+      </li>
+    </ul>
+  </div>
+
+
+  <h3>mHealth: Mobile Access Gateway (Server)</h3>
+
+  <h4>Swiss Capability Statements</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="CapabilityStatement-CH.mHealth.MobileAccessGateway.html">mHealth: Mobile Access Gateway (server)</a>
+        <p>CapabilityStatement for mHealth MobileAccessGateway (server).</p>
+        <ul>
+          <li>
+            <a href="CapabilityStatement-CH.PMIR.Manager.html">PMIR Patient Identity Manager (server)</a>
+            <p>CapabilityStatement for Actor PMIR Patient Identity Manager (server).</p>
+          </li>
+          <li>
+            <a href="CapabilityStatement-CH.MHD.DocumentRecipient.html">MHD Document Recipient (server)</a>
+            <p>CapabilityStatement for Actor MHD Document Recipient (server).</p>
+          </li>
+          <li>
+            <a href="CapabilityStatement-CH.MHD.DocumentResponder.html">MHD Document Responder (server)</a>
+            <p>CapabilityStatement for Actor MHD Document Responder (server).</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <h4>IHE Capability Statements</h4>
+  <div>
+    <ul>
+      <li>
+        <a href="CapabilityStatement-IHE.PIXm.Manager.html">IHE ITI Patient Identity Cross-Reference for Mobile (PIXm) - Manager (server)</a>
+        <p>CapabilityStatement for Manager Actor in the IHE IT Infrastructure Technical Framework Supplement IHE PIXm. See http://wiki.ihe.net/index.php/PIXm. The IHE Profile text is Normative, this conformance resource is Informative.</p>
+      </li>
+      <li>
+        <a href="CapabilityStatement-IHE.MHD.DocumentRecipient.html">IHE ITI Mobile access to Health Documents (MHD) - Document Recipient</a>
+        <p>This CapabilityStatement describes the Document Recipient actor in the IHE Mobile access to Health Documents (MHD) Rev. 3.1 Profile. See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD). The IHE MHD Profile text is Normative, this conformance resource is Informative.</p>
+      </li>
+      <li>
+        <a href="CapabilityStatement-IHE.MHD.DocumentResponder.html">IHE ITI Mobile access to Health Documents (MHD) - Document Responder (server)</a>
+        <p>This CapabilityStatement describes the Document Responder actor in the IHE Mobile access to Health Documents (MHD) Rev. 3.1 Profile. See http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD). The IHE MHD Profile text is Normative, this conformance resource is Informative.</p>
+      </li>
+    </ul>
   </div>
 </div>
