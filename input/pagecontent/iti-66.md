@@ -33,12 +33,13 @@ various metadata parameters it issues a Find Document Manifests message.
 
 ### Message Example
 
+Find Document Manifest **request**:
 ```
 GET [base]/DocumentManifest?patient.identifier=urn:oid:2.999|11111111 HTTP/1.1
 Accept: application/fhir+json
 ```
 
-See [Bundle example](Bundle-Bundle-FindDocumentManifests.html) (and the corresponding [profile](StructureDefinition-ch-mhd-comprehensive-documentmanifest-bundle.html)) as response to the Find Document Manifest request.
+See [Bundle example](Bundle-Bundle-FindDocumentManifests.html) (and the corresponding [profile](StructureDefinition-ch-mhd-comprehensive-documentmanifest-bundle.html)) as **response** to the Find Document Manifest request.
 
 ### Security Consideration
 

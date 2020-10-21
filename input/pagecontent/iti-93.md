@@ -21,7 +21,7 @@ Approved CP 1198-01 PMIR – Clarify Patient Identity Manager return in merge/de
 
 ### Trigger Events
 
-A Supplier triggers a Mobile Patient Identity Feed Request to a Consumer when patients are created, updated,
+A Supplier triggers a Mobile Patient Identity Feed request to a Consumer when patients are created, updated,
 merged, or deleted.
 
 ### Message Semantics
@@ -41,7 +41,7 @@ the patient in the community.
 
 ### Message Example
 
-See [Bundle example](Bundle-BundlePmirFeed.html) (and the corresponding [profile](StructureDefinition-ch-pmir-bundle.html)) for the Mobile Patient Identity Feed Request.
+See [Bundle example](Bundle-BundlePmirFeed.html) (and the corresponding [profile](StructureDefinition-ch-pmir-bundle.html)) for the Mobile Patient Identity Feed **request**.
 
 ### Security Consideration
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the

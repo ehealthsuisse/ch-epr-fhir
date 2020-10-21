@@ -42,7 +42,7 @@ GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]{&targetSystem=[uri]}{&_form
 | targetSystem | **1..2** | uri | The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section 3.83.4.1.2.2. | SHALL be Restricted to the Assigning authority of the community and/or the EPR-SPID. |
 | _format | 0..1 | token | The requested format of the response from the mime-type value set. See ITI TF-2x: Appendix Z.6. | No further refinement. |
 
-*Table 3.83.4.2.2-1: $ihe-pix Message Response*
+*Table 3.83.4.2.2-1: $ihe-pix Message response*
 
 {:class="table table-bordered"}
 | Parameter | Cardinality | Data Type | Description |
@@ -58,13 +58,13 @@ See the corresponding [OperationDefinition](OperationDefinition-CH.PMIR.html).
 
 ### Message Example
 Message response for a patient with a local id of 123 by AssigningAuthority oid 1.2.3 which resides in a
-community where the Assigning Authority is oid 5.6.7 and the MPI-PID and EPR-SPID are requested.
+community where the Assigning Authority is oid 5.6.7 and the MPI-PID and EPR-SPID are **requested**.
 
 ```
 GET [base]/Patient/$ihe-pix?sourceIdentifier=urn:oid:1.2.3|123&targetSystem=urn:oid:5.6.7&targetSystem=urn:oid:2.16.756.5.30.1.127.3.10.3
 ```
 
-See [Parameters example](Parameters-ParametersPmirCrossreferenceQuery.html) as response to the Mobile Patient Identifier Cross-reference Query.
+See [Parameters example](Parameters-ParametersPmirCrossreferenceQuery.html) as **response** to the Mobile Patient Identifier Cross-reference Query.
 
 ### Security Consideration
 

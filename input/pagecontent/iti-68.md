@@ -29,7 +29,7 @@ This MHD Profile is based on Release 4 of the emerging [HL7® FHIR®](https://ww
 The Document Consumer wants to obtain a document. 
 
 ### Message Semantics
-The Document Consumer sends a HTTP GET request to the server. The Document Consumer
+The Document Consumer sends a HTTP GET **request** to the server. The Document Consumer
 request may be to retrieve the document content referenced by a
 `DocumentReference.content.attachment.url`. 
 
