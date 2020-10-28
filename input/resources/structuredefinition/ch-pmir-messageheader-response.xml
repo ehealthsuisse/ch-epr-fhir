@@ -18,6 +18,7 @@
   <purpose value="Added constraints for the MessageHeader resource for PMIR (response)." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
+  <abstract value="false" />
   <type value="MessageHeader" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MessageHeader" />
   <derivation value="constraint" />
