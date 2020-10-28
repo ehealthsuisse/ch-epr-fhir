@@ -1,6 +1,11 @@
 {
   "resourceType": "Bundle",
   "id": "BundlePmirResponse",
+  "meta": {
+    "profile": [
+      "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle-response"
+    ]
+  },
   "type": "message",
   "entry": [
     {
