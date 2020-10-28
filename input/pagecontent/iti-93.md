@@ -41,7 +41,8 @@ the patient in the community.
 
 ### Message Example
 
-See [Bundle example](Bundle-BundlePmirFeed.html) (and the corresponding [profile](StructureDefinition-ch-pmir-bundle.html)) for the Mobile Patient Identity Feed **request**.
+See [Bundle example](Bundle-BundlePmirFeed.html) (and the corresponding [profile](StructureDefinition-ch-pmir-bundle.html)) for the Mobile Patient Identity Feed **request**.   
+See [Bundle example](Bundle-BundlePmirResponse.html) (and the corresponding [profile](StructureDefinition-ch-pmir-bundle-response.html)) for the Mobile Patient Identity Feed **response**.
 
 ### Security Consideration
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the

@@ -87,6 +87,14 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Bundle/BundlePmirResponse"/>
+      </reference>
+      <name value="BundlePmirResponse"/>
+      <description value="Example Bundle for a PMIR Response"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle-response"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="DocumentReference/2-7-DocRefMedicationCard"/>
       </reference>
       <name value="Document Reference for MedicationCard"/>
@@ -210,7 +218,19 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ch-pmir-bundle-response"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ch-pmir-bundle"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-pmir-messageheader-response"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
