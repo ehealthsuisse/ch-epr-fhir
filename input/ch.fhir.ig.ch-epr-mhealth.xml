@@ -103,6 +103,14 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Bundle/2-7-BundleProvideDocument-Response"/>
+      </reference>
+      <name value="MHD Provide Document Bundle Response for MedicationCard"/>
+      <description value="MHD Provide Document Bundle Response for MedicationCard"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Bundle/2-7-BundleProvideDocument"/>
       </reference>
       <name value="MHD Provide Document Bundle for MedicationCard"/>
@@ -167,6 +175,12 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-mhd-provide-comprehensive-documentreference"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
