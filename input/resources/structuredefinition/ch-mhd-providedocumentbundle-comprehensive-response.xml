@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="ch-mhd-providedocumentbundle-comprehensive-response"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
+    <name value="IHE_MHD_ProvideDocumentBundle_Comprehensive_Response_CH"/>
+    <title value="CH MHD Provide Comphrensive Document Bundle Response"/>
+    <status value="draft"/>
+    <date value="2020-10-20"/>
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description value="IHE MHD profile on Response of Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata."/>
+    <fhirVersion value="4.0.1"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Bundle"/>
+    <!--<baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive"/>-->
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Bundle">
+            <path value="Bundle"/>
+        </element>
+        <element id="Bundle.type">
+            <path value="Bundle.type"/>
+            <fixedCode value="transaction-response"/>
+        </element>
+        <element id="Bundle.link">
+            <path value="Bundle.link"/>
+        </element>
+        <element id="Bundle.link.relation">
+            <path value="Bundle.link.relation"/>
+        </element>
+        <element id="Bundle.link.url">
+            <path value="Bundle.link.url"/>
+        </element>
+        <element id="Bundle.entry">
+			<path value="Bundle.entry"/>
+            <short value="One entry for each entry in the request, in the same order as received"/>
+            <min value="2"/>
+		</element>
+        <element id="Bundle.entry.response">
+			<path value="Bundle.entry.response"/>
+            <short value="Indicating the results of processing the entry"/>
+            <min value="1"/>
+		</element>
+        <element id="Bundle.entry.response.status">
+			<path value="Bundle.entry.response.status"/>
+		</element>
+
+        <!-- IHE MHD: the .location element shall be populated-->
+        <element id="Bundle.entry.response.location">
+			<path value="Bundle.entry.response.location"/>
+            <min value="1"/>
+		</element>
+
+        <!-- IHE MHD: the .etag element may be populated when the Document Recipient supports FHIR resource versioning -->
+        <element id="Bundle.entry.response.etag">
+			<path value="Bundle.entry.response.etag"/>
+		</element>
+
+        <!-- Warnings, such as PartialFolderContentNotProcessed, shall be reported in Bundle.entry.response.outcome -->
+        <element id="Bundle.entry.response.outcome">
+			<path value="Bundle.entry.response.outcome"/>
+		</element>
+        
+    </differential>
+</StructureDefinition>

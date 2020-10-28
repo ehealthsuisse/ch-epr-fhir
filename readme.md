@@ -52,6 +52,7 @@ The IHE profiles are **imported** from https://github.com/IHE/ITI.MHD ([FHIR IG 
    * ch-mhd-provide-comprehensive-documentreference **is copied from** IHE.MHD.Provide.Comprehensive.DocumentReference **and adapted to Swiss requirements**
       * ch-ext-deletionstatus
       * ch-mhd-query-comprehensive-documentreference **is copied from** IHE.MHD.Query.Comprehensive.DocumentReference **and adapted to Swiss requirements**
+* ch-mhd-providedocumentbundle-comprehensive-response
 
 #### Validation
 To support **conformance** to the IHE profiles, the following validation mechanisms are added in this Implementation Guide:

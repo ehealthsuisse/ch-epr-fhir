@@ -91,6 +91,10 @@
           </li>
         </ul>
       </li>
+      <li>
+        <a href="StructureDefinition-ch-mhd-providedocumentbundle-comprehensive-response.html">CH MHD Provide Comphrensive Document Bundle Response</a>
+        <p>IHE MHD profile on Response of Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata.</p>
+      </li>
     </ul>
   </div>
 
