@@ -3,7 +3,9 @@
 GET {{host}}/metadata HTTP/1.1
 Accept: application/fhir+json
 
+
 ############ Register Patient Data ############
+
 
 ### ITI-93 Mobile Patient Identity Feed
 POST {{host}}/$process-message HTTP/1.1
@@ -11,6 +13,7 @@ Accept: application/fhir+json
 Content-Type: application/fhir+json
 
 < ./test/PmirFeed.json
+    ### Response: PmirResponse.json   
 
 
 ############ Submit Document (Patient MAG-002) ############
@@ -19,10 +22,10 @@ Content-Type: application/fhir+json
 ### ITI-83 Mobile Patient Identifier Cross-Reference Query (PIXm)
     ### sourceIdentifier: AssigningAuthority|PatientLocalId
     ### targetSystem: AssigningAuthority (MPI-PID)
-    ### Response: targetId = Patient/1.3.6.1.4.1.21367.2017.2.5.83-MAG-002
 GET {{host}}/Patient/$ihe-pix?sourceIdentifier=urn:oid:1.3.6.1.4.1.21367.2017.2.7.109|localpid&targetSystem=urn:oid:1.3.6.1.4.1.21367.2017.2.5.83 HTTP/1.1
 Accept: application/fhir+json
 Content-Type: application/fhir+json
+   ### Response: targetId = Patient/1.3.6.1.4.1.21367.2017.2.5.83-MAG-002
 
 
 ### ITI-65 Request (MHD: Provide Document Bundle)
@@ -42,11 +45,13 @@ Accept: application/fhir+json
 Content-Type: application/fhir+json
     ### Response: MAG-002_Response-ITI-66.json
 
+
 ### ITI-67 Request (MHD: Find Document References)
 GET {{host}}/DocumentReference?status=current&patient.identifier=urn:oid:1.3.6.1.4.1.21367.2017.2.5.83|MAG-002 HTTP/1.1
 Accept: application/fhir+json
 Content-Type: application/fhir+json
     ### Response: MAG-002_Response-ITI-67.json
+
 
 ### ITI-68 Request (MHD: Retrieve Document -> Medication Card document (CDA))
     ### DocumentReference.content.attachment.url from Find Document Reference
@@ -73,7 +78,7 @@ Content-Type: application/fhir+json
 GET http://test.ahdis.ch/camel/xdsretrieve?uniqueId=1.3.6.1.4.1.12559.11.13.2.1.3102&repositoryUniqueId=1.1.4567332.1.2
 Accept: application/fhir+json
 
-### Save Response as MAG-001_MedCard-CDA.xml
+### Save Response (CDA) as MAG-001_MedCard-CDA.xml
 
 
 ### Transform CDA to FHIR (Microservice for Transformation)

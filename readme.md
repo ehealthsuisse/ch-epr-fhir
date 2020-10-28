@@ -33,6 +33,8 @@ The IHE profiles are **imported** from https://github.com/IHE/fhir (as of Aug 13
    * ch-epr-mhealth-humanname
    * ch-epr-mhealth-birthname
    * ch-pmir-provider-organization
+* ch-pmir-bundle-response
+   * ch-pmir-messageheader-response
 
 #### MHD: IHE Structure Definitions
 The IHE profiles are **imported** from https://github.com/IHE/ITI.MHD ([FHIR IG (CI Build)](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/index.html)) (as of Aug 7, 2020).

@@ -26,6 +26,16 @@
           </li>
         </ul>
       </li>
+      <li>
+        <a href="StructureDefinition-ch-pmir-bundle-response.html">CH PMIR Bundle Message Response</a>
+        <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
+        <ul>
+          <li>
+            <a href="StructureDefinition-ch-pmir-messageheader-response.html">CH PMIR MessageHeader Response</a>
+            <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
+          </li>
+        </ul>
+      </li>
     </ul>
   </div>
 

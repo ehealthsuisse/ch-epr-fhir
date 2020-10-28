@@ -47,8 +47,8 @@ The optional metadata about the DeletionStatus of the document is represented in
 
 ### Message Example
 
-See [Bundle example](Bundle-2-7-BundleProvideDocument.html) (and the corresponding [profile](StructureDefinition-ch-mhd-providedocumentbundle-comprehensive.html)) for the Provide Document Bundle **Request**.   
-See [Bundle example](Bundle-2-7-BundleProvideDocument-Response.html) (and the corresponding [profile](StructureDefinition-ch-mhd-providedocumentbundle-comprehensive-response.html)) for the Provide Document Bundle **Response**.
+See [Bundle example](Bundle-2-7-BundleProvideDocument.html) (and the corresponding [profile](StructureDefinition-ch-mhd-providedocumentbundle-comprehensive.html)) for the Provide Document Bundle **request**.   
+See [Bundle example](Bundle-2-7-BundleProvideDocument-Response.html) (and the corresponding [profile](StructureDefinition-ch-mhd-providedocumentbundle-comprehensive-response.html)) for the Provide Document Bundle **response**.
 
 ### Security Consideration
 
