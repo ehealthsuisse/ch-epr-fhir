@@ -72,10 +72,19 @@
     </resource>
     <resource>
       <reference>
-        <reference value="Parameters/ParametersPmirCrossreferenceQuery"/>
+        <reference value="Parameters/ParametersPmirInput"/>
       </reference>
-      <name value="ParametersPmirCrossreferenceQuery"/>
-      <description value="Example Response PMIR Mobile Patient Identifier Corss-reference Query"/>
+      <name value="ParametersPmirInput"/>
+      <description value="Example Input Parameters PMIR Mobile Patient Identifier Corss-reference Query"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Parameters/ParametersPmirOutput"/>
+      </reference>
+      <name value="ParametersPmirOutput"/>
+      <description value="Example Output Parameters PMIR Mobile Patient Identifier Corss-reference Query"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
     </resource>
     <resource>
       <reference>
@@ -218,6 +227,18 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ch-pixm-in-parameters"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-pixm-out-parameters"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ch-pmir-bundle-response"/>
       </reference>
       <exampleBoolean value="false"/>
@@ -260,6 +281,12 @@
     </resource>
     
     <!-- imported IHE FHIR Structure Defintions -->
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/IHE.PIXm.Parameters"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
     <resource>
       <reference>
         <reference value="StructureDefinition/IHE.PMIR.Bundle"/>
@@ -479,7 +506,12 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-
+    <resource>
+      <reference>
+        <reference value="ValueSet/ch-pixm-format-mimetype"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
 
     <!-- IG Pages -->
     <page>

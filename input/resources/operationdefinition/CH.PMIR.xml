@@ -21,13 +21,15 @@
     <system value="false"/>
     <type value="true"/>
     <instance value="false"/>
+    <inputProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
+    <outputProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
     <parameter>
         <name value="sourceIdentifier"/>
         <use value="in"/>
         <min value="1"/>
         <max value="1"/>
         <documentation value="The Patient identifier search parameter that will be used by the Patient Identifier Cross-reference Manager to find cross matching identifiers associated with the Patient Resource. See Section 3.83.4.1.2.1"/>
-        <type value="string"/>
+        <type value="Identifier"/>
         <searchType value="token" />
     </parameter>
     <parameter>
@@ -36,7 +38,7 @@
         <min value="1"/>
         <max value="2"/>
         <documentation value="The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section 3.83.4.1.2.2."/>
-        <type value="string" />
+        <type value="uri" />
         <searchType value="uri"/>
     </parameter>
     <parameter>
@@ -45,7 +47,7 @@
         <min value="0"/>
         <max value="1"/>
         <documentation value="The requested format of the response from the mime-type value set. See ITI TF-2x: Appendix Z.6"/>
-        <type value="string"/>
+        <type value="code"/>
         <searchType value="token" />
     </parameter>
     <parameter>
