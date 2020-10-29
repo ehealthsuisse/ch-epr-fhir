@@ -1,6 +1,11 @@
 {
     "resourceType": "Parameters",
-    "id": "ParametersPmirCrossreferenceQuery",
+    "id": "ParametersPmirOutput",
+    "meta": {
+        "profile": [
+            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"
+        ]
+    },
     "parameter": [
         {
             "name": "targetIdentifier",

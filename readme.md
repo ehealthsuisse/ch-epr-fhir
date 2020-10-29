@@ -16,6 +16,15 @@ The profiles of the FHIR implementation guide CH EPR mHealth are **derived** or 
 
 ### Structure Definitions
 
+#### PIXm: IHE Structure Definitions
+The IHE profiles come from IHE Services (Sept 2020).
+
+* IHE.PIXm.Parameters
+
+#### PIXm: CH EPR mHealth Structure Definitions
+* ch-pixm-in-parameters
+* ch-pixm-out-parameters **is derived from** (`baseDefinition`) IHE.PIXm.Parameters
+
 #### PMIR: IHE Structure Definitions
 The IHE profiles are **imported** from https://github.com/IHE/fhir (as of Aug 13, 2020).
 

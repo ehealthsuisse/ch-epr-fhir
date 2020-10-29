@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ch-pixm-out-parameters" />
+  <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters" />
+  <name value="IHE_PIXm_OUT_Parameters_CH" />
+  <title value="CH PIXm OUT Parameters" />
+  <status value="draft" />
+  <date value="2020-10-29" />
+  <publisher value="eHealth Suisse"/>
+  <contact>
+    <name value="eHealth Suisse"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.e-health-suisse.ch"/>
+    </telecom>
+  </contact>
+  <description value="See https://wiki.ihe.net/index.php/Patient_Identifier_Cross-Reference_for_Mobile_(PIXm)"/>
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Parameters" />
+  <baseDefinition value="http://ihe.net/fhir/StructureDefinition/IHE.PIXm.Parameters" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Parameters">
+      <path value="Parameters" />
+    </element>
+    <element id="Parameters.parameter">
+      <path value="Parameters.parameter" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="name" />
+        </discriminator>
+        <description value="allowed parameters are targetId and targetIdentifier" />
+        <rules value="open" />
+      </slicing>
+      <max value="3"/>
+    </element>
+
+    <element id="Parameters.parameter:targetId">
+      <path value="Parameters.parameter" />
+      <sliceName value="targetId" />
+      <short value="targetId" />
+      <max value="1"/>
+    </element>
+    <element id="Parameters.parameter:targetId.name">
+      <path value="Parameters.parameter.name" />
+      <fixedString value="targetId" />
+    </element>
+    <element id="Parameters.parameter:targetId.valueReference">
+      <path value="Parameters.parameter.valueReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient" />
+        <aggregation value="referenced" />
+      </type>
+    </element>
+    <element id="Parameters.parameter:targetId.valueReference.reference">
+      <path value="Parameters.parameter.valueReference.reference" />
+      <short value="Absolute URL"/>
+    </element>
+
+    <element id="Parameters.parameter:targetIdentifier">
+      <path value="Parameters.parameter" />
+      <sliceName value="targetIdentifier" />
+      <short value="targetIdentifier" />
+      <max value="2"/>
+    </element>
+    <element id="Parameters.parameter:targetIdentifier.name">
+      <path value="Parameters.parameter.name" />
+      <fixedString value="targetIdentifier" />
+    </element>
+    <element id="Parameters.parameter:targetIdentifier.valueIdentifier">
+      <path value="Parameters.parameter.valueIdentifier" />
+    </element>
+    <element id="Parameters.parameter:targetIdentifier.valueIdentifier.system">
+      <path value="Parameters.parameter.valueIdentifier.system" />
+    </element>
+    <element id="Parameters.parameter:targetIdentifier.valueIdentifier.value">
+      <path value="Parameters.parameter.valueIdentifier.value" />
+    </element>
+  </differential>
+</StructureDefinition>

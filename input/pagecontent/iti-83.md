@@ -63,8 +63,8 @@ community where the Assigning Authority is oid 5.6.7 and the MPI-PID and EPR-SPI
 ```
 GET [base]/Patient/$ihe-pix?sourceIdentifier=urn:oid:1.2.3|123&targetSystem=urn:oid:5.6.7&targetSystem=urn:oid:2.16.756.5.30.1.127.3.10.3
 ```
-
-See [Parameters example](Parameters-ParametersPmirCrossreferenceQuery.html) as **response** to the Mobile Patient Identifier Cross-reference Query.
+See [Input Parameters example](Parameters-ParametersPmirInput.html) (and the corresponding [profile](StructureDefinition-ch-pixm-in-parameters.html)) for the Mobile Patient Identifier Cross-reference Query.   
+See [Output Parameters example](Parameters-ParametersPmirOutput.html) (and the corresponding [profile](StructureDefinition-ch-pixm-out-parameters.html)) as **response** to the Mobile Patient Identifier Cross-reference Query.
 
 ### Security Consideration
 

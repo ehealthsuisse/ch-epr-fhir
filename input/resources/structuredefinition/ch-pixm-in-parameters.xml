@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ch-pixm-in-parameters" />
+  <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters" />
+  <name value="PIXm_IN_Parameters_CH" />
+  <title value="CH PIXm IN Parameters" />
+  <status value="draft" />
+  <date value="2020-10-29" />
+  <publisher value="eHealth Suisse"/>
+  <contact>
+    <name value="eHealth Suisse"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.e-health-suisse.ch"/>
+    </telecom>
+  </contact>
+  <description value="See https://wiki.ihe.net/index.php/Patient_Identifier_Cross-Reference_for_Mobile_(PIXm)"/>
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Parameters" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Parameters" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Parameters">
+      <path value="Parameters" />
+    </element>
+    <element id="Parameters.parameter">
+      <path value="Parameters.parameter" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="name" />
+        </discriminator>
+        <description value="allowed parameters are sourceIdentifier, targetSystem and _format" />
+        <rules value="open" />
+      </slicing>
+    </element>
+    <!-- IN parameter: sourceIdentifier -->
+    <element id="Parameters.parameter:sourceIdentifier">
+      <path value="Parameters.parameter" />
+      <sliceName value="sourceIdentifier" />
+      <short value="sourceIdentifier"/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="Parameters.parameter:sourceIdentifier.name">
+      <path value="Parameters.parameter.name" />
+      <fixedString value="sourceIdentifier" />
+    </element>
+    <element id="Parameters.parameter:sourceIdentifier.valueIdentifier">
+      <path value="Parameters.parameter.valueIdentifier" />
+      <min value="1" />
+      <type>
+        <code value="Identifier" />
+      </type>
+    </element>
+    <element id="Parameters.parameter:sourceIdentifier.valueIdentifier.system">
+      <path value="Parameters.parameter.valueIdentifier.system" />
+      <min value="1" />
+    </element>
+    <element id="Parameters.parameter:sourceIdentifier.valueIdentifier.value">
+      <path value="Parameters.parameter.valueIdentifier.value" />
+      <min value="1" />
+    </element>
+
+    <!-- IN parameter: targetSystem -->
+    <element id="Parameters.parameter:targetSystem">
+      <path value="Parameters.parameter" />
+      <sliceName value="targetSystem" />
+      <short value="targetSystem"/>
+      <min value="1"/>
+      <max value="2"/>
+    </element>
+    <element id="Parameters.parameter:targetSystem.name">
+      <path value="Parameters.parameter.name" />
+      <fixedString value="targetSystem" />
+    </element>
+    <element id="Parameters.parameter:targetSystem.valueUri">
+      <path value="Parameters.parameter.valueUri" />
+      <min value="1" />
+      <type>
+        <code value="uri" />
+      </type>
+    </element>
+
+    <!-- IN parameter: _format -->
+    <element id="Parameters.parameter:_format">
+      <path value="Parameters.parameter" />
+      <sliceName value="_format" />
+      <short value="_format"/>
+      <max value="1"/>
+    </element>
+    <element id="Parameters.parameter:_format.name">
+      <path value="Parameters.parameter.name" />
+      <fixedString value="_format" />
+    </element>
+    <element id="Parameters.parameter:_format.valueCode">
+      <path value="Parameters.parameter.valueCode" />
+      <short value="application/fhir+json | json | application/fhir+xml | xml"/>
+      <min value="1" />
+      <type>
+        <code value="code" />
+      </type>
+      <binding>
+				<strength value="required" />
+				<valueSet value="http://fhir.ch/ig/ch-epr-mhealth/ValueSet/ch-pixm-format-mimetype" />
+			</binding>
+    </element>    
+  </differential>
+</StructureDefinition>
