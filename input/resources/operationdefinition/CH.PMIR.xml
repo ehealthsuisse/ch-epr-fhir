@@ -29,7 +29,7 @@
         <min value="1"/>
         <max value="1"/>
         <documentation value="The Patient identifier search parameter that will be used by the Patient Identifier Cross-reference Manager to find cross matching identifiers associated with the Patient Resource. See Section 3.83.4.1.2.1"/>
-        <type value="Identifier"/>
+        <type value="string"/>
         <searchType value="token" />
     </parameter>
     <parameter>
@@ -38,7 +38,7 @@
         <min value="1"/>
         <max value="2"/>
         <documentation value="The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section 3.83.4.1.2.2."/>
-        <type value="uri" />
+        <type value="string" />
         <searchType value="uri"/>
     </parameter>
     <parameter>
@@ -47,7 +47,7 @@
         <min value="0"/>
         <max value="1"/>
         <documentation value="The requested format of the response from the mime-type value set. See ITI TF-2x: Appendix Z.6"/>
-        <type value="code"/>
+        <type value="string"/>
         <searchType value="token" />
     </parameter>
     <parameter>
