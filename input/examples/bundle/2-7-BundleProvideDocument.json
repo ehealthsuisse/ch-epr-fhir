@@ -19,7 +19,7 @@
             },
             "request": {
                 "method": "POST",
-                "url": "urn:uuid:d8d1fe44-07e9-4a84-985f-fde97d77d54b"
+                "url": "Binary"
             }
         },
         {
@@ -68,7 +68,7 @@
             },
             "request": {
                 "method": "POST",
-                "url": "urn:uuid:68a928c0-df48-4743-a291-bfb0609bbddc"
+                "url": "DocumentManifest"
             }
         },
         {
@@ -193,7 +193,7 @@
             },
             "request": {
                 "method": "POST",
-                "url": "urn:uuid:5604f114-bf96-4c12-8dac-25715a05cf3f"
+                "url": "DocumentReference"
             }
         }
     ]
