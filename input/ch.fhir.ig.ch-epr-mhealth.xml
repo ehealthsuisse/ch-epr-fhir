@@ -23,6 +23,7 @@
       <value value="https://www.e-health-suisse.ch"/>
     </telecom>
   </contact>
+  <description value="Implementation Guide for the Mobile access to Health Documents (epr-mhealth) Profile for the Swiss EPR"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
