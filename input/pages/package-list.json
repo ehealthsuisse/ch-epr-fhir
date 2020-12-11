@@ -13,14 +13,23 @@
       "current": true
     },
     {
-      "version": "0.1.1",
-      "date": "2020-08-24",
+      "version": "0.1.2",
+      "date": "2020-12-11",
       "desc": "eHealth Suisse DSTU 1",
       "path": "http://fhir.ch/ig/ch-epr-mhealth",
       "status": "trial-use",
       "sequence" : "DSTU 1",
       "fhirversion": "4.0.1",
       "current": true
+    },
+    {
+      "version": "0.1.1",
+      "date": "2020-08-24",
+      "desc": "eHealth Suisse DSTU 1",
+      "path": "http://fhir.ch/ig/ch-epr-mhealth/0.1.1",
+      "status": "trial-use",
+      "sequence" : "DSTU 1",
+      "fhirversion": "4.0.1"
     },
     {
       "version": "0.1.0",

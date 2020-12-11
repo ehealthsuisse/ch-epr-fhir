@@ -14,7 +14,7 @@
   <title value="CH EPR mHealth (R4)"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2020-10-14"/>
+  <date value="2020-12-11"/>
   <publisher value="eHealth Suisse"/>
   <contact>
     <name value="eHealth Suisse"/>
@@ -584,8 +584,8 @@
     <!-- IG Parameters -->
     <parameter>
       <code value="releaselabel"/>
-      <value value="CI build"/>
-      <!--<value value="Draft Standard for Trial Use"/>-->
+      <!--<value value="CI build"/>-->
+      <value value="Draft Standard for Trial Use"/>
     </parameter>
     <parameter>
       <code value="path-pages" />
