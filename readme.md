@@ -51,18 +51,15 @@ The IHE profiles are **imported** from https://github.com/IHE/ITI.MHD ([FHIR IG 
 * IHE.MHD.ProvideDocumentBundle.Comprehensive 
    * IHE.MHD.Comprehensive.List
       * IHE.MHD.Minimal.List
-   * IHE.MHD.Provide.Comprehensive.DocumentReference + IHE.MHD.Query.Comprehensive.DocumentReference
-      * IHE.MHD.Provide.Minimal.DocumentReference
    * IHE.MHD.Comprehensive.DocumentManifest
-      * IHE.MHD.Minimal.DocumentManifest
+      * IHE.MHD.Minimal.DocumentManifest 
 
 #### MHD: CH EPR mHealth Structure Definitions
 * ch-mhd-providedocumentbundle-comprehensive **is copied from** IHE.MHD.ProvideDocumentBundle.Comprehensive **and adapted to Swiss requirements** 
    * ch-mhd-comprehensive-documentmanifest **is copied from** IHE.MHD.Comprehensive.DocumentManifest **and adapted to Swiss requirements**
       * ch-ext-author-authorrole
-   * ch-mhd-provide-comprehensive-documentreference **is copied from** IHE.MHD.Provide.Comprehensive.DocumentReference **and adapted to Swiss requirements**
+   * ch-mhd-comprehensive-documentreference
       * ch-ext-deletionstatus
-      * ch-mhd-query-comprehensive-documentreference **is copied from** IHE.MHD.Query.Comprehensive.DocumentReference **and adapted to Swiss requirements**
 * ch-mhd-providedocumentbundle-comprehensive-response
 
 #### Validation

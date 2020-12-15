@@ -133,7 +133,7 @@
             <type>
                 <code value="Resource" />
                 <!--<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />-->
-                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference" />
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference" />
             </type>
         </element>
         <element id="Bundle.entry:DocumentReference.request">

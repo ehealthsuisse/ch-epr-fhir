@@ -121,7 +121,7 @@
 			<path value="DocumentManifest.content" />
 			<type>
 				<code value="Reference" />
-				<targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference" />
+				<targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference" />
 				<aggregation value="referenced" />
 				<aggregation value="bundled" />
 			</type>

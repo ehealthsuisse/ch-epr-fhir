@@ -79,7 +79,7 @@
                 "resourceType": "DocumentReference",
                 "meta": {
                     "profile": [
-                        "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference"
+                        "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference"
                     ]
                 },
                 "contained": [

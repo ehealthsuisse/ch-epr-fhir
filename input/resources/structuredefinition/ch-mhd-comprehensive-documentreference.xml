@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="ch-mhd-provide-comprehensive-documentreference"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference"/>
-    <name value="IHE_MHD_Provide_Comprehensive_DocumentReference_CH"/>
-    <title value="CH MHD Provide Comprehensive DocumentReference"/>
+    <id value="ch-mhd-comprehensive-documentreference"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference"/>
+    <name value="IHE_MHD_Comprehensive_DocumentReference_CH"/>
+    <title value="CH MHD Comprehensive DocumentReference"/>
     <status value="draft"/>
     <date value="2020-07-10"/>
     <publisher value="eHealth Suisse"/>
@@ -24,12 +24,12 @@
     <differential>
         <element id="DocumentReference">
             <path value="DocumentReference"/>
-            <short value="CH MHD Provide Comprehensive DocumentReference"/>
+            <short value="CH MHD Comprehensive DocumentReference"/>
             <constraint>
                 <key value="ch-mhd"/>
                 <severity value="warning"/>
                 <human value="The resource is not conform to the MHD profile from https://github.com/IHE/ITI.MHD"/>
-                <expression value="conformsTo('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference')"/>
+                <expression value="conformsTo('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference')"/>
             </constraint>
         </element>
         <element id="DocumentReference.extension">

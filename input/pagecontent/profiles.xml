@@ -123,7 +123,7 @@
             <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet).</p>
           </li>
           <li>
-            <a href="StructureDefinition-ch-mhd-provide-comprehensive-documentreference.html">CH MHD Provide Comprehensive DocumentReference</a>
+            <a href="StructureDefinition-ch-mhd-comprehensive-documentreference.html">CH MHD Comprehensive DocumentReference</a>
             <p>IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Comprehensive (aka XDS-on-FHIR) Metadata.</p>
           </li>
         </ul>
@@ -152,16 +152,16 @@
               </li>
             </ul>
           </li>
-          <li>
-            <a href="StructureDefinition-IHE.MHD.Provide.Comprehensive.DocumentReference.html">Provide Comprehensive DocumentReference</a>
+          <!--<li>
+            <a href="http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html">Comprehensive DocumentReference</a>
             <p>IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Comprehensive (aka XDS-on-FHIR) Metadata.</p>
             <ul>
               <li>
-                <a href="StructureDefinition-IHE.MHD.Provide.Minimal.DocumentReference.html">Provide Minimal DocumentReference</a>
+                <a href="http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Minimal.DocumentReference.html">Minimal DocumentReference</a>
                 <p>IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Minimal Metadata.</p>
               </li>
             </ul>
-          </li>
+          </li>-->
           <li>
             <a href="StructureDefinition-IHE.MHD.Comprehensive.DocumentManifest.html">Comprehensive DocumentManifest (SubmissionSet)</a>
             <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet).</p>
@@ -206,14 +206,8 @@
   <div>
     <ul>
       <li>
-        <a href="StructureDefinition-ch-mhd-query-comprehensive-documentreference-bundle.html">CH MHD Query Comprehensive DocumentReference Bundle</a>
+        <a href="StructureDefinition-ch-mhd-comprehensive-documentreference-bundle.html">CH MHD Comprehensive DocumentReference Bundle</a>
         <p>IHE MHD Profile on DocumentReference (DocumentEntry) in a Bundle from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
-        <ul>
-          <li>
-            <a href="StructureDefinition-ch-mhd-query-comprehensive-documentreference.html">CH MHD Query Comprehensive DocumentReference</a>
-            <p>IHE MHD Profile on DocumentReference (DocumentEntry) from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
-          </li>
-        </ul>
       </li>
     </ul>
   </div>
@@ -222,14 +216,8 @@
   <div>
     <ul>
       <li>
-        <a href="StructureDefinition-IHE.MHD.Query.Comprehensive.DocumentReference.Bundle.html">Query Comprehensive DocumentReference Bundle</a>
+        <a href="StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.Bundle.html">Comprehensive DocumentReference Bundle</a>
         <p>IHE MHD Profile on DocumentReference (DocumentEntry) in a Bundle from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
-        <ul>
-          <li>
-            <a href="StructureDefinition-IHE.MHD.Query.Comprehensive.DocumentReference.html">Query Comprehensive DocumentReference</a>
-            <p>IHE MHD Profile on DocumentReference (DocumentEntry) from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
-          </li>
-        </ul>
       </li>
     </ul>
   </div>

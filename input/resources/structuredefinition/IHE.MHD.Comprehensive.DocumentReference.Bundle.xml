@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-	<id value="IHE.MHD.Query.Comprehensive.DocumentReference.Bundle" />
-	<url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/IHE.MHD.Query.Comprehensive.DocumentReference.Bundle" />
-	<name value="IHE_MHD_Query_Comprehensive_DocumentReference_Bundle" />
-	<title value="Query Comprehensive DocumentReference Bundle" />
+	<id value="IHE.MHD.Comprehensive.DocumentReference.Bundle" />
+	<url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference.Bundle" />
+	<name value="IHE_MHD_Comprehensive_DocumentReference_Bundle" />
+	<title value="Comprehensive DocumentReference Bundle" />
 	<status value="draft" />
 	<date value="2020-10-14" />
 	<publisher value="eHealth Suisse"/>
@@ -52,17 +52,17 @@
 				<rules value="open" />
 			</slicing>
 		</element>
-		<element id="Bundle.entry:DocumentManifest">
+		<element id="Bundle.entry:DocumentReference">
 			<path value="Bundle.entry"/>
-			<sliceName value="DocumentManifest"/>
-			<short value="DocumentManifest"/>
+			<sliceName value="DocumentReference"/>
+			<short value="DocumentReference"/>
 		</element>
-		<element id="Bundle.entry:DocumentManifest.resource">
+		<element id="Bundle.entry:DocumentReference.resource">
 			<path value="Bundle.entry.resource"/>
             <min value="1"/>
 			<type>
 				<code value="Resource" />
-				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Query.Comprehensive.DocumentReference"/>
+				<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"/>
 			</type>
 		</element>
 	</differential>
