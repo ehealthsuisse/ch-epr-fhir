@@ -14,7 +14,7 @@
     },
     {
       "version": "0.1.2",
-      "date": "2020-12-11",
+      "date": "2020-12-16",
       "desc": "eHealth Suisse DSTU 1",
       "path": "http://fhir.ch/ig/ch-epr-mhealth",
       "status": "trial-use",
