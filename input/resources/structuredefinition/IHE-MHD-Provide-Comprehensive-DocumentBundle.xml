@@ -15,7 +15,7 @@
         </telecom>
     </contact>
 	<description value="IHE_MHD_Provide_Comprehensive_DocumentBundle, define URL to resolve profile in Bundle.meta.profile"/>
-	<fhirVersion value="4.0.0" />
+	<fhirVersion value="4.0.1" />
 	<kind value="resource" />
 	<abstract value="false" />
 	<type value="Bundle" />

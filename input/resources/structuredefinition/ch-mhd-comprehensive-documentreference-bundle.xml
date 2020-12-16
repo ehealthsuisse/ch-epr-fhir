@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="ch-mhd-query-comprehensive-documentreference-bundle"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference-bundle"/>
-    <name value="IHE_MHD_Query_Comprehensive_DocumentReference_Bundle_CH"/>
-    <title value="CH MHD Query Comprehensive DocumentReference Bundle"/>
+    <id value="ch-mhd-comprehensive-documentreference-bundle"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference-bundle"/>
+    <name value="IHE_MHD_Comprehensive_DocumentReference_Bundle_CH"/>
+    <title value="CH MHD Comprehensive DocumentReference Bundle"/>
     <status value="draft"/>
     <date value="2020-10-14"/>
     <publisher value="eHealth Suisse"/>
@@ -72,7 +72,7 @@
             <min value="1"/>
 			<type>
 				<code value="Resource" />
-				<profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-query-comprehensive-documentreference" />
+				<profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference" />
 			</type>
 		</element>
     </differential>

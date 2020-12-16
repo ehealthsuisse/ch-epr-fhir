@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="ch-mhd-provide-comprehensive-documentreference"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-provide-comprehensive-documentreference"/>
-    <name value="IHE_MHD_Provide_Comprehensive_DocumentReference_CH"/>
-    <title value="CH MHD Provide Comprehensive DocumentReference"/>
+    <id value="ch-mhd-comprehensive-documentreference"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference"/>
+    <name value="IHE_MHD_Comprehensive_DocumentReference_CH"/>
+    <title value="CH MHD Comprehensive DocumentReference"/>
     <status value="draft"/>
     <date value="2020-07-10"/>
     <publisher value="eHealth Suisse"/>
@@ -24,12 +24,12 @@
     <differential>
         <element id="DocumentReference">
             <path value="DocumentReference"/>
-            <short value="CH MHD Provide Comprehensive DocumentReference"/>
+            <short value="CH MHD Comprehensive DocumentReference"/>
             <constraint>
                 <key value="ch-mhd"/>
                 <severity value="warning"/>
                 <human value="The resource is not conform to the MHD profile from https://github.com/IHE/ITI.MHD"/>
-                <expression value="conformsTo('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference')"/>
+                <expression value="conformsTo('http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference')"/>
             </constraint>
         </element>
         <element id="DocumentReference.extension">
@@ -57,7 +57,6 @@
             <path value="DocumentReference.masterIdentifier" />
             <comment value="See ITI TF-2x: Z.9.1.1 Identifier and CDA root plus extension." />
             <min value="1" />
-            <mustSupport value="true" />
         </element>
         <element id="DocumentReference.identifier">
             <path value="DocumentReference.identifier" />
@@ -97,7 +96,6 @@
                 <aggregation value="referenced" />
                 <aggregation value="bundled" />
             </type>
-            <mustSupport value="true" />
         </element>
         <element id="DocumentReference.date">
             <path value="DocumentReference.date" />
@@ -117,7 +115,6 @@
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
                 <aggregation value="contained" />
             </type>
-            <mustSupport value="true" />
         </element>
         <element id="DocumentReference.authenticator">
             <path value="DocumentReference.authenticator" />
@@ -128,7 +125,6 @@
                 <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-practitionerrole" />
                 <aggregation value="contained" />
             </type>
-            <mustSupport value="false" />
         </element>
         <element id="DocumentReference.custodian">
             <path value="DocumentReference.custodian" />
@@ -142,7 +138,6 @@
         </element>
         <element id="DocumentReference.description">
             <path value="DocumentReference.description" />
-            <mustSupport value="false" />
         </element>
         <element id="DocumentReference.securityLabel">
             <path value="DocumentReference.securityLabel" />
@@ -153,7 +148,6 @@
         <element id="DocumentReference.content">
             <path value="DocumentReference.content" />
             <max value="1" />
-            <mustSupport value="true" />
         </element>
         <element id="DocumentReference.content.attachment">
             <path value="DocumentReference.content.attachment" />
@@ -178,29 +172,10 @@
             <path value="DocumentReference.content.attachment.url" />
             <min value="1" />
             <max value="1" />
-            <mustSupport value="true" />
-        </element>
-        <element id="DocumentReference.content.attachment.size">
-            <path value="DocumentReference.content.attachment.size" />
-            <comment value="The size is calculated on the data prior to base64 encoding, if the data is base64 encoded." />
-            <mustSupport value="false" />
-        </element>
-        <element id="DocumentReference.content.attachment.hash">
-            <path value="DocumentReference.content.attachment.hash" />
-            <comment value="The IHE Document Sharing metadata element hash holds the SHA1 hash of the document. The hash is encoded in FHIR in base64Binary, whereas in XDS hexbinary is used. The hash is calculated on the data prior to base64 encoding, if the data is base64 encoded." />
-            <mustSupport value="false" />
-        </element>
-        <element id="DocumentReference.content.attachment.title">
-            <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
-                <valueBoolean value="true" />
-            </extension>
-            <path value="DocumentReference.content.attachment.title" />
-            <mustSupport value="false" />
         </element>
         <element id="DocumentReference.content.attachment.creation">
             <path value="DocumentReference.content.attachment.creation" />
             <min value="1" />
-            <mustSupport value="false" />
         </element>
         <element id="DocumentReference.content.format">
             <path value="DocumentReference.content.format" />
@@ -210,21 +185,6 @@
         <element id="DocumentReference.context">
             <path value="DocumentReference.context" />
             <min value="1" />
-            <mustSupport value="false" />
-        </element>
-        <!-- not relevant in Swiss context -->
-        <!--<element id="DocumentReference.context.encounter">
-            <path value="DocumentReference.context.encounter" />
-            <comment value="When referenceIdList contains an encounter, and a FHIR Encounter is available, it may be referenced." />
-            <type>
-                <code value="Reference" />
-                <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-encounter" />
-            </type>
-            <mustSupport value="false" />
-        </element>-->
-        <element id="DocumentReference.context.event">
-            <path value="DocumentReference.context.event" />
-            <mustSupport value="false" />
         </element>
         <element id="DocumentReference.context.period">
             <path value="DocumentReference.context.period" />
@@ -250,17 +210,14 @@
                 <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient" />
                 <aggregation value="contained" />
             </type>
-            <mustSupport value="true" />
         </element>
         <element id="DocumentReference.context.related">
             <path value="DocumentReference.context.related" />
             <comment value="May be filled with URL pointers to Resources or Identifiers found in referenceIdList" />
-            <mustSupport value="false" />
         </element>
         <element id="DocumentReference.context.related.identifier">
             <path value="DocumentReference.context.related.identifier" />
             <comment value="Requirements on XDS-I.b (Swiss context): When a Imaging Document Source provides a document to the Document Repository, it must provide the StudyInstanceUID, found in the to be registered KOS object, in the referenceIdList (urn:ihe:iti:xds:2013:referenceIdList) attribute of the documentEntry metadata." />
-            <mustSupport value="false" />
         </element>
     </differential>
 </StructureDefinition>
