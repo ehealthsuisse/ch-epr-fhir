@@ -566,8 +566,8 @@
     <!-- IG Parameters -->
     <parameter>
       <code value="releaselabel"/>
-      <!--<value value="CI build"/>-->
-      <value value="Draft Standard for Trial Use"/>
+      <value value="CI build"/>
+      <!--<value value="Draft Standard for Trial Use"/>-->
     </parameter>
     <parameter>
       <code value="path-pages" />
