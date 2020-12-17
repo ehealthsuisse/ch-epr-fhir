@@ -35,8 +35,8 @@ CH PMIR MessageHeader Response | TBD | TBD
 CH MHD Provide Comphrensive Document Bundle | TBD | TBD
 IHE_MHD_Provide_Comprehensive_DocumentBundle | TBD | TBD
 CH MHD Comprehensive DocumentManifest (SubmissionSet)
-[CH MHD Comprehensive DocumentReference](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/StructureDefinition-ch-mhd-comprehensive-documentreference.html) | TBD | TBD
-CH MHD Provide Comphrensive Document Bundle Response | `conformsTo` | [MHD Comprehensive DocumentReference](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) (https://github.com/IHE/ITI.MHD)
+[CH MHD Comprehensive DocumentReference](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/StructureDefinition-ch-mhd-comprehensive-documentreference.html) | check conformity with constraint `conformsTo` and example is validated against it (`meta.profile`) | [MHD Comprehensive DocumentReference](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) (https://github.com/IHE/ITI.MHD)
+CH MHD Provide Comphrensive Document Bundle Response | TBD | TBD
 CH MHD Comprehensive DocumentManifest (SubmissionSet) Bundle | TBD | TBD
 CH MHD Comprehensive DocumentReference Bundle | TBD | TBD
 
