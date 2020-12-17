@@ -23,6 +23,10 @@ gofsh ./input/resources/structuredefinition -o ./input/fsh -d ch.fhir.ig.ch-core
 
 ## Relation to IHE profiles since version v0.1.3 (currently as CI build and work in progress)
 
+To support **conformance** to the IHE profiles, the following validation mechanisms are added in this implementation guide:
+* The CH EPR mHealth profiles check the conformity to the corresponding IHE profile using constraints (`conformsTo`)
+* The examples are validated against both profiles (CH EPR mHealth & IHE) (listed in `meta.profile`)
+
 CH EPR mHealth profile | Relation/Action | IHE profile (Source)
 --- | --- | --- 
 CH PIXm IN Parameters | TBD | TBD
@@ -35,7 +39,7 @@ CH PMIR MessageHeader Response | TBD | TBD
 CH MHD Provide Comphrensive Document Bundle | TBD | TBD
 IHE_MHD_Provide_Comprehensive_DocumentBundle | TBD | TBD
 CH MHD Comprehensive DocumentManifest (SubmissionSet)
-[CH MHD Comprehensive DocumentReference](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/StructureDefinition-ch-mhd-comprehensive-documentreference.html) | check conformity with constraint `conformsTo` and example is validated against it (`meta.profile`) | [MHD Comprehensive DocumentReference](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) (https://github.com/IHE/ITI.MHD)
+[CH MHD Comprehensive DocumentReference](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/StructureDefinition-ch-mhd-comprehensive-documentreference.html) | `conformsTo` & `meta.profile` | [MHD Comprehensive DocumentReference](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) (https://github.com/IHE/ITI.MHD)
 CH MHD Provide Comphrensive Document Bundle Response | TBD | TBD
 CH MHD Comprehensive DocumentManifest (SubmissionSet) Bundle | TBD | TBD
 CH MHD Comprehensive DocumentReference Bundle | TBD | TBD
