@@ -111,7 +111,7 @@
                 <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
                 <aggregation value="contained" />
             </type>
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentManifest.source">
             <path value="DocumentManifest.source" />

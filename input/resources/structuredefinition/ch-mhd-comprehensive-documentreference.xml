@@ -62,7 +62,7 @@
             <path value="DocumentReference.identifier" />
             <comment value="When the DocumentReference.identifier carries the entryUUID then the DocumentReference.identifier use shall be ‘official’." />
             <min value="1" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.status">
             <path value="DocumentReference.status" />
@@ -78,13 +78,13 @@
         <element id="DocumentReference.type">
             <path value="DocumentReference.type" />
             <min value="1" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.category">
             <path value="DocumentReference.category" />
             <min value="1" />
             <max value="1" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.subject">
             <path value="DocumentReference.subject" />
@@ -100,7 +100,7 @@
         <element id="DocumentReference.date">
             <path value="DocumentReference.date" />
             <min value="1" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.author">
             <path value="DocumentReference.author" />
@@ -134,7 +134,7 @@
         <element id="DocumentReference.relatesTo">
             <path value="DocumentReference.relatesTo" />
             <comment value="See ITI TF-2c: 3.65.4.1.2.3" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.description">
             <path value="DocumentReference.description" />
@@ -143,7 +143,7 @@
             <path value="DocumentReference.securityLabel" />
             <comment value="Note: This is NOT the DocumentReference.meta, as that holds the meta tags for the DocumentReference itself." />
             <min value="1" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.content">
             <path value="DocumentReference.content" />
@@ -151,17 +151,17 @@
         </element>
         <element id="DocumentReference.content.attachment">
             <path value="DocumentReference.content.attachment" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.content.attachment.contentType">
             <path value="DocumentReference.content.attachment.contentType" />
             <min value="1" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.content.attachment.language">
             <path value="DocumentReference.content.attachment.language" />
             <min value="1" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.content.attachment.data">
             <path value="DocumentReference.content.attachment.data" />
@@ -180,7 +180,7 @@
         <element id="DocumentReference.content.format">
             <path value="DocumentReference.content.format" />
             <min value="1" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.context">
             <path value="DocumentReference.context" />
@@ -188,17 +188,17 @@
         </element>
         <element id="DocumentReference.context.period">
             <path value="DocumentReference.context.period" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.context.facilityType">
             <path value="DocumentReference.context.facilityType" />
             <min value="1" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.context.practiceSetting">
             <path value="DocumentReference.context.practiceSetting" />
             <min value="1" />
-            <mustSupport value="true" />
+            <!--<mustSupport value="true" />-->
         </element>
         <element id="DocumentReference.context.sourcePatientInfo">
             <path value="DocumentReference.context.sourcePatientInfo" />
