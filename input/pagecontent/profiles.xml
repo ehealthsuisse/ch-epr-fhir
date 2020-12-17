@@ -7,7 +7,6 @@
 
   <h3>Mobile Patient Identifier Cross-reference Query [ITI-83]</h3>
 
-  <h4>Swiss Profiles</h4>
   <div>
     <ul>
       <li>
@@ -21,20 +20,9 @@
     </ul>
   </div>
 
-  <h4>IHE Profiles</h4>
-  <div>
-    <ul>
-      <li>
-        <a href="StructureDefinition-IHE.PIXm.Parameters.html">IHE PIXm Parameters</a>
-        <p>See https://wiki.ihe.net/index.php/Patient_Identifier_Cross-Reference_for_Mobile_(PIXm)</p>
-      </li>
-    </ul>
-  </div>
-
 
   <h3>Mobile Patient Identity Feed [ITI-93]</h3>
 
-  <h4>Swiss Profiles</h4>
   <div>
     <ul>
       <li>
@@ -66,48 +54,9 @@
     </ul>
   </div>
 
-  <h4>IHE Profiles</h4>
-  <div>
-    <ul>
-      <li>
-        <a href="StructureDefinition-IHE.PMIR.Bundle.html">IHE PMIR Bundle Message</a>
-        <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
-        <ul>
-          <li>
-            <a href="StructureDefinition-IHE.PMIR.MessageHeader.html">IHE PMIR MessageHeader</a>
-            <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
-          </li>
-          <li>
-            <a href="StructureDefinition-IHE.PMIR.BundleHistory.html">IHE PMIR Bundle History</a>
-            <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="StructureDefinition-IHE.PMIR.Patient.Merge.html">IHE PMIR Patient Merge</a>
-        <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
-      </li>
-      <li>
-        <a href="StructureDefinition-IHE.PMIR.Patient.RelatedPerson.html">IHE PMIR Patient Related Person</a>
-        <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
-      </li>
-      <li>
-        <a href="StructureDefinition-IHE.PMIR.Subscription.html">IHE PMIR Subscription</a>
-        <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
-        <ul>
-          <li>
-            <a href="StructureDefinition-IHE.PMIR.Subscription.request.html">IHE PMIR Subscription request</a>
-            <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-
+  
   <h3>Provide Document Bundle [ITI-65]</h3>
 
-  <h4>Swiss Profiles</h4>
   <div>
     <ul>
       <li>
@@ -135,51 +84,9 @@
     </ul>
   </div>
 
-  <h4>IHE Profiles</h4>
-  <div>
-    <ul>
-      <li>
-        <a href="StructureDefinition-IHE.MHD.ProvideDocumentBundle.Comprehensive.html">Provide Comphrensive Document Bundle</a>
-        <p>IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata.</p>
-        <ul>
-          <li>
-            <a href="StructureDefinition-IHE.MHD.Comprehensive.List.html">Comprehensive List (Folder)</a>
-            <p>IHE MHD Profile on List with Comprehensive Metadata (Folder).</p>
-            <ul>
-              <li>
-                <a href="StructureDefinition-IHE.MHD.Minimal.List.html">Minimal List Folder</a>
-                <p>IHE MHD Profile on List with Minimal Metadata (Folder).</p>
-              </li>
-            </ul>
-          </li>
-          <!--<li>
-            <a href="http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html">Comprehensive DocumentReference</a>
-            <p>IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Comprehensive (aka XDS-on-FHIR) Metadata.</p>
-            <ul>
-              <li>
-                <a href="http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Minimal.DocumentReference.html">Minimal DocumentReference</a>
-                <p>IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Minimal Metadata.</p>
-              </li>
-            </ul>
-          </li>-->
-          <li>
-            <a href="StructureDefinition-IHE.MHD.Comprehensive.DocumentManifest.html">Comprehensive DocumentManifest (SubmissionSet)</a>
-            <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet).</p>
-            <ul>
-              <li>
-                <a href="StructureDefinition-IHE.MHD.Minimal.DocumentManifest.html">Minimal DocumentManifest (SubmissionSet)</a>
-                <p>IHE MHD Profile on DocumentManifest for Minimal Metadata (SubmissionSet).</p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-
+  
   <h3>Find Document Manifest [ITI-66]</h3>
-  <h4>Swiss Profiles</h4>
+  
   <div>
     <ul>
       <li>
@@ -189,34 +96,13 @@
     </ul>
   </div>
 
-  <h4>Referencing IHE Profiles</h4>
-  <div>
-    <ul>
-      <li>
-        <a href="StructureDefinition-IHE.MHD.Comprehensive.DocumentManifest.Bundle.html">Comprehensive DocumentManifest (SubmissionSet) Bundle</a>
-        <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet) in a Bundle.</p>
-      </li>
-    </ul>
-  </div>
-
 
   <h3>Find Document Reference [ITI-67]</h3>
 
-  <h4>Swiss Profiles</h4>
   <div>
     <ul>
       <li>
         <a href="StructureDefinition-ch-mhd-comprehensive-documentreference-bundle.html">CH MHD Comprehensive DocumentReference Bundle</a>
-        <p>IHE MHD Profile on DocumentReference (DocumentEntry) in a Bundle from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
-      </li>
-    </ul>
-  </div>
-
-  <h4>Referencing IHE Profiles</h4>
-  <div>
-    <ul>
-      <li>
-        <a href="StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.Bundle.html">Comprehensive DocumentReference Bundle</a>
         <p>IHE MHD Profile on DocumentReference (DocumentEntry) in a Bundle from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
       </li>
     </ul>

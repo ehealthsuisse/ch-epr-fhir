@@ -54,9 +54,33 @@
     <!-- examples -->
     <resource>
       <reference>
+        <reference value="Parameters/ParametersPmirInput"/>
+      </reference>
+      <name value="Parameters PMIR Input"/>
+      <description value="Example Input Parameters PMIR Mobile Patient Identifier Corss-reference Query"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Parameters/ParametersPmirOutput"/>
+      </reference>
+      <name value="Parameters PMIR Output"/>
+      <description value="Example Output Parameters PMIR Mobile Patient Identifier Corss-reference Query"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/BundlePmirFeed"/>
+      </reference>
+      <name value="Bundle PMIR Feed"/>
+      <description value="Example Bundle for a PMIR Feed"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Patient/PatientPmirFeed"/>
       </reference>
-      <name value="PatientPmirFeed"/>
+      <name value="Patient PMIR Feed"/>
       <description value="Example PMIR patient feed"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
     </resource>
@@ -64,7 +88,7 @@
       <reference>
         <reference value="Patient/FranzMusterNeedsAbsoluteUrl"/>
       </reference>
-      <name value="FranzMusterNeedsAbsoluteUrl"/>
+      <name value="Franz Muster Needs Absolute Url"/>
       <description value="Example Patient"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
     </resource>
@@ -78,59 +102,11 @@
     </resource>
     <resource>
       <reference>
-        <reference value="Parameters/ParametersPmirInput"/>
-      </reference>
-      <name value="ParametersPmirInput"/>
-      <description value="Example Input Parameters PMIR Mobile Patient Identifier Corss-reference Query"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Parameters/ParametersPmirOutput"/>
-      </reference>
-      <name value="ParametersPmirOutput"/>
-      <description value="Example Output Parameters PMIR Mobile Patient Identifier Corss-reference Query"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Bundle/BundlePmirFeed"/>
-      </reference>
-      <name value="BundlePmirFeed"/>
-      <description value="Example Bundle for a PMIR Feed"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="Bundle/BundlePmirResponse"/>
       </reference>
-      <name value="BundlePmirResponse"/>
+      <name value="Bundle PMIR Response"/>
       <description value="Example Bundle for a PMIR Response"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle-response"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="DocumentReference/2-7-DocRefMedicationCard"/>
-      </reference>
-      <name value="Document Reference for MedicationCard"/>
-      <description value="Example DocumentReference for a MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="DocumentManifest/2-7-DocManMedicationCard"/>
-      </reference>
-      <name value="DocumentManifest for MedicationCard"/>
-      <description value="Example DocumentManifest for a MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Bundle/2-7-BundleProvideDocument-Response"/>
-      </reference>
-      <name value="MHD Provide Document Bundle Response for MedicationCard"/>
-      <description value="MHD Provide Document Bundle Response for MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
     </resource>
     <resource>
       <reference>
@@ -142,83 +118,46 @@
     </resource>
     <resource>
       <reference>
+        <reference value="DocumentManifest/2-7-DocManMedicationCard"/>
+      </reference>
+      <name value="DocumentManifest for MedicationCard"/>
+      <description value="Example DocumentManifest for a MedicationCard"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="DocumentReference/2-7-DocRefMedicationCard"/>
+      </reference>
+      <name value="DocumentReference for MedicationCard"/>
+      <description value="Example DocumentReference for a MedicationCard"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/2-7-BundleProvideDocument-Response"/>
+      </reference>
+      <name value="MHD Provide Document Bundle Response for MedicationCard"/>
+      <description value="MHD Provide Document Bundle Response for MedicationCard"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Bundle/Bundle-FindDocumentManifests"/>
       </reference>
-      <name value="MHD Find Document Manifests"/>
-      <description value="MHD Find Document Manifests - Bundle as Response"/>
+      <name value="MHD Find DocumentManifests"/>
+      <description value="MHD Find DocumentManifests - Bundle as Response"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest-bundle"/>
     </resource>
     <resource>
       <reference>
         <reference value="Bundle/Bundle-FindDocumentReferences"/>
       </reference>
-      <name value="MHD Find Document References"/>
-      <description value="MHD Find Document References - Bundle as Response"/>
+      <name value="MHD Find DocumentReferences"/>
+      <description value="MHD Find DocumentReferences - Bundle as Response"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference-bundle"/>
     </resource>
 
-
-    <!-- CH EPR mHealth structure definitions -->
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-epr-mhealth-birthname"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-epr-mhealth-humanname"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-ext-author-authorrole"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-ext-deletionstatus"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-comprehensive-documentmanifest-bundle"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-comprehensive-documentreference-bundle"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-comprehensive-documentreference"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
+    <!-- CH EPR mHealth: Resource Profiles -->
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-pixm-in-parameters"/>
@@ -233,19 +172,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-pmir-bundle-response"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/ch-pmir-bundle"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-pmir-messageheader-response"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -263,10 +190,88 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ch-pmir-bundle-response"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-pmir-messageheader-response"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/IHE-MHD-Provide-Comprehensive-DocumentBundle"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-mhd-comprehensive-documentreference"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-mhd-comprehensive-documentmanifest-bundle"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-mhd-comprehensive-documentreference-bundle"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+
+    <!-- CH EPR mHealth: Data Type Profiles -->
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-epr-mhealth-humanname"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-epr-mhealth-birthname"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+
+    <!-- CH EPR mHealth: Extension Definitions -->
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-ext-author-authorrole"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ch-ext-deletionstatus"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    
+    <!-- Referencing IHE profiles -->
     <resource>
       <reference>
         <reference value="StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest.Bundle"/>
@@ -381,7 +386,43 @@
     <!-- CH EPR mHealth Capability Statements -->
     <resource>
       <reference>
+        <reference value="CapabilityStatement/CH.mHealth.App"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.PMIR.Consumer"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.PMIR.Source"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.MHD.DocumentSource"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="CapabilityStatement/CH.MHD.DocumentConsumer"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.mHealth.MobileAccessGateway"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.PMIR.Manager"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -397,43 +438,7 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.MHD.DocumentSource"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.mHealth.App"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.mHealth.MobileAccessGateway"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.PMIR.Consumer"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.PMIR.Manager"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.PMIR.Source"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-
+    
     <!-- imported IHE FHIR Capability Statements -->
     <resource>
       <reference>
