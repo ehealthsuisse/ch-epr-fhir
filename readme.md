@@ -21,7 +21,27 @@ GoFSH is executed from the command line. GoFSH requires that these files be JSON
 gofsh ./input/resources/structuredefinition -o ./input/fsh -d ch.fhir.ig.ch-core@1.0.0 -d ch.fhir.ig.ch-epr-term@2.0.4 -d ihe.mhd.fhir@current
 ```
 
-## Source Information
+## Relation to IHE profiles since version v0.1.3 (currently as CI build and work in progress)
+
+CH EPR mHealth profile | Relation/Action | IHE profile (Source)
+--- | --- | --- 
+CH PIXm IN Parameters | TBD | TBD
+CH PIXm OUT Parameters | TBD | TBD
+CH PMIR Bundle Message | TBD | TBD
+CH EPR mHealth Patient Profile for IHE PMIR | TBD | TBD
+CH EPR mHealth Provider Organization Profile for IHE PMIR | TBD | TBD
+CH PMIR Bundle Message Response | TBD | TBD
+CH PMIR MessageHeader Response | TBD | TBD
+CH MHD Provide Comphrensive Document Bundle | TBD | TBD
+IHE_MHD_Provide_Comprehensive_DocumentBundle | TBD | TBD
+CH MHD Comprehensive DocumentManifest (SubmissionSet)
+[CH MHD Comprehensive DocumentReference](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/StructureDefinition-ch-mhd-comprehensive-documentreference.html) | TBD | TBD
+CH MHD Provide Comphrensive Document Bundle Response | `conformsTo` | [MHD Comprehensive DocumentReference](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) (https://github.com/IHE/ITI.MHD)
+CH MHD Comprehensive DocumentManifest (SubmissionSet) Bundle | TBD | TBD
+CH MHD Comprehensive DocumentReference Bundle | TBD | TBD
+
+
+## Source Information until v0.1.2
 The profiles of the FHIR implementation guide CH EPR mHealth are **derived** or **copied and adapted** from existing IHE profiles. Therefore they have been **imported** into the implementation guide. The sources of the structure definitions, operation definitions and capability statements and their dependencies are listed below.
 
 * https://github.com/IHE/fhir
@@ -66,6 +86,8 @@ The IHE profiles are **imported** from https://github.com/IHE/ITI.MHD ([FHIR IG 
 * IHE.MHD.ProvideDocumentBundle.Comprehensive 
    * IHE.MHD.Comprehensive.List
       * IHE.MHD.Minimal.List
+   * IHE.MHD.Provide.Comprehensive.DocumentReference + IHE.MHD.Query.Comprehensive.DocumentReference
+      * IHE.MHD.Provide.Minimal.DocumentReference
    * IHE.MHD.Comprehensive.DocumentManifest
       * IHE.MHD.Minimal.DocumentManifest 
 
@@ -73,8 +95,9 @@ The IHE profiles are **imported** from https://github.com/IHE/ITI.MHD ([FHIR IG 
 * ch-mhd-providedocumentbundle-comprehensive **is copied from** IHE.MHD.ProvideDocumentBundle.Comprehensive **and adapted to Swiss requirements** 
    * ch-mhd-comprehensive-documentmanifest **is copied from** IHE.MHD.Comprehensive.DocumentManifest **and adapted to Swiss requirements**
       * ch-ext-author-authorrole
-   * ch-mhd-comprehensive-documentreference
+   * ch-mhd-provide-comprehensive-documentreference **is copied from** IHE.MHD.Provide.Comprehensive.DocumentReference **and adapted to Swiss requirements**
       * ch-ext-deletionstatus
+      * ch-mhd-query-comprehensive-documentreference **is copied from** IHE.MHD.Query.Comprehensive.DocumentReference **and adapted to Swiss requirements**
 * ch-mhd-providedocumentbundle-comprehensive-response
 
 #### Validation
