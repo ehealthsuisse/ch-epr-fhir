@@ -23,11 +23,13 @@ gofsh ./input/resources/structuredefinition -o ./input/fsh -d ch.fhir.ig.ch-core
 
 ## Relation to IHE profiles since version v0.1.3 (currently as CI build and work in progress)
 
+### Structure Definitions
+
 To support **conformance** to the IHE profiles, the following validation mechanisms are added in this implementation guide:
 * The CH EPR mHealth profiles check the conformity to the corresponding IHE profile using constraints (`conformsTo`)
 * The examples are validated against both profiles (CH EPR mHealth & IHE) (listed in `meta.profile`)
 
-CH EPR mHealth profile | Relation/Action | IHE profile (Source)
+CH EPR mHealth Structure Definition | Relation/Action | IHE Structure Definition (Source)
 --- | --- | --- 
 CH PIXm IN Parameters | TBD | TBD
 CH PIXm OUT Parameters | TBD | TBD
@@ -44,6 +46,19 @@ CH MHD Provide Comphrensive Document Bundle Response | TBD | TBD
 CH MHD Comprehensive DocumentManifest (SubmissionSet) Bundle | TBD | TBD
 CH MHD Comprehensive DocumentReference Bundle | TBD | TBD
 
+### Capability Statements
+
+CH EPR mHealth Capability Statement | Relation/Action | IHE Capability Statement (Source)
+--- | --- | --- 
+[CH.mHealth.App](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.mHealth.App.html) | - | -
+[CH.PMIR.Consumer](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.PMIR.Consumer.html) | as a template and adapted to Swiss requirements | https://github.com/JohnMoehrke/ITI.PIXm ([FHIR IG (CI Build)](http://build.fhir.org/ig/JohnMoehrke/ITI.PIXm/branches/master/index.html)) (as of Aug 7, 2020)
+[CH.PMIR.Source](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.PMIR.Source.html) | - | -
+[CH.MHD.DocumentSource](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentSource.html) | as a template and adapted to Swiss requirements | https://github.com/IHE/fhir (as of Aug 13, 2020)
+[CH.MHD.DocumentConsumer](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentConsumer.html) | as a template and adapted to Swiss requirements | https://github.com/IHE/fhir (as of Aug 13, 2020)
+[CH.mHealth.MobileAccessGateway](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.mHealth.MobileAccessGateway.html) | - | -
+[CH.PMIR.Manager](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.PMIR.Manager.html) | - | https://github.com/JohnMoehrke/ITI.PIXm ([FHIR IG (CI Build)](http://build.fhir.org/ig/JohnMoehrke/ITI.PIXm/branches/master/index.html)) (as of Aug 7, 2020)
+[CH.MHD.DocumentRecipient](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentRecipient.html) | as a template and adapted to Swiss requirements | https://github.com/IHE/fhir (as of Aug 13, 2020)
+[CH.MHD.DocumentResponder](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentResponder.html) | as a template and adapted to Swiss requirements | https://github.com/IHE/fhir (as of Aug 13, 2020)
 
 ## Source Information until v0.1.2
 The profiles of the FHIR implementation guide CH EPR mHealth are **derived** or **copied and adapted** from existing IHE profiles. Therefore they have been **imported** into the implementation guide. The sources of the structure definitions, operation definitions and capability statements and their dependencies are listed below.

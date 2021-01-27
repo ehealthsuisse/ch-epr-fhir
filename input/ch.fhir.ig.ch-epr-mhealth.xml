@@ -438,45 +438,6 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    
-    <!-- imported IHE FHIR Capability Statements -->
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/IHE.MHD.DocumentConsumer"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/IHE.MHD.DocumentRecipient"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/IHE.MHD.DocumentResponder"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/IHE.MHD.DocumentSource"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/IHE.PIXm.Consumer"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/IHE.PIXm.Manager"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-
 
     <!-- CH EPR mHealth Code Systems -->
     <resource>
