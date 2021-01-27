@@ -46,6 +46,13 @@ CH MHD Provide Comphrensive Document Bundle Response | TBD | TBD
 CH MHD Comprehensive DocumentManifest (SubmissionSet) Bundle | TBD | TBD
 CH MHD Comprehensive DocumentReference Bundle | TBD | TBD
 
+
+### Operation Definitions
+
+CH EPR mHealth Operation Definition | Relation/Action | IHE Operation Definition (Source)
+--- | --- | --- 
+[CH.PMIR](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/OperationDefinition-CH.PMIR.html) | as a template and adapted to Swiss requirements | [https://github.com/JohnMoehrke/ITI.PIXm](https://github.com/JohnMoehrke/ITI.PIXm/blob/master/input/resources/operationdefinition-IHE_PIXm_pix.xml) ([FHIR IG (CI Build)](http://build.fhir.org/ig/JohnMoehrke/ITI.PIXm/branches/master/OperationDefinition-IHE_PIXm_pix.html)) (as of Aug 7, 2020)
+
 ### Capability Statements
 
 CH EPR mHealth Capability Statement | Relation/Action | IHE Capability Statement (Source)

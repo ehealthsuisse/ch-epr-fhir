@@ -374,14 +374,6 @@
       <exampleBoolean value="false"/>
     </resource>
 
-    <!-- imported IHE FHIR Operation Defintions -->
-    <resource>
-      <reference>
-        <reference value="OperationDefinition/IHE.PIXm.pix"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-
 
     <!-- CH EPR mHealth Capability Statements -->
     <resource>
