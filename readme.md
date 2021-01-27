@@ -56,7 +56,7 @@ CH EPR mHealth Capability Statement | Relation/Action | IHE Capability Statement
 [CH.MHD.DocumentSource](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentSource.html) | as a template and adapted to Swiss requirements | https://github.com/IHE/fhir (as of Aug 13, 2020)
 [CH.MHD.DocumentConsumer](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentConsumer.html) | as a template and adapted to Swiss requirements | https://github.com/IHE/fhir (as of Aug 13, 2020)
 [CH.mHealth.MobileAccessGateway](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.mHealth.MobileAccessGateway.html) | - | -
-[CH.PMIR.Manager](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.PMIR.Manager.html) | - | https://github.com/JohnMoehrke/ITI.PIXm ([FHIR IG (CI Build)](http://build.fhir.org/ig/JohnMoehrke/ITI.PIXm/branches/master/index.html)) (as of Aug 7, 2020)
+[CH.PMIR.Manager](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.PMIR.Manager.html) | as a template and adapted to Swiss requirements | https://github.com/JohnMoehrke/ITI.PIXm ([FHIR IG (CI Build)](http://build.fhir.org/ig/JohnMoehrke/ITI.PIXm/branches/master/index.html)) (as of Aug 7, 2020)
 [CH.MHD.DocumentRecipient](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentRecipient.html) | as a template and adapted to Swiss requirements | https://github.com/IHE/fhir (as of Aug 13, 2020)
 [CH.MHD.DocumentResponder](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentResponder.html) | as a template and adapted to Swiss requirements | https://github.com/IHE/fhir (as of Aug 13, 2020)
 
