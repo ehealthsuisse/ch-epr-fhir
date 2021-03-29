@@ -20,10 +20,10 @@ The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *S
 The extensions, restrictions and translations specified apply to the following IHE IT Infrastructure (ITI) Integration profiles:
 
 * [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/)
-* [IUA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_IUA.pdf)
+* [IUA](https://profiles.ihe.net/ITI/IUA/index.html)
 * [PMIR](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PMIR.pdf)
 * [MHD](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf)
-* [RESTFul ATNA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)
+* [RESTful ATNA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)
 
 ### Overview
 
@@ -36,10 +36,11 @@ technologies (REST, OAuth, etc.) which are widely spread in the developer commun
 native applications and Web Applications as well, for example in primary systems.
 
 The scope of this extension covers the following use cases:
-1. User Authentication and authorization;
-2. Read documents from the EPR;
-3. Write documents to the EPR;
-4. Write logs to the EPR ATNA Audit Repository.
+1.	Client authentication and authorization; 
+2.	User Authentication; 
+3.	Read documents from the EPR;
+4.	Write documents to the EPR; 
+5.	Write logs to the EPR ATNA Audit Record Repository.   
 
 This extension covers two options:
 1. Generic mHealth option – This option adresses primary systems or mobile applications using the basic EPR flows but replace the XDS.b related and PIX V3 profiles with the FHIR based profiles;
