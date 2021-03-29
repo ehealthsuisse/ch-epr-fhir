@@ -37,5 +37,5 @@ request may be to retrieve the document content referenced by a
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Patient Identity Manager using IUA profile with basic access token. Consequently
-the Retrieve Document [ITI-68] request must authorize using the Incorporate Authorization Token [ITI-72]
+the Retrieve Document [ITI-68] request must authorize using the Incorporate Access Token [ITI-72]
 transaction of the IUA profile.

@@ -71,4 +71,4 @@ See [Output Parameters example](Parameters-ParametersPmirOutput.html) (and the c
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Patient Identity Manager using IUA profile with basic access token. Consequently
 the Mobile Patient Identifier Cross-reference Query [ITI-83] request must authorize using the Incorporate
-Authorization Token [ITI-72] transaction of the IUA profile.
+Access Token [ITI-72] transaction of the IUA profile.

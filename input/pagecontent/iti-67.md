@@ -46,5 +46,5 @@ See [Bundle example](Bundle-Bundle-FindDocumentReferences.html) (and the corresp
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Patient Identity Manager using IUA profile with basic access token. Consequently
-the Find Document References [ITI-67] request must authorize using the Incorporate Authorization Token
+the Find Document References [ITI-67] request must authorize using the Incorporate Access Token
 [ITI-72] transaction of the IUA profile.

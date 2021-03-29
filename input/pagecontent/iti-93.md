@@ -47,5 +47,5 @@ See [Bundle example](Bundle-BundlePmirResponse.html) (and the corresponding [pro
 ### Security Consideration
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Patient Identity Manager using IUA profile with basic access token. Consequently
-the Mobile Patient Identity Feed [ITI-93] request must authorize using the Incorporate Authorization Token
+the Mobile Patient Identity Feed [ITI-93] request must authorize using the Incorporate Access Token
 [ITI-72] transaction of the IUA profile.
