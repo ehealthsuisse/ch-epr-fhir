@@ -44,6 +44,6 @@ See [Bundle example](Bundle-Bundle-FindDocumentManifests.html) (and the correspo
 ### Security Consideration
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
-Patient Identity Manager using IUA profile with basic access token. Consequently
+Document Responder using IUA profile with extended access token. Consequently
 the Finde Document Manifest [ITI-66] request must authorize using the Incorporate Access Token [ITI-
 72] transaction of the IUA profile.

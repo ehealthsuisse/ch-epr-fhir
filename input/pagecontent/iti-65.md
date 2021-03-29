@@ -53,6 +53,6 @@ See [Bundle example](Bundle-2-7-BundleProvideDocument-Response.html) (and the co
 ### Security Consideration
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
-Patient Identity Manager using IUA profile with basic access token. Consequently
+Document Recipient using IUA profile with extended access token. Consequently
 the Provide Document Bundle [ITI-65] request must authorize using the Incorporate Access Token [ITI-
 72] transaction of the IUA profile.
