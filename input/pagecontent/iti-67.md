@@ -25,7 +25,7 @@ This MHD Profile is based on Release 4 of the emerging [HL7® FHIR®](https://ww
 
 ### Messages
 
-{% include MHD_ActorDiagram_ITI-67.svg %}
+<div>{% include MHD_ActorDiagram_ITI-67.svg %}</div>
 
 ### Trigger Events
 
