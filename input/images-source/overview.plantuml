@@ -1,0 +1,43 @@
+@startuml
+
+title **Profiles, actors and transactions covered in this national extension**
+
+skinparam componentStyle rectangle
+left to right direction
+
+component "mHealth: App" {
+  [IUA Authorization Client] as IUAClient
+
+  [PIXm Patient Identifier Cross-reference Consumer] as PIXmConsumer
+  [CH:PIXm Patient Identity Source] as PIXmSource
+
+  [MHD Document Source] as MHDSource
+  [MHD Document Consumer] as MHDConsumer
+
+  [RESTful ATNA Secure Node] as ATNANode
+}
+
+component "mHealth: Mobile Access Gateway" {
+  [IUA Authorization Server] as IUAAuthServer
+  IUAClient -> IUAAuthServer : Get Access Token [ITI-71], \nGet Authorization Server Metadata [ITI-103]
+  [IUA Resource Server] as IUAResourceServer
+  IUAClient --> IUAResourceServer : Incorporate Access Token [ITI-72]
+
+  [CH:PIXm Patient Identifier Cross-reference Manager] as PIXmManager
+  PIXmConsumer --> PIXmManager : Mobile Patient Identifier Cross-reference Query [ITI-83]
+  PIXmSource --> PIXmManager : Mobile Patient Identity Feed [ITI-93]
+
+  [MHD Document Recipient] as MHDRecipient
+  MHDSource --> MHDRecipient : Provide Document Bundle [ITI-65]
+
+  [MHD Document Responder] as MHDResponder
+  MHDConsumer --> MHDResponder : Find Document Manifests [ITI-66], \nFind Document References [ITI-67], \nRetrieve Document [ITI-68] 
+
+  [RESTful ATNA Audit Record Repository] as ATNARepository
+  ATNANode --> ATNARepository : Record Audit Event [ITI-20]
+}
+
+[User Authentication Provider] as UAProvider
+IUAAuthServer --> UAProvider : Authenticate User
+
+@enduml
