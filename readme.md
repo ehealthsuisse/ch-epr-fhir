@@ -1,26 +1,6 @@
 # CH EPR mHealth
 The national IHE extensions documented in this FHIR implementation guide shall be used in conjunction with the definitions of integration profiles, actors and transactions provided in Volumes 1 through 3 of the IHE IT Infrastructure Technical Framework.
 
-
-## Building the Diagrams
-[PlantUML](http://plantuml.com/) is used to generate the sequence diagrams. Execute the shell script ./do-it.sh
-
-
-## SUSHI (SUSHI Unshortens ShortHand Inputs)
-*"[FHIR Shorthand (FSH)](http://build.fhir.org/ig/HL7/fhir-shorthand/) is a domain-specific language for defining the contents of FHIR Resources and Implementation Guides. Explore [FSH School](https://fshschool.org/) to get the knowledge you need to get started using FSH."*
-
-### Preparation to use SUSHI
-* [Install Node.js](https://fshschool.org/docs/sushi/installation/#step-1-install-nodejs)
-* [Install SUSHI](https://fshschool.org/docs/sushi/installation/#step-2-install-sushi)
-
-### GoFSH
-Using [GoFSH](https://fshschool.org/docs/gofsh/), you can turn existing FHIR artifacts into FSH definitions.
-
-GoFSH is executed from the command line. GoFSH requires that these files be JSON. An example form of the GoFSH execution command is as follows:
-```
-gofsh ./input/resources/structuredefinition -o ./input/fsh -d ch.fhir.ig.ch-core@1.0.0 -d ch.fhir.ig.ch-epr-term@2.0.4 -d ihe.mhd.fhir@current
-```
-
 ## Relation to IHE profiles since version v0.1.3 (currently as CI build and work in progress)
 
 ### Structure Definitions
