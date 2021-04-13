@@ -21,19 +21,15 @@ The extensions, restrictions and translations specified apply to the following I
 
 * [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/)
 * [IUA](https://profiles.ihe.net/ITI/IUA/index.html)
-* [PMIR](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PMIR.pdf)
-* [MHD](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf)
+* [PIXm](https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PIXm.pdf), [PMIR](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PMIR.pdf)
+* [MHD](https://profiles.ihe.net/ITI/MHD/index.html)
 * [RESTful ATNA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)
 
 ### Overview
 
 #### Introduction
 
-This national extension is motivated by the intention to ease integration of mobile applications to the Swiss
-EPR by extending the IHE FHIR based mobile profiles. This national extension to IHE profiles is intended for
-mobile applications running on mobile devices, but not limited to. The IHE FHIR based mobile profiles use
-technologies (REST, OAuth, etc.) which are widely spread in the developer community and may be used for
-native applications and Web Applications as well, for example in primary systems.
+This national extension is motivated by the intention to ease integration of mobile applications to the Swiss EPR by extending the IHE FHIR based mobile profiles. This national extension to IHE profiles is intended for mobile applications running on mobile devices, but not limited to. The IHE FHIR based mobile profiles use technologies (REST, OAuth, etc.) which are widely spread in the developer community and may be used for native applications and Web Applications, for example in web based primary systems.
 
 The scope of this extension covers the following use cases:
 1.	Client authentication and authorization; 
@@ -46,7 +42,7 @@ This extension covers two options:
 1. Generic mHealth option – This option adresses primary systems or mobile applications using the basic EPR flows but replace the XDS.b related and PIX V3 profiles with the FHIR based profiles;
 2. SMART on FHIR – This option adresses mobile apps or modular primary systems that want to connect to the Swiss EPR using SMART on FHIR.
 
-The options differ by the architecture for the user authentication and request authorization. While in the
+The options differ by the architecture for the user authentication and authorization. While in the
 generic mHealth option all profiles and extensions defined in this extension must be applied, in the SMART
 on FHIR option only a subset of the mHealth profiles and transactions must be applied.
 
