@@ -3,7 +3,7 @@
 <Patient xmlns="http://hl7.org/fhir">
   <id value="FranzMusterNeedsAbsoluteUrl"/>
   <meta>
-    <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
+    <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
   </meta>
   <contained>
     <Organization xmlns="http://hl7.org/fhir">

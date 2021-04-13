@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ch-pmir-bundle" />
+  <id value="ch-pixm-bundle" />
   <text>
     <status value="additional" />
     <div xmlns="http://www.w3.org/1999/xhtml">
 StructureDefinition for Bundle resource constraints in the CH EPR mHealth Implementation Guide </div>
   </text>
-  <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle" />
-  <name value="IHE_PMIR_Bundle_CH" />
-  <title value="CH PMIR Bundle Message" />
+  <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle" />
+  <name value="CH:PIXm_Bundle_CH" />
+  <title value="CH:PIXm Bundle Feed Message" />
   <status value="draft" />
   <date value="2020-06-15" />
   <publisher value="eHealth Suisse"/>
@@ -19,8 +19,8 @@ StructureDefinition for Bundle resource constraints in the CH EPR mHealth Implem
       <value value="https://www.e-health-suisse.ch"/>
     </telecom>
   </contact>
-  <description value="See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)" />
-  <purpose value="Added constraints for the Bundle resource for PMIR." />
+  <description value="See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(CH:PIXm)" />
+  <purpose value="Added constraints for the Bundle resource for CH:PIXm." />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="v2" />
@@ -50,14 +50,14 @@ StructureDefinition for Bundle resource constraints in the CH EPR mHealth Implem
   <differential>
     <element id="Bundle">
       <path value="Bundle"/>
-      <short value="CH PMIR Bundle Message"/>
+      <short value="CH CH:PIXm Bundle Message"/>
       <min value="0"/>
       <max value="*"/>
       <constraint>
-        <key value="ch-pmir-bdl-1"/>
+        <key value="ch-pixm-bdl-1"/>
         <severity value="error"/>
-        <human value="Patient resoures in the bundle must conform to the ch-pmir-patient restrictions"/>
-        <expression value="entry.resource.entry.all(resource.conformsTo('http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient'))"/>
+        <human value="Patient resoures in the bundle must conform to the ch-pixm-patient restrictions"/>
+        <expression value="entry.resource.entry.all(resource.conformsTo('http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient'))"/>
       </constraint>
     </element>
   </differential>

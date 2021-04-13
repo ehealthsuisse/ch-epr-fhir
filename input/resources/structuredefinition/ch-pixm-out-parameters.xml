@@ -62,7 +62,7 @@
       <path value="Parameters.parameter.valueReference" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient" />
+        <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient" />
         <aggregation value="referenced" />
       </type>
     </element>

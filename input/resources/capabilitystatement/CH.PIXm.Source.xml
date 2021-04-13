@@ -1,8 +1,8 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-    <id value="CH.PMIR.Source"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PMIR.Source" />
-    <name value="CH_PMIR_Source" />
-    <title value="PMIR Patient Identity Source (client)" />
+    <id value="CH.PIXm.Source"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PIXm.Source" />
+    <name value="CH_PIXm_Source" />
+    <title value="PIXm Patient Identity Source (client)" />
     <status value="draft" />
     <date value="2020-07-09" />
     <publisher value="eHealth Suisse"/>
@@ -13,21 +13,21 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="CapabilityStatement for Actor PMIR Patient Identity Source (client)." />
+    <description value="CapabilityStatement for Actor CH:PIXm Patient Identity Source (client)." />
     <kind value="requirements" />
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
     <format value="application/fhir+json" />
     <rest>
         <mode value="client" />
-        <documentation value="PMIR client registers data of a specific patient in the Patient Identity Manager [ITI-93]." />
+        <documentation value="CH:PIXm client registers data of a specific patient in the Patient Identifier Cross-reference Manager [ITI-93]." />
         <security>
             <cors value="false" />
             <description value="TLS SHALL be used" />
         </security>
         <interaction>
             <code value="transaction"/>
-            <documentation value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle"/>
+            <documentation value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle"/>
         </interaction>
     </rest>
 </CapabilityStatement>

@@ -1,10 +1,10 @@
 {
   "resourceType": "Bundle",
   "type": "message",
-  "id": "BundlePmirFeed",
+  "id": "BundlePIXmFeed",
   "meta": {
     "profile": [
-      "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle"
+      "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle"
     ]
   },
   "entry": [
@@ -37,13 +37,13 @@
         "type": "history",
         "entry": [
           {
-            "fullUrl": "http://example.com/fhir/Patient/PatientPmirFeed",
+            "fullUrl": "http://example.com/fhir/Patient/PatientPIXmFeed",
             "resource": {
               "resourceType": "Patient",
-              "id": "PatientPmirFeed",
+              "id": "PatientPIXmFeed",
               "text": {
                 "status": "generated",
-                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: PatientPmirFeed</p><p><b>meta</b>: </p><p><b>identifier</b>: Medical record number = 8734</p><p><b>name</b>: Franz Muster , Muster </p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1995-01-27</p></div>"
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>id</b>: PatientPIXmFeed</p><p><b>meta</b>: </p><p><b>identifier</b>: Medical record number = 8734</p><p><b>name</b>: Franz Muster , Muster </p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1995-01-27</p></div>"
               },
               "contained": [
                 {

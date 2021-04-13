@@ -5,15 +5,14 @@ The Mobile Patient Identity Feed transaction sends a FHIR Bundle of new and upda
 ### Actor Roles
 
 **Actor:** Supplier played by Patient Identity Source   
-**Role:** Registers data of a specific patient in the Patient Identity Manager.   
-**Actor:** Consumer played by Patient Identity Manager   
+**Role:** Registers data of a specific patient in the Patient Identifier Cross-reference Manager.   
+**Actor:** Consumer played by Patient Identifier Cross-reference Manager   
 **Role:** Stores the patient data provided with the request and assigns it to or creates a master patient record and a MPI-PID.   
 
 ### Referenced Standards
 
+[Patient Identifier Cross-reference for Mobile (PIXm), Rev. 2.1 – Trial Implementation, December 5, 2019](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PIXm.pdf)
 [Patient Master Identity Registry (PMIR) – Revision 1.1 – December 5, 2019](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PMIR.pdf)   
-Approved CP 1197-04 PMIR – Update to Message Semantics for ITI-93 Mobile Patient Identity Feed   
-Approved CP 1198-01 PMIR – Clarify Patient Identity Manager return in merge/delete case
 
 ### Messages
 
@@ -26,26 +25,26 @@ merged, or deleted.
 
 ### Message Semantics
 
-The same message semantic apply as in 3.93.4.1.2 Message Semantics of the CP-ITI-1197.
+The same message semantic apply as in 3.93.4.1.2 Message Semantics.
 
-The patient data (see [Patient example](Patient-PatientPmirFeed.html)) shall be conformant to the CH-PMIR Patient profile with the canonical url
-[http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient](StructureDefinition-ch-pmir-patient.html). 
+The patient data (see [Patient example](Patient-PatientPIXmFeed.html)) shall be conformant to the CH:PIXm Patient profile with the canonical url
+[http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient](StructureDefinition-ch-pixm-patient.html). 
 If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID 
 as an identifier MAY be added. The birthname can be added with the ISO 21090 qualifier extension, the religion MUST
 not be added.
 
-### Expected Actions Consumer played by Patient Identity Manager
+### Expected Actions Consumer played by Patient Identifier Cross-reference Manager
 
 If the MPI-PID is provided as an identifier the Patient Identity Manger SHALL use the MPI-PID to correlate
 the patient in the community.
 
 ### Message Example
 
-See [Bundle example](Bundle-BundlePmirFeed.html) (and the corresponding [profile](StructureDefinition-ch-pmir-bundle.html)) for the Mobile Patient Identity Feed **request**.   
-See [Bundle example](Bundle-BundlePmirResponse.html) (and the corresponding [profile](StructureDefinition-ch-pmir-bundle-response.html)) for the Mobile Patient Identity Feed **response**.
+See [Bundle example](Bundle-BundlePIXmFeed.html) (and the corresponding [profile](StructureDefinition-ch-pixm-bundle.html)) for the Mobile Patient Identity Feed **request**.   
+See [Bundle example](Bundle-BundlePIXmResponse.html) (and the corresponding [profile](StructureDefinition-ch-pixm-bundle-response.html)) for the Mobile Patient Identity Feed **response**.
 
 ### Security Consideration
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
-Patient Identity Manager using IUA profile with basic access token. Consequently
+Patient Identifier Cross-reference Manager using IUA profile with basic access token. Consequently
 the Mobile Patient Identity Feed [ITI-93] request must authorize using the Incorporate Access Token
 [ITI-72] transaction of the IUA profile.

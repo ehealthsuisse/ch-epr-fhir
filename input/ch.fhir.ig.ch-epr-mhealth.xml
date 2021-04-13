@@ -54,35 +54,35 @@
     <!-- examples -->
     <resource>
       <reference>
-        <reference value="Parameters/ParametersPmirInput"/>
+        <reference value="Parameters/ParametersPIXmInput"/>
       </reference>
-      <name value="Parameters PMIR Input"/>
-      <description value="Example Input Parameters PMIR Mobile Patient Identifier Corss-reference Query"/>
+      <name value="Parameters PIXm Query Input"/>
+      <description value="Example Input Parameters Mobile Patient Identifier Corss-reference Query"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
     </resource>
     <resource>
       <reference>
-        <reference value="Parameters/ParametersPmirOutput"/>
+        <reference value="Parameters/ParametersPIXmOutput"/>
       </reference>
-      <name value="Parameters PMIR Output"/>
-      <description value="Example Output Parameters PMIR Mobile Patient Identifier Corss-reference Query"/>
+      <name value="Parameters PIXm Query Output"/>
+      <description value="Example Output Parameters Mobile Patient Identifier Corss-reference Query"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
     </resource>
     <resource>
       <reference>
-        <reference value="Bundle/BundlePmirFeed"/>
+        <reference value="Bundle/BundlePIXmFeed"/>
       </reference>
-      <name value="Bundle PMIR Feed"/>
-      <description value="Example Bundle for a PMIR Feed"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle"/>
+      <name value="Bundle CH:PIXm Feed"/>
+      <description value="Example Bundle for a CH:PIXm Feed"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle"/>
     </resource>
     <resource>
       <reference>
-        <reference value="Patient/PatientPmirFeed"/>
+        <reference value="Patient/PatientPIXmFeed"/>
       </reference>
-      <name value="Patient PMIR Feed"/>
-      <description value="Example PMIR patient feed"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
+      <name value="Patient CH:PIXm Feed"/>
+      <description value="Example CH:PIXm patient feed"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
     </resource>
     <resource>
       <reference>
@@ -90,7 +90,7 @@
       </reference>
       <name value="Franz Muster Needs Absolute Url"/>
       <description value="Example Patient"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
     </resource>
     <resource>
       <reference>
@@ -98,15 +98,15 @@
       </reference>
       <name value="GruppenpraxisCH"/>
       <description value="Example Organization"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-provider-organization"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-provider-organization"/>
     </resource>
     <resource>
       <reference>
-        <reference value="Bundle/BundlePmirResponse"/>
+        <reference value="Bundle/BundlePIXmResponse"/>
       </reference>
-      <name value="Bundle PMIR Response"/>
-      <description value="Example Bundle for a PMIR Response"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle-response"/>
+      <name value="Bundle CH:PIXm Feed Response"/>
+      <description value="Example Bundle for a CH:PIXm Feed Response"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle-response"/>
     </resource>
     <resource>
       <reference>
@@ -172,31 +172,31 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-pmir-bundle"/>
+        <reference value="StructureDefinition/ch-pixm-bundle"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-pmir-patient"/>
+        <reference value="StructureDefinition/ch-pixm-patient"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-pmir-provider-organization"/>
+        <reference value="StructureDefinition/ch-pixm-provider-organization"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-pmir-bundle-response"/>
+        <reference value="StructureDefinition/ch-pixm-bundle-response"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-pmir-messageheader-response"/>
+        <reference value="StructureDefinition/ch-pixm-messageheader-response"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -369,7 +369,7 @@
     <!-- CH EPR mHealth  Operation Defintions -->
     <resource>
       <reference>
-        <reference value="OperationDefinition/CH.PMIR"/>
+        <reference value="OperationDefinition/CH.PIXm"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -384,13 +384,13 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CapabilityStatement/CH.PMIR.Consumer"/>
+        <reference value="CapabilityStatement/CH.PIXm.Consumer"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="CapabilityStatement/CH.PMIR.Source"/>
+        <reference value="CapabilityStatement/CH.PIXm.Source"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -414,7 +414,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CapabilityStatement/CH.PMIR.Manager"/>
+        <reference value="CapabilityStatement/CH.PIXm.Manager"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>

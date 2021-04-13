@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="ch-pmir-patient"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-patient"/>
-    <version value="0.1.0"/>
-    <name value="CHPmirPatient"/>
-    <title value="CH EPR mHealth Patient Profile for IHE PMIR"/>
+    <id value="ch-pixm-patient"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
+    <version value="0.2.0"/>
+    <name value="CHPIXmPatientFeed"/>
+    <title value="CH EPR mHealth Patient Profile for CH:PIXm Mobile Patient Identity Feed"/>
     <status value="draft"/>
-    <date value="2020-04-08"/>
+    <date value="2021-04-13"/>
     <publisher value="eHealth Suisse"/>
     <contact>
         <name value="eHealth Suisse"/>
@@ -15,7 +15,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="Patient"/>
+    <description value="The patient demographics and identifier information which can be provided in the CH:PIXm Feed according to the EPR. If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID as an identifier MAY be added. The birthname can be added with the  ISO 21090 qualifier extension."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -31,7 +31,7 @@
     <differential>
         <element id="Patient">
             <path value="Patient"/>
-            <short value="CH PMIR Patient"/>
+            <short value="CH:PIXm Patient"/>
         </element>
         <element id="Patient.extension:religion">
             <path value="Patient.extension" />
@@ -60,16 +60,10 @@
             <min value="0"/>
             <max value="1"/>
         </element>
-        <element id="Patient.identifier:AHVN13">
-            <path value="Patient.identifier"/>
-            <sliceName value="AHVN13"/>
-            <min value="0"/>
-            <max value="0"/>
-        </element>
         <element id="Patient.identifier:LocalPid">
             <path value="Patient.identifier" />
             <sliceName value="LocalPid" />
-            <min value="0" />
+            <min value="1" />
             <max value="*" />
             <patternIdentifier>
                 <type>
@@ -117,10 +111,9 @@
         <element id="Patient.managingOrganization">
             <path value="Patient.managingOrganization"/>
             <short value="Provider organization of the patient"/>
-            <comment value="ITI TF-2b: The Patient Identity Manager from PMIR MAY be grouped with the PIXV3 Patient Identifier Cross-reference Consumer to proxy the Mobile Patient Identifier Crossreference Query [ITI-83] to the PIXV3 Query [ITI-45] transactions, thus acting as a proxy to the Patient Identifier Cross-reference Manager that wants to enable RESTful query to its data."/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-provider-organization" />
+                <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-provider-organization" />
             </type>
         </element>
     </differential>

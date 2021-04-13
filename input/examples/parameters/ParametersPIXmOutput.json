@@ -1,6 +1,6 @@
 {
     "resourceType": "Parameters",
-    "id": "ParametersPmirOutput",
+    "id": "ParametersPIXmOutput",
     "meta": {
         "profile": [
             "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"

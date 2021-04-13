@@ -1,6 +1,6 @@
 {
     "resourceType": "Parameters",
-    "id": "ParametersPmirInput",
+    "id": "ParametersPIXmInput",
     "meta": {
         "profile": [
             "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"
@@ -20,7 +20,7 @@
         },
         {
             "name": "_format",
-            "valueCode": "application/fhir+json"
+            "valueCode": "json"
         }
     ]
 }

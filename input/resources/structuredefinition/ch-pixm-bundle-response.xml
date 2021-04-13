@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ch-pmir-bundle-response" />
-  <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle-response" />
-  <name value="IHE_PMIR_Bundle_Response_CH" />
-  <title value="CH PMIR Bundle Message Response" />
+  <id value="ch-pixm-bundle-response" />
+  <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle-response" />
+  <name value="CH_PIXm_Bundle_Response_CH" />
+  <title value="CH:PIXm Bundle Message Response" />
   <status value="draft" />
   <date value="2020-10-28" />
   <publisher value="eHealth Suisse"/>
@@ -14,8 +14,8 @@
       <value value="https://www.e-health-suisse.ch"/>
     </telecom>
   </contact>
-  <description value="See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)" />
-  <purpose value="Added constraints for the Bundle resource for PMIR (response)." />
+  <description value="See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(CH:PIXm)" />
+  <purpose value="Added constraints for the Bundle resource for CH:PIXm (response)." />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="v2" />
@@ -40,7 +40,7 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Bundle" />
-  <!--<baseDefinition value="http://ihe.net/fhir/StructureDefinition/IHE.PMIR.Bundle" />-->
+  <!--<baseDefinition value="  <baseDefinition value="http://ihe.net/fhir/StructureDefinition/IHE.PMIR.Bundle" />-->
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
   <derivation value="constraint" />
   <differential>
@@ -62,18 +62,18 @@
       </slicing>
       <min value="1" />
     </element>
-    <element id="Bundle.entry:PMIRMessageHeaderEntry">
+    <element id="Bundle.entry:IXmMessageHeaderEntry">
       <path value="Bundle.entry" />
-      <sliceName value="PMIRMessageHeaderEntry" />
+      <sliceName value="PIXmMessageHeaderEntry" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="Bundle.entry:PMIRMessageHeaderEntry.resource">
+    <element id="Bundle.entry:PIXmMessageHeaderEntry.resource">
       <path value="Bundle.entry.resource" />
       <min value="1" />
       <type>
         <code value="Resource" />
-        <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-messageheader-response" />
+        <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-messageheader-response" />
       </type>
     </element>
   </differential>

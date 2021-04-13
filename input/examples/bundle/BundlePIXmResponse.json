@@ -1,9 +1,9 @@
 {
   "resourceType": "Bundle",
-  "id": "BundlePmirResponse",
+  "id": "BundlePIXmResponse",
   "meta": {
     "profile": [
-      "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pmir-bundle-response"
+      "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle-response"
     ]
   },
   "type": "message",

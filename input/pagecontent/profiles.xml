@@ -26,15 +26,15 @@
   <div>
     <ul>
       <li>
-        <a href="StructureDefinition-ch-pmir-bundle.html">CH PMIR Bundle Message</a>
+        <a href="StructureDefinition-ch-pixm-bundle.html">CH:PIXm Bundle Message</a>
         <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
         <ul>
           <li>
-            <a href="StructureDefinition-ch-pmir-patient.html">CH EPR mHealth Patient Profile for IHE PMIR</a>
+            <a href="StructureDefinition-ch-pixm-patient.html">CH EPR mHealth Patient Profile for CH:PIXm Mobile Patient Identity Feed</a>
             <p>Patient</p>
             <ul>
               <li>
-                <a href="StructureDefinition-ch-pmir-provider-organization.html">CH EPR mHealth Provider Organization Profile for IHE PMIR</a>
+                <a href="StructureDefinition-ch-pixm-provider-organization.html">CH EPR mHealth Provider Organization Profile</a>
                 <p>Organization</p>
               </li>
             </ul>
@@ -42,11 +42,11 @@
         </ul>
       </li>
       <li>
-        <a href="StructureDefinition-ch-pmir-bundle-response.html">CH PMIR Bundle Message Response</a>
+        <a href="StructureDefinition-ch-pixm-bundle-response.html">CH:PIXm Bundle Message Response</a>
         <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
         <ul>
           <li>
-            <a href="StructureDefinition-ch-pmir-messageheader-response.html">CH PMIR MessageHeader Response</a>
+            <a href="StructureDefinition-ch-pixm-messageheader-response.html">CH:PIXm MessageHeader Response</a>
             <p>See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PMIR)</p>
           </li>
         </ul>
