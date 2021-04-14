@@ -90,7 +90,7 @@
   <div>
     <ul>
       <li>
-        <a href="StructureDefinition-ch-mhd-comprehensive-documentmanifest-bundle.html">CH MHD Comprehensive DocumentManifest (SubmissionSet) Bundle</a>
+        <a href="StructureDefinition-ch-mhd-submissionset-comprehensive-bundle.html">CH MHD Comprehensive SubmissionSet Bundle</a>
         <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet) in a Bundle.</p>
       </li>
     </ul>

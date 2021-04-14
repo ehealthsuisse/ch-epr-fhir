@@ -95,7 +95,7 @@
             <min value="1" />
             <type>
                 <code value="Reference" />
-                <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient-epr" />
+                <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient" />
                 <aggregation value="referenced" />
             </type>
             <mustSupport value="true" />
@@ -132,7 +132,7 @@
         </element>
         <element id="DocumentReference.description">
             <path value="DocumentReference.description" />
-            <max value="0" />
+            <mustSupport value="true" />
         </element>
         <element id="DocumentReference.securityLabel">
             <path value="DocumentReference.securityLabel" />
@@ -204,7 +204,7 @@
             <min value="1"/>
             <type>
                 <code value="Reference" />
-                <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient-epr" />
+                <targetProfile value="http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient" />
                 <aggregation value="contained" />
             </type>
             <mustSupport value="true" />

@@ -118,11 +118,11 @@
     </resource>
     <resource>
       <reference>
-        <reference value="DocumentManifest/2-7-DocManMedicationCard"/>
+        <reference value="List/2-7-DocSubMedicationCard"/>
       </reference>
-      <name value="DocumentManifest for MedicationCard"/>
-      <description value="Example DocumentManifest for a MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
+      <name value="SubmissionSet (List) for MedicationCard"/>
+      <description value="Example SubmissionSet for a MedicationCard"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
     </resource>
     <resource>
       <reference>
@@ -142,11 +142,11 @@
     </resource>
     <resource>
       <reference>
-        <reference value="Bundle/Bundle-FindDocumentManifests"/>
+        <reference value="Bundle/Bundle-FindSubmissionSets"/>
       </reference>
       <name value="MHD Find DocumentManifests"/>
       <description value="MHD Find DocumentManifests - Bundle as Response"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest-bundle"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
     </resource>
     <resource>
       <reference>
@@ -214,7 +214,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
+        <reference value="StructureDefinition/ch-mhd-submissionset-comprehensive"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -232,7 +232,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-mhd-comprehensive-documentmanifest-bundle"/>
+        <reference value="StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>

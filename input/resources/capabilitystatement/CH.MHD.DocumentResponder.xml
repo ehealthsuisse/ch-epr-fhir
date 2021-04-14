@@ -136,6 +136,7 @@
             </searchParam>
         </resource>
 
+        <!-- FIXME
         <resource>
             <type value="DocumentManifest"/>
             <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest"/>
@@ -194,7 +195,7 @@
                 <documentation value="Kind of document set"/>
             </searchParam>
         </resource>
-        
+    -->
         <resource>
             <type value="Binary"/>
             <interaction>

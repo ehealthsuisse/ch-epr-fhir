@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="ch-mhd-comprehensive-documentmanifest-bundle"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest-bundle"/>
-    <name value="IHE_MHD_Comprehensive_DocumentManifest_Bundle_CH"/>
-    <title value="CH MHD Comprehensive DocumentManifest (SubmissionSet) Bundle"/>
+    <id value="ch-mhd-submissionset-comprehensive-bundle"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
+    <name value="CHMhdSubmissionSetComprehensiveBundle"/>
+    <title value="CH MHD SubmissionSet Comprehensive Bundle"/>
     <status value="draft"/>
     <date value="2020-10-14"/>
     <publisher value="eHealth Suisse"/>
@@ -14,7 +14,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet) in a Bundle."/>
+    <description value="H MHD SubmissionSet Comprehensive Bundle response [ITI-66]"/>
     <fhirVersion value="4.0.1"/>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -62,17 +62,17 @@
 				<expression value="startsWith('http') or startsWith('urn:uuid:') = true"/>
             </constraint>
 		</element>
-		<element id="Bundle.entry:DocumentManifest">
+		<element id="Bundle.entry:SubmissionSetComprehensive">
 			<path value="Bundle.entry"/>
-			<sliceName value="DocumentManifest"/>
-			<short value="DocumentManifest"/>
+			<sliceName value="SubmissionSetComprehensive"/>
+			<short value="SubmissionSetComprehensive"/>
 		</element>
-		<element id="Bundle.entry:DocumentManifest.resource">
+		<element id="Bundle.entry:SubmissionSetComprehensive.resource">
 			<path value="Bundle.entry.resource"/>
             <min value="1"/>
 			<type>
 				<code value="Resource" />
-				<profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest" />
+				<profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive" />
 			</type>
 		</element>
     </differential>

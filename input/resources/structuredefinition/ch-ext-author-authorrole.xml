@@ -15,13 +15,13 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="Extension Author AuthorRole for DocumentManifest"/>
+    <description value="Extension Author AuthorRole for SubmissionSet"/>
     <fhirVersion value="4.0.1" />
     <kind value="complex-type"/>
     <abstract value="false"/>
     <context>
         <type value="element"/>
-        <expression value="DocumentManifest"/>
+        <expression value="List"/>
     </context>
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
