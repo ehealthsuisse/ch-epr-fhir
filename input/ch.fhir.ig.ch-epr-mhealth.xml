@@ -37,7 +37,7 @@
   <dependsOn id="chcore">
     <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
     <packageId value="ch.fhir.ig.ch-core"/>
-    <version value="1.0.0"/>
+    <version value="current"/>
   </dependsOn>
   <dependsOn id="cheprterm">
     <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
@@ -275,12 +275,6 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest.Bundle"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.MHD.Comprehensive.DocumentReference.Bundle"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
