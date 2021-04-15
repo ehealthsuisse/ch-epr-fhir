@@ -31,7 +31,7 @@
         <!-- SearchParameter Registry: https://www.hl7.org/fhir/searchparameter-registry.html -->
         <resource>
             <type value="DocumentReference"/>
-            <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference"/>
+            <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
             <interaction>
                 <code value="read"/>
             </interaction>

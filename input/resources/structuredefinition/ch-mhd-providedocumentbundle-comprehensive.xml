@@ -2,8 +2,8 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="ch-mhd-providedocumentbundle-comprehensive"/>
     <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
-    <name value="IHE_MHD_ProvideDocumentBundle_Comprehensive_CH"/>
-    <title value="CH MHD Provide Comphrensive Document Bundle"/>
+    <name value="CHMhdProvideDocumentBundleComprehensive"/>
+    <title value="CH MHD Provide Document Bundle Comprehensive"/>
     <status value="draft"/>
     <date value="2020-07-09"/>
     <publisher value="eHealth Suisse"/>
@@ -14,166 +14,148 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata."/>
+    <description value="IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata for the Swiss EPR."/>
     <fhirVersion value="4.0.1"/>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Bundle"/>
-    <!--<baseDefinition value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive"/>-->
-    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
+    <baseDefinition value="http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle" />
     <derivation value="constraint"/>
     <differential>
         <element id="Bundle">
             <path value="Bundle"/>
-            <short value="CH MHD Provide Comphrensive Document Bundle"/>
-            <constraint>
-                <key value="ch-mhd"/>
-                <severity value="warning"/>
-                <human value="The resource is not conform to the MHD profile from https://github.com/IHE/ITI.MHD"/>
-                <expression value="conformsTo('http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle')"/>
-            </constraint>
+            <short value="CH MHD Provide Document Bundle Comphrensive"/>
         </element>
         <element id="Bundle.meta">
             <path value="Bundle.meta"/>
             <min value="1"/>
         </element>
         <element id="Bundle.meta.profile.slice">
-			<path value="Bundle.meta.profile" />
-			<slicing>
-				<discriminator>
-					<type value="value" />
-					<path value="$this" />
-				</discriminator>
-				<rules value="open"/>
-			</slicing>
+            <path value="Bundle.meta.profile" />
+            <slicing>
+                <discriminator>
+                    <type value="value" />
+                    <path value="$this" />
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
             <min value="1"/>
-		</element>
-		<element id="Bundle.meta.profile:comprehensiveMetadata">
-			<path value="Bundle.meta.profile"/>
-			<sliceName value="comprehensiveMetadata"/>
-			<min value="1"/>
-			<max value="1"/>
-			<fixedCanonical value="http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle" />
-		</element>
-        
+            <mustSupport value="true" />
+        </element>
+        <element id="Bundle.meta.profile:comprehensiveMetadata">
+            <path value="Bundle.meta.profile"/>
+            <sliceName value="comprehensiveMetadata"/>
+            <min value="1"/>
+            <max value="1"/>
+            <patternCanonical value="http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle" />
+            <mustSupport value="true" />
+        </element>
+
         <!-- transaction type of a Bundle -->
         <element id="Bundle.type">
             <path value="Bundle.type" />
             <short value="transaction" />
-            <fixedCode value="transaction" />
+            <patternCode value="transaction"/>
+            <mustSupport value="true" />
         </element>
 
-        <!-- slice definition for the Bundle content -->
         <element id="Bundle.entry">
             <path value="Bundle.entry" />
-            <slicing>
-                <discriminator>
-                    <type value="profile" />
-                    <path value="$this.resource" />
-                </discriminator>
-                <description value="Everything in a proper Bundle"/>
-                <ordered value="false"/>
-                <!-- TODO: This should be closed, but because of the warnings on DocumentReference not being found I need to leave it open -->
-                <rules value="open" />
-            </slicing>
-            <min value="2"/>
+            <min value="3"/>
         </element>
 
-        <!-- Patient 0..1 - didn't include as it is not typically included in comprehensive mode as comprehensive is mostly used with XDS-on-FHIR -->
-        
-        <!-- DocumentManifest 1..1 -->
-        <element id="Bundle.entry:DocumentManifest">
-            <path value="Bundle.entry" />
-            <sliceName value="DocumentManifest" />
-            <short value="DocumentManifest" />
-            <definition value="The DocumentManifest defining this submission."/>
-            <alias value="SubmissionSet" />
-            <min value="1" />
-            <max value="1" />
+        <element id="Bundle.entry:SubmissionSet">
+            <path value="Bundle.entry"/>
+            <sliceName value="SubmissionSet"/>
+            <mustSupport value="true" />
         </element>
-        <element id="Bundle.entry:DocumentManifest.fullUrl">
-            <path value="Bundle.entry.fullUrl" />
-            <min value="1" />
-        </element>
-        <element id="Bundle.entry:DocumentManifest.resource">
-            <path value="Bundle.entry.resource" />
-            <min value="1" />
+
+        <element id="Bundle.entry:SubmissionSet.resource">
+            <path value="Bundle.entry.resource"/>
+            <min value="1"/>
             <type>
-                <code value="Resource" />
-                <!--<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest" />-->
-                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentmanifest" />
+                <code value="List"/>
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
             </type>
-        </element>
-        <element id="Bundle.entry:DocumentManifest.request">
-            <path value="Bundle.entry.request" />
-            <min value="1" />
-        </element>
-        <element id="Bundle.entry:DocumentManifest.request.method">
-            <path value="Bundle.entry.request.method" />
-            <fixedCode value="POST" />
+            <mustSupport value="true" />
         </element>
 
-        <!--DocumentReference 1..* -->
-        <element id="Bundle.entry:DocumentReference">
-            <path value="Bundle.entry" />
-            <sliceName value="DocumentReference" />
-            <short value="DocumentReference" />
-            <definition value="DocumentReference(s) defined or updated in the bundle."/>
-            <alias value="DocumentEntry"/>
-            <min value="1" />
-            <max value="*"/>
+        <element id="Bundle.entry:SubmissionSet.request">
+            <path value="Bundle.entry.request"/>
+            <min value="1"/>
+            <mustSupport value="true" />
         </element>
-        <element id="Bundle.entry:DocumentReference.fullUrl">
-            <path value="Bundle.entry.fullUrl" />
-            <min value="1" />
+
+        <element id="Bundle.entry:SubmissionSet.request.method">
+            <path value="Bundle.entry.request.method"/>
+            <patternCode value="POST"/>
+            <mustSupport value="true" />
         </element>
-        <element id="Bundle.entry:DocumentReference.resource">
-            <path value="Bundle.entry.resource" />
-            <min value="1" />
+
+        <element id="Bundle.entry:DocumentRefs">
+            <path value="Bundle.entry"/>
+            <sliceName value="DocumentRefs"/>
+            <min value="1"/>
+            <mustSupport value="true" />
+        </element>
+
+        <element id="Bundle.entry:DocumentRefs.resource">
+            <path value="Bundle.entry.resource"/>
+            <min value="1"/>
             <type>
-                <code value="Resource" />
-                <!--<profile value="http://ihe.net/fhir/ihe.mhd.fhir/StructureDefinition/IHE.MHD.Provide.Comprehensive.DocumentReference" />-->
-                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference" />
+                <code value="DocumentReference"/>
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
             </type>
-        </element>
-        <element id="Bundle.entry:DocumentReference.request">
-            <path value="Bundle.entry.request" />
-            <min value="1" />
-        </element>
-        <element id="Bundle.entry:DocumentReference.request.method">
-            <path value="Bundle.entry.request.method" />
-            <fixedCode value="POST" />
+            <mustSupport value="true" />
         </element>
 
-        <!-- Binary 0..* -->
-        <element id="Bundle.entry:Binary">
-            <path value="Bundle.entry" />
-            <sliceName value="Binary" />
-            <short value="Binary" />
-            <definition value="Entry for the actual document in a Binary resource." />
-            <alias value="document"/>
+        <element id="Bundle.entry:DocumentRefs.request">
+            <path value="Bundle.entry.request"/>
+            <mustSupport value="true" />
+        </element>
+
+        <element id="Bundle.entry:DocumentRefs.request.method">
+            <path value="Bundle.entry.request.method"/>
+            <patternCode value="POST"/>
+            <mustSupport value="true" />
+        </element>
+
+        <element id="Bundle.entry:Documents">
+            <path value="Bundle.entry"/>
+            <sliceName value="Documents"/>
+            <min value="1"/>
+            <mustSupport value="true" />
+        </element>
+
+        <element id="Bundle.entry:Documents.resource">
+            <path value="Bundle.entry.resource"/>
+            <min value="1"/>
+            <type>
+                <code value="Binary"/>
+                <profile value="http://hl7.org/fhir/StructureDefinition/Binary"/>
+            </type>
+            <mustSupport value="true" />
+        </element>
+
+        <element id="Bundle.entry:Documents.request">
+            <path value="Bundle.entry.request"/>
+            <min value="1"/>
+            <mustSupport value="true" />
+        </element>
+
+        <element id="Bundle.entry:Documents.request.method">
+            <path value="Bundle.entry.request.method"/>
+            <patternCode value="POST"/>
+            <mustSupport value="true" />
+        </element>
+
+        <element id="Bundle.entry:Folders">
+            <path value="Bundle.entry"/>
+            <sliceName value="Folders"/>
+            <short value="Folders"/>
+            <definition value="any Folders being created or updated"/>
             <min value="0"/>
-            <max value="*"/>
-        </element>
-        <element id="Bundle.entry:Binary.fullUrl">
-            <path value="Bundle.entry.fullUrl" />
-            <min value="1" />
-        </element>
-        <element id="Bundle.entry:Binary.resource">
-            <path value="Bundle.entry.resource" />
-            <min value="1" />
-            <type>
-                <code value="Resource" />
-                <profile value="http://hl7.org/fhir/StructureDefinition/Binary" />
-            </type>
-        </element>
-        <element id="Bundle.entry:Binary.request">
-            <path value="Bundle.entry.request" />
-            <min value="1" />
-        </element>
-        <element id="Bundle.entry:Binary.request.method">
-            <path value="Bundle.entry.request.method" />
-            <fixedCode value="POST" />
+            <max value="0"/>
         </element>
     </differential>
 </StructureDefinition>

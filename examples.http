@@ -29,8 +29,8 @@ Content-Type: application/fhir+json
 
 
 ### ITI-65 Request (MHD: Provide Document Bundle)
-    ### Patient: subject reference (DocumentReference & DocumentManifest) from PIXm Query=  http://test.ahdis.ch/fhir/Patient/1.3.6.1.4.1.21367.2017.2.5.83-MAG-002
-    ### Note for testing: When submitting a bundle, increase the masterIdentifier (DocumentReference & DocumentManifest)
+    ### Patient: subject reference (DocumentReference & List) from PIXm Query=  http://test.ahdis.ch/fhir/Patient/1.3.6.1.4.1.21367.2017.2.5.83-MAG-002
+    ### Note for testing: When submitting a bundle, increase the masterIdentifier (DocumentReference & List)
 POST {{host}}/ HTTP/1.1
 Accept: application/fhir+json
 Content-Type: application/fhir+json
@@ -38,12 +38,19 @@ Content-Type: application/fhir+json
 < ./test/MAG-002_BundleProvideDocument.json
     ### Response: MAG-002_Response-ITI-65.json
 
+### ITI-66 Request (MHD: Find Document Manifests -> Deprecated)
+### GET {{host}}/DocumentManifest?status=current&patient.identifier=urn:oid:1.3.6.1.4.1.21367.2017.2.5.83|MAG-002 HTTP/1.1
+### Accept: application/fhir+json
+## Content-Type: application/fhir+json
+    ### Response: MAG-002_Response-ITI-66.json
 
-### ITI-66 Request (MHD: Find Document Manifests)
-GET {{host}}/DocumentManifest?status=current&patient.identifier=urn:oid:1.3.6.1.4.1.21367.2017.2.5.83|MAG-002 HTTP/1.1
+### ITI-66 Request (MHD: Find Document List)
+GET {{host}}/List?code=submissionset&status=current&patient.identifier=urn:oid:1.3.6.1.4.1.21367.2017.2.5.83|MAG-002 HTTP/1.1
 Accept: application/fhir+json
 Content-Type: application/fhir+json
-    ### Response: MAG-002_Response-ITI-66.json
+
+
+### Response: MAG-002_Response-ITI-66.json
 
 
 ### ITI-67 Request (MHD: Find Document References)
@@ -57,33 +64,3 @@ Content-Type: application/fhir+json
     ### DocumentReference.content.attachment.url from Find Document Reference
 GET http://test.ahdis.ch/camel/xdsretrieve?uniqueId=1.3.6.1.4.1.12559.11.13.2.1.3008&repositoryUniqueId=1.1.4567332.1.2
 Accept: application/fhir+json
-
-
-############ Retrieve Document and transform from CDA to FHIR (Patient MAG-001) ############
-
-
-### ITI-66 Request (MHD: Find Document Manifests)
-GET {{host}}/DocumentManifest?status=current&patient.identifier=urn:oid:1.3.6.1.4.1.21367.2017.2.5.83|MAG-001 HTTP/1.1
-Accept: application/fhir+json
-Content-Type: application/fhir+json
-
-
-### ITI-67 Request (MHD: Find Document References)
-GET {{host}}/DocumentReference?status=current&patient.identifier=urn:oid:1.3.6.1.4.1.21367.2017.2.5.83|MAG-001 HTTP/1.1
-Accept: application/fhir+json
-Content-Type: application/fhir+json
-
-
-### ITI-68 Request (MHD: Retrieve Document -> Medication Card document)
-GET http://test.ahdis.ch/camel/xdsretrieve?uniqueId=1.3.6.1.4.1.12559.11.13.2.1.3102&repositoryUniqueId=1.1.4567332.1.2
-Accept: application/fhir+json
-
-### Save Response (CDA) as MAG-001_MedCard-CDA.xml
-
-
-### Transform CDA to FHIR (Microservice for Transformation)
-POST https://test.ahdis.ch/r4/StructureMap/$transform?source=http://fhir.ch/ig/cda-fhir-maps/StructureMap/CdaChEmedMedicationCardDocumentToBundle
-Accept: application/fhir+json;fhirVersion=4.0
-Content-Type: application/fhir+xml;fhirVersion=4.0
-
-< ./test/MAG-001_MedCard-CDA.xml

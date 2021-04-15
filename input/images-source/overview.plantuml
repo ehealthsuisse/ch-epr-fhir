@@ -31,7 +31,7 @@ component "mHealth: Mobile Access Gateway" {
   MHDSource --> MHDRecipient : Provide Document Bundle [ITI-65]
 
   [MHD Document Responder] as MHDResponder
-  MHDConsumer --> MHDResponder : Find Document Manifests [ITI-66], \nFind Document References [ITI-67], \nRetrieve Document [ITI-68] 
+  MHDConsumer --> MHDResponder : Find Document Lists [ITI-66], \nFind Document References [ITI-67], \nRetrieve Document [ITI-68] 
 
   [RESTful ATNA Audit Record Repository] as ATNARepository
   ATNANode --> ATNARepository : Record Audit Event [ITI-20]

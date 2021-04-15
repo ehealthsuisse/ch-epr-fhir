@@ -112,7 +112,7 @@
             <path value="List.entry.item"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference"/>
+                <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
                 <aggregation value="referenced" />
                 <aggregation value="bundled" />
             </type>

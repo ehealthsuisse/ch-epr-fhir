@@ -1,26 +1,25 @@
-There are **no additional requirements** for the Swiss EPR of the Find Document Manifests [ITI-66] transaction
+There are **no additional requirements** for the Swiss EPR of the Find Document Lists [ITI-66] transaction
 defined in the MHD Profile published in the IHE ITI Trial Implementation “Mobile Access to Health Documents”.
-The SubmissionSet.Author.AuthorRole mapping to DocumentManifest has to be supported.
+The SubmissionSet.Author.AuthorRole mapping to DocumentManifest has to be supported. The Document Responder
+does not need to support the FindFolders Query from the XDS on FHIR Option. 
 
 ### Scope
 
-The Find Document Manifests [ITI-66] transaction is used to find DocumentManifest Resources
+The Find Document Lists [ITI-66] transaction is used to find List Resources
 that satisfy a set of parameters. It is equivalent to the FindSubmissionSets query in the Registry
-Stored Query [ITI-18] transaction, as documented in ITI TF-2a: 3.18.4.1.2.3.7.1. The result of
-the query is a Bundle containing DocumentManifest Resources that match the query parameters.
+Stored Query [ITI-18] transaction, as documented in [ITI TF-2a: 3.18.4.1.2.3.7.2](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.2). The result of the query is a Bundle containing List Resources that match the query parameters.
 
 ### Actor Roles
 
 **Actor:** Document Consumer   
-**Role:** Requests a list of DocumentManifest Resources, matching the supplied set of criteria, from the Document Responder.   
+**Role:** Requests List Resources, matching the supplied set of criteria, from the Document Responder   
 **Actor:** Document Responder   
-**Role:** Returns DocumentManifest Resources that match the search criteria provided by the Document Consumer.   
+**Role:** Returns List Resources that match the search criteria provided by the Document Consumer   
 
 ### Referenced Standards
 
-[Mobile access to Health Documents (MHD) With XDS on FHIR Rev. 3.1 – 2019-03-06](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf)   
-
-This MHD Profile is based on Release 4 of the emerging [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
+[Mobile access to Health Documents (MHD), 2021-03-31, public comment release](https://profiles.ihe.net/ITI/MHD/4.0.0-comment/)   
+This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
 
 ### Messages
 
@@ -28,14 +27,13 @@ This MHD Profile is based on Release 4 of the emerging [HL7® FHIR®](https://ww
 
 ### Trigger Events
 
-When the Document Consumer needs to discover DocumentManifest Resources matching
-various metadata parameters it issues a Find Document Manifests message. 
+When the Document Consumer needs to discover List Resources matching various metadata parameters it issues a Find Document Lists message.
 
 ### Message Example
 
-Find Document Manifest **request**:
+Find Document List **request**:
 ```
-GET [base]/DocumentManifest?patient.identifier=urn:oid:2.999|11111111 HTTP/1.1
+GET [base]/List?patient.identifier=urn:oid:2.999|11111111 HTTP/1.1
 Accept: application/fhir+json
 ```
 

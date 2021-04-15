@@ -15,9 +15,9 @@ In the Swiss EPR the transaction is used by the MHD Document Source to store doc
 
 ### Referenced Standards
 
-[Mobile access to Health Documents (MHD) With XDS on FHIR Rev. 3.1 – 2019-03-06](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_MHD.pdf)   
+[Mobile access to Health Documents (MHD), 2021-03-31, public comment release](https://profiles.ihe.net/ITI/MHD/4.0.0-comment/)   
 
-This MHD Profile is based on Release 4 of the emerging [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
+This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
 
 ### Messages
 
@@ -39,7 +39,7 @@ In addition the following extensions have been defined for the Swiss EPR additio
 * [DeletionStatus](#deletionstatus) (Annex 5.1 1.2.4) on the DocumentReference
 
 #### SubmissionSet.Author.AuthorRole   
-The required metadata about the AuthorRole of the Author is represented in the DocumentManifest using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole](StructureDefinition-ch-ext-author-authorrole.html). The values are definded in the ValueSet [SubmissionSet.Author.AuthorRole](http://fhir.ch/ig/ch-epr-term/ValueSet/SubmissionSet.Author.AuthorRole).
+The required metadata about the AuthorRole of the Author is represented in the List for the SubmissionSet using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole](StructureDefinition-ch-ext-author-authorrole.html). The values are definded in the ValueSet [SubmissionSet.Author.AuthorRole](http://fhir.ch/ig/ch-epr-term/ValueSet/SubmissionSet.Author.AuthorRole).
 
 #### DeletionStatus   
 The optional metadata about the DeletionStatus of the document is represented in the DocumentReference using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus](StructureDefinition-ch-ext-deletionstatus.html). The values are defined int the ValueSet [ch-ehealth-valueset-deletionstatus](ValueSet-ch-ehealth-valueset-deletionstatus.html).

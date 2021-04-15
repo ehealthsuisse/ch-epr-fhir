@@ -5,11 +5,11 @@ title Interaction Diagram for [ITI-66]
 participant consumer as "Document\nConsumer"
 participant responder as "Document\nResponder"
 
-consumer -> responder: Find Document Manifests Request Message
+consumer -> responder: Find Document Lists Request Message
 activate consumer
 activate responder
 
-responder -> consumer: Find Document Manifests Response Message
+responder -> consumer: Find Document Lists Response Message
 deactivate responder
 deactivate consumer
 

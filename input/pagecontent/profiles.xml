@@ -60,38 +60,34 @@
   <div>
     <ul>
       <li>
-        <a href="StructureDefinition-ch-mhd-providedocumentbundle-comprehensive.html">CH MHD Provide Comphrensive Document Bundle</a>
+        <a href="StructureDefinition-ch-mhd-providedocumentbundle-comprehensive.html">CH MHD Provide Document Bundle Comphrensive</a>
         <p>IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata.</p>
         <ul>
           <li>
-            <a href="StructureDefinition-IHE-MHD-Provide-Comprehensive-DocumentBundle.html">IHE_MHD_Provide_Comprehensive_DocumentBundle</a>
-            <p>IHE_MHD_Provide_Comprehensive_DocumentBundle, define URL to resolve profile in Bundle.meta.profile</p>
+            <a href="StructureDefinition-ch-mhd-submissionset-comprehensive.html">CH MHD Comprehensive SubmissionSet</a>
+            <p>IHE MHD Profile on List for Comprehensive Metadata (SubmissionSet).</p>
           </li>
           <li>
-            <a href="StructureDefinition-ch-mhd-comprehensive-documentmanifest.html">CH MHD Comprehensive DocumentManifest (SubmissionSet)</a>
-            <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet).</p>
-          </li>
-          <li>
-            <a href="StructureDefinition-ch-mhd-comprehensive-documentreference.html">CH MHD Comprehensive DocumentReference</a>
+            <a href="StructureDefinition-ch-mhd-documentreference-comprehensive.html">CH MHD DocumentReference Comprehensive</a>
             <p>IHE MHD Profile on DocumentReference (DocumentEntry) when used in the Provide Transaction with Comprehensive (aka XDS-on-FHIR) Metadata.</p>
           </li>
         </ul>
       </li>
       <li>
-        <a href="StructureDefinition-ch-mhd-providedocumentbundle-comprehensive-response.html">CH MHD Provide Comphrensive Document Bundle Response</a>
+        <a href="StructureDefinition-ch-mhd-providedocumentbundle-comprehensive-response.html">CH MHD Provide Document Bundle Comphrensive Response</a>
         <p>IHE MHD profile on Response of Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata.</p>
       </li>
     </ul>
   </div>
 
   
-  <h3>Find Document Manifest [ITI-66]</h3>
+  <h3>Find Document Lists [ITI-66]</h3>
   
   <div>
     <ul>
       <li>
         <a href="StructureDefinition-ch-mhd-submissionset-comprehensive-bundle.html">CH MHD Comprehensive SubmissionSet Bundle</a>
-        <p>IHE MHD Profile on DocumentManifest for Comprehensive Metadata (SubmissionSet) in a Bundle.</p>
+        <p>IHE MHD Profile on List for Comprehensive SubmissionSet in a Bundle.</p>
       </li>
     </ul>
   </div>
@@ -102,7 +98,7 @@
   <div>
     <ul>
       <li>
-        <a href="StructureDefinition-ch-mhd-comprehensive-documentreference-bundle.html">CH MHD Comprehensive DocumentReference Bundle</a>
+        <a href="StructureDefinition-ch-mhd-documentreference-comprehensive-bundle.html">CH MHD DocumentReference Comprehensive Bundle</a>
         <p>IHE MHD Profile on DocumentReference (DocumentEntry) in a Bundle from a Query with Comprehensive Metadata (aka XDS-on-FHIR).</p>
       </li>
     </ul>

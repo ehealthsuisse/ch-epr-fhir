@@ -14,17 +14,17 @@ CH EPR mHealth Structure Definition | Relation/Action | IHE Structure Definition
 CH PIXm IN Parameters | TBD | TBD
 CH PIXm OUT Parameters | TBD | TBD
 CH PMIR Bundle Message | TBD | TBD
-CH EPR mHealth Patient Profile for IHE PMIR | TBD | TBD
-CH EPR mHealth Provider Organization Profile for IHE PMIR | TBD | TBD
-CH PMIR Bundle Message Response | TBD | TBD
-CH PMIR MessageHeader Response | TBD | TBD
-CH MHD Provide Comphrensive Document Bundle | TBD | TBD
+CH EPR mHealth Patient Profile for CH:PIXm | TBD | TBD
+CH EPR mHealth Provider Organization Profile for CH:PIXm | TBD | TBD
+CH PIXm Bundle Message Response | TBD | TBD
+CH PIXm MessageHeader Response | TBD | TBD
+CH MHD Provide Document Bundle Comphrensive | TBD | TBD
 IHE_MHD_Provide_Comprehensive_DocumentBundle | TBD | TBD
-CH MHD Comprehensive DocumentManifest (SubmissionSet)
-[CH MHD Comprehensive DocumentReference](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/StructureDefinition-ch-mhd-comprehensive-documentreference.html) | `conformsTo` & `meta.profile` | [MHD Comprehensive DocumentReference](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) (https://github.com/IHE/ITI.MHD)
-CH MHD Provide Comphrensive Document Bundle Response | TBD | TBD
-CH MHD Comprehensive DocumentManifest (SubmissionSet) Bundle | TBD | TBD
-CH MHD Comprehensive DocumentReference Bundle | TBD | TBD
+CH MHD Comprehensive List (SubmissionSet)
+[CH MHD DocumentReference Comprehensive](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/StructureDefinition-ch-mhd-documentreference-comprehensive.html) | `conformsTo` & `meta.profile` | [MHD DocumentReference Comprehensive](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/StructureDefinition-IHE.MHD.Comprehensive.DocumentReference.html) (https://github.com/IHE/ITI.MHD)
+CH MHD Provide Document Bundle Comphrensive Response | TBD | TBD
+CH MHD Comprehensive SubmissionSet Bundle | TBD | TBD
+CH MHD DocumentReference Comprehensive Bundle | TBD | TBD
 
 
 ### Operation Definitions
@@ -77,33 +77,25 @@ The IHE profiles are **imported** from https://github.com/IHE/fhir (as of Aug 13
 * IHE.PMIR.Subscription
    * IHE.PMIR.Subscription.request
 
-#### PMIR: CH EPR mHealth Structure Definitions
-* ch-pmir-bundle **is derived from** (`baseDefinition`) IHE.PMIR.Bundle
-* ch-pmir-patient
+#### CH:PIXm: CH EPR mHealth Structure Definitions
+* ch-pixm-bundle **is derived from** (`baseDefinition`) IHE.PMIR.Bundle
+* ch-pixm-patient
    * ch-epr-mhealth-humanname
    * ch-epr-mhealth-birthname
-   * ch-pmir-provider-organization
-* ch-pmir-bundle-response
-   * ch-pmir-messageheader-response
+   * ch-pixm-provider-organization
+* ch-pim-bundle-response
+   * ch-pim-messageheader-response
 
 #### MHD: IHE Structure Definitions
-The IHE profiles are **imported** from https://github.com/IHE/ITI.MHD ([FHIR IG (CI Build)](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/index.html)) (as of Aug 7, 2020).
-
-* IHE.MHD.ProvideDocumentBundle.Comprehensive 
-   * IHE.MHD.Comprehensive.List
-      * IHE.MHD.Minimal.List
-   * IHE.MHD.Provide.Comprehensive.DocumentReference + IHE.MHD.Query.Comprehensive.DocumentReference
-      * IHE.MHD.Provide.Minimal.DocumentReference
-   * IHE.MHD.Comprehensive.DocumentManifest
-      * IHE.MHD.Minimal.DocumentManifest 
+The IHE profiles are referenced from the public comment version https://profiles.ihe.net/ITI/MHD/index.html, Package ihe.mhd.fhir#4.0.0-comment 
 
 #### MHD: CH EPR mHealth Structure Definitions
 * ch-mhd-providedocumentbundle-comprehensive **is copied from** IHE.MHD.ProvideDocumentBundle.Comprehensive **and adapted to Swiss requirements** 
    * ch-mhd-comprehensive-documentmanifest **is copied from** IHE.MHD.Comprehensive.DocumentManifest **and adapted to Swiss requirements**
       * ch-ext-author-authorrole
-   * ch-mhd-provide-comprehensive-documentreference **is copied from** IHE.MHD.Provide.Comprehensive.DocumentReference **and adapted to Swiss requirements**
+   * ch-mhd-provide-documentreference-comprehensive **is copied from** IHE.MHD.Provide.Comprehensive.DocumentReference **and adapted to Swiss requirements**
       * ch-ext-deletionstatus
-      * ch-mhd-query-comprehensive-documentreference **is copied from** IHE.MHD.Query.Comprehensive.DocumentReference **and adapted to Swiss requirements**
+      * ch-mhd-query-documentreference-comprehensive **is copied from** IHE.MHD.Query.Comprehensive.DocumentReference **and adapted to Swiss requirements**
 * ch-mhd-providedocumentbundle-comprehensive-response
 
 #### Validation
@@ -112,16 +104,15 @@ To support **conformance** to the IHE profiles, the following validation mechani
 * The examples are validated against both profiles (CH EPR mHealth, IHE) (listed in meta.profile)
 * The profiles (CH EPR mHealth) check the conformity to the corresponding IHE profile using constraints (conformsTo)
 
-
 ### Operation Definitions
 
-#### PMIR: IHE Operation Definitions
+#### CH:PIXm: IHE Operation Definitions
 The IHE operation definitions are **imported** from https://github.com/JohnMoehrke/ITI.PIXm ([FHIR IG (CI Build)](http://build.fhir.org/ig/JohnMoehrke/ITI.PIXm/branches/master/index.html)) (as of Aug 7, 2020).
 
 * IHE.PIXm.pix
 
-#### PMIR: CH EPR mHealth Operation Definitions
-* CH.PMIR **is copied from** IHE.PIXm.pix **and adapted to Swiss requirements**
+#### CH:PIXM: CH EPR mHealth Operation Definitions
+* CH.PIXm **is copied from** IHE.PIXm.pix **and adapted to Swiss requirements**
 
 
 ### Capability Statements
@@ -129,15 +120,15 @@ The IHE operation definitions are **imported** from https://github.com/JohnMoehr
 * CH.mHealth.App
 * CH.mHealth.MobileAccessGateway
 
-#### PMIR: IHE Capability Statements
+#### CH:PIXM: IHE Capability Statements
 The IHE capability statements for PMIR are **imported** from https://github.com/JohnMoehrke/ITI.PIXm ([FHIR IG (CI Build)](http://build.fhir.org/ig/JohnMoehrke/ITI.PIXm/branches/master/index.html)) (as of Aug 7, 2020).
 * IHE.PIXm.Consumer
 * IHE.PIXm.Manager
 
-#### PMIR: CH EPR mHealth Capability Statements
-* CH.PMIR.Consumer **is copied from** IHE.PIXm.Consumer **and adapted to Swiss requirements**
-* CH.PMIR.Source
-* CH.PMIR.Manager **is copied from** IHE.PIXm.Manager **and adapted to Swiss requirements**
+#### PIXm: CH EPR mHealth Capability Statements
+* CH.PIXm.Consumer **is copied from** IHE.PIXm.Consumer **and adapted to Swiss requirements**
+* CH.PIXm.Source
+* CH.PIXm.Manager **is copied from** IHE.PIXm.Manager **and adapted to Swiss requirements**
 
 #### MHD: IHE Capability Statements
 The IHE capability statments for MHD are **imported** from https://github.com/IHE/fhir (as of Aug 13, 2020).

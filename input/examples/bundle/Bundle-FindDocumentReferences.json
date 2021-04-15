@@ -4,7 +4,7 @@
   "meta": {
     "lastUpdated": "2020-10-14T07:56:23.916+00:00",
     "profile": [
-      "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference-bundle"
+      "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"
     ]
   },
   "type": "searchset",

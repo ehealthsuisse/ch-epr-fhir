@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="ch-mhd-comprehensive-documentreference"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference"/>
-    <name value="CHMhdComprehensiveDocumentReference"/>
-    <title value="CH MHD Comprehensive DocumentReference"/>
+    <id value="ch-mhd-documentreference-comprehensive"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
+    <name value="CHMhdDocumentReferenceComprehensive"/>
+    <title value="CH MHD DocumentReference Comprehensive"/>
     <status value="draft"/>
     <date value="2020-07-10"/>
     <publisher value="eHealth Suisse"/>
@@ -24,7 +24,7 @@
     <differential>
         <element id="DocumentReference">
             <path value="DocumentReference"/>
-            <short value="CH MHD Comprehensive DocumentReference"/>
+            <short value="CH MHD DocumentReference Comprehensive"/>
             <constraint>
                 <key value="ch-mhd"/>
                 <severity value="error"/>

@@ -130,7 +130,7 @@
       </reference>
       <name value="DocumentReference for MedicationCard"/>
       <description value="Example DocumentReference for a MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
     </resource>
     <resource>
       <reference>
@@ -144,8 +144,8 @@
       <reference>
         <reference value="Bundle/Bundle-FindSubmissionSets"/>
       </reference>
-      <name value="MHD Find DocumentManifests"/>
-      <description value="MHD Find DocumentManifests - Bundle as Response"/>
+      <name value="MHD Find DocumentSubmissionSet (List)"/>
+      <description value="MHD Find Document SumbmissionSet- Bundle as Response"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
     </resource>
     <resource>
@@ -154,7 +154,7 @@
       </reference>
       <name value="MHD Find DocumentReferences"/>
       <description value="MHD Find DocumentReferences - Bundle as Response"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-comprehensive-documentreference-bundle"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
     </resource>
 
     <!-- CH EPR mHealth: Resource Profiles -->
@@ -208,19 +208,13 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/IHE-MHD-Provide-Comprehensive-DocumentBundle"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/ch-mhd-submissionset-comprehensive"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-mhd-comprehensive-documentreference"/>
+        <reference value="StructureDefinition/ch-mhd-documentreference-comprehensive"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -238,7 +232,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-mhd-comprehensive-documentreference-bundle"/>
+        <reference value="StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -270,15 +264,7 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    
-    <!-- Referencing IHE profiles -->
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest.Bundle"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    
+        
     <!-- imported IHE FHIR Structure Defintions -->
     <resource>
       <reference>
@@ -328,37 +314,6 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.MHD.Comprehensive.DocumentManifest"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.MHD.Comprehensive.List"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.MHD.Minimal.DocumentManifest"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.MHD.Minimal.List"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.MHD.ProvideDocumentBundle.Comprehensive"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-
 
     <!-- CH EPR mHealth  Operation Defintions -->
     <resource>
@@ -474,7 +429,7 @@
       </page>
       <page>
         <nameUrl value="iti-66.html"/>
-        <title value="Find Document Manifest [ITI-66]"/>
+        <title value="Find Document Lists [ITI-66]"/>
         <generation value="markdown"/>
       </page>
       <page>
