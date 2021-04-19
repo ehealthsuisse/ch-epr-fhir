@@ -7,7 +7,7 @@
 StructureDefinition for Bundle resource constraints in the CH EPR mHealth Implementation Guide </div>
   </text>
   <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle" />
-  <name value="CH:PIXm_Bundle_CH" />
+  <name value="CHPIXm_Bundle_CH" />
   <title value="CH:PIXm Bundle Feed Message" />
   <status value="draft" />
   <date value="2020-06-15" />

@@ -33,16 +33,19 @@ The same message semantics as for 3.65.4.1.2 Message Semantics applies. The FHIR
 
 `http://ihe.net/fhir/StructureDefinition/IHE_MHD_Provide_Comprehensive_DocumentBundle`
 
-In addition the following extensions have been defined for the Swiss EPR additional metadata:
+The additional Swiss EPR metadata is defined with:
 
-* [SubmissionSet.Author.AuthorRole](#submissionsetauthorauthorrole) (Annex 5.1 1.2.4) on the DocumentManifest
-* [DeletionStatus](#deletionstatus) (Annex 5.1 1.2.4) on the DocumentReference
-
-#### SubmissionSet.Author.AuthorRole   
-The required metadata about the AuthorRole of the Author is represented in the List for the SubmissionSet using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole](StructureDefinition-ch-ext-author-authorrole.html). The values are definded in the ValueSet [SubmissionSet.Author.AuthorRole](http://fhir.ch/ig/ch-epr-term/ValueSet/SubmissionSet.Author.AuthorRole).
+* [DeletionStatus](#deletionstatus) (Annex 5.1 1.2.4.1)
+* [SubmissionSet.Author.AuthorRole](#submissionsetauthorauthorrole) (Annex 5.1 1.2.4.3)
+* [DocumentEntry.originalProviderRole ](#documentEntryoriginalproviderrole) (Annex 5.1 1.2.4.4)
 
 #### DeletionStatus   
 The optional metadata about the DeletionStatus of the document is represented in the DocumentReference using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus](StructureDefinition-ch-ext-deletionstatus.html). The values are defined int the ValueSet [ch-ehealth-valueset-deletionstatus](ValueSet-ch-ehealth-valueset-deletionstatus.html).
+#### SubmissionSet.Author.AuthorRole   
+The SubmissionSet.Author element MAY be used to track the user who made the latest changes to the document metadata. If present, the value of the AuthorRole attribute SHALL be taken from the SubmissionSet.Author.AuthorRole value set with the OID 2.16.756.5.30.1.127.3.10.1.41. The required metadata about the AuthorRole of the Author is represented in the List for the SubmissionSet using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole](StructureDefinition-ch-ext-author-authorrole.html). The values are defined in the ValueSet [SubmissionSet.Author.AuthorRole](http://fhir.ch/ig/ch-epr-term/ValueSet/SubmissionSet.Author.AuthorRole).
+
+#### DocumentEntry.originalProviderRole   
+An extra metadata attribute SHALL be used to distinguish document originally provided by patients or their representatives from documents originally provided by healthcare professionals, assistants, technical users or document administrators. The extra metadata attribute SHALL be set by the Document Source actor to the role value of the current user and SHALL NOT be updated by Update Initiator or Document Administrator actors. The required metadata about the originalProviderRole of the Author is represented in the DocumentReference using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole](StructureDefinition-ch-ext-author-authorrole.html). The values are defined in the ValueSet [DocumentEntry.originalProviderRole](http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.originalProviderRole).
 
 
 ### Message Example

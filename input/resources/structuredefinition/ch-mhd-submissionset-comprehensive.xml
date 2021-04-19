@@ -43,8 +43,8 @@
         <element id="List.extension:authorAuthorRole">
             <path value="List.extension" />
             <sliceName value="authorAuthorRole" />
-            <short value="Author role of the author of the document"/>
-            <min value="1"/>
+            <short value="The SubmissionSet.Author element MAY be used to track the user who made the latest changes to the document metadata."/>
+            <min value="0"/>
             <max value="1"/>
             <type>
                 <code value="Extension" />

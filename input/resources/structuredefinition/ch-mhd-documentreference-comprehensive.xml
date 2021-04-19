@@ -55,6 +55,18 @@
                 <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus" />
             </type>
         </element>
+        <element id="DocumentReference.extension:originalProviderRole">
+            <path value="DocumentReference.extension" />
+            <sliceName value="originalProviderRole" />
+            <short value="This extra metadata attribute SHALL be set by the Document Source actor to the role value of the current user and SHALL NOT be updated by Update Initiator or Document Administrator actors."/>
+            <min value="1"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension" />
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole" />
+            </type>
+            <mustSupport value="true" />
+        </element>
         <element id="DocumentReference.masterIdentifier">
             <path value="DocumentReference.masterIdentifier" />
             <comment value="See ITI TF-2x: Z.9.1.1 Identifier and CDA root plus extension." />

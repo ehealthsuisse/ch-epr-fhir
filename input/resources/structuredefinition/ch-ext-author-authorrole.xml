@@ -23,6 +23,10 @@
         <type value="element"/>
         <expression value="List"/>
     </context>
+    <context>
+        <type value="element"/>
+        <expression value="DocumentReference"/>
+    </context>
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
     <derivation value="constraint"/>
@@ -53,6 +57,7 @@
             <binding>
                 <strength value="required"/>
                 <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/SubmissionSet.Author.AuthorRole"/>
+                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.originalProviderRole"/>
             </binding>
         </element>
     </differential>
