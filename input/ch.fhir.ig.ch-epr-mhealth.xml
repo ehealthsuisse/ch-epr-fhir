@@ -443,6 +443,11 @@
         <generation value="markdown"/>
       </page>
       <page>
+        <nameUrl value="iti-103.html"/>
+        <title value="Get Authorization Server Metadata [ITI-103]"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
         <nameUrl value="profiles.html"/>
         <title value="Profiles"/>
         <generation value="html"/>

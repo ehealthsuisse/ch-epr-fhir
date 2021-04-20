@@ -8,10 +8,10 @@ In the Swiss EPR the transaction is used by the MHD Document Source to store doc
 
 ### Actor Roles
 
-**Actor:** Document Source   
-**Role:** Sends documents and metadata to the Document Recipient.   
-**Actor:** Document Recipient   
-**Role:** Accepts the document and metadata sent from the Document Source.   
+**Actor:** Document Source
+**Role:** Sends documents and metadata to the Document Recipient.
+**Actor:** Document Recipient
+**Role:** Accepts the document and metadata sent from the Document Source.
 
 ### Referenced Standards
 

@@ -48,12 +48,10 @@ CH EPR mHealth Capability Statement | Relation/Action | IHE Capability Statement
 [CH.MHD.DocumentResponder](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentResponder.html) | as a template and adapted to Swiss requirements | [Document Responder (server)](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/CapabilityStatement-IHE.MHD.DocumentResponder.html)
 
 ## Source Information until v0.1.2
-The profiles of the FHIR implementation guide CH EPR mHealth are **derived** or **copied and adapted** from existing IHE profiles. Therefore they have been **imported** into the implementation guide. The sources of the structure definitions, operation definitions and capability statements and their dependencies are listed below.
+The profiles of the FHIR implementation guide CH EPR mHealth are **derived** or **copied and adapted** from existing IHE profiles. Therefore they have been **imported** into the implementation guide. The sources of the structure definitions, operation definitions and capability statements and their dependencies are listed below. The IHE [ITI MHD Implementation Guide](https://profiles.ihe.net/ITI/MHD/index.html) is included as a dependency.
 
 * https://github.com/IHE/fhir
-* https://github.com/IHE/ITI.MHD ([FHIR IG (CI Build)](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/index.html))
 * https://github.com/JohnMoehrke/ITI.PIXm ([FHIR IG (CI Build)](http://build.fhir.org/ig/JohnMoehrke/ITI.PIXm/branches/master/index.html))
-
 
 ### Structure Definitions
 
@@ -89,20 +87,11 @@ The IHE profiles are **imported** from https://github.com/IHE/fhir (as of Aug 13
 #### MHD: IHE Structure Definitions
 The IHE profiles are referenced from the public comment version https://profiles.ihe.net/ITI/MHD/index.html, Package ihe.mhd.fhir#4.0.0-comment 
 
-#### MHD: CH EPR mHealth Structure Definitions
-* ch-mhd-providedocumentbundle-comprehensive **is copied from** IHE.MHD.ProvideDocumentBundle.Comprehensive **and adapted to Swiss requirements** 
-   * ch-mhd-comprehensive-documentmanifest **is copied from** IHE.MHD.Comprehensive.DocumentManifest **and adapted to Swiss requirements**
-      * ch-ext-author-authorrole
-   * ch-mhd-provide-documentreference-comprehensive **is copied from** IHE.MHD.Provide.Comprehensive.DocumentReference **and adapted to Swiss requirements**
-      * ch-ext-deletionstatus
-      * ch-mhd-query-documentreference-comprehensive **is copied from** IHE.MHD.Query.Comprehensive.DocumentReference **and adapted to Swiss requirements**
-* ch-mhd-providedocumentbundle-comprehensive-response
-
 #### Validation
 To support **conformance** to the IHE profiles, the following validation mechanisms are added in this Implementation Guide:
 
 * The examples are validated against both profiles (CH EPR mHealth, IHE) (listed in meta.profile)
-* The profiles (CH EPR mHealth) check the conformity to the corresponding IHE profile using constraints (conformsTo)
+* The profiles (CH EPR mHealth) check the conformity to the corresponding IHE profile using constraints (conformsTo) when it is derived from a base or swiss resource and not directly from the IHE constrained resource (e.g. [CH MHD DocumentReference Comprehensive](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/StructureDefinition-ch-mhd-documentreference-comprehensive.html))
 
 ### Operation Definitions
 

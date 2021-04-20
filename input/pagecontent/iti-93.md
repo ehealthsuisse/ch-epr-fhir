@@ -16,7 +16,7 @@ The Mobile Patient Identity Feed transaction sends a FHIR Bundle of new and upda
 
 ### Messages
 
-<div>{% include PMIR_ActorDiagram_ITI-93.svg %}</div>
+<div>{% include CHPIXM_ActorDiagram_ITI-93.svg %}</div>
 
 ### Trigger Events
 
