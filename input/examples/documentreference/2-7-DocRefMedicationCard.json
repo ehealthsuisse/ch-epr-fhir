@@ -32,7 +32,7 @@
         {
             "url": "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus",
             "valueCoding": {
-                "system": "http://fhir.ch/ig/ch-epr-mhealth/CodeSysteme/ch-ehealth-codesystem-deletionstatus",
+                "system": "http://fhir.ch/ig/ch-epr-mhealth/CodeSystem/ch-ehealth-codesystem-deletionstatus",
                 "code": "deletionNotRequested"
             }
         }, 

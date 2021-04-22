@@ -19,7 +19,7 @@
     <immutable value="false"/>
     <compose>
         <include>
-            <system value="http://fhir.ch/ig/ch-epr-mhealth/CodeSysteme/ch-ehealth-codesystem-deletionstatus"/>
+            <system value="http://fhir.ch/ig/ch-epr-mhealth/CodeSystem/ch-ehealth-codesystem-deletionstatus"/>
             <concept>
                 <code value="deletionNotRequested"/>
             </concept>

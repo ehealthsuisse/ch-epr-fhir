@@ -8,6 +8,12 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="iti-83.html">Mobile Patient Identifier Cross-reference Query [ITI-83]</a>
+      </li>
+      <li>
+        <a href="iti-93.html">Mobile Patient Identity Feed [ITI-93]</a>
+      </li>
+      <li>
         <a href="iti-65.html">Provide Document Bundle [ITI-65]</a>
       </li>
       <li>
@@ -23,18 +29,9 @@
         <a href="iti-71.html">Get Access Token [ITI-71]</a>
       </li>
       <li>
-        <a href="iti-83.html">Mobile Patient Identifier Cross-reference Query [ITI-83]</a>
-      </li>
-      <li>
-        <a href="iti-93.html">Mobile Patient Identity Feed [ITI-93]</a>
-      </li>
-      <li>
         <a href="iti-103.html">Get Authorization Server Metadata [ITI-103]</a>
       </li>
     </ul>
-  </li>
-  <li>
-    <a href="profiles.html">Profiles</a>
   </li>
   <li>
     <a href="extensions.html">Extensions</a>

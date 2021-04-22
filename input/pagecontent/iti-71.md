@@ -3,21 +3,24 @@ This section describes the national extension for the Swiss EPR to the Get Acces
 
 The transaction is used by an mHealth App to pass claims to the IUA Authorization Server and to retrieve access token to be used for authorization of the apps access to write data to and retrieve data from the Swiss EPR.  
 
-Depending on the claims made by the mHealth App, two different flavors of access tokens are provid-ed by the IUA Authorization Server: 
+Depending on the claims made by the mHealth App, two different flavors of access tokens are provided by the IUA Authorization Server: 
 
 - Basic Access Token – IUA conformal access token authorizing access to the EPR end-points which are NOT protected by the EPR role and attribute based authorization (i.e. for the CH:PIXm endpoints). 
 - Extended Access Token – IUA conformal access token for the EPR endpoints which are protected by the EPR role and attribute based authorization (i.e. for the MHD endpoints).
 
-An mHealth app in the SMART Standalone Launch sequence SHALL perform the transaction first to get basic access to the Swiss EPR. This requires user authentication as well as the user consent, al-lowing the mHealth app to access the Swiss EPR and perform transactions on behalf of the user. The IUA Authorization Server MAY present a User Interface for the user to authenticate and provide user consent, or by validating against data stored at app registration time.
+An mHealth app in the SMART Standalone Launch sequence SHALL perform the transaction first to get basic access to the Swiss EPR. This requires user authentication as well as the user consent, allowing the mHealth app to access the Swiss EPR and perform transactions on behalf of the user. The IUA Authorization Server MAY present a User Interface for the user to authenticate and provide user consent, or by validating against data stored at app registration time.
 
-Once the mHealth App is authorized, it may launch other embedded mHealth apps (or views) using the SMART EHR Launch Sequence. In this case, the embedded app inherits the basic access authorization from the launching app  and may retrieve extended access token for EPR endpoints protected by the EPR role and attribute based authorization (e.g. to retrieve Documents).
+Once the mHealth App is authorized, it may launch other embedded mHealth apps (or views) using the SMART EHR Launch Sequence. In this case, the embedded app inherits the basic access authorization from the launching app<sup><a href="#1">1</a></sup> and may retrieve extended access token for EPR endpoints protected by the EPR role and attribute based authorization (e.g. to retrieve Documents).
 
+<sup id="1">1</sup>By claiming a launch indicator, the launch is indicated as a SMART EHR launch, initiated from an app, which has already been authorized before. 
 ### Actor Roles
 
 **Actor:** IUA Authorization Client  
 **Role:** Communicates launch information and claims to the IUA Authorization Server and receives JWT ac-cess token or XUA Authorization Assertion.   
 **Actor:** IUA Authorization Server  
-**Role:** Role  Verifies claims and authentication information, retrieves and validates the user consent for the mHealth app to act on behalf of the user  and responds a JWT or XUA compliant access token to the IUA Authorization Client.  
+**Role:** Role  Verifies claims and authentication information, retrieves and validates the user consent for the mHealth app to act on behalf of the user <sup><a href="#2">2</a></sup> and responds a JWT or XUA compliant access token to the IUA Authorization Client.  
+
+<sup id="2">2</sup>E.g. by presenting a screen for the user to give consent. 
 
 ### Referenced Standards
 
@@ -71,7 +74,7 @@ The following table summarizes the requirements on the scope parameter used to c
 | Scope                     | Optionality (Basic/ Extended). | Reference            | Remark                                                                                                                                                                    |
 |---------------------------|--------------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | launch                    | O/R                            | SMART on FHIR        | Permission to obtain launch context when the app is launched from an EHR. Required for apps or views launched from an EHR or an mHealth app which was authorized before.  |
-| purpose_of_use=token   | O/R                            | See sections below.  | Value taken from code system 2.16.756.5.30.1.127.3.10.5 of the CH: EPR value set.                                                                                         |
+| purpose_of_use=token<sup><a href="#3">3</a></sup>  | O/R                            | See sections below.  | Value taken from code system 2.16.756.5.30.1.127.3.10.5 of the CH: EPR value set.                                                                                         |
 | subject_role=token        | O/R                            | See sections below.  | Only the values for the Role of Healthcare Professionals, Assistants, Patients and Representatives are allowed.                                                           |
 | person_id=value           | O/R                            | See sections below.  | EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax.                                                                   |
 | principal=token           | O/O                            | See sections below.  | Name of the healthcare professional an assistant is acting on behalf of.                                                                                                  |
@@ -82,12 +85,11 @@ The following table summarizes the requirements on the scope parameter used to c
 
 <figcaption ID="6">Overview of the request’s scope parameter. For the explanation see the following sections.</figcaption>  
   
-
-Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
+<sup id="3">3</sup>Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
 
 The scope parameter of the request MAY claim the following attributes:
 - There may be a scope with name “launch”. If present, it indicates the permission to obtain launch context for apps (or views) launched in SMART EHR Launch mode. The scope SHALL be used by all apps (or views) launched from a mHealth app which was authorized before.
-- There MAY be a scope with name "purpose_of_use=token". If present, the token SHALL convey the coded value of the current transaction’s purpose of use. Allowed values are NORM (normal access) and EMER (mergency access) from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. e.g. purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5|NORM
+- There MAY be a scope with name "purpose_of_use=token". If present, the token SHALL convey the coded value of the current transaction’s purpose of use. Allowed values are NORM (normal access) and EMER (emergency access) from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. e.g. purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5|NORM
 - There MAY be a scope with name "subject_role=token". If present, the token SHALL convey the coded value of the subject’s role. The value SHALL be either HCP (healthcare professional), ASS (assistant), REP (representative) or PAT (patient) from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. e.g.: subject_role=urn:oid:2.16.756.5.30.1.127.3.10.6|HCP
 - There MAY be a scope with name "person_id=value". If present, the value shall convey the EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax. e.g: person_id=305000^^^&amp;2.16.756.5.30.1.109.6.5.3.1.1&amp;ISO
 
@@ -164,12 +166,12 @@ When launched, the IUA Authorization Client SHALL perform HTTP GET request with 
 
 If the IUA Authorization Client receives the request from the IUA Authorization Server on the callback URL conveying the authorization code, it SHALL perform the HTTP POST request with the client_id and client_secret in the HTTP authorization header to resolve the authorization code to the access token.  
 
-The IUA Authorization Client SHALL use the access token as defined in IUA Incorporate Access Token transaction, when performing requests to resources of the Swiss EPR .  
+The IUA Authorization Client SHALL use the access token as defined in IUA Incorporate Access Token transaction, when performing requests to resources of the Swiss EPR<sup><a href="#4">4</a></sup>.  
 
 ### Expected Actions IUA Authorization Server 
 The IUA Authorization Server SHALL support the HTTP conversation of the OAUTH 2.1 Authorization Code grant as follows:
 
-If the IUA Authorization Server receives a request, it SHALL authenticate the user by redirecting the request to a XUA Authentication Provider. The XUA Authentication provider authenticates the user based on its internal session management (i.e. by checking the requests cookies or other methods) or by validating the user authentication means and returns the identity token to the IUA Authorization Server. 
+If the IUA Authorization Server receives a request, it SHALL authenticate the user by redirecting the request to a XUA Authentication Provider<sup><a href="#5">5</a></sup>. The XUA Authentication provider authenticates the user based on its internal session management (i.e. by checking the requests cookies or other methods) or by validating the user authentication means and returns the identity token to the IUA Authorization Server. 
 
 In case of authentication failure, the IUA Authorization Server must respond with HTTP error code 401 ‘Not authorized’.
 
@@ -179,11 +181,14 @@ If the app (or view) is launched as an SMART EHR Launch, the IUA Authorization S
 
 Depending on the scope claimed, the IUA Authorization Server SHALL either build an basic access authorization token allowing basic access to the EPR (i.e. to access patient data), or an extended access to access resources protected by the role and attribute based EPR authorization (i.e. read and write documents).
 
-The business rules for the IUA Authorization Server for the Healthcare Professional, Assistant, Patient and Representative Extension SHALL be the same as for Annex5 1.6.4.2.4.4 Expected Actions X-Assertion Provider Extensions.
+The business rules for the IUA Authorization Server for the Healthcare Professional, Assistant, Patient and Representative Extension SHALL be the same as for Annex 5E1 1.6.4.2.4.4 Expected Actions X-Assertion Provider Extensions.
 
 If successful the IUA Authorization Server shall generate an OAuth 2.1 authorization code and per-form a callback to the URL defined in the request, using the OAuth authorization code as URL query parameter with key ‘code’.
 
 The IUA Authorization Server SHALL stores the access token and the assigned authorization code and respond the access token on request to the Authorization Client. 
+
+<sup id="4">4</sup>This covers all possible EPR transaction, with the exception of the ITI-103  
+<sup id="5">5</sup>The XUA Authentication Provider currently only supports SAML 2 based authentication as defined in Annex 8 of the EPDV-EDI, but will be extended to Open ID Connect in the future. Currently SMART on FHIR does not have an SAML 2 option.  
 
 ### Message Example
 
