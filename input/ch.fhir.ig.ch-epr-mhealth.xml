@@ -395,12 +395,6 @@
       </reference>
       <exampleBoolean value="false"/>
     </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/ch-pixm-format-mimetype"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
 
     <!-- IG Pages -->
     <page>

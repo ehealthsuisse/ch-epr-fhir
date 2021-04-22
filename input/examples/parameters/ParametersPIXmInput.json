@@ -17,10 +17,6 @@
         {
             "name": "targetSystem",
             "valueUri": "urn:oid:5.6.7"
-        },
-        {
-            "name": "_format",
-            "valueCode": "json"
         }
     ]
 }

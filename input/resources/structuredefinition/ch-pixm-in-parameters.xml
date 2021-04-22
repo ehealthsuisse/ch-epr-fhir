@@ -93,29 +93,5 @@
         <code value="uri" />
       </type>
     </element>
-
-    <!-- IN parameter: _format -->
-    <element id="Parameters.parameter:_format">
-      <path value="Parameters.parameter" />
-      <sliceName value="_format" />
-      <short value="_format"/>
-      <max value="1"/>
-    </element>
-    <element id="Parameters.parameter:_format.name">
-      <path value="Parameters.parameter.name" />
-      <fixedString value="_format" />
-    </element>
-    <element id="Parameters.parameter:_format.valueCode">
-      <path value="Parameters.parameter.valueCode" />
-      <short value="application/fhir+json | json | application/fhir+xml | xml"/>
-      <min value="1" />
-      <type>
-        <code value="code" />
-      </type>
-      <binding>
-				<strength value="required" />
-				<valueSet value="http://fhir.ch/ig/ch-epr-mhealth/ValueSet/ch-pixm-format-mimetype" />
-			</binding>
-    </element>    
   </differential>
 </StructureDefinition>
