@@ -1,0 +1,27 @@
+@startuml 
+
+actor User
+
+participant "User Agent" as UserAgent
+participant "Authorization Client" as Client
+participant "Authorization Server" as AuthzServer
+
+autonumber 0 1 "<b>[00]</b>"
+
+group Get Access Token (ITI-71) [Authorization Code Grant]
+Client -> UserAgent: Redirect to Authorization Server \n(authorization request incl requested scopes, resource, etc.)
+UserAgent -> AuthzServer: authorization request
+
+note over User, AuthzServer
+  Authorization Server determines access based on
+  user authentication, consent and/or other policies.
+end note
+
+AuthzServer -> UserAgent: Redirect to Client \n(authorization response with Authorization Code)
+UserAgent -> Client: authorization response
+
+Client -> AuthzServer: Get Access Token Request \n(client credentials + Authorization Code)
+AuthzServer --> Client: Get Access Token Response (access token)
+end
+
+@enduml
