@@ -1,0 +1,24 @@
+@startuml
+
+title Interaction Diagram for [ITI-20]
+
+participant consumer as "Secure Application\nSecureNode\nAudit Record Forwarder"
+participant responder as "Audit Record\nRepository"
+
+consumer -> responder: Send Audit Resource Request
+activate consumer
+activate responder
+
+responder -> consumer: Send Audit Resource Response
+deactivate responder
+deactivate consumer
+
+consumer -> responder: Send Audit Bundle Request
+activate consumer
+activate responder
+
+responder -> consumer: Send Audit Bundle Response
+deactivate responder
+deactivate consumer
+
+@enduml 

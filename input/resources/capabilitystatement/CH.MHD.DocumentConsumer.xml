@@ -20,7 +20,7 @@
     <format value="application/fhir+json" />
     <rest>
         <mode value="client" />
-        <documentation value="MHD client requests a list of DocumentManifest Resources, matching the supplied set of criteria, from the Document Responder [ITI-66]. 
+        <documentation value="MHD client requests a list of List Resources, matching the supplied set of criteria, from the Document Responder [ITI-66]. 
         MHD client requests a list of DocumentReference Resources, matching the supplied set of criteria, from the Document Responder [ITI-67].
         MHD client requests a document from the Document Responder [ITI-68]." />
         <security>

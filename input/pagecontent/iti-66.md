@@ -1,4 +1,4 @@
-There are **no additional requirements** for the Swiss EPR of the Find Document Lists [ITI-66] transaction
+There are no additional requirements for the Swiss EPR of the Find Document Lists [ITI-66] transaction
 defined in the MHD Profile published in the IHE ITI Trial Implementation “Mobile Access to Health Documents”.
 The SubmissionSet.Author.AuthorRole mapping to DocumentManifest has to be supported. The Document Responder
 does not need to support the FindFolders Query from the XDS on FHIR Option. 
@@ -24,6 +24,7 @@ This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://www.hl7.org
 ### Messages
 
 <div>{% include MHD_ActorDiagram_ITI-66.svg %}</div>
+<div><figcaption>Interaction diagram for [ITI-66]</figcaption></div>  
 
 ### Trigger Events
 
@@ -43,5 +44,5 @@ See [Bundle example](Bundle-Bundle-FindSubmissionSets.html) (and the correspondi
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Document Responder using IUA profile with extended access token. Consequently
-the Finde Document Manifest [ITI-66] request must authorize using the Incorporate Access Token [ITI-
+the Find Document Lists [ITI-66] request must authorize using the Incorporate Access Token [ITI-
 72] transaction of the IUA profile.

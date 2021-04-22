@@ -407,6 +407,16 @@
         <generation value="markdown"/>
       </page>
       <page>
+        <nameUrl value="iti-71.html"/>
+        <title value="Get Access Token [ITI-71]"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="iti-103.html"/>
+        <title value="Get Authorization Server Metadata [ITI-103]"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
         <nameUrl value="iti-83.html"/>
         <title value="Mobile Patient Identifier Cross-reference Query [ITI-83]"/>
         <generation value="markdown"/>
@@ -437,13 +447,8 @@
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="iti-103.html"/>
-        <title value="Get Authorization Server Metadata [ITI-103]"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="iti-71.html"/>
-        <title value="Get Access Token [ITI-71]"/>
+        <nameUrl value="iti-20.html"/>
+        <title value="Record Audit Event [ITI-20]"/>
         <generation value="markdown"/>
       </page>
       <page>

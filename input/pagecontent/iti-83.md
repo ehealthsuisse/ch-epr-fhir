@@ -1,4 +1,4 @@
-This section documents **additional requirements** in the Swiss EPR context on the Mobile Patient Identifier
+This section documents additional requirements in the Swiss EPR context on the Mobile Patient Identifier
 Cross-reference Query.
 
 ### Scope
@@ -55,12 +55,15 @@ error Target Domain not recognized (3.83.4.2.2.4) SHALL be returned.
 See the corresponding [OperationDefinition](OperationDefinition-CH.PIXm.html).
 
 ### Message Example
-Message response for a patient with a local id of 123 by AssigningAuthority oid 1.2.3 which resides in a
-community where the Assigning Authority is oid 5.6.7 and the MPI-PID and EPR-SPID are **requested**.
+Query for a patient with a local id of 123 by AssigningAuthority oid 1.2.3 which resides in a
+community where the Assigning Authority is oid 5.6.7 and the MPI-PID and EPR-SPID are requested:
 
 ```
 GET [base]/Patient/$ihe-pix?sourceIdentifier=urn:oid:1.2.3|123&targetSystem=urn:oid:5.6.7&targetSystem=urn:oid:2.16.756.5.30.1.127.3.10.3
 ```
+[Example response to above query](Parameters-ParametersPIXmOutput.json.html)
+
+Alternative:  
 See [Input Parameters example](Parameters-ParametersPIXmInput.html) (and the corresponding [profile](StructureDefinition-ch-pixm-in-parameters.html)) for the Mobile Patient Identifier Cross-reference Query.   
 See [Output Parameters example](Parameters-ParametersPIXmOutput.html) (and the corresponding [profile](StructureDefinition-ch-pixm-out-parameters.html)) as response to the Mobile Patient Identifier Cross-reference Query.
 
