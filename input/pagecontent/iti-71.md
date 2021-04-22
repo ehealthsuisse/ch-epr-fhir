@@ -31,6 +31,7 @@ This national extension does not reference additional standards to the standards
 
 <figcaption>OAuth 2.1 authorization code grant flow of the of the IUA Get Access Token transaction</figcaption>  
 
+{:class="table table-bordered"}
 | Step                                                                                                               | Parameter             | Opt (Basic/ Extended). | Reference     | Remark                                                                                                                                                                                                                             |
 |--------------------------------------------------------------------------------------------------------------------|-----------------------|------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | The mHealth app sends a HTTP GET request to the IUA Authorization Server endpoint.                                 | response_type         | R                      | IUA           | The value must be code.                                                                                                                                                                                                            |
@@ -71,6 +72,7 @@ A user launches an mHealth app or a specific application view to access data and
 
 The following table summarizes the requirements on the scope parameter used to convey the claims: 
 
+{:class="table table-bordered"}
 | Scope                     | Optionality (Basic/ Extended). | Reference            | Remark                                                                                                                                                                    |
 |---------------------------|--------------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | launch                    | O/R                            | SMART on FHIR        | Permission to obtain launch context when the app is launched from an EHR. Required for apps or views launched from an EHR or an mHealth app which was authorized before.  |
@@ -88,19 +90,19 @@ The following table summarizes the requirements on the scope parameter used to c
 <sup id="3">3</sup>Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
 
 The scope parameter of the request MAY claim the following attributes:
-- There may be a scope with name “launch”. If present, it indicates the permission to obtain launch context for apps (or views) launched in SMART EHR Launch mode. The scope SHALL be used by all apps (or views) launched from a mHealth app which was authorized before.
-- There MAY be a scope with name "purpose_of_use=token". If present, the token SHALL convey the coded value of the current transaction’s purpose of use. Allowed values are NORM (normal access) and EMER (emergency access) from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. e.g. purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5|NORM
-- There MAY be a scope with name "subject_role=token". If present, the token SHALL convey the coded value of the subject’s role. The value SHALL be either HCP (healthcare professional), ASS (assistant), REP (representative) or PAT (patient) from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. e.g.: subject_role=urn:oid:2.16.756.5.30.1.127.3.10.6|HCP
+- There may be a scope with name “launch”. If present, it indicates the permission to obtain launch context for apps (or views) launched in SMART EHR Launch mode. The scope SHALL be used by all apps (or views) launched from a mHealth app which was authorized before.  
+- There MAY be a scope with name "purpose_of_use=token". If present, the token SHALL convey the coded value of the current transaction’s purpose of use. Allowed values are NORM (normal access) and EMER (emergency access) from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. e.g. purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5\|NORM  
+- There MAY be a scope with name "subject_role=token". If present, the token SHALL convey the coded value of the subject’s role. The value SHALL be either HCP (healthcare professional), ASS (assistant), REP (representative) or PAT (patient) from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. e.g.: subject_role=urn:oid:2.16.756.5.30.1.127.3.10.6\|HCP  
 - There MAY be a scope with name "person_id=value". If present, the value shall convey the EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax. e.g: person_id=305000^^^&amp;2.16.756.5.30.1.109.6.5.3.1.1&amp;ISO
 
 Depending on the value of the role scope additional scopes are required, as described in the following sections.
 
-##### Heathcare Professional Extension
-In the healthcare professional extension, the scope subject_role  SHALL be the code HCP from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set.
+##### Healthcare Professional Extension
+In the healthcare professional extension, the scope subject_role SHALL be the code HCP from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set.
 
 ##### Assistant Extension
-In the assistant extension, the scope subject_role SHALL be the code ASS from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. There SHALL be a scope with name princi-pal_id=value. The value SHALL convey the GLN of the healthcare professional an assistant is acting on behalf of. There SHALL be a scope with name principal=value. The value SHALL convey the name of the healthcare professional an assistant is acting on behalf of.
-There MAY be one or more scopes with name group_id=value and corresponding group=value. If pre-sent each value SHALL convey the ID and name of the subject’s organization or group as registered in the EPR HPD. The ID MUST be an OID in the format of an URN.
+In the assistant extension, the scope subject_role SHALL be the code ASS from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. There SHALL be a scope with name principal_id=value. The value SHALL convey the GLN of the healthcare professional an assistant is acting on behalf of. There SHALL be a scope with name principal=value. The value SHALL convey the name of the healthcare professional an assistant is acting on behalf of.
+There MAY be one or more scopes with name group_id=value and corresponding group=value. If present each value SHALL convey the ID and name of the subject’s organization or group as registered in the EPR HPD. The ID MUST be an OID in the format of an URN.
 
 ##### 	Patient Extension
 In the patient extension, the scope subject_role SHALL be the code PAT from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. The value of the purpose of use scope SHALL be the code NORM from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.
@@ -110,13 +112,14 @@ In the representative extension, the scope subject_role SHALL be the code REP fr
 
 
 ####	Response
-The response SHALL either convey an basic acces token in JWT format, granting basic access to the EPR (i.e. to access patient data), or an extended access token to access re-sources protected by the role and attribute based EPR authorization (i.e. read and write documents).
+The response SHALL either convey an basic access token in JWT format, granting basic access to the EPR (i.e. to access patient data), or an extended access token to access resources protected by the role and attribute based EPR authorization (i.e. read and write documents).
 
 ##### JSON Web Token Option
 
 From the 3.71.4.2.2.1.1 JWT IUA extension subject_name, subject_role, purpose_of_use, nation-al_provider_identifier, person_id shall be supported by the Authorization Server and Resource Server.
 The claim content for the JWT IUA extensions shall correspond to the content defined in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 
+{:class="table table-bordered"}
 | JWT Claim (Extension)        | Optionality | XUA Attribute EPR                                  | Remark                                                                                                                                                                    |
 |------------------------------|-------------|----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | subject_name                 | O/R         | urn:oasis:names:tc:xspa:1.0:subject:subject-id     | Plain text’s user name.                                                                                                                                                   |
@@ -135,6 +138,7 @@ The Authorization Server and Resource Server SHALL support the following extensi
 
 The ch_group extension claims shall be wrapped in an "extensions" object with key 'ch_group’ and a JSON Array containing the json objects with properties name and id. The id MUST be an OID in the format of an URN. 
 
+{:class="table table-bordered"}
 | ch_group Array element | Optionality | XUA Attribute EPR                                   | Remark                                                                                                                                          |
 |------------------------|-------------|-----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | name                   | O/R         | urn:oasis:names:tc:xspa:1.0:subject:organization    | In XUA it is an array of text description of the groups/organizations, in the JWT extension it is an array of groups with properties name, id.  |
@@ -151,6 +155,7 @@ The Authorization Server and Resource Server shall support the following extensi
 The ch_assistant extension claims shall be wrapped in an "extensions" object with key 'ch_assistant' and a JSON value object containing the claims. 
 The claim content for the JWT CH:EPR extensions shall correspond to the content defined in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 
+{:class="table table-bordered"}
 | JWT Claim (Extension) | Optionality | XUA Attribute EPR                  | Remark                                                                   |
 |-----------------------|-------------|------------------------------------|--------------------------------------------------------------------------|
 | principal             | O/R         | urn:e-health-suisse:principal-name | Name of the healthcare professional an assistant is acting on behalf of. |

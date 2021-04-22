@@ -12,13 +12,13 @@ local identifier the MPI and get the corresponding MPI-PID and the EPR-SPID iden
 **Role:** Resolves the local ID sent with the request to the MPI-PID and EPR-SPID.   
 
 ### Referenced Standards
-[Patient Identifier Cross-reference for Mobile (PIXm), Rev. 2.1 – Trial Implementation, December 5, 2019](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PIXm.pdf)
-
+[Patient Identifier Cross-reference for Mobile (PIXm), Rev. 2.1 – Trial Implementation, December 5, 2019](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PIXm.pdf)  
 This PIXm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
 
 ### Messages
 
 <div>{% include CHPIXM_ActorDiagram_ITI-83.svg %}</div>
+<div><figcaption>Interaction diagram for [ITI-83]</figcaption></div>  
 
 ### Trigger Events
 A mobile app wants to access (read or write) documents, which requires the MPI-PID of the patient.
@@ -30,8 +30,7 @@ Parameter:
 ```
 GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]{&targetSystem=[uri]}{&_format=[token]}
 ```
-
-*Table 3.83.4.1.2-1: $ihe-pix Message HTTP query Parameters*   
+<div><figcaption>$ihe-pix Message HTTP query Parameters</figcaption></div>  
 
 {:class="table table-bordered"}
 | Query parameter Name | Cardinalty | Search Type | Description | Swiss National Extension |
@@ -41,7 +40,7 @@ GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]{&targetSystem=[uri]}{&_form
 | targetSystem | **1..2** | uri | The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section 3.83.4.1.2.2. | SHALL be Restricted to the Assigning authority of the community and/or the EPR-SPID. |
 | _format | 0..1 | token | The requested format of the response from the mime-type value set. See ITI TF-2x: Appendix Z.6. | No further refinement. |
 
-*Table 3.83.4.2.2-1: $ihe-pix Message response*
+<div><figcaption>$ihe-pix Message response</figcaption></div>  
 
 {:class="table table-bordered"}
 | Parameter | Cardinality | Data Type | Description |
