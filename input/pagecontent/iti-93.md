@@ -22,20 +22,20 @@ The Mobile Patient Identity Feed transaction sends a FHIR Bundle of new and upda
 ### Trigger Events
 
 A Supplier triggers a Mobile Patient Identity Feed request to a Consumer when patients are created, updated,
-merged, or deleted.
+merged or deleted.
 
 ### Message Semantics
 
 The same message semantic apply as in 3.93.4.1.2 Message Semantics.
 
-The patient data (see [Patient example](Patient-PatientPIXmFeed.html)) shall be conform to the CH:PIXm Patient profile with the canonical url
+The patient data (see [Patient example](Patient-PatientPIXmFeed.html)) SHALL be conform to the CH:PIXm Patient profile with the canonical url
 [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient](StructureDefinition-ch-pixm-patient.html). 
 If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID 
 as an identifier MAY be added. The birthname can be added with the ISO 21090 qualifier extension, the religion SHALL not be added.
 
 ### Expected Actions Consumer played by Patient Identifier Cross-reference Manager
 
-If the MPI-PID is provided as an identifier the Patient Identity Manger SHALL use the MPI-PID to correlate
+If the MPI-PID is provided as an identifier the Patient Identifier Cross-reference Manager SHALL use the MPI-PID to correlate
 the patient in the community.
 
 ### Message Example

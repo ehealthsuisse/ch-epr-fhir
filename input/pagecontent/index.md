@@ -21,7 +21,7 @@ The extensions, restrictions and translations specified apply to the following I
 
 * [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/)
 * [IUA](https://profiles.ihe.net/ITI/IUA/index.html)
-* [PIXm](https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PIXm.pdf), [PMIR](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PMIR.pdf)
+* [PIXm](https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PIXm.pdf)
 * [MHD](https://profiles.ihe.net/ITI/MHD/index.html)
 * [RESTful ATNA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)
 
@@ -42,7 +42,7 @@ This extension covers two options:
 1. Generic mHealth option – This option adresses primary systems or mobile applications using the basic EPR flows but replace the XDS.b related and PIX V3 profiles with the FHIR based profiles;
 2. SMART on FHIR – This option adresses mobile apps or modular primary systems that want to connect to the Swiss EPR using SMART on FHIR.
 
-The options differ by the architecture for the user authentication and authorization. While in the
+The options differ by the architecture for the user authentication, client authentication  and authorization. While in the
 generic mHealth option all profiles and extensions defined in this extension must be applied, in the SMART
 on FHIR option only a subset of the mHealth profiles and transactions must be applied.
 

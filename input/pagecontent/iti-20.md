@@ -1,6 +1,6 @@
 ### Scope
 
-This section describes the national extension for the Swiss EPR of the Send Audit Resource Request Message – RESTful interaction [ITI-20] transaction defined in the RESTful ATNA profile which is currently prepared as IHE Trial Implementation with the working title” Add RESTful ATNA (Query and Feed)”. The Audit Record Repository SHALL support the ATX: FHIR Feed Option.
+This section describes the national extension for the Swiss EPR of the Send Audit Resource Request Message – RESTful interaction [ITI-20] transaction defined in the RESTful ATNA profile which is currently prepared as IHE Trial Implementation with the working title ”Add RESTful ATNA (Query and Feed)”. The Audit Record Repository SHALL support the ATX: FHIR Feed Option.
 
 ### Actor Roles
 
@@ -12,12 +12,12 @@ This section describes the national extension for the Swiss EPR of the Send Audi
 ### Referenced Standards
 
 [Add RESTful ATNA (Query and Feed), Rev. 3.2 – Trial Implementation, August 28, 2020](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)  
-The Trial Implementation is based on Release 4 of the [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
-
+This RESTful ATNA profile is based on Release 4 of the [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
 ### Messages
 
+The “Send Audit Resource Request Message – FHIR Feed Interaction” is used for auditing the FHIR Audit Event Resource using the RESTful protocol. 
+
 <div>{% include RESTATNA_ActorDiagram_ITI-20.svg %}</div>
-<div><figcaption>Interaction diagram for FHIR Feed Interaction [ITI-65]</figcaption></div>  
 
 ### Trigger Events
 

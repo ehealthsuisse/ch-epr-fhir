@@ -2,7 +2,7 @@
 
 title Interaction Diagram for [ITI-20]
 
-participant consumer as "Secure Application\nSecureNode\nAudit Record Forwarder"
+participant consumer as "Secure Application\nSecure Node\nAudit Record Forwarder"
 participant responder as "Audit Record\nRepository"
 
 consumer -> responder: Send Audit Resource Request

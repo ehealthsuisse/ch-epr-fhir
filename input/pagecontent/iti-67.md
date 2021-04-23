@@ -1,4 +1,4 @@
-There are no additional requirements for the Swiss EPR extension for the for the Swiss EPR of the Find
+There are no additional requirements for the Swiss EPR extension of the Find
 Document References [ITI-67] transaction defined in the MHD Profile published in the IHE ITI Trial Implementation
 “Mobile Access to Health Documents”.
 
