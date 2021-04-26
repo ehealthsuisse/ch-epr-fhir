@@ -23,7 +23,7 @@
         <documentation value="PIXm client queries the Patient Identifier Crossreference Manager for the MPI-PID and EPR-SPID [ITI-83]." />
         <security>
             <cors value="false" />
-            <description value="TLS SHALL be used" />
+            <description value="TLS SHALL be used together with IUA basic access token" />
         </security>
         <resource>
             <type value="Patient" />
