@@ -1,5 +1,7 @@
 @startuml 
 
+title Interaction Diagram for [ITI-103]
+
 participant "Authorization Client\nor\nResource Server" as Client
 participant "Authorization Server" as AuthzServer
 

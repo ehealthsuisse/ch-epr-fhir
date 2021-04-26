@@ -1,0 +1,20 @@
+
+
+app -> mp_AuthorizationServer: GET /metadata
+activate mp_AuthorizationServer
+app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
+deactivate mp_AuthorizationServer
+
+app -> mp_AuthorizationServer: Redirect to Authz Server (SMART standalone launce sequence)\nwith OpenID Connect
+activate mp_AuthorizationServer
+mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
+activate idp_user_authentication_provider
+mp_AuthorizationServer <- idp_user_authentication_provider
+deactivate idp_user_authentication_provider
+mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
+mp_AuthorizationServer -> app: On Approval redirect to app with code
+deactivate mp_AuthorizationServer
+app -> mp_AuthorizationServer: Exchange code for access token
+activate mp_AuthorizationServer
+app <- mp_AuthorizationServer: access token for response [JWT:UAP-ID]
+deactivate mp_AuthorizationServer

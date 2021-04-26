@@ -1,0 +1,42 @@
+@startuml
+!include design.plantuml.txt
+title 3.03 mHealth - write document for patient
+
+actor user as "Patient"
+
+box "mHealth App" #BFCAD2
+	participant app as "App GUI"
+    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer"
+    participant docsource as "Document Source (MHD)"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "IUA\nAuthorization Server"
+end box
+
+box "Community Components" #FFEFDE
+	participant mp_pix_x_ref_mgr as "Patient Identifier \nCross-reference \nManager"
+	participant mp_doc_recipient as "Document Recipient (MHD)\nDocument Source (XDS) | X-Service User"
+	participant cc_x_assertion_provider as "X-Assertion Provider" 
+end box
+
+user -[#black]> app: read doc
+activate app
+
+!include_many step_mh_idp.plantuml.txt
+
+!include_many step_mh_pixm.plantuml.txt
+
+app -[#black]> docsource: write document [MPI-ID, JWT:UAP-ID]
+activate docsource
+docsource -> mp_doc_recipient: [ITI-65] Provide Document Bundle Request [MPI-ID, JWT:UAP-ID]
+activate mp_doc_recipient
+docsource <- mp_doc_recipient: [ITI-65] Provide Document Bundle Response 
+deactivate mp_doc_recipient
+app <[#black]- docsource
+deactivate docsource
+
+user <[#black]- app
+deactivate app
+
+@enduml 

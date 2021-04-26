@@ -51,3 +51,5 @@ on FHIR option only a subset of the mHealth profiles and transactions must be ap
 The following figure shows the profiles, actors and transactions specified or referenced in this national extension:
 
 <div>{% include overview.svg %}</div>
+
+For the process flow of the mHealth profiles see [sequence diagrams](sequencediagrams.html).

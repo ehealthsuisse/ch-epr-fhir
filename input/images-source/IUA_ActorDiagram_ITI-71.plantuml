@@ -1,5 +1,7 @@
 @startuml 
 
+title Interaction Diagram for [ITI-71]
+
 actor User
 
 participant "User Agent" as UserAgent

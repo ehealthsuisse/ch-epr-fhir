@@ -1,0 +1,25 @@
+@startuml
+!include design.plantuml.txt
+title 3.01 mHealth - Authentication/Authorization
+
+actor user as "Patient"
+
+box "mHealth App" #BFCAD2
+	participant app as "App GUI"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
+end box
+
+box "Community Components" #FFEFDE
+	participant mp_AuthorizationServer as "Authorization Server (IUA)"
+end box
+
+user -[#black]> app: authenticate
+activate app
+!include_many step_mh_idp.plantuml.txt
+user <[#black]- app
+deactivate app
+
+@enduml 

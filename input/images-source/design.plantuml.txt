@@ -1,0 +1,3 @@
+skinparam Padding 1
+autonumber 1 1 "<b>[00]"
+skinparam svgDimensionStyle false

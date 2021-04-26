@@ -1,0 +1,9 @@
+app -[#black]> pixmconsumer: query MPI_A-PID from MPI\nusing local ID and access token
+activate pixmconsumer
+pixmconsumer -> mp_pix_x_ref_mgr: [ITI-83] Mobile Patient Identifier Cross-reference Query [local ID] together with access token
+activate mp_pix_x_ref_mgr
+
+pixmconsumer <- mp_pix_x_ref_mgr: [ITI-83] ] Mobile Patient Identifier Cross-reference Query Response [MPI-PID, EPR-SPID]
+deactivate mp_pix_x_ref_mgr
+app <[#black]- pixmconsumer: 
+deactivate pixmconsumer

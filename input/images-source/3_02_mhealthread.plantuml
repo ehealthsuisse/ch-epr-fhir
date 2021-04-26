@@ -1,0 +1,77 @@
+@startuml
+!include design.plantuml.txt
+title 3.02 mHealth - get document for patient (2. Generic mHealth Option)
+
+actor user as "Patient"
+
+box "mHealth App" #BFCAD2
+	participant app as "App GUI"
+    participant docconsumer as "Document Consumer (MHD)"
+    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer"
+	participant AuthorizationClient as "Authorization Client (IUA)"
+end box
+
+box "Community Components" #FFEFDE
+	participant mp_pix_x_ref_mgr as "Patient Identifier \nCross-reference \nManger"
+	participant mp_AuthorizationServer as "Authorization Server (IUA)"
+	participant mp_doc_responder as "Document Responder (MHD)"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
+end box
+
+
+user -[#black]> app: read doc
+activate app
+
+app -> mp_AuthorizationServer: GET /metadata
+activate mp_AuthorizationServer
+app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
+deactivate mp_AuthorizationServer
+
+app -[#black]> AuthorizationClient: Get Authorization Token
+activate AuthorizationClient
+AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Authorization Token 
+activate mp_AuthorizationServer
+mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
+activate idp_user_authentication_provider
+mp_AuthorizationServer <- idp_user_authentication_provider
+deactivate idp_user_authentication_provider
+mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
+AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Authorization Token Response 
+deactivate mp_AuthorizationServer
+app <[#black]- AuthorizationClient: 
+deactivate AuthorizationClient
+
+app -> mp_AuthorizationServer: Exchange code for access token
+activate mp_AuthorizationServer
+app <- mp_AuthorizationServer: access token for response [JWT:UAP-ID]
+deactivate mp_AuthorizationServer
+
+!include_many step_mh_pixm.plantuml.txt
+
+!include_many step_mh_iua.plantuml.txt
+
+app -> docconsumer: query documents
+activate docconsumer
+docconsumer -[#black]> mp_doc_responder: query documents [ITI-67]
+activate mp_doc_responder
+docconsumer <[#black]- mp_doc_responder
+deactivate mp_doc_responder
+docconsumer <- app
+deactivate docconsumer
+
+app -> docconsumer: retrieve documents
+activate docconsumer
+docconsumer -[#black]> mp_doc_responder: retrieve document [ITI-68]
+activate mp_doc_responder
+docconsumer <[#black]- mp_doc_responder
+deactivate mp_doc_responder
+docconsumer <- app
+deactivate docconsumer
+
+user <[#black]- app
+deactivate app
+
+@enduml 

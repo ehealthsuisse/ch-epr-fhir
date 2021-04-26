@@ -471,6 +471,11 @@
         <title value="Operations"/>
         <generation value="html"/>
       </page>
+      <page>
+        <nameUrl value="sequencediagrams.html"/>
+        <title value="Sequence Diagrams"/>
+        <generation value="markdown"/>
+      </page>
     </page>
 
 
