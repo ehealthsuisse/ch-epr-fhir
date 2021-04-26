@@ -18,7 +18,6 @@ This PIXm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://w
 ### Messages
 
 <div>{% include CHPIXM_ActorDiagram_ITI-83.svg %}</div>
-<div><figcaption>Interaction diagram for [ITI-83]</figcaption></div>  
 
 ### Trigger Events
 A mobile app wants to access (read or write) documents, which requires the MPI-PID of the patient.

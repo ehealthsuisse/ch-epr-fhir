@@ -27,9 +27,10 @@ Once the mHealth App is authorized, it may launch other embedded mHealth Apps (o
 This national extension does not reference additional standards to the standards referenced in the Get Access Token [ITI-71] transaction of the IUA Trial Implementation.   
 ### Messages
 
+OAuth 2.1 authorization code grant flow of the of the IUA Get Access Token transaction:
+
 <div>{% include IUA_ActorDiagram_ITI-71.svg %}</div>
 
-<figcaption>OAuth 2.1 authorization code grant flow of the of the IUA Get Access Token transaction</figcaption>  
 
 {:class="table table-bordered"}
 | Step                                                                                                               | Parameter             | Opt (Basic/ Extended). | Reference     | Remark                                                                                                                                                                                                                             |
