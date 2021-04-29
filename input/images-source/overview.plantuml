@@ -3,6 +3,8 @@
 title **Profiles, actors and transactions covered in this national extension**
 
 skinparam componentStyle rectangle
+skinparam svgDimensionStyle false
+
 left to right direction
 
 component "mHealth: App" {
