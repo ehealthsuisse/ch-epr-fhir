@@ -11,6 +11,6 @@ idp_user_authentication_provider -> app: On Approval redirect to app with code
 deactivate idp_user_authentication_provider
 app -> idp_user_authentication_provider: Exchange code for access token
 activate idp_user_authentication_provider
-app <- idp_user_authentication_provider: access token for response [JWT:UAP-ID]
+app <- idp_user_authentication_provider: access token for response
 deactivate idp_user_authentication_provider
 

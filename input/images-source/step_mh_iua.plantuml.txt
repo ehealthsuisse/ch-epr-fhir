@@ -1,8 +1,8 @@
 app -[#black]> AuthorizationClient: Get Authorization Token
 activate AuthorizationClient
-AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Authorization Token [SAML Token Option]
+AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Authorization Token [Extended access token]
 activate mp_AuthorizationServer
-AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Authorization Token Response [SAML Token Option]
+AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Authorization Token Response [Extended access token]
 deactivate mp_AuthorizationServer
 app <[#black]- AuthorizationClient: 
 deactivate AuthorizationClient

@@ -74,21 +74,23 @@ A user launches an mHealth App or a specific application view to access data and
 The following table summarizes the requirements on the scope parameter used to convey the claims: 
 
 {:class="table table-bordered"}
-| Scope                     | Optionality (Basic/ Extended). | Reference            | Remark                                                                                                                                                                    |
-|---------------------------|--------------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| launch                    | O/R                            | SMART on FHIR        | Permission to obtain launch context when the app is launched from an EHR. Required for apps or views launched from an EHR or a mHealth App which was authorized before.  |
-| purpose_of_use=token<sup><a href="#3">3</a></sup>  | O/R                            | See sections below.  | Value taken from code system 2.16.756.5.30.1.127.3.10.5 of the CH: EPR value set.                                                                                         |
-| subject_role=token        | O/R                            | See sections below.  | Only the values for the Role of Healthcare Professionals, Assistants, Patients and Representatives are allowed.                                                           |
-| person_id=value           | O/R                            | See sections below.  | EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax.                                                                   |
-| principal=token           | O/O                            | See sections below.  | Name of the healthcare professional an assistant is acting on behalf of.                                                                                                  |
-| principal_id=token        | O/O                            | See sections below.  | GLN of the healthcare professional an assistant is acting on behalf of.                                                                                                   |
-| group=value               | O/O                            | See sections below.  | Name of the organization or group an assistant is acting on behalf of.                                                                                                    |
-| group_id=value            | O/O                            | See sections below.  | OID of the organization or group an assistant is acting on behalf of.                                                                                                     |
-| access_token_format=value | O/O                            |                      | Either ihe-jwt or ihe-saml as value. Will return this token_flavor. If scope is not provided defaults to ihe-jwt.                                                         |
+| Scope                     | Optionality (Basic/ Extended) | Type  | Reference            | Remark                                                                                                                                                                    |
+|---------------------------|--------------------------------|-------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| launch                    | O/R  |       | SMART on FHIR        | Permission to obtain launch context when the app is launched from an EHR. Required for apps or views launched from an EHR or a mHealth App which was authorized before.  |
+| purpose_of_use            | O/R  | token<sup><a href="#3">3</a></sup>  | See sections below.  | Value taken from code system 2.16.756.5.30.1.127.3.10.5 of the CH: EPR value set.                                                                                         |
+| subject_role              | O/R  | token   | See sections below.  | Only the values for the Role of Healthcare Professionals, Assistants, Patients and Representatives are allowed.                                                           |
+| person_id                 | O/R  | string, CX  | See sections below.  | EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax.                                                                   |
+| principal                 | O/O  | token  | See sections below.  | Name of the healthcare professional an assistant is acting on behalf of.                                                                                                  |
+| principal_id              | O/O  | token  | See sections below.  | GLN of the healthcare professional an assistant is acting on behalf of.                                                                                                   |
+| group                     | O/O  | string  | See sections below.  | Name of the organization or group an assistant is acting on behalf of.                                                                                                    |
+| group_id                  | O/O  | string  | See sections below.  | OID of the organization or group an assistant is acting on behalf of.                                                                                                     |
+| access_token_format       | O/O  | string  |                      | Either ihe-jwt or ihe-saml as value. Will return this token_flavor. If scope is not provided defaults to ihe-jwt.                                                         |
+<sup id="3">3</sup>Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
 
 <figcaption ID="6">Overview of the request’s scope parameter. For the explanation see the following sections.</figcaption>  
   
-<sup id="3">3</sup>Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
+
+
 
 The scope parameter of the request MAY claim the following attributes:
 - There may be a scope with name “launch”. If present, it indicates the permission to obtain launch context for apps (or views) launched in SMART EHR Launch mode. The scope SHALL be used by all apps (or views) launched from a mHealth App which was authorized before.  
@@ -117,20 +119,31 @@ The response SHALL either convey a basic access token in JWT format, granting ba
 
 ##### JSON Web Token Option
 
-From the 3.71.4.2.2.1.1 JWT IUA extension subject_name, subject_role, purpose_of_use, nation-al_provider_identifier, person_id shall be supported by the Authorization Server and Resource Server.
+From the 3.71.4.2.2.1.1 JWT IUA extension subject_name, subject_role, purpose_of_use, person_id shall be supported by the Authorization Server and Resource Server.
 The claim content for the JWT IUA extensions shall correspond to the content defined in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 
 {:class="table table-bordered"}
 | JWT Claim (Extension)        | Optionality | XUA Attribute EPR                                  | Remark                                                                                                                                                                    |
 |------------------------------|-------------|----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | subject_name                 | O/R         | urn:oasis:names:tc:xspa:1.0:subject:subject-id     | Plain text’s user name.                                                                                                                                                   |
-| subject_role                 | O/R         | urn:oasis:names:tc:xacml:2.0:subject:role          | IUA defines this as an array of code objects indicating the user role. In the Swiss EPR only one coded value conveying the role taken from the EPR Role Code Value Set.   |
-| purpose_of_use               | O/R         | urn:oasis:names:tc:xspa:1.0:subject:purposeofuse   | Code object indicating the purpose of use. In the Swiss EPR the value SHALL be taken from the EPR Purpose Of Use Value Set.                                               |
-| national_provider_identifier | O/R         |                                                    | SHALL be the GLN of the healthcare or assistant.                                                                                                                          |
+| subject_role                 | O/R         | urn:oasis:names:tc:xacml:2.0:subject:role          | Code indicating the user role. In the Swiss EPR the value SHALL be taken from the EPR Role Code Value Set.     |
+| purpose_of_use               | O/R         | urn:oasis:names:tc:xspa:1.0:subject:purposeofuse   | Code indicating the purpose of use. In the Swiss EPR the value SHALL be taken from the EPR Purpose Of Use Value Set.                                               |
 | person_id                    | O/R         | urn:oasis:names:tc:xacml:2.0:resource:resource-id  | SHALL be the EPR-SPID of the patients EPR.                                                                                                                                |
 
 <figcaption>Attributes of the IUA Get Access Token response in the JWT extension ihe_iua.</figcaption>  
   
+##### The JWT ch_epr extension 
+
+The Authorization Server and Resource Server SHALL support the following extensions to the JWT access token for an EPR user:
+-	user_id: subject identifier according to Annex 5 E1 1.6.4.3.4.2 Message Semantics.
+
+{:class="table table-bordered"}
+| JWT Claim (Extension) | Optionality | XUA Attribute EPR                  | Remark                                                                   |
+|-----------------------|-------------|------------------------------------|--------------------------------------------------------------------------|
+| user_id               | R         | &lt;NameID&gt; child element of the &lt;Subject&gt; | Depending on the Annex 5 E1 Extension |
+
+<figcaption>Attributes of the IUA Get Access Token response in the JWT extension ch_delegation.</figcaption>
+
 ##### The JWT ch_group extension 
 
 The Authorization Server and Resource Server SHALL support the following extensions to the JWT access token for a list of groups a subject acting on behalf of:
@@ -147,13 +160,13 @@ The ch_group extension claims shall be wrapped in an "extensions" object with ke
 
 <figcaption>Attributes of the IUA Get Access Token response in the JWT extension ch_group.</figcaption>  
 
-##### The JWT ch_assistant extension 
+##### The JWT ch_delegation extension 
 
 The Authorization Server and Resource Server shall support the following extensions to the JWT access token:
 -	principal (optional) Name of the healthcare professional an assistant is acting on behalf of.
 -	principal_id (optional) GLN of the healthcare professional an assistant is acting on behalf of.
 
-The ch_assistant extension claims shall be wrapped in an "extensions" object with key 'ch_assistant' and a JSON value object containing the claims. 
+The ch_delegation extension claims shall be wrapped in an "extensions" object with key 'ch_delegation' and a JSON value object containing the claims. 
 The claim content for the JWT CH:EPR extensions shall correspond to the content defined in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 
 {:class="table table-bordered"}
@@ -162,7 +175,7 @@ The claim content for the JWT CH:EPR extensions shall correspond to the content 
 | principal             | O/R         | urn:e-health-suisse:principal-name | Name of the healthcare professional an assistant is acting on behalf of. |
 | principal_id          | O/R         | urn:e-health-suisse:principal-id   | GLN of the healthcare professional an assistant is acting on behalf of.  |
 
-<figcaption>Attributes of the IUA Get Access Token response in the JWT extension ch_assistant.</figcaption>  
+<figcaption>Attributes of the IUA Get Access Token response in the JWT extension ch_delegation.</figcaption>  
 
 
 ### Expected Actions IUA Authorization Client
@@ -189,7 +202,7 @@ Depending on the scope claimed, the IUA Authorization Server SHALL either build 
 
 The business rules for the IUA Authorization Server for the Healthcare Professional, Assistant, Patient and Representative Extension SHALL be the same as for Annex 5E1 1.6.4.2.4.4 Expected Actions X-Assertion Provider Extensions.
 
-If successful the IUA Authorization Server SHALL generate an OAuth 2.1 authorization code and per-form a callback to the URL defined in the request, using the OAuth authorization code as URL query parameter with key ‘code’.
+If successful the IUA Authorization Server SHALL generate an OAuth 2.1 authorization code and perform a callback to the URL defined in the request, using the OAuth authorization code as URL query parameter with key ‘code’.
 
 The IUA Authorization Server SHALL store the access token and the assigned authorization code and respond the access token on request to the Authorization Client. 
 
@@ -261,8 +274,10 @@ A JWT access token returned by the IUA Authorization Server and to be used to re
   "jti": "c5436729-3f26-4dbf-abd3-2790dc7771a",
   "extensions" : {  
     "ihe_iua" : {  
-      "subject_name": "Martina Musterarzt",
-      "national_provider_identifier": "2000000090092"
+      "subject_name": "Martina Musterarzt"
+    }, 
+    "ch_epr": {
+      "user_id": "2000000090092" 
     }
 }
 ```
@@ -281,19 +296,19 @@ A extend JWT access token to be used to access patient documents SHALL have the 
   "extensions" : {  
     "ihe_iua" : {  
       "subject_name": "Martina Musterarzt",
-      "national_provider_identifier": "2000000090092",
       "person_id": "761337610411353650^^^&amp;2.16.756.5.30.1.127.3.10.3&amp;ISO",
-      "subject_role": [
-        {
+      "subject_role": {
           "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
           "code": "HCP"
-        }
-      ],
+      },
       "purpose_of_use": {
           "system": "urn:uuid:2.16.756.5.30.1.127.3.10.5",
           "code": "NORM",
       }
     }, 
+    "ch_epr": {
+      "user_id": "2000000090092" 
+    },
     "ch_group" : [
       {
         "name": "Name of group with id urn:oid:2.2.2.1",
@@ -312,7 +327,7 @@ A extend JWT access token to be used to access patient documents SHALL have the 
 }
 ```
 
-A JWT access token to be used to access by an assistant acting behalf on a healthcare professional for a patient SHALL have the additional extension ch_assistant:
+A JWT access token to be used to access by an assistant acting behalf on a healthcare professional for a patient SHALL have the additional extension ch_delegation:
 
 ```json
 {
@@ -326,18 +341,18 @@ A JWT access token to be used to access by an assistant acting behalf on a healt
   "extensions" : {  
     "ihe_iua" : {  
       "subject_name": "Dagmar Musterassistent",
-      "national_provider_identifier": "2000000090108",
       "person_id": "761337610411353650^^^&amp;2.16.756.5.30.1.127.3.10.3&amp;ISO",
-      "subject_role": [
-        {
+      "subject_role": {
           "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
           "code": "HCP"
-        }
-      ],
+      },
       "purpose_of_use": {
           "system": "urn:uuid:2.16.756.5.30.1.127.3.10.5",
           "code": "NORM",
       }
+    }, 
+    "ch_epr": {
+      "user_id": "2000000090108" 
     }, 
     "ch_group" : [
       {
@@ -353,7 +368,7 @@ A JWT access token to be used to access by an assistant acting behalf on a healt
         "id": "urn:oid:2.2.2.3"
       }
     ],
-    "ch_assistant": {
+    "ch_delegation": {
       "principal": "Martina Musterarzt", 
       "principal_id": "2000000090092" 
     }

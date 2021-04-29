@@ -1,6 +1,5 @@
 @startuml
 !include design.plantuml.txt
-title 3.02 mHealth - get document for patient (2. Generic mHealth Option)
 
 actor user as "Patient"
 
@@ -46,7 +45,7 @@ deactivate AuthorizationClient
 
 app -> mp_AuthorizationServer: Exchange code for access token
 activate mp_AuthorizationServer
-app <- mp_AuthorizationServer: access token for response [JWT:UAP-ID]
+app <- mp_AuthorizationServer: access token for response
 deactivate mp_AuthorizationServer
 
 !include_many step_mh_pixm.plantuml.txt

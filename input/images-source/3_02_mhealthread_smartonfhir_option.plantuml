@@ -1,6 +1,5 @@
 @startuml
 !include design.plantuml.txt
-title 3.02 mHealth - get document for patient (3. SMART on FHIR option)
 
 actor user as "Patient"
 
@@ -11,7 +10,6 @@ end box
 
 
 box "Community Components" #FFEFDE
-	participant mp_pix_x_ref_mgr as "Patient Identifier \nCross-reference \nManager"
 	participant mp_AuthorizationServer as "Authorization Server (IUA)"
 	participant mp_doc_responder as "Document Responder (MHD)"
 end box
@@ -41,7 +39,7 @@ mp_AuthorizationServer -> app2: On Approval redirect to app with code
 deactivate mp_AuthorizationServer
 app2 -> mp_AuthorizationServer: Exchange code for access token
 activate mp_AuthorizationServer
-app2 <- mp_AuthorizationServer: access token for response [JWT:UAP-ID]
+app2 <- mp_AuthorizationServer: access token for response
 deactivate mp_AuthorizationServer
 
 

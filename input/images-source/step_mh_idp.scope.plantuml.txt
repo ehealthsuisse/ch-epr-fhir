@@ -16,5 +16,5 @@ mp_AuthorizationServer -> app: On Approval redirect to app with code
 deactivate mp_AuthorizationServer
 app -> mp_AuthorizationServer: Exchange code for access token
 activate mp_AuthorizationServer
-app <- mp_AuthorizationServer: access token for response [JWT:UAP-ID]
+app <- mp_AuthorizationServer: access token for response
 deactivate mp_AuthorizationServer

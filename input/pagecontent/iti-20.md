@@ -32,5 +32,4 @@ Same message semantics and expected actions apply as described in the ITI-20 tra
 
 ### Security Consideration
 
-TLS SHALL be used. This national extension enforces authentication and authorization of access to the
-Audit Record Repository using IUA profile with basic access token. 
+TLS SHALL be used. 
