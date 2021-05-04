@@ -42,6 +42,6 @@ See [Bundle example](Bundle-Bundle-FindSubmissionSets.html) (and the correspondi
 ### Security Consideration
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
-Document Responder using IUA profile with extended access token. Consequently
+Document Responder using the IUA profile with extended access token. Consequently
 the Find Document Lists [ITI-66] request must authorize using the Incorporate Access Token [ITI-
 72] transaction of the IUA profile.

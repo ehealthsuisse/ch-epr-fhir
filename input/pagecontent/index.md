@@ -42,10 +42,6 @@ This extension covers two options:
 1. Generic mHealth option – This option adresses primary systems or mobile applications using the basic EPR flows but replace the XDS.b related and PIX V3 profiles with the FHIR based profiles;
 2. SMART on FHIR – This option adresses mobile apps or modular primary systems that want to connect to the Swiss EPR using SMART on FHIR.
 
-The options differ by the architecture for the user authentication, client authentication  and authorization. While in the
-generic mHealth option all profiles and extensions defined in this extension must be applied, in the SMART
-on FHIR option only a subset of the mHealth profiles and transactions must be applied.
-
 #### Profiles, actors and transactions
 
 The following figure shows the profiles, actors and transactions specified or referenced in this national extension:

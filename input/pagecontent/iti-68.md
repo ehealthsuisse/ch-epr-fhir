@@ -33,6 +33,6 @@ The Document Consumer sends a HTTP GET **request** to the server.
 ### Security Consideration
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
-Document Responder using IUA profile with extended access token. Consequently
+Document Responder using the IUA profile with extended access token. Consequently
 the Retrieve Document [ITI-68] request must authorize using the Incorporate Access Token [ITI-72]
 transaction of the IUA profile.

@@ -43,7 +43,7 @@ CH EPR mHealth Capability Statement | Relation/Action | IHE Capability Statement
 [CH.PMIR.Source](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.PMIR.Source.html) | - | -
 [CH.MHD.DocumentSource](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentSource.html) | as a template and adapted to Swiss requirements | [Document Source (publisher)](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/CapabilityStatement-IHE.MHD.DocumentSource.html)
 [CH.MHD.DocumentConsumer](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentConsumer.html) | as a template and adapted to Swiss requirements | [Document Consumer (client)](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/CapabilityStatement-IHE.MHD.DocumentConsumer.html)
-[CH.mHealth.MobileAccessGateway](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.mHealth.MobileAccessGateway.html) | - | -
+[CH.mHealth.API](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.mHealth.API.html) | - | -
 [CH.PMIR.Manager](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.PMIR.Manager.html) | as a template and adapted to Swiss requirements | [https://github.com/JohnMoehrke/ITI.PIXm](https://github.com/JohnMoehrke/ITI.PIXm/blob/master/input/resources/capabilitystatement-IHE_PIXm_Manager.xml) ([FHIR IG (CI Build)](http://build.fhir.org/ig/JohnMoehrke/ITI.PIXm/branches/master/CapabilityStatement-IHE_PIXm_Manager.html)) (as of Aug 7, 2020)
 [CH.MHD.DocumentRecipient](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentRecipient.html) | as a template and adapted to Swiss requirements | [Document Recipient](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/CapabilityStatement-IHE.MHD.DocumentRecipient.html)
 [CH.MHD.DocumentResponder](http://build.fhir.org/ig/ehealthsuisse/ch-epr-mhealth/CapabilityStatement-CH.MHD.DocumentResponder.html) | as a template and adapted to Swiss requirements | [Document Responder (server)](http://build.fhir.org/ig/IHE/ITI.MHD/branches/master/CapabilityStatement-IHE.MHD.DocumentResponder.html)
@@ -108,7 +108,7 @@ The IHE operation definitions are **imported** from https://github.com/JohnMoehr
 ### Capability Statements
 
 * CH.mHealth.App
-* CH.mHealth.MobileAccessGateway
+* CH.mHealth.API
 
 #### CH:PIXM: IHE Capability Statements
 The IHE capability statements for PMIR are **imported** from https://github.com/JohnMoehrke/ITI.PIXm ([FHIR IG (CI Build)](http://build.fhir.org/ig/JohnMoehrke/ITI.PIXm/branches/master/index.html)) (as of Aug 7, 2020).

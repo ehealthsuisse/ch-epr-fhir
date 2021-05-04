@@ -19,7 +19,7 @@ component "mHealth: App" {
   [RESTful ATNA Secure Node] as ATNANode
 }
 
-component "mHealth: Mobile Access Gateway" {
+component "mHealth: API" {
   [IUA Authorization Server] as IUAAuthServer
   IUAClient -> IUAAuthServer : Get Access Token [ITI-71], \nGet Authorization Server Metadata [ITI-103]
   [IUA Resource Server] as IUAResourceServer

@@ -8,7 +8,7 @@ Depending on the claims made by the mHealth App, two different flavors of access
 - Basic Access Token – IUA conformal access token authorizing access to the EPR end-points which are NOT protected by the EPR role and attribute based authorization (i.e. for the CH:PIXm endpoints). 
 - Extended Access Token – IUA conformal access token for the EPR endpoints which are protected by the EPR role and attribute based authorization (i.e. for the MHD endpoints).
 
-An mHealth App in the SMART Standalone Launch sequence SHALL perform the transaction first to get basic access to the Swiss EPR. This requires user authentication as well as the user consent, allowing the mHealth App to access the Swiss EPR and perform transactions on behalf of the user. The IUA Authorization Server MAY present a User Interface for the user to authenticate and provide user consent, or by validating against data stored at app registration time.
+An mHealth App in the SMART Standalone Launch sequence SHALL perform the transaction first to get basic access to the Swiss EPR. This requires user authentication as well as the user consent, allowing the mHealth App to access the Swiss EPR and perform transactions on behalf of the user. The IUA Authorization Server SHALL present a User Interface for the user to authenticate and provide user consent, or by validating against data stored at app registration time.
 
 Once the mHealth App is authorized, it may launch other embedded mHealth Apps (or views) using the SMART EHR Launch Sequence. In this case, the embedded app inherits the basic access authorization from the launching app<sup><a href="#1">1</a></sup> and may retrieve extended access token for EPR endpoints protected by the EPR role and attribute based authorization (e.g. to retrieve documents).
 
@@ -37,28 +37,24 @@ OAuth 2.1 authorization code grant flow of the of the IUA Get Access Token trans
 |--------------------------------------------------------------------------------------------------------------------|-----------------------|------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | The mHealth App sends a HTTP GET request to the IUA Authorization Server endpoint.                                 | response_type         | R                      | IUA           | The value must be code.                                                                                                                                                                                                            |
 |                                                                                                                    | client_id             | R                      | IUA           | The ID, the client is registered at the IUA Authorization Server.                                                                                                                                                                  |
-|                                                                                                                    | redirect_uri          | R                      | IUA           | The IUA Authorization Server redirects the user-agent to the client's redirection endpoint previously established with the Authorization Server during the client registration process or when making the authorization request.  |
-|                                                                                                                    |                       |                        | SMART on FHIR | Used as callback URL, the IUA Authorization Server will send the authorization code to.The URL SHALL match one of the client's pre-registered redirect URIs.                                                                       |
-|                                                                                                                    |                       |                        |               | The attribute is optional in IUA, required in the SMART on FHIR Launch Framework.                                                                                                                                                  |
-|                                                                                                                    | state                 | R                      | IUA           |                                                                                                                                                                                                                                    |
-|                                                                                                                    | scope                 | R                      | IUA           | Attributes the app claims (see detailed description below).                                                                                                                                                                        |
-|                                                                                                                    |                       |                        | SMART on FHIR |                                                                                                                                                                                                                                    |
+|                                                                                                                    | redirect_uri          | R                      | IUA / SMART on FHIR  | Used as callback URL, the IUA Authorization Server will send the authorization code to. The URL SHALL match one of the client's pre-registered redirect URIs.                                                                                                                                                  |
+|                                                                                                                    | state                 |  R                      | IUA | An unguessable value used by the client to track the state between the authorization request and the callback.                                                                                                                                                                                                                                   |
+|                                                                                                                    | scope                 | R                      | IUA / SMART on FHIR | Attributes the app claims (see detailed description below).                                                                                                                                                                        |
 |                                                                                                                    | aud                   | R                      | SMART on FHIR | The audience URL the token will be used for.                                                                                                                                                                                       |
 |                                                                                                                    | launch                | O/R                    | SMART on FHIR | If present, the launch parameter indicates that the app (or the view) was launched from an EHR or mHealth App context which has already been authorized to access the Swiss EPR (e.g. SMART on FHIR based primary system).         |
 |                                                                                                                    | code_challenge        | R                      | IUA           | Transformed version of code_verifier with code_challenge_method                                                                                                                                                                    |
 |                                                                                                                    | code_challenge_method | R                      | IUA           | SHALL be “S256”.                                                                                                                                                                                                                   |
 | The Authorization Server performs a HTTP GET on the callback URL (redirect_uri) conveying the authorization code.  | code                  | R                      | IUA           | The authorization code generated by the Authorization Server.                                                                                                                                                                      |
-|                                                                                                                    | state                 | R                      | IUA           | An unguessable value used by the client to track the state between the authorization request and the callback.                                                                                                                     |
+|                                                                                                                    | state                 | R                      | IUA           | The unguessable value used by the client to track the state between the authorization request and the callback.                                                                                                                     |
 | The app performs an HTTP POST with parameter                                                                       | client_id             | R                      | IUA           | The ID the client is registered at the IUA Authorization Server.                                                                                                                                                                   |
 | as a form-encoded HTTP entity body, passing its                                                                    | redirect_uri          | R                      | IUA           | The URI to redirect the apps user agent to.                                                                                                                                                                                        |
 | client_id and client_secret as an HTTP Basic authorization header.                                                 | grant_type            | R                      | IUA           | Value shall be “authorization_code”.                                                                                                                                                                                               |
 |                                                                                                                    | code                  | R                      | IUA           | The authorization code.                                                                                                                                                                                                            |
 |                                                                                                                    | code_verifier         | R                      | IUA           | The original code verifier string.                                                                                                                                                                                                 |
-| The Authorization Server responds with the access token in the HTML body element.                                  | access_token          | R                      | IUA           | A string containing the access token. The format of the access token string depends on the supported JWT Token or SAML Token.The Authorization Token in JWT format or a XUA Authorization Assertion.                               |
+| The Authorization Server responds with the access token in the HTML body element.                                  | access_token          | R                      | IUA           | A string containing the access token which may either be a JWT or a XUA Authorization Assertion.                                |
 |                                                                                                                    | token_type            | R                      | IUA           | The value of the parameter shall be Bearer.                                                                                                                                                                                        |
 |                                                                                                                    | scope                 | R                      | IUA           | The scope granted by the Authorization Server.                                                                                                                                                                                     |
 |                                                                                                                    | expires_in            | R                      | IUA           | Maximum duration of 5 minutes.                                                                                                                                                                                                      |
-|                                                                                                                    |                       |                        |               |                                                                                                                                                                                                                                    |
 |                                                                                                                    | refresh_token         | O                      | IUA           | TBD how to handle refresh tokens                                                                                                                                                                                                   |
 
 <figcaption ID="5">Description of the HTTP conversation of the transaction.</figcaption>  
@@ -85,6 +81,7 @@ The following table summarizes the requirements on the scope parameter used to c
 | group                     | O/O  | string  | See sections below.  | Name of the organization or group an assistant is acting on behalf of.                                                                                                    |
 | group_id                  | O/O  | string  | See sections below.  | OID of the organization or group an assistant is acting on behalf of.                                                                                                     |
 | access_token_format       | O/O  | string  |                      | Either ihe-jwt or ihe-saml as value. Will return this token_flavor. If scope is not provided defaults to ihe-jwt.                                                         |
+
 <sup id="3">3</sup>Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
 
 <figcaption ID="6">Overview of the request’s scope parameter. For the explanation see the following sections.</figcaption>  
@@ -119,8 +116,9 @@ The response SHALL either convey a basic access token in JWT format, granting ba
 
 ##### JSON Web Token Option
 
-From the 3.71.4.2.2.1.1 JWT IUA extension subject_name, subject_role, purpose_of_use, person_id shall be supported by the Authorization Server and Resource Server.
-The claim content for the JWT IUA extensions shall correspond to the content defined in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
+The Authorization Server and Resource Server SHALL support the 3.71.4.2.2.1.1 JWT IUA extension with the following claims as defined in Table <a href="#jwttiua">below</a>.
+
+The claim content for the JWT IUA extensions SHALL correspond to the content defined in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 
 {:class="table table-bordered"}
 | JWT Claim (Extension)        | Optionality | XUA Attribute EPR                                  | Remark                                                                                                                                                                    |
@@ -130,7 +128,7 @@ The claim content for the JWT IUA extensions shall correspond to the content def
 | purpose_of_use               | O/R         | urn:oasis:names:tc:xspa:1.0:subject:purposeofuse   | Code indicating the purpose of use. In the Swiss EPR the value SHALL be taken from the EPR Purpose Of Use Value Set.                                               |
 | person_id                    | O/R         | urn:oasis:names:tc:xacml:2.0:resource:resource-id  | SHALL be the EPR-SPID of the patients EPR.                                                                                                                                |
 
-<figcaption>Attributes of the IUA Get Access Token response in the JWT extension ihe_iua.</figcaption>  
+<figcaption id='jwttiua'>Attributes of the IUA Get Access Token response in the JWT extension ihe_iua.</figcaption>  
   
 ##### The JWT ch_epr extension 
 
@@ -141,12 +139,13 @@ The Authorization Server and Resource Server SHALL support the following extensi
 | JWT Claim (Extension) | Optionality | XUA Attribute EPR                  | Remark                                                                   |
 |-----------------------|-------------|------------------------------------|--------------------------------------------------------------------------|
 | user_id               | R         | &lt;NameID&gt; child element of the &lt;Subject&gt; | Depending on the Annex 5 E1 Extension |
+| user_id_qualifier               | R         | Name qualifier attribute of &lt;NameID&gt; | Depending on the Annex 5 E1 Extension |
 
 <figcaption>Attributes of the IUA Get Access Token response in the JWT extension ch_delegation.</figcaption>
 
 ##### The JWT ch_group extension 
 
-The Authorization Server and Resource Server SHALL support the following extensions to the JWT access token for a list of groups a subject acting on behalf of:
+The Authorization Server and Resource Server SHALL support the following extensions to the JWT access token for a list of groups a subject is member of:
 -	name: Name of the organization/group. The name MUST be a string. 
 -	id: The id of the organization/group.The id MUST be an OID in the format of an URN
 
@@ -277,7 +276,8 @@ A JWT access token returned by the IUA Authorization Server and to be used to re
       "subject_name": "Martina Musterarzt"
     }, 
     "ch_epr": {
-      "user_id": "2000000090092" 
+      "user_id": "2000000090092", 
+      "user_id_qualifier": "urn:gs1:gln" 
     }
 }
 ```
@@ -307,7 +307,8 @@ A extend JWT access token to be used to access patient documents SHALL have the 
       }
     }, 
     "ch_epr": {
-      "user_id": "2000000090092" 
+      "user_id": "2000000090092", 
+      "user_id_qualifier": "urn:gs1:gln" 
     },
     "ch_group" : [
       {
@@ -352,7 +353,8 @@ A JWT access token to be used to access by an assistant acting behalf on a healt
       }
     }, 
     "ch_epr": {
-      "user_id": "2000000090108" 
+      "user_id": "2000000090108", 
+      "user_id_qualifier": "urn:gs1:gln" 
     }, 
     "ch_group" : [
       {

@@ -352,7 +352,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CapabilityStatement/CH.mHealth.MobileAccessGateway"/>
+        <reference value="CapabilityStatement/CH.mHealth.API"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>

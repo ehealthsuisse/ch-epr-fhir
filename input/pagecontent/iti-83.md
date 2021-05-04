@@ -69,6 +69,6 @@ See [Output Parameters example](Parameters-ParametersPIXmOutput.html) (and the c
 ### Security Consideration
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
-Patient Identifier Cross-reference Manager using IUA profile with basic access token. Consequently
+Patient Identifier Cross-reference Manager using the IUA profile with basic access token. Consequently
 the Mobile Patient Identifier Cross-reference Query [ITI-83] request must authorize using the Incorporate
 Access Token [ITI-72] transaction of the IUA profile.

@@ -35,12 +35,12 @@
   </div>
 
 
-  <h3>mHealth: Mobile Access Gateway (Server)</h3>
+  <h3>mHealth: API (Server)</h3>
 
   <div>
     <ul>
       <li>
-        <a href="CapabilityStatement-CH.mHealth.MobileAccessGateway.html">mHealth: Mobile Access Gateway (server)</a>
+        <a href="CapabilityStatement-CH.mHealth.API.html">mHealth: API (server)</a>
         <p>CapabilityStatement for mHealth MobileAccessGateway (server).</p>
         <ul>
           <li>
