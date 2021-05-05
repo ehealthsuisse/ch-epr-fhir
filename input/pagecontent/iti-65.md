@@ -36,7 +36,7 @@ The additional Swiss EPR metadata is defined with:
 
 * [DeletionStatus](#deletionstatus) (Annex 5.1 1.2.4.1)
 * [SubmissionSet.Author.AuthorRole](#submissionsetauthorauthorrole) (Annex 5.1 1.2.4.3)
-* [DocumentEntry.originalProviderRole ](#documentEntryoriginalproviderrole) (Annex 5.1 1.2.4.4)
+* [DocumentEntry.originalProviderRole ](#documententryoriginalproviderrole) (Annex 5.1 1.2.4.4)
 
 #### DeletionStatus   
 The optional metadata about the DeletionStatus of the document is represented in the DocumentReference using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus](StructureDefinition-ch-ext-deletionstatus.html). The values are defined in the ValueSet [ch-ehealth-valueset-deletionstatus](ValueSet-ch-ehealth-valueset-deletionstatus.html).

@@ -2,6 +2,25 @@
   <li>
     <a href="index.html">Home</a>
   </li>
+  <li class="Profiles">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="iti-iua.html">Internet User Authorization (IUA)</a>
+      </li>
+      <li>
+        <a href="iti-ch-pixm.html">Patient Identifier Cross-reference for Mobile (CH:PIXm)</a>
+      </li>
+      <li>
+        <a href="iti-mhd.html">Mobile Access to Health Documents (MHD) with XDS on FHIR</a>
+      </li>
+      <li>
+        <a href="iti-restful-atna.html">RESTful ATNA</a>
+      </li>
+    </ul>
+  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Transactions<b class="caret">
       </b>
@@ -34,22 +53,29 @@
       <li>
         <a href="iti-20.html">Record Audit Event [ITI-20]</a>
       </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Appendix<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="extensions.html">Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+      <li>
+        <a href="capstatements.html">Capability Statements</a>
+      </li>
+      <li>
+        <a href="operations.html">Operations</a>
+      </li>
       <li>
         <a href="sequencediagrams.html">Sequence diagrams</a>
       </li>
     </ul>
-  </li>
-  <li>
-    <a href="extensions.html">Extensions</a>
-  </li>
-  <li>
-    <a href="terminology.html">Terminology</a>
-  </li>
-  <li>
-    <a href="capstatements.html">Capability Statements</a>
-  </li>
-  <li>
-    <a href="operations.html">Operations</a>
   </li>
   <li>
     <a href="artifacts.html">Artifacts</a>

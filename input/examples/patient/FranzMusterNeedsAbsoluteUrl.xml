@@ -23,7 +23,7 @@
     </Organization>
   </contained>
   <identifier>
-    <system value="urn:oid:5.6.7"/>
+    <system value="urn:oid:2.999.5.6.7"/>
     <value value="value of MPI-PID"/>
   </identifier>
   <identifier>

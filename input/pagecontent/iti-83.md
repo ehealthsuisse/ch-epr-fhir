@@ -58,7 +58,7 @@ Query for a patient with a local id of 123 by AssigningAuthority oid 1.2.3 which
 community where the Assigning Authority is oid 5.6.7 and the MPI-PID and EPR-SPID are requested:
 
 ```
-GET [base]/Patient/$ihe-pix?sourceIdentifier=urn:oid:1.2.3|123&targetSystem=urn:oid:5.6.7&targetSystem=urn:oid:2.16.756.5.30.1.127.3.10.3
+GET [base]/Patient/$ihe-pix?sourceIdentifier=urn:oid:2.999.1.2.3|123&targetSystem=urn:oid:2.999.5.6.7&targetSystem=urn:oid:2.16.756.5.30.1.127.3.10.3
 ```
 [Example response to above query](Parameters-ParametersPIXmOutput.json.html)
 

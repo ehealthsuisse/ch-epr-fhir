@@ -402,82 +402,111 @@
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="iti-71.html"/>
-        <title value="Get Access Token [ITI-71]"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="iti-103.html"/>
-        <title value="Get Authorization Server Metadata [ITI-103]"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="iti-83.html"/>
-        <title value="Mobile Patient Identifier Cross-reference Query [ITI-83]"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="iti-93.html"/>
-        <title value="CH:PIXm Mobile Patient Identity Feed [ITI-93]"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="iti-65.html"/>
-        <title value="Provide Document Bundle [ITI-65]"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="iti-66.html"/>
-        <title value="Find Document Lists [ITI-66]"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="iti-67.html"/>
-        <title value="Find Document References [ITI-67]"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="iti-68.html"/>
-        <title value="Retrieve Document [ITI-68]"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="iti-20.html"/>
-        <title value="Record Audit Event [ITI-20]"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
         <nameUrl value="profiles.html"/>
         <title value="Profiles"/>
-        <generation value="html"/>
+        <generation value="markdown"/>        
+        <page>
+          <nameUrl value="iti-iua.html"/>
+          <title value="Internet User Authorization (IUA)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-ch-pixm.html"/>
+          <title value="Patient Identifier Cross-reference for Mobile (CH:PIXm)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-mhd.html"/>
+          <title value="Mobile Access to Health Documents (MHD) with XDS on FHIR"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-restful-atna.html"/>
+          <title value="RESTful ATNA"/>
+          <generation value="markdown"/>
+        </page>
       </page>
       <page>
-        <nameUrl value="extensions.html"/>
-        <title value="Extensions"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="terminology.html"/>
-        <title value="Terminology"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="capstatements.html"/>
-        <title value="Capability Statements"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="operations.html"/>
-        <title value="Operations"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <nameUrl value="sequencediagrams.html"/>
-        <title value="Sequence Diagrams"/>
+        <title value="Transactions"/>
         <generation value="markdown"/>
+        <nameUrl value="transactions.html"/>
+        <page>
+          <nameUrl value="iti-71.html"/>
+          <title value="Get Access Token [ITI-71]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-103.html"/>
+          <title value="Get Authorization Server Metadata [ITI-103]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-83.html"/>
+          <title value="Mobile Patient Identifier Cross-reference Query [ITI-83]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-93.html"/>
+          <title value="CH:PIXm Mobile Patient Identity Feed [ITI-93]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-65.html"/>
+          <title value="Provide Document Bundle [ITI-65]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-66.html"/>
+          <title value="Find Document Lists [ITI-66]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-67.html"/>
+          <title value="Find Document References [ITI-67]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-68.html"/>
+          <title value="Retrieve Document [ITI-68]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-20.html"/>
+          <title value="Record Audit Event [ITI-20]"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+      <page>
+        <title value="Appendix"/>
+        <generation value="markdown"/>
+        <nameUrl value="appendix.html"/>
+        <page>
+          <nameUrl value="extensions.html"/>
+          <title value="Extensions"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="terminology.html"/>
+          <title value="Terminology"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="capstatements.html"/>
+          <title value="Capability Statements"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="operations.html"/>
+          <title value="Operations"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="sequencediagrams.html"/>
+          <title value="Sequence Diagrams"/>
+          <generation value="markdown"/>
+        </page>
       </page>
     </page>
-
 
     <!-- IG Parameters -->
     <parameter>
