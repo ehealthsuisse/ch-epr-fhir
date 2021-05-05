@@ -1,3 +1,16 @@
+<div markdown="1" class="stu-note">
+This implementation guide is a mayor update and currently in draft status.
+
+main changes to  version [0.1.1](https://fhir.ch/ig/ch-epr-mhealth/0.1.1/index.html):
+- updated to new [IHE IUA version](https://profiles.ihe.net/ITI/IUA/index.html)
+- switched to [CH:PIXm](iti-ch-pixm.html)
+- updated to [MHD public comment](https://profiles.ihe.net/ITI/MHD/index.html)
+- integrated [RESTFul ATNA](https://profiles.ihe.net/ITI/MHD/index.html)
+- open issues known at [publication](openissues.html)  
+ 
+Please add your feedback via the 'Propose a change'-link in the footer on the page where you have comments.
+</div>
+
 ### Introduction
 
 The national extensions documented in this implementation guide shall be used in conjunction with the definitions of integration 

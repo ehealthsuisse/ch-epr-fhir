@@ -505,6 +505,11 @@
           <title value="Sequence Diagrams"/>
           <generation value="markdown"/>
         </page>
+        <page>
+          <nameUrl value="openissues.html"/>
+          <title value="Open Issues"/>
+          <generation value="markdown"/>
+        </page>
       </page>
     </page>
 
