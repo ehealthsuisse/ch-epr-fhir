@@ -42,6 +42,7 @@
                 <code value="uri"/>
             </type>
             <fixedUri value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus"/>
+            <mustSupport value="true" />
         </element>
         <element id="Extension.valueCoding">
             <path value="Extension.valueCoding"/>
@@ -54,6 +55,7 @@
                 <strength value="required"/>
                 <valueSet value="http://fhir.ch/ig/ch-epr-mhealth/ValueSet/ch-ehealth-valueset-deletionstatus"/>
             </binding>
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition> 

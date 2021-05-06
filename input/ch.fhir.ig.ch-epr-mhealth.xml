@@ -9,7 +9,7 @@
     </div>
   </text>
   <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
-  <version value="0.1.3"/>
+  <version value="0.2.0"/>
   <name value="CHEprMhealth"/>
   <title value="CH EPR mHealth (R4)"/>
   <status value="active"/>

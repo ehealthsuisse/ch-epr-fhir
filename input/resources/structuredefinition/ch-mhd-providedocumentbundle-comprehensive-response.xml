@@ -29,44 +29,53 @@
         <element id="Bundle.type">
             <path value="Bundle.type"/>
             <fixedCode value="transaction-response"/>
+            <mustSupport value="true" />
         </element>
         <element id="Bundle.link">
             <path value="Bundle.link"/>
+            <mustSupport value="true" />
         </element>
         <element id="Bundle.link.relation">
             <path value="Bundle.link.relation"/>
         </element>
         <element id="Bundle.link.url">
             <path value="Bundle.link.url"/>
+            <mustSupport value="true" />
         </element>
         <element id="Bundle.entry">
 			<path value="Bundle.entry"/>
             <short value="One entry for each entry in the request, in the same order as received"/>
             <min value="2"/>
+            <mustSupport value="true" />
 		</element>
         <element id="Bundle.entry.response">
 			<path value="Bundle.entry.response"/>
             <short value="Indicating the results of processing the entry"/>
             <min value="1"/>
+            <mustSupport value="true" />
 		</element>
         <element id="Bundle.entry.response.status">
 			<path value="Bundle.entry.response.status"/>
+            <mustSupport value="true" />
 		</element>
 
         <!-- IHE MHD: the .location element shall be populated-->
         <element id="Bundle.entry.response.location">
 			<path value="Bundle.entry.response.location"/>
             <min value="1"/>
+            <mustSupport value="true" />
 		</element>
 
         <!-- IHE MHD: the .etag element may be populated when the Document Recipient supports FHIR resource versioning -->
         <element id="Bundle.entry.response.etag">
 			<path value="Bundle.entry.response.etag"/>
+            <mustSupport value="true" />
 		</element>
 
         <!-- Warnings, such as PartialFolderContentNotProcessed, shall be reported in Bundle.entry.response.outcome -->
         <element id="Bundle.entry.response.outcome">
 			<path value="Bundle.entry.response.outcome"/>
+            <mustSupport value="true" />
 		</element>
         
     </differential>

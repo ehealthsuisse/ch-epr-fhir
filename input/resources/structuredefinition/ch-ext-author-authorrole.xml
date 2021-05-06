@@ -46,6 +46,7 @@
                 <code value="uri"/>
             </type>
             <fixedUri value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole"/>
+            <mustSupport value="true" />
         </element>
         <element id="Extension.valueCoding">
             <path value="Extension.valueCoding"/>
@@ -59,6 +60,7 @@
                 <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/SubmissionSet.Author.AuthorRole"/>
                 <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.originalProviderRole"/>
             </binding>
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition> 

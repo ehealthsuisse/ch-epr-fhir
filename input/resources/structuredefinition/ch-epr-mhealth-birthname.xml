@@ -37,6 +37,7 @@
             <path value="HumanName.family"/>
             <short value="The birthname of the patient"/>
             <min value="1"/>
+            <mustSupport value="true" />
         </element>
         <element id="HumanName.family.extension">
             <path value="HumanName.family.extension" />

@@ -34,6 +34,7 @@
 				</discriminator>
 				<rules value="open" />
 			</slicing>
+            <mustSupport value="true" />
 		</element>
         <element id="Bundle.entry.fullUrl">
 			<path value="Bundle.entry.fullUrl"/>
@@ -44,11 +45,13 @@
                 <human value="The fullUrl must be an absolute URL server address or an URI for UUID/OID"/>
 				<expression value="startsWith('http') or startsWith('urn:uuid:') = true"/>
             </constraint>
+            <mustSupport value="true" />
 		</element>
 		<element id="Bundle.entry:DocumentReference">
 			<path value="Bundle.entry"/>
 			<sliceName value="DocumentReference"/>
 			<short value="DocumentReference"/>
+            <mustSupport value="true" />
 		</element>
 		<element id="Bundle.entry:DocumentReference.resource">
 			<path value="Bundle.entry.resource"/>
@@ -57,6 +60,7 @@
 				<code value="DocumentReference" />
 				<profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive" />
 			</type>
+            <mustSupport value="true" />
 		</element>
     </differential>
 </StructureDefinition>

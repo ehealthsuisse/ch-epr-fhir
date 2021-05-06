@@ -42,10 +42,9 @@
         </element>
         <element id="Organization.identifier">
             <path value="Organization.identifier"/>
+            <short value="The value shall be expressed as and ISO OID"/>
             <min value="1"/>
+            <mustSupport value="true" />
         </element>
     </differential>
 </StructureDefinition>
-
-<!--y an id attribute, and at least one of address, telecommunications address, or contact person to be  present. 
-The id attribute SHALL have only a root, expressed as an ISO OID.-->

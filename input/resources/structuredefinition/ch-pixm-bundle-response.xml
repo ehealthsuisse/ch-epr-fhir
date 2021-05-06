@@ -61,12 +61,14 @@
         <rules value="open"/>
       </slicing>
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Bundle.entry:IXmMessageHeaderEntry">
       <path value="Bundle.entry" />
       <sliceName value="PIXmMessageHeaderEntry" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Bundle.entry:PIXmMessageHeaderEntry.resource">
       <path value="Bundle.entry.resource" />
@@ -75,6 +77,7 @@
         <code value="Resource" />
         <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-messageheader-response" />
       </type>
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

@@ -32,23 +32,29 @@
         <code value="uri" />
       </type>
       <fixedUri value="urn:ihe:iti:pmir:2019:patient-feed" />
+      <mustSupport value="true" />
     </element>
     <element id="MessageHeader.destination">
       <path value="MessageHeader.destination" />
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="MessageHeader.source">
       <path value="MessageHeader.source" />
+      <mustSupport value="true" />
     </element>
     <element id="MessageHeader.response">
       <path value="MessageHeader.response" />
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="MessageHeader.response.identifier">
       <path value="MessageHeader.response.identifier" />
+      <mustSupport value="true" />
     </element>
     <element id="MessageHeader.response.code">
       <path value="MessageHeader.response.code" />
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

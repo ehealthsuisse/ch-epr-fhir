@@ -19,8 +19,8 @@ StructureDefinition for Bundle resource constraints in the CH EPR mHealth Implem
       <value value="https://www.e-health-suisse.ch"/>
     </telecom>
   </contact>
-  <description value="See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(CH:PIXm)" />
-  <purpose value="Added constraints for the Bundle resource for CH:PIXm." />
+  <description value="Feed / Update or Merge Patient resources. Patients must conform to the ch-pixm-patient profile" />
+  <purpose value="Provide local identifier with the initial demographics of the patient in the community." />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="v2" />
@@ -56,9 +56,31 @@ StructureDefinition for Bundle resource constraints in the CH EPR mHealth Implem
       <constraint>
         <key value="ch-pixm-bdl-1"/>
         <severity value="error"/>
-        <human value="Patient resoures in the bundle must conform to the ch-pixm-patient restrictions"/>
+        <human value="Patient resources in the bundle must conform to the ch-pixm-patient restrictions"/>
         <expression value="entry.resource.entry.all(resource.conformsTo('http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient'))"/>
       </constraint>
+    </element>
+    <element id="Bundle.entry">
+      <path value="Bundle.entry"/>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:PMIRMessageHeaderEntry">
+      <path value="Bundle.entry"/>
+      <sliceName value="PMIRMessageHeaderEntry"/>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:PMIRMessageHeaderEntry.resource">
+      <path value="Bundle.entry.resource"/>
+      <mustSupport value="true" /> 
+    </element>
+    <element id="Bundle.entry:PMIRBundleHistoryEntry">
+      <path value="Bundle.entry"/>
+      <sliceName value="PMIRBundleHistoryEntry"/>
+      <mustSupport value="true" /> 
+    </element>
+    <element id="Bundle.entry:PMIRBundleHistoryEntry.resource">
+      <path value="Bundle.entry.resource"/>
+      <mustSupport value="true" /> 
     </element>
   </differential>
 </StructureDefinition>
