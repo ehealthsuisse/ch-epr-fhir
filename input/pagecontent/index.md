@@ -1,5 +1,5 @@
 <div markdown="1" class="stu-note">
-This implementation guide is a mayor update and currently in draft status.
+This implementation guide is a major update and currently in draft status.
 
 main changes to  version [0.1.1](https://fhir.ch/ig/ch-epr-mhealth/0.1.1/index.html):
 - updated to new [IHE IUA version](https://profiles.ihe.net/ITI/IUA/index.html)
