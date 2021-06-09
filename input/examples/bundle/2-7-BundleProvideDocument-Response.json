@@ -24,7 +24,7 @@
     {
       "response": {
         "status": "201 Created",
-        "location": "DocumentManifest/68a928c0-df48-4743-a291-bfb0609bbddc",
+        "location": "List/68a928c0-df48-4743-a291-bfb0609bbddc",
         "lastModified": "2020-10-02T11:56:15.094+00:00"
       }
     },
