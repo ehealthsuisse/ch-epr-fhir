@@ -42,7 +42,7 @@
   <dependsOn id="ihemhdfhir">
     <uri value="http://ihe.net/fhir/ihe.mhd.fhir/ImplementationGuide/ihe.mhd.fhir"/>
     <packageId value="ihe.mhd.fhir"/>
-    <version value="current"/>
+    <version value="4.0.1"/>
   </dependsOn>
   <definition>
 
