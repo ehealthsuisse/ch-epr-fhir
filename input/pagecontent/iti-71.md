@@ -16,9 +16,9 @@ Once the mHealth App is authorized, it may launch other embedded mHealth Apps (o
 ### Actor Roles
 
 **Actor:** IUA Authorization Client  
-**Role:** Communicates launch information and claims to the IUA Authorization Server and receives JWT ac-cess token or XUA Authorization Assertion.   
+**Role:** Communicates launch information and claims to the IUA Authorization Server and receives JWT access token or XUA Authorization Assertion.   
 **Actor:** IUA Authorization Server  
-**Role:** Role  Verifies claims and authentication information, retrieves and validates the user consent for the mHealth App to act on behalf of the user <sup><a href="#2">2</a></sup> and responds a JWT or XUA compliant access token to the IUA Authorization Client.  
+**Role:** Verifies claims and authentication information, retrieves and validates the user consent for the mHealth App to act on behalf of the user <sup><a href="#2">2</a></sup> and responds a JWT or XUA compliant access token to the IUA Authorization Client.  
 
 <sup id="2">2</sup>E.g. by presenting a screen for the user to give consent. 
 
