@@ -21,6 +21,8 @@ regulations of the Ordinance on the Electronic Patient Record (EPRO, SR 816.11).
 EPRO-DFI are published in Official Compilation of Federal Legislation (AS) (available in [German](https://www.admin.ch/opc/de/classified-compilation/20111795/index.html), [French](https://www.admin.ch/opc/fr/classified-compilation/20111795/index.html)
 and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.html)).
 
+**Download**: You can download this implementation guide in npm format from [here](package.tgz).
+
 #### Terminology
 
 The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, 
