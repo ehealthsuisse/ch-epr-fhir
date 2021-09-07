@@ -15,7 +15,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="Extension Author AuthorRole for SubmissionSet"/>
+    <description value="Extension Author AuthorRole for SubmissionSet and DocumentEntry"/>
     <fhirVersion value="4.0.1" />
     <kind value="complex-type"/>
     <abstract value="false"/>
