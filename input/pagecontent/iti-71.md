@@ -93,7 +93,7 @@ The scope parameter of the request MAY claim the following attributes:
 - There may be a scope with name “launch”. If present, it indicates the permission to obtain launch context for apps (or views) launched in SMART EHR Launch mode. The scope SHALL be used by all apps (or views) launched from a mHealth App which was authorized before.  
 - There MAY be a scope with name "purpose_of_use=token". If present, the token SHALL convey the coded value of the current transaction’s purpose of use. Allowed values are NORM (normal access) and EMER (emergency access) from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. e.g. purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5\|NORM  
 - There MAY be a scope with name "subject_role=token". If present, the token SHALL convey the coded value of the subject’s role. The value SHALL be either HCP (healthcare professional), ASS (assistant), REP (representative) or PAT (patient) from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. e.g.: subject_role=urn:oid:2.16.756.5.30.1.127.3.10.6\|HCP  
-- There MAY be a scope with name "person_id=value". If present, the value SHALL convey the EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax. e.g: person_id=305000^^^&amp;2.16.756.5.30.1.109.6.5.3.1.1&amp;ISO
+- There MAY be a scope with name "person_id=value". If present, the value SHALL convey the EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax. e.g: person_id=761337610435209810^^^&amp;2.16.756.5.30.1.109.6.5.3.1.1&amp;ISO
 
 Depending on the value of the role scope additional scopes are required, as described in the following sections.
 
