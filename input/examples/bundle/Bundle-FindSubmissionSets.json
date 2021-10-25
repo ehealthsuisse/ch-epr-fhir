@@ -11,7 +11,7 @@
   ],
   "entry": [
     {
-      "fullUrl": "urn:uuid:68a928c0-df48-4743-a291-bfb0609bbddc",
+      "fullUrl": "http://example.com/List/4125",
       "resource": {
         "resourceType": "List",
         "id": "4125",
