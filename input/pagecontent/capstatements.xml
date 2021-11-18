@@ -15,11 +15,11 @@
         <ul>
           <li>
             <a href="CapabilityStatement-CH.PIXm.Consumer.html">PIXm Patient Identifier Cross-Reference Consumer (client)</a>
-            <p>CapabilityStatement for Actor PMIR Patient Identifier Cross-reference Consumer (client).</p>
+            <p>CapabilityStatement for Actor PIXM Patient Identifier Cross-reference Consumer (client).</p>
           </li>
           <li>
             <a href="CapabilityStatement-CH.PIXm.Source.html">PIXm Patient Identity Source (client)</a>
-            <p>CapabilityStatement for Actor PMIR Patient Identity Source (client).</p>
+            <p>CapabilityStatement for Actor PIXM Patient Identity Source (client).</p>
           </li>
           <li>
             <a href="CapabilityStatement-CH.MHD.DocumentSource.html">MHD Document Source (client)</a>

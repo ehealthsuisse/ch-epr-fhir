@@ -39,10 +39,15 @@
     <packageId value="ch.fhir.ig.ch-core"/>
     <version value="2.0.0"/>
   </dependsOn>
+  <dependsOn id="ihepixmfhir">
+    <uri value="http://profiles.ihe.net/ITI/PIXm/ImplementationGuide/IHE.ITI.PIXm"/>
+    <packageId value="IHE.ITI.PIXm"/>
+    <version value="3.0.0"/>
+  </dependsOn>
   <dependsOn id="ihemhdfhir">
-    <uri value="http://ihe.net/fhir/ihe.mhd.fhir/ImplementationGuide/ihe.mhd.fhir"/>
+    <uri value="http://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.mhd.fhir"/>
     <packageId value="ihe.mhd.fhir"/>
-    <version value="4.0.1"/>
+    <version value="4.0.2"/>
   </dependsOn>
   <definition>
 
@@ -65,18 +70,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="Bundle/BundlePIXmFeed"/>
-      </reference>
-      <name value="Bundle PIXm Feed"/>
-      <description value="Example Bundle for a PIXm Feed"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="Patient/PatientPIXmFeed"/>
       </reference>
       <name value="Patient PIXm Feed"/>
-      <description value="Example PIXm patient feed"/>
+      <description value="Example PIXm Patient for Feed"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
     </resource>
     <resource>
@@ -94,14 +91,6 @@
       <name value="GruppenpraxisCH"/>
       <description value="Example Organization"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-provider-organization"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Bundle/BundlePIXmResponse"/>
-      </reference>
-      <name value="Bundle PIXm Feed Response"/>
-      <description value="Example Bundle for a PIXm Feed Response"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle-response"/>
     </resource>
     <resource>
       <reference>
@@ -167,12 +156,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ch-pixm-bundle"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/ch-pixm-patient"/>
       </reference>
       <exampleBoolean value="false"/>
@@ -180,18 +163,6 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-pixm-provider-organization"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-pixm-bundle-response"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-pixm-messageheader-response"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
@@ -256,56 +227,6 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-ext-deletionstatus"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-        
-    <!-- imported IHE FHIR Structure Defintions -->
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.PIXm.Parameters"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.PMIR.Bundle"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.PMIR.BundleHistory"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.PMIR.MessageHeader"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.PMIR.Patient.Merge"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.PMIR.Patient.RelatedPerson"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.PMIR.Subscription"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/IHE.PMIR.Subscription.request"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
