@@ -7,7 +7,7 @@ does not need to support the FindFolders Query from the XDS on FHIR Option.
 
 The Find Document Lists [ITI-66] transaction is used to find List Resources
 that satisfy a set of parameters. It is equivalent to the FindSubmissionSets query in the Registry
-Stored Query [ITI-18] transaction, as documented in [ITI TF-2a: 3.18.4.1.2.3.7.2](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.2). The result of the query is a Bundle containing List Resources that match the query parameters.
+Stored Query [ITI-18](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html) transaction, as documented in [ITI TF-2: 3.18.4.1.2.3.7.2](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.2). The result of the query is a Bundle containing List Resources that match the query parameters.
 
 ### Actor Roles
 
@@ -18,7 +18,7 @@ Stored Query [ITI-18] transaction, as documented in [ITI TF-2a: 3.18.4.1.2.3.7.2
 
 ### Referenced Standards
 
-[Mobile access to Health Documents (MHD), 2021-03-31, public comment release](https://profiles.ihe.net/ITI/MHD/4.0.0-comment/)   
+[Mobile access to Health Documents (MHD), Rev. 4.0.2 – Trial-Implementation,  November 8, 2021](https://profiles.ihe.net/ITI/MHD/index.html)   
 This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
 
 ### Messages

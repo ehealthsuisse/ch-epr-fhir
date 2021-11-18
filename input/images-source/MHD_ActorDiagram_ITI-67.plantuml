@@ -2,15 +2,13 @@
 
 title Interaction Diagram for [ITI-67]
 
-participant consumer as "Document\nConsumer"
-participant responder as "Document\nResponder"
-
-consumer -> responder: Find Document References Request Message
-activate consumer
-activate responder
-
-responder -> consumer: Find Document References Response Message
-deactivate responder
-deactivate consumer
+participant "Document Consumer" as DocumentConsumer
+participant "Document Responder" as DocumentResponder
+activate "DocumentConsumer"
+activate "DocumentResponder"
+"DocumentConsumer" -> "DocumentResponder" : 1. Find Document References [ITI-67]
+return
+deactivate "DocumentConsumer"
+deactivate "DocumentResponder"
 
 @enduml 

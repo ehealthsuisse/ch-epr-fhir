@@ -3,7 +3,7 @@ This implementation guide is a major update and currently in draft status.
 
 Main changes to version [0.1.1](https://fhir.ch/ig/ch-epr-mhealth/0.1.1/index.html):
 - updated to new [IHE IUA version](https://profiles.ihe.net/ITI/IUA/index.html)
-- switched to [PIXm](iti-ch-pixm.html)
+- switched to [PIXm](iti-pixm.html)
 - updated to [Mobile Access to Health Documents (MHD) Release 4.0.1](https://profiles.ihe.net/ITI/MHD/index.html)
 - integrated [RESTFul ATNA](https://profiles.ihe.net/ITI/MHD/index.html)
 - open issues known at [publication](openissues.html)  
@@ -34,7 +34,7 @@ The extensions, restrictions and translations specified apply to the following I
 
 * [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/)
 * [IUA](https://profiles.ihe.net/ITI/IUA/index.html)
-* [PIXm](https://ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PIXm.pdf)
+* [PIXm](https://profiles.ihe.net/ITI/PIXm/index.html)
 * [MHD](https://profiles.ihe.net/ITI/MHD/index.html)
 * [RESTful ATNA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)
 

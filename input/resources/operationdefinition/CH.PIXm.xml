@@ -46,7 +46,7 @@
         <use value="in"/>
         <min value="0"/>
         <max value="1"/>
-        <documentation value="The requested format of the response from the mime-type value set. See ITI TF-2x: Appendix Z.6"/>
+        <documentation value="The requested format of the response from the mime-type value set. See ITI TF-2: Appendix Z.6"/>
         <type value="string"/>
         <searchType value="token" />
     </parameter>
@@ -55,7 +55,7 @@
         <use value="out"/>
         <min value="0"/>
         <max value="2"/>
-        <documentation value="The identifier found. Constraints to include the assigning authority as specified in ITI TF-2x: Appendix E.3"/>
+        <documentation value="The identifier found. Constraints to include the assigning authority as specified in ITI TF-2: Appendix E.3"/>
         <type value="Identifier"/>
     </parameter>
     <parameter>

@@ -1,4 +1,4 @@
-This section specifies Swiss national extensions to Internet User Authorization (IUA) Profile, which is published as an IHE ITI Trial Implementation profile.
+This section specifies Swiss national extensions to Internet User Authorization (IUA) Profile, which is [published](https://profiles.ihe.net/ITI/IUA/index.html) as an IHE ITI Trial Implementation profile.
 
 ### Scope  
 There is no extension or restriction of the profile scope defined in this national extension. 

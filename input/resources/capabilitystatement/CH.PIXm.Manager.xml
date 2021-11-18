@@ -21,7 +21,7 @@
     <rest>
         <mode value="server" />
         <documentation value="PIXm server resolves the local ID sent with the request to the MPI-PID and EPR-SPID [ITI-83]. 
-        PIXm server stores the patient data provided with the request and assigns it to or creates a master patient record and a MPI-PID [ITI-93]." />
+        PIXm server stores the patient data provided with the request and assigns it to or creates a master patient record and a MPI-PID [ITI-104]." />
         <security>
             <cors value="false" />
             <description value="TLS SHALL be used together with IUA basic access token" />

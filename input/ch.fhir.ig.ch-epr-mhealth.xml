@@ -411,8 +411,8 @@
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="iti-ch-pixm.html"/>
-          <title value="Patient Identifier Cross-reference for Mobile (PIXm)"/>
+          <nameUrl value="iti-pixm.html"/>
+          <title value="Patient Identifier Cross-referencing for mobile (PIXm)"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -446,8 +446,8 @@
           <generation value="markdown"/>
         </page>
         <page>
-          <nameUrl value="iti-93.html"/>
-          <title value="PIXm Mobile Patient Identity Feed [ITI-93]"/>
+          <nameUrl value="iti-104.html"/>
+          <title value="Patient Identity Feed FHIR [ITI-104]"/>
           <generation value="markdown"/>
         </page>
         <page>

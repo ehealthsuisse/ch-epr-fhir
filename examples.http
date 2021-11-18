@@ -7,7 +7,7 @@ Accept: application/fhir+json
 ############ Register Patient Data ############
 
 
-### ITI-93 Mobile Patient Identity Feed
+### ITI-104 Mobile Patient Identity Feed
 POST {{host}}/$process-message HTTP/1.1
 Accept: application/fhir+json
 Content-Type: application/fhir+json

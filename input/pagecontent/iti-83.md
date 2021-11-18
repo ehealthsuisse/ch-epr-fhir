@@ -12,18 +12,18 @@ local identifier the MPI and get the corresponding MPI-PID and the EPR-SPID iden
 **Role:** Resolves the local ID sent with the request to the MPI-PID and EPR-SPID.   
 
 ### Referenced Standards
-[Patient Identifier Cross-reference for Mobile (PIXm), Rev. 2.1 – Trial Implementation, December 5, 2019](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PIXm.pdf)  
+[Patient Identifier Cross-referencing for mobile (PIXm), Rev. 3.0.0 – Trial-Implementation, November 8, 2021](https://profiles.ihe.net/ITI/PIXm/index.html)  
 This PIXm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
 
 ### Messages
 
-<div>{% include CHPIXM_ActorDiagram_ITI-83.svg %}</div>
+<div>{% include PIXM_ActorDiagram_ITI-83.svg %}</div>
 
 ### Trigger Events
 A mobile app wants to access (read or write) documents, which requires the MPI-PID of the patient.
 
 ### Message Semantics
-The message semantics is the same as defined in 3.83.4.1.2 with a restriction on the targetSystem query
+The message semantics is the same as defined in [2:3.83.4.1.2](https://profiles.ihe.net/ITI/PIXm/ITI-83.html#2383412-message-semantics) with a restriction on the targetSystem query
 Parameter:
 
 ```
@@ -35,9 +35,9 @@ GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]{&targetSystem=[uri]}{&_form
 | Query parameter Name | Cardinalty | Search Type | Description | Swiss National Extension |
 | --- | --- | --- | --- | --- |
 | **Input Parameters** |||||
-| sourceIdentifier | 1..1 | token | The Patient identifier search parameter that will be used by the Patient Identifier Cross-reference Manager to find cross matching identifiers associated with the Patient Resource. See Section 3.83.4.1.2.1. | No further refinement. |
-| targetSystem | **1..2** | uri | The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section 3.83.4.1.2.2. | SHALL be Restricted to the Assigning authority of the community and/or the EPR-SPID. |
-| _format | 0..1 | token | The requested format of the response from the mime-type value set. See ITI TF-2x: Appendix Z.6. | No further refinement. |
+| sourceIdentifier | 1..1 | token | The Patient identifier search parameter that will be used by the Patient Identifier Cross-reference Manager to find cross matching identifiers associated with the Patient Resource. See Section [2:3.83.4.1.2.1](https://profiles.ihe.net/ITI/PIXm/ITI-83.html#23834121-source-patient-identifier-parameter). | No further refinement. |
+| targetSystem | **1..2** | uri | The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section [2:3.83.4.1.2.2](https://profiles.ihe.net/ITI/PIXm/ITI-83.html#23834122-requesting-patient-identifier-domains-to-be-returned). | SHALL be Restricted to the Assigning authority of the community and/or the EPR-SPID. |
+| _format | 0..1 | token | The requested format of the response from the mime-type value set. See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html). | No further refinement. |
 
 <div><figcaption>$ihe-pix Message response</figcaption></div>  
 
@@ -45,11 +45,11 @@ GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]{&targetSystem=[uri]}{&_form
 | Parameter | Cardinality | Data Type | Description |
 | --- | --- | --- | --- |
 | **FHIR Parameters Resource** ||||
-| targetIdentifier | **0..2** | Identifier | The identifier found. Constraints to include the assigning authority as specified in ITI TF-2x: Appendix E.3. |
+| targetIdentifier | **0..2** | Identifier | The identifier found. Constraints to include the assigning authority as specified in [ITI TF-2: Appendix E.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#page=16). |
 | targetId | **0..1** | Reference(Patient) | The URL of the Patient Resource |
 
 If the targetSystem is not restricted to the Assigning authority of the community and/or the EPR-SPID the
-error Target Domain not recognized (3.83.4.2.2.4) SHALL be returned.
+error Target Domain not recognized ([2:3.83.4.2.2.4](https://profiles.ihe.net/ITI/PIXm/ITI-83.html#23834224-target-domain-not-recognized)) SHALL be returned.
 
 See the corresponding [OperationDefinition](OperationDefinition-CH.PIXm.html).
 

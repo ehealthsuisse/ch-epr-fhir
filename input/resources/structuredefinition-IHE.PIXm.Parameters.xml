@@ -82,7 +82,7 @@
     </element>
     <element id="Parameters.parameter:targetIdentifier.value[x].assigner.display">
       <path value="Parameters.parameter.value[x].assigner.display" />
-      <comment value="When the assigning authority name is provided, the actor shall also populate the display attribute. (IHE ITI TF-2x E3 FHIR Identifier Type)" />
+      <comment value="When the assigning authority name is provided, the actor shall also populate the display attribute. (IHE ITI TF-2 E3 FHIR Identifier Type)" />
       <min value="1" />
     </element>
   </differential>

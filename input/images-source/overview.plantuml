@@ -27,7 +27,7 @@ component "mHealth: API" {
 
   [PIXm Patient Identifier Cross-reference Manager] as PIXmManager
   PIXmConsumer --> PIXmManager : Mobile Patient Identifier Cross-reference Query [ITI-83]
-  PIXmSource --> PIXmManager : Mobile Patient Identity Feed [ITI-93]
+  PIXmSource --> PIXmManager : Patient Identity Feed FHIR [ITI-104]
 
   [MHD Document Recipient] as MHDRecipient
   MHDSource --> MHDRecipient : Provide Document Bundle [ITI-65]

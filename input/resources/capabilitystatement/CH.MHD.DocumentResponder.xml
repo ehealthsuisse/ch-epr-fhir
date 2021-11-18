@@ -179,7 +179,7 @@
                             value="http://hl7.org/fhir/SearchParameter/clinical-identifier"/>
                 <type value="token"/>
                 <documentation
-                            value="This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See ITI TF-2x: Appendix Z.2 for additional constraints on the use of the token search parameter type."/>
+                            value="This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See ITI TF-2: Appendix Z.2 for additional constraints on the use of the token search parameter type."/>
             </searchParam>
             <searchParam>
                 <name value="subject"/>
@@ -193,7 +193,7 @@
                 <definition value="http://hl7.org/fhir/SearchParameter/List-source"/>
                 <type value="reference"/>
                 <documentation
-                            value="These parameters, of type string, specify the name parts of the author person which is associated with the List. See ITI TF-2x: Appendix Z.2 for use of the string data type."/>
+                            value="These parameters, of type string, specify the name parts of the author person which is associated with the List. See ITI TF-2: Appendix Z.2 for use of the string data type."/>
             </searchParam>
             <searchParam>
                 <name value="status"/>
