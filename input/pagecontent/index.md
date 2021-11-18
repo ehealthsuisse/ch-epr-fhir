@@ -3,7 +3,7 @@ This implementation guide is a major update and currently in draft status.
 
 Main changes to version [0.1.1](https://fhir.ch/ig/ch-epr-mhealth/0.1.1/index.html):
 - updated to new [IHE IUA version](https://profiles.ihe.net/ITI/IUA/index.html)
-- switched to [CH:PIXm](iti-ch-pixm.html)
+- switched to [PIXm](iti-ch-pixm.html)
 - updated to [Mobile Access to Health Documents (MHD) Release 4.0.1](https://profiles.ihe.net/ITI/MHD/index.html)
 - integrated [RESTFul ATNA](https://profiles.ihe.net/ITI/MHD/index.html)
 - open issues known at [publication](openissues.html)  

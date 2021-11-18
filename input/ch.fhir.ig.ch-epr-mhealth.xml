@@ -67,16 +67,16 @@
       <reference>
         <reference value="Bundle/BundlePIXmFeed"/>
       </reference>
-      <name value="Bundle CH:PIXm Feed"/>
-      <description value="Example Bundle for a CH:PIXm Feed"/>
+      <name value="Bundle PIXm Feed"/>
+      <description value="Example Bundle for a PIXm Feed"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle"/>
     </resource>
     <resource>
       <reference>
         <reference value="Patient/PatientPIXmFeed"/>
       </reference>
-      <name value="Patient CH:PIXm Feed"/>
-      <description value="Example CH:PIXm patient feed"/>
+      <name value="Patient PIXm Feed"/>
+      <description value="Example PIXm patient feed"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
     </resource>
     <resource>
@@ -99,8 +99,8 @@
       <reference>
         <reference value="Bundle/BundlePIXmResponse"/>
       </reference>
-      <name value="Bundle CH:PIXm Feed Response"/>
-      <description value="Example Bundle for a CH:PIXm Feed Response"/>
+      <name value="Bundle PIXm Feed Response"/>
+      <description value="Example Bundle for a PIXm Feed Response"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle-response"/>
     </resource>
     <resource>
@@ -412,7 +412,7 @@
         </page>
         <page>
           <nameUrl value="iti-ch-pixm.html"/>
-          <title value="Patient Identifier Cross-reference for Mobile (CH:PIXm)"/>
+          <title value="Patient Identifier Cross-reference for Mobile (PIXm)"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -447,7 +447,7 @@
         </page>
         <page>
           <nameUrl value="iti-93.html"/>
-          <title value="CH:PIXm Mobile Patient Identity Feed [ITI-93]"/>
+          <title value="PIXm Mobile Patient Identity Feed [ITI-93]"/>
           <generation value="markdown"/>
         </page>
         <page>

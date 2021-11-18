@@ -4,7 +4,7 @@
     <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
     <version value="0.2.0"/>
     <name value="CHPIXmPatientFeed"/>
-    <title value="CH EPR mHealth Patient Profile for CH:PIXm Mobile Patient Identity Feed"/>
+    <title value="CH EPR mHealth Patient Profile for PIXm Mobile Patient Identity Feed"/>
     <status value="draft"/>
     <date value="2021-04-13"/>
     <publisher value="eHealth Suisse"/>
@@ -15,7 +15,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="The patient demographics and identifier information which can be provided in the CH:PIXm Feed according to the EPR. If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID as an identifier MAY be added. The birthname can be added with the  ISO 21090 qualifier extension."/>
+    <description value="The patient demographics and identifier information which can be provided in the PIXm Feed according to the EPR. If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID as an identifier MAY be added. The birthname can be added with the  ISO 21090 qualifier extension."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -31,7 +31,7 @@
     <differential>
         <element id="Patient">
             <path value="Patient"/>
-            <short value="CH:PIXm Patient"/>
+            <short value="PIXm Patient"/>
         </element>
         <element id="Patient.extension:religion">
             <path value="Patient.extension" />

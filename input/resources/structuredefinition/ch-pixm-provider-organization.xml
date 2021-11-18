@@ -4,7 +4,7 @@
     <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-provider-organization"/>
     <version value="0.1.0"/>
     <name value="CHPIXmProviderOrganization"/>
-    <title value="CH EPR mHealth Provider Organization Profile for CH:PIXm"/>
+    <title value="CH EPR mHealth Provider Organization Profile for PIXm"/>
     <status value="draft"/>
     <date value="2020-08-04"/>
     <publisher value="eHealth Suisse"/>
@@ -31,7 +31,7 @@
     <differential>
         <element id="Organization">
             <path value="Organization"/>
-            <short value="CH CH:PIXm Provider Organization"/>
+            <short value="CH PIXm Provider Organization"/>
             <constraint>
                 <key value="ch-epr-mhealth-org-1"/>
                 <severity value="error"/>

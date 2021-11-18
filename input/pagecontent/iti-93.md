@@ -27,7 +27,7 @@ merged or deleted.
 
 The same message semantic apply as in 3.93.4.1.2 Message Semantics.
 
-The patient data (see [Patient example](Patient-PatientPIXmFeed.html)) SHALL be conform to the CH:PIXm Patient profile with the canonical url
+The patient data (see [Patient example](Patient-PatientPIXmFeed.html)) SHALL be conform to the PIXm Patient profile with the canonical url
 [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient](StructureDefinition-ch-pixm-patient.html). 
 If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID 
 as an identifier MAY be added. The birthname can be added with the ISO 21090 qualifier extension, the religion SHALL not be added.
@@ -45,5 +45,5 @@ See [Bundle example](Bundle-BundlePIXmResponse.html) (and the corresponding [pro
 ### Security Consideration
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Patient Identifier Cross-reference Manager using the IUA profile with basic access token. Consequently
-the CH:PIXm Mobile Patient Identity Feed [ITI-93] request must authorize using the Incorporate Access Token
+the PIXm Mobile Patient Identity Feed [ITI-93] request must authorize using the Incorporate Access Token
 [ITI-72] transaction of the IUA profile.

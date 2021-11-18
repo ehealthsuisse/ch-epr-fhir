@@ -13,7 +13,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="CapabilityStatement for Actor CH:PIXm Patient Identifier Cross-reference Manager (server)." />
+    <description value="CapabilityStatement for Actor PIXm Patient Identifier Cross-reference Manager (server)." />
     <kind value="requirements" />
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />

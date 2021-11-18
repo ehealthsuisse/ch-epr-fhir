@@ -11,7 +11,7 @@ component "mHealth: App" {
   [IUA Authorization Client] as IUAClient
 
   [PIXm Patient Identifier Cross-reference Consumer] as PIXmConsumer
-  [CH:PIXm Patient Identity Source] as PIXmSource
+  [PIXm Patient Identity Source] as PIXmSource
 
   [MHD Document Source] as MHDSource
   [MHD Document Consumer] as MHDConsumer
@@ -25,7 +25,7 @@ component "mHealth: API" {
   [IUA Resource Server] as IUAResourceServer
   IUAClient --> IUAResourceServer : Incorporate Access Token [ITI-72]
 
-  [CH:PIXm Patient Identifier Cross-reference Manager] as PIXmManager
+  [PIXm Patient Identifier Cross-reference Manager] as PIXmManager
   PIXmConsumer --> PIXmManager : Mobile Patient Identifier Cross-reference Query [ITI-83]
   PIXmSource --> PIXmManager : Mobile Patient Identity Feed [ITI-93]
 

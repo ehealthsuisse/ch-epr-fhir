@@ -14,11 +14,11 @@
         <p>CapabilityStatement for mHealth App (client).</p>
         <ul>
           <li>
-            <a href="CapabilityStatement-CH.PIXm.Consumer.html">CH:PIXm Patient Identifier Cross-Reference Consumer (client)</a>
+            <a href="CapabilityStatement-CH.PIXm.Consumer.html">PIXm Patient Identifier Cross-Reference Consumer (client)</a>
             <p>CapabilityStatement for Actor PMIR Patient Identifier Cross-reference Consumer (client).</p>
           </li>
           <li>
-            <a href="CapabilityStatement-CH.PIXm.Source.html">CH:PIXm Patient Identity Source (client)</a>
+            <a href="CapabilityStatement-CH.PIXm.Source.html">PIXm Patient Identity Source (client)</a>
             <p>CapabilityStatement for Actor PMIR Patient Identity Source (client).</p>
           </li>
           <li>
@@ -44,8 +44,8 @@
         <p>CapabilityStatement for mHealth MobileAccessGateway (server).</p>
         <ul>
           <li>
-            <a href="CapabilityStatement-CH.PIXm.Manager.html">CH:PIXm Patient Identifier Cross-reference Manager (server)</a>
-            <p>CapabilityStatement for Actor CH:PIXm Patient Identifier Cross-reference Manager (server).</p>
+            <a href="CapabilityStatement-CH.PIXm.Manager.html">PIXm Patient Identifier Cross-reference Manager (server)</a>
+            <p>CapabilityStatement for Actor PIXm Patient Identifier Cross-reference Manager (server).</p>
           </li>
           <li>
             <a href="CapabilityStatement-CH.MHD.DocumentRecipient.html">MHD Document Recipient (server)</a>

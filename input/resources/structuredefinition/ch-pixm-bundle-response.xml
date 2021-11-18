@@ -3,7 +3,7 @@
   <id value="ch-pixm-bundle-response" />
   <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle-response" />
   <name value="CH_PIXm_Bundle_Response_CH" />
-  <title value="CH:PIXm Bundle Message Response" />
+  <title value="PIXm Bundle Message Response" />
   <status value="draft" />
   <date value="2020-10-28" />
   <publisher value="eHealth Suisse"/>
@@ -14,8 +14,8 @@
       <value value="https://www.e-health-suisse.ch"/>
     </telecom>
   </contact>
-  <description value="See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(CH:PIXm)" />
-  <purpose value="Added constraints for the Bundle resource for CH:PIXm (response)." />
+  <description value="See https://wiki.ihe.net/index.php/Patient_Master_Identity_Registry_(PIXm)" />
+  <purpose value="Added constraints for the Bundle resource for PIXm (response)." />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="v2" />
