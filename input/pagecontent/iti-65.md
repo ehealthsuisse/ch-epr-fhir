@@ -14,8 +14,7 @@ In the Swiss EPR the transaction is used by the MHD Document Source to store doc
 **Role:** Accepts the document and metadata sent from the Document Source.  
 
 ### Referenced Standards
-
-[Mobile access to Health Documents (MHD), 2021-03-31, public comment release](https://profiles.ihe.net/ITI/MHD/4.0.0-comment/)  
+[Mobile access to Health Documents (MHD), Rev. 4.0.2 – Trial-Implementation,  November 8, 2021](https://profiles.ihe.net/ITI/MHD/index.html)  
 This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
 
 ### Messages
@@ -28,7 +27,7 @@ This method is invoked when the Document Source needs to submit one or more docu
 Recipient.
 
 ### Message Semantics
-The same message semantics as for 3.65.4.1.2 Message Semantics applies. The FHIR `Bundle.meta.profile` shall have the following value:   
+The same message semantics as for [2:3.65.4.1.2](https://profiles.ihe.net/ITI/MHD/ITI-65.html#2365412-message-semantics) Message Semantics applies. The FHIR `Bundle.meta.profile` shall have the following value:   
 
 `http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
 

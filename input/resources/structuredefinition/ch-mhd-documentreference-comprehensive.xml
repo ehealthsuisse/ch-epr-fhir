@@ -69,7 +69,7 @@
         </element>
         <element id="DocumentReference.masterIdentifier">
             <path value="DocumentReference.masterIdentifier" />
-            <comment value="See ITI TF-2x: Z.9.1.1 Identifier and CDA root plus extension." />
+            <comment value="See ITI TF-2: Z.9.1.1 Identifier and CDA root plus extension." />
             <min value="1" />
             <mustSupport value="true" />
         </element>

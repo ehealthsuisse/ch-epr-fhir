@@ -11,7 +11,7 @@
         <a href="iti-iua.html">Internet User Authorization (IUA)</a>
       </li>
       <li>
-        <a href="iti-ch-pixm.html">Patient Identifier Cross-reference for Mobile (CH:PIXm)</a>
+        <a href="iti-pixm.html">Patient Identifier Cross-referencing for mobile (PIXm)</a>
       </li>
       <li>
         <a href="iti-mhd.html">Mobile Access to Health Documents (MHD) with XDS on FHIR</a>
@@ -33,7 +33,7 @@
         <a href="iti-71.html">Get Access Token [ITI-71]</a>
       </li>
       <li>
-        <a href="iti-93.html">CH:PIXm Mobile Patient Identity Feed [ITI-93]</a>
+        <a href="iti-104.html">Patient Identity Feed FHIR [ITI-104]</a>
       </li>
       <li>
         <a href="iti-83.html">Mobile Patient Identifier Cross-reference Query [ITI-83]</a>

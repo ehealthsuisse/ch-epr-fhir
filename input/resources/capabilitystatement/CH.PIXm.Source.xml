@@ -13,21 +13,26 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="CapabilityStatement for Actor CH:PIXm Patient Identity Source (client)." />
+    <description value="The Patient Identity Source Actor CapabililtyStatement expresses the requirements that can be utilized while being compliant. - using FHIR R4 - using json or xml encoding - using conditional update for [ITI-104] - provide supported Patient profile for crosss-referencing for [ITI-104]"/>
     <kind value="requirements" />
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
     <format value="application/fhir+json" />
     <rest>
         <mode value="client" />
-        <documentation value="CH:PIXm client registers data of a specific patient in the Patient Identifier Cross-reference Manager [ITI-93]." />
+        <documentation value="PIXm client registers data of a specific patient in the Patient Identifier Cross-reference Manager [ITI-104]." />
         <security>
             <cors value="false" />
             <description value="TLS SHALL be used together with IUA basic access token" />
         </security>
-        <interaction>
-            <code value="transaction"/>
-            <documentation value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle"/>
-        </interaction>
+        <resource>
+            <type value="Patient"/>
+            <supportedProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
+            <interaction>
+                <code value="update"/>
+                <documentation value="conditional update for [ITI-104]"/>
+            </interaction>
+            <conditionalUpdate value="true"/>
+        </resource>
     </rest>
 </CapabilityStatement>

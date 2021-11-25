@@ -13,7 +13,8 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="CapabilityStatement for Actor PIXm Patient Identifier Cross-reference Consumer (client)." />
+    <description
+               value="The Patient Identifier Cross-reference Consumer Actor CapabililtyStatement expresses the requirements that can be utilized while being compliant. - using FHIR R4 - using json or xml encoding - query the $ihe-pix operation"/>
     <kind value="requirements" />
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />

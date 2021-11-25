@@ -2,15 +2,13 @@
 
 title Interaction Diagram for [ITI-68]
 
-participant consumer as "Document\nConsumer"
-participant responder as "Document\nResponder"
-
-consumer -> responder: Retrieve Document Request Message
-activate consumer
-activate responder
-
-responder -> consumer: Retrieve Document Response Message
-deactivate responder
-deactivate consumer
+participant "Document Consumer" as DocumentConsumer
+participant "Document Responder" as DocumentResponder
+activate "DocumentConsumer"
+activate "DocumentResponder"
+"DocumentConsumer" -> "DocumentResponder" : 1. Retrieve Document [ITI-68]
+return
+deactivate "DocumentConsumer"
+deactivate "DocumentResponder"
 
 @enduml 

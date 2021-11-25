@@ -14,7 +14,7 @@
       <value value="https://www.e-health-suisse.ch"/>
     </telecom>
   </contact>
-  <description value="See https://wiki.ihe.net/index.php/Patient_Identifier_Cross-Reference_for_Mobile_(PIXm)"/>
+  <description value="The StructureDefinition defines the Output Parameters for the $ihe-pix operation: "/>
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="v2" />
@@ -29,7 +29,7 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Parameters" />
-  <baseDefinition value="http://ihe.net/fhir/StructureDefinition/IHE.PIXm.Parameters" />
+  <baseDefinition value="http://profiles.ihe.net/ITI/PIXm/StructureDefinition/IHE.PIXm.Query.Parameters.Out" />
   <derivation value="constraint" />
   <differential>
     <element id="Parameters">

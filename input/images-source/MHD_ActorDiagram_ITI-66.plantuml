@@ -2,15 +2,13 @@
 
 title Interaction Diagram for [ITI-66]
 
-participant consumer as "Document\nConsumer"
-participant responder as "Document\nResponder"
-
-consumer -> responder: Find Document Lists Request Message
-activate consumer
-activate responder
-
-responder -> consumer: Find Document Lists Response Message
-deactivate responder
-deactivate consumer
+participant "Document Consumer" as DocumentConsumer
+participant "Document Responder" as DocumentResponder
+activate "DocumentConsumer"
+activate "DocumentResponder"
+"DocumentConsumer" -> "DocumentResponder" : 1. Find Document Lists [ITI-66]
+return
+deactivate "DocumentConsumer"
+deactivate "DocumentResponder"
 
 @enduml 

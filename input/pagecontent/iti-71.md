@@ -5,7 +5,7 @@ The transaction is used by an mHealth App to pass claims to the IUA Authorizatio
 
 Depending on the claims made by the mHealth App, two different flavors of access tokens are provided by the IUA Authorization Server: 
 
-- Basic Access Token – IUA conformal access token authorizing access to the EPR end-points which are NOT protected by the EPR role and attribute based authorization (i.e. for the CH:PIXm endpoints). 
+- Basic Access Token – IUA conformal access token authorizing access to the EPR end-points which are NOT protected by the EPR role and attribute based authorization (i.e. for the PIXm endpoints). 
 - Extended Access Token – IUA conformal access token for the EPR endpoints which are protected by the EPR role and attribute based authorization (i.e. for the MHD endpoints).
 
 An mHealth App in the SMART Standalone Launch sequence SHALL perform the transaction first to get basic access to the Swiss EPR. This requires user authentication as well as the user consent, allowing the mHealth App to access the Swiss EPR and perform transactions on behalf of the user. The IUA Authorization Server SHALL present a User Interface for the user to authenticate and provide user consent, or by validating against data stored at app registration time.

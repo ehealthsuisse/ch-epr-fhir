@@ -2,15 +2,14 @@
 
 title Interaction Diagram for [ITI-65]
 
-participant source as "Document\nSource"
-participant recipient as "Document\nRecipient"
-
-source -> recipient : Provide Document Bundle Request Message
-activate source
-activate recipient
-
-recipient -> source: Provide Document Bundle Response Message
-deactivate recipient
-deactivate source
+hide footbox
+participant "Document Source" as DocumentSource
+participant "Document Recipient" as DocumentRecipient
+activate "DocumentSource"
+activate "DocumentRecipient"
+"DocumentSource" -> "DocumentRecipient" : 1. Request to publish documents [ITI-65]
+"DocumentRecipient" --> "DocumentSource" : 2. Documents published [ITI-65]
+deactivate "DocumentSource"
+deactivate "DocumentRecipient"
 
 @enduml 

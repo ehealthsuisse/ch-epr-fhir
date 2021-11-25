@@ -1,0 +1,15 @@
+@startuml
+
+hide footbox
+participant "Patient Identity Source" as PatientIdentitySource
+participant "Patient Identifier Cross-reference Manager" as PatientIdentifierCrossReferenceManager
+activate "PatientIdentitySource"
+activate "PatientIdentifierCrossReferenceManager"
+"PatientIdentitySource" -> "PatientIdentifierCrossReferenceManager" : Add or revise Patient
+"PatientIdentifierCrossReferenceManager" --> "PatientIdentitySource" : Patient added or revised
+"PatientIdentitySource" -> "PatientIdentifierCrossReferenceManager" : Resolve Duplicate Patient
+"PatientIdentifierCrossReferenceManager" --> "PatientIdentitySource" : Patient duplicate resolved
+deactivate "PatientIdentitySource"
+deactivate "PatientIdentifierCrossReferenceManager"
+
+@enduml 

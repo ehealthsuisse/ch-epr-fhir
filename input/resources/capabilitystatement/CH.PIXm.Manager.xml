@@ -13,7 +13,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="CapabilityStatement for Actor CH:PIXm Patient Identifier Cross-reference Manager (server)." />
+    <description value="The Patient Identifier Cross-reference Manager CapabililtyStatement expresses the requirements that shall be provided. - using FHIR R4 - using json and xml encoding - support the $ihe-pix operation - support conditional update for [ITI-104] - support conditional delete for [ITI-104] if Remove Patient Option is supported - used with IHE-IUA"/>
     <kind value="requirements" />
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
@@ -21,21 +21,23 @@
     <rest>
         <mode value="server" />
         <documentation value="PIXm server resolves the local ID sent with the request to the MPI-PID and EPR-SPID [ITI-83]. 
-        PIXm server stores the patient data provided with the request and assigns it to or creates a master patient record and a MPI-PID [ITI-93]." />
+        PIXm server stores the patient data provided with the request and assigns it to or creates a master patient record and a MPI-PID [ITI-104]." />
         <security>
             <cors value="false" />
             <description value="TLS SHALL be used together with IUA basic access token" />
         </security>
         <resource>
-            <type value="Patient" />
-            <operation>
-                <name value="$ihe-pix"/>
-                <definition value="http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/CH.PIXm"/>
-            </operation>
+            <type value="Patient"/>
+            <supportedProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
+            <interaction>
+                <code value="update"/>
+                <documentation value="conditional update for [ITI-104]"/>
+            </interaction>
+            <conditionalUpdate value="true"/>
         </resource>
-        <interaction>
-            <code value="transaction"/>
-            <documentation value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-bundle"/>
-        </interaction>
+        <operation>
+            <name value="$ihe-pix"/>
+            <definition value="http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/CH.PIXm"/>
+        </operation>
     </rest>
 </CapabilityStatement>
