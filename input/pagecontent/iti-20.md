@@ -33,3 +33,5 @@ Same message semantics and expected actions apply as described in the ITI-20 tra
 ### Security Consideration
 
 TLS SHALL be used. 
+
+[Audit Example for a Provide Bundle Transaction from source perspective](AuditEvent-ex-auditProvideBundle-source.html).
