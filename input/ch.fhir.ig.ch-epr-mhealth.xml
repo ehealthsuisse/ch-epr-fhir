@@ -34,6 +34,11 @@
   <packageId value="ch.fhir.ig.ch-epr-mhealth"/>
   <license value="CC-BY-SA-4.0"/>
   <fhirVersion value="4.0.1"/>
+  <dependsOn id="chterm">
+    <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
+    <packageId value="ch.fhir.ig.ch-epr-term"/>
+    <version value="2.0.5"/>
+  </dependsOn>
   <dependsOn id="chcore">
     <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
     <packageId value="ch.fhir.ig.ch-core"/>
@@ -139,6 +144,14 @@
       <name value="MHD Find DocumentReferences"/>
       <description value="MHD Find DocumentReferences - Bundle as Response"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="AuditEvent/ex-auditProvideBundle-source"/>
+      </reference>
+      <name value="Audit Event for Provide Bundle Transaction at Source"/>
+      <description value="Audit Example for a Provide Bundle Transaction from source perspective"/>
+      <exampleCanonical value="http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source"/>
     </resource>
 
     <!-- CH EPR mHealth: Resource Profiles -->
