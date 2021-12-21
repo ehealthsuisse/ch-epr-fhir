@@ -23,11 +23,13 @@ and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.
 
 **Download**: You can download this implementation guide in npm format from [here](package.tgz).
 
-#### Terminology
+### Conformance Expectations
 
 The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, 
 *RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in
 [[RFC2119](https://www.ietf.org/rfc/rfc2119.txt)].
+
+This implementation guide uses `Must Support` in StructureDefinitions with the definition found in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir). This is equivalent to the IHE use of **R2** as defined in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir).
 
 #### Scope of precisions
 The extensions, restrictions and translations specified apply to the following IHE IT Infrastructure (ITI) Integration profiles:

@@ -37,7 +37,7 @@
   <dependsOn id="chterm">
     <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
     <packageId value="ch.fhir.ig.ch-epr-term"/>
-    <version value="2.0.5"/>
+    <version value="current"/>
   </dependsOn>
   <dependsOn id="chcore">
     <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
@@ -226,6 +226,12 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/ch-epr-mhealth-birthname"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/OidIdentifier"/>
       </reference>
       <exampleBoolean value="false"/>
     </resource>
