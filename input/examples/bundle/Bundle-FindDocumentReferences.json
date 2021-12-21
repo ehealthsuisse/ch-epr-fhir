@@ -24,7 +24,7 @@
         "contained": [
           {
             "resourceType": "Patient",
-            "id": "1",
+            "id": "pat",
             "identifier": [
               {
                 "use": "usual",
@@ -60,6 +60,7 @@
           }
         ],
         "masterIdentifier": {
+          "system": "urn:ietf:rfc:3986",
           "value": "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2951"
         },
         "identifier": [
@@ -115,7 +116,7 @@
               "creation": "2020-06-29T11:58:00+00:00"
             },
             "format": {
-              "system": "urn:oid:1.3.6.1.4.1.19376.1.2.3",
+              "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
               "code": "urn:ihe:pharm:pml:2013",
               "display": "Community Medication List"
             }
@@ -141,7 +142,7 @@
             ]
           },
           "sourcePatientInfo": {
-            "reference": "#1"
+            "reference": "#pat"
           }
         }
       }

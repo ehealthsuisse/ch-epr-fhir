@@ -58,7 +58,7 @@
         <element id="DocumentReference.extension:originalProviderRole">
             <path value="DocumentReference.extension" />
             <sliceName value="originalProviderRole" />
-            <short value="This extra metadata attribute SHALL be set by the Document Source actor to the role value of the current user and SHALL NOT be updated by Update Initiator or Document Administrator actors."/>
+            <short value="Original ProviderRole: This extra metadata attribute SHALL be set by the Document Source actor to the role value of the current user and SHALL NOT be updated by Update Initiator or Document Administrator actors."/>
             <min value="1"/>
             <max value="1"/>
             <type>
@@ -72,6 +72,10 @@
             <comment value="See ITI TF-2: Z.9.1.1 Identifier and CDA root plus extension." />
             <min value="1" />
             <mustSupport value="true" />
+            <type>
+                <code value="Identifier" />
+                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/OidIdentifier" />
+            </type>
         </element>
         <element id="DocumentReference.identifier">
             <path value="DocumentReference.identifier" />
@@ -94,12 +98,18 @@
             <path value="DocumentReference.type" />
             <min value="1" />
             <mustSupport value="true" />
+            <binding>
+                <strength value="required"/>
+            </binding>
         </element>
         <element id="DocumentReference.category">
             <path value="DocumentReference.category" />
             <min value="1" />
             <max value="1" />
             <mustSupport value="true" />
+            <binding>
+                <strength value="required"/>
+            </binding>
         </element>
         <element id="DocumentReference.subject">
             <path value="DocumentReference.subject" />
@@ -151,6 +161,9 @@
             <comment value="Note: This is NOT the DocumentReference.meta, as that holds the meta tags for the DocumentReference itself." />
             <min value="1" />
             <mustSupport value="true" />
+            <binding>
+                <strength value="required"/>
+            </binding>
         </element>
         <element id="DocumentReference.content">
             <path value="DocumentReference.content" />
@@ -164,11 +177,20 @@
             <path value="DocumentReference.content.attachment.contentType" />
             <min value="1" />
             <mustSupport value="true" />
+            <binding>
+                <strength value="required"/>
+                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.mimeType"/>
+            </binding>
         </element>
         <element id="DocumentReference.content.attachment.language">
             <path value="DocumentReference.content.attachment.language" />
             <min value="1" />
             <mustSupport value="true" />
+            <binding>
+                <strength value="required"/>
+                <!--				<strength value="preferred"/> -->
+                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.languageCode"/>
+            </binding>
         </element>
         <element id="DocumentReference.content.attachment.data">
             <path value="DocumentReference.content.attachment.data" />
@@ -202,6 +224,11 @@
             <path value="DocumentReference.content.format" />
             <min value="1" />
             <mustSupport value="true" />
+            <binding>
+                <strength value="required"/>
+                <description value="Document Format Codes."/>
+                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.formatCode"/>
+            </binding>
         </element>
         <element id="DocumentReference.context">
             <path value="DocumentReference.context" />
@@ -215,11 +242,27 @@
             <path value="DocumentReference.context.facilityType" />
             <min value="1" />
             <mustSupport value="true" />
+            <binding>
+                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+                    <valueString value="DocumentC80FacilityType"/>
+                </extension>
+                <strength value="required"/>
+                <description value="XDS Facility Type."/>
+                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.healthcareFacilityTypeCode"/>
+            </binding>
         </element>
         <element id="DocumentReference.context.practiceSetting">
             <path value="DocumentReference.context.practiceSetting" />
             <min value="1" />
             <mustSupport value="true" />
+            <binding>
+                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+                    <valueString value="DocumentC80PracticeSetting"/>
+                </extension>
+                <strength value="required"/>
+                <description value="Additional details about where the content was created (e.g. clinical specialty)."/>
+                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.practiceSettingCode"/>
+            </binding>
         </element>
         <element id="DocumentReference.context.sourcePatientInfo">
             <path value="DocumentReference.context.sourcePatientInfo" />
