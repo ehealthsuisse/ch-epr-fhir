@@ -4,6 +4,16 @@ See open issues on [github](https://github.com/ehealthsuisse/ch-epr-mhealth/issu
 * [IUA Refresh token handling](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/20)
 * [IUA ihe_saml token option supported for the generic mHealth Option](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/21)
 * [IUA ihe-jwt token option handling in XDS environment](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/22)
-* [PIXm Mobile Patient Identity Feed](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/23)
 * [MHD extension for RMU](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/25) 
-* [RESTful ATNA Mapping between DICOM Audit Message definitions and FHIR AuditEvent Resource](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/26)
+
+## DSTU1 Informative Ballot 2021 resolved issues
+
+- MHD Find DocumentReferences - attachment.url not a full URL [#27](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/27)
+- CH MHD DocumentManifest/DocumentReference profiles - Various issues [#28](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/28)
+- Adjusted Description CH Extension Author AuthorRole [#29](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/29)
+- PIXm Patient Identifier Cross-reference Manager (server) - JSON Representation [#30](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/30)
+- Typos [#31](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/31)
+- Add download link for npm package on home page[#32](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/32)
+- Correct fullUrl and add id in searchset [#36](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/36)
+- Record Audit Event [ITI-20] [#38](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/38)
+- Get Access Token, correct EPR-SPID example [#39](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/39)

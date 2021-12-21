@@ -9,12 +9,12 @@
     </div>
   </text>
   <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
-  <version value="0.2.0"/>
+  <version value="1.0.0"/>
   <name value="CHEprMhealth"/>
   <title value="CH EPR mHealth (R4)"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2021-06-16"/>
+  <date value="2021-12-21"/>
   <publisher value="eHealth Suisse"/>
   <contact>
     <name value="eHealth Suisse"/>
@@ -457,7 +457,7 @@
     <parameter>
       <code value="releaselabel"/>
       <!--<value value="CI build"/>-->
-      <value value="DSTU 1 Informative Ballot"/>
+      <value value="DSTU1"/>
     </parameter>
     <parameter>
       <code value="path-pages" />

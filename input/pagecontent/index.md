@@ -1,16 +1,3 @@
-<div markdown="1" class="stu-note">
-This implementation guide is a major update and currently in draft status.
-
-Main changes to version [0.1.1](https://fhir.ch/ig/ch-epr-mhealth/0.1.1/index.html):
-- updated to new [IHE IUA version](https://profiles.ihe.net/ITI/IUA/index.html)
-- switched to [PIXm](iti-pixm.html)
-- updated to [Mobile Access to Health Documents (MHD) Release 4.0.1](https://profiles.ihe.net/ITI/MHD/index.html)
-- integrated [RESTFul ATNA](https://profiles.ihe.net/ITI/MHD/index.html)
-- open issues known at [publication](openissues.html)  
- 
-This implementation guide is under informative ballot by [HL7 Switzerland](https://www.hl7.ch/) until September 24th, 2021 midnight. Please add your feedback via the ‘Propose a change’-link in the footer on the page where you have comments.
-</div>
-
 ### Introduction
 
 The national extensions documented in this implementation guide shall be used in conjunction with the definitions of integration 
@@ -20,6 +7,13 @@ This implementation guide with national extensions of IHE integration profiles w
 regulations of the Ordinance on the Electronic Patient Record (EPRO, SR 816.11). The EPRO and the
 EPRO-DFI are published in Official Compilation of Federal Legislation (AS) (available in [German](https://www.admin.ch/opc/de/classified-compilation/20111795/index.html), [French](https://www.admin.ch/opc/fr/classified-compilation/20111795/index.html)
 and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.html)).
+
+<div markdown="1" class="stu-note">
+
+| [Significant Changes, Open, and Closed Issues](openissues.html) |
+{: .grid}
+
+</div>
 
 **Download**: You can download this implementation guide in npm format from [here](package.tgz).
 
