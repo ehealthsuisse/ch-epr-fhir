@@ -84,7 +84,16 @@
             <path value="List.date"/>
             <mustSupport value="true" />
         </element>
-
+        <element id="List.source">
+            <path value="List.source"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="List.source.extension:authorOrg">
+            <path value="List.source.extension"/>
+            <sliceName value="authorOrg"/>
+            <min value="0"/>
+            <max value="0"/>
+        </element>
         <element id="List.entry">
             <path value="List.entry"/>
             <min value="1" />
