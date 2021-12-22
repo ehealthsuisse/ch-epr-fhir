@@ -13,14 +13,23 @@
       "current": true
     },
     {
-      "version": "0.2.0",
-      "date": "2021-06-16",
-      "desc": "HL7 Switzerland Informative Ballot",
+      "version": "1.0.0",
+      "date": "2021-12-22",
+      "desc": "eHealth Suisse DSTU 1",
       "path": "http://fhir.ch/ig/ch-epr-mhealth",
       "status": "trial-use",
       "sequence" : "DSTU 1",
       "fhirversion": "4.0.1",
       "current": true
+    },
+    {
+      "version": "0.2.0",
+      "date": "2021-06-16",
+      "desc": "HL7 Switzerland Informative Ballot",
+      "path": "http://fhir.ch/ig/ch-epr-mhealth/0.2.0",
+      "status": "trial-use",
+      "sequence" : "DSTU 1",
+      "fhirversion": "4.0.1"
     },
     {
       "version": "0.1.2",
