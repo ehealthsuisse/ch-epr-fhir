@@ -456,8 +456,8 @@
     <!-- IG Parameters -->
     <parameter>
       <code value="releaselabel"/>
-      <!--<value value="CI Build"/>-->
-      <value value="DSTU 2 Informative Ballot"/>
+      <value value="CI Build"/>
+      <!--<value value="DSTU 2 Informative Ballot"/>-->
     </parameter>
     <parameter>
       <code value="path-pages" />
