@@ -5,7 +5,4 @@ temp/**
 template/**
 .vscode/**
 *.jar
-www/*   
-!www/package-list.json   
-!www/publish.ini
 fsh-generated/**

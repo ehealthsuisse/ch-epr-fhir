@@ -10,12 +10,13 @@ and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.
 
 <div markdown="1" class="stu-note">
 
-| [Significant Changes, Open, and Closed Issues](openissues.html) |
-{: .grid}
+This implementation guide is under ballot for DSTU 2 by [HL7 Switzerland](https://www.hl7.ch/) until September 30th, 2022 midnight. Please add your feedback via the 'Propose a change'-link in the footer on the page where you have comments. 
+
+[Significant Changes, Open and Closed Issues](openissues.html)
 
 </div>
 
-**Download**: You can download this implementation guide in npm format from [here](package.tgz).
+**Download**: You can download this implementation guide in [NPM format](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification) from [here](package.tgz).
 
 ### Conformance Expectations
 

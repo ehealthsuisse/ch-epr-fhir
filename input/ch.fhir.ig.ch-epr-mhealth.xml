@@ -9,12 +9,12 @@
     </div>
   </text>
   <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
-  <version value="1.0.0"/>
+  <version value="1.1.0"/>
   <name value="CHEprMhealth"/>
   <title value="CH EPR mHealth (R4)"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2021-12-22"/>
+  <date value="2022-07-07"/>
   <publisher value="eHealth Suisse"/>
   <contact>
     <name value="eHealth Suisse"/>
@@ -37,12 +37,12 @@
   <dependsOn id="chterm">
     <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
     <packageId value="ch.fhir.ig.ch-epr-term"/>
-    <version value="2.0.6"/>
+    <version value="2.0.x"/>
   </dependsOn>
   <dependsOn id="chcore">
     <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
     <packageId value="ch.fhir.ig.ch-core"/>
-    <version value="2.0.0"/>
+    <version value="2.1.0"/>
   </dependsOn>
   <dependsOn id="ihepixmfhir">
     <uri value="http://profiles.ihe.net/ITI/PIXm/ImplementationGuide/IHE.ITI.PIXm"/>
@@ -456,8 +456,8 @@
     <!-- IG Parameters -->
     <parameter>
       <code value="releaselabel"/>
-      <value value="CI build"/>
-      <!--<value value="DSTU 1"/>-->
+      <!--<value value="CI Build"/>-->
+      <value value="DSTU 2 Informative Ballot"/>
     </parameter>
     <parameter>
       <code value="path-pages" />
