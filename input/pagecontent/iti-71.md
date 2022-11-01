@@ -1,4 +1,4 @@
-This section describes the national extension for the Swiss EPR to the Get Access Token [ITI-71] transaction defined in the IUA profile published in the IHE IT Infrastructure Technical Framework Trial Implementation “Internet User Authorization”. In this transaction, the OAuth Authorization Code grant type option is enforced for security reasons
+This section describes the national extension for the Swiss EPR to the Get Access Token [ITI-71] transaction defined in the IUA profile published in the IHE IT Infrastructure Technical Framework Trial Implementation “Internet User Authorization”. In this transaction, the OAuth Authorization Code grant type option is enforced for security reasons.
 ### Scope
 
 The transaction is used by an mHealth App to pass claims to the IUA Authorization Server and to retrieve access token to be used for authorization of the apps access to write data to and retrieve data from the Swiss EPR.  

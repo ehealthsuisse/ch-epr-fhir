@@ -4,7 +4,7 @@ app -> mp_AuthorizationServer: GET /metadata
 activate mp_AuthorizationServer
 app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
 deactivate mp_AuthorizationServer
-app -> idp_user_authentication_provider: Redirect to Authz Server (SMART standalone launce sequence)\nwith OpenID Connect
+app -> idp_user_authentication_provider: Redirect to Authorization Server (SMART standalone launch sequence)\nwith OpenID Connect
 activate idp_user_authentication_provider
 idp_user_authentication_provider -> idp_user_authentication_provider: Authenticate and authorize User
 idp_user_authentication_provider -> app: On Approval redirect to app with code
