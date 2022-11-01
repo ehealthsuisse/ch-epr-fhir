@@ -9,6 +9,7 @@ See open issues on [GitHub](https://github.com/ehealthsuisse/ch-epr-mhealth/issu
 
 ### DSTU2 Informative Ballot 2022 - Resolved Issues
 * Typos [#49](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/49)/[#51](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/51)
+* Add new IG fragments (IP Statements, Cross Version Analysis, Dependency Table, Globals Table) [#53](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/53)
 
 ### DSTU1 Informative Ballot 2021 - Resolved Issues
 - MHD Find DocumentReferences - attachment.url not a full URL [#27](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/27)
