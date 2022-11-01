@@ -9,6 +9,7 @@
    <experimental value="false"/>
    <date value="2022-11-01"/>
    <publisher value="eHealth Suisse"/>
+   <caseSensitive value="true"/>
    <contact>
       <name value="eHealth Suisse"/>
       <telecom>
