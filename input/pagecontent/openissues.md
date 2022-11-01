@@ -1,4 +1,5 @@
-See open issues on [github](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/)
+### Open Issues
+See open issues on [GitHub](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/)
 
 * [IUA handling of client authentication](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/19)
 * [IUA Refresh token handling](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/20)
@@ -6,8 +7,10 @@ See open issues on [github](https://github.com/ehealthsuisse/ch-epr-mhealth/issu
 * [IUA ihe-jwt token option handling in XDS environment](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/22)
 * [MHD extension for RMU](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/25) 
 
-## DSTU1 Informative Ballot 2021 resolved issues
+### DSTU2 Informative Ballot 2022 - Resolved Issues
+* 
 
+### DSTU1 Informative Ballot 2021 - Resolved Issues
 - MHD Find DocumentReferences - attachment.url not a full URL [#27](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/27)
 - CH MHD DocumentManifest/DocumentReference profiles - Various issues [#28](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/28)
 - Adjusted Description CH Extension Author AuthorRole [#29](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/29)

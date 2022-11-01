@@ -10,9 +10,7 @@ and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.
 
 <div markdown="1" class="stu-note">
 
-This implementation guide is under ballot for DSTU 2 by [HL7 Switzerland](https://www.hl7.ch/) until September 30th, 2022 midnight. Please add your feedback via the 'Propose a change'-link in the footer on the page where you have comments. 
-
-[Significant Changes, Open and Closed Issues](openissues.html)
+[Significant changes, open and closed Issues](openissues.html)
 
 </div>
 
