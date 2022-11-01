@@ -2,11 +2,11 @@
 <ValueSet xmlns="http://hl7.org/fhir">
     <id value="ch-ehealth-valueset-deletionstatus"/>
     <url value="http://fhir.ch/ig/ch-epr-mhealth/ValueSet/ch-ehealth-valueset-deletionstatus"/>
-    <version value="0.1.0"/>
+    <version value="2.0.0"/>
     <name value="CHEhealthValuesetDeletionStatus"/>
     <title value="ch-ehealth-valueset-deletionstatus"/>
     <status value="draft"/>
-    <publisher value="eHealth Suisse"/>
+    <experimental value="false"/>
     <publisher value="eHealth Suisse"/>
     <contact>
         <name value="eHealth Suisse"/>
