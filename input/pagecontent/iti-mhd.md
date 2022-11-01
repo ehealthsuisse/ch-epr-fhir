@@ -10,7 +10,7 @@ No extensions or restrictions to the profile use cases are specified in the Swis
 No extensions or restrictions to the actors and transactions are specified in the Swiss national extension.
 
 ### Actor options  
-For all actors the Comprehensive Metadata Option and the XDS on FHIR Option SHALL be support-ed. For all actors the Metadata as defined in Annex 3 SHALL be supported.
+For all actors the Comprehensive Metadata Option and the XDS on FHIR Option SHALL be supported. For all actors the Metadata as defined in Annex 3 SHALL be supported.
 
 ### Required Actor Groupings  
 The Actors Document Recipient and Document Responder MUST be grouped according to the XDS on FHIR grouping condition see Table 33.3-1: MHD - Actors Required Grouping.
