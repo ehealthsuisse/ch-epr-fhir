@@ -1,2 +1,4 @@
 == Suppressed Messages ==
 
+# The following display values are specific in the Swiss context
+Display Name for http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:pharm:pml:2013 should be one of 'Pharmacy PML' instead of 'Community Medication List' for 'http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:pharm:pml:2013'
