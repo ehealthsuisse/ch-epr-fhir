@@ -1,6 +1,6 @@
 Sample sequence diagrams to illustrate the usage of the generic mhealth option / SMART on FHIR options for reading documents as a patient / health professional:
 
-### patient get document  – generic mHealth option
+### patient get document – generic mHealth option
 
 <div>{% include /3_02_mhealthread.svg %}</div>
 
