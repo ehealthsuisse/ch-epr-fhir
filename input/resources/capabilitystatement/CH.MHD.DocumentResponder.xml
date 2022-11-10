@@ -214,9 +214,9 @@
                 <name value="sourceId"/>
                 <definition
                             value="https://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId"/>
-                <type value="reference"/>
+                <type value="token"/>
                 <documentation
-                            value="This IHE extension on parameters defined as SearchParameter/List-SourceId, of type reference, specifies the source (author) value supplied in the List Resource."/>
+                            value="This IHE extension on parameters defined as SearchParameter/List-SourceId, of type token, specifies the source (author) value supplied in the List Resource."/>
             </searchParam>
             </resource>
         <resource>
