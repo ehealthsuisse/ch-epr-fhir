@@ -29,16 +29,16 @@ activate mp_AuthorizationServer
 app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
 deactivate mp_AuthorizationServer
 
-app -[#black]> AuthorizationClient: Get Authorization Token
+app -[#black]> AuthorizationClient: Get Access Token
 activate AuthorizationClient
-AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Authorization Token 
+AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Access Token Request 
 activate mp_AuthorizationServer
 mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
 activate idp_user_authentication_provider
 mp_AuthorizationServer <- idp_user_authentication_provider
 deactivate idp_user_authentication_provider
 mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
-AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Authorization Token Response 
+AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Access Token Response 
 deactivate mp_AuthorizationServer
 app <[#black]- AuthorizationClient: 
 deactivate AuthorizationClient

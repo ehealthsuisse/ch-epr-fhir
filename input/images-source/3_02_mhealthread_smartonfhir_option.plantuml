@@ -28,7 +28,7 @@ deactivate mp_AuthorizationServer
 
 
 
-app2 -> mp_AuthorizationServer: IUA Get Authorization Token
+app2 -> mp_AuthorizationServer: IUA Get Access Token
 activate mp_AuthorizationServer
 mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
 activate idp_user_authentication_provider
