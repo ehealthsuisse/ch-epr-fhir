@@ -1,4 +1,11 @@
 == Suppressed Messages ==
 
 # The following display values are specific in the Swiss context
-Display Name for http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:pharm:pml:2013 should be one of 'Pharmacy PML' instead of 'Community Medication List' for 'http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:pharm:pml:2013'
+Display Name for http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:pharm:pml:2013 should be one of 1 choices from 'Pharmacy PML', not 'Community Medication List' for 'http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:pharm:pml:2013'
+
+# It's the Swiss specific profile itself (for IG publisher reason)
+INFORMATION: Bundle/2-7-BundleProvideDocument: Bundle.meta.profile[0]: This element does not match any known slice defined in the profile http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive
+# Swiss extension
+INFORMATION: Bundle/2-7-BundleProvideDocument: Bundle.entry[1].resource.extension[2]: This element does not match any known slice defined in the profile https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.SubmissionSet
+# Additional slice
+INFORMATION: AuditEvent/ex-auditProvideBundle-source: AuditEvent.agent[2]: This element does not match any known slice defined in the profile https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source
