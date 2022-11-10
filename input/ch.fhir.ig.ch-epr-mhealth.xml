@@ -45,14 +45,14 @@
     <version value="2.1.0"/>
   </dependsOn>
   <dependsOn id="ihepixmfhir">
-    <uri value="http://profiles.ihe.net/ITI/PIXm/ImplementationGuide/IHE.ITI.PIXm"/>
-    <packageId value="IHE.ITI.PIXm"/>
+    <uri value="http://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm"/>
+    <packageId value="ihe.iti.pixm"/>
     <version value="3.0.0"/>
   </dependsOn>
   <dependsOn id="ihemhdfhir">
-    <uri value="http://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.mhd.fhir"/>
-    <packageId value="ihe.mhd.fhir"/>
-    <version value="4.0.2"/>
+    <uri value="https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd"/>
+    <packageId value="ihe.iti.mhd"/>
+    <version value="current"/>
   </dependsOn>
   <definition>
 
@@ -151,7 +151,7 @@
       </reference>
       <name value="Audit Event for Provide Bundle Transaction at Source"/>
       <description value="Audit Example for a Provide Bundle Transaction from source perspective"/>
-      <exampleCanonical value="http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source"/>
+      <exampleCanonical value="https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source"/>
     </resource>
 
     <!-- CH EPR mHealth: Resource Profiles -->

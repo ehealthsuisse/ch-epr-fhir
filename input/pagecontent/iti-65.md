@@ -29,7 +29,7 @@ Recipient.
 ### Message Semantics
 The same message semantics as for [2:3.65.4.1.2](https://profiles.ihe.net/ITI/MHD/ITI-65.html#2365412-message-semantics) Message Semantics applies. The FHIR `Bundle.meta.profile` shall have the following value:   
 
-`http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
+`https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle`
 
 The additional Swiss EPR metadata is defined with:
 

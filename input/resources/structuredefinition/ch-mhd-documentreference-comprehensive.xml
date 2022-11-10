@@ -29,7 +29,7 @@
                 <key value="ch-mhd"/>
                 <severity value="error"/>
                 <human value="The DocumentReference needs to conform to IHE.MHD.Comprehensive.DocumentReference"/>
-                <expression value="conformsTo('http://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference')"/>
+                <expression value="conformsTo('https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference')"/>
             </constraint>
         </element>
         <element id="DocumentReference.extension">
