@@ -8,6 +8,17 @@ See open issues on [GitHub](https://github.com/ehealthsuisse/ch-epr-mhealth/issu
 * [MHD extension for RMU](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/25) 
 
 ### DSTU2 Informative Ballot 2022 - Resolved Issues
+* Changes due to the adjustments in the new version of the derived [IHE ITI MHD](https://profiles.ihe.net/ITI/MHD/) IG [#47](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/47)/[#50](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/50):
+   * Update canonical URLs to 'https://profiles.ihe.net/ITI/MHD/' (https instead of http) 
+   * Change package id from 'ihe.mhd.fhir' to 'ihe.iti.mhd'
+   * Provide Document Bundle [ITI-65]: according to MHD should the entryUUID not be added by the Document Source (need to be added by the DocumentResponder)
+      * Remove List.identifier requirements (http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive) 
+      * Remove List.identifier with 'use = official' (examples 2-7-BundleProvideDocument, 2-7-DocRefMedicationCard, 2-7-DocSubMedicationCard)
+      * Remove DocumentReference.identifier requirements (http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive)
+      * Remove DocumentReference.identifier (example 2-7-BundleProvideDocument)
+      * Remove 'use = official' from DocumentReference.identifier (example Bundle-FindDocumentReferences)
+   * SearchParameter 'https://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId' changed from type 'reference' to 'token' (MHD Document Consumer (client)/MHD Document Responder (server)) 
+
 * Typos [#49](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/49)/[#51](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/51)
 * Add new IG fragments (IP Statements, Cross Version Analysis, Dependency Table, Globals Table) [#53](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/53)
 * Add missing element 'experimental' to CS/VS [#54](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/54)
