@@ -65,7 +65,6 @@
         },
         "identifier": [
           {
-            "use": "official",
             "system": "urn:ietf:rfc:3986",
             "value": "urn:uuid:50383ae5-49e5-4dea-b0e6-660cb9e7b91f"
           }

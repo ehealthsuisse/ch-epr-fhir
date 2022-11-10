@@ -79,8 +79,6 @@
         </element>
         <element id="DocumentReference.identifier">
             <path value="DocumentReference.identifier" />
-            <comment value="When the DocumentReference.identifier carries the entryUUID then the DocumentReference.identifier use shall be ‘official’." />
-            <min value="1" />
             <mustSupport value="true" />
         </element>
         <element id="DocumentReference.status">
