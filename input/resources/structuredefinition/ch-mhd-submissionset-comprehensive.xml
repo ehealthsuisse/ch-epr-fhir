@@ -54,7 +54,7 @@
         </element>
         <element id="List.identifier">
             <path value="List.identifier"/>
-            <short value="identifier, for entryUUID set use to offical, for uniqueID set use  to ususal"/>
+            <short value="identifier, for uniqueID set use to ususal"/>
             <mustSupport value="true" />
         </element>
         <element id="List.status">
