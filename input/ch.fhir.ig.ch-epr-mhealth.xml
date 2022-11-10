@@ -153,7 +153,7 @@
       <description value="Audit Example for a Provide Bundle Transaction from source perspective"/>
       <exampleCanonical value="https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source"/>
     </resource>
-
+ 
     <!-- CH EPR mHealth: Resource Profiles -->
     <resource>
       <reference>
