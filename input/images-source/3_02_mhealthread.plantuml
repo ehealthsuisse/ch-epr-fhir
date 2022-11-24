@@ -43,11 +43,6 @@ deactivate mp_AuthorizationServer
 app <[#black]- AuthorizationClient: 
 deactivate AuthorizationClient
 
-app -> mp_AuthorizationServer: Exchange code for access token
-activate mp_AuthorizationServer
-app <- mp_AuthorizationServer: access token for response
-deactivate mp_AuthorizationServer
-
 !include_many step_mh_pixm.plantuml.txt
 
 !include_many step_mh_iua.plantuml.txt
