@@ -29,7 +29,7 @@
   <kind value="resource" />
   <abstract value="false" />
   <type value="Parameters" />
-  <baseDefinition value="http://profiles.ihe.net/ITI/PIXm/StructureDefinition/IHE.PIXm.Query.Parameters.In" />
+  <baseDefinition value="https://profiles.ihe.net/ITI/PIXm/StructureDefinition/IHE.PIXm.Query.Parameters.In" />
   <derivation value="constraint" />
   <differential>
     <element id="Parameters">
