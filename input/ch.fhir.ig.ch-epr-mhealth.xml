@@ -52,7 +52,7 @@
   <dependsOn id="ihemhdfhir">
     <uri value="https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd"/>
     <packageId value="ihe.iti.mhd"/>
-    <version value="current"/>
+    <version value="4.2.0"/>
   </dependsOn>
   <definition>
 
