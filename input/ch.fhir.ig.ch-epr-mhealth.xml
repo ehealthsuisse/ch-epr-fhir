@@ -45,9 +45,9 @@
     <version value="2.1.0"/>
   </dependsOn>
   <dependsOn id="ihepixmfhir">
-    <uri value="http://profiles.ihe.net/ITI/PIXm/ImplementationGuide/IHE.ITI.PIXm"/>
-    <packageId value="IHE.ITI.PIXm"/>
-    <version value="3.0.0"/>
+    <uri value="https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm"/>
+    <packageId value="ihe.iti.pixm"/>
+    <version value="3.0.2"/>
   </dependsOn>
   <dependsOn id="ihemhdfhir">
     <uri value="http://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.mhd.fhir"/>
