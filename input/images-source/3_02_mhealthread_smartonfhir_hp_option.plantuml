@@ -35,7 +35,7 @@ activate app
 app -> app2: launch app
 activate app2
 
-app2 -> mp_AuthorizationServer: IUA Get Authorization Token
+app2 -> mp_AuthorizationServer: IUA Get Access Token
 activate mp_AuthorizationServer
 mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
 activate idp_user_authentication_provider
@@ -44,11 +44,6 @@ deactivate idp_user_authentication_provider
 mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
 mp_AuthorizationServer -> app2: On Approval redirect to app with code
 deactivate mp_AuthorizationServer
-app2 -> mp_AuthorizationServer: Exchange code for access token
-activate mp_AuthorizationServer
-app2 <- mp_AuthorizationServer: access token for response
-deactivate mp_AuthorizationServer
-
 
 app2 -[#black]> docconsumer: query documents
 activate docconsumer

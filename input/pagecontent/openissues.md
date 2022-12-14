@@ -18,7 +18,10 @@ See open issues on [GitHub](https://github.com/ehealthsuisse/ch-epr-mhealth/issu
       * Remove DocumentReference.identifier (example 2-7-BundleProvideDocument)
       * Remove 'use = official' from DocumentReference.identifier (example Bundle-FindDocumentReferences)
    * SearchParameter 'https://profiles.ihe.net/ITI/MHD/SearchParameter/List-SourceId' changed from type 'reference' to 'token' (MHD Document Consumer (client)/MHD Document Responder (server)) 
-
+* Changes due to the adjustments in the new version of the derived [IHE ITI PIXm](https://profiles.ihe.net/ITI/PIXm/index.html) IG [#58](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/58):
+   * Update canonical URLs to 'https://profiles.ihe.net/ITI/PIXm/' (https instead of http)
+   * Change package id from 'IHE.ITI.PIXm' to 'ihe.iti.pixm'
+* Update sequence diagrams (appendix) [#51](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/51)
 * Typos [#49](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/49)/[#51](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/51)
 * Add new IG fragments (IP Statements, Cross Version Analysis, Dependency Table, Globals Table) [#53](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/53)
 * Add missing element 'experimental' to CS/VS [#54](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/54)
@@ -30,7 +33,7 @@ See open issues on [GitHub](https://github.com/ehealthsuisse/ch-epr-mhealth/issu
 - Adjusted Description CH Extension Author AuthorRole [#29](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/29)
 - PIXm Patient Identifier Cross-reference Manager (server) - JSON Representation [#30](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/30)
 - Typos [#31](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/31)
-- Add download link for npm package on home page[#32](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/32)
+- Add download link for npm package on home page [#32](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/32)
 - Correct fullUrl and add id in searchset [#36](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/36)
 - Record Audit Event [ITI-20] [#38](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/38)
 - Get Access Token, correct EPR-SPID example [#39](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/39)
