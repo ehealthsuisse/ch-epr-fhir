@@ -26,6 +26,7 @@ See open issues on [GitHub](https://github.com/ehealthsuisse/ch-epr-mhealth/issu
 * Add new IG fragments (IP Statements, Cross Version Analysis, Dependency Table, Globals Table) [#53](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/53)
 * Add missing element 'experimental' to CS/VS [#54](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/54)
 * Add missing element 'caseSensitive' to CS [#55](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/55)
+* Remove reference to process flow with sequence diagram [#46](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/46)
 
 ### DSTU1 Informative Ballot 2021 - Resolved Issues
 - MHD Find DocumentReferences - attachment.url not a full URL [#27](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/27)

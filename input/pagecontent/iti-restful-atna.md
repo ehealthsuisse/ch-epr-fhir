@@ -15,8 +15,5 @@ The Audit Record Repository SHALL support the ATX: FHIR Feed Option.
 ### Grouping 
 The Swiss national extension does not define requirements on the grouping of actors in this profile, which extend or restrict the grouping required from the ATNA profile.
 
-### Process Flow
-For the process flow of this profile and its interplay with the other mHealth profiles see [sequence diagrams](sequencediagrams.html). 
-
 ### Security Consideration
 The Swiss national extension does not define additional requirements on ATNA Security Considerations.
