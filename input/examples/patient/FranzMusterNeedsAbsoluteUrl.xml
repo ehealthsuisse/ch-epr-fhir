@@ -4,6 +4,10 @@
   <id value="FranzMusterNeedsAbsoluteUrl"/>
   <meta>
     <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+    </security>
   </meta>
   <identifier>
     <system value="urn:oid:2.999.5.6.7"/>

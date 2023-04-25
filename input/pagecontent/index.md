@@ -29,6 +29,7 @@ The extensions, restrictions and translations specified apply to the following I
 
 * [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/)
 * [IUA](https://profiles.ihe.net/ITI/IUA/index.html)
+* [PDQm](https://profiles.ihe.net/ITI/PDQm/index.html)
 * [PIXm](https://profiles.ihe.net/ITI/PIXm/index.html)
 * [MHD](https://profiles.ihe.net/ITI/MHD/index.html)
 * [RESTful ATNA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)
@@ -47,7 +48,7 @@ The scope of this extension covers the following use cases:
 5.	Write logs to the EPR ATNA Audit Record Repository.   
 
 This extension covers two options:
-1. Generic mHealth option – This option adresses primary systems or mobile applications using the basic EPR flows but replace the XDS.b related and PIX V3 profiles with the FHIR based profiles;
+1. Generic mHealth option – This option adresses primary systems or mobile applications using the basic EPR flows but replace the XDS.b related and PIX/PDQ V3 profiles with the FHIR based profiles;
 2. SMART on FHIR – This option adresses mobile apps or modular primary systems that want to connect to the Swiss EPR using SMART on FHIR.
 
 #### Profiles, actors and transactions

@@ -49,6 +49,11 @@
     <packageId value="ihe.iti.pixm"/>
     <version value="3.0.2"/>
   </dependsOn>
+  <dependsOn id="ihepdqmfhir">
+    <uri value="https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pdqm"/>
+    <packageId value="ihe.iti.pdqm"/>
+    <version value="2.4.0"/>
+  </dependsOn>
   <dependsOn id="ihemhdfhir">
     <uri value="https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd"/>
     <packageId value="ihe.iti.mhd"/>
@@ -104,6 +109,14 @@
       <name value="MHD Provide Document Bundle for MedicationCard"/>
       <description value="MHD Provide Document Bundle for MedicationCard"/>
       <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/PDQm-Response"/>
+      </reference>
+      <name value="PDQm Demographics Query result"/>
+      <description value="PDQm Demographics Query result for Franz Muster, 27.1.1955"/>
+      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient" />
     </resource>
     <resource>
       <reference>
@@ -268,6 +281,18 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CapabilityStatement/CH.PDQm.Consumer"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CapabilityStatement/CH.PDQm.Supplier"/>
+      </reference>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="CapabilityStatement/CH.PIXm.Consumer"/>
       </reference>
       <exampleBoolean value="false"/>
@@ -351,6 +376,11 @@
           <generation value="markdown"/>
         </page>
         <page>
+          <nameUrl value="iti-pdqm.html"/>
+          <title value="Patient Demographics Query for Mobile (PDQm)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
           <nameUrl value="iti-pixm.html"/>
           <title value="Patient Identifier Cross-referencing for mobile (PIXm)"/>
           <generation value="markdown"/>
@@ -378,6 +408,11 @@
         <page>
           <nameUrl value="iti-103.html"/>
           <title value="Get Authorization Server Metadata [ITI-103]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-78.html"/>
+          <title value="Mobile Patient Demographics Query [ITI-78]"/>
           <generation value="markdown"/>
         </page>
         <page>

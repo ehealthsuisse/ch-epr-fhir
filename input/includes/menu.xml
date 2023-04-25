@@ -11,6 +11,9 @@
         <a href="iti-iua.html">Internet User Authorization (IUA)</a>
       </li>
       <li>
+        <a href="iti-pdqm.html">Patient Demographics Query for mobile (PDQm)</a>
+      </li>
+      <li>
         <a href="iti-pixm.html">Patient Identifier Cross-referencing for mobile (PIXm)</a>
       </li>
       <li>
@@ -34,6 +37,9 @@
       </li>
       <li>
         <a href="iti-104.html">Patient Identity Feed FHIR [ITI-104]</a>
+      </li>
+      <li>
+        <a href="iti-78.html">Mobile Patient Demographics Query [ITI-78]</a>
       </li>
       <li>
         <a href="iti-83.html">Mobile Patient Identifier Cross-reference Query [ITI-83]</a>
