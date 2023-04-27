@@ -16,7 +16,7 @@ This PDQm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://w
 
 ### Messages
 
-<div>{% include PDQM_ActorDiagram_ITI-78.svg %}</div>
+<div>{% include PDQm_ActorDiagram_ITI-78.svg %}</div>
 
 ### Trigger Events
 A mobile app wants to query patients, which participate in the Swiss EPR.
