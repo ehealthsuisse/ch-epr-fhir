@@ -59,6 +59,11 @@
     <packageId value="ihe.iti.mhd"/>
     <version value="4.2.0"/>
   </dependsOn>
+  <dependsOn id="ihemcsdfhir">
+    <uri value="https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd"/>
+    <packageId value="ihe.iti.mcsd"/>
+    <version value="3.8.0"/>
+  </dependsOn>
   <definition>
 
     <!-- examples -->
@@ -395,6 +400,11 @@
           <title value="RESTful ATNA"/>
           <generation value="markdown"/>
         </page>
+        <page>
+          <nameUrl value="iti-mcsd.html"/>
+          <title value="Mobile Care Services Discovery (mCSD)"/>
+          <generation value="markdown"/>
+        </page>
       </page>
       <page>
         <title value="Transactions"/>
@@ -448,6 +458,16 @@
         <page>
           <nameUrl value="iti-20.html"/>
           <title value="Record Audit Event [ITI-20]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-90.html"/>
+          <title value="Find Matching Care Services [ITI-90]"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <nameUrl value="iti-91.html"/>
+          <title value="Request Care Services Updates [ITI-91]"/>
           <generation value="markdown"/>
         </page>
       </page>

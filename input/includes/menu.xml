@@ -22,6 +22,9 @@
       <li>
         <a href="iti-restful-atna.html">RESTful ATNA</a>
       </li>
+      <li>
+        <a href="iti-mcsd.html">Mobile Care Services Discovery (mCSD)</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">
@@ -58,6 +61,12 @@
       </li>
       <li>
         <a href="iti-20.html">Record Audit Event [ITI-20]</a>
+      </li>
+      <li>
+        <a href="iti-90.html">Find Matching Care Services [ITI-90]</a>
+      </li>
+      <li>
+        <a href="iti-91.html">Request Care Services Updates [ITI-91]</a>
       </li>
     </ul>
   </li>
