@@ -9,7 +9,7 @@ participant "Care Services Update\nSupplier" as Server
 activate Client
 activate Server
 Client -> Server : Request Care Services Updates Request
-Server -> Client : Request Care Services Updates Response
+Server --> Client : Request Care Services Updates Response
 deactivate Server
 deactivate Client
 

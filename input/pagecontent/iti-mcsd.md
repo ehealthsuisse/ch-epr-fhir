@@ -15,6 +15,8 @@ A mHealth application wants to duplicate the registry of healthcare organization
 operations on it. It can perform an [ITI-91](iti-91.html) request with a parameter to get the list of changes to the 
 registry since the given date and time.
 
+It offers an alternative to HPD ITI-58 and CH:PIDD transactions.
+
 ###	Actors and Transactions, Content Specifications
 
 ### Actor Options

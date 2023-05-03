@@ -1,6 +1,7 @@
 Instance: a
 InstanceOf: Bundle
-Description: "An exemple of ITI-91 response Bundle"
+Title: "CH mCSD ITI-91 response bundle"
+Description: "An exemple of ITI-91 response Bundle in the profile CH mCSD"
 * type = #history
 
 // First entry, an addition

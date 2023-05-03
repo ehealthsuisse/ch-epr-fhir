@@ -19,6 +19,9 @@ component "mHealth: App" {
   [MHD Document Consumer] as MHDConsumer
 
   [RESTful ATNA Secure Node] as ATNANode
+
+  [Care Services Selective Consumer] as mCSDSelectiveConsumer
+  [Care Services Update Consumer] as mCSDUpdateConsumer
 }
 
 component "mHealth: API" {
@@ -42,6 +45,11 @@ component "mHealth: API" {
 
   [RESTful ATNA Audit Record Repository] as ATNARepository
   ATNANode --> ATNARepository : Record Audit Event [ITI-20]
+
+  [Care Services Selective Supplier] as mCSDSelectiveSupplier
+  [Care Services Update Supplier] as mCSDUpdateSupplier
+  mCSDSelectiveConsumer --> mCSDSelectiveSupplier : Find Matching Care Services [ITI-90]
+  mCSDUpdateConsumer --> mCSDUpdateSupplier : Request Care Services Updates [ITI-91]
 }
 
 [User Authentication Provider] as UAProvider
