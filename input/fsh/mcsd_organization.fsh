@@ -54,7 +54,7 @@ InstanceOf: CHmCSDOrganization
 Title: "CH mCSD Organization Spital X"
 Description: "An exemple of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
 (uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"
-* meta.lastUpdated =
+* meta.lastUpdated = "2014-08-15T10:35:02.034Z"
 * identifier[+].use = #official
 * identifier[=].value = "CommunityA:00000001000"
 * identifier[+].use = #old

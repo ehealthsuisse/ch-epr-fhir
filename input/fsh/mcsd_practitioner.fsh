@@ -6,7 +6,8 @@ Description: "Practitioner"
 * obeys ch-mcsd-practitioner-ihe-conformance
 * identifier 2.. // uid and hcIdentifier are required
 // qualification can be bound to hcProfession and hcSpecialisation value sets
-* qualifitcation 1.. // hcProfession is required
+* qualification 1.. // hcProfession is required
+// gender is only m or f
 
 
 Invariant: ch-mcsd-practitioner-ihe-conformance
