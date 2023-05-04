@@ -54,17 +54,14 @@ InstanceOf: CHmCSDOrganization
 Title: "CH mCSD Organization Spital X"
 Description: "An exemple of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
 (uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"
-* meta.lastUpdated = "2014-08-15T10:35:02.034Z"
-* identifier[+].use = #official
-* identifier[=].value = "CommunityA:00000001000"
-* identifier[+].use = #old
-* identifier[=].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:oid:2.16.10.89.201" // TODO: RefData, Inactive
+* id = "SpitalX"
+* identifier[+].value = "uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
+* identifier[+].system = "urn:ietf:rfc:3986"
+* identifier[=].value = "urn:oid:2.16.10.89.201"
 * active = true
-* type[+].coding = $sct#394802001 "General medicine (qualifier value)"
-* type[+].coding = $sct#22232009 "Hospital (environment)"
+* type[+].coding = $sct#394802001 "General medicine"
+* type[+].coding = $sct#22232009 "Hospital"
 * name = "Spital X"
-* alias[+] = "Spital X" // TODO: can we deduplicate the value?
 * telecom[+].system = #fax
 * telecom[=].value = "+41 71 111 22 99"
 * telecom[+].system = #phone
@@ -76,9 +73,31 @@ Description: "An exemple of CHmCSDOrganization that contains the same informatio
 * address[=].state = "SG"
 * address[=].postalCode = "9007"
 * address[=].country = "CH"
-// TODO: should we distinguish between hpdProviderMailingAddress, hpdProviderLegalAddress, hpdProviderPracticeAddress
-// and hpdProviderBillingAddress?
-// TODO: hpdProviderLanguageSupported = de, fr, en, it
-// TODO: HcOrganizationCertificates = ...
-// TODO: HcSigningCertificate = ...
 // TODO: from example, 'description', 'name' and 'distinguishedName' are not present in EPD_ZAD_HPD_Attributes.xlsx
+
+
+Instance: CHmCSDOrganizationSpitalXDept3
+InstanceOf: CHmCSDOrganization
+Title: "CH mCSD Organization Spital X Dept. 3"
+Description: "An exemple of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
+examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"
+* id = "SpitalXDept3"
+* identifier[+].value = "uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
+* identifier[+].system = "urn:ietf:rfc:3986"
+* identifier[=].value = "urn:oid:2.16.10.89.203"
+* active = true
+* type[+].coding = $sct#394576009 "Accident & emergency"
+* type[+].coding = $sct#22232009 "Hospital"
+* name = "Dept. 3"
+* telecom[+].system = #fax
+* telecom[=].value = "+41 71 111 22 27"
+* telecom[+].system = #phone
+* telecom[=].value = "+41 71 111 22 19"
+* address[+].use = #work
+* address[=].line[+] = "Spital X - Medicina d'urgenza e di salvataggio"
+* address[=].line[+] = "95 Rorschacher Strasse"
+* address[=].city = "St. Gallen"
+* address[=].state = "SG"
+* address[=].postalCode = "9007"
+* address[=].country = "CH"
+* partOf = Reference(CHmCSDOrganizationSpitalX)

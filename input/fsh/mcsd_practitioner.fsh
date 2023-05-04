@@ -28,23 +28,23 @@ Title:    "LDAP schema"
 * name.text -> "HCProfessional.displayName"
 * name.prefix -> "HCProfessional.title"
 * name.given -> "HCProfessional.givenName"
-* name.given -> "HCProfessional.initials" // As given by FHIR specifications
+* name.given -> "HCProfessional.initials" // TODO: given is not suitable for the complete initials
 * name.family -> "HCProfessional.sn"
 * name.text -> "HCProfessional.cn"
 * communication.coding.code -> "HCProfessional.hpdProviderLanguageSupported"
 * gender -> "HCProfessional.gender"
 * telecom -> "HCProfessional.hpdMedicalRecordsDeliveryEmailAddress"
 * telecom -> "HCProfessional.mail"
-// userSMIMECertificate // TODO: extension?
-// hcSigningCertificate // TODO: extension?
-// userCertificate // TODO: extension?
-// createTimestamp // TODO: extension?
+// userSMIMECertificate
+// hcSigningCertificate
+// userCertificate
+// createTimestamp
 * meta.lastUpdated -> "HCProfessional.modifyTimestamp"
-* address -> "HCProfessional.physicalDeliveryOfficeName" // TODO: extension?
+* address -> "HCProfessional.physicalDeliveryOfficeName"
 * address -> "HCProfessional.hpdProviderMailingAddress"
 * address -> "HCProfessional.hpdProviderBillingAddress"
 * address -> "HCProfessional.hpdProviderPracticeAddress"
-// hcPracticeLocation: TODO: this references DNs
+// hcPracticeLocation
 * telecom -> "HCProfessional.telephoneNumber" // [system='phone']
 * telecom -> "HCProfessional.mobile"
 * telecom -> "HCProfessional.pager"
@@ -54,3 +54,37 @@ Title:    "LDAP schema"
 * address -> "HCProfessional.hpdProviderLegalAddress"
 // hcRegistrationStatus: no need to map, only value is "Unknown"
 // objectClass: no need to map, LDAP only
+
+
+Instance: CHmCSDPractitionerDrPeterPan
+InstanceOf: CHmCSDPractitioner
+Title: "CH mCSD Practitioner Dr. Peter Pan"
+Description: "An exemple of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
+(uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)"
+* id = "DrPeterPan"
+* identifier[+].system = "urn:oid:2.51.1.3"
+* identifier[=].value = "7601000102737"
+* identifier[+].value = "uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch"
+* active = true
+* name.text = "Peter Pan"
+* name.family = "Pan"
+* name.given = "Peter" // Wrong (Pan) in the example
+* name.prefix = "Dr."
+* telecom[+].system = #email
+* telecom[=].value = "peter.pan@email.com"
+* telecom[+].system = #fax
+* telecom[=].value = "+41 32 001 00 05"
+* telecom[+].system = #phone
+* telecom[=].value = "+41 79 001 00 06"
+* telecom[=].use = #mobile
+* telecom[+].system = #phone
+* telecom[=].value = "+41 32 001 00 04"
+* telecom[+].system = #pager
+* telecom[=].value = "+41 79 001 00 07"
+* gender = #male
+* qualification[+].code = $sct#309343006 "Physician" // Wrong (9343006) in the example
+* qualification[+].code = $sct#394576009 "Accident & emergency"
+* communication[+].coding = #de
+* communication[+].coding = #fr
+* communication[+].coding = #en
+* communication[+].coding = #it

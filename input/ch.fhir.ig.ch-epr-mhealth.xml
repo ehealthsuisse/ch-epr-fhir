@@ -1,530 +1,570 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="ch.fhir.ig.ch-epr-mhealth"/>
-  <text>
-    <status value="additional"/>
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      Implementation Guide for the Mobile access to Health Documents (epr-mhealth) Profile for the Swiss EPR
-    </div>
-  </text>
-  <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
-  <version value="3.0.0-ballot"/>
-  <name value="CHEprMhealth"/>
-  <title value="CH EPR mHealth (R4)"/>
-  <status value="active"/>
-  <experimental value="false"/>
-  <date value="2022-11-01"/>
-  <publisher value="eHealth Suisse"/>
-  <contact>
-    <name value="eHealth Suisse"/>
-    <telecom>
-      <system value="url"/>
-      <value value="https://www.e-health-suisse.ch"/>
-    </telecom>
-  </contact>
-  <description value="Implementation Guide for the Mobile access to Health Documents (epr-mhealth) Profile for the Swiss EPR"/>
-  <jurisdiction>
-    <coding>
-      <system value="urn:iso:std:iso:3166"/>
-      <code value="CH"/>
-    </coding>
-  </jurisdiction>
-  <copyright value="CC-BY-SA-4.0"/>
-  <packageId value="ch.fhir.ig.ch-epr-mhealth"/>
-  <license value="CC-BY-SA-4.0"/>
-  <fhirVersion value="4.0.1"/>
-  <!--<dependsOn id="chterm">
-    <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
-    <packageId value="ch.fhir.ig.ch-epr-term"/>
-    <version value="2.0.x"/>
-  </dependsOn>-->
-  <dependsOn id="chcore">
-    <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
-    <packageId value="ch.fhir.ig.ch-core"/>
-    <version value="current"/>
-  </dependsOn>
-  <dependsOn id="ihepixmfhir">
-    <uri value="https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm"/>
-    <packageId value="ihe.iti.pixm"/>
-    <version value="3.0.2"/>
-  </dependsOn>
-  <dependsOn id="ihepdqmfhir">
-    <uri value="https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pdqm"/>
-    <packageId value="ihe.iti.pdqm"/>
-    <version value="2.4.0"/>
-  </dependsOn>
-  <dependsOn id="ihemhdfhir">
-    <uri value="https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd"/>
-    <packageId value="ihe.iti.mhd"/>
-    <version value="4.2.0"/>
-  </dependsOn>
-  <dependsOn id="ihemcsdfhir">
-    <uri value="https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd"/>
-    <packageId value="ihe.iti.mcsd"/>
-    <version value="3.8.0"/>
-  </dependsOn>
-  <definition>
+    <id value="ch.fhir.ig.ch-epr-mhealth"/>
+    <text>
+        <status value="additional"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            Implementation Guide for the Mobile access to Health Documents (epr-mhealth) Profile for the Swiss EPR
+        </div>
+    </text>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
+    <version value="3.0.0-ballot"/>
+    <name value="CHEprMhealth"/>
+    <title value="CH EPR mHealth (R4)"/>
+    <status value="active"/>
+    <experimental value="false"/>
+    <date value="2022-11-01"/>
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description
+            value="Implementation Guide for the Mobile access to Health Documents (epr-mhealth) Profile for the Swiss EPR"/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="CH"/>
+        </coding>
+    </jurisdiction>
+    <copyright value="CC-BY-SA-4.0"/>
+    <packageId value="ch.fhir.ig.ch-epr-mhealth"/>
+    <license value="CC-BY-SA-4.0"/>
+    <fhirVersion value="4.0.1"/>
+    <!--<dependsOn id="chterm">
+      <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
+      <packageId value="ch.fhir.ig.ch-epr-term"/>
+      <version value="2.0.x"/>
+    </dependsOn>-->
+    <dependsOn id="chcore">
+        <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
+        <packageId value="ch.fhir.ig.ch-core"/>
+        <version value="current"/>
+    </dependsOn>
+    <dependsOn id="ihepixmfhir">
+        <uri value="https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm"/>
+        <packageId value="ihe.iti.pixm"/>
+        <version value="3.0.2"/>
+    </dependsOn>
+    <dependsOn id="ihepdqmfhir">
+        <uri value="https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pdqm"/>
+        <packageId value="ihe.iti.pdqm"/>
+        <version value="2.4.0"/>
+    </dependsOn>
+    <dependsOn id="ihemhdfhir">
+        <uri value="https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd"/>
+        <packageId value="ihe.iti.mhd"/>
+        <version value="4.2.0"/>
+    </dependsOn>
+    <dependsOn id="ihemcsdfhir">
+        <uri value="https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd"/>
+        <packageId value="ihe.iti.mcsd"/>
+        <version value="3.8.0"/>
+    </dependsOn>
+    <definition>
 
-    <!-- examples -->
-    <resource>
-      <reference>
-        <reference value="Parameters/ParametersPIXmInput"/>
-      </reference>
-      <name value="Parameters PIXm Query Input"/>
-      <description value="Example Input Parameters Mobile Patient Identifier Corss-reference Query"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Parameters/ParametersPIXmOutput"/>
-      </reference>
-      <name value="Parameters PIXm Query Output"/>
-      <description value="Example Output Parameters Mobile Patient Identifier Corss-reference Query"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Patient/PatientPIXmFeed"/>
-      </reference>
-      <name value="Patient PIXm Feed"/>
-      <description value="Example PIXm Patient for Feed"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Patient/FranzMusterNeedsAbsoluteUrl"/>
-      </reference>
-      <name value="Franz Muster Needs Absolute Url"/>
-      <description value="Example Patient"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Organization/GruppenpraxisCH"/>
-      </reference>
-      <name value="GruppenpraxisCH"/>
-      <description value="Example Organization"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-provider-organization"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Bundle/2-7-BundleProvideDocument"/>
-      </reference>
-      <name value="MHD Provide Document Bundle for MedicationCard"/>
-      <description value="MHD Provide Document Bundle for MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Bundle/PDQm-Response"/>
-      </reference>
-      <name value="PDQm Demographics Query result"/>
-      <description value="PDQm Demographics Query result for Franz Muster, 27.1.1955"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="List/2-7-DocSubMedicationCard"/>
-      </reference>
-      <name value="SubmissionSet (List) for MedicationCard"/>
-      <description value="Example SubmissionSet for a MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="DocumentReference/2-7-DocRefMedicationCard"/>
-      </reference>
-      <name value="DocumentReference for MedicationCard"/>
-      <description value="Example DocumentReference for a MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Bundle/2-7-BundleProvideDocument-Response"/>
-      </reference>
-      <name value="MHD Provide Document Bundle Response for MedicationCard"/>
-      <description value="MHD Provide Document Bundle Response for MedicationCard"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Bundle/Bundle-FindSubmissionSets"/>
-      </reference>
-      <name value="MHD Find DocumentSubmissionSet (List)"/>
-      <description value="MHD Find Document SumbmissionSet- Bundle as Response"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Bundle/Bundle-FindDocumentReferences"/>
-      </reference>
-      <name value="MHD Find DocumentReferences"/>
-      <description value="MHD Find DocumentReferences - Bundle as Response"/>
-      <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="AuditEvent/ex-auditProvideBundle-source"/>
-      </reference>
-      <name value="Audit Event for Provide Bundle Transaction at Source"/>
-      <description value="Audit Example for a Provide Bundle Transaction from source perspective"/>
-      <exampleCanonical value="https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source"/>
-    </resource>
- 
-    <!-- CH EPR mHealth: Resource Profiles -->
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-pixm-in-parameters"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-pixm-out-parameters"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-pixm-patient"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-pixm-provider-organization"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-submissionset-comprehensive"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-documentreference-comprehensive"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
+        <!-- examples -->
+        <resource>
+            <reference>
+                <reference value="Parameters/ParametersPIXmInput"/>
+            </reference>
+            <name value="Parameters PIXm Query Input"/>
+            <description value="Example Input Parameters Mobile Patient Identifier Corss-reference Query"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Parameters/ParametersPIXmOutput"/>
+            </reference>
+            <name value="Parameters PIXm Query Output"/>
+            <description value="Example Output Parameters Mobile Patient Identifier Corss-reference Query"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Patient/PatientPIXmFeed"/>
+            </reference>
+            <name value="Patient PIXm Feed"/>
+            <description value="Example PIXm Patient for Feed"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Patient/FranzMusterNeedsAbsoluteUrl"/>
+            </reference>
+            <name value="Franz Muster Needs Absolute Url"/>
+            <description value="Example Patient"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/GruppenpraxisCH"/>
+            </reference>
+            <name value="GruppenpraxisCH"/>
+            <description value="Example Organization"/>
+            <exampleCanonical
+                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-provider-organization"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/2-7-BundleProvideDocument"/>
+            </reference>
+            <name value="MHD Provide Document Bundle for MedicationCard"/>
+            <description value="MHD Provide Document Bundle for MedicationCard"/>
+            <exampleCanonical
+                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/PDQm-Response"/>
+            </reference>
+            <name value="PDQm Demographics Query result"/>
+            <description value="PDQm Demographics Query result for Franz Muster, 27.1.1955"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="List/2-7-DocSubMedicationCard"/>
+            </reference>
+            <name value="SubmissionSet (List) for MedicationCard"/>
+            <description value="Example SubmissionSet for a MedicationCard"/>
+            <exampleCanonical
+                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="DocumentReference/2-7-DocRefMedicationCard"/>
+            </reference>
+            <name value="DocumentReference for MedicationCard"/>
+            <description value="Example DocumentReference for a MedicationCard"/>
+            <exampleCanonical
+                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/2-7-BundleProvideDocument-Response"/>
+            </reference>
+            <name value="MHD Provide Document Bundle Response for MedicationCard"/>
+            <description value="MHD Provide Document Bundle Response for MedicationCard"/>
+            <exampleCanonical
+                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/Bundle-FindSubmissionSets"/>
+            </reference>
+            <name value="MHD Find DocumentSubmissionSet (List)"/>
+            <description value="MHD Find Document SumbmissionSet- Bundle as Response"/>
+            <exampleCanonical
+                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/Bundle-FindDocumentReferences"/>
+            </reference>
+            <name value="MHD Find DocumentReferences"/>
+            <description value="MHD Find DocumentReferences - Bundle as Response"/>
+            <exampleCanonical
+                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ex-auditProvideBundle-source"/>
+            </reference>
+            <name value="Audit Event for Provide Bundle Transaction at Source"/>
+            <description value="Audit Example for a Provide Bundle Transaction from source perspective"/>
+            <exampleCanonical
+                    value="https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/DrPeterPan"/>
+            </reference>
+            <name value="mCSD Practitioner Dr. Peter Pan"/>
+            <description value="An exemple of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
+(uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)"/>
+            <exampleCanonical value="TODO"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/SpitalX"/>
+            </reference>
+            <name value="mCSD Organization Spital X"/>
+            <description value="An exemple of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
+(uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
+            <exampleCanonical value="TODO"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/SpitalXDept3"/>
+            </reference>
+            <name value="mCSD Organization Spital X Dept. 3"/>
+            <description value="An exemple of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
+examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
+            <exampleCanonical value="TODO"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PractitionerRole/PeterPanSpitalXDept3"/>
+            </reference>
+            <name value="mCSD PractitionerRole Dr. Peter Pan at Spital X Dept. 3"/>
+            <description value="An exemple of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
+examples (CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch)"/>
+            <exampleCanonical value="TODO"/>
+        </resource>
 
-    <!-- CH EPR mHealth: Data Type Profiles -->
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-epr-mhealth-humanname"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-epr-mhealth-birthname"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/OidIdentifier"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
+        <!-- CH EPR mHealth: Resource Profiles -->
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-pixm-in-parameters"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-pixm-out-parameters"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-pixm-patient"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-pixm-provider-organization"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-mhd-submissionset-comprehensive"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-mhd-documentreference-comprehensive"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
 
-    <!-- CH EPR mHealth: Extension Definitions -->
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-ext-author-authorrole"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ch-ext-deletionstatus"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
+        <!-- CH EPR mHealth: Data Type Profiles -->
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-epr-mhealth-humanname"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-epr-mhealth-birthname"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/OidIdentifier"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
 
-    <!-- CH EPR mHealth  Operation Defintions -->
-    <resource>
-      <reference>
-        <reference value="OperationDefinition/CH.PIXm"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
+        <!-- CH EPR mHealth: Extension Definitions -->
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-ext-author-authorrole"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-ext-deletionstatus"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+
+        <!-- CH EPR mHealth  Operation Defintions -->
+        <resource>
+            <reference>
+                <reference value="OperationDefinition/CH.PIXm"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
 
 
-    <!-- CH EPR mHealth Capability Statements -->
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.mHealth.App"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.PDQm.Consumer"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.PDQm.Supplier"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.PIXm.Consumer"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.PIXm.Source"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.MHD.DocumentSource"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.MHD.DocumentConsumer"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.mHealth.API"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.PIXm.Manager"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.MHD.DocumentRecipient"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CapabilityStatement/CH.MHD.DocumentResponder"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
+        <!-- CH EPR mHealth Capability Statements -->
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.mHealth.App"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.PDQm.Consumer"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.PDQm.Supplier"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.PIXm.Consumer"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.PIXm.Source"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.MHD.DocumentSource"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.MHD.DocumentConsumer"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.mHealth.API"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.PIXm.Manager"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.MHD.DocumentRecipient"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.MHD.DocumentResponder"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
 
-    <!-- CH EPR mHealth Code Systems -->
-    <resource>
-      <reference>
-        <reference value="CodeSystem/ch-ehealth-codesystem-deletionstatus"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
+        <!-- CH EPR mHealth Code Systems -->
+        <resource>
+            <reference>
+                <reference value="CodeSystem/ch-ehealth-codesystem-deletionstatus"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
 
-    <!-- CH EPR mHealth Value Sets -->
-    <resource>
-      <reference>
-        <reference value="ValueSet/ch-ehealth-valueset-deletionstatus"/>
-      </reference>
-      <exampleBoolean value="false"/>
-    </resource>
+        <!-- CH EPR mHealth Value Sets -->
+        <resource>
+            <reference>
+                <reference value="ValueSet/ch-ehealth-valueset-deletionstatus"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
 
-    <!-- IG Pages -->
-    <page>
-      <nameUrl value="toc.html"/>
-      <title value="Table of Contents"/>
-      <generation value="html"/>
-      <page>
-        <nameUrl value="index.html"/>
-        <title value="Home"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <nameUrl value="profiles.html"/>
-        <title value="Profiles"/>
-        <generation value="markdown"/>        
+        <!-- IG Pages -->
         <page>
-          <nameUrl value="iti-iua.html"/>
-          <title value="Internet User Authorization (IUA)"/>
-          <generation value="markdown"/>
+            <nameUrl value="toc.html"/>
+            <title value="Table of Contents"/>
+            <generation value="html"/>
+            <page>
+                <nameUrl value="index.html"/>
+                <title value="Home"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="profiles.html"/>
+                <title value="Profiles"/>
+                <generation value="markdown"/>
+                <page>
+                    <nameUrl value="iti-iua.html"/>
+                    <title value="Internet User Authorization (IUA)"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-pdqm.html"/>
+                    <title value="Patient Demographics Query for Mobile (PDQm)"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-pixm.html"/>
+                    <title value="Patient Identifier Cross-referencing for mobile (PIXm)"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-mhd.html"/>
+                    <title value="Mobile Access to Health Documents (MHD) with XDS on FHIR"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-restful-atna.html"/>
+                    <title value="RESTful ATNA"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-mcsd.html"/>
+                    <title value="Mobile Care Services Discovery (mCSD)"/>
+                    <generation value="markdown"/>
+                </page>
+            </page>
+            <page>
+                <title value="Transactions"/>
+                <generation value="markdown"/>
+                <nameUrl value="transactions.html"/>
+                <page>
+                    <nameUrl value="iti-71.html"/>
+                    <title value="Get Access Token [ITI-71]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-103.html"/>
+                    <title value="Get Authorization Server Metadata [ITI-103]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-78.html"/>
+                    <title value="Mobile Patient Demographics Query [ITI-78]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-83.html"/>
+                    <title value="Mobile Patient Identifier Cross-reference Query [ITI-83]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-104.html"/>
+                    <title value="Patient Identity Feed FHIR [ITI-104]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-65.html"/>
+                    <title value="Provide Document Bundle [ITI-65]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-66.html"/>
+                    <title value="Find Document Lists [ITI-66]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-67.html"/>
+                    <title value="Find Document References [ITI-67]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-68.html"/>
+                    <title value="Retrieve Document [ITI-68]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-20.html"/>
+                    <title value="Record Audit Event [ITI-20]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="iti-90.html"/>
+                    <title value="Find Matching Care Services [ITI-90]"/>
+                    <generation value="markdown"/>
+                </page>
+            </page>
+            <page>
+                <title value="Appendix"/>
+                <generation value="markdown"/>
+                <nameUrl value="appendix.html"/>
+                <page>
+                    <nameUrl value="extensions.html"/>
+                    <title value="Extensions"/>
+                    <generation value="html"/>
+                </page>
+                <page>
+                    <nameUrl value="terminology.html"/>
+                    <title value="Terminology"/>
+                    <generation value="html"/>
+                </page>
+                <page>
+                    <nameUrl value="capstatements.html"/>
+                    <title value="Capability Statements"/>
+                    <generation value="html"/>
+                </page>
+                <page>
+                    <nameUrl value="operations.html"/>
+                    <title value="Operations"/>
+                    <generation value="html"/>
+                </page>
+                <page>
+                    <nameUrl value="sequencediagrams.html"/>
+                    <title value="Sequence Diagrams"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="openissues.html"/>
+                    <title value="Open Issues / Change Log"/>
+                    <generation value="markdown"/>
+                </page>
+            </page>
         </page>
-        <page>
-          <nameUrl value="iti-pdqm.html"/>
-          <title value="Patient Demographics Query for Mobile (PDQm)"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-pixm.html"/>
-          <title value="Patient Identifier Cross-referencing for mobile (PIXm)"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-mhd.html"/>
-          <title value="Mobile Access to Health Documents (MHD) with XDS on FHIR"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-restful-atna.html"/>
-          <title value="RESTful ATNA"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-mcsd.html"/>
-          <title value="Mobile Care Services Discovery (mCSD)"/>
-          <generation value="markdown"/>
-        </page>
-      </page>
-      <page>
-        <title value="Transactions"/>
-        <generation value="markdown"/>
-        <nameUrl value="transactions.html"/>
-        <page>
-          <nameUrl value="iti-71.html"/>
-          <title value="Get Access Token [ITI-71]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-103.html"/>
-          <title value="Get Authorization Server Metadata [ITI-103]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-78.html"/>
-          <title value="Mobile Patient Demographics Query [ITI-78]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-83.html"/>
-          <title value="Mobile Patient Identifier Cross-reference Query [ITI-83]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-104.html"/>
-          <title value="Patient Identity Feed FHIR [ITI-104]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-65.html"/>
-          <title value="Provide Document Bundle [ITI-65]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-66.html"/>
-          <title value="Find Document Lists [ITI-66]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-67.html"/>
-          <title value="Find Document References [ITI-67]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-68.html"/>
-          <title value="Retrieve Document [ITI-68]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-20.html"/>
-          <title value="Record Audit Event [ITI-20]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-90.html"/>
-          <title value="Find Matching Care Services [ITI-90]"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="iti-91.html"/>
-          <title value="Request Care Services Updates [ITI-91]"/>
-          <generation value="markdown"/>
-        </page>
-      </page>
-      <page>
-        <title value="Appendix"/>
-        <generation value="markdown"/>
-        <nameUrl value="appendix.html"/>
-        <page>
-          <nameUrl value="extensions.html"/>
-          <title value="Extensions"/>
-          <generation value="html"/>
-        </page>
-        <page>
-          <nameUrl value="terminology.html"/>
-          <title value="Terminology"/>
-          <generation value="html"/>
-        </page>
-        <page>
-          <nameUrl value="capstatements.html"/>
-          <title value="Capability Statements"/>
-          <generation value="html"/>
-        </page>
-        <page>
-          <nameUrl value="operations.html"/>
-          <title value="Operations"/>
-          <generation value="html"/>
-        </page>
-        <page>
-          <nameUrl value="sequencediagrams.html"/>
-          <title value="Sequence Diagrams"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <nameUrl value="openissues.html"/>
-          <title value="Open Issues / Change Log"/>
-          <generation value="markdown"/>
-        </page>
-      </page>
-    </page>
 
-    <!-- IG Parameters -->
-    <parameter>
-      <code value="releaselabel"/>
-      <value value="CI Build"/>
-      <!--<value value="DSTU2 Informative Ballot"/>-->
-    </parameter>
-    <parameter>
-      <code value="path-pages" />
-      <value value="input/pages"/>
-    </parameter>
-    <parameter>
-      <code value="copyrightyear"/>
-      <value value="2020+"/>
-    </parameter>
-    <parameter>
-      <code value="special-url"/>
-      <value value="http://ihe.net/fhir/"/>
-    </parameter>
-  </definition>
+        <!-- IG Parameters -->
+        <parameter>
+            <code value="releaselabel"/>
+            <value value="CI Build"/>
+            <!--<value value="DSTU2 Informative Ballot"/>-->
+        </parameter>
+        <parameter>
+            <code value="path-pages"/>
+            <value value="input/pages"/>
+        </parameter>
+        <parameter>
+            <code value="copyrightyear"/>
+            <value value="2020+"/>
+        </parameter>
+        <parameter>
+            <code value="special-url"/>
+            <value value="http://ihe.net/fhir/"/>
+        </parameter>
+    </definition>
 </ImplementationGuide>

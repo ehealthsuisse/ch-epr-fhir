@@ -10,8 +10,6 @@ activate Client
 activate Server
 Client -> Server : Find Matching Care Services Request
 Server --> Client : Find Matching Care Services Response
-Client -> Server : Retrieve Care Services Resource Request
-Server --> Client : Retrieve Care Services Resource Response
 deactivate Server
 deactivate Client
 

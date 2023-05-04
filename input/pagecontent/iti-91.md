@@ -26,22 +26,30 @@ It offers an alternative to the HPD CH:PIDD transaction.
 
 #### Request Message Semantics
 
-A Care Services Update Consumer initiates a history request using HTTP GET: 
+A Care Services Update Consumer initiates a history request using HTTP GET:
 `GET [base]/_history{?[parameters]&_format=[mime-type]}`.
 
-The following [search parameters] are supported:
+The following [search parameters](http://hl7.org/fhir/search.html#ptypes) are supported:
 
-- **\_since**: Only include resource versions that were created at or after the given instant in time. It is 
+- **\_since**: Only include resource versions that were created at or after the given instant in time. It is
   equivalent to CH:PIDD's ??.
 - **\_count**: The maximum number of search results on a page. It is equivalent to CH:PIDD's _pageSize_.
 - **\_pageNumber**: The actual page requested (starting with 1). It is equivalent to CH:PIDD's _pageNumber_.
-- **\_format**: Define the [expected response format], override the HTTP content negotiation.
+- **\_format**: Define the
+- [expected response format](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format)
+  , override the HTTP content negotiation.
+
+TODO: https://oehf.github.io/ipf-docs/_pages/apidocs/org/openehealth/ipf/commons/ihe/hpd/stub/chpidd/DownloadRequest.html
 
 #### Response Message Semantics
 
-The response message is a [History Bundle].
+The response message is a [History Bundle](http://hl7.org/fhir/R4/bundle.html#history) that contains
+[Organizations](StructureDefinition-ch-mcsd-organization.html),
+[Practitioners](StructureDefinition-ch-mcsd-practitioner.html) and
+[PractitionerRoles](StructureDefinition-ch-mcsd-practitionerrole.html).
 
-If the response results are paged, `Bundle.link` contains a link to the next page of results (where `relation = next`).
+If the response results are paged, `Bundle.link` contains a link to the next page of results (where `relation = 
+next`), if any.
 The total number of results is shown in `Bundle.total`.
 
 For an **addition** (equivalent to CH:PIDD's `<addRequest>`):
@@ -51,31 +59,25 @@ For an **addition** (equivalent to CH:PIDD's `<addRequest>`):
 
 For a **modification** (equivalent to CH:PIDD's `<modifyRequest>`):
 
-- `Bundle.entry[x].resource` is ?
+- `Bundle.entry[x].resource` is TODO?
 - `Bundle.entry[x].request.method` equals `PUT or PATCH?`.
 
 For a **deletion** (equivalent to CH:PIDD's `<delRequest>`):
 
 - `Bundle.entry[x].resource` is not present.
 - `Bundle.entry[x].request.method` equals `DELETE`.
-- `Bundle.entry[x].request.url` is ?
+- `Bundle.entry[x].request.url` is TODO?
 
 For all entries:
 
 - `Bundle.entry[x].response.lastModified` contains the action effective date time.
 
-No Location. Maybe no HealthcareService?
-
-See the X example of a search response.
+See the _[mCSD Request Care Services Updates Response Bundle](TODO)_ example of a search response.
 
 ### Security Considerations
 
-The actors involved shall record audit events according to ?
+The actors involved shall record audit events according to TODO?
 
 ### Todo
 
 For `<modifyRequest>`, do we go with PUT (full resource) or PATCH (differential only)? JsonPatch, XMLPatch or FHIRPath?
-
-[search parameters](http://hl7.org/fhir/search.html#ptypes)
-[expected response format](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format)
-[History Bundle](http://hl7.org/fhir/R4/bundle.html#history)
