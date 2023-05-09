@@ -32,12 +32,8 @@
             <p>CapabilityStatement for Actor MHD Document Consumer (client).</p>
           </li>
           <li>
-            TODO: mCSD Care Services Selective Consumer (client)
+            <a href="CapabilityStatement-CH.mCSD.CareServicesSelectiveConsumer.html">mCSD Care Services Selective Consumer (client)</a>
             <p>CapabilityStatement for Actor mCSD Care Services Selective Consumer (client).</p>
-          </li>
-          <li>
-            TODO: mCSD Care Services Update Consumer (client)
-            <p>CapabilityStatement for Actor mCSD Care Services Update Consumer (client).</p>
           </li>
         </ul>
       </li>
@@ -67,12 +63,8 @@
             <p>CapabilityStatement for Actor MHD Document Responder (server).</p>
           </li>
           <li>
-            TODO: mCSD Care Services Selective Supplier (server)
+            <a href="CapabilityStatement-CH.mCSD.CareServicesSelectiveSupplier.html">mCSD Care Services Selective Supplier (server)</a>
             <p>CapabilityStatement for Actor mCSD Care Services Selective Supplier (server).</p>
-          </li>
-          <li>
-            TODO: mCSD Care Services Update Supplier (server)
-            <p>CapabilityStatement for Actor mCSD Care Services Update Supplier (server).</p>
           </li>
         </ul>
       </li>

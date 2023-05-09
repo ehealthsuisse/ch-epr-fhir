@@ -187,7 +187,7 @@
             <name value="mCSD Practitioner Dr. Peter Pan"/>
             <description value="An exemple of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
 (uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)"/>
-            <exampleCanonical value="TODO"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"/>
         </resource>
         <resource>
             <reference>
@@ -196,7 +196,7 @@
             <name value="mCSD Organization Spital X"/>
             <description value="An exemple of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
 (uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
-            <exampleCanonical value="TODO"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"/>
         </resource>
         <resource>
             <reference>
@@ -205,15 +205,41 @@
             <name value="mCSD Organization Spital X Dept. 3"/>
             <description value="An exemple of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
 examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
-            <exampleCanonical value="TODO"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/PraxisP"/>
+            </reference>
+            <name value="mCSD Organization Praxis P"/>
+            <description value="An exemple of CHmCSDOrganization that contains the same information as Praxis P in the Swiss
+examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"/>
         </resource>
         <resource>
             <reference>
                 <reference value="PractitionerRole/PeterPanSpitalXDept3"/>
             </reference>
             <name value="mCSD PractitionerRole Dr. Peter Pan at Spital X Dept. 3"/>
-            <description value="An exemple of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
-examples (CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch)"/>
+            <description value="An exemple of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Spital X, Dept. 3
+Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch)"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PractitionerRole/PeterPanPraxisP"/>
+            </reference>
+            <name value="mCSD PractitionerRole Dr. Peter Pan at Praxis P"/>
+            <description value="An exemple of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Praxis P
+Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch)"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/FindMatchingCareServicesResponse"/>
+            </reference>
+            <name value="mCSD Find Matching Care Services Response Bundle"/>
+            <description value="An exemple of ITI-90 response Bundle in the profile CH mCSD"/>
             <exampleCanonical value="TODO"/>
         </resource>
 
@@ -386,6 +412,18 @@ examples (CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch)"/>
         <resource>
             <reference>
                 <reference value="CapabilityStatement/CH.MHD.DocumentResponder"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.mCSD.CareServicesSelectiveSupplier"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/CH.mCSD.CareServicesSelectiveConsumer"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>

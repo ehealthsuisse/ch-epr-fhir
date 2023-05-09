@@ -1,6 +1,6 @@
 Profile: CHmCSDPractitioner
 Parent: Practitioner
-Id: ch-mcsd-practitioner
+Id: CH.mCSD.Practitioner
 Title: "CH mCSD Practitioner"
 Description: "Practitioner"
 * obeys ch-mcsd-practitioner-ihe-conformance
@@ -84,7 +84,7 @@ Description: "An exemple of CHmCSDPractitioner that contains the same informatio
 * gender = #male
 * qualification[+].code = $sct#309343006 "Physician" // Wrong (9343006) in the example
 * qualification[+].code = $sct#394576009 "Accident & emergency"
-* communication[+].coding = #de
-* communication[+].coding = #fr
-* communication[+].coding = #en
-* communication[+].coding = #it
+//* communication[+].coding = #de TODO: the IGPublisher fails on communication
+//* communication[+].coding = #fr
+//* communication[+].coding = #en
+//* communication[+].coding = #it
