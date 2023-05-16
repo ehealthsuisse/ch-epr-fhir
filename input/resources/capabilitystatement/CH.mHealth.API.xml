@@ -16,6 +16,7 @@
     <description value="CapabilityStatement for mHealth API (server)." />
     <kind value="requirements" />
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PIXm.Manager"/>
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PIXm.Supplier"/>
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentRecipient"/>
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentResponder"/>
     <fhirVersion value="4.0.1" />

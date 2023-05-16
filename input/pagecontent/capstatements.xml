@@ -1,9 +1,9 @@
 <div xmlns="http://www.w3.org/1999/xhtml"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
 
-  <!--<div>
+  <!-- <div>
     {% include list-capabilitystatements.xhtml %}
-  </div>-->
+  </div> -->
 
   <h3>mHealth: App (Client)</h3>
 
@@ -15,11 +15,13 @@
         <ul>
           <li>
             <a href="CapabilityStatement-CH.PIXm.Consumer.html">PIXm Patient Identifier Cross-Reference Consumer (client)</a>
-            <p>CapabilityStatement for Actor PIXM Patient Identifier Cross-reference Consumer (client).</p>
+            <p>CapabilityStatement for Actor PIXm Patient Identifier Cross-reference Consumer (client).</p>
+          </li>
+           <li><a href="CapabilityStatement-CH.PDQm.Consumer.html">PDQm Consumer (client)</a> <p>CapabilityStatement for Actor PDQm Patient Demographics Query Consumer (client).</p>
           </li>
           <li>
             <a href="CapabilityStatement-CH.PIXm.Source.html">PIXm Patient Identity Source (client)</a>
-            <p>CapabilityStatement for Actor PIXM Patient Identity Source (client).</p>
+            <p>CapabilityStatement for Actor PIXm Patient Identity Source (client).</p>
           </li>
           <li>
             <a href="CapabilityStatement-CH.MHD.DocumentSource.html">MHD Document Source (client)</a>
@@ -47,6 +49,7 @@
             <a href="CapabilityStatement-CH.PIXm.Manager.html">PIXm Patient Identifier Cross-reference Manager (server)</a>
             <p>CapabilityStatement for Actor PIXm Patient Identifier Cross-reference Manager (server).</p>
           </li>
+         <li><a href="CapabilityStatement-CH.PDQm.Supplier.html">PDQm Supplier (server)</a> <p>CapabilityStatement for PDQm Patient Demographics Query Supplier (server)</p></li>
           <li>
             <a href="CapabilityStatement-CH.MHD.DocumentRecipient.html">MHD Document Recipient (server)</a>
             <p>CapabilityStatement for Actor MHD Document Recipient (server).</p>

@@ -15,6 +15,7 @@
     </contact>
     <description value="CapabilityStatement for mHealth App (client)." />
     <kind value="requirements" />
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PDQm.Consumer"/>
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PIXm.Consumer"/>
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PIXm.Source"/>
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentSource"/>
