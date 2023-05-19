@@ -35,14 +35,14 @@
     <packageId value="ch.fhir.ig.ch-epr-mhealth"/>
     <license value="CC-BY-SA-4.0"/>
     <fhirVersion value="4.0.1"/>
-    <!--<dependsOn id="chterm">
-      <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
-      <packageId value="ch.fhir.ig.ch-epr-term"/>
-      <version value="2.0.x"/>
-    </dependsOn>-->
     <dependsOn id="chcore">
         <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
         <packageId value="ch.fhir.ig.ch-core"/>
+        <version value="current"/>
+    </dependsOn>
+    <dependsOn id="cheprterm">
+        <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
+        <packageId value="ch.fhir.ig.ch-epr-term"/>
         <version value="current"/>
     </dependsOn>
     <dependsOn id="ihepixmfhir">
@@ -240,7 +240,6 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             </reference>
             <name value="mCSD Find Matching Care Services Response Bundle"/>
             <description value="An exemple of ITI-90 response Bundle in the profile CH mCSD"/>
-            <exampleCanonical value="TODO"/>
         </resource>
 
         <!-- CH EPR mHealth: Resource Profiles -->

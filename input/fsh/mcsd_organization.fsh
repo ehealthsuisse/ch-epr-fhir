@@ -2,13 +2,13 @@ Profile: CHmCSDOrganization
 Parent: Organization
 Id: CH.mCSD.Organization
 Title: "CH mCSD Organization"
-Description: "Organization"
+Description: "CH mCSD profile on Organization"
 * obeys ch-mcsd-organization-ihe-conformance
 * identifier 2.. // uid and hcIdentifier are required
-// type can be bind to EprHealthcareFacilityTypeCode and EprDocumentPracticeSettingCode
-// TODO: IHE has the purposeOfUse extension, should we add it here?
-// TODO: we could map businessCategory or HcSpecialisation to purposeOfUse, it is a bit similar
-// TODO: address from CH-CORE?
+//* type from http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.healthcareFacilityTypeCode (extensible)
+//* type ^binding.extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet].valueCanonical = "http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.practiceSettingCode"
+// http://hl7.org/fhir/StructureDefinition/elementdefinition-inheritedExtensibleValueSet
+//* type ^binding.extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName].valueString = "DocumentEntry.practiceSettingCode"
 
 
 Invariant: ch-mcsd-organization-ihe-conformance
@@ -24,28 +24,21 @@ Title:    "LDAP schema"
 * -> "HCRegulatedOrganization"
 * identifier -> "HCRegulatedOrganization.uid"
 * identifier -> "HCRegulatedOrganization.hcIdentifier"
-// Name and alias are hard to map to O and hcRegisteredName
 * name -> "HCRegulatedOrganization.O"
 * alias -> "HCRegulatedOrganization.O"
 * name -> "HCRegulatedOrganization.hcRegisteredName"
 * alias -> "HCRegulatedOrganization.hcRegisteredName"
 * type -> "HCRegulatedOrganization.businessCategory"
 * active -> "HCRegulatedOrganization.hpdProviderStatus"
-// ClinicalInformationContact: TODO: this references DNs
 * address -> "HCRegulatedOrganization.hpdProviderPracticeAddress"
 * contact.address -> "HCRegulatedOrganization.hpdProviderBillingAddress"
 * contact.address -> "HCRegulatedOrganization.hpdProviderMailingAddress"
-// hpdProviderLanguageSupported // TODO: extension?
 * type -> "HCRegulatedOrganization.HcSpecialisation"
-// HcSigningCertificate // This could be an extension
-// HcOrganizationCertificates // TODO: extension?
 * telecom -> "HCRegulatedOrganization.telephoneNumber"
 * telecom -> "HCRegulatedOrganization.facsimileTelephoneNumber"
-* partOf -> "HCRegulatedOrganization.memberOf" // TODO: review content of memberOf
-// createTimestamp // TODO: extension?
+* partOf -> "HCRegulatedOrganization.memberOf"
 * meta.lastUpdated -> "HCRegulatedOrganization.modifyTimestamp"
 * contact.address -> "HCRegulatedOrganization.hpdProviderLegalAddress"
-// objectClass: no need to map, LDAP only
 * contact.telecom -> "HCRegulatedOrganization.hpdMedicalRecordsDeliveryEmailAddress"
 
 
@@ -73,7 +66,6 @@ Description: "An exemple of CHmCSDOrganization that contains the same informatio
 * address[=].state = "SG"
 * address[=].postalCode = "9007"
 * address[=].country = "CH"
-// TODO: from example, 'description', 'name' and 'distinguishedName' are not present in EPD_ZAD_HPD_Attributes.xlsx
 
 
 Instance: CHmCSDOrganizationSpitalXDept3

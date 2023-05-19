@@ -2,12 +2,11 @@ Profile: CHmCSDPractitioner
 Parent: Practitioner
 Id: CH.mCSD.Practitioner
 Title: "CH mCSD Practitioner"
-Description: "Practitioner"
+Description: "CH mCSD profile on Practitioner"
 * obeys ch-mcsd-practitioner-ihe-conformance
-* identifier 2.. // uid and hcIdentifier are required
-// qualification can be bound to hcProfession and hcSpecialisation value sets
 * qualification 1.. // hcProfession is required
-// gender is only m or f
+//* qualification.code from http://fhir.ch/ig/ch-epr-term/ValueSet/HCProfessional.hcProfession (extensible)
+// TODO also http://fhir.ch/ig/ch-epr-term/ValueSet/HCProfessional.hcSpecialisation
 
 
 Invariant: ch-mcsd-practitioner-ihe-conformance
@@ -28,32 +27,23 @@ Title:    "LDAP schema"
 * name.text -> "HCProfessional.displayName"
 * name.prefix -> "HCProfessional.title"
 * name.given -> "HCProfessional.givenName"
-* name.given -> "HCProfessional.initials" // TODO: given is not suitable for the complete initials
 * name.family -> "HCProfessional.sn"
 * name.text -> "HCProfessional.cn"
 * communication.coding.code -> "HCProfessional.hpdProviderLanguageSupported"
 * gender -> "HCProfessional.gender"
 * telecom -> "HCProfessional.hpdMedicalRecordsDeliveryEmailAddress"
 * telecom -> "HCProfessional.mail"
-// userSMIMECertificate
-// hcSigningCertificate
-// userCertificate
-// createTimestamp
 * meta.lastUpdated -> "HCProfessional.modifyTimestamp"
 * address -> "HCProfessional.physicalDeliveryOfficeName"
 * address -> "HCProfessional.hpdProviderMailingAddress"
 * address -> "HCProfessional.hpdProviderBillingAddress"
 * address -> "HCProfessional.hpdProviderPracticeAddress"
-// hcPracticeLocation
 * telecom -> "HCProfessional.telephoneNumber" // [system='phone']
 * telecom -> "HCProfessional.mobile"
 * telecom -> "HCProfessional.pager"
 * telecom -> "HCProfessional.facsimileTelephoneNumber" // [system='fax']
 * qualification.code -> "HCProfessional.hcSpecialisation"
-// memberOf: contained in PractitionerRoles
 * address -> "HCProfessional.hpdProviderLegalAddress"
-// hcRegistrationStatus: no need to map, only value is "Unknown"
-// objectClass: no need to map, LDAP only
 
 
 Instance: CHmCSDPractitionerDrPeterPan
@@ -82,9 +72,9 @@ Description: "An exemple of CHmCSDPractitioner that contains the same informatio
 * telecom[+].system = #pager
 * telecom[=].value = "+41 79 001 00 07"
 * gender = #male
-* qualification[+].code = $sct#309343006 "Physician" // Wrong (9343006) in the example
+* qualification[+].code = $sct#309343006 "Physician"
 * qualification[+].code = $sct#394576009 "Accident & emergency"
-//* communication[+].coding = #de TODO: the IGPublisher fails on communication
-//* communication[+].coding = #fr
-//* communication[+].coding = #en
-//* communication[+].coding = #it
+* communication[+].coding = #de
+* communication[+].coding = #fr
+* communication[+].coding = #en
+* communication[+].coding = #it
