@@ -5,10 +5,6 @@ Title: "CH mCSD Organization"
 Description: "CH mCSD profile on Organization"
 * obeys ch-mcsd-organization-ihe-conformance
 * identifier 2.. // uid and hcIdentifier are required
-//* type from http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.healthcareFacilityTypeCode (extensible)
-//* type ^binding.extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet].valueCanonical = "http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.practiceSettingCode"
-// http://hl7.org/fhir/StructureDefinition/elementdefinition-inheritedExtensibleValueSet
-//* type ^binding.extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName].valueString = "DocumentEntry.practiceSettingCode"
 
 
 Invariant: ch-mcsd-organization-ihe-conformance

@@ -46,14 +46,3 @@ The Swiss extension uses [examples from eHealthSuisse](https://ehealthsuisse.ihe
 <img alt="LDAP examples"
      style="max-width:100%"
      src="https://lh6.googleusercontent.com/UmHlcRwLbFti3B_nf9PSjPsxfPWdsAA5JDBPm1sA6OfFu5CTTOR_AHaMhTBF5qWNeDpSFkOTWREf-RCfg6Jq3xPq7wwNAFkL1r51HQygorTOQQGeDJUQw592NbDXnpdrI4wEb6Jw" />
-
-### Todo
-
-- Add second ITI-90 transaction
-- Practitioner: no search parameter for the profession or specialty
-- Audit event? According to mCSD or ITI-58?
-
-Change proposals:
-
-- ITI-90: On _lastUpdated, prefixes gt, lt, sa and eb have no DSML2-equivalent.
-- ITI-91: Shall be implemented, but use-case much narrower than ITI-90. Not the same users probably.

@@ -15,9 +15,8 @@ Usage: #definition
 * format[+] = #application/fhir+json
 * rest.mode = #server
 * rest.documentation = "IHE ITI mCSD ITI-90 endpoint"
-* rest.resource[+].type = #Organization
+* rest.resource[+].type = #CHmCSDOrganization
 * rest.resource[=].supportedProfile[+] = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"
-* rest.resource[=].documentation = "."
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchInclude = "Organization.endpoint"
 * rest.resource[=].searchRevInclude[0] = "Location:organization"
@@ -37,9 +36,8 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].type = #token
-* rest.resource[+].type = #Practitioner
+* rest.resource[+].type = #CHmCSDPractitioner
 * rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"
-* rest.resource[=].documentation = "."
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchParam[0].name = "active"
 * rest.resource[=].searchParam[=].type = #token
@@ -63,9 +61,8 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[+].name = "family:exact"
 * rest.resource[=].searchParam[=].type = #string
-* rest.resource[+].type = #PractitionerRole
+* rest.resource[+].type = #CHmCSDPractitionerRole
 * rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"
-* rest.resource[=].documentation = "."
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchInclude = "PractitionerRole:practitioner"
 * rest.resource[=].searchParam[0].name = "active"
@@ -84,8 +81,7 @@ Usage: #definition
 * rest.searchParam[=].type = #token
 * rest.searchParam[+].name = "_lastUpdated"
 * rest.searchParam[=].type = #token
-* rest.searchParam[=].documentation = "The values for this shall support these prefixes: gt, lt, ge, le, sa, and eb"
-// TODO: clean not implemented features
+* rest.searchParam[=].documentation = "The values for this shall support these prefixes: ge and le"
 
 
 // Client Actor
@@ -107,7 +103,6 @@ Usage: #definition
 * rest.documentation = "IHE ITI mCSD ITI-90 endpoint"
 * rest.resource[+].type = #Organization
 * rest.resource[=].supportedProfile[+] = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"
-* rest.resource[=].documentation = "."
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchInclude = "Organization.endpoint"
 * rest.resource[=].searchRevInclude[0] = "Location:organization"
@@ -127,9 +122,8 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].type = #token
-* rest.resource[+].type = #Practitioner
+* rest.resource[+].type = #CHmCSDPractitioner
 * rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"
-* rest.resource[=].documentation = "."
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchParam[0].name = "active"
 * rest.resource[=].searchParam[=].type = #token
@@ -153,9 +147,8 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[+].name = "family:exact"
 * rest.resource[=].searchParam[=].type = #string
-* rest.resource[+].type = #PractitionerRole
+* rest.resource[+].type = #CHmCSDPractitionerRole
 * rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"
-* rest.resource[=].documentation = "."
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchInclude = "PractitionerRole:practitioner"
 * rest.resource[=].searchParam[0].name = "active"
@@ -174,5 +167,4 @@ Usage: #definition
 * rest.searchParam[=].type = #token
 * rest.searchParam[+].name = "_lastUpdated"
 * rest.searchParam[=].type = #token
-* rest.searchParam[=].documentation = "The values for this shall support these prefixes: gt, lt, ge, le, sa, and eb"
-// TODO: clean not implemented features
+* rest.searchParam[=].documentation = "The values for this shall support these prefixes: ge and le"

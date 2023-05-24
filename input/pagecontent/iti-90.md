@@ -7,7 +7,7 @@ A mHealth application wants to search for healthcare organizations and/or health
 
 It offers an alternative to the HPD ITI-58 transaction.
 
-### Actor Roles-
+### Actor Roles
 
 **Actor:** Care Services Selective Consumer<br>
 **Role:** Requests a list of resources from the Care Services Selective Supplier based on query parameters.<br>
@@ -17,7 +17,7 @@ It offers an alternative to the HPD ITI-58 transaction.
 ### Referenced Standards
 
 1. [IHE ITI Mobile Care Services Discovery (mCSD) 3.8.0](https://profiles.ihe.net/ITI/mCSD/3.8.0/)<br>
-2. [FHIR R4 API history](http://hl7.org/fhir/R4/http.html#history)<br>
+2. [FHIR R4 API search](http://hl7.org/fhir/R4/http.html#search)<br>
 3. [EPR – Central Services, Interface Documentation v1.0.40](https://www.e-health-suisse.ch/en/technik-semantik/epr-projectathon/epr-programming-aids/relevant-specifications.html#CentServRes)
 
 ### Messages
@@ -111,8 +111,8 @@ The following request searches for a practitioner named 'Müller':
 The following request searches for a practitioner with the GLN '7601000102737':
 `GET [base]/Practitioner?identifier=urn:oid:2.51.1.3|7601000102737`
 
-The following request searches for all practitioners working at the X organization:
-`GET [base]/PractitionerRole?organization=X&_include=PractitionerRole:practitioner`
+The following request searches for all practitioners working at the 'HUG' organization (which will also be returned):
+`GET [base]/PractitionerRole?organization=Organization/HUG&_include=PractitionerRole:practitioner`
 
 #### Find Matching Care Services Response Message
 
@@ -125,7 +125,7 @@ The response message is a [Search Results Bundle](http://hl7.org/fhir/R4/bundle.
 
 ##### Examples
 
-[Response message example](Bundle-FindMatchingCareServicesResponse.html).
+[Find Matching Care Services Response Message example](Bundle-FindMatchingCareServicesResponse.html).
 
 #### Retrieve Care Services Resource Message
 

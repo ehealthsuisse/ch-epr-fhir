@@ -5,8 +5,6 @@ Title: "CH mCSD Practitioner"
 Description: "CH mCSD profile on Practitioner"
 * obeys ch-mcsd-practitioner-ihe-conformance
 * qualification 1.. // hcProfession is required
-//* qualification.code from http://fhir.ch/ig/ch-epr-term/ValueSet/HCProfessional.hcProfession (extensible)
-// TODO also http://fhir.ch/ig/ch-epr-term/ValueSet/HCProfessional.hcSpecialisation
 
 
 Invariant: ch-mcsd-practitioner-ihe-conformance
