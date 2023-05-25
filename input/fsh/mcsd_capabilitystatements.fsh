@@ -16,8 +16,10 @@ Usage: #definition
 * rest.mode = #server
 * rest.documentation = "IHE ITI mCSD ITI-90 endpoint"
 * rest.resource[+].type = #Organization
-* rest.resource[=].supportedProfile[+] = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"
-* rest.resource[=].interaction.code = #search-type
+* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"
+* rest.resource[=].interaction[+].code = #read
+* rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].versioning = #no-version
 * rest.resource[=].searchInclude = "Organization.endpoint"
 * rest.resource[=].searchRevInclude[0] = "Location:organization"
 * rest.resource[=].searchRevInclude[+] = "OrganizationAffiliation:participating-organization"
@@ -37,8 +39,10 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[+].type = #Practitioner
-* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"
-* rest.resource[=].interaction.code = #search-type
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"
+* rest.resource[=].interaction[+].code = #read
+* rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].versioning = #no-version
 * rest.resource[=].searchParam[0].name = "active"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[+].name = "identifier"
@@ -62,8 +66,10 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "family:exact"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[+].type = #PractitionerRole
-* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"
-* rest.resource[=].interaction.code = #search-type
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"
+* rest.resource[=].interaction[+].code = #read
+* rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].versioning = #no-version
 * rest.resource[=].searchInclude = "PractitionerRole:practitioner"
 * rest.resource[=].searchParam[0].name = "active"
 * rest.resource[=].searchParam[=].type = #token
@@ -102,8 +108,10 @@ Usage: #definition
 * rest.mode = #client
 * rest.documentation = "IHE ITI mCSD ITI-90 endpoint"
 * rest.resource[+].type = #Organization
-* rest.resource[=].supportedProfile[+] = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"
-* rest.resource[=].interaction.code = #search-type
+* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"
+* rest.resource[=].interaction[+].code = #read
+* rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].versioning = #no-version
 * rest.resource[=].searchInclude = "Organization.endpoint"
 * rest.resource[=].searchRevInclude[0] = "Location:organization"
 * rest.resource[=].searchRevInclude[+] = "OrganizationAffiliation:participating-organization"
@@ -123,8 +131,10 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[+].type = #Practitioner
-* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"
-* rest.resource[=].interaction.code = #search-type
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"
+* rest.resource[=].interaction[+].code = #read
+* rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].versioning = #no-version
 * rest.resource[=].searchParam[0].name = "active"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[+].name = "identifier"
@@ -148,8 +158,10 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "family:exact"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[+].type = #PractitionerRole
-* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"
-* rest.resource[=].interaction.code = #search-type
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"
+* rest.resource[=].interaction[+].code = #read
+* rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].versioning = #no-version
 * rest.resource[=].searchInclude = "PractitionerRole:practitioner"
 * rest.resource[=].searchParam[0].name = "active"
 * rest.resource[=].searchParam[=].type = #token
