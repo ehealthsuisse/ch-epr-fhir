@@ -8,12 +8,12 @@ professionals.
 
 ### Use Cases
 
-A mHealth application wants to search for healthcare organizations and/or healthcare professionals. It can perform an
+A primary system wants to search for healthcare organizations or professionals. It can perform an
 [ITI-90](iti-90.html) request with search parameters to get a list of matched resources and retrieve a resource
 with its identifier.
 It offers an alternative to the HPD ITI-58 transaction, which is SOAP-based.
 
-The _Request Care Services Updates_ [ITI-91] transaction is not used in this National Extension.
+The _Request Care Services Updates_ [ITI-91] transaction is not used in this national extension.
 
 ### Actors and Transactions, Content Specifications
 

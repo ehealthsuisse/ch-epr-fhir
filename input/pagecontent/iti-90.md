@@ -1,8 +1,8 @@
-This section documents additional requirements in the Swiss EPR context on the Request Care Services Updates.
+This section documents additional requirements in the Swiss EPR context on the _Request Care Services Updates_.
 
 ### Scope
 
-A mHealth application wants to search for healthcare organizations and/or healthcare professionals. It can perform an
+A primary system wants to search for healthcare organizations or professionals. It can perform an
 [ITI-90](iti-90.html) request with search parameters to get a list of matched resources.
 
 It offers an alternative to the HPD ITI-58 transaction.
@@ -112,9 +112,9 @@ these resources may not yield any result. Some example queries are given here:
 #### Find Matching Care Services Response Message
 
 The response message is a [Search Results Bundle](http://hl7.org/fhir/R4/bundle.html#searchset) that contains
-[Organizations](StructureDefinition-CH.mCSD.Organization.html),
-[Practitioners](StructureDefinition-CH.mCSD.Practitioner.html) and
-[PractitionerRoles](StructureDefinition-CH.mCSD.Practitionerrole.html).
+**[Organizations](StructureDefinition-CH.mCSD.Organization.html)**,
+**[Practitioners](StructureDefinition-CH.mCSD.Practitioner.html)** and
+**[PractitionerRoles](StructureDefinition-CH.mCSD.Practitionerrole.html)**.
 [An example of response message](Bundle-FindMatchingCareServicesResponse.html) is provided.
 
 #### Retrieve Care Services Resource Message
@@ -144,3 +144,8 @@ instance.
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the _Care Services
 Selective Supplier_ using the IUA profile with basic access token. Consequently, the _Find Matching Care Services_
 [ITI-90] request must authorize using the _Incorporate Access Token_ [ITI-72] transaction of the IUA profile.
+
+The actors involved shall record audit events according to the [Audit Event for Find Matching Care Services for Read by 
+the Care Services Selective Supplier and Consumer](https://profiles.ihe.net/ITI/mCSD/3.8.0/StructureDefinition-IHE.mCSD.Audit.CareServices.Read.html)
+or the [Audit Event for Find Matching Care Services for Query by the Care Services Selective Supplier and 
+Consumer](https://profiles.ihe.net/ITI/mCSD/3.8.0/StructureDefinition-IHE.mCSD.Audit.CareServices.Query.html).
