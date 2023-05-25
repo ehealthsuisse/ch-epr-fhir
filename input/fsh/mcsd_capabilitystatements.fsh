@@ -15,7 +15,7 @@ Usage: #definition
 * format[+] = #application/fhir+json
 * rest.mode = #server
 * rest.documentation = "IHE ITI mCSD ITI-90 endpoint"
-* rest.resource[+].type = #CHmCSDOrganization
+* rest.resource[+].type = #Organization
 * rest.resource[=].supportedProfile[+] = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchInclude = "Organization.endpoint"
@@ -36,7 +36,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].type = #token
-* rest.resource[+].type = #CHmCSDPractitioner
+* rest.resource[+].type = #Practitioner
 * rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchParam[0].name = "active"
@@ -61,7 +61,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[+].name = "family:exact"
 * rest.resource[=].searchParam[=].type = #string
-* rest.resource[+].type = #CHmCSDPractitionerRole
+* rest.resource[+].type = #PractitionerRole
 * rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchInclude = "PractitionerRole:practitioner"
@@ -122,7 +122,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #reference
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].type = #token
-* rest.resource[+].type = #CHmCSDPractitioner
+* rest.resource[+].type = #Practitioner
 * rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchParam[0].name = "active"
@@ -147,7 +147,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[=].searchParam[+].name = "family:exact"
 * rest.resource[=].searchParam[=].type = #string
-* rest.resource[+].type = #CHmCSDPractitionerRole
+* rest.resource[+].type = #PractitionerRole
 * rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"
 * rest.resource[=].interaction.code = #search-type
 * rest.resource[=].searchInclude = "PractitionerRole:practitioner"

@@ -9,11 +9,11 @@ professionals.
 ### Use Cases
 
 A mHealth application wants to search for healthcare organizations and/or healthcare professionals. It can perform an
-[ITI-90](iti-90.html) request with search parameters to get a list of matched resources and retrieve a resource 
+[ITI-90](iti-90.html) request with search parameters to get a list of matched resources and retrieve a resource
 with its identifier.
 It offers an alternative to the HPD ITI-58 transaction, which is SOAP-based.
 
-The _Request Care Services Updates [ITI-91]_ transaction is not used in this National Extension.
+The _Request Care Services Updates_ [ITI-91] transaction is not used in this National Extension.
 
 ### Actors and Transactions, Content Specifications
 
@@ -34,10 +34,9 @@ Therefore, actors of this profile must be grouped with actors of other profiles 
 
 <figcaption ID="1">Table 1: Grouping of mCSD actors required by this national extension.</figcaption>
 
-
 ### Security Consideration
 
-This national extension enforces authentication and authorization of access to the Care Services Selective Supplier
+This national extension enforces authentication and authorization of access to the _Care Services Selective Supplier_
 using the IUA profile with basic access token as described in [IUA](iti-71.html).
 
 ### Examples

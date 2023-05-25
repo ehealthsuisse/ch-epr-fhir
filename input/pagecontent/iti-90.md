@@ -26,9 +26,9 @@ It offers an alternative to the HPD ITI-58 transaction.
 
 #### Find Matching Care Services Request Message
 
-The Find Matching Care Services message is a FHIR search operation on the mCSD Resources.
+The _Find Matching Care Services_ message is a FHIR search operation on the mCSD Resources.
 
-A Care Services Selective Consumer initiates a search request using HTTP GET or POST:
+A _Care Services Selective Consumer_ initiates a search request using HTTP GET or POST:
 
 `GET [base]/[resource]?[parameters]`
 
@@ -42,9 +42,8 @@ param1=value&param2=value
 
 ##### Semantics
 
-The Care Services Selective Supplier shall support the following search parameters for all resources:
+The _Care Services Selective Supplier_ shall support the following search parameters for all resources:
 
-{:class="table table-bordered"}
 | Parameter    | Type   | Path                      | Modifiers | Description                                                                                                                           |
 |--------------|--------|---------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------|
 | _id          | token  | Resource.id               |           |                                                                                                                                       |
@@ -52,37 +51,38 @@ The Care Services Selective Supplier shall support the following search paramete
 | _format      | token  | N/A                       |           | Defines the [expected response format](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) |
 | _sort        |        | N/A                       |           | For [sorting](https://www.hl7.org/fhir/R4/search.html#sort)                                                                           |
 | _count       | number | N/A                       |           | For [paging](https://www.hl7.org/fhir/R4/search.html#count)                                                                           |
-
-The Care Services Selective Supplier shall support the following search parameters on the
-[Organization](StructureDefinition-CH.mCSD.Organization.html) resource:
-
-| Parameter                                                      | Type      | Path                       | Modifiers          | Description      |
-|----------------------------------------------------------------|-----------|----------------------------|--------------------|------------------|
-| active                                                         | token     | Organization.active        |                    |                  |
-| identifier                                                     | token     | Organization.identifier    |                    |                  |
-| name                                                           | string    | Organization.(name, alias) | :contains, :exact  |                  |
-| partof                                                         | reference | Organization.partOf        |                    |                  |
-| type                                                           | token     | Organization.type          |                    |                  |
-| _include=Organization.endpoint                                 |           |                            |                    | It has no effect |
-| _revInclude=Location:organization                              |           |                            |                    | It has no effect |
-| _revInclude=OrganizationAffiliation:participating-organization |           |                            |                    | It has no effect |
-| _revInclude=OrganizationAffiliation:primary-organization       |           |                            |                    | It has no effect |
 {:class="table table-bordered"}
 
-The Care Services Selective Supplier shall support the following search parameters on the 
-[Practitioner](StructureDefinition-CH.mCSD.Practitioner.html) resource:
+The _Care Services Selective Supplier_ shall support the following search parameters on the
+**[Organization](StructureDefinition-CH.mCSD.Organization.html)** resource:
 
-| Parameter  | Type   | Path                     | Modifiers          | Description                                                                       |
-|------------|--------|--------------------------|--------------------|-----------------------------------------------------------------------------------|
-| active     | token  | Practitioner.active      |                    |                                                                                   |
-| identifier | token  | Practitioner.identifier  |                    |                                                                                   |
-| name       | string | Practitioner.name        | :contains, :exact  | A server defined search that may match any of the string fields in the HumanName  |
-| given      | string | Practitioner.name.given  | :contains, :exact  |                                                                                   |
-| family     | string | Practitioner.name.family | :contains, :exact  |                                                                                   |
+| Parameter                                                      | Type      | Path                       | Modifiers         | Description      |
+|----------------------------------------------------------------|-----------|----------------------------|-------------------|------------------|
+| active                                                         | token     | Organization.active        |                   |                  |
+| identifier                                                     | token     | Organization.identifier    |                   |                  |
+| name                                                           | string    | Organization.(name, alias) | :contains, :exact |                  |
+| partof                                                         | reference | Organization.partOf        |                   |                  |
+| type                                                           | token     | Organization.type          |                   |                  |
+| _include=Organization.endpoint                                 |           |                            |                   | It has no effect |
+| _revInclude=Location:organization                              |           |                            |                   | It has no effect |
+| _revInclude=OrganizationAffiliation:participating-organization |           |                            |                   | It has no effect |
+| _revInclude=OrganizationAffiliation:primary-organization       |           |                            |                   | It has no effect |
 {:class="table table-bordered"}
 
-The Care Services Selective Supplier shall support the following search parameters on the 
-[PractitionerRole](StructureDefinition-CH.mCSD.PractitionerRole.html) resource:
+The _Care Services Selective Supplier_ shall support the following search parameters on the
+**[Practitioner](StructureDefinition-CH.mCSD.Practitioner.html)** resource:
+
+| Parameter  | Type   | Path                     | Modifiers         | Description                                                                      |
+|------------|--------|--------------------------|-------------------|----------------------------------------------------------------------------------|
+| active     | token  | Practitioner.active      |                   |                                                                                  |
+| identifier | token  | Practitioner.identifier  |                   |                                                                                  |
+| name       | string | Practitioner.name        | :contains, :exact | A server defined search that may match any of the string fields in the HumanName |
+| given      | string | Practitioner.name.given  | :contains, :exact |                                                                                  |
+| family     | string | Practitioner.name.family | :contains, :exact |                                                                                  |
+{:class="table table-bordered"}
+
+The _Care Services Selective Supplier_ shall support the following search parameters on the
+**[PractitionerRole](StructureDefinition-CH.mCSD.PractitionerRole.html)** resource:
 
 | Parameter                              | Type      | Path                               | Modifiers | Description                                           |
 |----------------------------------------|-----------|------------------------------------|-----------|-------------------------------------------------------|
@@ -96,67 +96,51 @@ The Care Services Selective Supplier shall support the following search paramete
 | _include=PractitionerRole:practitioner |           |                                    |           | Includes the referenced Practitioners in the response |
 {:class="table table-bordered"}
 
-The Care Services Selective Supplier may not support other resources (Endpoint, HealthcareService, Location and 
-OrganizationAffiliation), as they are not used in this national extension. Any search query on these resources may 
-not yield any result.
+The _Care Services Selective Supplier_ may not support other resources (**Endpoint**, **HealthcareService**,
+**Location** and **OrganizationAffiliation**), as they are not used in this national extension. Any search query on
+these resources may not yield any result. Some example queries are given here:
 
-##### Examples
-
-The following request searches for an active organization whose name contains 'Medical':
-`GET [base]/Organization?active=true&name:contains=Medical`
-
-The following request searches for a practitioner named 'Müller':
-`GET [base]/Practitioner?family=Müller`
-
-The following request searches for a practitioner with the GLN '7601000102737':
-`GET [base]/Practitioner?identifier=urn:oid:2.51.1.3|7601000102737`
-
-The following request searches for all practitioners working at the 'HUG' organization (which will also be returned):
-`GET [base]/PractitionerRole?organization=Organization/HUG&_include=PractitionerRole:practitioner`
+1. The following request searches for an active **Organization** whose name contains 'Medical':
+   `GET [base]/Organization?active=true&name:contains=Medical`
+2. The following request searches for a **Practitioner** named 'Müller':
+   `GET [base]/Practitioner?family=Müller`
+3. The following request searches for a **Practitioner** with the GLN '7601000102737':
+   `GET [base]/Practitioner?identifier=urn:oid:2.51.1.3|7601000102737`
+4. The following request searches for all **Practitioners** working at the 'HUG' organization:
+   `GET [base]/PractitionerRole?organization=Organization/HUG&_include=PractitionerRole:practitioner`
 
 #### Find Matching Care Services Response Message
-
-##### Semantics
 
 The response message is a [Search Results Bundle](http://hl7.org/fhir/R4/bundle.html#searchset) that contains
 [Organizations](StructureDefinition-CH.mCSD.Organization.html),
 [Practitioners](StructureDefinition-CH.mCSD.Practitioner.html) and
 [PractitionerRoles](StructureDefinition-CH.mCSD.Practitionerrole.html).
-
-##### Examples
-
-[Find Matching Care Services Response Message example](Bundle-FindMatchingCareServicesResponse.html).
+[An example of response message](Bundle-FindMatchingCareServicesResponse.html) is provided.
 
 #### Retrieve Care Services Resource Message
 
-The Retrieve Care Services Resource is conducted by executing an HTTP GET against the Care Services Selective 
-Supplier's Care Services Resource URL, providing the resource id of the resource being retrieved. The target is 
-formatted as:
+The _Retrieve Care Services Resource_ is conducted by executing an HTTP GET against the _Care Services Selective
+Supplier_'s Care Services Resource URL, providing the resource id of the resource being retrieved. The target is
+formatted as: `GET [base]/[resource]/[resourceId]`. Some examples are
 
-`GET [base]/[resource]/[resourceId]`
-
-##### Examples
-
-Retrieve the Organization 'Spital X Dept. 3': `GET [base]/Organization/SpitalXDept3`
-
-Retrieve the Practitioner 'Dr. Peter Pan': `GET [base]/Practitioner/DrPeterPan`
-
-Retrieve the PractitionerRole 'Dr. Peter Pan at Praxis P': `GET [base]/PractitionerRole/PeterPanPraxisP`
+1. Retrieve the **Organization** 'Spital X Dept. 3': `GET [base]/Organization/SpitalXDept3`.
+2. Retrieve the **Practitioner** 'Dr. Peter Pan': `GET [base]/Practitioner/DrPeterPan`.
+3. Retrieve the **PractitionerRole** 'Dr. Peter Pan at Praxis P': `GET [base]/PractitionerRole/PeterPanPraxisP`.
 
 #### Retrieve Care Services Resource Response Message
 
-The Care Services Selective Supplier shall respond to this query by sending a single Care Services Resource instance.
+The _Care Services Selective Supplier_ shall respond to this query by sending a single _Care Services Resource_
+instance.
 
-If the Care Services Selective Supplier finds the resource, `HTTP 200 OK` is returned with the resource (an 
-[Organization](StructureDefinition-CH.mCSD.Organization.html),
-[Practitioner](StructureDefinition-CH.mCSD.Practitioner.html) or
-[PractitionerRole](StructureDefinition-CH.mCSD.Practitionerrole.html)).
-
-If the Care Services Selective Supplier does not find the resource, `HTTP 404 Not Found` is returned with an 
-OperationOutcome resource.
+- If the _Care Services Selective Supplier_ finds the resource, `HTTP 200 OK` is returned with the resource (an
+  **[Organization](StructureDefinition-CH.mCSD.Organization.html)**,
+  **[Practitioner](StructureDefinition-CH.mCSD.Practitioner.html)** or
+  **[PractitionerRole](StructureDefinition-CH.mCSD.Practitionerrole.html)**).
+- If the _Care Services Selective Supplier_ does not find the resource, `HTTP 404 Not Found` is returned with an
+  **[OperationOutcome](https://www.hl7.org/fhir/r4/operationoutcome.html)** resource.
 
 ### Security Considerations
 
-TLS SHALL be used. This national extension enforces authentication and authorization of access to the Care Services 
-Selective Supplier using the IUA profile with basic access token. Consequently, the Find Matching Care Services 
-[ITI-90] request must authorize using the Incorporate Access Token [ITI-72] transaction of the IUA profile.
+TLS SHALL be used. This national extension enforces authentication and authorization of access to the _Care Services
+Selective Supplier_ using the IUA profile with basic access token. Consequently, the _Find Matching Care Services_
+[ITI-90] request must authorize using the _Incorporate Access Token_ [ITI-72] transaction of the IUA profile.
