@@ -1,5 +1,5 @@
 Profile: CHmCSDPractitioner
-Parent: Practitioner
+Parent: http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-practitioner-epr
 Id: CH.mCSD.Practitioner
 Title: "CH mCSD Practitioner"
 Description: "CH mCSD profile on Practitioner"

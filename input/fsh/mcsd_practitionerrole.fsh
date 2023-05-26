@@ -1,5 +1,5 @@
 Profile: CHmCSDPractitionerRole
-Parent: PractitionerRole
+Parent: http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-practitionerrole-epr
 Id: CH.mCSD.PractitionerRole
 Title: "CH mCSD PractitionerRole"
 Description: "CH mCSD profile on PractitionerRole"
@@ -9,8 +9,6 @@ Description: "CH mCSD profile on PractitionerRole"
 * organization only Reference(CHmCSDOrganization)
 * organization 1.. // From HPD
 * code 1.. // From mCSD
-* code from http://fhir.ch/ig/ch-epr-term/ValueSet/HCProfessional.hcProfession (extensible)
-* specialty from http://fhir.ch/ig/ch-epr-term/ValueSet/HCProfessional.hcSpecialisation (extensible)
 
 
 Invariant: ch-mcsd-practitionerrole-ihe-conformance

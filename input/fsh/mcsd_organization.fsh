@@ -1,5 +1,5 @@
 Profile: CHmCSDOrganization
-Parent: Organization
+Parent: http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-organization-epr
 Id: CH.mCSD.Organization
 Title: "CH mCSD Organization"
 Description: "CH mCSD profile on Organization"
