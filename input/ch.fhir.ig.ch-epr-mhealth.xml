@@ -40,11 +40,6 @@
         <packageId value="ch.fhir.ig.ch-core"/>
         <version value="current"/>
     </dependsOn>
-    <dependsOn id="cheprterm">
-        <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
-        <packageId value="ch.fhir.ig.ch-epr-term"/>
-        <version value="current"/>
-    </dependsOn>
     <dependsOn id="ihepixmfhir">
         <uri value="https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm"/>
         <packageId value="ihe.iti.pixm"/>
