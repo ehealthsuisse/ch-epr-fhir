@@ -422,13 +422,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             <exampleBoolean value="false"/>
         </resource>
 
-        <!-- CH EPR mHealth Code Systems -->
-        <resource>
-            <reference>
-                <reference value="CodeSystem/ch-ehealth-codesystem-deletionstatus"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
+    <!-- CH EPR mHealth Code Systems -->
 
     <!-- CH EPR mHealth Value Sets -->
 
