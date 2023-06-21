@@ -34,6 +34,7 @@
         </element>
         <element id="DocumentReference.extension">
             <path value="DocumentReference.extension" />
+            <min value="1"/>
             <slicing>
                 <discriminator>
                     <type value="value" />
