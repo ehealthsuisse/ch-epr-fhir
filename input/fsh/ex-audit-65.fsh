@@ -6,7 +6,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = DCM#110106 "Export"
 * action = #R
-* subtype = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
+* subtype[iti65] = urn:ihe:event-type-code#ITI-65 "Provide Document Bundle"
 //* severity = #Informational
 * recorded = 2020-06-29T12:01:30+00:00
 * outcome = http://terminology.hl7.org/CodeSystem/audit-event-outcome#0 "Success"
@@ -20,7 +20,7 @@ Usage: #example
 * agent[0].requestor = false
 * agent[0].network.address = "myDevice.example.com"
 * agent[0].network.type = http://hl7.org/fhir/network-type#1 "domain name"
-// documentRecipeint
+// documentRecipient
 * agent[1].type = DCM#110152 "Destination Role ID"
 * agent[1].requestor = false
 * agent[1].who.display = "myMachine.example.org"
