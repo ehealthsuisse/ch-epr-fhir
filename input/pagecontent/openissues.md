@@ -1,5 +1,6 @@
 ### DSTU3 Informative Ballot 2023 
 * added ITI-78 / Mobile Demographics Query to transactions [#52](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/52)
+* added the mCSD profile (transaction ITI-90) [#43](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/43)
 
 ### Open Issues
 See open issues on [GitHub](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/)
