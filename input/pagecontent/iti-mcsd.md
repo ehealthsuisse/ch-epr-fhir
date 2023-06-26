@@ -44,4 +44,4 @@ using the IUA profile with basic access token as described in [IUA](iti-71.html)
 The Swiss extension uses [examples from eHealthSuisse](https://ehealthsuisse.ihe-europe.net/test_data/CommunityAdd_A_B_xml.zip):
 <img alt="LDAP examples"
      style="max-width:100%"
-     src="https://lh6.googleusercontent.com/UmHlcRwLbFti3B_nf9PSjPsxfPWdsAA5JDBPm1sA6OfFu5CTTOR_AHaMhTBF5qWNeDpSFkOTWREf-RCfg6Jq3xPq7wwNAFkL1r51HQygorTOQQGeDJUQw592NbDXnpdrI4wEb6Jw" />
+     src="assets/images/ehealthsuisse_HPD_Structure.png" />
