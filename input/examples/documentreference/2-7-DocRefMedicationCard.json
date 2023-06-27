@@ -98,7 +98,7 @@
             "format": {
                 "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
                 "code": "urn:ihe:pharm:pml:2013",
-                "display": "Community Medication List"
+                "display": "Pharmacy PML"
             }
         }
     ],

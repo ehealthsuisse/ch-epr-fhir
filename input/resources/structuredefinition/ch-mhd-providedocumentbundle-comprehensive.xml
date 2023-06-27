@@ -24,7 +24,7 @@
     <differential>
         <element id="Bundle">
             <path value="Bundle"/>
-            <short value="CH MHD Provide Document Bundle Comphrensive"/>
+            <short value="CH MHD Provide Document Bundle Comprehensive"/>
         </element>
         <element id="Bundle.meta">
             <path value="Bundle.meta"/>
