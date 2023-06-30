@@ -9,7 +9,7 @@
         </div>
     </text>
     <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
-    <version value="3.0.0-ballot"/>
+    <version value="3.0.0-cibuild"/>
     <name value="CHEprMhealth"/>
     <title value="CH EPR mHealth (R4)"/>
     <status value="active"/>
@@ -581,7 +581,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <!-- IG Parameters -->
         <parameter>
             <code value="releaselabel"/>
-            <value value="ballot"/>
+            <value value="ci-build"/>
             <!--<value value="DSTU2 Informative Ballot"/>-->
         </parameter>
         <parameter>
