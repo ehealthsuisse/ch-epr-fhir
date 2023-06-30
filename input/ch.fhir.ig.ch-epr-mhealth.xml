@@ -14,7 +14,7 @@
     <title value="CH EPR mHealth (R4)"/>
     <status value="active"/>
     <experimental value="false"/>
-    <date value="2022-11-01"/>
+    <date value="2023-06-30"/>
     <publisher value="eHealth Suisse"/>
     <contact>
         <name value="eHealth Suisse"/>
@@ -31,14 +31,19 @@
             <code value="CH"/>
         </coding>
     </jurisdiction>
-    <copyright value="CC-BY-SA-4.0"/>
+    <copyright value="CC0-1.0"/>
     <packageId value="ch.fhir.ig.ch-epr-mhealth"/>
-    <license value="CC-BY-SA-4.0"/>
+    <license value="CC0-1.0"/>
     <fhirVersion value="4.0.1"/>
+    <dependsOn id="terminology">
+        <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+        <packageId value="hl7.terminology"/>
+      <version value="5.1.0"/>
+    </dependsOn>
     <dependsOn id="chcore">
         <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
         <packageId value="ch.fhir.ig.ch-core"/>
-        <version value="current"/>
+        <version value="4.0.0-ballot"/>
     </dependsOn>
     <dependsOn id="ihepixmfhir">
         <uri value="https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm"/>
@@ -571,7 +576,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <!-- IG Parameters -->
         <parameter>
             <code value="releaselabel"/>
-            <value value="CI Build"/>
+            <value value="ballot"/>
             <!--<value value="DSTU2 Informative Ballot"/>-->
         </parameter>
         <parameter>

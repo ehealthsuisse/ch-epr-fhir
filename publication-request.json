@@ -1,0 +1,11 @@
+{
+  "package-id" : "ch.fhir.ig.ch-epr-mhealth",
+  "version" : "3.0.0-ballot",
+  "path" : "http://fhir.ch/ig/ch-epr-mhealth/3.0.0-ballot",
+  "mode" : "milestone",
+  "status" : "ballot",
+  "sequence" : "Draft",
+  "desc" : "eHealth Suissse",
+  "changes" : "openissues.html",
+  "first": false
+}
