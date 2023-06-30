@@ -40,6 +40,11 @@
         <packageId value="hl7.terminology"/>
       <version value="5.1.0"/>
     </dependsOn>
+  <dependsOn id="cheprterm">
+    <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
+    <packageId value="ch.fhir.ig.ch-epr-term"/>
+     <version value="2.0.9"/>
+    </dependsOn>
     <dependsOn id="chcore">
         <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
         <packageId value="ch.fhir.ig.ch-core"/>

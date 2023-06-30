@@ -5,9 +5,15 @@ Description: "An exemple of ITI-90 response Bundle in the profile CH mCSD"
 * type = #searchset
 * id = "FindMatchingCareServicesResponse"
 // Let's put all our examples
-* entry[+].resource = CHmCSDPractitionerDrPeterPan
-* entry[+].resource = CHmCSDOrganizationSpitalX
-* entry[+].resource = CHmCSDOrganizationSpitalXDept3
-* entry[+].resource = CHmCSDOrganizationPraxisP
-* entry[+].resource = ChmCSDPractitionerRolePeterPanSpitalXDept3
-* entry[+].resource = ChmCSDPractitionerRolePeterPanPraxisP
+* entry[0].fullUrl = "http://test.fhir.ch/r4/Practitioner/DrPeterPan"
+* entry[=].resource = CHmCSDPractitionerDrPeterPan
+* entry[+].fullUrl = "http://test.fhir.ch/r4/Organization/SpitalX"
+* entry[=].resource = CHmCSDOrganizationSpitalX
+* entry[+].fullUrl = "http://test.fhir.ch/r4/Organization/SpitalXDept3"
+* entry[=].resource = CHmCSDOrganizationSpitalXDept3
+* entry[+].fullUrl = "http://test.fhir.ch/r4/Organization/PraxisP"
+* entry[=].resource = CHmCSDOrganizationPraxisP
+* entry[+].fullUrl = "http://test.fhir.ch/r4/PractitionerRole/PeterPanSpitalXDept3"
+* entry[=].resource = ChmCSDPractitionerRolePeterPanSpitalXDept3
+* entry[+].fullUrl = "http://test.fhir.ch/r4/PractitionerRole/PeterPanSpitalX"
+* entry[=].resource = ChmCSDPractitionerRolePeterPanPraxisP
