@@ -11,7 +11,7 @@ a patient pariticipating in the Swiss EPR.
 **Role:** Returns demographic information for all patients matching the demographics criteria provided by the Patient Demographics Consumer   
 
 ### Referenced Standards
-[IHE Patient Demographics Query for Mobile Rev. 3.0.0: Trial Implementation) based on FHIR R4. Patient Identifier Cross-referencing for mobile (PIXm), Rev. 3.0.0 – Trial-Implementation, Februar 28, 2022](https://profiles.ihe.net/ITI/PQDm/index.html)  
+[IHE Patient Demographics Query for Mobile Rev. 3.0.0: Trial Implementation) based on FHIR R4. Patient Identifier Cross-referencing for mobile (PIXm), Rev. 3.0.0 – Trial-Implementation, Februar 28, 2022](https://profiles.ihe.net/ITI/PDQm/index.html)  
 This PDQm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
 
 ### Messages
