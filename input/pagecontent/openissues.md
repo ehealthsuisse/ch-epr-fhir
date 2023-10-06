@@ -1,4 +1,34 @@
-### DSTU3 Informative Ballot 2023 
+### DSTU3 Informative Ballot 2023 - Raised Issues
+
+The implementation guide was under an informative ballot by HL7 Switzerland until September 30th, 2023. The following comments have been raised
+
+General IG considerations:
+* Rename Menu 'Profiles' to 'IHE Profiles' and menu 'Profiles'  [#83](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/83) 
+* Missing links to profiles and examples [#82](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/82)
+* Introduction [#76](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/76)
+* Sequence Diagrams: patient get document – generic mHealth option - local ID [#69](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/69) and precisions [#76](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/76) 
+* Typos, outdated links: [#81](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/81), [#75](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/75)
+
+IUA
+* Discrepancy with OAuth 2.1 specification [#79](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/79)
+* Comments on ITI-71 [#72](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/72)
+* Varia [#78](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/78)
+* Metadata attributes [#77](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/77) and [#71](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/71)
+
+PIxm/PDQm
+* Missing Swiss specific PDQ V3 Error message in PDQm [#80](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/80)
+* Various Issues [#73](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/73)
+
+MHD
+* Patient should not be allowed [#75](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/75)
+
+RESTful ATNA 
+* Various [#74](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/74)
+
+mCDS
+* Missing mCSD CapabilityStatement [#70](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/70)
+
+### DSTU3 Informative Ballot 2023 - Start 
 * added ITI-78 / Mobile Demographics Query to transactions [#52](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/52)
 * added the mCSD profile (transaction ITI-90) [#43](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/43)
 
