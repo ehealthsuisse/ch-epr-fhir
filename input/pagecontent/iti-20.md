@@ -12,7 +12,7 @@ This section describes the national extension for the Swiss EPR of the Send Audi
 ### Referenced Standards
 
 [Add RESTful ATNA (Query and Feed), Rev. 3.3 – Trial Implementation, July 2, 2021](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)  
-This RESTful ATNA profile is based on Release 4 of the [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
+This RESTful ATNA profile is based on Release 4 of the [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
 ### Messages
 
 The “Send Audit Resource Request Message – FHIR Feed Interaction” is used for auditing the FHIR Audit Event Resource using the RESTful protocol. 

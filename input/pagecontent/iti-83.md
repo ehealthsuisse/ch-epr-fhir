@@ -13,7 +13,7 @@ local identifier the MPI and get the corresponding MPI-PID and the EPR-SPID iden
 
 ### Referenced Standards
 [Patient Identifier Cross-referencing for mobile (PIXm), Rev. 3.0.0 – Trial-Implementation, November 8, 2021](https://profiles.ihe.net/ITI/PIXm/index.html)  
-This PIXm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://www.hl7.org/fhir/index.html) standard.
+This PIXm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
 
 ### Messages
 
