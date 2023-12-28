@@ -1,5 +1,6 @@
 ### DSTU3 Informative Ballot 2023 - Resolved Issues
 
+* Add missing mCSD CapabilityStatement imports in mHealth App and API [#70](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/70)
 * PDQm Supplier actor name misspelled in mHealth API CapabilityStatement [#87](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/87)
 * Missing Swiss specific PDQ V3 Error message in PDQm [#80](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/80)
 * Disallow non-contained Patient resources in ITI-65 requests [#75](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/75)

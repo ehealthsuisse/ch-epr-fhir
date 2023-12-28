@@ -20,6 +20,7 @@
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PIXm.Source"/>
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentSource"/>
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentConsumer"/>
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.mCSD.CareServicesSelectiveConsumer"/>
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
     <format value="application/fhir+json" />

@@ -19,6 +19,7 @@
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PDQm.Supplier"/>
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentRecipient"/>
     <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentResponder"/>
+    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.mCSD.CareServicesSelectiveSupplier"/>
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
     <format value="application/fhir+json" />
