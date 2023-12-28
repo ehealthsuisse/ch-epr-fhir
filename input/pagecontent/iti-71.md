@@ -18,7 +18,7 @@ When an IUA Authorization Client is authorized, it may launch SMART on FHIR Apps
 **Actor:** IUA Authorization Client  
 **Role:** Communicates claims and launch information to the IUA Authorization Server and receives JWT access token.   
 **Actor:** IUA Authorization Server  
-**Role:** Identifies the Authorization Client, authorizes the acces on behalf of the user, verifies claims and the authenticated user and responds a JWT Access Token to the IUA Authorization Client to be incorporated into the transactions to access protected ressources.  
+**Role:** Identifies the Authorization Client, authorizes the access on behalf of the user, verifies claims and the authenticated user and responds a JWT Access Token to the IUA Authorization Client to be incorporated into the transactions to access protected resources.  
 
 ### Referenced Standards
 
@@ -34,16 +34,16 @@ OAuth 2.1 authorization code grant flow of the IUA Get Access Token transaction:
 {:class="table table-bordered"}
 | Step                                                                                                               | Parameter             | Opt (Basic/ Extended). | Reference     | Remark                                                                                                                                                                                                                             |
 |--------------------------------------------------------------------------------------------------------------------|-----------------------|------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| The mHealth App sends a HTTP GET request to the IUA Authorization Server endpoint.                                 | response_type         | R                      | IUA           | The value SHALL be code.                                                                                                                                                                                                            |
+| The mHealth App sends an HTTP GET request to the IUA Authorization Server endpoint.                                | response_type         | R                      | IUA           | The value SHALL be code.                                                                                                                                                                                                            |
 |                                                                                                                    | client_id             | R                      | IUA           | The ID, the Authorization Client is registered at the IUA Authorization Server<sup><a href="#2">2</a></sup>.                                                                                                                                                                  |
 |                                                                                                                    | redirect_uri          | R                      | IUA / SMART on FHIR  | Used as the callback URL the IUA Authorization Server will send the authorization code to. The URL SHALL match one of the client's pre-registered redirect URIs.                                                                                                                                                  |
-|                                                                                                                    | state                 |  R                      | IUA | An unguessable value used by the client to track the state between the authorization request and the callback.                                                                                                                                                                                                                                   |
+|                                                                                                                    | state                 | R                      | IUA | An unguessable value used by the client to track the state between the authorization request and the callback.                                                                                                                                                                                                                                   |
 |                                                                                                                    | scope                 | R                      | IUA / SMART on FHIR | Attributes the Authorization Client claims (see detailed description below).                                                                                                                                                                        |
 |                                                                                                                    | aud                   | R                      | SMART on FHIR | The URL or array of URL of the Ressource Servers the token is intended to be used for.                                                                                                                                                                                       |
-|                                                                                                                    | launch                | R                    | SMART on FHIR | An opaque identifier which indicates that a SMART on FHIR App was launched from a portal or primary system which is authorized to access the Swiss EPR as EHR launch.         |
+|                                                                                                                    | launch                | R                      | SMART on FHIR | An opaque identifier which indicates that a SMART on FHIR App was launched from a portal or primary system which is authorized to access the Swiss EPR as EHR launch.         |
 |                                                                                                                    | code_challenge        | R                      | IUA           | Transformed version of code_verifier with code_challenge_method                                                                                                                                                                    |
 |                                                                                                                    | code_challenge_method | R                      | IUA           | SHALL be “S256”.                                                                                                                                                                                                                   |
-| The Authorization Server performs a HTTP GET on the callback URL (redirect_uri) conveying the authorization code.  | code                  | R                      | IUA           | The authorization code generated by the Authorization Server.                                                                                                                                                                      |
+| The Authorization Server performs an HTTP GET on the callback URL (redirect_uri) conveying the authorization code. | code                  | R                      | IUA           | The authorization code generated by the Authorization Server.                                                                                                                                                                      |
 |                                                                                                                    | state                 | R                      | IUA           | The unguessable value used by the client to track the state between the authorization request and the callback.                                                                                                                     |
 | The app performs an HTTP POST with parameter                                                                       | client_id             | R                      | IUA           | The ID the Authorization Client is registered at the IUA Authorization Server<sup><a href="#2">2</a></sup>.                                                                                                                                                                   |
 | as a form-encoded HTTP entity body, passing its                                                                    | redirect_uri          | R                      | IUA           | The URI to redirect the apps user agent to.                                                                                                                                                                                        |
@@ -103,7 +103,7 @@ In the healthcare professional extension, the scope subject_role SHALL be the co
 
 ##### Assistant Extension
 In the assistant extension, the scope subject_role SHALL be the code ASS from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. There SHALL be a scope with name principal_id=value. The value SHALL convey the GLN of the healthcare professional an assistant is acting on behalf of. There SHALL be a scope with name principal=value. The value SHALL convey the name of the healthcare professional an assistant is acting on behalf of.
-There MAY be one or more scopes with name group_id=value and corresponding group=value. If present each value SHALL convey the ID and name of the subject’s organization or group as registered in the EPR HPD. The ID SHALL be an OID in the format of an URN.
+There MAY be one or more scopes with name group_id=value and corresponding group=value. If present each value SHALL convey the ID and name of the subject’s organization or group as registered in the EPR HPD. The ID SHALL be an OID in the format of a URN.
 
 ##### 	Patient Extension
 In the patient extension, the scope subject_role SHALL be the code PAT from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. The value of the purpose of use scope SHALL be the code NORM from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.
@@ -148,9 +148,9 @@ The Authorization Server and Resource Server SHALL support the following extensi
 
 The Authorization Server and Resource Server SHALL support the following extensions to the JWT access token for a list of groups a subject is member of:
 -	name: Name of the organization/group. The name SHALL be a string. 
--	id: The id of the organization/group.The id SHALL be an OID in the format of an URN
+-	id: The id of the organization/group.The id SHALL be an OID in the format of a URN
 
-The ch_group extension claims shall be wrapped in an "extensions" object with key 'ch_group’ and a JSON array containing the JSON objects with properties name and id. The id SHALL be an OID in the format of an URN. 
+The ch_group extension claims shall be wrapped in an "extensions" object with key 'ch_group’ and a JSON array containing the JSON objects with properties name and id. The id SHALL be an OID in the format of a URN. 
 
 {:class="table table-bordered"}
 | ch_group array element | Optionality | XUA Attribute EPR                                   | Remark                                                                                                                                          |
@@ -216,7 +216,7 @@ The IUA Authorization Server SHALL store the access token and the assigned autho
 
 #### Request
 
-The first step of the conversation is a HTTP GET which may look like for a Basic Access Token: 
+The first step of the conversation is an HTTP GET which may look like for a Basic Access Token: 
 
 ```
 GET authorize?
@@ -244,13 +244,13 @@ GET authorize?
     code_challenge_method=S256
 ```
 
-The second step of the conversation is a HTTP GET Callback conveying the authorization code and may look like: 
+The second step of the conversation is an HTTP GET Callback conveying the authorization code and may look like: 
 
 ```
 GET /callback?code=8V1pr0rJ&state=98wrghuwuogerg97
 ```
 
-The third step of the conversation is a HTTP POST sending the authorization code to retrieve the authorization token in the response which may look like: 
+The third step of the conversation is an HTTP POST sending the authorization code to retrieve the authorization token in the response which may look like: 
 
 ```
 POST /token HTTP/1.1 

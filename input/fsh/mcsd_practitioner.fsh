@@ -47,7 +47,7 @@ Title:    "LDAP schema"
 Instance: CHmCSDPractitionerDrPeterPan
 InstanceOf: CHmCSDPractitioner
 Title: "CH mCSD Practitioner Dr. Peter Pan"
-Description: "An exemple of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
+Description: "An example of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
 (uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)"
 * id = "DrPeterPan"
 * identifier[+].system = "urn:oid:2.51.1.3"

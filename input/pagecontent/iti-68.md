@@ -28,7 +28,7 @@ This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://hl7.org/fhi
 The Document Consumer wants to obtain a document. 
 
 ### Message Semantics
-The Document Consumer sends a HTTP GET **request** to the server.
+The Document Consumer sends an HTTP GET **request** to the server.
 
 ### Security Consideration
 
