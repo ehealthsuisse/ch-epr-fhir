@@ -1,3 +1,7 @@
+### DSTU3 Informative Ballot 2023 - Resolved Issues
+
+* Disallow non-contained Patient resources in ITI-65 requests [#75](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/75)
+
 ### DSTU3 Informative Ballot 2023 - Raised Issues
 
 The implementation guide was under an informative ballot by HL7 Switzerland until September 30th, 2023. The following comments have been raised
