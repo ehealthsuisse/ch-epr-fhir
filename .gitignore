@@ -6,3 +6,4 @@ template/**
 .vscode/**
 *.jar
 fsh-generated/**
+.DS_Store
