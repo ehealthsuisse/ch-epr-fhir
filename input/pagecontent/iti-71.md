@@ -10,7 +10,7 @@ Depending on the claims made by the IUA Authorization Client, two different flav
 
 Once the IUA Authorization Client is authorized, it may launch SMART on FHIR Apps using the EHR Launch Sequence. In this case, the SMART on FHIR Apps inherit the basic access authorization from the launching app<sup><a href="#1">1</a></sup> and may retrieve Extended Access Token for EPR endpoints protected by the EPR role and attribute based authorization (e.g. to retrieve documents).
 
-<sup id="1">1</sup>By claiming a launch indicator, the launch is indicated as a SMART EHR Launch, initiated from a portal or primary system, which has been authorized before.
+<sup id="1">1</sup>By claiming a launch indicator, the launch is indicated as a SMART EHR Launch, initiated from a portal or primary system, which has been authorized to access on behalf of the user by the community during onboarding.
 
 ### Actor Roles
 
@@ -22,7 +22,7 @@ Once the IUA Authorization Client is authorized, it may launch SMART on FHIR App
 ### Referenced Standards
 
 This national extension does not reference additional standards to the standards referenced in the Get Access Token [ITI-71] transaction of the IUA Trial Implementation.  
- 
+
 ### Messages
 
 OAuth 2.1 authorization code grant flow of the of the IUA Get Access Token transaction:
@@ -83,8 +83,6 @@ The following table summarizes the requirements on the scope parameter used to c
 <sup id="3">3</sup>Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
 
 <figcaption ID="6">Overview of the request’s scope parameter. For the explanation see the following sections.</figcaption>  
-  
-
 
 
 The scope parameter of the request MAY claim the following attributes:
@@ -114,7 +112,7 @@ The response SHALL either convey a Basic Access Token in JWT format, granting ba
 
 ##### JSON Web Token Option
 
-The Authorization Server and Resource Server SHALL support the 3.71.4.2.2.1.1 JWT IUA extension with the following claims as defined in Table <a href="#jwttiua">below</a>.
+The Authorization Server and Resource Server SHALL support the IUA JWT extension with the following claims as defined in Table <a href="#jwttiua">below</a>.
 
 The claim content for the JWT IUA extensions SHALL correspond to the content defined in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 
@@ -131,7 +129,7 @@ The claim content for the JWT IUA extensions SHALL correspond to the content def
 ##### The JWT ch_epr extension 
 
 The Authorization Server and Resource Server SHALL support the following extensions to the JWT access token for an EPR user:
--	user_id: subject identifier according to Annex 5 E1 1.6.4.3.4.2 Message Semantics.
+-	user_id: subject identifier according to Annex 5 E1, section 1.6.4.3.4.2 Message Semantics.
 
 {:class="table table-bordered"}
 | JWT Claim (Extension) | Optionality | XUA Attribute EPR                  | Remark                                                                   |
