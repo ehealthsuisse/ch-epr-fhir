@@ -1,3 +1,10 @@
+### DSTU3 Informative Ballot
+
+### Added
+
+* Missing Swiss specific PDQ V3 Error message in PDQm [#80](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/80)
+
+
 ### DSTU3 Informative Ballot 2023 - Raised Issues
 
 The implementation guide was under an informative ballot by HL7 Switzerland until September 30th, 2023. The following comments have been raised
