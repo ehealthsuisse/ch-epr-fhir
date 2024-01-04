@@ -213,41 +213,41 @@ The IUA Authorization Server SHALL store the access token and the assigned autho
 
 #### Request
 
-The first step of the request conversion is a HTTP GET which may look like for a Basic Access Token: 
+The first step of the conversation is a HTTP GET which may look like for a Basic Access Token: 
 
 ```
 GET authorize?
     response_type=code&
     client_id=app-client-id&
-    http%3A%2F%2Flocalhost%3A9000%2Fcallback&
+    redirect_uri=http%3A%2F%2Flocalhost%3A9000%2Fcallback&
     launch=xyz123&
-    scope=launch+user%2F%2A.%2A+openid+fhirUser&state=98wrghuwuogerg97&aud=https%3A%2F%2Fehr%2Ffhir&code_challenge=ZmVjMmIwMWYyYTNjZWJiNTgyNTgxYzlmOGYyMWM0MWI3YmZhMjQ4YjU5MDc3Mzk4MDBmYTk0OThlNzZiNjAwMw&code_challenge_method=S256 HTTP/1.1
-
-Host: localhost:9001
+    scope=launch+user%2F%2A.%2A+openid+fhirUser&
+    state=98wrghuwuogerg97&
+    aud=https%3A%2F%2Fehr%2Ffhir&
+    code_challenge=ZmVjMmIwMWYyYTNjZWJiNTgyNTgxYzlmOGYyMWM0MWI3YmZhMjQ4YjU5MDc3Mzk4MDBmYTk0OThlNzZiNjAwMw&
+    code_challenge_method=S256
 ```
 
-for an extended access token where at least purpose_of_use (NORM), subject_role (HCP) and person_id are added to the scope:
+An extended access token where at least purpose_of_use (NORM), subject_role (HCP) and person_id are added to the scope may look like:
 
 ```
 GET authorize?
     response_type=code&
     client_id=app-client-id&
-    http%3A%2F%2Flocalhost%3A9000%2Fcallback&
+    redirect_uri=http%3A%2F%2Flocalhost%3A9000%2Fcallback&
     launch=xyz123&
-    scope=launch+user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CNORM+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CHCP+person_id%3D761337610411353650%5E%5E%5E%26amp%3B2.16.756.5.30.1.127.3.10.3%26amp%3BISO%0A&code_challenge=ZmVjMmIwMWYyYTNjZWJiNTgyNTgxYzlmOGYyMWM0MWI3YmZhMjQ4YjU5MDc3Mzk4MDBmYTk0OThlNzZiNjAwMw&code_challenge_method=S256 HTTP/1.1
-
-Host: localhost:9001
+    scope=launch+user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CNORM+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CHCP+person_id%3D761337610411353650%5E%5E%5E%26amp%3B2.16.756.5.30.1.127.3.10.3%26amp%3BISO%0A&
+    code_challenge=ZmVjMmIwMWYyYTNjZWJiNTgyNTgxYzlmOGYyMWM0MWI3YmZhMjQ4YjU5MDc3Mzk4MDBmYTk0OThlNzZiNjAwMw&
+    code_challenge_method=S256
 ```
 
-The second step of the request conversion is a HTTP GET Callback conveying the authorization code and may look like: 
+The second step of the conversation is a HTTP GET Callback conveying the authorization code and may look like: 
 
 ```
-GET /callback?code=8V1pr0rJ&state=98wrghuwuogerg97 HTTP/1.1 
-
-Host: localhost:9000
+GET /callback?code=8V1pr0rJ&state=98wrghuwuogerg97
 ```
 
-The third step of the request conversion is a HTTP POST sending the authorization code to retrieve the authorization token in the response which may look like: 
+The third step of the conversation is a HTTP POST sending the authorization code to retrieve the authorization token in the response which may look like: 
 
 ```
 POST /token HTTP/1.1 
@@ -256,7 +256,10 @@ Host: localhost:9001
 Accept: application/json
 Content-type: application/x-www-form-encoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
-grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A9000%2Fcallback&code=98wrghuwuogerg97&code_verifier=qskt4342of74bkncmicdpv2qd143iqd822j41q2gupc5n3o6f1clxhpd2x11
+grant_type=authorization_code&
+redirect_uri=http%3A%2F%2Flocalhost%3A9000%2Fcallback&
+code=98wrghuwuogerg97&
+code_verifier=qskt4342of74bkncmicdpv2qd143iqd822j41q2gupc5n3o6f1clxhpd2x11
 ```
 
 #### Response
