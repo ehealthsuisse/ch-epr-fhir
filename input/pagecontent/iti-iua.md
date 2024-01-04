@@ -3,11 +3,11 @@ This section specifies Swiss national extensions to Internet User Authorization 
 ### Scope  
 This profile provides means to retrieve EPR compliant access token and to incorporate the access token to transactions to authorize client applications when accessing protected resources. 
 
-This profile is based on the IHE IUA Trial Implementation and adds certain restrictions to be compliant to the ordinances of the Swiss EPR. 
+This profile is based on the IUA Trial Implementation and adds certain restrictions to be compliant to the ordinances of the Swiss EPR. 
 
-The scope of this profile is limited to primary systems and portals and the following options for native mobile clients present in the IUA Trial Implementation are not supported:
- * SMART on FHIR App launch of standalone Apps without a launch context. 
- * Client Authorization by User Consent at application launch.
+The scope of this national expension is limited to provide FHIR based interfaces for primary systems and portals connected to the Swiss EPR. This national extension is currently not scoped for native mobile clients. This profile therefore adds the following restrictions to the IUA Trial Implementation:
+ * SMART on FHIR Apps launched from portals and primary systems require a launch context identifying the portal or primary system. 
+ * Only portals and primary systems registered in the community during the onboarding process may retrieve an authorization token. The Client Authorization by User Consent method of the IUA Trial Implementation SHALL NOT be supported.
 
 For further restrictions on transactions and security consideration, see below. 
 
@@ -45,12 +45,21 @@ The IUA Authorization Server verfies that the patient or healthcare professional
 
 The IUA Authorization Server responds an IUA Authorization Token the SMART on FHIR App shall incorporate to any transaction to retrieve the data and documents from the patients EPR.
 
-
 ### Actors and Transactions   
-No extensions or restrictions to the IUA actors and transactions are specified in the Swiss national extension. 
 
-### Actor Options  
-This national extension restricts the IUA options to the Authorization Server Metadata and JWT Token option. The SAML Token and Token Introspection optios of the IHE IUA Trial Implementation SHALL not be used. 
+This national extension enhance the requirements on transactions and the expected actions of the Actors of the IUA Trial Implementation to comply to the legal requirements of the Swiss EPR.
+
+The scope of this national extension is limited to portals and primary systems to comply with ordinances of the Swiss EPR. This national extension is currently not scoped for native mobile clients. Therefore the Client Authorization by User Consent method SHALL NOT be supported. 
+
+Portals and primary systems SHALL be identified and authorized either on the TLS connection level or by digital signatures of the messages exchanged, or both. See section Expected Actions of the [Get Access Token transaction](iti-71.html#expected-actions-iua-authorization-server) for further details. 
+
+### Actor Options 
+
+This national extension restricts the Actor options of the IUA Trial Implementation to comply to the legal requirements of the Swiss EPR.
+
+Th IUA Trial Implementation supports three options for the Autorization Token format; the JWT Token, the SAML Token and the Token Introspection option. Since this national extension will apply to cross community communication, the Token Introspection Option SHALL NOT be used. 
+
+This national extension intends to simplify and modernize the technologies used to connect to the Swiss EPR. The legacy SAML Token option SHALL NOT be used. To support automated client configuration the Authorization Server actor SHALL support the Autorization Metadata option.  
 
 ### Grouping  
 The Swiss national extension does not define requirements on the grouping of actors in this profile, which extend or restrict the grouping required from the IUA profile. 
