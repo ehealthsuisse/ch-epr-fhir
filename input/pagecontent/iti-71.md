@@ -25,7 +25,7 @@ This national extension does not reference additional standards to the standards
 
 ### Messages
 
-OAuth 2.1 authorization code grant flow of the of the IUA Get Access Token transaction:
+OAuth 2.1 authorization code grant flow of the IUA Get Access Token transaction:
 
 <div>{% include IUA_ActorDiagram_ITI-71.svg %}</div>
 
