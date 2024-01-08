@@ -463,8 +463,8 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                 <generation value="markdown"/>
             </page>
             <page>
-                <nameUrl value="profiles.html"/>
-                <title value="Profiles"/>
+                <nameUrl value="volume1.html"/>
+                <title value="Volume 1"/>
                 <generation value="markdown"/>
                 <page>
                     <nameUrl value="iti-iua.html"/>
@@ -498,9 +498,9 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                 </page>
             </page>
             <page>
-                <title value="Transactions"/>
+                <title value="Volume 2"/>
                 <generation value="markdown"/>
-                <nameUrl value="transactions.html"/>
+                <nameUrl value="volume2.html"/>
                 <page>
                     <nameUrl value="iti-71.html"/>
                     <title value="Get Access Token [ITI-71]"/>
@@ -562,6 +562,11 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                 <generation value="markdown"/>
                 <nameUrl value="appendix.html"/>
                 <page>
+                    <nameUrl value="profiles.html"/>
+                    <title value="Profiles"/>
+                    <generation value="markdown"/>
+                </page>
+                    <page>
                     <nameUrl value="extensions.html"/>
                     <title value="Extensions"/>
                     <generation value="html"/>

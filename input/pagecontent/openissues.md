@@ -1,9 +1,9 @@
-### DSTU3 Informative Ballot
+### DSTU3 Informative Ballot 2023 - Resolved Issues
 
 ### Added
 
 * Missing Swiss specific PDQ V3 Error message in PDQm [#80](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/80)
-
+* Disallow non-contained Patient resources in ITI-65 requests [#75](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/75)
 
 ### DSTU3 Informative Ballot 2023 - Raised Issues
 

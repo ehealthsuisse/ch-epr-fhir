@@ -3,7 +3,7 @@
         <a href="index.html">Home</a>
     </li>
     <li class="Profiles">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1
             <b class="caret">
             </b>
         </a>
@@ -29,7 +29,7 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Transactions
+        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2
             <b class="caret">
             </b>
         </a>
@@ -75,6 +75,9 @@
             </b>
         </a>
         <ul class="dropdown-menu">
+            <li>
+                <a href="profiles.html">Profiles</a>
+            </li>
             <li>
                 <a href="extensions.html">Extensions</a>
             </li>
