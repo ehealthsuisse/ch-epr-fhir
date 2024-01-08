@@ -2,7 +2,7 @@ This section documents additional requirements in the Swiss EPR context on the M
 
 ### Scope
 The Mobile Patient Demographics Query is used by an app in the Swiss EPR to query with demographics parameters for
-a patient pariticipating in the Swiss EPR.
+a patient participating in the Swiss EPR.
 
 ### Actor Roles
 **Actor:** Patient Demographics Consumer   
@@ -22,16 +22,25 @@ This PDQm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://h
 A mobile app wants to query patients, which participate in the Swiss EPR.
 
 ### Message Semantics
-The message semantics is the same as defined in [2:3.78.4.1.2](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#2378412-message-semantics) with a restriction if there are more than 5 matches. If there are more than 5 matches, the result should return zero matches.
+The message semantics is the same as defined in [2:3.78.4.1.2](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#2378412-message-semantics) with a restriction if there are more than 5 matches. If there are more than 5 matches, the result should return zero matches with an OperationOutcome requesting more query parameters.
 
 ### Message Example
+
 Query for a patient with name Muster and birthdate 1995-01-27. 
 
 ```
 GET [base]/Patient?name=Muster&birthdate=1995-01-27
 Accept: application/fhir+json; fhirVersion=4.0
 ```
-[Example response to above query](Bundle-PDQm-Response.json.html)
+[Example response to above query](Bundle-PDQm-QueryResponse.json.html)
+
+Query for a patient with name M returning too many results: 
+
+```
+GET [base]/Patient?name=M
+Accept: application/fhir+json; fhirVersion=4.0
+```
+[Example response to above query](Bundle-PDQm-QueryResponseTooManyResults.json.html)
 
 ### Security Consideration
 
