@@ -1,5 +1,6 @@
 ### DSTU3 Informative Ballot 2023 - Resolved Issues
 
+* PDQm Query: the telecom search parameter shall not be used [#117](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/117)
 * Add CapabilityStatements for the RESTful ATNA profile [#107](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/107)
 * The targetSystem in PIXm queries shall be the MPI-PID and the EPR-SPID [#112](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/112)
 * Remove URN-prefix in AuditEvent.source.site [#108](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/108)
