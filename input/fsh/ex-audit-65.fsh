@@ -11,7 +11,7 @@ Usage: #example
 * recorded = 2020-06-29T12:01:30+00:00
 * outcome = http://terminology.hl7.org/CodeSystem/audit-event-outcome#0 "Success"
 * purposeOfEvent = urn:oid:2.16.756.5.30.1.127.3.10.5#NORM "Normal Access"
-* source.site = "urn:oid:1.3.6.1.4.1.12559.11.13.2.5"
+* source.site = "1.3.6.1.4.1.12559.11.13.2.5"
 * source.observer.display = "ihe-sourceId"
 * source.type = http://terminology.hl7.org/CodeSystem/security-source-type#1 "User Device"
 // documentSender
