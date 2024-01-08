@@ -27,7 +27,7 @@ The message semantics is the same as defined in [2:3.83.4.1.2](https://profiles.
 Parameter:
 
 ```
-GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]{&targetSystem=[uri]}{&_format=[token]}
+GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]&targetSystem=[uri]{&_format=[token]}
 ```
 <div><figcaption>$ihe-pix Message HTTP query Parameters</figcaption></div>  
 
@@ -36,7 +36,7 @@ GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]{&targetSystem=[uri]}{&_form
 | --- | --- | --- | --- | --- |
 | **Input Parameters** |||||
 | sourceIdentifier | 1..1 | token | The Patient identifier search parameter that will be used by the Patient Identifier Cross-reference Manager to find cross matching identifiers associated with the Patient Resource. See Section [2:3.83.4.1.2.1](https://profiles.ihe.net/ITI/PIXm/ITI-83.html#23834121-source-patient-identifier-parameter). | No further refinement. |
-| targetSystem | **1..2** | uri | The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section [2:3.83.4.1.2.2](https://profiles.ihe.net/ITI/PIXm/ITI-83.html#23834122-requesting-patient-identifier-domains-to-be-returned). | SHALL be Restricted to the Assigning authority of the community and/or the EPR-SPID. |
+| targetSystem | **2..2** | uri | The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section [2:3.83.4.1.2.2](https://profiles.ihe.net/ITI/PIXm/ITI-83.html#23834122-requesting-patient-identifier-domains-to-be-returned). | SHALL be the Assigning authority of the community and the EPR-SPID. |
 | _format | 0..1 | token | The requested format of the response from the mime-type value set. See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html). | No further refinement. |
 
 <div><figcaption>$ihe-pix Message response</figcaption></div>  
