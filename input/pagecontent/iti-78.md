@@ -22,7 +22,7 @@ This PDQm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://h
 A mobile app wants to query patients, which participate in the Swiss EPR.
 
 ### Message Semantics
-The message semantics is the same as defined in [2:3.78.4.1.2](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#2378412-message-semantics) with a restriction if there are more than 5 matches. If there are more than 5 matches, the result should return zero matches.
+The message semantics is the same as defined in [2:3.78.4.1.2](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#2378412-message-semantics) with a restriction if there are more than 5 matches. If there are more than 5 matches, the result should return zero matches with an OperationOutcome requesting more query parameters.
 
 ### Message Example
 
