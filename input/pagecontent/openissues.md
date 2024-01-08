@@ -1,5 +1,6 @@
 ### DSTU3 Informative Ballot 2023 - Resolved Issues
 
+* The targetSystem in PIXm queries shall be the MPI-PID and the EPR-SPID [#112](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/112)
 * Remove URN-prefix in AuditEvent.source.site [#108](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/108)
 * Add missing mCSD CapabilityStatement imports in mHealth App and API [#70](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/70)
 * PDQm Supplier actor name misspelled in mHealth API CapabilityStatement [#87](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/87)

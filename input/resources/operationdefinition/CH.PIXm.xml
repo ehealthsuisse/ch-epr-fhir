@@ -35,7 +35,7 @@
     <parameter>
         <name value="targetSystem"/>
         <use value="in"/>
-        <min value="1"/>
+        <min value="2"/>
         <max value="2"/>
         <documentation value="The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section 3.83.4.1.2.2."/>
         <type value="string" />

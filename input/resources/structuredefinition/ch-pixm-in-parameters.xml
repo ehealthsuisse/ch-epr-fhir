@@ -79,7 +79,7 @@
       <path value="Parameters.parameter" />
       <sliceName value="targetSystem" />
       <short value="targetSystem"/>
-      <min value="1"/>
+      <min value="2"/>
       <max value="2"/>
     </element>
     <element id="Parameters.parameter:targetSystem.name">
