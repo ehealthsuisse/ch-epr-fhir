@@ -15,7 +15,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="The patient demographics and identifier information which can be provided in the PIXm Feed according to the EPR. If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID as an identifier MAY be added. The birthname can be added with the  ISO 21090 qualifier extension."/>
+    <description value="The patient demographics and identifier information which can be provided in the PIXm Feed according to the EPR. The EPR-SPID as an identifier SHALL be added. The birthname can be added with the ISO 21090 qualifier extension."/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -52,13 +52,13 @@
                 </discriminator>
                 <rules value="open" />
             </slicing>
-            <min value="1"/>
+            <min value="2"/>
             <mustSupport value="true" />
         </element>
         <element id="Patient.identifier:EPR-SPID">
             <path value="Patient.identifier"/>
             <sliceName value="EPR-SPID"/>
-            <min value="0"/>
+            <min value="1"/>
             <max value="1"/>
             <mustSupport value="true" />
         </element>
