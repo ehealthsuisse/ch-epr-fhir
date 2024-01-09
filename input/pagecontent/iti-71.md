@@ -176,9 +176,7 @@ The claim content for the JWT CH:EPR extensions shall correspond to the content 
 ### Expected Actions IUA Authorization Client
 The IUA Authorization Client SHALL support the HTTP conversation of the OAuth 2.1 Authorization Code grant as follows:
 
-When launched, the IUA Authorization Client SHALL perform HTTP GET request with the URL query parameter as defined in [Table](#5) and with the scope claims described in [Table](#6). 
-
---- TODO: add Message signature (MAC)
+When launched, the IUA Authorization Client SHALL perform HTTP GET request with the URL query parameter as defined in [Table](#5) and with the scope claims described in [Table](#6).
 
 If the IUA Authorization Client receives the request from the IUA Authorization Server on the callback URL conveying the authorization code, it SHALL perform the HTTP POST request with the client_id and client_secret in the HTTP authorization header to resolve the authorization code to the access token.  
 
