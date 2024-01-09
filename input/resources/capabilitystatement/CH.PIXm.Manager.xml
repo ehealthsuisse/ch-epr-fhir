@@ -28,7 +28,7 @@
         </security>
         <resource>
             <type value="Patient"/>
-            <supportedProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
+            <supportedProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient-feed"/>
             <interaction>
                 <code value="update"/>
                 <documentation value="conditional update for [ITI-104]"/>

@@ -95,7 +95,7 @@
             </reference>
             <name value="Patient PIXm Feed"/>
             <description value="Example PIXm Patient for Feed"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient-feed"/>
         </resource>
         <resource>
             <reference>
@@ -103,7 +103,7 @@
             </reference>
             <name value="Franz Muster Needs Absolute Url"/>
             <description value="Example Patient"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-patient"/>
         </resource>
         <resource>
             <reference>
@@ -112,7 +112,7 @@
             <name value="GruppenpraxisCH"/>
             <description value="Example Organization"/>
             <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-provider-organization"/>
+                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-provider-organization"/>
         </resource>
         <resource>
             <reference>
@@ -278,13 +278,19 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ch-pixm-patient"/>
+                <reference value="StructureDefinition/ch-pdqm-patient"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ch-pixm-provider-organization"/>
+                <reference value="StructureDefinition/ch-pixm-patient-feed"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-pdqm-provider-organization"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
