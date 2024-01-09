@@ -1,0 +1,6 @@
+@startuml
+title RESTful ATNA Actor Diagram
+agent "Any Actor grouped with\nSecure Node or\nSecure Application" as Client
+agent "Audit Record Repository" as Server
+Client -down-> Server  : "[[iti-20.html ITI-20 Record Audit Event]]"
+@enduml

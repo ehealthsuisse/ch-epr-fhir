@@ -2,15 +2,13 @@
 
 title Interaction Diagram for [ITI-83]
 
-participant consumer as "Patient Identifier Cross-\nreference Consumer"
+hide footbox
+autoactivate on
+
+participant consumer as "Patient Identifier Cross-reference Consumer"
 participant manager as "Patient Identifier Cross-reference Manager"
 
 consumer -> manager : Get Corresponding Identifiers
-activate consumer
-activate manager
-
-manager -> consumer: Response
-deactivate manager
-deactivate consumer
+manager --> consumer: Response
 
 @enduml 

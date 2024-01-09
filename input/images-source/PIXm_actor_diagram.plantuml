@@ -1,0 +1,9 @@
+@startuml
+' https://github.com/IHE/ITI.PIXm/blob/master/input/images-source/ActorsAndTransactions.plantuml
+title PIXm Actor Diagram
+agent "Patient Identifier Cross-reference Consumer" as Consumer
+agent "Patient Identity Source" as Source
+agent "Patient Identifier Cross-reference Manager" as Manager
+Source -down-> Manager: "[[iti-104.html ITI-104 Patient Identity Feed FHIR]]"
+Consumer -down-> Manager : "[[iti-83.html ITI-83 Mobile Patient Identifier Cross-reference Query]]"
+@enduml

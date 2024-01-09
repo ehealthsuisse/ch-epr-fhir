@@ -9,18 +9,24 @@ A mHealth App wants to get data from the EPR. The mHealth App needs to know the 
 ###	Actors and Transactions, Content Specifications  
 This national extension adds restrictions to the correlation to other local identifiers, to the query results and a specific patient content profile is defined. Otherwise there are no extensions or restrictions to the profile actors and the transaction. 
 
+<div>
+{%include PIXm_actor_diagram.svg %}
+</div>
+This figure shows the actors directly involved in the _Patient Identifier Cross-referencing for mobile_ Profile and 
+the relevant transactions between them.
+
 ### Actor Options  
 No extensions or restrictions to the profile actor options are specified in the Swiss national extension. Support for the 'Remove Patient' option for Patient Identity Source and Patient Identifier Cross-reference Manager is not required. 
 
 ### Required Actor Grouping  
 This national extension enforces authentication and authorization for access control. Therefore actors of this profile must be grouped with actors of other profiles according to the following table: 
 
-{:class="table table-bordered"}
 | Actor                                         | Required Grouping         | Optionality |
 |-----------------------------------------------|---------------------------|-------------|
 | Patient Identifier   Cross-reference Manager  | IUA Resource Server       | R           |
 | Patient Identity Source                       | IUA Authorization Client  | R           |
 | Patient Identifier Cross-reference Consumer   | IUA Authorization Client  | R           |
+{:class="table table-bordered"}
 
 <figcaption ID="1">Table 1: Grouping of PIXm actors required by this national extension. </figcaption>
 

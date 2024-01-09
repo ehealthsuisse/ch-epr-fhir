@@ -1,4 +1,6 @@
-This section documents additional requirements in the Swiss EPR context on the _Request Care Services Updates_.
+This section describes the national extension for the Swiss EPR to the [Find Matching Care Services
+[ITI-90]](https://profiles.ihe.net/ITI/mCSD/ITI-90.html) transaction defined in the IUA profile published in the
+IHE IT Infrastructure Technical Framework Trial Implementation “Mobile Care Services Discovery”.
 
 ### Scope
 
@@ -16,8 +18,8 @@ It offers an alternative to the HPD ITI-58 transaction.
 
 ### Referenced Standards
 
-1. [IHE ITI Mobile Care Services Discovery (mCSD) 3.8.0](https://profiles.ihe.net/ITI/mCSD/3.8.0/)<br>
-2. [FHIR R4 API search](http://hl7.org/fhir/R4/http.html#search)<br>
+1. [IHE ITI Mobile Care Services Discovery (mCSD) 3.8.0](https://profiles.ihe.net/ITI/mCSD/3.8.0/)
+2. [FHIR R4 API search](http://hl7.org/fhir/R4/http.html#search)
 3. [EPR – Central Services, Interface Documentation v1.0.40](https://www.e-health-suisse.ch/en/technique/technical-interoperability/specifications-for-the-epr-implementation#CentServRes)
 
 ### Messages
@@ -30,15 +32,18 @@ The _Find Matching Care Services_ message is a FHIR search operation on the mCSD
 
 A _Care Services Selective Consumer_ initiates a search request using HTTP GET or POST:
 
-`GET [base]/[resource]?[parameters]`
+```
+GET [base]/[resource]?[parameters]
+```
 
 or
-<pre>
+
+```
 POST [base]/[resource]/_search
 Content-Type: application/x-www-form-urlencoded
 
 param1=value&param2=value
-</pre>
+```
 
 ##### Semantics
 
@@ -139,13 +144,27 @@ instance.
 - If the _Care Services Selective Supplier_ does not find the resource, `HTTP 404 Not Found` is returned with an
   **[OperationOutcome](https://www.hl7.org/fhir/r4/operationoutcome.html)** resource.
 
+#### CapabilityStatement Resource
+
+The CapabilityStatement resource for the **Care Services Selective Consumer** is
+[mCSD Care Services Selective Consumer](CapabilityStatement-CH.mCSD.CareServicesSelectiveConsumer.html).
+
+The CapabilityStatement resource for the **Care Services Selective Supplier** is
+[mCSD Care Services Selective Supplier](CapabilityStatement-CH.mCSD.CareServicesSelectiveSupplier.html).
+
 ### Security Considerations
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the _Care Services
 Selective Supplier_ using the IUA profile with basic access token. Consequently, the _Find Matching Care Services_
-[ITI-90] request must authorize using the _Incorporate Access Token_ [ITI-72] transaction of the IUA profile.
+[ITI-90] request must authorize using the [_Incorporate Access Token_ [ITI-72]](iti-72.html) transaction of the IUA profile.
 
-The actors involved shall record audit events according to the [Audit Event for Find Matching Care Services for Read by 
+#### Security Audit Considerations
+
+Note that the same audit message is recorded by both **Care Services Selective Supplier** and **Care Services 
+Selective Consumer**. The difference being the Audit Source element. Both sides record to show consistency between 
+the message sent by the Consumer and the action taken at the Supplier.
+
+The actors involved shall record audit events according to the [Audit Event for Find Matching Care Services for Read by
 the Care Services Selective Supplier and Consumer](https://profiles.ihe.net/ITI/mCSD/3.8.0/StructureDefinition-IHE.mCSD.Audit.CareServices.Read.html)
-or the [Audit Event for Find Matching Care Services for Query by the Care Services Selective Supplier and 
+or the [Audit Event for Find Matching Care Services for Query by the Care Services Selective Supplier and
 Consumer](https://profiles.ihe.net/ITI/mCSD/3.8.0/StructureDefinition-IHE.mCSD.Audit.CareServices.Query.html).

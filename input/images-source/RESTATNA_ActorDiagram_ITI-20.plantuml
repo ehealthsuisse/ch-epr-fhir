@@ -2,23 +2,16 @@
 
 title Interaction Diagram for [ITI-20]
 
+hide footbox
+autoactivate on
+
 participant consumer as "Secure Application\nSecure Node\nAudit Record Forwarder"
-participant responder as "Audit Record\nRepository"
+participant responder as "Audit Record Repository"
 
 consumer -> responder: Send Audit Resource Request
-activate consumer
-activate responder
-
-responder -> consumer: Send Audit Resource Response
-deactivate responder
-deactivate consumer
+responder --> consumer: Send Audit Resource Response
 
 consumer -> responder: Send Audit Bundle Request
-activate consumer
-activate responder
-
-responder -> consumer: Send Audit Bundle Response
-deactivate responder
-deactivate consumer
+responder --> consumer: Send Audit Bundle Response
 
 @enduml 

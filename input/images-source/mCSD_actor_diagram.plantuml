@@ -1,0 +1,7 @@
+@startuml
+' https://github.com/IHE/ITI.mCSD/blob/main/input/images-source/ActorsAndTransactions.plantuml
+title mCSD Actor Diagram
+agent "Care Services Selective Supplier" as SelectiveSupplier
+agent "Care Services Selective Consumer" as SelectiveConsumer
+SelectiveConsumer -down-> SelectiveSupplier : "[[iti-90.html ITI-90 Find Matching Care Services]]"
+@enduml

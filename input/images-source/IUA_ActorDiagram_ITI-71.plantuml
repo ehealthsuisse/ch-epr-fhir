@@ -9,6 +9,7 @@ participant "Authorization Client" as Client
 participant "Authorization Server" as AuthzServer
 
 autonumber 0 1 "<b>[00]</b>"
+autoactivate on
 
 group Get Access Token (ITI-71) [Authorization Code Grant]
 Client -> UserAgent: Redirect to Authorization Server \n(authorization request incl requested scopes, resource, etc.)

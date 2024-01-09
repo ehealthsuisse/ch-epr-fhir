@@ -9,6 +9,12 @@ No extensions or restrictions to the profile use cases are specified in the Swis
 ###	Actors and Transactions  
 No extensions or restrictions to the actors and transactions are specified in the Swiss national extension.
 
+<div>
+{%include MHD_actor_diagram.svg %}
+</div>
+This figure shows the actors directly involved in the _Mobile Access to Health Documents_ Profile and the relevant 
+transactions between them.
+
 ### Actor options  
 For all actors the Comprehensive Metadata Option and the XDS on FHIR Option SHALL be supported. For all actors the Metadata as defined in Annex 3 SHALL be supported.
 

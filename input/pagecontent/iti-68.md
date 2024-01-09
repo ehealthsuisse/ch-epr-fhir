@@ -1,6 +1,6 @@
-There are no additional requirements for the Swiss EPR extension of the Retrieve Document
-[ITI-68] transaction defined in the MHD Profile which is published in the IHE ITI Trial Implementation
-“Mobile Access to Health Documents”.
+This section describes the additional requirements for the Swiss EPR of the [Retrieve Document
+[ITI-68]](https://profiles.ihe.net/ITI/MHD/ITI-68.html) transaction defined in the MHD Profile published in the IHE ITI
+Trial Implementation “Mobile Access to Health Documents”.
 
 ### Scope
 
@@ -16,23 +16,40 @@ document from the Document Responder.
 
 ### Referenced Standards
 
-[Mobile access to Health Documents (MHD), Rev. 4.0.2 – Trial-Implementation,  November 8, 2021](https://profiles.ihe.net/ITI/MHD/index.html) 
-This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
+1. [Mobile access to Health Documents (MHD), Rev. 4.0.2 – Trial-Implementation,  November 8, 2021](https://profiles.ihe.net/ITI/MHD/index.html) 
+2. This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
 
 ### Messages
 
 <div>{% include MHD_ActorDiagram_ITI-68.svg %}</div>
 
-### Trigger Events
+#### Retrieve Document Request Message
 
-The Document Consumer wants to obtain a document. 
+#### Retrieve Document Response Message
 
-### Message Semantics
-The Document Consumer sends an HTTP GET **request** to the server.
+#### CapabilityStatement Resource
+
+The CapabilityStatement resource for the **Document Consumer** is [MHD Document Consumer](CapabilityStatement-CH.MHD.DocumentConsumer.html).
+
+The CapabilityStatement resource for the **Document Responder** is [MHD Document Responder](CapabilityStatement-CH.MHD.DocumentResponder.html).
 
 ### Security Consideration
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Document Responder using the IUA profile with extended access token. Consequently
-the Retrieve Document [ITI-68] request must authorize using the Incorporate Access Token [ITI-72]
+the _Retrieve Document_ [ITI-68] request must authorize using the [_Incorporate Access Token_ [ITI-72]](iti-72.html)
 transaction of the IUA profile.
+
+#### Security Audit Considerations
+
+##### Document Consumer Audit
+
+The **Document Consumer** shall be able to record a
+[Retrieve Document Consumer Audit Event Log](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Consumer.html).
+[Audit Example for a Retrieve Document transaction from consumer perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditRetrieveDocument-consumer.html).
+
+##### Document Responder Audit
+
+The **Document Responder** shall be able to record a
+[Retrieve Document Responder Audit Event Log](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Responder.html).
+[Audit Example for a Find Document Lists Transaction from responder perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditRetrieveDocument-responder.html).

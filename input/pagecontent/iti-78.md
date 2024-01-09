@@ -1,4 +1,6 @@
-This section documents additional requirements in the Swiss EPR context on the Mobile Patient Demographics Query.
+This section describes the national extension for the Swiss EPR to the [Mobile Patient Demographics Query
+[ITI-78]](https://profiles.ihe.net/ITI/PDQm/ITI-78.html) transaction defined in the IUA profile published in the 
+IHE IT Infrastructure Technical Framework Trial Implementation “Patient Demographics Query for mobile”.
 
 ### Scope
 The Mobile Patient Demographics Query is used by an app in the Swiss EPR to query with demographics parameters for
@@ -11,39 +13,38 @@ a patient participating in the Swiss EPR.
 **Role:** Returns demographic information for all patients matching the demographics criteria provided by the Patient Demographics Consumer   
 
 ### Referenced Standards
-[IHE Patient Demographics Query for Mobile Rev. 3.0.0: Trial Implementation) based on FHIR R4. Patient Identifier Cross-referencing for mobile (PIXm), Rev. 3.0.0 – Trial-Implementation, Februar 28, 2022](https://profiles.ihe.net/ITI/PDQm/index.html)  
-This PDQm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
+
+1. [IHE Patient Demographics Query for Mobile Rev. 3.0.0: Trial Implementation) based on FHIR R4. Patient Identifier Cross-referencing for mobile (PIXm), Rev. 3.0.0 – Trial-Implementation, Februar 28, 2022](https://profiles.ihe.net/ITI/PDQm/index.html)
+2. This PDQm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
 
 ### Messages
 
 <div>{% include PDQm_ActorDiagram_ITI-78.svg %}</div>
 
-### Trigger Events
-A mobile app wants to query patients, which participate in the Swiss EPR.
+#### Query Patient Resource message
 
-### Message Semantics
+##### Message Semantics
 
-The semantics of the _Query Patient Resource_ message is the same as defined in 
+The semantics of the _Query Patient Resource_ message is the same as defined in
 [2:3.78.4.1.2](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#2378412-message-semantics), with the following restrictions:
 
 - The `telecom` search parameter SHALL NOT be used.
 
-### Expected Actions
+##### Expected Actions
 
 The _Patient Demographics Supplier_ shall follow the expected actions as defined in
 [2:3.78.4.1.3](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#2378413-expected-actions), with the following restrictions:
 
-- If there are more than 5 matches, the result should return zero matches with an OperationOutcome requesting more 
+- If there are more than 5 matches, the result should return zero matches with an OperationOutcome requesting more
   query parameters.
 
 The patient data (see [Patient example](Patient-FranzMusterNeedsAbsoluteUrl.html)) SHALL conform to the [PDQm Patient profile](StructureDefinition-ch-pdqm-patient.html).
-The _Patient Demographics Supplier_ SHALL reference the _PDQm Patient_ profile or a derived constrained profile as a 
+The _Patient Demographics Supplier_ SHALL reference the _PDQm Patient_ profile or a derived constrained profile as a
 `supportedProfile` in the CapabilityStatement.
 
+##### Message Example
 
-### Message Example
-
-Query for a patient with name Muster and birthdate 1995-01-27. 
+Query for a patient with name Muster and birthdate 1995-01-27.
 
 ```
 GET [base]/Patient?name=Muster&birthdate=1995-01-27
@@ -51,7 +52,7 @@ Accept: application/fhir+json; fhirVersion=4.0
 ```
 [Example response to above query](Bundle-PDQm-QueryResponse.json.html)
 
-Query for a patient with name M returning too many results: 
+Query for a patient with name M returning too many results:
 
 ```
 GET [base]/Patient?name=M
@@ -59,9 +60,44 @@ Accept: application/fhir+json; fhirVersion=4.0
 ```
 [Example response to above query](Bundle-PDQm-QueryResponseTooManyResults.json.html)
 
+#### Query Patient Resource Response message
+
+#### Retrieve Patient Resource message
+
+The Retrieve Patient Resource is conducted by executing an HTTP GET against the Patient Demographics Supplier’s 
+Patient Resource URL, providing the resource id of the patient being retrieved. The target is formatted as:
+
+```
+GET [base]/Patient/[resourceId]
+```
+
+#### Retrieve Patient Resource Response message
+
+#### CapabilityStatement Resource
+
+The CapabilityStatement resource for the **Patient Demographics Consumer** is
+[PDQm Consumer](CapabilityStatement-CH.PDQm.Consumer.html).
+
+The CapabilityStatement resource for the **Patient Demographics Supplier** is
+[PDQm Supplier](CapabilityStatement-CH.PDQm.Supplier.html).
+
 ### Security Consideration
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Patient Identifier Cross-reference Manager using the IUA profile with basic access token. Consequently
-the Mobile Patient Identifier Cross-reference Query [ITI-83] request must authorize using the Incorporate
-Access Token [ITI-72] transaction of the IUA profile.
+the _Mobile Patient Identifier Cross-reference Query_ [ITI-83] request must authorize using the
+[_Incorporate Access Token_ [ITI-72]](iti-72.html) transaction of the IUA profile.
+
+#### Security Audit Considerations
+
+##### Patient Demographics Consumer Audit
+
+The **Patient Demographics Consumer** shall be able to record a
+[Patient Demographics Consumer AuditEvent](https://profiles.ihe.net/ITI/PDQm/StructureDefinition-IHE.PDQm.Query.Audit.Consumer.html).
+[Audit Example for a PDQm Query transaction from consumer perspective](https://profiles.ihe.net/ITI/PDQm/AuditEvent-ex-auditPdqmQuery-consumer.html).
+
+##### Patient Demographics Supplier Audit
+
+The **Patient Demographics Supplier** shall be able to record a
+[Patient Demographics Supplier AuditEvent](https://profiles.ihe.net/ITI/PDQm/StructureDefinition-IHE.PDQm.Query.Audit.Supplier.html).
+[Audit Example for a PDQm Query transaction from supplier perspective](https://profiles.ihe.net/ITI/PDQm/AuditEvent-ex-auditPdqmQuery-supplier.html).
