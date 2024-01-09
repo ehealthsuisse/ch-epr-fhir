@@ -387,4 +387,4 @@ A JWT access token to be used to access by an assistant acting behalf on a healt
 
 ### Security Consideration
 
-As specified in the IUA profile, the IUA Authorization Client and Authorization Server actors SHALL support the JWS (signed) alternative of the JWT token.
+IUA Authorization Clients, Authorization Servers and Resource Server actors SHALL use the JWS (signed) alternative of the JWT token as spcified in the IUA Trial Implementation. The JWE alternative SHALL not be used. 
