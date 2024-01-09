@@ -22,7 +22,19 @@ This PDQm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://h
 A mobile app wants to query patients, which participate in the Swiss EPR.
 
 ### Message Semantics
-The message semantics is the same as defined in [2:3.78.4.1.2](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#2378412-message-semantics) with a restriction if there are more than 5 matches. If there are more than 5 matches, the result should return zero matches with an OperationOutcome requesting more query parameters.
+
+The semantics of the _Query Patient Resource_ message is the same as defined in 
+[2:3.78.4.1.2](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#2378412-message-semantics), with the following restrictions:
+
+- The `telecom` search parameter SHALL NOT be used.
+
+### Expected Actions
+
+The _Patient Demographics Supplier_ shall follow the expected actions as defined in
+[2:3.78.4.1.3](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#2378413-expected-actions), with the following restrictions:
+
+- If there are more than 5 matches, the result should return zero matches with an OperationOutcome requesting more 
+  query parameters.
 
 ### Message Example
 
