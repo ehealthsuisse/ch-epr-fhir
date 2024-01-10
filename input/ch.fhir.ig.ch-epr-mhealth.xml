@@ -135,7 +135,7 @@
             <reference>
                 <reference value="Bundle/PDQm-QueryResponseTooManyResults"/>
             </reference>
-            <name value="PDQm Query response message too many results "/>
+            <name value="PDQm Query response message too many results"/>
             <description value="CH PDQm Query response message with too many results indication"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-querypatientresourceresponsemessage"/>
         </resource>
