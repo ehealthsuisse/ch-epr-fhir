@@ -72,7 +72,7 @@ Description: "An example of CHmCSDPractitioner that contains the same informatio
 * gender = #male
 * qualification[+].code = $sct#309343006 "Physician"
 * qualification[+].code = $sct#394576009 "Accident & emergency"
-* communication[+].coding = #de
-* communication[+].coding = #fr
-* communication[+].coding = #en
-* communication[+].coding = #it
+* communication[+].coding = $bcp47#de
+* communication[+].coding = $bcp47#fr
+* communication[+].coding = $bcp47#en
+* communication[+].coding = $bcp47#it
