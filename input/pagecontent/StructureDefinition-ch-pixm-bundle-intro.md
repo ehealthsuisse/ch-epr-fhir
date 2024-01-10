@@ -1,1 +1,0 @@
-Patient resources in the bundle must conform to the [ch-pixm-patient](StructureDefinition-ch-pixm-patient.html) profile.

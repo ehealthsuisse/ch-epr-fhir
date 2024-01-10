@@ -74,7 +74,7 @@ examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=c
 * identifier[+].system = "urn:ietf:rfc:3986"
 * identifier[=].value = "urn:oid:2.16.10.89.203"
 * active = true
-* type[+].coding = $sct#394576009 "Accident & emergency"
+* type[+].coding = $sct#225728007 "Accident and Emergency department"
 * type[+].coding = $sct#22232009 "Hospital"
 * name = "Dept. 3"
 * telecom[+].system = #fax

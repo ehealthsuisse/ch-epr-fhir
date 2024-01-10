@@ -41,7 +41,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC
 * practitioner = Reference(CHmCSDPractitionerDrPeterPan)
 * organization = Reference(CHmCSDOrganizationSpitalXDept3)
 * code = $sct#309343006 "Physician"
-* specialty = $sct#394576009 "Accident & emergency"
+* specialty = $medreg#1051 "General internal medicine"
 
 
 Instance: ChmCSDPractitionerRolePeterPanPraxisP
@@ -55,4 +55,4 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
 * practitioner = Reference(CHmCSDPractitionerDrPeterPan)
 * organization = Reference(CHmCSDOrganizationPraxisP)
 * code = $sct#309343006 "Physician"
-* specialty = $sct#394576009 "Accident & emergency"
+* specialty = $medreg#1051 "General internal medicine"
