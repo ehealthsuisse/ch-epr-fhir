@@ -41,7 +41,7 @@ Title:    "LDAP schema"
 Instance: CHmCSDOrganizationSpitalX
 InstanceOf: CHmCSDOrganization
 Title: "CH mCSD Organization Spital X"
-Description: "An exemple of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
+Description: "An example of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
 (uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"
 * id = "SpitalX"
 * identifier[+].value = "uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
@@ -67,7 +67,7 @@ Description: "An exemple of CHmCSDOrganization that contains the same informatio
 Instance: CHmCSDOrganizationSpitalXDept3
 InstanceOf: CHmCSDOrganization
 Title: "CH mCSD Organization Spital X Dept. 3"
-Description: "An exemple of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
+Description: "An example of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
 examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"
 * id = "SpitalXDept3"
 * identifier[+].value = "uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
@@ -94,7 +94,7 @@ examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=c
 Instance: CHmCSDOrganizationPraxisP
 InstanceOf: CHmCSDOrganization
 Title: "CH mCSD Organization Praxis P"
-Description: "An exemple of CHmCSDOrganization that contains the same information as Praxis P in the Swiss
+Description: "An example of CHmCSDOrganization that contains the same information as Praxis P in the Swiss
 examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"
 * id = "PraxisP"
 * identifier[+].value = "uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"

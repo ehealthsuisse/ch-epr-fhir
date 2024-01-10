@@ -2,7 +2,7 @@ Instance: CH.PDQm.Consumer
 InstanceOf: CapabilityStatement
 Title: "CH PDQm Consumer requirements CapabilityStatement"
 Description: """
-The PDQm Patient Demographics Consumer Actor requirements CapabililtyStatement expresses the requirements that can be utilized while being compliant.
+The PDQm Patient Demographics Consumer Actor requirements CapabilityStatement expresses the requirements that can be utilized while being compliant.
 
 - Query against the FHIR endpoint to the Patient Resource endpoint
 - Using FHIR R4
@@ -81,7 +81,7 @@ Usage: #definition
 Instance: CH.PDQm.Supplier
 InstanceOf: CapabilityStatement
 Description: """
-The PDQm Patient Demographics Supplier Actor requirements CapabililtyStatement expresses the requirements that shall be provided.
+The PDQm Patient Demographics Supplier Actor requirements CapabilityStatement expresses the requirements that shall be provided.
 
 - Query against the FHIR endpoint to the Patient Resource endpoint
 - Using FHIR R4

@@ -78,7 +78,7 @@
                 <reference value="Parameters/ParametersPIXmInput"/>
             </reference>
             <name value="Parameters PIXm Query Input"/>
-            <description value="Example Input Parameters Mobile Patient Identifier Corss-reference Query"/>
+            <description value="Example Input Parameters Mobile Patient Identifier Cross-reference Query"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
         </resource>
         <resource>
@@ -86,7 +86,7 @@
                 <reference value="Parameters/ParametersPIXmOutput"/>
             </reference>
             <name value="Parameters PIXm Query Output"/>
-            <description value="Example Output Parameters Mobile Patient Identifier Corss-reference Query"/>
+            <description value="Example Output Parameters Mobile Patient Identifier Cross-reference Query"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
         </resource>
         <resource>
@@ -171,7 +171,7 @@
                 <reference value="Bundle/Bundle-FindSubmissionSets"/>
             </reference>
             <name value="MHD Find DocumentSubmissionSet (List)"/>
-            <description value="MHD Find Document SumbmissionSet- Bundle as Response"/>
+            <description value="MHD Find Document SubmissionSet- Bundle as Response"/>
             <exampleCanonical
                     value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
         </resource>
@@ -206,7 +206,7 @@
                 <reference value="Practitioner/DrPeterPan"/>
             </reference>
             <name value="mCSD Practitioner Dr. Peter Pan"/>
-            <description value="An exemple of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
+            <description value="An example of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
 (uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"/>
         </resource>
@@ -215,7 +215,7 @@
                 <reference value="Organization/SpitalX"/>
             </reference>
             <name value="mCSD Organization Spital X"/>
-            <description value="An exemple of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
+            <description value="An example of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
 (uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"/>
         </resource>
@@ -224,7 +224,7 @@
                 <reference value="Organization/SpitalXDept3"/>
             </reference>
             <name value="mCSD Organization Spital X Dept. 3"/>
-            <description value="An exemple of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
+            <description value="An example of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
 examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"/>
         </resource>
@@ -233,7 +233,7 @@ examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=c
                 <reference value="Organization/PraxisP"/>
             </reference>
             <name value="mCSD Organization Praxis P"/>
-            <description value="An exemple of CHmCSDOrganization that contains the same information as Praxis P in the Swiss
+            <description value="An example of CHmCSDOrganization that contains the same information as Praxis P in the Swiss
 examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"/>
         </resource>
@@ -242,7 +242,7 @@ examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=c
                 <reference value="PractitionerRole/PeterPanSpitalXDept3"/>
             </reference>
             <name value="mCSD PractitionerRole Dr. Peter Pan at Spital X Dept. 3"/>
-            <description value="An exemple of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Spital X, Dept. 3
+            <description value="An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Spital X, Dept. 3
 Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch)"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"/>
         </resource>
@@ -251,7 +251,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC
                 <reference value="PractitionerRole/PeterPanPraxisP"/>
             </reference>
             <name value="mCSD PractitionerRole Dr. Peter Pan at Praxis P"/>
-            <description value="An exemple of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Praxis P
+            <description value="An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Praxis P
 Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch)"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"/>
         </resource>
@@ -260,7 +260,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                 <reference value="Bundle/FindMatchingCareServicesResponse"/>
             </reference>
             <name value="mCSD Find Matching Care Services Response Bundle"/>
-            <description value="An exemple of ITI-90 response Bundle in the profile CH mCSD"/>
+            <description value="An example of ITI-90 response Bundle in the profile CH mCSD"/>
         </resource>
 
         <!-- CH EPR mHealth: Resource Profiles -->

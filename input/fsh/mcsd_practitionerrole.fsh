@@ -33,7 +33,7 @@ Title:    "LDAP schema"
 Instance: ChmCSDPractitionerRolePeterPanSpitalXDept3
 InstanceOf: CHmCSDPractitionerRole
 Title: "CH mCSD PractitionerRole Dr. Peter Pan at Spital X Dept. 3"
-Description: "An exemple of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Spital X, Dept. 3
+Description: "An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Spital X, Dept. 3
 Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch)"
 * id = "PeterPanSpitalXDept3"
 * identifier[+].value = "CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch"
@@ -47,7 +47,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC
 Instance: ChmCSDPractitionerRolePeterPanPraxisP
 InstanceOf: CHmCSDPractitionerRole
 Title: "CH mCSD PractitionerRole Dr. Peter Pan at Praxis P"
-Description: "An exemple of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Praxis P
+Description: "An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Praxis P
 Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch)"
 * id = "PeterPanPraxisP"
 * identifier[+].value = "CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch"

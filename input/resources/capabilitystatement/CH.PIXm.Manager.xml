@@ -13,7 +13,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="The Patient Identifier Cross-reference Manager CapabililtyStatement expresses the requirements that shall be provided. - using FHIR R4 - using json and xml encoding - support the $ihe-pix operation - support conditional update for [ITI-104] - support conditional delete for [ITI-104] if Remove Patient Option is supported - used with IHE-IUA"/>
+    <description value="The Patient Identifier Cross-reference Manager CapabilityStatement expresses the requirements that shall be provided. - using FHIR R4 - using json and xml encoding - support the $ihe-pix operation - support conditional update for [ITI-104] - support conditional delete for [ITI-104] if Remove Patient Option is supported - used with IHE-IUA"/>
     <kind value="requirements" />
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
