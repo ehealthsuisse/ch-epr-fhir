@@ -15,5 +15,5 @@ Description: "An example of ITI-90 response Bundle in the profile CH mCSD"
 * entry[=].resource = CHmCSDOrganizationPraxisP
 * entry[+].fullUrl = "http://test.fhir.ch/r4/PractitionerRole/PeterPanSpitalXDept3"
 * entry[=].resource = ChmCSDPractitionerRolePeterPanSpitalXDept3
-* entry[+].fullUrl = "http://test.fhir.ch/r4/PractitionerRole/PeterPanSpitalX"
+* entry[+].fullUrl = "http://test.fhir.ch/r4/PractitionerRole/PeterPanPraxisP"
 * entry[=].resource = ChmCSDPractitionerRolePeterPanPraxisP
