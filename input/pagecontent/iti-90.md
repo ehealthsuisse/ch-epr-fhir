@@ -18,7 +18,7 @@ It offers an alternative to the HPD ITI-58 transaction.
 
 1. [IHE ITI Mobile Care Services Discovery (mCSD) 3.8.0](https://profiles.ihe.net/ITI/mCSD/3.8.0/)<br>
 2. [FHIR R4 API search](http://hl7.org/fhir/R4/http.html#search)<br>
-3. [EPR – Central Services, Interface Documentation v1.0.40](https://www.e-health-suisse.ch/en/technik-semantik/epr-projectathon/epr-programming-aids/relevant-specifications.html#CentServRes)
+3. [EPR – Central Services, Interface Documentation v1.0.40](https://www.e-health-suisse.ch/en/technique/technical-interoperability/specifications-for-the-epr-implementation#CentServRes)
 
 ### Messages
 
