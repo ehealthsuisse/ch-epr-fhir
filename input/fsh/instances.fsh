@@ -35,6 +35,7 @@ Usage: #definition
 * rest.documentation = "PDQm client will query for Patient resources matching a sub-set of the FHIR core Patient resource query parameters"
 * rest.security.description = "TLS SHALL be used together with IUA basic access token"
 * rest.resource.type = #Patient
+* rest.resource.supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-patient"
 * rest.resource.interaction[0].code = #read
 * rest.resource.interaction[+].code = #search-type
 * rest.resource.searchParam[0].name = "_id"
@@ -115,6 +116,7 @@ Usage: #definition
 * rest.security.cors = false
 * rest.security.description = "None mandated by IHE, encouraged IHE-IUA or SMART-on-FHIR"
 * rest.resource.type = #Patient
+* rest.resource.supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-patient"
 * rest.resource.interaction[0].code = #read
 * rest.resource.interaction[+].code = #search-type
 * rest.resource.searchParam[0].name = "_id"

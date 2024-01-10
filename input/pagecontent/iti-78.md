@@ -36,6 +36,11 @@ The _Patient Demographics Supplier_ shall follow the expected actions as defined
 - If there are more than 5 matches, the result should return zero matches with an OperationOutcome requesting more 
   query parameters.
 
+The patient data (see [Patient example](Patient-FranzMusterNeedsAbsoluteUrl.html)) SHALL conform to the [PDQm Patient profile](StructureDefinition-ch-pdqm-patient.html).
+The _Patient Demographics Supplier_ SHALL reference the _PDQm Patient_ profile or a derived constrained profile as a 
+`supportedProfile` in the CapabilityStatement.
+
+
 ### Message Example
 
 Query for a patient with name Muster and birthdate 1995-01-27. 

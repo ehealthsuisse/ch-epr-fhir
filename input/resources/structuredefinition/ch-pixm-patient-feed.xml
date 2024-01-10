@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="ch-pixm-patient-feed"/>
+    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient-feed"/>
+    <version value="0.2.0"/>
+    <name value="CHPIXmPatientFeed"/>
+    <title value="CH PIXm Patient Feed"/>
+    <status value="draft"/>
+    <date value="2021-04-13"/>
+    <publisher value="eHealth Suisse"/>
+    <contact>
+        <name value="eHealth Suisse"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://www.e-health-suisse.ch"/>
+        </telecom>
+    </contact>
+    <description
+            value="The patient demographics and identifier information which can be provided in the PIXm Feed according to the EPR. The EPR-SPID as an identifier SHALL be added. The birthname can be added with the  ISO 21090 qualifier extension."/>
+    <jurisdiction>
+        <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="CH"/>
+        </coding>
+    </jurisdiction>
+    <fhirVersion value="4.0.1" />
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Patient"/>
+    <baseDefinition value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-patient"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Patient">
+            <path value="Patient"/>
+            <short value="PIXm Patient Feed"/>
+        </element>
+        <element id="Patient.identifier">
+            <path value="Patient.identifier"/>
+            <min value="2"/>
+        </element>
+        <element id="Patient.identifier:LocalPid">
+            <path value="Patient.identifier" />
+            <sliceName value="LocalPid" />
+            <min value="1" />
+        </element>
+    </differential>
+</StructureDefinition>

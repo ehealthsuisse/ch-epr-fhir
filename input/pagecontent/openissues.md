@@ -1,5 +1,6 @@
 ### DSTU3 Informative Ballot 2023 - Resolved Issues
 
+* PIXmPatientFeed profile can't be used for PDQm responses [#115](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/115)
 * Fixed typos [#106](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/106)
 * PDQm Query: the telecom search parameter shall not be used [#117](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/117)
 * PIXm Feed: update requirements to the new Amendment 1 of Annex 5 EPRO-FDHA [#111](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/111)

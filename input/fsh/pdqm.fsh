@@ -83,7 +83,7 @@ Description:    "A profile on the Query Patient Resource Response message for IT
 * entry contains Patient 0..* and OperationOutcome 0..1
 * entry[Patient] ^short = "Patient"
 * entry[Patient].resource 1..
-* entry[Patient].resource only ch-pixm-patient
+* entry[Patient].resource only ch-pdqm-patient
 * entry[OperationOutcome] ^short = "OperationOutcome"
 * entry[OperationOutcome].resource 1..
 // * entry[OperationOutcome].resource ^type.code = "OperationOutcome"
