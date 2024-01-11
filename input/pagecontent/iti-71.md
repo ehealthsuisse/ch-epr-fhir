@@ -150,7 +150,7 @@ OAuth 2.1 authorization code grant flow of the IUA Get Access Token transaction:
    <tr>
     <td>04</td>
     <td>The Authorization Client performs an HTTP POST with parameter as a form-encoded HTTP entity body, passing its
-     client_id and client_secret as an HTTP Basic authorization header filed.</td>
+     client_id and client_secret as an HTTP authorization header field.</td>
     <td>client_id</td>
     <td>R</td>
     <td>IUA</td>
@@ -250,7 +250,7 @@ The Authorization Client SHALL send an IUA compliant Authorization Request for t
 | principal_id | O/O | token | See sections below. | GLN of the healthcare professional an assistant is acting on behalf of. |
 | group | O/O  | string  | See sections below.  | Name of the organization or group an assistant is acting on behalf of.|
 | group_id | O/O  | string  | See sections below.  | OID of the organization or group an assistant is acting on behalf of.|
-| access_token_format | O/O  | string  |  | Either ihe-jwt or ihe-saml as value. Will return this token_flavor. If scope is not provided defaults to ihe-jwt.|
+| access_token_format | O/O  | string  |  | Shall be ihe-jwt.|
 
 <sup id="3">3</sup>Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
 
