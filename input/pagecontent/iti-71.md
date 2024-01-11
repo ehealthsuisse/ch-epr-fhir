@@ -424,7 +424,7 @@ POST /token HTTP/1.1
 Host: localhost:9001
 
 Accept: application/json
-Content-type: application/x-www-form-encoded
+Content-type: application/x-www-form-urlencoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 grant_type=authorization_code&
 redirect_uri=http%3A%2F%2Flocalhost%3A9000%2Fcallback&
