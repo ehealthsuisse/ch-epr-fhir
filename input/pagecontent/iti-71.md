@@ -51,7 +51,8 @@ OAuth 2.1 authorization code grant flow of the IUA Get Access Token transaction:
 |  |      | code | R | IUA | The authorization |
 |  |      | code_verifier | R | IUA | The original code verifier string. |
 | 05 | The Authorization Server responds with the access token in the HTML body element. | access_token | R | IUA | A string containing the access token which SHALL be a JWT token.|
-|  |      | token_type | R | IUA | The value of the parameter shall be Bearer. |  |  | scope | R | IUA | The scope granted by the Authorization Server. |
+|  |      | token_type | R | IUA | The value of the parameter shall be Bearer. |
+|  |      | scope | R | IUA | The scope granted by the Authorization Server. |
 |  |      | expires_in | R | IUA | Maximum duration of 5 minutes. |
 
 <figcaption ID="5">Description of the HTTP conversation of the transaction.</figcaption>  
