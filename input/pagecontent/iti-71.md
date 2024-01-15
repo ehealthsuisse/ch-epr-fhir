@@ -25,8 +25,8 @@ When an IUA Authorization Client is authorized, it may launch SMART on FHIR Apps
 
 ### Referenced Standards
 
-1. [IHE ITI Technical Framework Supplement Internet User Authorization (IUA) Revision 2.1](https://profiles.ihe.net/ITI/IUA/index.html)
-2. [SMART Application Launch Framework Implementation Guide Release 1.0.0](http://www.hl7.org/fhir/smart-app-launch/)
+1. [IHE ITI Technical Framework Supplement Internet User Authorization (IUA) Revision 2.2](https://profiles.ihe.net/ITI/IUA/index.html)
+2. [SMART Application Launch Framework Implementation Guide Release 2.1.0](http://www.hl7.org/fhir/smart-app-launch/)
 
 ### Messages
 
