@@ -1,0 +1,7 @@
+@startuml
+' https://github.com/IHE/ITI.PDQm/blob/main/input/images-source/PDQm-Actor-Diagram.plantuml
+title PDQm Actor Diagram
+agent "Patient Demographics Consumer" as Client
+agent "Patient Demographics Supplier" as Server
+Client -down-> Server  : "[[iti-78.html ITI-78 Mobile Patient Demographics Query]]"
+@enduml

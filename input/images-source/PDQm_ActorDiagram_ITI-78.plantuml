@@ -3,19 +3,18 @@ hide footbox
 
 title Interaction Diagram for [ITI-78]
 
+hide footbox
+autoactivate on
+
 participant "Patient Demographics\nConsumer" as Client
 participant "Patient Demographics\nSupplier" as Server
 
 == Query ==
-activate Client
-activate Server
 Client -> Server : Query Patient Resource
-Server -> Client : Query Patient Resource Response
+Server --> Client : Query Patient Resource Response
 
 == Retrieve ==
 Client -> Server : Retrieve Patient Resource
-Server -> Client : Retrieve Patient Resource Response
-deactivate Server
-deactivate Client
+Server --> Client : Retrieve Patient Resource Response
 
 @enduml

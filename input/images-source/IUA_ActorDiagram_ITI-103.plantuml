@@ -5,8 +5,8 @@ title Interaction Diagram for [ITI-103]
 participant "Authorization Client\nor\nResource Server" as Client
 participant "Authorization Server" as AuthzServer
 
-autonumber 0 1 "<b>[00]</b>"
 autoactivate on
+hide footbox
 
 Client -> AuthzServer: Authorization Server Metadata Request
 Client <-- AuthzServer: Authorization Server Metadata Response

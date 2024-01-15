@@ -2,13 +2,13 @@
 
 title Interaction Diagram for [ITI-67]
 
+hide footbox
+autoactivate on
+
 participant "Document Consumer" as DocumentConsumer
 participant "Document Responder" as DocumentResponder
-activate "DocumentConsumer"
-activate "DocumentResponder"
-"DocumentConsumer" -> "DocumentResponder" : 1. Find Document References [ITI-67]
-return
-deactivate "DocumentConsumer"
-deactivate "DocumentResponder"
+
+"DocumentConsumer" -> "DocumentResponder" : Find Document References Request
+"DocumentResponder" --> "DocumentConsumer" : Find Document References Response
 
 @enduml 

@@ -17,6 +17,12 @@ The _Request Care Services Updates_ [ITI-91] transaction is not used in this nat
 
 ### Actors and Transactions, Content Specifications
 
+<div>
+{%include mCSD_actor_diagram.svg %}
+</div>
+This figure shows the actors directly involved in the _Mobile Care Services Discovery_ Profile and the relevant 
+transactions between them.
+
 ### Actor Options
 
 The Swiss national extension does not implement the 'Location Distance Option'.

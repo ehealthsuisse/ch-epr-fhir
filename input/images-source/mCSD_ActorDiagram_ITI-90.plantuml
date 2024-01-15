@@ -6,19 +6,13 @@ title Interaction Diagram for [ITI-90]
 participant "Care Services Selective\nConsumer" as Client
 participant "Care Services Selective\nSupplier" as Server
 
-activate Client
-activate Server
+hide footbox
+autoactivate on
+
 Client -> Server : Find Matching Care Services Request
 Server --> Client : Find Matching Care Services Response
-deactivate Client
-deactivate Server
 
-Client -[hidden]> Server
-activate Client
-activate Server
 Client -> Server : Retrieve Care Services Resource Request
 Server --> Client : Retrieve Care Services Resource Response
-deactivate Server
-deactivate Client
 
 @enduml

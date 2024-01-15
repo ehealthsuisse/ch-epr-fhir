@@ -1,0 +1,10 @@
+@startuml
+' https://github.com/IHE/ITI.MHD/blob/master/input/images-source/ActorsAndTransactions.plantuml
+title MHD Actor Diagram
+agent "Document Source" as DocumentSource
+agent "Document Consumer" as DocumentConsumer
+agent "Document Responder" as DocumentResponder
+agent "Document Recipient" as DocumentRecipient
+DocumentConsumer --> DocumentResponder : "[[iti-66.html ITI-66 Find Document Lists]]\n[[ITI-67.html ITI-67 Find Document References]]\n[[iti-68.html ITI-68 Retrieve Document]]"
+DocumentSource --> DocumentRecipient : "[[iti-65.html ITI-65 Provide Document Bundle]]"
+@enduml
