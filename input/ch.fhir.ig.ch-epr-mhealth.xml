@@ -77,7 +77,7 @@
             <reference>
                 <reference value="Parameters/ParametersPIXmInput"/>
             </reference>
-            <name value="Parameters PIXm Query Input"/>
+            <name value="PIXm Parameters Query Input"/>
             <description value="Example Input Parameters Mobile Patient Identifier Cross-reference Query"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
         </resource>
@@ -85,7 +85,7 @@
             <reference>
                 <reference value="Parameters/ParametersPIXmOutput"/>
             </reference>
-            <name value="Parameters PIXm Query Output"/>
+            <name value="PIXm Parameters Query Output"/>
             <description value="Example Output Parameters Mobile Patient Identifier Cross-reference Query"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
         </resource>
@@ -93,7 +93,7 @@
             <reference>
                 <reference value="Patient/PatientPIXmFeed"/>
             </reference>
-            <name value="Patient PIXm Feed"/>
+            <name value="PIXm Patient Feed"/>
             <description value="Example PIXm Patient for Feed"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient-feed"/>
         </resource>
@@ -101,7 +101,7 @@
             <reference>
                 <reference value="Patient/FranzMusterNeedsAbsoluteUrl"/>
             </reference>
-            <name value="Franz Muster Needs Absolute Url"/>
+            <name value="PDQm Patient Franz Muster (Full URL)"/>
             <description value="Example Patient"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-patient"/>
         </resource>
@@ -109,7 +109,7 @@
             <reference>
                 <reference value="Organization/GruppenpraxisCH"/>
             </reference>
-            <name value="GruppenpraxisCH"/>
+            <name value="PDQm Provider Organization Gruppenpraxis"/>
             <description value="Example Organization"/>
             <exampleCanonical
                     value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-provider-organization"/>
@@ -143,7 +143,7 @@
             <reference>
                 <reference value="List/2-7-DocSubMedicationCard"/>
             </reference>
-            <name value="SubmissionSet (List) for MedicationCard"/>
+            <name value="MHD SubmissionSet (List) for MedicationCard"/>
             <description value="Example SubmissionSet for a MedicationCard"/>
             <exampleCanonical
                     value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
@@ -152,7 +152,7 @@
             <reference>
                 <reference value="DocumentReference/2-7-DocRefMedicationCard"/>
             </reference>
-            <name value="DocumentReference for MedicationCard"/>
+            <name value="MHD DocumentReference for MedicationCard"/>
             <description value="Example DocumentReference for a MedicationCard"/>
             <exampleCanonical
                     value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
@@ -188,7 +188,7 @@
             <reference>
                 <reference value="AuditEvent/ex-auditProvideBundle-source"/>
             </reference>
-            <name value="Audit Event for Provide Bundle Transaction at Source"/>
+            <name value="ATNA Audit Event for Provide Bundle Transaction at Source"/>
             <description value="Audit Example for a Provide Bundle Transaction from source perspective"/>
             <exampleCanonical
                     value="https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source"/>

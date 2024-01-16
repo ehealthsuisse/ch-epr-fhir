@@ -54,7 +54,7 @@ deactivate mp_doc_responder
 app2 <[#black]- docconsumer
 deactivate docconsumer
 
-app2 -[#black]> docconsumer: query documents
+app2 -[#black]> docconsumer: retrieve document
 activate docconsumer
 docconsumer -[#black]> mp_doc_responder: retrieve document [ITI-68]
 activate mp_doc_responder

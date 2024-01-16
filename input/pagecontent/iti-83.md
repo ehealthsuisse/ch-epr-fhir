@@ -44,9 +44,9 @@ GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]&targetSystem=[uri]{&_format
 {:class="table table-bordered"}
 
 
-See the [Find patient matches using IHE-PIXm Profile](OperationDefinition-CH.PIXm.html) OperationDefinition and the 
+See the [PIXm Find patient matches](OperationDefinition-CH.PIXm.html) OperationDefinition and the 
 [CH PIXm IN Parameters](StructureDefinition-ch-pixm-in-parameters.html) Profile 
-(with its [example: Parameters PIXm Query Input](Parameters-ParametersPIXmInput.html)).
+(with its [example: PIXm Parameters Query Input](Parameters-ParametersPIXmInput.html)).
 
 
 ##### Message Example
