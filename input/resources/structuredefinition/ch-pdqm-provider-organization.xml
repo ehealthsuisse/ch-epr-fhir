@@ -4,7 +4,7 @@
     <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-provider-organization"/>
     <version value="0.1.0"/>
     <name value="CHPDQmProviderOrganization"/>
-    <title value="CH EPR mHealth Provider Organization Profile for PDQm"/>
+    <title value="CH PDQm Provider Organization"/>
     <status value="draft"/>
     <date value="2020-08-04"/>
     <publisher value="eHealth Suisse"/>
