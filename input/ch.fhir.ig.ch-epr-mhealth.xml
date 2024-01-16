@@ -53,7 +53,7 @@
     <dependsOn id="ihepixmfhir">
         <uri value="https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm"/>
         <packageId value="ihe.iti.pixm"/>
-        <version value="3.0.2"/>
+        <version value="3.0.3"/>
     </dependsOn>
     <dependsOn id="ihepdqmfhir">
         <uri value="https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pdqm"/>
@@ -63,7 +63,7 @@
     <dependsOn id="ihemhdfhir">
         <uri value="https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd"/>
         <packageId value="ihe.iti.mhd"/>
-        <version value="4.2.0"/>
+        <version value="4.2.1"/>
     </dependsOn>
     <dependsOn id="ihemcsdfhir">
         <uri value="https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd"/>
