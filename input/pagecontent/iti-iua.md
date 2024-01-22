@@ -76,4 +76,4 @@ The Swiss national extension does not define requirements on the grouping of act
 For the process flow of this profile and its interplay with the other mHealth profiles see [sequence diagrams](sequencediagrams.html). 
 
 ### Security Consideration  
-The IUA Authorization Server SHALL enforce authentication of the user by redirecting the App to the User Authentication Provider (Identity Provider) as described in [IUA](iti-71.html#expected-actions-iua-authorization-server).
+The Swiss national extension does not define additional security requirements beyond those sepcified in the underlying [IUA Trial Implementation](https://profiles.ihe.net/ITI/IUA/index.html).
