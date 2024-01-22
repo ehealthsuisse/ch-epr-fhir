@@ -41,18 +41,24 @@ The extensions, restrictions and translations specified apply to the following I
 
 #### Introduction
 
-This national extension is motivated by the intention to ease integration of mobile applications to the Swiss EPR by extending the IHE FHIR based mobile profiles. This national extension to IHE profiles is intended for mobile applications running on mobile devices, but not limited to. The IHE FHIR based mobile profiles use technologies (REST, OAuth, etc.) which are widely spread in the developer community and may be used for native applications and Web Applications, for example in web based primary systems.
+This national extension is motivated by the intention to provide FHIR based profiles for the Swiss EPR by extending the IHE FHIR based mobile profiles. The IHE FHIR based mobile profiles use technologies (REST, OAuth, etc.) which are widely spread in the developer community and may be used for Web Applications, for example in web based primary systems or portals.
+
+This national extension strictly separates the authentication and authorization of the applications use to access the EPR on behalf of the user and the authentication and authorization of the user itself. By using this separation this national extension closely follows the underlying IUA Trial Implementation and OAuth 2.1: 
+* Client authentication - an application identifies and authenticates to an authorization server.
+* Client authorization - an application is authorized by the user or system policy to access data and documents on behalf of the user.
+* User authentication - a natural person identifies and authenticates using an Identity Provider with the authenticators registered for the natural person.
+* User authorization - provision of an access token which includes the information required to perform authorization decisions and policy enforcement.     
 
 The scope of this extension covers the following use cases:
 1.	Client authentication and authorization; 
-2.	User Authentication; 
-3.	Read documents from the EPR;
-4.	Write documents to the EPR; 
+2.	User authentication and authorization; 
+3.	Read data and documents from the EPR;
+4.	Write data and documents to the EPR; 
 5.	Write logs to the EPR ATNA Audit Record Repository.   
 
 This extension covers two options:
-1. Generic mHealth option – This option adresses primary systems or mobile applications using the basic EPR flows but replace the XDS.b related and PIX/PDQ V3 profiles with the FHIR based profiles;
-2. SMART on FHIR – This option adresses mobile apps or modular primary systems that want to connect to the Swiss EPR using SMART on FHIR.
+1. Generic mHealth option – This option adresses primary systems or portals using the basic EPR flows replacing the XDS.b related and PIX/PDQ V3 profiles with the FHIR based profiles;
+2. SMART on FHIR – This option adresses modular portals or primary systems that want to connect to the Swiss EPR using SMART on FHIR.
 
 #### Profiles, actors and transactions
 
