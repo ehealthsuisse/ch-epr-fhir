@@ -431,7 +431,7 @@ The IUA Authorization Server SHALL identify the IUA Authorization Client (portal
 
 The IUA Authorization Server SHALL verify that the IUA Authorization Client (portal or primary system) is authorized to access the EPR on behalf of the users by checking if the IUA Authorization Client has been registered and authorized by the community during the onboarding process.
 
-For SMART on FHIR Apps is launched as EHR Launch, the IUA Authorization Server SHALL validate the launch scope parameter, by verifying that the portal or primary system which launched the SMART on FHIR App has been registered with this launch parameter value by the community during the onboarding process.
+For SMART on FHIR Apps launched in an EHR Launch, the IUA Authorization Server SHALL validate the launch scope parameter, by verifying that the portal or primary system which launched the SMART on FHIR App has been registered with this launch parameter value by the community during the onboarding process.
 
 In case of failure, the IUA Authorization Server SHALL respond with HTTP error code 401 ‘Not authorized’.
 
