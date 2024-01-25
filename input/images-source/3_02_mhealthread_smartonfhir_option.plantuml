@@ -21,7 +21,7 @@ end box
 user -[#black]> app2: read doc
 activate app2
 
-app2 -> mp_AuthorizationServer: GET /metadata
+app2 -> mp_AuthorizationServer: GET /.well-known/smart-configuration
 activate mp_AuthorizationServer
 app2 <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
 deactivate mp_AuthorizationServer
