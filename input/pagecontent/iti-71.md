@@ -427,7 +427,7 @@ If the IUA Authorization Server receives a request, it SHALL authenticate the us
 
 In case of authentication failure, the IUA Authorization Server SHALL respond with HTTP error code 401 ‘Not authorized’.
 
-The IUA Authorization Server SHALL identify the IUA Authorization Client (portal or primary system) based on the digital signature of the messages send by the IUA Authorization Client. The IUA Authorization Server MAY use the X.509 certificate of the TLS connection as additional source of information to identify the IUA Authorization Client.
+The IUA Authorization Server SHALL identify the IUA Authorization Client (portal or primary system) based on the digital signature of the messages send by the IUA Authorization Client. The IUA Authorization Server SHALL use the X.509 certificate provided by the portal or primary system in the TLS connection to authenticate the IUA Authorization Client.
 
 The IUA Authorization Server SHALL verify that the IUA Authorization Client (portal or primary system) is authorized to access the EPR on behalf of the users by checking if the IUA Authorization Client has been registered and authorized by the community during the onboarding process.
 
