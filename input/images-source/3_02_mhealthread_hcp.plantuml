@@ -1,12 +1,12 @@
 @startuml
 !include design.plantuml.txt
 
-actor user as "Patient"
+actor user as "Healthcare \nProfessional"
 
-box "mHealth App" #BFCAD2
+box "Healthcare Professional Portal or Primary System" #BFCAD2
 	participant app as "App GUI"
-    participant docconsumer as "Document Consumer\n(MHD)"
-    participant pixmconsumer as "Patient Identifier\nCross-reference\nConsumer"
+  participant docconsumer as "Document Consumer\n(MHD)"
+  participant pixmconsumer as "Patient Identifier\nCross-reference\nConsumer"
 	participant AuthorizationClient as "Authorization Client\n(IUA)"
 end box
 
@@ -20,33 +20,38 @@ box "IdP" #DFF3F7
 	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
 end box
 
-
+' Sequence starts
 user -[#black]> app: read doc
 activate app
 
+' Get metadata
 app -> mp_AuthorizationServer: GET /.well-known/smart-configuration
 activate mp_AuthorizationServer
 app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
 deactivate mp_AuthorizationServer
 
+' Get Access Token (Basic)
 app -[#black]> AuthorizationClient: Get Access Token
 activate AuthorizationClient
-AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Access Token Request 
+AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Access Token Request \n[Basic access token]
 activate mp_AuthorizationServer
 mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
 activate idp_user_authentication_provider
 mp_AuthorizationServer <- idp_user_authentication_provider
 deactivate idp_user_authentication_provider
 mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
-AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Access Token Response 
+AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Access Token Response \n[Basic access token]
 deactivate mp_AuthorizationServer
 app <[#black]- AuthorizationClient: 
 deactivate AuthorizationClient
 
+' Get Patient Identifiers (PIXm)
 !include_many step_mh_pixm.plantuml.txt
 
+' Get Access Token (Extended)
 !include_many step_mh_iua.plantuml.txt
 
+' Get Document Metadata
 app -> docconsumer: query documents
 activate docconsumer
 docconsumer -[#black]> mp_doc_responder: query documents [ITI-67]
@@ -56,6 +61,7 @@ deactivate mp_doc_responder
 docconsumer <- app
 deactivate docconsumer
 
+' Retrieve Document
 app -> docconsumer: retrieve documents
 activate docconsumer
 docconsumer -[#black]> mp_doc_responder: retrieve document [ITI-68]

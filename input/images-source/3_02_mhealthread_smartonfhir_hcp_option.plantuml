@@ -1,0 +1,97 @@
+@startuml
+!include design.plantuml.txt
+
+actor user as "Healthcare \nProfessional"
+
+box "Healthcare Professional Portal or Primary System" #BFCAD2
+	participant app as "App GUI\nIUA Authorization Client"
+	participant AuthorizationClient as "Authorization Client\n(IUA)"
+  participant pixmconsumer as "Patient Identifier\nCross-reference\nConsumer"
+end box
+
+box "SMART on FHIR App" #BDBED0
+	participant app2 as "App GUI\nIUA Authorization Client"
+  participant docconsumer as "Document Consumer\n(MHD)"
+end box
+
+box "Community Components" #FFEFDE
+	participant mp_AuthorizationServer as "Authorization Server\n(IUA)"
+	participant mp_pix_x_ref_mgr as "Patient Identifier\nCross-reference\nMange"
+	participant mp_doc_responder as "Document Responder\n(MHD)"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "User\nAuthentication\nProvider"
+end box
+
+' Sequence starts
+user -[#black]> app: read doc
+activate app
+
+' Get metadata
+app -> mp_AuthorizationServer: GET /.well-known/smart-configuration
+activate mp_AuthorizationServer
+app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
+deactivate mp_AuthorizationServer
+
+' Get Access Token (Basic)
+app -[#black]> AuthorizationClient: Get Access Token
+activate AuthorizationClient
+AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Access Token Request \n[Basic access token]
+activate mp_AuthorizationServer
+mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
+activate idp_user_authentication_provider
+mp_AuthorizationServer <- idp_user_authentication_provider
+deactivate idp_user_authentication_provider
+mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
+AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Access Token Response \n[Basic access token]
+deactivate mp_AuthorizationServer
+app <[#black]- AuthorizationClient:
+deactivate AuthorizationClient
+
+' Get Patient Identifiers (PIXm)
+!include_many step_mh_pixm.plantuml.txt
+
+' SMART on FHIR App launch
+app -> app2: launch app
+activate app2
+
+' Get metadata
+app2 -> mp_AuthorizationServer: GET /.well-known/smart-configuration
+activate mp_AuthorizationServer
+app2 <- mp_AuthorizationServer: Conformance statement \nincl. OAuth 2.1 endpoints
+deactivate mp_AuthorizationServer
+
+' Get Access Token (Extended)
+app2 -> mp_AuthorizationServer: [ITI-71] Get Access Token\n[Extended access token]
+activate mp_AuthorizationServer
+app2 <- mp_AuthorizationServer: [ITI-71] Get Access Token Response\n[Extended access token]
+deactivate mp_AuthorizationServer
+
+' Get Document Metadata
+app2 -[#black]> docconsumer: query documents
+activate docconsumer
+docconsumer -[#black]> mp_doc_responder: query documents [ITI-67]
+activate mp_doc_responder
+docconsumer <[#black]- mp_doc_responder
+deactivate mp_doc_responder
+app2 <[#black]- docconsumer
+deactivate docconsumer
+
+' Retrieve Document
+app2 -[#black]> docconsumer: retrieve document
+activate docconsumer
+docconsumer -[#black]> mp_doc_responder: retrieve document [ITI-68]
+activate mp_doc_responder
+docconsumer <[#black]- mp_doc_responder
+deactivate mp_doc_responder
+app2 <[#black]- docconsumer
+deactivate docconsumer
+
+app <[#black]- app2
+deactivate app2
+
+user <[#black]- app
+deactivate app
+
+@enduml 
