@@ -49,6 +49,7 @@ Query for a patient with name Muster and birthdate 1995-01-27.
 ```
 GET [base]/Patient?name=Muster&birthdate=1995-01-27
 Accept: application/fhir+json
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 ```
 [Example response to above query](Bundle-PDQm-QueryResponse.json.html)
 
@@ -57,6 +58,7 @@ Query for a patient with name M returning too many results:
 ```
 GET [base]/Patient?name=M
 Accept: application/fhir+json
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 ```
 [Example response to above query](Bundle-PDQm-QueryResponseTooManyResults.json.html)
 
@@ -87,6 +89,8 @@ TLS SHALL be used. This national extension enforces authentication and authoriza
 Patient Identifier Cross-reference Manager using the IUA profile with basic access token. Consequently
 the _Mobile Patient Identifier Cross-reference Query_ [ITI-83] request must authorize using the
 [_Incorporate Access Token_ [ITI-72]](iti-72.html) transaction of the IUA profile.
+
+The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
 
 #### Security Audit Considerations
 

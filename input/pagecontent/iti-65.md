@@ -79,6 +79,8 @@ Document Recipient using the IUA profile with extended access token. Consequentl
 the _Provide Document Bundle_ [ITI-65] request must authorize using the [_Incorporate Access Token_ [ITI-72]](iti-72.html)
 transaction of the IUA profile.
 
+The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
+
 #### Security Audit Considerations
 
 ##### Document Source Audit
