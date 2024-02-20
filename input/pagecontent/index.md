@@ -37,6 +37,11 @@ The extensions, restrictions and translations specified apply to the following I
 * [mCSD](https://profiles.ihe.net/ITI/mCSD/index.html)
 * [RESTful ATNA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)
 
+#### Related profiles, actors and transactions
+
+The FHIR API specifications to read audit trails is defined in a separate national Integration Profile
+(_CH:ATC, SR816.11, Annex 5, Extension 2_) with the supporting [Implementation Guide](https://fhir.ch/ig/ch-atc/index.html).
+
 ### Overview
 
 #### Introduction
