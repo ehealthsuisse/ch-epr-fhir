@@ -40,7 +40,7 @@ The extensions, restrictions and translations specified apply to the following I
 #### Related profiles, actors and transactions
 
 The FHIR API specifications to read audit trails is defined in a separate national Integration Profile
-(_SR816.11, Annex 5, Extension 2_) with the supporting [Implementation Guide](https://fhir.ch/ig/ch-atc/index.html).
+(_CH:ATC, SR816.11, Annex 5, Extension 2_) with the supporting [Implementation Guide](https://fhir.ch/ig/ch-atc/index.html).
 
 ### Overview
 
