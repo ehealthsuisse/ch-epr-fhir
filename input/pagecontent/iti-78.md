@@ -48,7 +48,7 @@ Query for a patient with name Muster and birthdate 1995-01-27.
 
 ```
 GET [base]/Patient?name=Muster&birthdate=1995-01-27
-Accept: application/fhir+json; fhirVersion=4.0
+Accept: application/fhir+json
 ```
 [Example response to above query](Bundle-PDQm-QueryResponse.json.html)
 
@@ -56,7 +56,7 @@ Query for a patient with name M returning too many results:
 
 ```
 GET [base]/Patient?name=M
-Accept: application/fhir+json; fhirVersion=4.0
+Accept: application/fhir+json
 ```
 [Example response to above query](Bundle-PDQm-QueryResponseTooManyResults.json.html)
 
