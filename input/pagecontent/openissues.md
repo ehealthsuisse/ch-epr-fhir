@@ -14,6 +14,7 @@
 * Missing Swiss specific PDQ V3 Error message in PDQm [#80](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/80)
 * Disallow non-contained Patient resources in ITI-65 requests [#75](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/75)
 * Updated sequence diagrams, standalone launch is not possible [#69](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/69) [#98](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/98)
+* Removed the fhirVersion from Accept header examples [#149](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/149)
 
 ### DSTU3 Informative Ballot 2023 - Raised Issues
 
