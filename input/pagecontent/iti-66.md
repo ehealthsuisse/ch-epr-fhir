@@ -51,7 +51,7 @@ The CapabilityStatement resource for the **Document Responder** is [MHD Document
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the Document 
 Responder using the IUA profile with extended access token. Consequently the _Find Document Lists_ [ITI-66] request 
-must authorize using the [_Incorporate Access Token_ [ITI-72]](iti-72.html) transaction of the IUA profile.
+must authorize using the [https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72](iti-72.html) transaction of the IUA profile.
 
 #### Security Audit Considerations
 

@@ -233,9 +233,7 @@ A user launches a portal or primary system, or a SMART on FHIR App to access dat
 
 ##### Message Semantics
 
-The Authorization Client SHALL send an IUA compliant Authorization Request for the authorization code flow as 
-described in sections [IUA](#request). The Authorization Request SHALL set the scope parameter with one or many 
-scope values as defined in the table below.
+The Authorization Client SHALL send an IUA compliant Authorization Request for the authorization code flow. The Authorization Request SHALL set the scope parameter with one or many scope values as defined in the table below.
 
 | Scope               | Optionality (Basic/ Extended) | Type                               | Reference           | Remark                                                                                                                                                                  |
 |---------------------|-------------------------------|------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
