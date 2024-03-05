@@ -55,7 +55,10 @@ Query for a patient with a local id of 123 by AssigningAuthority oid 1.2.3 which
 community where the Assigning Authority is oid 5.6.7 and the MPI-PID and EPR-SPID are requested:
 
 ```
-GET [base]/Patient/$ihe-pix?sourceIdentifier=urn:oid:2.999.1.2.3|123&targetSystem=urn:oid:2.999.5.6.7&targetSystem=urn:oid:2.16.756.5.30.1.127.3.10.3
+GET [base]/Patient/$ihe-pix?sourceIdentifier=urn:oid:2.999.1.2.3|123&targetSystem=urn:oid:2.999.5.6.7&targetSystem=urn:oid:2.16.756.5.30.1.127.3.10.3 HTTP/1.1
+Accept: application/fhir+json
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
+
 ```
 
 #### Response message
@@ -108,6 +111,8 @@ TLS SHALL be used. This national extension enforces authentication and authoriza
 Patient Identifier Cross-reference Manager using the IUA profile with basic access token. Consequently
 the _Mobile Patient Identifier Cross-reference Query_ [ITI-83] request must authorize using the 
 [_Incorporate Access Token_ [ITI-72]](iti-72.html) transaction of the IUA profile.
+
+The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
 
 #### Security Audit Considerations
 

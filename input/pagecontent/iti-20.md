@@ -51,3 +51,5 @@ The CapabilityStatement resource for the **Audit Record Repository** is
 ### Security Consideration
 
 TLS SHALL be used.
+
+The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).

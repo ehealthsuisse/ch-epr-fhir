@@ -57,7 +57,8 @@ See open issues on [GitHub](https://github.com/ehealthsuisse/ch-epr-mhealth/issu
 * [IUA Refresh token handling](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/20)
 * [IUA ihe_saml token option supported for the generic mHealth Option](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/21)
 * [IUA ihe-jwt token option handling in XDS environment](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/22)
-* [MHD extension for RMU](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/25) 
+* [MHD extension for RMU](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/25)
+* [Adapt IHE profiles for the Trace Context support](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/153)
 
 ### DSTU2 Informative Ballot 2022 - Resolved Issues
 * Changes due to the adjustments in the new version of the derived [IHE ITI MHD](https://profiles.ihe.net/ITI/MHD/) IG [#47](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/47)/[#50](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/50):

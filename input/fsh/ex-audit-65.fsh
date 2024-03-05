@@ -1,3 +1,6 @@
+/* 
+This instance is temporarily defined in examples/auditevent/ex-auditProvideBundle-source.json because sushi complains about the entity[transaction] slice
+
 Instance: ex-auditProvideBundle-source
 InstanceOf: IHE.MHD.ProvideBundle.Audit.Source
 Title: "Audit Example of ITI-65 at source"
@@ -42,4 +45,6 @@ Usage: #example
 * entity[submissionSet].role = http://terminology.hl7.org/CodeSystem/object-role#20 "Job"
 * entity[submissionSet].what.identifier.system = "urn:ietf:rfc:3986"
 * entity[submissionSet].what.identifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.6.2949"
-
+* entity[transaction].what.identifier.value = "00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01"
+* entity[transaction].type = https://profiles.ihe.net/ITI/BALP/CodeSystem/BasicAuditEntityType#Traceparent
+ */

@@ -94,6 +94,9 @@
                 <a href="sequencediagrams.html">Sequence diagrams</a>
             </li>
             <li>
+                <a href="tracecontext.html">Trace Context</a>
+            </li>
+            <li>
                 <a href="openissues.html">Open Issues / Change Log</a>
             </li>
         </ul>

@@ -10,7 +10,7 @@ left to right direction
 component "mHealth: App" {
   [IUA Authorization Client] as IUAClient
 
-  [Patient DemographicsvConsumer] as PDQmConsumer
+  [Patient Demographics Consumer] as PDQmConsumer
 
   [PIXm Patient Identifier Cross-reference Consumer] as PIXmConsumer
   [PIXm Patient Identity Source] as PIXmSource

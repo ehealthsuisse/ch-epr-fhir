@@ -40,6 +40,8 @@ Document Responder using the IUA profile with extended access token. Consequentl
 the _Retrieve Document_ [ITI-68] request must authorize using the [_Incorporate Access Token_ [ITI-72]](iti-72.html)
 transaction of the IUA profile.
 
+The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
+
 #### Security Audit Considerations
 
 ##### Document Consumer Audit

@@ -598,6 +598,11 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                     <generation value="markdown"/>
                 </page>
                 <page>
+                    <nameUrl value="tracecontext.html"/>
+                    <title value="Trace Context"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
                     <nameUrl value="openissues.html"/>
                     <title value="Open Issues / Change Log"/>
                     <generation value="markdown"/>

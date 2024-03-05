@@ -33,13 +33,17 @@ The _Find Matching Care Services_ message is a FHIR search operation on the mCSD
 A _Care Services Selective Consumer_ initiates a search request using HTTP GET or POST:
 
 ```
-GET [base]/[resource]?[parameters]
+GET [base]/[resource]?[parameters] HTTP/1.1
+Accept: application/fhir+json
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 ```
 
 or
 
 ```
-POST [base]/[resource]/_search
+POST [base]/[resource]/_search HTTP/1.1
+Accept: application/fhir+json
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 Content-Type: application/x-www-form-urlencoded
 
 param1=value&param2=value
@@ -157,6 +161,8 @@ The CapabilityStatement resource for the **Care Services Selective Supplier** is
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the _Care Services
 Selective Supplier_ using the IUA profile with basic access token. Consequently, the _Find Matching Care Services_
 [ITI-90] request must authorize using the [_Incorporate Access Token_ [ITI-72]](iti-72.html) transaction of the IUA profile.
+
+The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
 
 #### Security Audit Considerations
 

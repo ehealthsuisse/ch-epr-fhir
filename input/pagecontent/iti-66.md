@@ -32,6 +32,7 @@ _Find Document List_ example **request**:
 ```
 GET [base]/List?patient.identifier=urn:oid:2.999|11111111 HTTP/1.1
 Accept: application/fhir+json
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 ```
 
 #### Find Document Lists Response Message
@@ -52,6 +53,8 @@ The CapabilityStatement resource for the **Document Responder** is [MHD Document
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the Document 
 Responder using the IUA profile with extended access token. Consequently the _Find Document Lists_ [ITI-66] request 
 must authorize using the [_Incorporate Access Token_ [ITI-72]](iti-72.html) transaction of the IUA profile.
+
+The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
 
 #### Security Audit Considerations
 
