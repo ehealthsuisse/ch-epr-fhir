@@ -76,7 +76,7 @@ The CapabilityStatement resource for the **Document Recipient** is [MHD Document
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Document Recipient using the IUA profile with extended access token. Consequently
-the _Provide Document Bundle_ [ITI-65] request must authorize using the [_Incorporate Access Token_ [ITI-72]](iti-72.html)
+the _Provide Document Bundle_ [ITI-65] request must authorize using the [https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72](iti-72.html)
 transaction of the IUA profile.
 
 The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).

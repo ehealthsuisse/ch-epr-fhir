@@ -163,14 +163,6 @@ OAuth 2.1 authorization code grant flow of the IUA Get Access Token transaction:
    <tr>
     <td>&nbsp;</td> 
     <td>&nbsp;</td>
-    <td>redirect_uri</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The URI to redirect the Authorization Client user agent to.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
     <td>grant_type</td>
     <td>R</td>
     <td>IUA</td>
@@ -241,9 +233,7 @@ A user launches a portal or primary system, or a SMART on FHIR App to access dat
 
 ##### Message Semantics
 
-The Authorization Client SHALL send an IUA compliant Authorization Request for the authorization code flow as 
-described in sections [IUA](#request). The Authorization Request SHALL set the scope parameter with one or many 
-scope values as defined in the table below.
+The Authorization Client SHALL send an IUA compliant Authorization Request for the authorization code flow. The Authorization Request SHALL set the scope parameter with one or many scope values as defined in the table below.
 
 | Scope               | Optionality (Basic/ Extended) | Type                               | Reference           | Remark                                                                                                                                                                  |
 |---------------------|-------------------------------|------------------------------------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -255,7 +245,7 @@ scope values as defined in the table below.
 | principal_id        | O/O                           | token                              | See sections below. | GLN of the healthcare professional an assistant is acting on behalf of.                                                                                                 |
 | group               | O/O                           | string                             | See sections below. | Name of the organization or group an assistant is acting on behalf of.                                                                                                  |
 | group_id            | O/O                           | string                             | See sections below. | OID of the organization or group an assistant is acting on behalf of.                                                                                                   |
-| access_token_format | O/O                           | string                             |                     | Shall be `ihe-jwt`.                                                                                                                                                     |
+| access_token_format | O/O                           | Strings                   |                     | SHALL be of value "urn:ietf:params:oauth:token-type:jwt".  |
 {:class="table table-bordered"}
 
 <sup id="3">3</sup>Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
@@ -344,9 +334,9 @@ Accept: application/json
 Content-type: application/x-www-form-urlencoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 grant_type=authorization_code&
-redirect_uri=http%3A%2F%2Flocalhost%3A9000%2Fcallback&
 code=98wrghuwuogerg97&
-code_verifier=qskt4342of74bkncmicdpv2qd143iqd822j41q2gupc5n3o6f1clxhpd2x11
+code_verifier=qskt4342of74bkncmicdpv2qd143iqd822j41q2gupc5n3o6f1clxhpd2x11&
+access_token_format=urn:ietf:params:oauth:token-type:jwt
 ```
 
 #### Get Access Token Response

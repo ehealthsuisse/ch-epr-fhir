@@ -110,7 +110,7 @@ The CapabilityStatement resource for the **Patient Identifier Cross-reference Ma
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Patient Identifier Cross-reference Manager using the IUA profile with basic access token. Consequently
 the _Mobile Patient Identifier Cross-reference Query_ [ITI-83] request must authorize using the 
-[_Incorporate Access Token_ [ITI-72]](iti-72.html) transaction of the IUA profile.
+[https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72](iti-72.html) transaction of the IUA profile.
 
 The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
 

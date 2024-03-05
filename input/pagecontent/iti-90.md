@@ -160,7 +160,7 @@ The CapabilityStatement resource for the **Care Services Selective Supplier** is
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the _Care Services
 Selective Supplier_ using the IUA profile with basic access token. Consequently, the _Find Matching Care Services_
-[ITI-90] request must authorize using the [_Incorporate Access Token_ [ITI-72]](iti-72.html) transaction of the IUA profile.
+[ITI-90] request must authorize using the [https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72](iti-72.html) transaction of the IUA profile.
 
 The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
 
