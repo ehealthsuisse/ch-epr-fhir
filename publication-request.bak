@@ -1,10 +1,10 @@
 {
   "package-id" : "ch.fhir.ig.ch-epr-mhealth",
-  "version" : "3.0.0",
-  "path" : "http://fhir.ch/ig/ch-epr-mhealth/3.0.0",
+  "version" : "4.0.0-ci-build",
+  "path" : "http://fhir.ch/ig/ch-epr-mhealth/4.0.0",
   "mode" : "milestone",
-  "status" : "trial-use",
-  "sequence" : "DSTU3",
+  "status" : "ci-build",
+  "sequence" : "DSTUe",
   "desc" : "eHealth Suissse",
   "changes" : "openissues.html",
   "first": false
