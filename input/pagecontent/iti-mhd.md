@@ -37,4 +37,4 @@ This national extension enforces authentication and authorization for access con
 For the process flow of this profile and its interplay with the other mHealth profiles see [sequence diagrams](sequencediagrams.html). 
 
 ### Security Consideration
-This national extension enforces authentication and authorization of access to the Patient Identity Manager using the IUA profile with extended access token as described in [IUA](iti-71.html#expected-actions-iua-authorization-server).
+This national extension enforces authentication and authorization of access to the Patient Identity Manager using the IUA profile with extended access token as described in [IUA](iti-71.html#expected-actions-1).

@@ -53,7 +53,7 @@ This national extension enhance the requirements on transactions and the expecte
 
 The scope of this national extension is limited to portals and primary systems to comply with ordinances of the Swiss EPR. This national extension is currently not scoped for native mobile clients. Therefore the Client Authorization by User Consent method SHALL NOT be supported. 
 
-Portals and primary systems SHALL be identified and authorized either on the TLS connection level or by digital signatures of the messages exchanged, or both. See section Expected Actions of the [Get Access Token transaction](iti-71.html#expected-actions-iua-authorization-server) for further details. 
+Portals and primary systems SHALL be identified and authorized either on the TLS connection level or by digital signatures of the messages exchanged, or both. See section Expected Actions of the [Get Access Token transaction](iti-71.html#expected-actions-1) for further details. 
 
 <div>
 {%include IUA_actor_diagram.svg %}
