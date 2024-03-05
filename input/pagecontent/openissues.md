@@ -1,3 +1,8 @@
+### Open Issues
+
+* Incorporate iua cp 1288 [#152](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/152)
+* Adapt IHE profiles for the Trace Context support [#153](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/153)
+
 ### DSTU3 Informative Ballot 2023 - Resolved Issues
 
 * Upgrade dependencies and fix IG link labels [#103](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/103)

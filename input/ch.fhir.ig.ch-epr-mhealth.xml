@@ -38,17 +38,17 @@
     <dependsOn id="terminology">
         <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
         <packageId value="hl7.terminology"/>
-      <version value="5.1.0"/>
+      <version value="5.4.0"/>
     </dependsOn>
   <dependsOn id="cheprterm">
     <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
     <packageId value="ch.fhir.ig.ch-epr-term"/>
-     <version value="2.0.9"/>
+     <version value="2.0.x"/>
     </dependsOn>
     <dependsOn id="chcore">
         <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
         <packageId value="ch.fhir.ig.ch-core"/>
-        <version value="4.0.0-ballot"/>
+        <version value="4.0.0"/>
     </dependsOn>
     <dependsOn id="ihepixmfhir">
         <uri value="https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm"/>
