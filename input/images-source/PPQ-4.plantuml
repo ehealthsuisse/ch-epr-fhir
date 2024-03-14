@@ -1,0 +1,9 @@
+@startuml
+
+participant "Policy Source" as Source
+participant "Policy Repository" as Repo
+
+Source -> Repo: HTTP <b>POST</b> [baseUrl]\nPayload: Bundle of type "transaction"
+Repo --> Source: HTTP response\nPayload: Bundle of type "transaction-response" / OperationOutcome
+
+@enduml
