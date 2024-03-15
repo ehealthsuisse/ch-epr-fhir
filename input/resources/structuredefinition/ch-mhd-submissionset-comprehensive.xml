@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="ch-mhd-submissionset-comprehensive"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
     <name value="CHMhdSubmissionSetComprehensive"/>
     <title value="CH MHD SubmissionSet Comprehensive"/>
     <status value="draft"/>
@@ -48,7 +48,7 @@
             <max value="1"/>
             <type>
                 <code value="Extension" />
-                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole" />
+                <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-author-authorrole" />
             </type>
             <mustSupport value="true" />
         </element>
@@ -104,7 +104,7 @@
             <path value="List.entry.item"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
+                <targetProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
                 <aggregation value="referenced" />
                 <aggregation value="bundled" />
             </type>

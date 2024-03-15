@@ -3,7 +3,7 @@ Parent: Identifier
 Id: OidIdentifier
 Title: "Oid Identifier"
 Description: "Identifer with an oid"
-* ^url = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/OidIdentifier"
+* ^url = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/OidIdentifier"
 * system 1..
 * system = "urn:ietf:rfc:3986" (exactly)
 * value 1..

@@ -1,6 +1,6 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
     <id value="CH.PIXm.Source"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PIXm.Source" />
+    <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PIXm.Source" />
     <name value="CH_PIXm_Source" />
     <title value="PIXm Patient Identity Source (client)" />
     <status value="draft" />
@@ -27,7 +27,7 @@
         </security>
         <resource>
             <type value="Patient"/>
-            <supportedProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient-feed"/>
+            <supportedProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-patient-feed"/>
             <interaction>
                 <code value="update"/>
                 <documentation value="conditional update for [ITI-104]"/>

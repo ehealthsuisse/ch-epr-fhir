@@ -20,7 +20,7 @@ The PDQm Patient Demographics Consumer Actor requirements CapabilityStatement ex
 - TLS SHALL be used together with IUA basic access token
 """
 Usage: #definition
-* url = "http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PDQm.Consumer"
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PDQm.Consumer"
 * name = "CH_PDQm_Consumer"
 * title = "PDQm Consumer (client)"
 * status = #active
@@ -35,7 +35,7 @@ Usage: #definition
 * rest.documentation = "PDQm client will query for Patient resources matching a sub-set of the FHIR core Patient resource query parameters"
 * rest.security.description = "TLS SHALL be used together with IUA basic access token"
 * rest.resource.type = #Patient
-* rest.resource.supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-patient"
+* rest.resource.supportedProfile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-patient"
 * rest.resource.interaction[0].code = #read
 * rest.resource.interaction[+].code = #search-type
 * rest.resource.searchParam[0].name = "_id"
@@ -100,7 +100,7 @@ The PDQm Patient Demographics Supplier Actor requirements CapabilityStatement ex
 - TLS SHALL be used together with IUA basic access token
 """
 Usage: #definition
-* url = "http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PDQm.Supplier"
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PDQm.Supplier"
 * name = "CH_PDQm_Supplier"
 * title = "PDQm Supplier (server)"
 * status = #active
@@ -116,7 +116,7 @@ Usage: #definition
 * rest.security.cors = false
 * rest.security.description = "None mandated by IHE, encouraged IHE-IUA or SMART-on-FHIR"
 * rest.resource.type = #Patient
-* rest.resource.supportedProfile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-patient"
+* rest.resource.supportedProfile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-patient"
 * rest.resource.interaction[0].code = #read
 * rest.resource.interaction[+].code = #search-type
 * rest.resource.searchParam[0].name = "_id"

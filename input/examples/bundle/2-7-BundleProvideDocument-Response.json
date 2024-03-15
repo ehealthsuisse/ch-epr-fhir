@@ -3,7 +3,7 @@
   "id": "2-7-BundleProvideDocument-Response",
   "meta": {
     "profile": [
-      "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"
+      "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"
     ]
   },
   "type": "transaction-response",

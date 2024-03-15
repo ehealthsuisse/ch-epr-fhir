@@ -2,7 +2,7 @@
 Instance: CH.ATNA.AuditRecordRepository
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.ATNA.AuditRecordRepository"
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.ATNA.AuditRecordRepository"
 * name = "CH_ATNA_Audit_Record_Repository"
 * title = "ATNA Audit Record Repository (server)"
 * status = #active
@@ -41,7 +41,7 @@ Usage: #definition
 Instance: CH.ATNA.AuditCreator
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.ATNA.AuditCreator"
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.ATNA.AuditCreator"
 * name = "CH_ATNA_Audit_Creator"
 * title = "ATNA Audit Creator (client)"
 * status = #active

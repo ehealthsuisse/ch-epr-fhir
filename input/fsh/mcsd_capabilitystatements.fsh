@@ -2,7 +2,7 @@
 Instance: CH.mCSD.CareServicesSelectiveSupplier
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.mCSD.CareServicesSelectiveSupplier"
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesSelectiveSupplier"
 * name = "CH_mCSD_Care_Services_Selective_Supplier"
 * title = "mCSD Care Services Selective Supplier (server)"
 * status = #active
@@ -16,7 +16,7 @@ Usage: #definition
 * rest.mode = #server
 * rest.documentation = "IHE ITI mCSD ITI-90 endpoint"
 * rest.resource[+].type = #Organization
-* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"
+* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
 * rest.resource[=].interaction[+].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].versioning = #no-version
@@ -39,7 +39,7 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[+].type = #Practitioner
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
 * rest.resource[=].interaction[+].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].versioning = #no-version
@@ -66,7 +66,7 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "family:exact"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[+].type = #PractitionerRole
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
 * rest.resource[=].interaction[+].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].versioning = #no-version
@@ -94,7 +94,7 @@ Usage: #definition
 Instance: CH.mCSD.CareServicesSelectiveConsumer
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.mCSD.CareServicesSelectiveConsumer"
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesSelectiveConsumer"
 * name = "CH_mCSD_Care_Services_Selective_Consumer"
 * title = "mCSD Care Services Selective Consumer (client)"
 * status = #active
@@ -108,7 +108,7 @@ Usage: #definition
 * rest.mode = #client
 * rest.documentation = "IHE ITI mCSD ITI-90 endpoint"
 * rest.resource[+].type = #Organization
-* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"
+* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
 * rest.resource[=].interaction[+].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].versioning = #no-version
@@ -131,7 +131,7 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "type"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[+].type = #Practitioner
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
 * rest.resource[=].interaction[+].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].versioning = #no-version
@@ -158,7 +158,7 @@ Usage: #definition
 * rest.resource[=].searchParam[+].name = "family:exact"
 * rest.resource[=].searchParam[=].type = #string
 * rest.resource[+].type = #PractitionerRole
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
 * rest.resource[=].interaction[+].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].versioning = #no-version

@@ -124,7 +124,7 @@ Accept: application/fhir+json
 	"id": "FranzMuster",
 	"meta": {
 		"profile": [
-			"http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient"
+			"http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-patient"
 		]
 	},
 	"identifier": [

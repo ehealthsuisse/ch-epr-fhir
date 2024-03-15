@@ -1,6 +1,6 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
     <id value="CH.PIXm.Consumer"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PIXm.Consumer" />
+    <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PIXm.Consumer" />
     <name value="CH_PIXm_Consumer" />
     <title value="PIXm Patient Identifier Cross-Reference Consumer (client)" />
     <status value="draft" />
@@ -30,7 +30,7 @@
             <type value="Patient" />
             <operation>
                 <name value="$ihe-pix"/>
-                <definition value="http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/CH.PIXm"/>
+                <definition value="http://fhir.ch/ig/ch-epr-fhir/OperationDefinition/CH.PIXm"/>
             </operation>
         </resource>
     </rest>

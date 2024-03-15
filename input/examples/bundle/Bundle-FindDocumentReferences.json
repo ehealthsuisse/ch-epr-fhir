@@ -4,7 +4,7 @@
   "meta": {
     "lastUpdated": "2020-10-14T07:56:23.916+00:00",
     "profile": [
-      "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"
+      "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"
     ]
   },
   "type": "searchset",
@@ -44,14 +44,14 @@
         ],
         "extension": [
           {
-            "url": "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus",
+            "url": "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-deletionstatus",
             "valueCoding": {
               "system": "urn:oid:2.16.756.5.30.1.127.3.10.18",
               "code": "urn:e-health-suisse:2019:deletionStatus:deletionNotRequested"
             }
           },
           {
-              "url": "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole",
+              "url": "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-author-authorrole",
               "valueCoding": {
                   "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
                   "code": "HCP",

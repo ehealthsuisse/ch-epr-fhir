@@ -3,7 +3,7 @@
     "id": "ParametersPIXmInput",
     "meta": {
         "profile": [
-            "http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"
+            "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-in-parameters"
         ]
     },
     "parameter": [

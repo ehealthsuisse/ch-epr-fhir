@@ -40,7 +40,7 @@ Profile ([example: Bundle: 2-7-BundleProvideDocument](Bundle-2-7-BundleProvideDo
 ##### DeletionStatus
 
 The optional metadata about the DeletionStatus of the document is represented in the DocumentReference using the
-extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus](StructureDefinition-ch-ext-deletionstatus.html).
+extension with the URL [http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-deletionstatus](StructureDefinition-ch-ext-deletionstatus.html).
 The values are defined in the ValueSet [DocumentEntry.Ext.EprDeletionStatus](http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.Ext.EprDeletionStatus).
 
 ##### SubmissionSet.Author.AuthorRole
@@ -48,7 +48,7 @@ The values are defined in the ValueSet [DocumentEntry.Ext.EprDeletionStatus](htt
 The SubmissionSet.Author element MAY be used to track the user who made the latest changes to the document metadata.
 If present, the value of the AuthorRole attribute SHALL be taken from the SubmissionSet.Author.AuthorRole value set
 with the OID `2.16.756.5.30.1.127.3.10.1.41`. The required metadata about the AuthorRole of the Author is represented
-in the List for the SubmissionSet using the extension with the URL [http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole](StructureDefinition-ch-ext-author-authorrole.html).
+in the List for the SubmissionSet using the extension with the URL [http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-author-authorrole](StructureDefinition-ch-ext-author-authorrole.html).
 The values are defined in the ValueSet [SubmissionSet.Author.AuthorRole](http://fhir.ch/ig/ch-epr-term/ValueSet/SubmissionSet.Author.AuthorRole).
 
 ##### DocumentEntry.originalProviderRole
@@ -58,7 +58,7 @@ representatives from documents originally provided by healthcare professionals, 
 administrators. The extra metadata attribute SHALL be set by the Document Source actor to the role value of the current
 user and SHALL NOT be updated by Update Initiator or Document Administrator actors. The required metadata about the
 originalProviderRole of the Author is represented in the DocumentReference using the extension with the URL
-[http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-author-authorrole](StructureDefinition-ch-ext-author-authorrole.html).
+[http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-author-authorrole](StructureDefinition-ch-ext-author-authorrole.html).
 The values are defined in the ValueSet [DocumentEntry.originalProviderRole](http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.originalProviderRole).
 
 #### Provide Document Bundle Response Message
