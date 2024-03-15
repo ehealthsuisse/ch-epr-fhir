@@ -47,7 +47,7 @@
     <ul>
       <li>
         <a href="CapabilityStatement-CH.mHealth.API.html">mHealth: API (server)</a>
-        <p>CapabilityStatement for mHealth MobileAccessGateway (server).</p>
+        <p>CapabilityStatement for mHealth API (server).</p>
         <ul>
           <li>
             <a href="CapabilityStatement-CH.PIXm.Manager.html">PIXm Patient Identifier Cross-reference Manager (server)</a>
