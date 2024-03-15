@@ -1,6 +1,6 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
     <id value="CH.PIXm.Manager"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PIXm.Manager" />
+    <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PIXm.Manager" />
     <name value="CH_PIXm_Manager" />
     <title value="PIXm Patient Identifier Cross-reference Manager (server)" />
     <status value="draft" />
@@ -28,7 +28,7 @@
         </security>
         <resource>
             <type value="Patient"/>
-            <supportedProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient-feed"/>
+            <supportedProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-patient-feed"/>
             <interaction>
                 <code value="update"/>
                 <documentation value="conditional update for [ITI-104]"/>
@@ -37,7 +37,7 @@
         </resource>
         <operation>
             <name value="$ihe-pix"/>
-            <definition value="http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/CH.PIXm"/>
+            <definition value="http://fhir.ch/ig/ch-epr-fhir/OperationDefinition/CH.PIXm"/>
         </operation>
     </rest>
 </CapabilityStatement>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OperationDefinition xmlns="http://hl7.org/fhir">
     <id value="CH.PIXm"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/OperationDefinition/CH.PIXm"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/OperationDefinition/CH.PIXm"/>
     <name value="CH_PIXm" />
     <title value="PIXm Find patient matches"/>
     <status value="draft"/>
@@ -21,8 +21,8 @@
     <system value="false"/>
     <type value="true"/>
     <instance value="false"/>
-    <inputProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
-    <outputProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
+    <inputProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-in-parameters"/>
+    <outputProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-out-parameters"/>
     <parameter>
         <name value="sourceIdentifier"/>
         <use value="in"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="ch-pdqm-patient"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-patient"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-patient"/>
     <version value="0.2.0"/>
     <name value="CHPDQmPatient"/>
     <title value="CH PDQm Patient"/>
@@ -97,7 +97,7 @@
             <max value="*"/>
             <type>
                 <code value="HumanName"/>
-                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-epr-mhealth-humanname" />
+                <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-humanname" />
             </type>
             <mustSupport value="true" />
         </element>
@@ -110,7 +110,7 @@
             <max value="1"/>
             <type>
                 <code value="HumanName"/>
-                <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-epr-mhealth-birthname" />
+                <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-birthname" />
             </type>
             <mustSupport value="true" />
         </element>
@@ -119,7 +119,7 @@
             <short value="Provider organization of the patient"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-provider-organization" />
+                <targetProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-provider-organization" />
             </type>
             <mustSupport value="true" />
         </element>

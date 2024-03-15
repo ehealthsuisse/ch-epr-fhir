@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="ch-pixm-out-parameters" />
-  <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters" />
+  <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-out-parameters" />
   <name value="IHE_PIXm_OUT_Parameters_CH" />
   <title value="CH PIXm OUT Parameters" />
   <status value="draft" />
@@ -62,7 +62,7 @@
       <path value="Parameters.parameter.valueReference" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-patient" />
+        <targetProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-patient" />
         <aggregation value="referenced" />
       </type>
     </element>

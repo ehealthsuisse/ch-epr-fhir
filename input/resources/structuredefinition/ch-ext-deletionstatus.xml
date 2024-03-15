@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="ch-ext-deletionstatus"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-deletionstatus"/>
     <version value="0.1.0"/>
     <name value="ChExtDeletionStatus"/>
     <title value="CH Extension Deletion Status"/>
@@ -41,7 +41,7 @@
             <type>
                 <code value="uri"/>
             </type>
-            <fixedUri value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-ext-deletionstatus"/>
+            <fixedUri value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-deletionstatus"/>
             <mustSupport value="true" />
         </element>
         <element id="Extension.valueCoding">

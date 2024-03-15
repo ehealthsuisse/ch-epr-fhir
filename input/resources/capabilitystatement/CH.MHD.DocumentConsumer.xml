@@ -1,6 +1,6 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
     <id value="CH.MHD.DocumentConsumer"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentConsumer" />
+    <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentConsumer" />
     <name value="CH_MHD_DocumentConsumer" />
     <title value="MHD Document Consumer (client)" />
     <status value="draft" />
@@ -29,7 +29,7 @@
          </security>
         <resource>
             <type value="DocumentReference"/>
-            <profile value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
+            <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -138,7 +138,7 @@
         <resource>
             <type value="List"/>
             <profile
-                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
+                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
             <interaction>
                 <code value="read"/>
             </interaction>

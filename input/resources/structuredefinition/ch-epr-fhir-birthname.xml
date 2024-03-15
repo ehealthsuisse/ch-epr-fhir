@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="ch-epr-mhealth-birthname"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-epr-mhealth-birthname"/>
+    <id value="ch-epr-fhir-birthname"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-birthname"/>
     <version value="0.1.0"/>
     <name value="ChEprFhirBirthName"/>
     <title value="CH EPR FHIR BirthName"/>

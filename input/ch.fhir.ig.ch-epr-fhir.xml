@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-    <id value="ch.fhir.ig.ch-epr-mhealth"/>
+    <id value="ch.fhir.ig.ch-epr-fhir"/>
     <text>
         <status value="additional"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
             Implementation Guide for the Mobile access to Health Documents (EPR FHIR) Profile for the Swiss EPR
         </div>
     </text>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/ImplementationGuide/ch.fhir.ig.ch-epr-fhir"/>
     <version value="4.0.0-ci-build"/>
     <name value="CHEprFhir"/>
     <title value="CH EPR FHIR (R4)"/>
@@ -32,7 +32,7 @@
         </coding>
     </jurisdiction>
     <copyright value="CC0-1.0"/>
-    <packageId value="ch.fhir.ig.ch-epr-mhealth"/>
+    <packageId value="ch.fhir.ig.ch-epr-fhir"/>
     <license value="CC0-1.0"/>
     <fhirVersion value="4.0.1"/>
     <dependsOn id="terminology">
@@ -79,7 +79,7 @@
             </reference>
             <name value="PIXm Parameters Query Input"/>
             <description value="Example Input Parameters Mobile Patient Identifier Cross-reference Query"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-in-parameters"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-in-parameters"/>
         </resource>
         <resource>
             <reference>
@@ -87,7 +87,7 @@
             </reference>
             <name value="PIXm Parameters Query Output"/>
             <description value="Example Output Parameters Mobile Patient Identifier Cross-reference Query"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-out-parameters"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-out-parameters"/>
         </resource>
         <resource>
             <reference>
@@ -95,7 +95,7 @@
             </reference>
             <name value="PIXm Patient Feed"/>
             <description value="Example PIXm Patient for Feed"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pixm-patient-feed"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-patient-feed"/>
         </resource>
         <resource>
             <reference>
@@ -103,7 +103,7 @@
             </reference>
             <name value="PDQm Patient Franz Muster (Full URL)"/>
             <description value="Example Patient"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-patient"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-patient"/>
         </resource>
         <resource>
             <reference>
@@ -112,7 +112,7 @@
             <name value="PDQm Provider Organization Gruppenpraxis"/>
             <description value="Example Organization"/>
             <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-provider-organization"/>
+                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-provider-organization"/>
         </resource>
         <resource>
             <reference>
@@ -121,7 +121,7 @@
             <name value="MHD Provide Document Bundle for MedicationCard"/>
             <description value="MHD Provide Document Bundle for MedicationCard"/>
             <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
+                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"/>
         </resource>
         <resource>
             <reference>
@@ -129,7 +129,7 @@
             </reference>
             <name value="PDQm Query response message"/>
             <description value="CH PDQm Query response message example result for Franz Muster, 27.1.1955"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-querypatientresourceresponsemessage"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-querypatientresourceresponsemessage"/>
         </resource>
         <resource>
             <reference>
@@ -137,7 +137,7 @@
             </reference>
             <name value="PDQm Query response message too many results"/>
             <description value="CH PDQm Query response message with too many results indication"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-querypatientresourceresponsemessage"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-querypatientresourceresponsemessage"/>
         </resource>
         <resource>
             <reference>
@@ -146,7 +146,7 @@
             <name value="MHD SubmissionSet (List) for MedicationCard"/>
             <description value="Example SubmissionSet for a MedicationCard"/>
             <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
+                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-submissionset-comprehensive"/>
         </resource>
         <resource>
             <reference>
@@ -155,7 +155,7 @@
             <name value="MHD DocumentReference for MedicationCard"/>
             <description value="Example DocumentReference for a MedicationCard"/>
             <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
+                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
         </resource>
 <resource>
             <reference>
@@ -164,7 +164,7 @@
             <name value="MHD Provide Document Bundle Response for MedicationCard"/>
             <description value="MHD Provide Document Bundle Response for MedicationCard"/>
             <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
+                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
         </resource>
         <resource>
             <reference>
@@ -173,7 +173,7 @@
             <name value="MHD Find DocumentSubmissionSet (List)"/>
             <description value="MHD Find Document SubmissionSet- Bundle as Response"/>
             <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
+                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
         </resource>
         <resource>
             <reference>
@@ -182,7 +182,7 @@
             <name value="MHD Find DocumentReferences"/>
             <description value="MHD Find DocumentReferences - Bundle as Response"/>
             <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
+                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
         </resource>
         <resource>
             <reference>
@@ -199,7 +199,7 @@
             </reference>
             <name value="PDQm OperationOutcome More Attributes Requested Example"/>
             <description value="An example on the OperationOutcome for indicating which additional attributes are requested to lower the results number."/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-moreattributesrequested"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-moreattributesrequested"/>
         </resource>
         <resource>
             <reference>
@@ -208,7 +208,7 @@
             <name value="mCSD Practitioner Dr. Peter Pan"/>
             <description value="An example of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
 (uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Practitioner"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"/>
         </resource>
         <resource>
             <reference>
@@ -217,7 +217,7 @@
             <name value="mCSD Organization Spital X"/>
             <description value="An example of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
 (uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"/>
         </resource>
         <resource>
             <reference>
@@ -226,7 +226,7 @@
             <name value="mCSD Organization Spital X Dept. 3"/>
             <description value="An example of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
 examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"/>
         </resource>
         <resource>
             <reference>
@@ -235,7 +235,7 @@ examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=c
             <name value="mCSD Organization Praxis P"/>
             <description value="An example of CHmCSDOrganization that contains the same information as Praxis P in the Swiss
 examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.Organization"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"/>
         </resource>
         <resource>
             <reference>
@@ -244,7 +244,7 @@ examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=c
             <name value="mCSD PractitionerRole Dr. Peter Pan at Spital X Dept. 3"/>
             <description value="An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Spital X, Dept. 3
 Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch)"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"/>
         </resource>
         <resource>
             <reference>
@@ -253,7 +253,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC
             <name value="mCSD PractitionerRole Dr. Peter Pan at Praxis P"/>
             <description value="An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Praxis P
 Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch)"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/CH.mCSD.PractitionerRole"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"/>
         </resource>
 <resource>
             <reference>
@@ -334,13 +334,13 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <!-- CH EPR FHIR: Data Type Profiles -->
         <resource>
             <reference>
-                <reference value="StructureDefinition/ch-epr-mhealth-humanname"/>
+                <reference value="StructureDefinition/ch-epr-fhir-humanname"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ch-epr-mhealth-birthname"/>
+                <reference value="StructureDefinition/ch-epr-fhir-birthname"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>

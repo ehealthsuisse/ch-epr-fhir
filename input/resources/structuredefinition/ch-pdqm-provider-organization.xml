@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="ch-pdqm-provider-organization"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-pdqm-provider-organization"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-provider-organization"/>
     <version value="0.1.0"/>
     <name value="CHPDQmProviderOrganization"/>
     <title value="CH PDQm Provider Organization"/>
@@ -33,7 +33,7 @@
             <path value="Organization"/>
             <short value="CH PDQm Provider Organization"/>
             <constraint>
-                <key value="ch-epr-mhealth-org-1"/>
+                <key value="ch-epr-fhir-org-1"/>
                 <severity value="error"/>
                 <human value="The organization SHALL have at least one of telecom, address, or contact person to be present."/>
                 <expression value="(telecom.count() + address.count() + contact.name.count()) > 0"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
     <id value="ch-mhd-providedocumentbundle-comprehensive-response"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
     <name value="IHE_MHD_ProvideDocumentBundle_Comprehensive_Response_CH"/>
     <title value="CH MHD Provide Document Bundle Comprehensive Response"/>
     <status value="draft"/>

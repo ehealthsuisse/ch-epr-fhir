@@ -1,6 +1,6 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
     <id value="CH.mHealth.API"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.mHealth.API" />
+    <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mHealth.API" />
     <name value="CH_mHealth_API" />
     <title value="mHealth: API (server)" />
     <status value="draft" />
@@ -15,11 +15,11 @@
     </contact>
     <description value="CapabilityStatement for mHealth API (server)." />
     <kind value="requirements" />
-    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PIXm.Manager"/>
-    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.PDQm.Supplier"/>
-    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentRecipient"/>
-    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.MHD.DocumentResponder"/>
-    <imports value="http://fhir.ch/ig/ch-epr-mhealth/CapabilityStatement/CH.mCSD.CareServicesSelectiveSupplier"/>
+    <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PIXm.Manager"/>
+    <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PDQm.Supplier"/>
+    <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentRecipient"/>
+    <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentResponder"/>
+    <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesSelectiveSupplier"/>
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
     <format value="application/fhir+json" />

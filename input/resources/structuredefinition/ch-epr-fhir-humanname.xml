@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-    <id value="ch-epr-mhealth-humanname"/>
-    <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-epr-mhealth-humanname"/>
+    <id value="ch-epr-fhir-humanname"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-humanname"/>
     <version value="0.1.0"/>
     <name value="ChEprFhirHumanName"/>
     <title value="CH EPR FHIR HumanName"/>
@@ -32,7 +32,7 @@
         <element id="HumanName">
             <path value="HumanName"/>
             <constraint>
-                <key value="ch-epr-mhealth-1"/>
+                <key value="ch-epr-fhir-1"/>
                 <severity value="error"/>
                 <human value="For birth name (iso21090-EN-qualifier BR) use slice 'name:BirthName'"/>
                 <expression value="family.extension.where(url='http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier' and value='BR').exists()=false"/>
