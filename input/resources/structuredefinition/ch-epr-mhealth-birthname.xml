@@ -3,8 +3,8 @@
     <id value="ch-epr-mhealth-birthname"/>
     <url value="http://fhir.ch/ig/ch-epr-mhealth/StructureDefinition/ch-epr-mhealth-birthname"/>
     <version value="0.1.0"/>
-    <name value="ChEprMHealthBirthName"/>
-    <title value="CH EPR mHealth BirthName"/>
+    <name value="ChEprFhirBirthName"/>
+    <title value="CH EPR FHIR BirthName"/>
     <status value="draft"/>
     <date value="2020-07-07T00:00:00+10:00"/>
     <publisher value="eHealth Suisse"/>

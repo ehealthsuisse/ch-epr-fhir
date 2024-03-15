@@ -5,13 +5,13 @@
     <text>
         <status value="additional"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
-            Implementation Guide for the Mobile access to Health Documents (epr-mhealth) Profile for the Swiss EPR
+            Implementation Guide for the Mobile access to Health Documents (EPR FHIR) Profile for the Swiss EPR
         </div>
     </text>
     <url value="http://fhir.ch/ig/ch-epr-mhealth/ImplementationGuide/ch.fhir.ig.ch-epr-mhealth"/>
     <version value="4.0.0-ci-build"/>
-    <name value="CHEprMhealth"/>
-    <title value="CH EPR mHealth (R4)"/>
+    <name value="CHEprFhir"/>
+    <title value="CH EPR FHIR (R4)"/>
     <status value="active"/>
     <experimental value="false"/>
     <date value="2024-03-05"/>
@@ -24,7 +24,7 @@
         </telecom>
     </contact>
     <description
-            value="Implementation Guide for the Mobile access to Health Documents (epr-mhealth) Profile for the Swiss EPR"/>
+            value="Implementation Guide for the Mobile access to Health Documents (EPR FHIR) Profile for the Swiss EPR"/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -263,7 +263,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             <description value="An example of ITI-90 response Bundle in the profile CH mCSD"/>
         </resource>
 
-        <!-- CH EPR mHealth: Resource Profiles -->
+        <!-- CH EPR FHIR: Resource Profiles -->
         <resource>
             <reference>
                 <reference value="StructureDefinition/ch-pixm-in-parameters"/>
@@ -331,7 +331,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             <exampleBoolean value="false"/>
         </resource>
 
-        <!-- CH EPR mHealth: Data Type Profiles -->
+        <!-- CH EPR FHIR: Data Type Profiles -->
         <resource>
             <reference>
                 <reference value="StructureDefinition/ch-epr-mhealth-humanname"/>
@@ -351,7 +351,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             <exampleBoolean value="false"/>
         </resource>
 
-        <!-- CH EPR mHealth: Extension Definitions -->
+        <!-- CH EPR FHIR: Extension Definitions -->
         <resource>
             <reference>
                 <reference value="StructureDefinition/ch-ext-author-authorrole"/>
@@ -365,7 +365,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             <exampleBoolean value="false"/>
         </resource>
 
-        <!-- CH EPR mHealth  Operation Defintions -->
+        <!-- CH EPR FHIR  Operation Definitions -->
         <resource>
             <reference>
                 <reference value="OperationDefinition/CH.PIXm"/>
@@ -374,7 +374,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         </resource>
 
 
-        <!-- CH EPR mHealth Capability Statements -->
+        <!-- CH EPR FHIR Capability Statements -->
         <resource>
             <reference>
                 <reference value="CapabilityStatement/CH.mHealth.App"/>
@@ -454,9 +454,9 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             <exampleBoolean value="false"/>
         </resource>
 
-    <!-- CH EPR mHealth Code Systems -->
+    <!-- CH EPR FHIR Code Systems -->
 
-    <!-- CH EPR mHealth Value Sets -->
+    <!-- CH EPR FHIR Value Sets -->
 
         <!-- IG Pages -->
         <page>
