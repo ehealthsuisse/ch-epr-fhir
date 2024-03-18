@@ -7,3 +7,4 @@ Alias: $MHDlistTypes = https://profiles.ihe.net/ITI/MHD/CodeSystem/MHDlistTypes
 Alias: $formatcode = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
 Alias: $bcp47 = urn:ietf:bcp:47
 Alias: $medreg = urn:oid:2.16.756.5.30.1.127.3.5
+Alias: $URI = urn:ietf:rfc:3986

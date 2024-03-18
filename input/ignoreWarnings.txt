@@ -14,3 +14,9 @@ INFORMATION: Bundle/PDQm-QueryResponse: Bundle.entry[0].resource.identifier[0]: 
 # Two known errors time of publication due https://github.com/ehealthsuisse/ch-epr-mhealth/issues/153
 This element does not match any known slice defined in the profile https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source|4.2.1 and slicing is CLOSED: AuditEvent.entity[2]: Does not match slice 'patient' (discriminator: type.where((system = 'http://terminology.hl7.org/CodeSystem/audit-entity-type') and (code = '1') and (display = 'Person')).exists()), AuditEvent.entity[2]: Does not match slice 'submissionSet' (discriminator: type.where((system = 'http://terminology.hl7.org/CodeSystem/audit-entity-type') and (code = '2') and (display = 'System Object')).exists())
 AuditEvent.entity: max allowed = 2, but found 3 (from https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source|4.2.1)
+
+# Seems harmless
+Code found in include, however: null
+
+# Whenever the path is "StructureDefinition.snapshot.element[*].example[0].value.ofType(Identifier)", it is an error in the base specification and not in the PPQm IG itself
+if identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'
