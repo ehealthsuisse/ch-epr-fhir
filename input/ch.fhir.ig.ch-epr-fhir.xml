@@ -502,6 +502,11 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                     <title value="Mobile Care Services Discovery (mCSD)"/>
                     <generation value="markdown"/>
                 </page>
+                <page>
+                    <nameUrl value="ppqm.html"/>
+                    <title value="Privacy Policy Query for Mobile (CH:PPQm)"/>
+                    <generation value="markdown"/>
+                </page>
             </page>
             <page>
                 <title value="Volume 2"/>
@@ -560,6 +565,21 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                 <page>
                     <nameUrl value="iti-90.html"/>
                     <title value="Find Matching Care Services [ITI-90]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="ppqm-3.html"/>
+                    <title value="Mobile Privacy Policy Feed [PPQ-3]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="ppqm-4.html"/>
+                    <title value="Mobile Privacy Policy Bundle Feed [PPQ-4]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="ppqm-5.html"/>
+                    <title value="Mobile Privacy Policy Retrieve [PPQ-5]"/>
                     <generation value="markdown"/>
                 </page>
             </page>
