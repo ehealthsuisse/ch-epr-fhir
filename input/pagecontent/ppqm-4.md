@@ -5,7 +5,10 @@ method which SHALL be supported is POST.
 
 ### HTTP Method POST
 
-Figure 5: PPQ-4: HTTP Method POST
+<figure>
+  {% include PPQm-4_actor_diagram.svg %}
+  <figcaption>Figure 5: PPQ-4: HTTP Method POST</figcaption>
+</figure>
 
 #### Trigger Event
 

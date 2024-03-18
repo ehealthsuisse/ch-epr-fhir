@@ -115,7 +115,11 @@ The national integration profile CH:PPQm — “Privacy Policy Query for Mobile�
 
 CH:PPQm comprises the following actors and transactions:
 
-Figure 1: CH:PPQm actor diagram 
+<figure>
+  <img src="assets/images/actors.svg"/>
+  <figcaption>Figure 1: CH:PPQm actor diagram</figcaption>
+</figure>
+ 
 
 Actor: 	Policy Repository
 Role: 	Stores policies and policy sets and provides the possibility to add, query, update and delete them

@@ -4,8 +4,11 @@ This transaction is used by the Policy Consumer to retrieve policy sets. The onl
 is GET.
 
 ### HTTP Method GET
- 
-Figure 6: PPQ-5: HTTP Method GET
+
+<figure>
+  {% include PPQm-5_actor_diagram.svg %}
+  <figcaption>Figure 6: PPQ-5: HTTP Method GET</figcaption>
+</figure>
 
 #### Trigger Events
 

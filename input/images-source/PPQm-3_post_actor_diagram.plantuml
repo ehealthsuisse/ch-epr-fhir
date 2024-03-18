@@ -1,0 +1,14 @@
+@startuml
+
+title Interaction Diagram for [PPQ-3 POST]
+
+hide footbox
+autoactivate on
+
+participant "Policy Source" as PolicySource
+participant "Policy Repository" as PolicyRepository
+
+"PolicySource" -> "PolicyRepository" : HTTP <b>POST</b> [baseUrl]/Consent\nPayload: Consent
+"PolicyRepository" --> "PolicySource" : HTTP response\nPayload: none / OperationOutcome / Consent
+
+@enduml
