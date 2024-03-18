@@ -5,7 +5,10 @@ following HTTP methods SHALL be supported: POST, PUT, and DELETE.
 
 ### HTTP Method POST
 
-Figure 2: PPQ-3: HTTP Method POST
+<figure>
+  {% include PPQm-3_post_actor_diagram.svg %}
+  <figcaption>Figure 2: PPQ-3: HTTP Method POST</figcaption>
+</figure>
 
 #### Trigger Event
 
@@ -34,7 +37,10 @@ The PPQ 3 response SHALL be created according to the section 3.1.0.8 of the FHIR
 
 ### HTTP Method PUT
 
-Figure 3: PPQ-3: HTTP Method PUT
+<figure>
+  {% include PPQm-3_put_actor_diagram.svg %}
+  <figcaption>Figure 3: PPQ-3: HTTP Method PUT</figcaption>
+</figure>
 
 #### Trigger Event
 
@@ -63,8 +69,11 @@ ID is the same as in the HTTP URL.
 The PPQ 3 response SHALL be created according to the section 3.1.0.4 of the FHIR R4 specification.
 
 ###	HTTP Method DELETE
- 
-Figure 4: PPQ-3: HTTP Method DELETE
+
+<figure>
+  {% include PPQm-3_delete_actor_diagram.svg %}
+  <figcaption>Figure 4: PPQ-3: HTTP Method DELETE</figcaption>
+</figure>
 
 #### Trigger Event
 

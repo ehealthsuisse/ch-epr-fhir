@@ -1,0 +1,14 @@
+@startuml
+
+title Interaction Diagram for [PPQ-3 DELETE]
+
+hide footbox
+autoactivate on
+
+participant "Policy Source" as PolicySource
+participant "Policy Repository" as PolicyRepository
+
+"PolicySource" -> "PolicyRepository" : HTTP <b>DELETE</b> [baseUrl]/Consent?identifier=[uuid]\nPayload: none
+"PolicyRepository" --> "PolicySource" : HTTP response\nPayload: none / OperationOutcome
+
+@enduml
