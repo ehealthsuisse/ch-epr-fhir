@@ -21,6 +21,9 @@ component "EPR App" {
   [RESTful ATNA Secure Node] as ATNANode
 
   [Care Services Selective Consumer] as mCSDSelectiveConsumer
+
+  [Policy Source] as PPQmPolicySource
+  [Policy Consumer] as PPQmPolicyConsumer
 }
 
 component "EPR API" {
@@ -47,6 +50,10 @@ component "EPR API" {
 
   [Care Services Selective Supplier] as mCSDSelectiveSupplier
   mCSDSelectiveConsumer --> mCSDSelectiveSupplier : Find Matching Care Services [ITI-90]
+
+  [Policy Repository] as PPQmPolicyRepository
+  PPQmPolicySource --> PPQmPolicyRepository : Mobile Privacy Policy Feed [PPQ-3],\nMobile Privacy Policy Bundle Feed [PPQ-4]
+  PPQmPolicyConsumer --> PPQmPolicyRepository : Mobile Privacy Policy Retrieve [PPQ-5]
 }
 
 [User Authentication Provider] as UAProvider
