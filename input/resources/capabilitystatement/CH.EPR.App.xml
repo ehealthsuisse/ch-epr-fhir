@@ -21,6 +21,7 @@
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentSource"/>
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentConsumer"/>
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesSelectiveConsumer"/>
+    <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PPQm.PolicySourceConsumer"/>
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
     <format value="application/fhir+json" />
