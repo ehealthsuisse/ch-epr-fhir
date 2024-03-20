@@ -57,13 +57,9 @@ Description: "Swiss EPR Policy Set as a Consent"
 * patient.reference             0..0
 * patient.type                  0..0
 * patient.identifier            1..1
+* patient.identifier            only EPRSPIDIdentifier
 * patient.identifier.use        0..0
 * patient.identifier.type       0..0
-* patient.identifier.system     1..1
-* patient.identifier.system     = "urn:oid:2.16.756.5.30.1.127.3.10.3"
-* patient.identifier.value      1..1
-* patient.identifier.value      ^short = "EPR-SPID of the patient (18 digits)"
-* patient.identifier.value      obeys ch-epr-ppqm-epr-spid-format
 * patient.identifier.period     0..0
 * patient.identifier.assigner   0..0
 * patient.display               0..0
@@ -150,11 +146,6 @@ Description: "Swiss EPR Policy Set as a Consent"
 Invariant:      ch-epr-ppqm-uuid-format
 Description:    "The policy set ID must be a UUID in URN format"
 Expression:     "lower().matches('^urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')"
-Severity:       #error
-
-Invariant:      ch-epr-ppqm-epr-spid-format
-Description:    "The patient ID must be an EPR-SPID"
-Expression:     "matches('^[0-9]{18}$')"
 Severity:       #error
 
 Invariant:      ch-epr-ppqm-date-format
@@ -256,7 +247,7 @@ Usage: #example
 * scope.coding = #patient-privacy
 * category.coding = #INFA
 * patient.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
-* patient.identifier.value = "123456789012345678"
+* patient.identifier.value = "761337610000000002"
 * policyRule.coding = $URI#urn:e-health-suisse:2015:policies:access-level:full
 * provision.actor.role.coding = #PAT
 * provision.actor.reference.identifier.type.coding = $URI#urn:e-health-suisse:2015:epr-spid
@@ -276,7 +267,7 @@ Usage: #example
 * scope.coding = #patient-privacy
 * category.coding = #INFA
 * patient.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
-* patient.identifier.value = "123456789012345678"
+* patient.identifier.value = "761337610000000002"
 * policyRule.coding = $URI#urn:e-health-suisse:2015:policies:access-level:normal
 * provision.actor.role.coding = #HCP
 * provision.actor.reference.display = "all"
@@ -296,7 +287,7 @@ Usage: #example
 * scope.coding = #patient-privacy
 * category.coding = #INFA
 * patient.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
-* patient.identifier.value = "123456789012345678"
+* patient.identifier.value = "761337610000000002"
 * policyRule.coding = $URI#urn:e-health-suisse:2015:policies:provide-level:restricted
 * provision.actor.role.coding = #HCP
 * provision.actor.reference.display = "all"
@@ -318,7 +309,7 @@ Usage: #example
 * scope.coding = #patient-privacy
 * category.coding = #INFA
 * patient.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
-* patient.identifier.value = "123456789012345678"
+* patient.identifier.value = "761337610000000002"
 * policyRule.coding = $URI#urn:e-health-suisse:2015:policies:access-level:delegation-and-normal
 * provision.period.end = "2022-02-15"
 * provision.actor.role.coding = #HCP
@@ -340,7 +331,7 @@ Usage: #example
 * scope.coding = #patient-privacy
 * category.coding = #INFA
 * patient.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
-* patient.identifier.value = "123456789012345678"
+* patient.identifier.value = "761337610000000002"
 * policyRule.coding = $URI#urn:e-health-suisse:2015:policies:access-level:restricted
 * provision.period.start = "2022-02-01"
 * provision.period.end = "2022-02-15"
@@ -363,7 +354,7 @@ Usage: #example
 * scope.coding = #patient-privacy
 * category.coding = #INFA
 * patient.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
-* patient.identifier.value = "123456789012345678"
+* patient.identifier.value = "761337610000000002"
 * policyRule.coding = $URI#urn:e-health-suisse:2015:policies:access-level:full
 * provision.actor.role.coding = #REP
 * provision.actor.reference.identifier.type.coding = $URI#urn:e-health-suisse:representative-id
