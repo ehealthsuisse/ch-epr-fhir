@@ -197,7 +197,7 @@ The policy set ID in the DeletePolicyRequest SHALL be taken from the PPQ-3 reque
 
 #### Transformation of PPQ-4 Requests into PPQ-1 Requests
 
-PPQ-4 request body is a [PpqmRequestBundle](StructureDefinition-PpqmFeedRequestBundle.html) resource, where all 
+PPQ-4 request body is a [PpqmFeedRequestBundle](StructureDefinition-PpqmFeedRequestBundle.html) resource, where all 
 attributes entry.request.method have the same value — "POST", "PUT", or "DELETE".
 
 The PPQ-1 request type depends on this value as follows:
@@ -279,7 +279,7 @@ Three variants are possible:
 3. PPQ-2 call ends with a SOAP Fault.
 
 If the PPQ-2 response has the status "urn:oasis:names:tc:xacml:1.0:status:ok", then the PPQ-5 response SHALL be a
-Bundle resource compliant to the [PpqmRequestBundle](StructureDefinition-PpqmFeedRequestBundle.html) profile. For
+Bundle resource compliant to the [PpqmFeedRequestBundle](StructureDefinition-PpqmFeedRequestBundle.html) profile. For
 each policy set contained in the PPQ-2 response, the following steps SHALL be performed:
 - Transform the policy set into a Consent resource compliant to the
   [PpqmConsent profile](StructureDefinition-PpqmConsent.html), as described in the 
