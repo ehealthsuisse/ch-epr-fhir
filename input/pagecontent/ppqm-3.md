@@ -90,7 +90,7 @@ The request SHALL be sent to `[baseUrl]/Consent?identifier=[uuid]`.
 The Policy Repository SHALL implement the Conditional Delete pattern described in section 3.1.0.7.1 of the FHIR R4
 specification. 
 
-Upon receiving the HTTP PUT request, the Policy Repository SHALL:
+Upon receiving the HTTP DELETE request, the Policy Repository SHALL:
 -	Delete the policy set referenced in the request.
 -	Create a PPQ 3 response according to the transaction outcome.
 
