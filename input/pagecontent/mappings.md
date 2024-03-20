@@ -1,15 +1,6 @@
-# Volume 3 – Content Profiles
+### Mapping between PpqmConsent Resources and CH:PPQ Policy Sets
 
-Definitions of resource profiles, coding systems, and value sets for the FHIR resources used in the CH:PPQm profile
-are provided in the CH:PPQm implementation guide.
-
-The rest of this chapter defines a mapping between CH:PPQm and CH:PPQ data structures — section 4.1 draws parallels
-between FHIR Consent resources and XACML 2.0 policy sets, section 4.2 focusses on the transformation of messages
-used in CH:PPQm and CH:PPQ transactions.
-
-## Mapping between PpqmConsent Resources and CH:PPQ Policy Sets
-
-### Transformation of PpqmConsent Resources into CH:PPQ Policy Sets
+#### Transformation of PpqmConsent Resources into CH:PPQ Policy Sets
 
 Each [PpqmConsent](StructureDefinition-PpqmConsent.html) resource contains an element identifier with
 `type.coding.code` equal to "templateId". In this element, the attribute value contains the ID of the official
@@ -42,9 +33,9 @@ SHALL be filled according to the table below:
 | End date             | `provision.period.end`                                                         |
 {:class="table table-bordered"}
 
-Table 4: Mapping of PpqmConsent attributes onto CH:PPQ policy set template placeholders
+Table 1: Mapping of PpqmConsent attributes onto CH:PPQ policy set template placeholders
 
-### Transformation of CH:PPQ Policy Sets into PpqmConsent Resources
+#### Transformation of CH:PPQ Policy Sets into PpqmConsent Resources
 
 Each patient-related CH:PPQ policy set is generated from a template provided in the official Policy Stack, but does
 not hold a direct reference to this template. Therefore, the first step is to determine the template ID. For that,
@@ -187,57 +178,59 @@ rules defined for each template in the table below:
 	</tbody>
 </table>
 
-Table 5: Mapping of CH:PPQ policy set elements onto PpqmConsent attributes
+Table 2: Mapping of CH:PPQ policy set elements onto PpqmConsent attributes
 
-## Mapping between CH:PPQm and CH:PPQ Messages
+### Mapping between CH:PPQm and CH:PPQ Messages
 
-### Transformation of PPQ-3 Requests into PPQ-1 Requests
+#### Transformation of PPQ-3 Requests into PPQ-1 Requests
 
-The PPQ 1 request type depends on the HTTP method used to submit the PPQ 3 request:
+The PPQ-1 request type depends on the HTTP method used to submit the PPQ-3 request:
 - "POST" — AddPolicyRequest.
 - "PUT" — UpdatePolicyRequest if the policy already exists in the Policy Repository, otherwise AddPolicyRequest.
 - "DELETE" — DeletePolicyRequest.
 
-The policy set in AddPolicyRequest and UpdatePolicyRequest SHALL be constructed as described in section 4.1.1 from
-the [PpqmConsent](StructureDefinition-PpqmConsent.html) resource contained in the PPQ 3 request body.
+The policy set in AddPolicyRequest and UpdatePolicyRequest SHALL be constructed as described in the
+[section "Transformation of PpqmConsent Resources into CH:PPQ Policy Sets"](#transformation-of-ppqmconsent-resources-into-chppq-policy-sets)
+from the [PpqmConsent](StructureDefinition-PpqmConsent.html) resource contained in the PPQ-3 request body.
 
-The policy set ID in the DeletePolicyRequest SHALL be taken from the PPQ 3 request URL.
+The policy set ID in the DeletePolicyRequest SHALL be taken from the PPQ-3 request URL.
 
-### Transformation of PPQ-4 Requests into PPQ-1 Requests
+#### Transformation of PPQ-4 Requests into PPQ-1 Requests
 
-PPQ 4 request body is a PpqmRequestBundle resource, where all attributes entry.request.method have the same value —
-"POST", "PUT", or "DELETE".
+PPQ-4 request body is a [PpqmRequestBundle](StructureDefinition-PpqmFeedRequestBundle.html) resource, where all 
+attributes entry.request.method have the same value — "POST", "PUT", or "DELETE".
 
-The PPQ 1 request type depends on this value as follows:
+The PPQ-1 request type depends on this value as follows:
 - "POST" — AddPolicyRequest.
-- "PUT" — UpdatePolicyRequest if the policy sets contained in the PPQ 4 request bundle already exist in the Policy
+- "PUT" — UpdatePolicyRequest if the policy sets contained in the PPQ-4 request bundle already exist in the Policy
   Repository, otherwise AddPolicyRequest. If some policy sets do already exist in the Policy Repository while
-  others do not, then the transformation of the PPQ 4 request into an PPQ 1 request is not possible, and the PPQ 4
-  request SHALL be rejected (creating two PPQ 1 requests would break the transactional semantics of PPQ 4).
+  others do not, then the transformation of the PPQ-4 request into an PPQ-1 request is not possible, and the PPQ-4
+  request SHALL be rejected (creating two PPQ-1 requests would break the transactional semantics of PPQ-4).
 - "DELETE" — DeletePolicyRequest.
 
-Policy sets in AddPolicyRequest and UpdatePolicyRequest SHALL be constructed as described in section 4.1.1 from the
-[PpqmConsent](StructureDefinition-PpqmConsent.html) resources embedded in the PPQ 4 request bundle.
+Policy sets in AddPolicyRequest and UpdatePolicyRequest SHALL be constructed as described in the
+[section "Transformation of PpqmConsent Resources into CH:PPQ Policy Sets"](#transformation-of-ppqmconsent-resources-into-chppq-policy-sets)
+from the [PpqmConsent](StructureDefinition-PpqmConsent.html) resources embedded in the PPQ-4 request bundle.
 
-Policy set IDs in the DeletePolicyRequest SHALL be taken from the all attributes `entry.request.url` of the PPQ 4
+Policy set IDs in the DeletePolicyRequest SHALL be taken from the all attributes `entry.request.url` of the PPQ-4
 request bundle.
 
-### Transformation of PPQ-1 Responses into PPQ-3/PPQ-4 Responses
+#### Transformation of PPQ-1 Responses into PPQ-3/PPQ-4 Responses
 
 Three variants are possible:
-1. PPQ 1 response with the status "urn:e-health-suisse:2015:response-status:success".
-2. PPQ 1 response with the status "urn:e-health-suisse:2015:response-status:failure".
-3. PPQ 1 call ends with a SOAP Fault.
-4. If the PPQ 1 response has the status "urn:e-health-suisse:2015:response-status:success", then the PPQ 3/PPQ 4
+1. PPQ-1 response with the status "urn:e-health-suisse:2015:response-status:success".
+2. PPQ-1 response with the status "urn:e-health-suisse:2015:response-status:failure".
+3. PPQ-1 call ends with a SOAP Fault.
+4. If the PPQ-1 response has the status "urn:e-health-suisse:2015:response-status:success", then the PPQ-3/PPQ-4
    response SHALL be created according to the sections 3.1.0.4 (for UpdatePolicy), 3.1.0.7 (for DeletePolicy), or 3.1.0.
    8 (for AddPolicy) of the FHIR R4 specification. If the client’s HTTP return preference is OperationOutcome, then
-   this resource SHALL be created as defined in Table 6.
+   this resource SHALL be created as defined in Table 3.
 
-If the PPQ 1 response has the status "urn:e-health-suisse:2015:response-status:failure", then the PPQ 3/PPQ 4
-response SHALL be an OperationOutcome resource created as defined in Table 6, and the HTTP status code SHALL be set
+If the PPQ-1 response has the status "urn:e-health-suisse:2015:response-status:failure", then the PPQ-3/PPQ-4
+response SHALL be an OperationOutcome resource created as defined in Table 3, and the HTTP status code SHALL be set
 to 400.
 
-The following mapping SHALL be used when transforming PPQ 1 responses into OperationOutcome resources:
+The following mapping SHALL be used when transforming PPQ-1 responses into OperationOutcome resources:
 <table class="table table-bordered">
 	<tbody>
 		<tr>
@@ -262,45 +255,49 @@ urn:e-health-suisse:2015:response-status:<…></strong></td>
 	</tbody>
 </table>
 
-Table 6: Mapping of PPQ-1 response elements onto OperationOutcome attributes
+Table 3: Mapping of PPQ-1 response elements onto OperationOutcome attributes
 
-If the PPQ 1 call ended with a SOAP Fault, then the PPQ 3/PPQ 4 response SHALL be an OperationOutcome resource
-created as defined in section 4.2.6, and the HTTP status code SHALL be set to the value defined in the same section.
+If the PPQ-1 call ended with a SOAP Fault, then the PPQ-3/PPQ-4 response SHALL be an OperationOutcome resource
+created as defined in the
+[section "Transformation of SOAP Faults into OperationOutcome Resources"](#transformation-of-soap-faults-into-operationoutcome-resources),
+and the HTTP status code SHALL be set to the value defined in the same 
+section.
 
-### Transformation of PPQ-5 Requests into PPQ-2 Requests
+#### Transformation of PPQ-5 Requests into PPQ-2 Requests
 
-If the PPQ 5 request URL contains the parameter `patient:identifier`, then the PPQ 2 request SHALL address all
+If the PPQ-5 request URL contains the parameter `patient:identifier`, then the PPQ-2 request SHALL address all
 policies related to the patient referenced there (retrieve policies by EPR-SPID).
 
-If the PPQ 5 request URL contains the parameter `identifier`, then the PPQ 2 request SHALL address the policy set
+If the PPQ-5 request URL contains the parameter `identifier`, then the PPQ-2 request SHALL address the policy set
 referenced there (retrieve policies by direct references).
 
-### Transformation of PPQ-2 Responses into PPQ-5 Responses
+#### Transformation of PPQ-2 Responses into PPQ-5 Responses
 
 Three variants are possible:
-1. PPQ 2 response with the status "urn:oasis:names:tc:xacml:1.0:status:ok".
-2. PPQ 2 response with another status.
-3. PPQ 2 call ends with a SOAP Fault.
+1. PPQ-2 response with the status "urn:oasis:names:tc:xacml:1.0:status:ok".
+2. PPQ-2 response with another status.
+3. PPQ-2 call ends with a SOAP Fault.
 
-If the PPQ 2 response has the status "urn:oasis:names:tc:xacml:1.0:status:ok", then the PPQ 5 response SHALL be a
-Bundle resource compliant to the PpqmRequestBundle profile. For
-each policy set contained in the PPQ 2 response, the following steps SHALL be performed:
+If the PPQ-2 response has the status "urn:oasis:names:tc:xacml:1.0:status:ok", then the PPQ-5 response SHALL be a
+Bundle resource compliant to the [PpqmRequestBundle](StructureDefinition-PpqmFeedRequestBundle.html) profile. For
+each policy set contained in the PPQ-2 response, the following steps SHALL be performed:
 - Transform the policy set into a Consent resource compliant to the
-  [PpqmConsent profile](StructureDefinition-PpqmConsent.html), as described in section 4.1.2.
-- Add this Consent to the PPQ 5 response Bundle.
+  [PpqmConsent profile](StructureDefinition-PpqmConsent.html), as described in the 
+  [section "Transformation of CH:PPQ Policy Sets into PpqmConsent Resources"](#transformation-of-chppq-policy-sets-into-ppqmconsent-resources).
+- Add this Consent to the PPQ-5 response Bundle.
 
-If the PPQ 2 response hat the status other than "urn:e-health-suisse: 2015:response-status:failure", then the PPQ 5
-response SHALL be an OperationOutcome resource created as defined in Table 7, and the HTTP status code SHALL be
+If the PPQ-2 response hat the status other than "urn:e-health-suisse: 2015:response-status:failure", then the PPQ-5
+response SHALL be an OperationOutcome resource created as defined in Table 4, and the HTTP status code SHALL be
 according to Table 8.
-The following mapping SHALL be used for transformation of negative PPQ 2 responses into OperationOutcome resources:
+The following mapping SHALL be used for transformation of negative PPQ-2 responses into OperationOutcome resources:
 
 | OperationOutcome attribute | Value                                                                                 |
 |:---------------------------|:--------------------------------------------------------------------------------------|
 | `severity`                 | fixed value "error"                                                                   |
-| `code`                     | Mapping of `//samlp:StatusCode/@Value` to a FHIR issue type code according to Table 8 |
+| `code`                     | Mapping of `//samlp:StatusCode/@Value` to a FHIR issue type code according to Table 5 |
 {:class="table table-bordered"}
 
-Table 7: Mapping of PPQ-2 response elements onto OperationOutcome attributes
+Table 4: Mapping of PPQ-2 response elements onto OperationOutcome attributes
 
 | `//samlp:StatusCode/@Value`                          | FHIR Issue type code | HTTP status code |
 |:-----------------------------------------------------|:---------------------|:-----------------|
@@ -309,23 +306,25 @@ Table 7: Mapping of PPQ-2 response elements onto OperationOutcome attributes
 | `urn:oasis:names:tc:SAML:2.0:status:VersionMismatch` | `structure`          | 500              |
 {:class="table table-bordered"}
 
-Table 8: Mapping of SAML error codes onto FHIR issue type codes and HTTP status codes
+Table 5: Mapping of SAML error codes onto FHIR issue type codes and HTTP status codes
 
-If the PPQ 2 call ended with a SOAP Fault, then the PPQ 5 response SHALL be an OperationOutcome resource created as
-defined in section 4.2.6, and the HTTP status code SHALL be set to the value defined in the same section.
+If the PPQ-2 call ended with a SOAP Fault, then the PPQ-5 response SHALL be an OperationOutcome resource created as
+defined in the
+[section "Transformation of SOAP Faults into OperationOutcome Resources"](#transformation-of-soap-faults-into-operationoutcome-resources),
+and the HTTP status code SHALL be set to the value defined in the same section.
 
-### Transformation of SOAP Faults into OperationOutcome Resources
+#### Transformation of SOAP Faults into OperationOutcome Resources
 
 The following mapping SHALL be used when transforming SOAP Faults into OperationOutcome resources:
 
-| OperationOutcome attribute | Value                                                                                         |
-|:---------------------------|:----------------------------------------------------------------------------------------------|
-| `severity`                 | fixed value "error"                                                                           |
-| `code`                     | Mapping of `/soap:Fault/soap:Code/soap:Value` to a FHIR issue type code according to Table 10 |
-| `diagnostics`              | The whole `soap:Fault` element, Base64-encoded                                                |
+| OperationOutcome attribute | Value                                                                                        |
+|:---------------------------|:---------------------------------------------------------------------------------------------|
+| `severity`                 | fixed value "error"                                                                          |
+| `code`                     | Mapping of `/soap:Fault/soap:Code/soap:Value` to a FHIR issue type code according to Table 7 |
+| `diagnostics`              | The whole `soap:Fault` element, Base64-encoded                                               |
 {:class="table table-bordered"}
 
-Table 9: Mapping of SOAP Fault elements onto OperationOutcome attributes
+Table 6: Mapping of SOAP Fault elements onto OperationOutcome attributes
 
 | SOAP error code       | FHIR issue type code | HTTP status code |
 |:----------------------|:---------------------|:-----------------|
@@ -336,4 +335,4 @@ Table 9: Mapping of SOAP Fault elements onto OperationOutcome attributes
 | `Receiver`            | `transient`          | 503              |
 {:class="table table-bordered"}
 
-Table 10: Mapping of SOAP error codes onto FHIR issue type codes and HTTP status codes
+Table 7: Mapping of SOAP error codes onto FHIR issue type codes and HTTP status codes
