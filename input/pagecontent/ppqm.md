@@ -202,7 +202,7 @@ Policy Stack template. For example:
 { 
   "type": {
     "coding": [{
-      "system": "http://fhir.ch/ig/ch-epr-ppqm/CodeSystem/PpqmConsentIdentifierType",
+      "system": "http://fhir.ch/ig/ch-epr-fhir/CodeSystem/PpqmConsentIdentifierType",
       "code": "templateId"
     }]
   },
@@ -265,7 +265,7 @@ rules defined for each template in the table below:
 		</tr>
 		<tr>
 			<td><code>identifier.type</code> (1)</td>
-			<td colspan="6">fixed value: code "http://fhir.ch/ig/ch-epr-ppqm/CodeSystem/PpqmConsentIdentifierType|policySetId"</td>
+			<td colspan="6">fixed value: code "http://fhir.ch/ig/ch-epr-fhir/CodeSystem/PpqmConsentIdentifierType|policySetId"</td>
 		</tr>
 		<tr>
 			<td><code>identifier.value</code> (2)</td>
@@ -278,7 +278,7 @@ rules defined for each template in the table below:
 		</tr>
 		<tr>
 			<td><code>identifier.type</code> (2)</td>
-			<td colspan="6">fixed value: code "http://fhir.ch/ig/ch-epr-ppqm/CodeSystem/PpqmConsentIdentifierType|templateId"</td>
+			<td colspan="6">fixed value: code "http://fhir.ch/ig/ch-epr-fhir/CodeSystem/PpqmConsentIdentifierType|templateId"</td>
 		</tr>
 		<tr>
 			<td><code>status</code></td>
