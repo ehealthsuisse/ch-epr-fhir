@@ -262,6 +262,83 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             <name value="mCSD Find Matching Care Services Response Bundle"/>
             <description value="An example of ITI-90 response Bundle in the profile CH mCSD"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/PpqmFeedRequestBundleAdd"/>
+            </reference>
+            <name value="PPQm Feed Request Bundle for HTTP method POST -- add new policy sets"/>
+            <description value="PPQm Feed Request Bundle for HTTP method POST -- add new policy sets"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/PpqmFeedRequestBundleUpdate"/>
+            </reference>
+            <name value="PPQm Feed Request Bundle for HTTP method PUT -- conditionally add/update policy sets"/>
+            <description value="PPQm Feed Request Bundle for HTTP method PUT -- conditionally add/update policy sets"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/PpqmFeedRequestBundleDelete"/>
+            </reference>
+            <name value="PPQm Feed Request Bundle for HTTP method DELETE -- delete policy sets"/>
+            <description value="PPQm Feed Request Bundle for HTTP method DELETE -- delete policy sets"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/6de90529-3baa-4157-9bef-e945363b2c39"/>
+            </reference>
+            <name value="PPQm Feed Response Bundle"/>
+            <description value="PPQm Feed Response Bundle"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/PpqmRetrieveResponseBundle"/>
+            </reference>
+            <name value="PPQm Retrieve Response Bundle"/>
+            <description value="PPQm Retrieve Response Bundle"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Consent/Template201Consent"/>
+            </reference>
+            <name value="PpqmConsent for template 201 -- Full access for the patient"/>
+            <description value="PpqmConsent for template 201 -- Full access for the patient"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Consent/Template202Consent"/>
+            </reference>
+            <name value="PpqmConsent for template 202 -- Access in emergency mode"/>
+            <description value="PpqmConsent for template 202 -- Access in emergency mode"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Consent/Template203Consent"/>
+            </reference>
+            <name value="PpqmConsent for template 203 -- Default provide level"/>
+            <description value="PpqmConsent for template 203 -- Default provide level"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Consent/Template301Consent"/>
+            </reference>
+            <name value="PpqmConsent for template 301 -- Access level for a healthcare professional"/>
+            <description value="PpqmConsent for template 301 -- Access level for a healthcare professional"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Consent/Template302Consent"/>
+            </reference>
+            <name value="PpqmConsent for template 302 -- Access level for a group of healthcare professionals"/>
+            <description value="PpqmConsent for template 302 -- Access level for a group of healthcare professionals"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Consent/Template303Consent"/>
+            </reference>
+            <name value="PpqmConsent for template 303 -- Full access for a representative"/>
+            <description value="PpqmConsent for template 303 -- Full access for a representative"/>
+        </resource>
 
         <!-- CH EPR FHIR: Resource Profiles -->
         <resource>
@@ -327,6 +404,24 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <resource>
             <reference>
                 <reference value="StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/PpqmConsent"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/PpqmFeedRequestBundle"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/PpqmRetrieveResponseBundle"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
