@@ -4,7 +4,7 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PPQm.PolicyRepository"
 * name = "CH_PPQm_Policy_Repository"
-* title = "CH:PPQm Policy Repository (server)"
+* title = "PPQm Policy Repository (server)"
 * status = #active
 * experimental = false
 * date = "2024-03-19"
@@ -43,7 +43,7 @@ InstanceOf: CapabilityStatement
 Usage: #definition
 * url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PPQm.PolicySourceConsumer"
 * name = "CH_PPQm_Policy_Source_Consumer"
-* title = "CH:PPQm Policy Source and Consumer (client)"
+* title = "PPQm Policy Source and Consumer (client)"
 * status = #active
 * experimental = false
 * date = "2024-03-19"
