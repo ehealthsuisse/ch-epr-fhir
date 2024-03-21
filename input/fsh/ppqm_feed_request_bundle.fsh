@@ -1,7 +1,7 @@
 Profile: PpqmFeedRequestBundle
 Parent: Bundle
 Id: PpqmFeedRequestBundle
-Title: "PpqmFeedRequestBundle"
+Title: "CH PPQm Feed Request Bundle"
 Description: "Bundle for Mobile Privacy Policy Bundle Feed requests"
 
 * obeys ch-epr-ppqm-method-equality
@@ -46,8 +46,8 @@ Severity:       #error
 
 Instance: PpqmFeedRequestBundleAdd
 InstanceOf: PpqmFeedRequestBundle
-Title: "PPQm Feed Request Bundle for HTTP method POST -- add new policy sets"
-Description: "PPQm Feed Request Bundle for HTTP method POST -- add new policy sets"
+Title: "PPQm Feed Request Bundle (POST)"
+Description: "CH:PPQm Feed Request Bundle for HTTP method POST -- add new policy sets"
 Usage: #example
 * type = http://hl7.org/fhir/bundle-type#transaction
 * entry[+].request.method = #POST
@@ -62,8 +62,8 @@ Usage: #example
 
 Instance: PpqmFeedRequestBundleUpdate
 InstanceOf: PpqmFeedRequestBundle
-Title: "PPQm Feed Request Bundle for HTTP method PUT -- conditionally add/update policy sets"
-Description: "PPQm Feed Request Bundle for HTTP method PUT -- conditionally add/update policy sets"
+Title: "PPQm Feed Request Bundle (PUT)"
+Description: "CH:PPQm Feed Request Bundle for HTTP method PUT -- conditionally update policy sets"
 Usage: #example
 * type = http://hl7.org/fhir/bundle-type#transaction
 * entry[+].request.method = #PUT
@@ -78,8 +78,8 @@ Usage: #example
 
 Instance: PpqmFeedRequestBundleDelete
 InstanceOf: PpqmFeedRequestBundle
-Title: "PPQm Feed Request Bundle for HTTP method DELETE -- delete policy sets"
-Description: "PPQm Feed Request Bundle for HTTP method DELETE -- delete policy sets"
+Title: "PPQm Feed Request Bundle (DELETE)"
+Description: "CH:PPQm Feed Request Bundle for HTTP method DELETE -- delete policy sets"
 Usage: #example
 * type = http://hl7.org/fhir/bundle-type#transaction
 * entry[+].request.method = #DELETE
@@ -92,7 +92,7 @@ Usage: #example
 Instance: PpqmFeedResponseBundle
 InstanceOf: Bundle
 Title: "PPQm Feed Response Bundle"
-Description: "PPQm Feed Response Bundle"
+Description: "CH:PPQm Feed Response Bundle"
 Usage: #example
 * id = "6de90529-3baa-4157-9bef-e945363b2c39"
 * type = http://hl7.org/fhir/bundle-type#transaction-response

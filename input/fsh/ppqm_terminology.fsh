@@ -1,6 +1,6 @@
 ValueSet: PpqmActorIdentifierType
-Title: "PPQm Actor Identifier Type"
-Description: "Actor Identifier Types for PPQm"
+Title: "CH PPQm Actor Identifier Type"
+Description: "Actor Identifier Types for CH:PPQm"
 * ^experimental = false
 
 * $URI#urn:e-health-suisse:2015:epr-spid                   "EPR-SPID"
@@ -11,8 +11,8 @@ Description: "Actor Identifier Types for PPQm"
 
 CodeSystem: PpqmConsentIdentifierType
 Id: PpqmConsentIdentifierType
-Title: "PPQm Consent Identifier Type"
-Description: "Code system for PPQm Consent Identifier Types"
+Title: "CH PPQm Consent Identifier Type"
+Description: "Code system for CH:PPQm Consent Identifier Types"
 * ^caseSensitive = true
 * ^experimental = false
 
@@ -21,16 +21,16 @@ Description: "Code system for PPQm Consent Identifier Types"
 
 
 ValueSet: PpqmConsentIdentifierType
-Title: "PPQm Consent Identifier Type"
-Description: "Value Set for PPQm Consent Identifier Types"
+Title: "CH PPQm Consent Identifier Type"
+Description: "Value Set for CH:PPQm Consent Identifier Types"
 * ^experimental = false
 
 * include codes from system PpqmConsentIdentifierType
 
 
 ValueSet: PpqmFeedRequestHttpMethod
-Title: "PPQm Feed Request HTTP Method"
-Description: "HTTP methods allowed in PPQm Feed requests"
+Title: "CH PPQm Feed Request HTTP Method"
+Description: "HTTP methods allowed in CH:PPQm Feed requests"
 * ^experimental = false
 
 * http://hl7.org/fhir/http-verb#POST    "POST"
@@ -40,7 +40,7 @@ Description: "HTTP methods allowed in PPQm Feed requests"
 
 CodeSystem: PpqmPolicySetTemplateId
 Id: PpqmPolicySetTemplateId
-Title: "PPQm Policy Set Template ID"
+Title: "CH PPQm Policy Set Template ID"
 Description: "Code system for Policy Set Template IDs"
 * ^caseSensitive = true
 * ^experimental = false
@@ -54,7 +54,7 @@ Description: "Code system for Policy Set Template IDs"
 
 
 ValueSet: PpqmPolicySetTemplateId
-Title: "PPQm Policy Set Template ID"
+Title: "CH PPQm Policy Set Template ID"
 Description: "IDs of policy set templates"
 * ^experimental = false
 
@@ -62,7 +62,7 @@ Description: "IDs of policy set templates"
 
 
 ValueSet: PpqmReferencedPolicySet
-Title: "PPQm Referenced Policy Set"
+Title: "CH PPQm Referenced Policy Set"
 Description: "IDs of basis policy sets that may be referenced from templates.  Note that this value set intentionally does not contain IDs of all policy sets contained in the official stack, see [documentation](https://github.com/ehealthsuisse/ch-epr-adr-ppq/blob/main/docs/Policies.md)"
 * ^experimental = false
 

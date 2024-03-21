@@ -1,7 +1,7 @@
 Profile: PpqmRetrieveResponseBundle
 Parent: Bundle
 Id: PpqmRetrieveResponseBundle
-Title: "PpqmRetrieveResponseBundle"
+Title: "CH PPQm Retrieve Response Bundle"
 Description: "Bundle for Mobile Privacy Policy Retrieve responses"
 
 
@@ -12,7 +12,7 @@ Description: "Bundle for Mobile Privacy Policy Retrieve responses"
 
 Instance: PpqmRetrieveResponseBundle
 InstanceOf: PpqmRetrieveResponseBundle
-Title: "PPQm Retrieve Response Bundle"
+Title: "CH PPQm Retrieve Response Bundle"
 Description: "PPQm Retrieve Response Bundle"
 Usage: #example
 * type = http://hl7.org/fhir/bundle-type#searchset

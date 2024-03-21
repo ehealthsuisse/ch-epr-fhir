@@ -1,7 +1,7 @@
 Profile: PpqmConsent
 Parent: Consent
 Id: PpqmConsent
-Title: "PpqmConsent"
+Title: "CH PPQm Consent"
 Description: "Swiss EPR Policy Set as a Consent"
 
 * obeys ch-epr-ppqm-template-structure
@@ -236,8 +236,8 @@ Severity:       #error
 
 Instance: Template201Consent
 InstanceOf: PpqmConsent
-Title: "PpqmConsent for template 201 -- Full access for the patient"
-Description: "PpqmConsent for template 201 -- Full access for the patient"
+Title: "PPQm Consent for template 201"
+Description: "CH:PPQm Consent for template 201 -- Full access for the patient"
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 201 - Full access for the patient</p></div>"
@@ -256,8 +256,8 @@ Usage: #example
 
 Instance: Template202Consent
 InstanceOf: PpqmConsent
-Title: "PpqmConsent for template 202 -- Access in emergency mode"
-Description: "PpqmConsent for template 202 -- Access in emergency mode"
+Title: "PPQm Consent for template 202"
+Description: "CH:PPQm Consent for template 202 -- Access in emergency mode"
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 202 - Access in emergency mode</p></div>"
@@ -276,8 +276,8 @@ Usage: #example
 
 Instance: Template203Consent
 InstanceOf: PpqmConsent
-Title: "PpqmConsent for template 203 -- Default provide level"
-Description: "PpqmConsent for template 203 -- Default provide level"
+Title: "PPQm Consent for template 203"
+Description: "CH:PPQm Consent for template 203 -- Default provide level"
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 203 - Default provide level</p></div>"
@@ -298,8 +298,8 @@ Usage: #example
 
 Instance: Template301Consent
 InstanceOf: PpqmConsent
-Title: "PpqmConsent for template 301 -- Access level for a healthcare professional"
-Description: "PpqmConsent for template 301 -- Access level for a healthcare professional"
+Title: "PPQm Consent for template 301"
+Description: "CH:PPQm Consent for template 301 -- Access level for a healthcare professional"
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 301 - Access level for a healthcare professional</p></div>"
@@ -320,8 +320,8 @@ Usage: #example
 
 Instance: Template302Consent
 InstanceOf: PpqmConsent
-Title: "PpqmConsent for template 302 -- Access level for a group of healthcare professionals"
-Description: "PpqmConsent for template 302 -- Access level for a group of healthcare professionals"
+Title: "PPQm Consent for template 302"
+Description: "CH:PPQm Consent for template 302 -- Access level for a group of healthcare professionals"
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 302 -- Access level for a group of healthcare professionals</p></div>"
@@ -343,8 +343,8 @@ Usage: #example
 
 Instance: Template303Consent
 InstanceOf: PpqmConsent
-Title: "PpqmConsent for template 303 -- Full access for a representative"
-Description: "PpqmConsent for template 303 -- Full access for a representative"
+Title: "PPQm Consent for template 303"
+Description: "CH:PPQm Consent for template 303 -- Full access for a representative"
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 303 - Full access for a representative</p></div>"
