@@ -1,3 +1,7 @@
+### Unreleased
+
+* Renamed the ImplementationGuide from `ch-epr-mhealth` to `ch-epr-fhir` [#159](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/159)
+
 ### Open Issues
 
 * Incorporate iua cp 1288 [#152](https://github.com/ehealthsuisse/ch-epr-mhealth/issues/152)
