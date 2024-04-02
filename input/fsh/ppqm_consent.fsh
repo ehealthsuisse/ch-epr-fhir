@@ -194,7 +194,7 @@ Id: PpqmConsentTemplate202
 Title: "CH PPQm Consent Template 202"
 Description: "Swiss EPR Policy Set Template 202 as a Consent -- Access in emergency mode"
 * identifier[templateId].value = "202"
-* policyRule.coding obeys ch-epr-ppqm-policy-rule-access-normal-or-restricted
+* policyRule.coding from PpqmReferencedPolicySetGroupEmergency (required)
 * provision.period 0..0
 * provision.actor.role.coding = $ehealthRole#HCP
 * provision.actor.reference.identifier 0..0
@@ -227,7 +227,7 @@ Id: PpqmConsentTemplate203
 Title: "CH PPQm Consent Template 203"
 Description: "Swiss EPR Policy Set Template 203 as a Consent -- Default provide level"
 * identifier[templateId].value = "203"
-* policyRule.coding obeys ch-epr-ppqm-policy-rule-provide-normal-or-restricted
+* policyRule.coding from PpqmReferencedPolicySetDefaultProvide (required)
 * provision.period 0..0
 * provision.actor.role.coding = $ehealthRole#HCP
 * provision.actor.reference.identifier 0..0
@@ -271,7 +271,7 @@ Title: "CH PPQm Consent Template 301"
 Description: "Swiss EPR Policy Set Template 301 as a Consent -- Access level for a healthcare professional"
 * obeys ch-epr-ppqm-delegation-policy-or-end-date
 * identifier[templateId].value = "301"
-* policyRule.coding obeys ch-epr-ppqm-policy-rule-for-hcp
+* policyRule.coding from PpqmReferencedPolicySetHcp (required)
 * provision.actor.role.coding = $ehealthRole#HCP
 * provision.actor.reference.identifier 1..1
 * provision.actor.reference.identifier only GLNIdentifier
@@ -309,7 +309,7 @@ Id: PpqmConsentTemplate302
 Title: "CH PPQm Consent Template 302"
 Description: "Swiss EPR Policy Set Template 302 as a Consent -- Access level for a group of healthcare professionals"
 * identifier[templateId].value = "302"
-* policyRule.coding obeys ch-epr-ppqm-policy-rule-access-normal-or-restricted
+* policyRule.coding from PpqmReferencedPolicySetGroupEmergency (required)
 * provision.period.end 1..1
 * provision.actor.role.coding = $ehealthRole#HCP
 * provision.actor.reference.identifier 1..1
@@ -379,25 +379,6 @@ Usage: #example
 Invariant:      ch-epr-ppqm-provision-actor-is-patient
 Description:    "The provision.actor and patient SHALL be the same"
 Expression:     "provision[0].actor.reference.identifier[0].value = patient.identifier.value"
-Severity:       #error
-
-Invariant:      ch-epr-ppqm-policy-rule-access-normal-or-restricted
-Description:    "The policy rule access-level SHALL be either 'normal' or 'restricted'"
-Expression:     "(code = 'urn:e-health-suisse:2015:policies:access-level:normal') or (code = 'urn:e-health-suisse:2015:policies:access-level:restricted')"
-Severity:       #error
-
-Invariant:      ch-epr-ppqm-policy-rule-provide-normal-or-restricted
-Description:    "The policy rule provide-level SHALL be either 'normal' or 'restricted'"
-Expression:     "(code = 'urn:e-health-suisse:2015:policies:provide-level:normal') or (code = 'urn:e-health-suisse:2015:policies:provide-level:restricted')"
-Severity:       #error
-
-Invariant:      ch-epr-ppqm-policy-rule-for-hcp
-Description:    "The policy rule SHALL be either 'normal', 'restricted', 'delegation-and-normal', 'delegation-and-restricted' or 'exclusion-list'"
-Expression:     "(code = 'urn:e-health-suisse:2015:policies:access-level:normal') or
-                 (code = 'urn:e-health-suisse:2015:policies:access-level:restricted') or
-                 (code = 'urn:e-health-suisse:2015:policies:access-level:delegation-and-normal') or
-                 (code = 'urn:e-health-suisse:2015:policies:access-level:delegation-and-restricted') or
-                 (code = 'urn:e-health-suisse:2015:policies:exclusion-list')"
 Severity:       #error
 
 Invariant:      ch-epr-ppqm-delegation-policy-or-end-date
