@@ -1,6 +1,6 @@
 @startuml
 !include design.plantuml.txt
-title 3.01 mHealth - Authentication/Authorization
+title 3.01 Authentication/Authorization
 
 actor user as "Patient"
 

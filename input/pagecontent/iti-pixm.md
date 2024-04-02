@@ -33,7 +33,7 @@ This national extension enforces authentication and authorization for access con
 <figcaption ID="1">Table 1: Grouping of PIXm actors required by this national extension. </figcaption>
 
 ###	Process Flow
-For the process flow of this profile and its interplay with the other mHealth profiles see [sequence diagrams](sequencediagrams.html). 
+For the process flow of this profile and its interplay with the other profiles see [sequence diagrams](sequencediagrams.html). 
 
 ###	Security Consideration
 This national extension enforces authentication and authorization of access to the Patient Identifier Cross-reference Manager using the IUA profile with basic access token as described in [IUA](iti-71.html).

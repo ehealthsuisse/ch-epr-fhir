@@ -17,7 +17,7 @@ For further restrictions on transactions and security consideration, see below.
 
 #### Patient Access from a Portal
 
-A patient uses a portal which is integrated to the Swiss EPR using the mHealth profiles to access and share data and documents with healthcare professionals. To access documents from the EPR the patient authenticates at a certified Identity Provider and the portal connects to the IUA Authorization Server and sends the required claims to access the EPR. 
+A patient uses a portal which is integrated to the Swiss EPR using the profiles to access and share data and documents with healthcare professionals. To access documents from the EPR the patient authenticates at a certified Identity Provider and the portal connects to the IUA Authorization Server and sends the required claims to access the EPR. 
 
 The IUA Authorization Server verifies if the portal is authorized to access the EPR on behalf of the patient by checking that the portal is registered as a portal of the community.
 
@@ -27,7 +27,7 @@ The IUA Authorization Server responds an IUA Authorization Token the portal shal
 
 #### User Access from an integrated Primary System
 
-A healthcare professional uses a primary system which is integrated to the Swiss EPR using the mHealth profiles to access and share data and documents with her patients or other healthcare professionals. To access documents from the EPR the healthcare professional authenticates in her primary system, selects the patient and switches to the user interface to display the patients documents and the primary system connects to the IUA Authorization Server and sends the required claims to access the patients EPR. 
+A healthcare professional uses a primary system which is integrated to the Swiss EPR using the profiles to access and share data and documents with her patients or other healthcare professionals. To access documents from the EPR the healthcare professional authenticates in her primary system, selects the patient and switches to the user interface to display the patients documents and the primary system connects to the IUA Authorization Server and sends the required claims to access the patients EPR. 
 
 The IUA Authorization Server verifies if the primary system is authorized to access the EPR on behalf of the user by checking that the primary system has been registered during the onboarding process of the primary system.
 
@@ -73,7 +73,7 @@ This national extension intends to simplify and modernize the technologies used 
 The Swiss national extension does not define requirements on the grouping of actors in this profile, which extend or restrict the grouping required from the IUA profile. 
 
 ### Process Flow  
-For the process flow of this profile and its interplay with the other mHealth profiles see [sequence diagrams](sequencediagrams.html). 
+For the process flow of this profile and its interplay with the other profiles see [sequence diagrams](sequencediagrams.html). 
 
 ### Security Consideration  
 The Swiss national extension does not define additional security requirements beyond those sepcified in the underlying [IUA Trial Implementation](https://profiles.ihe.net/ITI/IUA/index.html).
