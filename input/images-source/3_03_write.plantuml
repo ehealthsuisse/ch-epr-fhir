@@ -1,6 +1,6 @@
 @startuml
 !include design.plantuml.txt
-title 3.03 mHealth - write document for patient
+title 3.03 write document for patient
 
 actor user as "Patient"
 
