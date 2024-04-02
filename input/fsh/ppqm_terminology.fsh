@@ -75,3 +75,30 @@ Description: "IDs of basis policy sets that may be referenced from templates.  N
 * $URI#urn:e-health-suisse:2015:policies:access-level:delegation-and-normal     "Read normal with delegation"     // "Read access to documents with confidentiality level NORMAL with the possibility to delegate it"
 * $URI#urn:e-health-suisse:2015:policies:access-level:delegation-and-restricted "Read restricted with delegation" // "Read access to documents with confidentiality level NORMAL and RESTRICTED with the possibility to delegate it"
 * $URI#urn:e-health-suisse:2015:policies:exclusion-list                         "Exclusion list"                  // "Exclusion list, neither read nor write access is allowed"
+
+
+ValueSet: PpqmReferencedPolicySetGroupEmergency
+Title: "CH PPQm Referenced Policy Set for Emergency (202) and HCP Group (302) templates"
+Description: "IDs of basis policy sets that may be referenced from templates 202 and 302.  Note that this value set intentionally does not contain IDs of all policy sets contained in the official stack, see [documentation](https://github.com/ehealthsuisse/ch-epr-adr-ppq/blob/main/docs/Policies.md)"
+* ^experimental = false
+* $URI#urn:e-health-suisse:2015:policies:access-level:normal                    "Read normal"                     // "Read access to documents with confidentiality level NORMAL"
+* $URI#urn:e-health-suisse:2015:policies:access-level:restricted                "Read restricted"                 // "Read access to documents with confidentiality level NORMAL and RESTRICTED"
+
+
+ValueSet: PpqmReferencedPolicySetDefaultProvide
+Title: "CH PPQm Referenced Policy Set for Default Provide (203) template"
+Description: "IDs of basis policy sets that may be referenced from templates 203.  Note that this value set intentionally does not contain IDs of all policy sets contained in the official stack, see [documentation](https://github.com/ehealthsuisse/ch-epr-adr-ppq/blob/main/docs/Policies.md)"
+* ^experimental = false
+* $URI#urn:e-health-suisse:2015:policies:provide-level:normal                   "Write normal"                    // "Creation of new documents with confidentiality level not less than NORMAL"
+* $URI#urn:e-health-suisse:2015:policies:provide-level:restricted               "Write restricted"                // "Creation of new documents with confidentiality level not less than RESTRICTED"
+
+
+ValueSet: PpqmReferencedPolicySetHcp
+Title: "CH PPQm Referenced Policy Set for Healthcare professionals (301) template"
+Description: "IDs of basis policy sets that may be referenced from templates 301.  Note that this value set intentionally does not contain IDs of all policy sets contained in the official stack, see [documentation](https://github.com/ehealthsuisse/ch-epr-adr-ppq/blob/main/docs/Policies.md)"
+* ^experimental = false
+* $URI#urn:e-health-suisse:2015:policies:access-level:normal                    "Read normal"                     // "Read access to documents with confidentiality level NORMAL"
+* $URI#urn:e-health-suisse:2015:policies:access-level:restricted                "Read restricted"                 // "Read access to documents with confidentiality level NORMAL and RESTRICTED"
+* $URI#urn:e-health-suisse:2015:policies:access-level:delegation-and-normal     "Read normal with delegation"     // "Read access to documents with confidentiality level NORMAL with the possibility to delegate it"
+* $URI#urn:e-health-suisse:2015:policies:access-level:delegation-and-restricted "Read restricted with delegation" // "Read access to documents with confidentiality level NORMAL and RESTRICTED with the possibility to delegate it"
+* $URI#urn:e-health-suisse:2015:policies:exclusion-list                         "Exclusion list"                  // "Exclusion list, neither read nor write access is allowed"
