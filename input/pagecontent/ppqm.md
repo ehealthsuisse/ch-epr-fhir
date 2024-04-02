@@ -58,8 +58,7 @@ Table 2: CH:PPQm required actors groupings
 ### Referenced Standards
 
 - HL7 FHIR standard Release 4: [http://hl7.org/fhir/R4/index.html](http://hl7.org/fhir/R4/index.html)
-- CH Core Implementation Guide (R4) v2.0.0: [http://fhir.ch/ig/ch-core](http://fhir.ch/ig/ch-core)
-- CH EPR PPQm Implementation Guide (R4) v1.0.0: [http://fhir.ch/ig/ch-epr-ppqm](http://fhir.ch/ig/ch-epr-ppqm).
+- CH Core Implementation Guide (R4): [http://fhir.ch/ig/ch-core](http://fhir.ch/ig/ch-core)
 
 See also:
 - CH:PPQ specification in the [Amendment 2.1 of Annex 5 EPRO-FDHA](https://www.fedlex.admin.ch/eli/oc/2023/221/de/annexes).
