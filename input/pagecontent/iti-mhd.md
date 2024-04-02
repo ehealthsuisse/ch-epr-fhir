@@ -1,7 +1,7 @@
 This section specifies Swiss national extensions to the Mobile Access to Health Documents (MHD) with XDS on FHIR Profile, which is [published](https://profiles.ihe.net/ITI/MHD/index.html) as an IHE ITI Trial Implementation profile.
 
 ### Scope  
-A mHealth App can query, retrieve or publish data to EPR communities using the transaction of the MHD profile.   
+An EPR App can query, retrieve or publish data to EPR communities using the transaction of the MHD profile.   
 
 ###	Use Cases  
 No extensions or restrictions to the profile use cases are specified in the Swiss in national extension. 

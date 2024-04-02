@@ -4,7 +4,9 @@ This section specifies Swiss national extensions to Patient Identifier Cross-ref
 In the Swiss EPR, the PIXm profile ensures that different systems can correlate the local identity with the MPI-PID (and EPR-SPID) for the community and that the initial demographics data can be fed to the MPI. The profile supports creation, update and deprecation of patient master identity information about a subject of care using the HL7 FHIR standard resources and RESTful transactions.
 
 ###	Use Cases  
-A mHealth App wants to get data from the EPR. The mHealth App needs to know the MPI-PID in the community. With the local identifier the mHealth App can query the MPI-PID (and EPR-SPID) for the community. The local identifier with the initial demographics data needs to be setup initially in the community that the correlation is possible.
+An EPR App wants to get data from the EPR. The EPR App needs to know the MPI-PID in the community. With the local 
+identifier the EPR App can query the MPI-PID (and EPR-SPID) for the community. The local identifier with the initial 
+demographics data needs to be setup initially in the community that the correlation is possible.
 
 ###	Actors and Transactions, Content Specifications  
 This national extension adds restrictions to the correlation to other local identifiers, to the query results and a specific patient content profile is defined. Otherwise there are no extensions or restrictions to the profile actors and the transaction. 

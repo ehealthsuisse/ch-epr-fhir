@@ -377,7 +377,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <!-- CH EPR FHIR Capability Statements -->
         <resource>
             <reference>
-                <reference value="CapabilityStatement/CH.mHealth.App"/>
+                <reference value="CapabilityStatement/CH.EPR.App"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
@@ -419,7 +419,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         </resource>
         <resource>
             <reference>
-                <reference value="CapabilityStatement/CH.mHealth.API"/>
+                <reference value="CapabilityStatement/CH.EPR.API"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>

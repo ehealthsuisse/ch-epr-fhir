@@ -4,7 +4,7 @@ title 3.03 mHealth - write document for patient
 
 actor user as "Patient"
 
-box "mHealth App" #BFCAD2
+box "EPR App" #BFCAD2
 	participant app as "App GUI"
     participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer"
     participant docsource as "Document Source (MHD)"
