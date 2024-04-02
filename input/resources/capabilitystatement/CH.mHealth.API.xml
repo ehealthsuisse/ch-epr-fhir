@@ -1,8 +1,8 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-    <id value="CH.mHealth.API"/>
-    <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mHealth.API" />
-    <name value="CH_mHealth_API" />
-    <title value="mHealth: API (server)" />
+    <id value="CH.EPR.API"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.EPR.API" />
+    <name value="CH_EPR_API" />
+    <title value="EPR API (server)" />
     <status value="draft" />
     <date value="2020-07-08" />
     <publisher value="eHealth Suisse"/>
@@ -13,7 +13,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="CapabilityStatement for mHealth API (server)." />
+    <description value="CapabilityStatement for EPR API (server)." />
     <kind value="requirements" />
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PIXm.Manager"/>
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PDQm.Supplier"/>

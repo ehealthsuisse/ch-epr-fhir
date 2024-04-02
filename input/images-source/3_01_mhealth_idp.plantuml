@@ -4,7 +4,7 @@ title 3.01 mHealth - Authentication/Authorization
 
 actor user as "Patient"
 
-box "mHealth App" #BFCAD2
+box "EPR App" #BFCAD2
 	participant app as "App GUI"
 end box
 

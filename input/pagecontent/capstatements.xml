@@ -5,13 +5,13 @@
     {% include list-capabilitystatements.xhtml %}
   </div> -->
 
-  <h3>mHealth: App (Client)</h3>
+  <h3>EPR App (Client)</h3>
 
   <div>
     <ul>
       <li>
-        <a href="CapabilityStatement-CH.mHealth.App.html">mHealth: App (client)</a>
-        <p>CapabilityStatement for mHealth App (client).</p>
+        <a href="CapabilityStatement-CH.EPR.App.html">EPR App (client)</a>
+        <p>CapabilityStatement for EPR App (client).</p>
         <ul>
           <li>
             <a href="CapabilityStatement-CH.PIXm.Consumer.html">PIXm Patient Identifier Cross-Reference Consumer (client)</a>
@@ -41,13 +41,13 @@
   </div>
 
 
-  <h3>mHealth: API (Server)</h3>
+  <h3>EPR API (Server)</h3>
 
   <div>
     <ul>
       <li>
-        <a href="CapabilityStatement-CH.mHealth.API.html">mHealth: API (server)</a>
-        <p>CapabilityStatement for mHealth API (server).</p>
+        <a href="CapabilityStatement-CH.EPR.API.html">EPR API (server)</a>
+        <p>CapabilityStatement for EPR API (server).</p>
         <ul>
           <li>
             <a href="CapabilityStatement-CH.PIXm.Manager.html">PIXm Patient Identifier Cross-reference Manager (server)</a>
