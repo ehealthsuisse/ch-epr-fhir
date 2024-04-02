@@ -43,14 +43,14 @@ Note 1: The actor SHALL support at least one transaction.
 
 The required actor groupings are shown in Table 2:
 
-| Actors            | Actor to be grouped with | Reference                                   |
-|-------------------|--------------------------|---------------------------------------------|
-| Policy Repository | IUA Resource Server      | Amendment mHealth of Annex 5, section 2.3.1 |
-|                   | ATNA Secure Application  | Amendment 1 of Annex 5, Section 1.5         |
-| Policy Source     | IUA Authorization Client | Amendment mHealth of Annex 5, section 2.3.1 |
-|                   | ATNA Secure Application  | Amendment mHealth of Annex 5, section 2.3.4 |
-| Policy Consumer   | IUA Authorization Client | Amendment mHealth of Annex 5, section 2.3.1 |
-|                   | ATNA Secure Application  | Amendment mHealth of Annex 5, section 2.3.4 |
+| Actors            | Actor to be grouped with |
+|-------------------|--------------------------|
+| Policy Repository | IUA Resource Server      |
+|                   | ATNA Secure Application  |
+| Policy Source     | IUA Authorization Client |
+|                   | ATNA Secure Application  | 
+| Policy Consumer   | IUA Authorization Client |
+|                   | ATNA Secure Application  |
 {:class="table table-bordered"}
 
 Table 2: CH:PPQm required actors groupings
@@ -73,7 +73,7 @@ _This section is not normative._
 Implementers may decide to implement CH:PPQm transactions on top of CH:PPQ ones, i.e. to create a FHIR layer over an 
 existing XACML-based Policy Repository. The CH:PPQm specification supports this approach by defining transactions 
 and data structures in a way which allows an efficient bridging between CH:PPQ and CH:PPQm, and by providing message 
-transformation rules (see the page [Mappings](mappings.html)).
+transformation rules (see the page [Mappings](StructureDefinition-PpqmConsent-mappings.html)).
 
 In terms of actor grouping, this would mean that the Policy Repository may be optionally grouped with CH:PPQ Policy 
 Source and CH:PPQ Policy Consumer in order to communicate over PPQ-1 and PPQ-2 with itself.
@@ -83,6 +83,6 @@ Policy Stack and not related to any particular patients.
 
 ### Further Aspects
 
-In order to provide interoperability between CH:PPQ and CH:PPQm, the page [Mappings](mappings.html) defines
-transformation rules between XACML 2.0 Policy Sets and
-[PpqmConsent](StructureDefinition-PpqmConsent.html) resources.
+In order to provide interoperability between CH:PPQ and CH:PPQm, the page 
+[Mappings](StructureDefinition-PpqmConsent-mappings.html) defines transformation rules between XACML 2.0 
+Policy Sets and [PpqmConsent](StructureDefinition-PpqmConsent.html) resources.
