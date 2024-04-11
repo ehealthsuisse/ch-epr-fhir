@@ -30,7 +30,7 @@ local identifier the MPI and get the corresponding MPI-PID and the EPR-SPID iden
 The message semantics is the same as defined in [2:3.83.4.1.2](https://profiles.ihe.net/ITI/PIXm/ITI-83.html#2383412-message-semantics) with a restriction on the targetSystem query
 Parameter:
 
-```
+```http
 GET [base]/Patient/$ihe-pix?sourceIdentifier=[token]&targetSystem=[uri]{&_format=[token]}
 ```
 <div><figcaption>$ihe-pix Message HTTP query Parameters</figcaption></div>
@@ -54,7 +54,7 @@ See the [PIXm Find patient matches](OperationDefinition-CH.PIXm.html) OperationD
 Query for a patient with a local id of 123 by AssigningAuthority oid 1.2.3 which resides in a
 community where the Assigning Authority is oid 5.6.7 and the MPI-PID and EPR-SPID are requested:
 
-```
+```http
 GET [base]/Patient/$ihe-pix?sourceIdentifier=urn:oid:2.999.1.2.3|123&targetSystem=urn:oid:2.999.5.6.7&targetSystem=urn:oid:2.16.756.5.30.1.127.3.10.3 HTTP/1.1
 Accept: application/fhir+json
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00

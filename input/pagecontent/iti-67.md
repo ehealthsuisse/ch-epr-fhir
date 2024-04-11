@@ -29,7 +29,7 @@ query parameters.
 #### Find Document References Request Message
 
 _Find Document Reference_ example **request**:
-```
+```http
 GET [base]/DocumentReference?patient.identifier=urn:oid:2.999|11111111 HTTP/1.1
 Accept: application/fhir+json
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00

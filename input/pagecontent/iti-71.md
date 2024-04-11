@@ -292,7 +292,7 @@ The IUA Authorization Client SHALL use the access token as defined in IUA Incorp
 
 The first step of the conversation is an HTTP GET which may look like for a Basic Access Token:
 
-```
+```http
 GET authorize?
     response_type=code&
     client_id=app-client-id&
@@ -307,7 +307,7 @@ GET authorize?
 
 An extended access token where at least purpose_of_use (NORM), subject_role (HCP) and person_id are added to the scope may look like:
 
-```
+```http
 GET authorize?
     response_type=code&
     client_id=app-client-id&
@@ -320,13 +320,13 @@ GET authorize?
 
 The second step of the conversation is an HTTP GET Callback conveying the authorization code and may look like:
 
-```
+```http
 GET /callback?code=8V1pr0rJ&state=98wrghuwuogerg97
 ```
 
 The third step of the conversation is an HTTP POST sending the authorization code to retrieve the authorization token in the response which may look like:
 
-```
+```http
 POST /token HTTP/1.1 
 Host: localhost:9001
 

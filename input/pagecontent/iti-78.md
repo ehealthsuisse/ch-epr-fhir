@@ -46,7 +46,7 @@ The _Patient Demographics Supplier_ SHALL reference the _PDQm Patient_ profile o
 
 Query for a patient with name Muster and birthdate 1995-01-27.
 
-```
+```http
 GET [base]/Patient?name=Muster&birthdate=1995-01-27
 Accept: application/fhir+json
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
@@ -55,7 +55,7 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 
 Query for a patient with name M returning too many results:
 
-```
+```http
 GET [base]/Patient?name=M
 Accept: application/fhir+json
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
@@ -69,7 +69,7 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 The Retrieve Patient Resource is conducted by executing an HTTP GET against the Patient Demographics Supplier’s 
 Patient Resource URL, providing the resource id of the patient being retrieved. The target is formatted as:
 
-```
+```http
 GET [base]/Patient/[resourceId]
 ```
 
