@@ -350,12 +350,15 @@ The Authorization Server and Resource Server SHALL support the IUA JWT extension
 
 The claim content for the JWT IUA extensions SHALL correspond to the content defined in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 
-| JWT Claim (Extension) | Optionality | XUA Attribute EPR                                 | Remark                                                                                                               |
-|-----------------------|-------------|---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| subject_name          | O/R         | urn:oasis:names:tc:xspa:1.0:subject:subject-id    | Plain text’s user name.                                                                                              |
-| subject_role          | O/R         | urn:oasis:names:tc:xacml:2.0:subject:role         | Code indicating the user role. In the Swiss EPR the value SHALL be taken from the EPR Role Code Value Set.           |
-| purpose_of_use        | O/R         | urn:oasis:names:tc:xspa:1.0:subject:purposeofuse  | Code indicating the purpose of use. In the Swiss EPR the value SHALL be taken from the EPR Purpose Of Use Value Set. |
-| person_id             | O/R         | urn:oasis:names:tc:xacml:2.0:resource:resource-id | SHALL be the EPR-SPID of the patients EPR.                                                                           |
+| JWT Claim (Extension) | Optionality (Basic/ Extended) | XUA Attribute EPR | Remark |
+|-----------------------|-------------------------------|-------------------|--------|
+| subject_name | R/R | urn:oasis:names:tc:xspa:1.0:subject:subject-id | Plain text’s user name.|
+| subject_organization | O/O | urn:oasis:names:tc:xspa:1.0:subject:organization | The name of the user's organization or institution as text.|
+| subject_organization_id | O/O | urn:oasis:names:tc:xspa:1.0:subject:organization-id | The OID of the user's organization in URN notation.|
+| subject_role | O/R | urn:oasis:names:tc:xacml:2.0:subject:role | Code indicating the user role. In the Swiss EPR the value SHALL be taken from the EPR Role Code Value Set.|
+| purpose_of_use | O/R | urn:oasis:names:tc:xspa:1.0:subject:purposeofuse | Code indicating the purpose of use. In the Swiss EPR the value SHALL be taken from the EPR Purpose Of Use Value Set. |
+| home_community_id | O/R | urn:ihe:iti:xca:2010:homeCommunityId | The user's home community identifier where the request originated. Its value should be an OID in URN notation.|
+| person_id | O/R | urn:oasis:names:tc:xacml:2.0:resource:resource-id | SHALL be the EPR-SPID of the patients EPR.|
 {:class="table table-bordered"}
 
 <figcaption id='jwttiua'>Attributes of the IUA Get Access Token response in the JWT extension ihe_iua.</figcaption>  
@@ -366,10 +369,10 @@ The Authorization Server and Resource Server SHALL support the following extensi
 
 -	user_id: subject identifier according to Annex 5 E1, section 1.6.4.3.4.2 Message Semantics.
 
-| JWT Claim (Extension) | Optionality | XUA Attribute EPR                                   | Remark                     |
-|-----------------------|-------------|-----------------------------------------------------|----------------------------|
-| user_id               | R           | &lt;NameID&gt; child element of the &lt;Subject&gt; | Depending on the Extension |
-| user_id_qualifier     | R           | Name qualifier attribute of &lt;NameID&gt;          | Depending on the Extension |
+| JWT Claim (Extension) | Optionality (Basic/ Extended) | XUA Attribute EPR | Remark |
+|-----------------------|-------------|-------------------------------------|--------|
+| user_id               | O/R         | &lt;NameID&gt; child element of the &lt;Subject&gt; |  |
+| user_id_qualifier     | O/R         | Name qualifier attribute of &lt;NameID&gt;          |  |
 {:class="table table-bordered"}
 
 <figcaption>Attributes of the IUA Get Access Token response in the JWT extension ch_delegation.</figcaption>
@@ -383,7 +386,7 @@ The Authorization Server and Resource Server SHALL support the following extensi
 
 The ch_group extension claims shall be wrapped in an "extensions" object with key 'ch_group’ and a JSON array containing the JSON objects with properties name and id. The id SHALL be an OID in the format of a URN.
 
-| ch_group array element | Optionality | XUA Attribute EPR                                   | Remark                                          |
+| ch_group array element | Optionality (Basic/ Extended) | XUA Attribute EPR | Remark |
 |------------------------|-------------|-----------------------------------------------------|-------------------------------------------------|
 | name                   | O/R         | urn:oasis:names:tc:xspa:1.0:subject:organization    | An array of groups with properties name and id. |
 | id                     | O/R         | urn:oasis:names:tc:xspa:1.0:subject:organization-id | An array of group names and group ids.          |
@@ -401,7 +404,7 @@ The Authorization Server and Resource Server shall support the following extensi
 The ch_delegation extension claims shall be wrapped in an "extensions" object with key 'ch_delegation' and a JSON value object containing the claims.
 The claim content for the JWT CH:EPR extensions shall correspond to the content defined in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 
-| JWT Claim (Extension) | Optionality | XUA Attribute EPR                  | Remark                                                                   |
+| JWT Claim (Extension) | Optionality (Basic/ Extended) | XUA Attribute EPR | Remark |
 |-----------------------|-------------|------------------------------------|--------------------------------------------------------------------------|
 | principal             | O/R         | urn:e-health-suisse:principal-name | Name of the healthcare professional an assistant is acting on behalf of. |
 | principal_id          | O/R         | urn:e-health-suisse:principal-id   | GLN of the healthcare professional an assistant is acting on behalf of.  |
@@ -450,7 +453,8 @@ A JWT access token returned by the IUA Authorization Server and to be used to re
   "jti": "c5436729-3f26-4dbf-abd3-2790dc7771a",
   "extensions" : {  
     "ihe_iua" : {  
-      "subject_name": "Martina Musterarzt"
+      "subject_name": "Martina Musterarzt", 
+      "home_community_id": "urn:oid:1.2.3.4" 
     }, 
     "ch_epr": {
       "user_id": "2000000090092", 
@@ -473,6 +477,7 @@ A extend JWT access token to be used to access patient documents SHALL have the 
   "extensions" : {  
     "ihe_iua" : {  
       "subject_name": "Martina Musterarzt",
+      "home_community_id": "urn:oid:1.2.3.4",  
       "person_id": "761337610411353650^^^&amp;2.16.756.5.30.1.127.3.10.3&amp;ISO",
       "subject_role": {
           "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
@@ -519,6 +524,7 @@ A JWT access token to be used to access by an assistant acting behalf on a healt
   "extensions" : {  
     "ihe_iua" : {  
       "subject_name": "Dagmar Musterassistent",
+      "home_community_id": "urn:oid:1.2.3.4", 
       "person_id": "761337610411353650^^^&amp;2.16.756.5.30.1.127.3.10.3&amp;ISO",
       "subject_role": {
           "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
