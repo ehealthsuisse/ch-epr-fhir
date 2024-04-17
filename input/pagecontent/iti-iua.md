@@ -76,4 +76,11 @@ The Swiss national extension does not define requirements on the grouping of act
 For the process flow of this profile and its interplay with the other profiles see [sequence diagrams](sequencediagrams.html). 
 
 ### Security Consideration  
-The Swiss national extension does not define additional security requirements beyond those sepcified in the underlying [IUA Trial Implementation](https://profiles.ihe.net/ITI/IUA/index.html).
+
+This national extension enforces client authentication of the TLS network layer with X.509 client certifictes. The TLS client certificate shall be used together with the OAuth 2 client ID to identify the client when granting access to the EPR. The client certificates shall match the requirements of EPRO-FDHA, Annex 2, Section 4.15.3b.    
+
+Communities shall verify and register the combination of the OAuth client ID, the URLs and the client certifcate during the onboarding process. 
+
+Communities shall verify the combination of the OAuth client ID, the URLs and the client certifcate of all requests against the registered values and shall reject requests in case of mismatch. 
+
+The Swiss national extension does not define further additional security requirements beyond those sepcified in the underlying [IUA Trial Implementation](https://profiles.ihe.net/ITI/IUA/index.html).
