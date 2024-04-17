@@ -158,7 +158,7 @@ Profile: PpqmConsentTemplate201
 Parent: PpqmConsent
 Id: PpqmConsentTemplate201
 Title: "CH PPQm Consent Template 201"
-Description: "Swiss EPR Policy Set Template 201 as a Consent -- Full access for the patient"
+Description: "Swiss EPR Policy Set Template 201 -- This profile grants the access for the patient to the patients EHR. This profile shall be used to document the patient consent to the EHR during onbarding."
 * identifier[templateId].value = "201"
 * policyRule.coding = $URI#urn:e-health-suisse:2015:policies:access-level:full
 * provision.period 0..0
@@ -173,7 +173,7 @@ Description: "Swiss EPR Policy Set Template 201 as a Consent -- Full access for 
 Instance: Template201Consent
 InstanceOf: PpqmConsentTemplate201
 Title: "PPQm Consent for template 201"
-Description: "CH:PPQm Consent for template 201 -- Full access for the patient"
+Description: "Swiss EPR Policy Set Template 201 -- This profile grants access for the patient to the patients EHR. This profile shall be used to document the patient consent to the EHR during onbarding."
 Usage: #example
 * identifier[policySetId].value = "urn:uuid:57ab9b0d-7d97-4d85-9e4b-02bc7c939ad9"
 * text.status = #empty
@@ -192,7 +192,7 @@ Profile: PpqmConsentTemplate202
 Parent: PpqmConsent
 Id: PpqmConsentTemplate202
 Title: "CH PPQm Consent Template 202"
-Description: "Swiss EPR Policy Set Template 202 as a Consent -- Access in emergency mode"
+Description: "Swiss EPR Policy Set Template 202 -- This profile grants access for healthcare professionals and assistants in emergency mode. This profile shall be implemented by the patient portal for patients and representatives."
 * identifier[templateId].value = "202"
 * policyRule.coding from PpqmReferencedPolicySetGroupEmergency (required)
 * provision.period 0..0
@@ -206,7 +206,7 @@ Description: "Swiss EPR Policy Set Template 202 as a Consent -- Access in emerge
 Instance: Template202Consent
 InstanceOf: PpqmConsentTemplate202
 Title: "PPQm Consent for template 202"
-Description: "CH:PPQm Consent for template 202 -- Access in emergency mode"
+Description: "Swiss EPR Policy Set Template 202 -- This profile grants access for healthcare professionals and assistants in emergency mode. This profile shall be implemented by the patient portal for patients and representatives."
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 202 - Access in emergency mode</p></div>"
@@ -225,7 +225,8 @@ Profile: PpqmConsentTemplate203
 Parent: PpqmConsent
 Id: PpqmConsentTemplate203
 Title: "CH PPQm Consent Template 203"
-Description: "Swiss EPR Policy Set Template 203 as a Consent -- Default provide level"
+Description: "Swiss EPR Policy Set Template 203 -- This profile sets the default provide level and shall be implemented by the patient portal for patients and representatives."
+Usage: #example"
 * identifier[templateId].value = "203"
 * policyRule.coding from PpqmReferencedPolicySetDefaultProvide (required)
 * provision.period 0..0
@@ -246,7 +247,7 @@ Description: "Swiss EPR Policy Set Template 203 as a Consent -- Default provide 
 Instance: Template203Consent
 InstanceOf: PpqmConsentTemplate203
 Title: "PPQm Consent for template 203"
-Description: "CH:PPQm Consent for template 203 -- Default provide level"
+Description: "Swiss EPR Policy Set Template 203 -- This profile sets the default provide level and shall be implented by the patient portal for patients and representatives."
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 203 - Default provide level</p></div>"
@@ -268,7 +269,7 @@ Profile: PpqmConsentTemplate301
 Parent: PpqmConsent
 Id: PpqmConsentTemplate301
 Title: "CH PPQm Consent Template 301"
-Description: "Swiss EPR Policy Set Template 301 as a Consent -- Access level for a healthcare professional"
+Description: "Swiss EPR Policy Set Template 301 -- This profile sets the access level for a healthcare professionals and assistants. This profile shall be immplemented by the patient portal for patients and representatives."
 * obeys ch-epr-ppqm-delegation-policy-or-end-date
 * identifier[templateId].value = "301"
 * policyRule.coding from PpqmReferencedPolicySetHcp (required)
@@ -284,7 +285,7 @@ Description: "Swiss EPR Policy Set Template 301 as a Consent -- Access level for
 Instance: Template301Consent
 InstanceOf: PpqmConsentTemplate301
 Title: "PPQm Consent for template 301"
-Description: "CH:PPQm Consent for template 301 -- Access level for a healthcare professional"
+Description: "Swiss EPR Policy Set Template 301 -- This profile sets the access level for a healthcare professionals and assistants. This profile shall be implemented by the patient portal for patients and representatives."
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 301 - Access level for a healthcare professional</p></div>"
@@ -307,7 +308,7 @@ Profile: PpqmConsentTemplate302
 Parent: PpqmConsent
 Id: PpqmConsentTemplate302
 Title: "CH PPQm Consent Template 302"
-Description: "Swiss EPR Policy Set Template 302 as a Consent -- Access level for a group of healthcare professionals"
+Description: "Swiss EPR Policy Set Template 302 -- This profile sets the access level for groups. This profile shall be implemented by the patient portal for patients and representatives."
 * identifier[templateId].value = "302"
 * policyRule.coding from PpqmReferencedPolicySetGroupEmergency (required)
 * provision.period.end 1..1
@@ -323,7 +324,7 @@ Description: "Swiss EPR Policy Set Template 302 as a Consent -- Access level for
 Instance: Template302Consent
 InstanceOf: PpqmConsentTemplate302
 Title: "PPQm Consent for template 302"
-Description: "CH:PPQm Consent for template 302 -- Access level for a group of healthcare professionals"
+Description: "Swiss EPR Policy Set Template 302 -- This profile sets the access level for groups. This profile shall be implemented by the patient portal for patients and representatives."
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 302 -- Access level for a group of healthcare professionals</p></div>"
@@ -347,7 +348,7 @@ Profile: PpqmConsentTemplate303
 Parent: PpqmConsent
 Id: PpqmConsentTemplate303
 Title: "CH PPQm Consent Template 303"
-Description: "Swiss EPR Policy Set Template 303 as a Consent -- Full access for a representative"
+Description: "Swiss EPR Policy Set Template 303 -- This profile grants full access for a representative. This profile shall be used to documents the representaion to a patients EHR."
 * identifier[templateId].value = "303"
 * policyRule.coding = $URI#urn:e-health-suisse:2015:policies:access-level:full
 * provision.period 0..0
@@ -361,7 +362,7 @@ Description: "Swiss EPR Policy Set Template 303 as a Consent -- Full access for 
 Instance: Template303Consent
 InstanceOf: PpqmConsentTemplate303
 Title: "PPQm Consent for template 303"
-Description: "CH:PPQm Consent for template 303 -- Full access for a representative"
+Description: "Swiss EPR Policy Set Template 303 -- This profile grants full access for a representative. This profile shall be used to documents the representaion to a patients EHR."
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 303 - Full access for a representative</p></div>"
