@@ -166,6 +166,13 @@
                             value="This parameter, of type token, specifies the code.coding value supplied in the List Resource. The value of the code element indicates the List of type SubmissionSet or Folder as indicated."/>
             </searchParam>
             <searchParam>
+                <name value="creation"/>
+                <definition
+                            value="https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"/>
+                <type value="date"/>
+                <documentation value="When this document was created"/>
+            </searchParam>
+            <searchParam>
                 <name value="date"/>
                 <definition value="http://hl7.org/fhir/SearchParameter/clinical-date"/>
                 <type value="date"/>

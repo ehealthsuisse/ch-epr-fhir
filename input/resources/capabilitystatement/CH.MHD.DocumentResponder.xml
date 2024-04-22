@@ -81,6 +81,13 @@
                 <documentation value="Format/content rules for the document"/>
             </searchParam>
             <searchParam>
+                <name value="creation"/>
+                <definition
+                            value="https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"/>
+                <type value="date"/>
+                <documentation value="When this document was created"/>
+              </searchParam>
+            <searchParam>
                 <name value="date"/>
                 <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-date"/>
                 <type value="date"/>
