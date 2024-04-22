@@ -19,7 +19,7 @@ The result of the query is a Bundle containing List Resources that match the que
 
 ### Referenced Standards
 
-1. [Mobile access to Health Documents (MHD), Rev. 4.0.2 – Trial-Implementation,  November 8, 2021](https://profiles.ihe.net/ITI/MHD/index.html)   
+1. [Mobile access to Health Documents (MHD), Rev. 4.2.1 – Trial-Implementation,  August 2, 2023](https://profiles.ihe.net/ITI/MHD/index.html)   
 2. This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
 
 ### Messages
@@ -28,12 +28,15 @@ The result of the query is a Bundle containing List Resources that match the que
 
 #### Find Document Lists Request Message
 
+The Document Consumer SHALL include the search parameter patient.identifier with the oid of the EPR-SPID.
+
 _Find Document List_ example **request**:
 ```http
-GET [base]/List?patient.identifier=urn:oid:2.999|11111111 HTTP/1.1
+GET [base]/List?patient.identifier=urn:oid:2.16.756.5.30.1.127.3.10.3|761337610411353650&&status=current HTTP/1.1
 Accept: application/fhir+json
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 ```
+
 
 #### Find Document Lists Response Message
 
