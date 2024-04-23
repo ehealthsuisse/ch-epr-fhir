@@ -226,7 +226,6 @@ Parent: PpqmConsent
 Id: PpqmConsentTemplate203
 Title: "CH PPQm Consent Template 203"
 Description: "Swiss EPR Policy Set Template 203 -- This profile sets the default provide level and shall be implemented by the patient portal for patients and representatives."
-Usage: #example"
 * identifier[templateId].value = "203"
 * policyRule.coding from PpqmReferencedPolicySetDefaultProvide (required)
 * provision.period 0..0
@@ -260,9 +259,9 @@ Usage: #example
 * policyRule.coding = $URI#urn:e-health-suisse:2015:policies:provide-level:restricted
 * provision.actor.role.coding = $ehealthRole#HCP
 * provision.actor.reference.display = "all"
-* provision.purpose[norm] = ChEhealthCodesystemPurposeOfUse#NORM
-* provision.purpose[auto] = ChEhealthCodesystemPurposeOfUse#AUTO
-* provision.purpose[dicom_auto] = ChEhealthCodesystemPurposeOfUse#DICOM_AUTO
+* provision.purpose[0] = ChEhealthCodesystemPurposeOfUse#NORM
+* provision.purpose[1] = ChEhealthCodesystemPurposeOfUse#AUTO
+* provision.purpose[2] = ChEhealthCodesystemPurposeOfUse#DICOM_AUTO
 
 
 Profile: PpqmConsentTemplate301
