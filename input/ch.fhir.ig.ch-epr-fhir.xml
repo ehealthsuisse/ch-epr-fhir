@@ -666,6 +666,11 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                     <generation value="markdown"/>
                 </page>
                 <page>
+                    <nameUrl value="ch-mhd-1.html"/>
+                    <title value="Update Limited Document Metadata [CH:MHD-1]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
                     <nameUrl value="iti-20.html"/>
                     <title value="Record Audit Event [ITI-20]"/>
                     <generation value="markdown"/>

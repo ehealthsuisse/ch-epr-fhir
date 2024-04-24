@@ -1,13 +1,20 @@
 This section specifies Swiss national extensions to the Mobile Access to Health Documents (MHD) with XDS on FHIR Profile, which is [published](https://profiles.ihe.net/ITI/MHD/index.html) as an IHE ITI Trial Implementation profile.
 
+The national extensions adds an additional transaction to≈from the Document Source to the Document Recipient. 
+
 ### Scope  
-An EPR App can query, retrieve or publish data to EPR communities using the transaction of the MHD profile.   
+An EPR App can query, retrieve or publish data to an EPR community using the transaction of the MHD profile. 
+An EPR App can Update Limited Document Metadata for a published document with this national extension.  
 
 ###	Use Cases  
-No extensions or restrictions to the profile use cases are specified in the Swiss in national extension. 
+In addition to the Document Sharing Use Case for MHD the national extension defines the following Use Cases:
+
+#### Limited Document Metadata from a Health Care professional with a primary system
+A Healthcare professional has published a document in his own community for the patient but needs to update the metadata of the document. 
+The healthcare professional updates the metadata (e.g. title) in the primary systems and submits the updated metadata to the community. The
+metadata which is allowed to be updated is defined in Annex 5.1 1.12.1.
 
 ###	Actors and Transactions  
-No extensions or restrictions to the actors and transactions are specified in the Swiss national extension.
 
 <div>
 {%include MHD_actor_diagram.svg %}
