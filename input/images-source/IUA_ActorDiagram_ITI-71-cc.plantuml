@@ -1,0 +1,15 @@
+@startuml 
+
+title Interaction Diagram for [ITI-71]
+
+participant "Authorization Client" as Client
+participant "Authorization Server" as AuthzServer
+
+autonumber 0 1 "<b>[00]</b>"
+autoactivate on
+
+Client -> AuthzServer: Get Access Token Request
+AuthzServer --> Client: Get Access Token Response (access token)
+end
+
+@enduml
