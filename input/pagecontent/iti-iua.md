@@ -43,7 +43,7 @@ The patient or healthcare professional authenticates in the portal or primary sy
 
 The IUA Authorization Server verifies that the portal or primary system is authorized to launch SMART on FHIR Apps which connect to the EPR on behalf of the user by checking that the portal or primary system has been registered beforehand during the onboarding process of the portal or primary system application.
 
-The IUA Authorization Server verifies that the patient or healthcare professional has a valid session at the Identity Provider and retrieves the Identity Assertion from the Identity Provider. The Authorization Server validates the claims together with the data from the Identity Assertion and resolves additional information the SMART on FHIR App requires to access the EPR (e.g., resolve the digital identity to th EPR-SPID).
+The IUA Authorization Server verifies that the patient or healthcare professional has a valid session at the Identity Provider and retrieves the Identity Assertion from the Identity Provider. The Authorization Server validates the claims together with the data from the Identity Assertion and resolves additional information the SMART on FHIR App requires to access the EPR (e.g., resolve the digital identity to the EPR-SPID).
 
 The IUA Authorization Server responds an IUA Authorization Token the SMART on FHIR App shall incorporate to any transaction to retrieve the data and documents from the patients EPR.
 
@@ -77,10 +77,10 @@ For the process flow of this profile and its interplay with the other profiles s
 
 ### Security Consideration  
 
-This national extension enforces client authentication of the TLS network layer with X.509 client certifictes. The TLS client certificate shall be used together with the OAuth 2 client ID to identify the client when granting access to the EPR. The client certificates shall match the requirements of EPRO-FDHA, Annex 2, Section 4.15.3b.    
+This national extension enforces client authentication of the TLS network layer with X.509 client certificates. The TLS client certificate shall be used together with the OAuth 2 client ID to identify the client when granting access to the EPR. The client certificates shall match the requirements of EPRO-FDHA, Annex 2, Section 4.15.3b.    
 
-Communities shall verify and register the combination of the OAuth client ID, the URLs and the client certifcate during the onboarding process. 
+Communities shall verify and register the combination of the OAuth client ID, the URLs and the client certificate during the onboarding process. 
 
-Communities shall verify the combination of the OAuth client ID, the URLs and the client certifcate of all requests against the registered values and shall reject requests in case of mismatch. 
+Communities shall verify the combination of the OAuth client ID, the URLs and the client certificate of all requests against the registered values and shall reject requests in case of mismatch. 
 
-The Swiss national extension does not define further additional security requirements beyond those sepcified in the underlying [IUA Trial Implementation](https://profiles.ihe.net/ITI/IUA/index.html).
+The Swiss national extension does not define further additional security requirements beyond those specified in the underlying [IUA Trial Implementation](https://profiles.ihe.net/ITI/IUA/index.html).
