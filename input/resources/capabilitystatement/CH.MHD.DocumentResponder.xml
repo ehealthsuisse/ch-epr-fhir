@@ -20,7 +20,7 @@
     <format value="application/fhir+json" />
     <rest>
         <mode value="server" />
-        <documentation value="MHD server returns Lisst Resources that match the search criteria provided by the Document Consumer [ITI-66]. 
+        <documentation value="MHD server returns List Resources that match the search criteria provided by the Document Consumer [ITI-66]. 
         MHD server returns DocumentReference Resources that match the search criteria provided by the Document Consumer [ITI-67].
         MHD server serves the document to the Document Consumer [ITI-68]." />
         <security>
@@ -80,6 +80,13 @@
                 <type value="token"/>
                 <documentation value="Format/content rules for the document"/>
             </searchParam>
+            <searchParam>
+                <name value="creation"/>
+                <definition
+                            value="https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"/>
+                <type value="date"/>
+                <documentation value="When this document was created"/>
+              </searchParam>
             <searchParam>
                 <name value="date"/>
                 <definition value="http://hl7.org/fhir/SearchParameter/DocumentReference-date"/>

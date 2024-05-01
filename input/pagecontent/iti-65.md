@@ -15,7 +15,7 @@ In the Swiss EPR the transaction is used by the MHD Document Source to store doc
 
 ### Referenced Standards
 
-1. [Mobile access to Health Documents (MHD), Rev. 4.0.2 – Trial-Implementation,  November 8, 2021](https://profiles.ihe.net/ITI/MHD/index.html)  
+1. [Mobile access to Health Documents (MHD), Rev. 4.2.1 – Trial-Implementation,  August 2, 2023](https://profiles.ihe.net/ITI/MHD/index.html)  
 2. This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
 
 ### Messages
