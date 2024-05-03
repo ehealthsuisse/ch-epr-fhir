@@ -9,7 +9,6 @@ autonumber 0 1 "<b>[00]</b>"
 autoactivate on
 
 Client -> AuthzServer: Get Access Token Request
-AuthzServer --> Client: Get Access Token Response (access token)
-end
+AuthzServer -> Client: Get Access Token Response (access token)
 
 @enduml

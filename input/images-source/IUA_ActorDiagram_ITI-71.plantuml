@@ -24,7 +24,6 @@ AuthzServer -> UserAgent: Redirect to Client \n(authorization response with Auth
 UserAgent -> Client: authorization response
 
 Client -> AuthzServer: Get Access Token Request \n(client credentials + Authorization Code)
-AuthzServer --> Client: Get Access Token Response (access token)
-end
+AuthzServer -> Client: Get Access Token Response (access token)
 
 @enduml
