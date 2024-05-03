@@ -2,3 +2,6 @@
 feedback:
     active: true
     formUrl: https://docs.google.com/forms/d/e/1FAIpQLSffM9HysTOg3VdMOeaFmWiWGH0OQT-FZLmwZaeXgZqUr66Y0A/viewform?usp=sf_link
+css:
+    navbar: 144b8a
+    title: 4fa2da    
