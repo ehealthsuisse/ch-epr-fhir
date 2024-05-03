@@ -432,7 +432,7 @@ Content-type: application/x-www-form-urlencoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 grant_type=client_credentials&
 access_token_format=urn:ietf:params:oauth:token-type:jwt&
-scope=user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CAUTO+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CTCU+person_id%3D761337610411353650%5E%5E%5E%26amp%3B2.16.756.5.30.1.127.3.10.3%26amp%3BISO%0A&
+scope=user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CAUTO+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CTCU+person_id%3D761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO
 ```
 
 #### Authorization Code Grant Type
@@ -530,7 +530,9 @@ The scope parameter of the request MAY claim the following attributes:
 - There MAY be a scope with name “launch”. If present, it indicates the permission of SMART on FHIR Apps to obtain launch context from a portal or primary system authorized to access the EPR.
 - There MAY be a scope with name "purpose_of_use=token". If present, the token SHALL convey the coded value of the current transaction’s purpose of use. Allowed values are NORM (normal access) and EMER (emergency access) from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. e.g. purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5\|NORM
 - There MAY be a scope with name "subject_role=token". If present, the token SHALL convey the coded value of the subject’s role. The value SHALL be either HCP (healthcare professional), ASS (assistant), REP (representative) or PAT (patient) from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. e.g.: subject_role=urn:oid:2.16.756.5.30.1.127.3.10.6\|HCP
-- There MAY be a scope with name "person_id=value". If present, the value SHALL convey the EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax. e.g: person_id=761337610435209810^^^&amp;2.16.756.5.30.1.109.6.5.3.1.1&amp;ISO
+- There MAY be a scope with name "person_id=value". If present, the value SHALL convey the EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax. e.g: person_id=761337610411353650^^^&2.16.756.5.30.1.109.6.5.3.1.1&ISO
+
+Note: The parameters need to be url encoded, see above message example. 
 
 Depending on the value of the role scope additional scopes are required, as described in the following sections.
 
@@ -596,7 +598,7 @@ GET authorize?
     client_id=app-client-id&
     redirect_uri=http%3A%2F%2Flocalhost%3A9000%2Fcallback&
     launch=xyz123&
-    scope=launch+user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CNORM+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CHCP+person_id%3D761337610411353650%5E%5E%5E%26amp%3B2.16.756.5.30.1.127.3.10.3%26amp%3BISO%0A&
+    scope=launch+user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CNORM+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CHCP+person_id%3D761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO&
     code_challenge=ZmVjMmIwMWYyYTNjZWJiNTgyNTgxYzlmOGYyMWM0MWI3YmZhMjQ4YjU5MDc3Mzk4MDBmYTk0OThlNzZiNjAwMw&
     code_challenge_method=S256
 ```
@@ -805,7 +807,7 @@ A extend JWT access token to be used to access patient documents SHALL have the 
     "ihe_iua" : {  
       "subject_name": "Martina Musterarzt",
       "home_community_id": "urn:oid:1.2.3.4",  
-      "person_id": "761337610411353650^^^&amp;2.16.756.5.30.1.127.3.10.3&amp;ISO",
+      "person_id": "761337610411353650^^^&2.16.756.5.30.1.127.3.10.3&ISO",
       "subject_role": {
           "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
           "code": "HCP"
@@ -852,7 +854,7 @@ A JWT access token to be used to access by an assistant acting behalf on a healt
     "ihe_iua" : {  
       "subject_name": "Dagmar Musterassistent",
       "home_community_id": "urn:oid:1.2.3.4", 
-      "person_id": "761337610411353650^^^&amp;2.16.756.5.30.1.127.3.10.3&amp;ISO",
+      "person_id": "761337610411353650^^^&2.16.756.5.30.1.127.3.10.3&ISO",
       "subject_role": {
           "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
           "code": "HCP"
