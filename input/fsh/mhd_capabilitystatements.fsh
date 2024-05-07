@@ -304,6 +304,9 @@ Usage: #definition
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.interaction.code = #transaction
 * rest.interaction.documentation = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"
+* rest.resource[+].type = #DocumentReference
+* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"
+* rest.resource[=].interaction.code = #update
 
 Instance: CH.MHD.DocumentSource
 InstanceOf: CapabilityStatement
@@ -328,3 +331,6 @@ Usage: #definition
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.interaction.code = #transaction
 * rest.interaction.documentation = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"
+* rest.resource[+].type = #DocumentReference
+* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"
+* rest.resource[=].interaction.code = #update

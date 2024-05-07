@@ -38,6 +38,143 @@ A Document Source shall send a request for either the JSON or the XML format as 
 The Document Source shall be capable of accepting elements specified in profile [CH MHD DocumentReference Comprehensive](StructureDefinition-ch-mhd-documentreference-comprehensive.html).
 The DocumentReference elements which are allowed to be updated are defined in Annex 5.1 1.12.1. The [Mappings tab](StructureDefinition-ch-mhd-documentreference-comprehensive-mappings.html#mappings-for-xds-metadata-equivalent-http-ihe-net-xds), indicates the mapping between DocumentReference elements and the XDS elements defined in Annex 5.1 1.12.1.
 
+##### Example
+
+```http
+PUT [base]/DocumentReference/1c8d1f74-1686-4188-9c35-0c5727c771cc HTTP/1.1
+Accept: application/fhir+json
+traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
+
+{
+  "resourceType": "DocumentReference",
+  "id": "1c8d1f74-1686-4188-9c35-0c5727c771cc",
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "pat",
+      "identifier": [
+        {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "MR"
+              }
+            ]
+          },
+          "system": "urn:oid:2.16.756.888888.3.1",
+          "value": "8734"
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-deletionstatus",
+      "valueCoding": {
+        "system": "urn:oid:2.16.756.5.30.1.127.3.10.18",
+        "code": "urn:e-health-suisse:2019:deletionStatus:deletionNotRequested"
+      }
+    },
+    {
+      "url": "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-author-authorrole",
+      "valueCoding": {
+        "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
+        "code": "HCP",
+        "display": "Healthcare professional"
+      }
+    }
+  ],
+  "masterIdentifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2951"
+  },
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:uuid:50383ae5-49e5-4dea-b0e6-660cb9e7b91f"
+    }
+  ],
+  "status": "current",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "721912009",
+        "display": "Medication summary document (record artifact)"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "422735006",
+          "display": "Summary clinical document (record artifact)"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "http://example.org/Patient/FranzMusterNeedsAbsoluteUrl"
+  },
+  "date": "2020-06-29T11:58:00+00:00",
+  "description": "Changed Description for -MedicationCard",
+  "securityLabel": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "17621005",
+          "display": "Normal (qualifier value)"
+        }
+      ]
+    }
+  ],
+  "content": [
+    {
+      "attachment": {
+        "contentType": "text/xml",
+        "language": "de-CH",
+        "url": "http://example.com/xdsretrieve?uniqueId=urn:uuid:413eb0f7-aa72-4405-86a4-7793a23fcc27&repositoryUniqueId=2.999.756.42.1",
+        "creation": "2020-06-29T11:58:00+00:00"
+      },
+      "format": {
+        "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
+        "code": "urn:ihe:pharm:pml:2013",
+        "display": "Pharmacy PML"
+      }
+    }
+  ],
+  "context": {
+    "facilityType": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "264358009",
+          "display": "General practice premises (environment)"
+        }
+      ]
+    },
+    "practiceSetting": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394802001",
+          "display": "General medicine (qualifier value)"
+        }
+      ]
+    },
+    "sourcePatientInfo": {
+      "reference": "#pat"
+    }
+  }
+}
+```
+
+
 ##### Expected Actions
 
 The Document Recipient shall provide a [CapabilityStatement](CapabilityStatement-CH.MHD.DocumentRecipient.html) with the capabilities interaction and indicate that update is available on the DocumentReference.
@@ -55,9 +192,6 @@ the request in its response message.
 ##### Response Message
 See http://hl7.org/fhir/http.html#update for response.
 
-##### Example
-
-TODO
 
 ### Security Consideration
 
