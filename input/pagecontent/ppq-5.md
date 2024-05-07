@@ -24,26 +24,29 @@ The request SHALL be sent:
 
 #### Expected Actions
 
-Upon receiving the HTTP `GET` request, the Policy Repository SHALL create a PPQ 5 response according to the transaction
+Upon receiving the HTTP `GET` request, the Policy Repository SHALL create a PPQ-5 response according to the transaction
 outcome.
 
 #### Response Message
 
-The PPQ 5 response SHALL be created according to the section 3.1.0.9 of the FHIR R4 specification. If the response body
+The PPQ-5 response SHALL be created according to the section
+[3.1.0.9](https://hl7.org/fhir/R4/http.html#search) of the FHIR R4 specification. If the response body
 is a Bundle, then it SHALL comply to the
-[PpqmRetrieveResponseBundle profile](StructureDefinition-PpqmRetrieveResponseBundle.html). 
+[PpqmRetrieveResponseBundle](StructureDefinition-PpqmRetrieveResponseBundle.html) profile. 
 
 ### Security Considerations
 
 TLS SHALL be used. For user authentication and authorization, the IUA profile with extended access token SHALL be used
-as described in the Amendment mHealth of Annex 5, Section 3.2. Consequently, the Mobile Privacy Policy Retrieve [PPQ 5]
+as described in the Amendment mHealth of Annex 5, Section 3.2. Consequently, the Mobile Privacy Policy Retrieve [PPQ-5]
 transaction SHALL be combined with the Incorporate Access Token
 [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA
 profile.
 
+The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
+
 The involved actors SHALL record audit events. The Policy Consumer SHALL use the ATNA FHIR Feed option thereby, the
 Policy Repository SHALL use either the ATNA FHIR Feed option or the ATNA TLS Syslog option.
 
-The audit records correspond to the ones of PPQ 2, with the following adaptations:
+The audit records correspond to the ones of PPQ-2, with the following adaptations:
 - `EventTypeCode` SHALL be set to `EV("PPQ-5", "e-health-suisse", "Mobile Privacy Policy Retrieve")`.
 - The Destination User ID SHALL be the FHIR endpoint URI of the Policy Repository.

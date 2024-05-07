@@ -49,6 +49,8 @@ the following heuristics SHALL be used:
   `@codeSystem` equal to "2.16.756.5.30.1.127.3.10.5" and `@code` equal to "EMER" → template **202**.
 - The policy set contains an element `/PolicySet/Target/Subjects/Subject/SubjectMatch/SubjectAttributeDesignator` with
   `@AttributeId` equal to "urn:oasis:names:tc:xspa:1.0:subject:organization-id" → template **302**.
+- The ID of the referenced policy set (value of the element `<PolicySetIdReference>`) contains the substring 
+  "delegation" → template **304**.  
 - Otherwise → template **301**.
 
 The [PpqmConsent](StructureDefinition-PpqmConsent.html) resource attributes SHALL be populated according to the
@@ -59,21 +61,22 @@ rules defined for each template in the table below:
 		<tr>
 			<td><strong>PpqmConsent attribute</strong></td>
 			<td><strong>Template 201</strong><br>(full access for the patient)</td>
-			<td><strong>Template 202</strong><br>(confidentiality level for emergency access)</td>
+			<td><strong>Template 202</strong><br>(confidentiality level for emergency read access)</td>
 			<td><strong>Template 203</strong><br>(minimal confidentiality level for upload)</td>
-			<td><strong>Template 301</strong><br>(individual access permissions)</td>
-			<td><strong>Template 302</strong><br>(group access permissions)</td>
+			<td><strong>Template 301</strong><br>(individual read access permissions)</td>
+			<td><strong>Template 302</strong><br>(group read access permissions)</td>
 			<td><strong>Template 303</strong><br>(full access for the patient's representative)</td>
+			<td><strong>Template 304</strong><br>(individual read access permissions with delegation)</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td><code>identifier.value</code> (1)</td>
-			<td colspan="6">value of <code>/PolicySet/@PolicySetId</code></td>
+			<td colspan="7">value of <code>/PolicySet/@PolicySetId</code></td>
 		</tr>
 		<tr>
 			<td><code>identifier.type</code> (1)</td>
-			<td colspan="6">fixed value: code "http://fhir.ch/ig/ch-epr-fhir/CodeSystem/PpqmConsentIdentifierType|policySetId"</td>
+			<td colspan="7">fixed value: code "http://fhir.ch/ig/ch-epr-fhir/CodeSystem/PpqmConsentIdentifierType|policySetId"</td>
 		</tr>
 		<tr>
 			<td><code>identifier.value</code> (2)</td>
@@ -83,34 +86,35 @@ rules defined for each template in the table below:
 			<td>fixed value: "301"</td>
 			<td>fixed value: "302"</td>
 			<td>fixed value: "303"</td>
+			<td>fixed value: "304"</td>
 		</tr>
 		<tr>
 			<td><code>identifier.type</code> (2)</td>
-			<td colspan="6">fixed value: code "http://fhir.ch/ig/ch-epr-fhir/CodeSystem/PpqmConsentIdentifierType|templateId"</td>
+			<td colspan="7">fixed value: code "http://fhir.ch/ig/ch-epr-fhir/CodeSystem/PpqmConsentIdentifierType|templateId"</td>
 		</tr>
 		<tr>
 			<td><code>status</code></td>
-			<td colspan="6">fixed value: code "active"</td>
+			<td colspan="7">fixed value: code "active"</td>
 		</tr>
 		<tr>
 			<td><code>scope</code></td>
-			<td colspan="6">fixed value: code "http://terminology.hl7.org/CodeSystem/consentscope|patient-privacy"</td>
+			<td colspan="7">fixed value: code "http://terminology.hl7.org/CodeSystem/consentscope|patient-privacy"</td>
 		</tr>
 		<tr>
 			<td><code>category</code></td>
-			<td colspan="6">fixed value: code "http://terminology.hl7.org/CodeSystem/v3-ActCode|INFA"</td>
+			<td colspan="7">fixed value: code "http://terminology.hl7.org/CodeSystem/v3-ActCode|INFA"</td>
 		</tr>
 		<tr>
 			<td><code>patient.identifier.system</code></td>
-			<td colspan="6">fixed value: "urn:oid:2.16.756.5.30.1.127.3.10.3" (OID of EPR-SPID in URN format)</td>
+			<td colspan="7">fixed value: "urn:oid:2.16.756.5.30.1.127.3.10.3"</td>
 		</tr>
 		<tr>
 			<td><code>patient.identifier.value</code></td>
-			<td colspan="6">EPR-SPID of the patient</td>
+			<td colspan="7">EPR-SPID of the patient</td>
 		</tr>
 		<tr>
 			<td><code>policyRule.coding.code</code></td>
-			<td colspan="6">value of <code>/PolicySet/PolicySetIdReference</code></td>
+			<td colspan="7">value of <code>/PolicySet/PolicySetIdReference</code></td>
 		</tr>
 		<tr>
 			<td><code>provision.period.start</code></td>
@@ -120,6 +124,7 @@ rules defined for each template in the table below:
 			<td>allowed only if the end date is provided</td>
 			<td>optional</td>
 			<td><em>not populated</em></td>
+			<td>optional</td>
 		</tr>
 		<tr>
 			<td><code>provision.period.end</code></td>
@@ -129,15 +134,21 @@ rules defined for each template in the table below:
 			<td>optional</td>
 			<td>required</td>
 			<td><em>not populated</em></td>
+			<td>required</td>
 		</tr>
 		<tr>
-			<td><code>provision.actor.role</code></td>
-			<td>fixed code: "EprRole|PAT"</td>
-			<td>fixed code: "EprRole|HCP"</td>
-			<td>fixed code: "EprRole|HCP"</td>
-			<td>fixed code: "EprRole|HCP"</td>
-			<td>fixed code: "EprRole|HCP"</td>
-			<td>fixed code: "EprRole|REP"</td>
+			<td><code>provision.actor.role.coding.code</code></td>
+			<td>fixed value: "PAT"</td>
+			<td>fixed value: "HCP"</td>
+			<td>fixed value: "HCP"</td>
+			<td>fixed value: "HCP"</td>
+			<td>fixed value: "HCP"</td>
+			<td>fixed value: "REP"</td>
+			<td>fixed value: "HCP"</td>
+		</tr>
+		<tr>
+			<td><code>provision.actor.role.coding.system</code></td>
+			<td colspan="7">fixed value: "urn:oid:2.16.756.5.30.1.127.3.10.6"</td>
 		</tr>
 		<tr>
 			<td><code>provision.actor.reference.identifier.type.coding.code</code></td>
@@ -147,6 +158,7 @@ rules defined for each template in the table below:
 			<td>fixed value: "urn:gs1:gln"</td>
 			<td>fixed value: "urn:oasis: names:tc:xspa: 1.0:subject:organization-id"</td>
 			<td>fixed value: "urn:e-health-suisse:representative-id"</td>
+			<td>fixed value: "urn:gs1:gln"</td>
 		</tr>
 		<tr>
 			<td><code>provision.actor.reference.identifier.value</code></td>
@@ -156,6 +168,17 @@ rules defined for each template in the table below:
 			<td>GLN of the healthcare professional</td>
 			<td>OID of the HCP group, in URN format</td>
 			<td>ID of the patient's representative</td>
+			<td>GLN of the healthcare professional</td>
+		</tr>
+		<tr>
+			<td><code>provision.actor.reference.identifier.system</code></td>
+			<td>fixed value: "urn:oid:2.16.756.5.30.1.127.3.10.3"</td>
+			<td><em>not populated</em></td>
+			<td><em>not populated</em></td>
+			<td>fixed value: "urn:oid:2.51.1.3"</td>
+			<td><em>not populated</em></td>
+			<td><em>not populated</em></td>
+			<td>fixed value: "urn:oid:2.51.1.3"</td>
 		</tr>
 		<tr>
 			<td><code>provision.actor.reference.display</code></td>
@@ -165,15 +188,21 @@ rules defined for each template in the table below:
 			<td><em>not populated</em></td>
 			<td><em>not populated</em></td>
 			<td><em>not populated</em></td>
+			<td><em>not populated</em></td>
 		</tr>
 		<tr>
-			<td><code>provision.purpose</code></td>
+			<td><code>provision.purpose.code</code></td>
 			<td><em>not populated</em></td>
-			<td>fixed value: code "EprPurposeOfUse|EMER"</td>
-			<td>fixed value: set of codes "EprPurposeOfUse|NORM", "EprPurposeOfUse|AUTO" , "EprPurposeOfUse|DICOM_AUTO"</td>
-			<td>fixed value: code "EprPurposeOfUse|NORM"</td>
-			<td>fixed value: code "EprPurposeOfUse|NORM"</td>
+			<td>fixed value: "EMER"</td>
+			<td>fixed values: "NORM", "AUTO", "DICOM_AUTO"<br/>(each in its own repetition of <code>provision.purpose</code>)</td>
+			<td>fixed value: "NORM"</td>
+			<td>fixed value: "NORM"</td>
 			<td><em>not populated</em></td>
+			<td>fixed value: "NORM"</td>
+		</tr>
+		<tr>
+			<td><code>provision.purpose.system</code></td>
+			<td colspan="7">fixed value: "urn:oid:2.16.756.5.30.1.127.3.10.5" if <code>provision.purpose.code</code> is provided; otherwise not present</td>
 		</tr>
 	</tbody>
 </table>

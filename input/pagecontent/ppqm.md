@@ -1,5 +1,5 @@
 According to Swiss EPR regulations, patients have the right to decide who is allowed to access and modify data in 
-their EPR, and under which circumstance (cf. emergency access). The national integration profile "Privacy Policy 
+their EPR, and under which circumstances (cf. emergency access). The national integration profile "Privacy Policy 
 Query" (CH:PPQ, see Amendment 2.1 of Annex 5 EPRO-FDHA) defines how to specify these decisions as access policies in 
 the XACML 2.0 format and interchange them using the SOAP transport protocol. For mobile applications, this 
 combination of standards is only restrictedly suitable, therefore a more lightweight solution like HL7 FHIR® is 
@@ -12,9 +12,10 @@ The national integration profile CH:PPQm — "Privacy Policy Query for Mobile" �
 CH:PPQm comprises the following actors and transactions:
 
 <figure>
-  <img src="assets/images/actors.svg" alt="CH:PPQm actor diagram"/>
+  <img src="assets/images/ppqm-actors.svg" alt="CH:PPQm actor diagram"/>
   <figcaption>Figure 1: CH:PPQm actor diagram</figcaption>
 </figure>
+
 
 **Actor:** Policy Repository<br>
 **Role:** Stores policies and policy sets and provides the possibility to add, query, update and delete them<br>
@@ -27,14 +28,14 @@ Table 1 lists the transactions for each actor directly involved in the CH:PPQm P
 this profile, an actor shall support all required transactions (labeled "R") and may support the optional 
 transactions (labeled "O").
 
-| Actors            | Transactions                              | Optionality | Section              |
-|-------------------|-------------------------------------------|-------------|----------------------|
-| Policy Repository | Mobile Privacy Policy Feed (PPQ-3)        | R           | [PPQ-3](ppqm-3.html) |
-|                   | Mobile Privacy Policy Bundle Feed (PPQ-4) | R           | [PPQ-4](ppqm-4.html) |
-|                   | Mobile Privacy Policy Retrieve (PPQ-5)    | R           | [PPQ-5](ppqm-5.html) |
-| Policy Source     | Mobile Privacy Policy Feed (PPQ-3)        | O (Note 1)  | [PPQ-3](ppqm-3.html) |
-|                   | Mobile Privacy Policy Bundle Feed (PPQ-4) | O (Note 1)  | [PPQ-4](ppqm-4.html) |
-| Policy Consumer   | Mobile Privacy Policy Retrieve (PPQ-5)    | R           | [PPQ-5](ppqm-5.html) |
+| Actors            | Transactions                              | Optionality | Section             |
+|-------------------|-------------------------------------------|-------------|---------------------|
+| Policy Repository | Mobile Privacy Policy Feed (PPQ-3)        | R           | [PPQ-3](ppq-3.html) |
+|                   | Mobile Privacy Policy Bundle Feed (PPQ-4) | R           | [PPQ-4](ppq-4.html) |
+|                   | Mobile Privacy Policy Retrieve (PPQ-5)    | R           | [PPQ-5](ppq-5.html) |
+| Policy Source     | Mobile Privacy Policy Feed (PPQ-3)        | O (Note 1)  | [PPQ-3](ppq-3.html) |
+|                   | Mobile Privacy Policy Bundle Feed (PPQ-4) | O (Note 1)  | [PPQ-4](ppq-4.html) |
+| Policy Consumer   | Mobile Privacy Policy Retrieve (PPQ-5)    | R           | [PPQ-5](ppq-5.html) |
 {:class="table table-bordered"}
 
 Table 1: CH:PPQm transactions
@@ -58,7 +59,6 @@ Table 2: CH:PPQm required actors groupings
 ### Referenced Standards
 
 - HL7 FHIR standard Release 4: [http://hl7.org/fhir/R4/index.html](http://hl7.org/fhir/R4/index.html)
-- CH Core Implementation Guide (R4): [http://fhir.ch/ig/ch-core](http://fhir.ch/ig/ch-core)
 
 See also:
 - CH:PPQ specification in the [Amendment 2.1 of Annex 5 EPRO-FDHA](https://www.fedlex.admin.ch/eli/oc/2023/221/de/annexes).

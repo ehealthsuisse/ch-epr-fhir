@@ -1,4 +1,3 @@
-input-cache/org.hl7.fhir.publisher.jar
 input-cache/**
 output/**
 temp/**
@@ -7,3 +6,6 @@ template/**
 *.jar
 fsh-generated/**
 .DS_Store
+/_*.bat
+/_*.sh
+/.idea
