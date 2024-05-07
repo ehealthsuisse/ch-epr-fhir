@@ -57,7 +57,7 @@ TLS SHALL be used. This national extension enforces authentication and authoriza
 Responder using the IUA profile with extended access token. Consequently the _Find Document Lists_ [ITI-66] request 
 must authorize using the [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA profile.
 
-The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
+For the `traceparent` header handling refer to [Trace Context header](tracecontext.html).
 
 #### Security Audit Considerations
 

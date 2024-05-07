@@ -1,6 +1,6 @@
 ### Trace Context header
 
-For all transaction described in this implementation guide, the HTTP `traceparent` header is required. This header 
+For all transaction described in this implementation guide, the HTTP `traceparent` header is specified. This header 
 is defined in the [W3C Trace Context Recommendation](https://www.w3.org/TR/trace-context/).
 
 The header value is made of four parts separated by dashes: the **version**, **trace-id**, **parent-id** and
@@ -20,7 +20,7 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
   requirements for this field, it is recommended using the value `00`.
 
 Each actor shall support the `traceparent` header. Grouped actors shall use the same **trace-id** value to correlate
-IHE transactions.
+IHE transactions according to the Change Proposal `EHSEPDBEP-222` for A5E1.
 
 ##### Audit event requirements
 
