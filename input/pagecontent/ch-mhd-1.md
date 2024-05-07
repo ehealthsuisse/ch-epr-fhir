@@ -185,9 +185,9 @@ Any error that occurs during the processing of the Update Limited Document Metad
 no change made to the existing DocumentReference. The DocumentReference Responder shall return the status and any error codes incurred during the processing of
 the request in its response message. 
 
-1. Verify the submitted and existing DocumentReference have the same values for the identifiers. If these values are not identical, an OperationOutcome with the error code ***XDSMetadataIdentifierError*** should be returned.
-2. Verify the submitted and existing DocumentReference reference the same Patient. If these values are not identical, an OperationOutcome with the error code ***XDSPatientIDReconciliationError*** should be returned.
-3. Check the submitted DocumentReference and determine if it contains only changes to modifiable attributes, as described in Annex 5.1 1.12.1. If not, an OperationOutcome with the error code ***UnmodifiableMetadataError*** should be returned.
+1. Verify the submitted and existing DocumentReference have the same values for the identifiers. If these values are not identical, an OperationOutcome with the error code [XDSMetadataIdentifierError](OperationOutcome-MhdOperationOutcomeErrorXdsMetadataIdentifier.html) should be returned.
+2. Verify the submitted and existing DocumentReference reference the same Patient. If these values are not identical, an OperationOutcome with the error code [XDSPatientIDReconciliationError](OperationOutcome-MhdOperationOutcomeErrorXDSPatientIDReconciliationError.html) should be returned.
+3. Check the submitted DocumentReference and determine if it contains only changes to modifiable attributes, as described in Annex 5.1 1.12.1. If not, an OperationOutcome with the error code [UnmodifiableMetadataError](OperationOutcome-MhdOperationOutcomeErrorUnmodifiableMetadataError.html) should be returned.
 
 ##### Response Message
 See http://hl7.org/fhir/http.html#update for response.
@@ -207,15 +207,10 @@ For the `traceparent` header handling refer to [Trace Context header](traceconte
 ##### Document Source Audit
 
 The **Document Source** shall record an
-[Audit Event for Provide Bundle Transaction at Source](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.ProvideBundle.Audit.Source.html).
-[Audit Example for a Provide Bundle Transaction from source perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditProvideBundle-source.html).
-
-TODO
+[Audit Event for Update Limited DocumentMetadata Transaction at Source](StructureDefinition-ch-mhd-updatelimiteddocumentmetadata-audit-source.html).
 
 ##### Document Recipient Audit
 
-TODO
 
 The **Document Recipient** shall record an
-[Audit Event for Provide Bundle Transaction at Recipient](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.ProvideBundle.Audit.Recipient.html).
-[Audit Example for a Provide Bundle Transaction from recipient perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditProvideBundle-recipient.html).
+[Audit Event for Update Limited Document Metadata Transaction at Recipient](StructureDefinition-ch-mhd-updatelimiteddocumentmetadata-audit-recipient.html).

@@ -48,7 +48,7 @@
     <dependsOn id="chcore">
         <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
         <packageId value="ch.fhir.ig.ch-core"/>
-        <version value="4.0.0"/>
+        <version value="current"/>
     </dependsOn>
     <dependsOn id="ihepixmfhir">
         <uri value="https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm"/>
@@ -200,6 +200,30 @@
             <name value="PDQm OperationOutcome More Attributes Requested Example"/>
             <description value="An example on the OperationOutcome for indicating which additional attributes are requested to lower the results number."/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-moreattributesrequested"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="OperationOutcome/MhdOperationOutcomeErrorUnmodifiableMetadataError"/>
+            </reference>
+            <name value="MHD OperationOutcome DocumentReference udpate error unmodifiable metadata"/>
+            <description value="Error OperationOutcome that the updated DocumentReference changed unmodifiable metadata"/>
+            <exampleBoolean value="true" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="OperationOutcome/MhdOperationOutcomeErrorXDSPatientIDReconciliationError"/>
+            </reference>
+            <name value="MHD OperationOutcome DocumentReference udpate error patient id reconciliation"/>
+            <description value="Error OperationOutcome that the updated DocumentReference references not the same patient"/>
+            <exampleBoolean value="true" />
+        </resource>
+        <resource>
+            <reference>
+                <reference value="OperationOutcome/MhdOperationOutcomeErrorXdsMetadataIdentifier"/>
+            </reference>
+            <name value="MHD OperationOutcome DocumentReference udpate error identifiers"/>
+            <description value="Error OperationOutcome that the updated DocumentReference has not same values for the identifiers"/>
+            <exampleBoolean value="true" />
         </resource>
         <resource>
             <reference>
@@ -405,6 +429,24 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <resource>
             <reference>
                 <reference value="StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-mhd-updatelimiteddocumentmetadata-audit-recipient"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-mhd-updatelimiteddocumentmetadata-audit-source"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-mhd-home-community-id"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
@@ -736,7 +778,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="openissues.html"/>
+                    <nameUrl value="changelog.html"/>
                     <title value="Open Issues / Change Log"/>
                     <generation value="markdown"/>
                 </page>
