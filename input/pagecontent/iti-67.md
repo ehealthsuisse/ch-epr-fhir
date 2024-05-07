@@ -55,6 +55,8 @@ Document Responder using the IUA profile with extended access token. Consequentl
 the _Find Document References_ [ITI-67] request must authorize using the 
 [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA profile.
 
+For the `traceparent` header handling refer to [Trace Context header](tracecontext.html).
+
 #### Security Audit Considerations
 
 ##### Document Consumer Audit
