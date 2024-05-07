@@ -27,13 +27,13 @@ The Update Limited Document Metadata Request Message provides the ability to sub
 
 ##### Trigger Events
 
-The Update Limited Document Metadata Request Message is triggered when an Document Source needs to transmit updated DocumentEntry metadata.
+The Update Limited Document Metadata Request Message is triggered when an Document Source needs to transmit updated DocumentReference metadata.
 
 ##### Message Semantics
 
 A Document Source initiates a FHIR request using Update as defined at http://hl7.org/fhir/http.html#update on a DocumentReference Resource.
 
-A Document Source shall to send a request for either the JSON or the XML format as defined in FHIR. A Document Recipient shall to support the JSON and the XML format.
+A Document Source shall send a request for either the JSON or the XML format as defined in FHIR. A Document Recipient shall support the JSON and the XML format.
 
 The Document Source shall be capable of accepting elements specified in profile [CH MHD DocumentReference Comprehensive](StructureDefinition-ch-mhd-documentreference-comprehensive.html).
 The DocumentReference elements which are allowed to be updated are defined in Annex 5.1 1.12.1. The [Mappings tab](StructureDefinition-ch-mhd-documentreference-comprehensive-mappings.html#mappings-for-xds-metadata-equivalent-http-ihe-net-xds), indicates the mapping between DocumentReference elements and the XDS elements defined in Annex 5.1 1.12.1.
@@ -72,7 +72,7 @@ For the `traceparent` header handling refer to [Trace Context header](traceconte
 
 ##### Document Source Audit
 
-The **Document Source** shall to record an
+The **Document Source** shall record an
 [Audit Event for Provide Bundle Transaction at Source](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.ProvideBundle.Audit.Source.html).
 [Audit Example for a Provide Bundle Transaction from source perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditProvideBundle-source.html).
 
@@ -82,6 +82,6 @@ TODO
 
 TODO
 
-The **Document Recipient** shall to record an
+The **Document Recipient** shall record an
 [Audit Event for Provide Bundle Transaction at Recipient](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.ProvideBundle.Audit.Recipient.html).
 [Audit Example for a Provide Bundle Transaction from recipient perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditProvideBundle-recipient.html).

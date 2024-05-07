@@ -96,12 +96,12 @@ For the `traceparent` header handling refer to [Trace Context header](traceconte
 
 ##### Patient Demographics Consumer Audit
 
-The **Patient Demographics Consumer** shall to record a
+The **Patient Demographics Consumer** shall record a
 [Patient Demographics Consumer AuditEvent](https://profiles.ihe.net/ITI/PDQm/StructureDefinition-IHE.PDQm.Query.Audit.Consumer.html).
 [Audit Example for a PDQm Query transaction from consumer perspective](https://profiles.ihe.net/ITI/PDQm/AuditEvent-ex-auditPdqmQuery-consumer.html).
 
 ##### Patient Demographics Supplier Audit
 
-The **Patient Demographics Supplier** shall to record a
+The **Patient Demographics Supplier** shall record a
 [Patient Demographics Supplier AuditEvent](https://profiles.ihe.net/ITI/PDQm/StructureDefinition-IHE.PDQm.Query.Audit.Supplier.html).
 [Audit Example for a PDQm Query transaction from supplier perspective](https://profiles.ihe.net/ITI/PDQm/AuditEvent-ex-auditPdqmQuery-supplier.html).

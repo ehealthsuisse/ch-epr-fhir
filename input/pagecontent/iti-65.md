@@ -85,12 +85,12 @@ For the `traceparent` header handling refer to [Trace Context header](traceconte
 
 ##### Document Source Audit
 
-The **Document Source** shall to record an
+The **Document Source** shall record an
 [Audit Event for Provide Bundle Transaction at Source](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.ProvideBundle.Audit.Source.html).
 [Audit Example for a Provide Bundle Transaction from source perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditProvideBundle-source.html).
 
 ##### Document Recipient Audit
 
-The **Document Recipient** shall to record an
+The **Document Recipient** shall record an
 [Audit Event for Provide Bundle Transaction at Recipient](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.ProvideBundle.Audit.Recipient.html).
 [Audit Example for a Provide Bundle Transaction from recipient perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditProvideBundle-recipient.html).

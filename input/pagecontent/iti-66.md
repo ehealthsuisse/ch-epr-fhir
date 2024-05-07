@@ -63,12 +63,12 @@ For the `traceparent` header handling refer to [Trace Context header](traceconte
 
 ##### Document Consumer Audit
 
-The **Document Consumer** shall to record a
+The **Document Consumer** shall record a
 [Find Document Lists Consumer Audit Event Log](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Consumer.html).
 [Audit Example for a Find Document Lists Transaction from Consumer perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditFindDocumentLists-consumer.html).
 
 ##### Document Responder Audit
 
-The **Document Responder** shall to record a
+The **Document Responder** shall record a
 [Find Document Lists Responder Audit Event Log](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Responder.html).
 [Audit Example for a Find Document Lists Transaction from Responder perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditFindDocumentLists-responder.html).
