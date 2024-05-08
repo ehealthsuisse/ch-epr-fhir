@@ -20,7 +20,7 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
   requirements for this field, it is recommended using the value `00`.
 
 Each actor shall support the `traceparent` header. Grouped actors shall use the same **trace-id** value to correlate
-IHE transactions according to the Change Proposal `EHSEPDBEP-222` for A5E1.
+IHE transactions.
 
 ##### Audit event requirements
 
