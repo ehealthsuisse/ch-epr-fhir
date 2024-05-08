@@ -22,6 +22,13 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 Each actor shall support the `traceparent` header. Grouped actors shall use the same **trace-id** value to correlate
 IHE transactions.
 
+Actors of all transactions SHALL support the W3C Trace Context Recommendation and 
+SHOULD send the HTTP header `traceparent` in requests.
+
+Moreover, when serving incoming requests, each actor SHALL:
+-	Accept the HTTP header `traceparent` if it is contained in the incoming request, oth-erwise — generate it.
+-	Send the HTTP header `traceparent` in all requests induced by the incoming request, with the same value of the field trace id as for the incoming request.
+
 ##### Audit event requirements
 
 The `traceparent` header value of the generated message SHALL be added to the generated Audit Event: for the client,
