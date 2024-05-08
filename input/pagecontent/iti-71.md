@@ -32,9 +32,10 @@ When an IUA Authorization Client is authorized, it may launch SMART on FHIR Apps
 
 #### Client Credential Grant Type
 
-OAuth 2.1 client credential grant flow of the IUA Get Access Token transaction:
+This section specifies the OAuth 2.1 client credential grant flow of the IUA Get Access Token transaction, which shall be used by clinical archive systems to retrieve an Access Token. 
 
 <div>{% include IUA_ActorDiagram_ITI-71-cc.svg %}</div>
+<figcaption ID="10">Sequence diagram of the transaction.</figcaption>  
 
 <table class="table table-bordered">
 
@@ -59,7 +60,7 @@ OAuth 2.1 client credential grant flow of the IUA Get Access Token transaction:
   </thead>
   <tbody>
    <tr>
-    <td></td>
+    <td>00</td>
     <td>The Authorization Client sends an HTTP POST request to the IUA Authorization Server endpoint.</td>
     <td>response_type</td>
     <td>R</td>
@@ -101,7 +102,7 @@ OAuth 2.1 client credential grant flow of the IUA Get Access Token transaction:
     <td>The URL or array of URL of the Resource Servers the token is intended to be used for.</td>
    </tr>
    <tr>
-    <td></td>
+    <td>01</td>
     <td>The Authorization Server responds with the access token in the HTML body element.</td>
     <td>access_token</td>
     <td>R</td>
@@ -140,10 +141,10 @@ OAuth 2.1 client credential grant flow of the IUA Get Access Token transaction:
 
 #### Authorization Code Grant Type
 
-OAuth 2.1 authorization code grant flow of the IUA Get Access Token transaction:
+This section specifies the OAuth 2.1 authorization code grant flow of the IUA Get Access Token transaction, which shall be used by portals and primary systems. 
 
 <div>{% include IUA_ActorDiagram_ITI-71.svg %}</div>
-
+<figcaption ID="1">Sequence diagram of the transaction.</figcaption>  
 
 <table class="table table-bordered">
 
@@ -384,14 +385,14 @@ The Authorization Client SHALL send an IUA compliant Authorization Request for t
       <td>R/R</td>
       <td>token</td>
       <td>See sections below.</td>
-      <td>Name of the legal responsible healthcare professional the technical user is acting on behalf of.</td>
+      <td>Name of the legal responsible healthcare professional the technical user is acting on behalf of. According to the law and regulations the healthcare professional shall be the individual who is resposiblethe rules to be used by the clinial archive to filter documents to be uploaded to the Swiss EHR.</td>
     </tr>
     <tr>
       <td>principal_id</td>
       <td>R/R</td>
       <td>token</td>
       <td>See sections below.</td>
-      <td>GLN of the legal responsible healthcare professional the technical user is acting on behalf of.</td>
+      <td>GLN of the legal responsible healthcare professional the technical user is acting on behalf of. According to the law and regulations the healthcare professional shall be the individual who is resposible for the rules to be used by the clinial archive to filter documents to be uploaded to the Swiss EHR.</td>
     </tr>
     <tr>
       <td>access_token_format</td>

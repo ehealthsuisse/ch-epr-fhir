@@ -47,6 +47,19 @@ The IUA Authorization Server verifies that the patient or healthcare professiona
 
 The IUA Authorization Server responds an IUA Authorization Token the SMART on FHIR App shall incorporate to any transaction to retrieve the data and documents from the patients EPR.
 
+#### Writing documents from clinical archives
+
+A healthcare professional uses a primary system which stores documents in a clinical archive system. The clinical archive system uses specific algorithms to decide which documents shall be stored in the Swiss EPR of the patient.
+
+The healthcare professional reports medical information of a treatment in her primary system. The primary system creates a structured or unstructured document from the data and stores them in the clinical archive system. The clinical archive system decides whether the document shall be stored in the patients EHR using the policies defined in the clinic. 
+
+To access the patient EHR the clinical archive system first request a basic authorization token using the client credential flow and uses the basic authorization token in the PIXm or PDQm transactions used to retrieve the EHR-SPID and the XAD PID of the patient. 
+
+The Authorization server returns the basic access token if the clincial archive systems is reqistered beforehand and is authorized to access the Swiss EHR. 
+
+The clinical archive system then requests a extended authorization token to be used with the MHD transaction to store the document in the patients EHR.
+
+
 ### Actors and Transactions   
 
 This national extension enhance the requirements on transactions and the expected actions of the Actors of the IUA Trial Implementation to comply to the legal requirements of the Swiss EPR.
