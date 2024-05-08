@@ -43,7 +43,7 @@
   <dependsOn id="cheprterm">
     <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
     <packageId value="ch.fhir.ig.ch-epr-term"/>
-     <version value="2.0.x"/>
+     <version value="2.0.10"/>
     </dependsOn>
     <dependsOn id="chcore">
         <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
@@ -300,45 +300,52 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         </resource>
         <resource>
             <reference>
-                <reference value="Consent/Template201Consent"/>
+                <reference value="Consent/PpqmConsentTemplate201Example"/>
             </reference>
             <name value="PPQm Consent for template 201"/>
             <description value="CH:PPQm Consent for template 201 -- Full access for the patient"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Consent/Template202Consent"/>
+                <reference value="Consent/PpqmConsentTemplate202Example"/>
             </reference>
             <name value="PPQm Consent for template 202"/>
-            <description value="CH:PPQm Consent for template 202 -- Access in emergency mode"/>
+            <description value="CH:PPQm Consent for template 202 -- Read access in emergency mode"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Consent/Template203Consent"/>
+                <reference value="Consent/PpqmConsentTemplate203Example"/>
             </reference>
             <name value="PPQm Consent for template 203"/>
             <description value="CH:PPQm Consent for template 203 -- Default provide level"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Consent/Template301Consent"/>
+                <reference value="Consent/PpqmConsentTemplate301Example"/>
             </reference>
             <name value="PPQm Consent for template 301"/>
-            <description value="CH:PPQm Consent for template 301 -- Access level for a healthcare professional"/>
+            <description value="CH:PPQm Consent for template 301 -- Read access for a healthcare professional, without delegation"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Consent/Template302Consent"/>
+                <reference value="Consent/PpqmConsentTemplate302Example"/>
             </reference>
             <name value="PPQm Consent for template 302"/>
-            <description value="CH:PPQm Consent for template 302 -- Access level for a group of healthcare professionals"/>
+            <description value="CH:PPQm Consent for template 302 -- Read access for a group of healthcare professionals"/>
         </resource>
         <resource>
             <reference>
-                <reference value="Consent/Template303Consent"/>
+                <reference value="Consent/PpqmConsentTemplate303Example"/>
             </reference>
             <name value="PPQm Consent for template 303"/>
             <description value="CH:PPQm Consent for template 303 -- Full access for a representative"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Consent/PpqmConsentTemplate304Example"/>
+            </reference>
+            <name value="PPQm Consent for template 304"/>
+            <description value="CH:PPQm Consent for template 304 -- Read access for a healthcare professional, with delegation"/>
         </resource>
 
         <!-- CH EPR FHIR: Resource Profiles -->
@@ -676,17 +683,17 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="ppqm-3.html"/>
+                    <nameUrl value="ppq-3.html"/>
                     <title value="Mobile Privacy Policy Feed [PPQ-3]"/>
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="ppqm-4.html"/>
+                    <nameUrl value="ppq-4.html"/>
                     <title value="Mobile Privacy Policy Bundle Feed [PPQ-4]"/>
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="ppqm-5.html"/>
+                    <nameUrl value="ppq-5.html"/>
                     <title value="Mobile Privacy Policy Retrieve [PPQ-5]"/>
                     <generation value="markdown"/>
                 </page>

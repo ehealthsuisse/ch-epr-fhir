@@ -52,13 +52,14 @@ Usage: #example
 * type = http://hl7.org/fhir/bundle-type#transaction
 * entry[+].request.method = #POST
 * entry[=].request.url = "Consent"
-* entry[=].resource = Template201Consent
+* entry[=].resource = PpqmConsentTemplate201Example
 * entry[+].request.method = #POST
 * entry[=].request.url = "Consent"
-* entry[=].resource = Template202Consent
+* entry[=].resource = PpqmConsentTemplate202Example
 * entry[+].request.method = #POST
 * entry[=].request.url = "Consent"
-* entry[=].resource = Template203Consent
+* entry[=].resource = PpqmConsentTemplate203Example
+
 
 Instance: PpqmFeedRequestBundleUpdate
 InstanceOf: PpqmFeedRequestBundle
@@ -68,13 +69,17 @@ Usage: #example
 * type = http://hl7.org/fhir/bundle-type#transaction
 * entry[+].request.method = #PUT
 * entry[=].request.url = "Consent?identifier=urn:uuid:f1e1ed8e-0582-4e47-a76e-5e8f6cc0908f"
-* entry[=].resource = Template301Consent
+* entry[=].resource = PpqmConsentTemplate301Example
 * entry[+].request.method = #PUT
 * entry[=].request.url = "Consent?identifier=urn:uuid:c23c862a-b297-43c7-875b-d933982c9756"
-* entry[=].resource = Template302Consent
+* entry[=].resource = PpqmConsentTemplate302Example
 * entry[+].request.method = #PUT
 * entry[=].request.url = "Consent?identifier=urn:uuid:f663289d-4cc4-41d7-a01d-213e18e1f722"
-* entry[=].resource = Template303Consent
+* entry[=].resource = PpqmConsentTemplate303Example
+* entry[+].request.method = #PUT
+* entry[=].request.url = "Consent?identifier=urn:uuid:f1e1ed8e-0582-4e47-a76e-5e8f6cc09304"
+* entry[=].resource = PpqmConsentTemplate304Example
+
 
 Instance: PpqmFeedRequestBundleDelete
 InstanceOf: PpqmFeedRequestBundle
@@ -88,6 +93,7 @@ Usage: #example
 * entry[=].request.url = "Consent?identifier=urn:uuid:c23c862a-b297-43c7-875b-d933982c9756"
 * entry[+].request.method = #DELETE
 * entry[=].request.url = "Consent?identifier=urn:uuid:f663289d-4cc4-41d7-a01d-213e18e1f722"
+
 
 Instance: PpqmFeedResponseBundle
 InstanceOf: Bundle
