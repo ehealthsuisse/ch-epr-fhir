@@ -40,18 +40,18 @@ Document Responder using the IUA profile with extended access token. Consequentl
 the _Retrieve Document_ [ITI-68] request must authorize using the [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
 transaction of the IUA profile.
 
-The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
+For the `traceparent` header handling refer to [Trace Context header](tracecontext.html).
 
 #### Security Audit Considerations
 
 ##### Document Consumer Audit
 
-The **Document Consumer** shall be able to record a
+The **Document Consumer** shall record a
 [Retrieve Document Consumer Audit Event Log](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Consumer.html).
 [Audit Example for a Retrieve Document transaction from consumer perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditRetrieveDocument-consumer.html).
 
 ##### Document Responder Audit
 
-The **Document Responder** shall be able to record a
+The **Document Responder** shall record a
 [Retrieve Document Responder Audit Event Log](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.RetrieveDocument.Audit.Responder.html).
 [Audit Example for a Find Document Lists Transaction from responder perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditRetrieveDocument-responder.html).

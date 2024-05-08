@@ -57,18 +57,18 @@ TLS SHALL be used. This national extension enforces authentication and authoriza
 Responder using the IUA profile with extended access token. Consequently the _Find Document Lists_ [ITI-66] request 
 must authorize using the [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA profile.
 
-The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
+For the `traceparent` header handling refer to [Trace Context header](tracecontext.html).
 
 #### Security Audit Considerations
 
 ##### Document Consumer Audit
 
-The **Document Consumer** shall be able to record a
+The **Document Consumer** shall record a
 [Find Document Lists Consumer Audit Event Log](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Consumer.html).
 [Audit Example for a Find Document Lists Transaction from Consumer perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditFindDocumentLists-consumer.html).
 
 ##### Document Responder Audit
 
-The **Document Responder** shall be able to record a
+The **Document Responder** shall record a
 [Find Document Lists Responder Audit Event Log](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.FindDocumentLists.Audit.Responder.html).
 [Audit Example for a Find Document Lists Transaction from Responder perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditFindDocumentLists-responder.html).

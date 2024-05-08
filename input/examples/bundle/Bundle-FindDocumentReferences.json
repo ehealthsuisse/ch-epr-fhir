@@ -17,10 +17,10 @@
   ],
   "entry": [
     {
-      "fullUrl": "http://example.com/DocumentReference/3123",
+      "fullUrl": "http://example.com/DocumentReference/1c8d1f74-1686-4188-9c35-0c5727c771cc",
       "resource": {
         "resourceType": "DocumentReference",
-        "id": "3123",
+        "id": "1c8d1f74-1686-4188-9c35-0c5727c771cc",
         "contained": [
           {
             "resourceType": "Patient",
