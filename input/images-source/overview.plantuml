@@ -40,7 +40,7 @@ component "EPR API" {
   PIXmSource --> PIXmManager : Patient Identity Feed FHIR [ITI-104]
 
   [MHD Document Recipient] as MHDRecipient
-  MHDSource --> MHDRecipient : Provide Document Bundle [ITI-65], \nUpdate Limited Document Metadata [CH:MHD-1]
+  MHDSource --> MHDRecipient : Provide Document Bundle [ITI-65], \nUpdate Document Metadata [CH:MHD-1]
 
   [MHD Document Responder] as MHDResponder
   MHDConsumer --> MHDResponder : Find Document Lists [ITI-66], \nFind Document References [ITI-67], \nRetrieve Document [ITI-68] 

@@ -51,14 +51,6 @@
             <mustSupport value="true" />
         </element>
 
-        <!-- transaction type of a Bundle -->
-        <element id="Bundle.type">
-            <path value="Bundle.type" />
-            <short value="transaction" />
-            <patternCode value="transaction"/>
-            <mustSupport value="true" />
-        </element>
-
         <element id="Bundle.entry">
             <path value="Bundle.entry" />
             <min value="3"/>
@@ -91,6 +83,7 @@
             <patternCode value="POST"/>
             <mustSupport value="true" />
         </element>
+
 
         <element id="Bundle.entry:DocumentRefs">
             <path value="Bundle.entry"/>

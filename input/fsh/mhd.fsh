@@ -1,8 +1,8 @@
-Profile:        AuditUpdateLimitedDocumentMetadataRecipient
+Profile:        AuditUpdatedDcumentMetadataRecipient
 Parent:         AuditEvent
-Id:             ch-mhd-updatelimiteddocumentmetadata-audit-recipient
-Title:          "Audit Event for Update Limited Document Metadata Transaction at Recipient"
-Description:    "Defines constraints on the AuditEvent Resource to record when a Update Limited Document Metadata Transaction happens at the Recipient.
+Id:             ch-mhd-updatedocumentmetadata-audit-recipient
+Title:          "Audit Event for Update Document Metadata Transaction at Recipient"
+Description:    "Defines constraints on the AuditEvent Resource to record when a Update Document Metadata Transaction happens at the Recipient.
 - Import event
 - shall have source of itself
 - shall have a document source agent
@@ -18,7 +18,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * subtype ^slicing.rules = #open // allow other codes
 * subtype 1..
 * subtype contains chmhd1 1..1
-* subtype[chmhd1] = urn:e-health-suisse:event-type-code#CH-MHD-1 "Update Limited Document Metadata"
+* subtype[chmhd1] = urn:e-health-suisse:event-type-code#CH-MHD-1 "Update Document Metadata"
 // * severity in R5
 * recorded 1..1 // already required
 * outcome 1..1
@@ -66,11 +66,11 @@ Description: "The Audit Source is this agent too."
 Expression: "$this.who = %resource.source.observer"
 Severity: #error
 
-Profile:        AuditUpdateLimitedDocumentMetadataSource
+Profile:        AuditUpdateDocumentMetadataSource
 Parent:         AuditEvent
-Id:             ch-mhd-updatelimiteddocumentmetadata-audit-source
-Title:          "Audit Event for Update Limited DocumentMetadata Transaction at Source"
-Description:    "Defines constraints on the AuditEvent Resource to record when a UpdateLimitedDocumentMetadata Transaction happens at the Source.
+Id:             ch-mhd-updatedocumentmetadata-audit-source
+Title:          "Audit Event for Update DocumentMetadata Transaction at Source"
+Description:    "Defines constraints on the AuditEvent Resource to record when a updatedocumentmetadata Transaction happens at the Source.
 - Export event
 - shall have source of itself
 - shall have a document source agent
@@ -86,7 +86,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * subtype ^slicing.rules = #open // allow other codes
 * subtype 1..
 * subtype contains chmhd1 1..1
-* subtype[chmhd1] = urn:e-health-suisse:event-type-code#CH-MHD-1 "Update Limited Document Metadata"
+* subtype[chmhd1] = urn:e-health-suisse:event-type-code#CH-MHD-1 "Update Document Metadata"
 // * severity in R5
 * recorded 1..1 // already required
 * outcome 1..1

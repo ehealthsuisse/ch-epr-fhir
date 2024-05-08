@@ -4,15 +4,18 @@ The national extensions adds an additional transaction to≈from the Document So
 
 ### Scope  
 An EPR App can query, retrieve or publish data to an EPR community using the transaction of the MHD profile. 
-An EPR App can Update Limited Document Metadata for a published document with this national extension.  
+An EPR App can Update Document Metadata for a published document with this national extension.  
 
 ###	Use Cases  
 In addition to the Document Sharing Use Case for MHD the national extension defines the following Use Cases:
 
-#### Limited Document Metadata from a Health Care professional with a primary system
+#### Document Metadata update from a Health Care professional with a primary system
 A Healthcare professional has published a document in his own community for the patient but needs to update the metadata of the document. 
 The healthcare professional updates the metadata (e.g. title) in the primary systems and submits the updated metadata to the community. The
 metadata which is allowed to be updated is defined in Annex 5.1 1.12.1.
+
+#### Patient changes confidentiality code of a document
+A patient wants to change the confidentiality code of one of his documents. The patient updates the confidentiality code in the portal and the portal submits the updated metadata to the community. 
 
 ###	Actors and Transactions  
 

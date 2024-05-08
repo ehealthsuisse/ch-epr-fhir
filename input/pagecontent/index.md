@@ -10,7 +10,7 @@ and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.
 
 <div markdown="1" class="stu-note">
 
-[Significant changes, open and closed Issues](openissues.html)
+[Significant changes, open and closed Issues](changelog.html)
 
 </div>
 

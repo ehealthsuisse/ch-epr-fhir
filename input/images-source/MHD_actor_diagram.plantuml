@@ -6,5 +6,5 @@ agent "Document Consumer" as DocumentConsumer
 agent "Document Responder" as DocumentResponder
 agent "Document Recipient" as DocumentRecipient
 DocumentConsumer --> DocumentResponder : "[[iti-66.html ITI-66 Find Document Lists]]\n[[ITI-67.html ITI-67 Find Document References]]\n[[iti-68.html ITI-68 Retrieve Document]]"
-DocumentSource --> DocumentRecipient : "[[iti-65.html ITI-65 Provide Document Bundle]]\n[[ch-mhd-1.html CH:MHD-1 Update Limited Document Metadata]]"
+DocumentSource --> DocumentRecipient : "[[iti-65.html ITI-65 Provide Document Bundle]]\n[[ch-mhd-1.html CH:MHD-1 Update Document Metadata]]"
 @enduml

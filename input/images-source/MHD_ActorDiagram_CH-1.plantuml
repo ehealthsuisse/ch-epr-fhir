@@ -8,7 +8,7 @@ autoactivate on
 participant "Document Source" as DocumentSource
 participant "Document Recipient" as DocumentRecipient
 
-"DocumentSource" -> "DocumentRecipient" : Request to Update Limited Document Metadata
+"DocumentSource" -> "DocumentRecipient" : Request to Update Document Metadata
 "DocumentRecipient" --> "DocumentSource" : Updated DocumentReference Response
 
 @enduml 

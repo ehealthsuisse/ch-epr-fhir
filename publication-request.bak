@@ -6,6 +6,6 @@
   "status" : "ci-build",
   "sequence" : "DSTUe",
   "desc" : "eHealth Suissse",
-  "changes" : "openissues.html",
+  "changes" : "changelog.html",
   "first": false
 }
