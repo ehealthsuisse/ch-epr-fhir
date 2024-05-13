@@ -1,0 +1,11 @@
+{
+  "package-id" : "ch.fhir.ig.ch-epr-fhir",
+  "version" : "4.0.0-ci-build",
+  "path" : "http://fhir.ch/ig/ch-epr-fhir/4.0.0",
+  "mode" : "milestone",
+  "status" : "ci-build",
+  "sequence" : "DSTU",
+  "desc" : "eHealth Suissse",
+  "changes" : "changelog.html",
+  "first": false
+}

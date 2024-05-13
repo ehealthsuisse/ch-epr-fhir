@@ -2,8 +2,7 @@ This section corresponds to transaction [CH:MHD-1]. Transaction [CH:MHD-1] is us
 
 ### Scope
 
-The Update Limited Document Metadata [CH-MHD-1] transaction is used to update Limited
-document metadata from the Document Consumer to the Document Responder.
+The Update Document Metadata [CH-MHD-1] transaction is used to update  document metadata from the Document Consumer to the Document Responder.
 
 ### Actor Roles
 
@@ -21,13 +20,13 @@ document metadata from the Document Consumer to the Document Responder.
 
 <div>{% include MHD_ActorDiagram_CH-1.svg %}</div>
 
-#### Update Limited Document Metadata Request Message
+#### Update Document Metadata Request Message
 
-The Update Limited Document Metadata Request Message provides the ability to submit updated attributes for a DocumentReference resource in a community.
+The Update Document Metadata Request Message provides the ability to submit updated attributes for a DocumentReference resource in a community.
 
 ##### Trigger Events
 
-The Update Limited Document Metadata Request Message is triggered when an Document Source needs to transmit updated DocumentReference metadata.
+The Update Document Metadata Request Message is triggered when an Document Source needs to transmit updated DocumentReference metadata.
 
 ##### Message Semantics
 
@@ -36,7 +35,7 @@ A Document Source initiates a FHIR request using Update as defined at http://hl7
 A Document Source shall send a request for either the JSON or the XML format as defined in FHIR. A Document Recipient shall support the JSON and the XML format.
 
 The Document Source shall be capable of accepting elements specified in profile [CH MHD DocumentReference Comprehensive](StructureDefinition-ch-mhd-documentreference-comprehensive.html).
-The DocumentReference elements which are allowed to be updated are defined in Annex 5.1 1.12.1. The [Mappings tab](StructureDefinition-ch-mhd-documentreference-comprehensive-mappings.html#mappings-for-xds-metadata-equivalent-http-ihe-net-xds), indicates the mapping between DocumentReference elements and the XDS elements defined in Annex 5.1 1.12.1.
+The DocumentReference elements which are allowed to be updated are defined in Annex 5.1 1.12.1. The [Mappings tab](StructureDefinition-ch-mhd-documentreference-comprehensive-mappings.html#mappings-for-xds-metadata-equivalent-http-ihe-netxds), indicates the mapping between DocumentReference elements and the XDS elements defined in Annex 5.1 1.12.1.
 
 ##### Example
 
@@ -179,9 +178,9 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 
 The Document Recipient shall provide a [CapabilityStatement](CapabilityStatement-CH.MHD.DocumentRecipient.html) with the capabilities interaction and indicate that update is available on the DocumentReference.
 
-The Update Responder shall process the Update Limited Document Metadata Request message and return the updated DocumentReference.
+The Update Responder shall process the Update Document Metadata Request message and return the updated DocumentReference.
 
-Any error that occurs during the processing of the Update Limited Document Metadata Request message shall cause the entire transaction to fail and 
+Any error that occurs during the processing of the Update Document Metadata Request message shall cause the entire transaction to fail and 
 no change made to the existing DocumentReference. The DocumentReference Responder shall return the status and any error codes incurred during the processing of
 the request in its response message. 
 
@@ -197,7 +196,7 @@ See http://hl7.org/fhir/http.html#update for response.
 
 TLS SHALL be used. This national extension enforces authentication and authorization of access to the
 Document Recipient using the IUA profile with extended access token. Consequently
-the _Update Limited Document Metadata_ [CH:MHD-1] request must authorize using the [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
+the _Update Document Metadata_ [CH:MHD-1] request must authorize using the [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
 transaction of the IUA profile.
 
 For the `traceparent` header handling refer to [Trace Context header](tracecontext.html).
@@ -207,10 +206,10 @@ For the `traceparent` header handling refer to [Trace Context header](traceconte
 ##### Document Source Audit
 
 The **Document Source** shall record an
-[Audit Event for Update Limited DocumentMetadata Transaction at Source](StructureDefinition-ch-mhd-updatelimiteddocumentmetadata-audit-source.html).
+[Audit Event for Update Document Metadata Transaction at Source](StructureDefinition-ch-mhd-updatedocumentmetadata-audit-source.html).
 
 ##### Document Recipient Audit
 
 
 The **Document Recipient** shall record an
-[Audit Event for Update Limited Document Metadata Transaction at Recipient](StructureDefinition-ch-mhd-updatelimiteddocumentmetadata-audit-recipient.html).
+[Audit Event for Update Document Metadata Transaction at Recipient](StructureDefinition-ch-mhd-updatedocumentmetadata-audit-recipient.html).

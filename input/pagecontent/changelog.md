@@ -1,15 +1,20 @@
 ### DSTU4 Informative Ballot 2024
 
-* Renamed the ImplementationGuide from `ch-epr-fhir` to `ch-epr-fhir` [#159](https://github.com/ehealthsuisse/ch-epr-fhir/issues/159)
+major updates on the IG have been made:
+* Renamed the ImplementationGuide from `ch-epr-mhealth` to `ch-epr-fhir` [#159](https://github.com/ehealthsuisse/ch-epr-fhir/issues/159)
 * MHD: Require EPR-SPID as a query patient.identifier [#166](https://github.com/ehealthsuisse/ch-epr-fhir/issues/166)
 * MHD: support ITI-67 creation search parameter [#170](https://github.com/ehealthsuisse/ch-epr-fhir/issues/170)
 * MHD: extension to support restricted metadata update [#25](https://github.com/ehealthsuisse/ch-epr-fhir/issues/25)
-* MHD: Add an extension for providing the homeCommunityId [#181](https://github.com/ehealthsuisse/ch-epr-fhir/issues/181)
+* IUA: IUA JWT Extension for homeCommunityId [#165](https://github.com/ehealthsuisse/ch-epr-fhir/issues/165)
+* IUA Client Registration [#146](https://github.com/ehealthsuisse/ch-epr-fhir/issues/146) and [others](https://github.com/ehealthsuisse/ch-epr-fhir/issues?q=is%3Aissue+is%3Aclosed+IUA)
+* PPQm: Integrated [CH EPR PPQm](https://github.com/ehealthsuisse/ch-epr-fhir/issues/147) into this guide and introduce 304 Consent template [#164](https://github.com/ehealthsuisse/ch-epr-fhir/issues/164))
 
-### Open Issues
+* complete [changelog](https://github.com/ehealthsuisse/ch-epr-fhir/compare/v3.0.0...master)
 
-* Incorporate iua cp 1288 [#152](https://github.com/ehealthsuisse/ch-epr-fhir/issues/152)
-* Adapt IHE profiles for the Trace Context support [#153](https://github.com/ehealthsuisse/ch-epr-fhir/issues/153)
+The following items are under current development:
+* Cross community access [#92](https://github.com/ehealthsuisse/ch-epr-fhir/issues/92)
+* mCSD additional transaction for Feed [#158](https://github.com/ehealthsuisse/ch-epr-fhir/issues/158)
+* Audit Examples together with IUA and adapted to EPR requirements [#186](https://github.com/ehealthsuisse/ch-epr-fhir/issues/186)
 
 ### DSTU3 Informative Ballot 2023 - Resolved Issues
 

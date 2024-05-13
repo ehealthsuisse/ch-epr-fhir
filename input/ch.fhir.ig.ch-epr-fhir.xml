@@ -14,7 +14,7 @@
     <title value="CH EPR FHIR (R4)"/>
     <status value="active"/>
     <experimental value="false"/>
-    <date value="2024-03-05"/>
+    <date value="2025-05-10"/>
     <publisher value="eHealth Suisse"/>
     <contact>
         <name value="eHealth Suisse"/>
@@ -43,7 +43,7 @@
   <dependsOn id="cheprterm">
     <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
     <packageId value="ch.fhir.ig.ch-epr-term"/>
-     <version value="2.0.10"/>
+     <version value="2.0.x"/>
     </dependsOn>
     <dependsOn id="chcore">
         <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
@@ -441,13 +441,13 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ch-mhd-updatelimiteddocumentmetadata-audit-recipient"/>
+                <reference value="StructureDefinition/ch-mhd-updatedocumentmetadata-audit-recipient"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ch-mhd-updatelimiteddocumentmetadata-audit-source"/>
+                <reference value="StructureDefinition/ch-mhd-updatedocumentmetadata-audit-source"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
@@ -716,7 +716,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                 </page>
                 <page>
                     <nameUrl value="ch-mhd-1.html"/>
-                    <title value="Update Limited Document Metadata [CH:MHD-1]"/>
+                    <title value="Update Document Metadata [CH:MHD-1]"/>
                     <generation value="markdown"/>
                 </page>
                 <page>
