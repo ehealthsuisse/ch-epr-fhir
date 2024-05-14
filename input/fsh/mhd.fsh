@@ -162,7 +162,7 @@ Title: "CH MHD Extension to provide the homeCommunityId"
 Description: "This CH MHD extension enables to proivde homeCommunityId in an OperationOutcome"
 * ^context[+].type = #element
 * ^context[=].expression = "OperationOutcome.issue.details"
-* . ^short = "CH ELM Extension: HIV Code"
+* . ^short = "CH MHD Extension: homeCommunityId"
 * value[x] 1..
 * value[x] only Identifier
 * valueIdentifier ^short = "Value of the homeCommunityId"
