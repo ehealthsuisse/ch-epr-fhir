@@ -475,6 +475,12 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             </reference>
             <exampleBoolean value="false"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/ch-epr-fhir-auditevent"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
 
         <!-- CH EPR FHIR: Data Type Profiles -->
         <resource>

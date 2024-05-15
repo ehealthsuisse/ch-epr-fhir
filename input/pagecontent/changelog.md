@@ -8,6 +8,7 @@ major updates on the IG have been made:
 * IUA: IUA JWT Extension for homeCommunityId [#165](https://github.com/ehealthsuisse/ch-epr-fhir/issues/165)
 * IUA Client Registration [#146](https://github.com/ehealthsuisse/ch-epr-fhir/issues/146) and [others](https://github.com/ehealthsuisse/ch-epr-fhir/issues?q=is%3Aissue+is%3Aclosed+IUA)
 * PPQm: Integrated [CH EPR PPQm](https://github.com/ehealthsuisse/ch-epr-fhir/issues/147) into this guide and introduce 304 Consent template [#164](https://github.com/ehealthsuisse/ch-epr-fhir/issues/164))
+* Define AuditEvent profile to define Trace Context [#185](https://github.com/ehealthsuisse/ch-epr-fhir/issues/185)
 
 * complete [changelog](https://github.com/ehealthsuisse/ch-epr-fhir/compare/v3.0.0...master)
 

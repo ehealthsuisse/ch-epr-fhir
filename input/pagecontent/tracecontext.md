@@ -26,15 +26,14 @@ Actors of all transactions SHALL support the W3C Trace Context Recommendation an
 SHOULD send the HTTP header `traceparent` in requests.
 
 Moreover, when serving incoming requests, each actor SHALL:
--	Accept the HTTP header `traceparent` if it is contained in the incoming request, oth-erwise — generate it.
+-	Accept the HTTP header `traceparent` if it is contained in the incoming request, otherwise — generate it.
 -	Send the HTTP header `traceparent` in all requests induced by the incoming request, with the same value of the field trace id as for the incoming request.
 
 ##### Audit event requirements
 
 The `traceparent` header value of the generated message SHALL be added to the generated Audit Event: for the client,
 the header value of the request; for the responder, the header value of the response.
-It is described as an `AuditEvent.entity`, with the system 
-`https://profiles.ihe.net/ITI/BALP/CodeSystem/BasicAuditEntityType#Traceparent`, as demonstrated below.
+It is described as an `AuditEvent.entity`, with the `type` and `role`element as demonstrated below.
 
 ```json
 {
@@ -48,8 +47,14 @@ It is described as an `AuditEvent.entity`, with the system
         }
       },
       "type" : {
-        "system" : "https://profiles.ihe.net/ITI/BALP/CodeSystem/BasicAuditEntityType",
-        "code" : "Traceparent"
+        "system" : "http://terminology.hl7.org/CodeSystem/audit-entity-type",
+        "code" : "4",
+        "display" : "Other"
+      },
+      "role" : {
+        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
+        "code" : "26",
+        "display" : "Processing Element"
       }
     }
   ]
