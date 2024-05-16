@@ -1,5 +1,6 @@
 ### DSTU4 Informative Ballot 2024
 
+* 4.0.1 technical corrector because plantuml files were not generated
 major updates on the IG have been made:
 * Renamed the ImplementationGuide from `ch-epr-mhealth` to `ch-epr-fhir` [#159](https://github.com/ehealthsuisse/ch-epr-fhir/issues/159)
 * MHD: Require EPR-SPID as a query patient.identifier [#166](https://github.com/ehealthsuisse/ch-epr-fhir/issues/166)

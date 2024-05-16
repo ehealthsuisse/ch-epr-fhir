@@ -9,7 +9,7 @@
         </div>
     </text>
     <url value="http://fhir.ch/ig/ch-epr-fhir/ImplementationGuide/ch.fhir.ig.ch-epr-fhir"/>
-    <version value="4.0.0-ballot"/>
+    <version value="4.0.1-ballot"/>
     <name value="CHEprFhir"/>
     <title value="CH EPR FHIR (R4)"/>
     <status value="active"/>
