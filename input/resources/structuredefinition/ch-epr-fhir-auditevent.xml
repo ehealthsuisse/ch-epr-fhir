@@ -24,7 +24,6 @@
   <differential>
     <element id="AuditEvent">
       <path value="AuditEvent"/>
-      <short value="AuditEvent Profile"/>
     </element>
     <element id="AuditEvent.entity">
       <path value="AuditEvent.entity"/>
@@ -32,6 +31,10 @@
         <discriminator>
           <type value="value"/>
           <path value="type.code"/>
+        </discriminator>
+        <discriminator>
+          <type value="value"/>
+          <path value="role.code"/>
         </discriminator>
         <rules value="open"/>
       </slicing>
@@ -84,7 +87,7 @@
     <element id="AuditEvent.entity:TraceContext">
       <path value="AuditEvent.entity"/>
       <sliceName value="TraceContext"/>
-      <short value="TraceContext"/>
+      <short value="Trace Context"/>
       <min value="0"/>
       <max value="1"/>
     </element>
