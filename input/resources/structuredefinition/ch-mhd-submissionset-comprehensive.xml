@@ -31,7 +31,7 @@
             <sliceName value="designationType"/>
             <binding>
                 <strength value="required" />
-                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/SubmissionSet.contentTypeCode" />
+                <valueSet value="http://fhir.ch/ig/ch-term/ValueSet/SubmissionSet.contentTypeCode" />
             </binding>
             <mustSupport value="true" />
         </element>

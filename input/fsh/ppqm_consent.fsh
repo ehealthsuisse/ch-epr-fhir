@@ -98,7 +98,7 @@ Description: "Swiss EPR Policy Set as a Consent"
 
 * provision.actor                       1..1
 * provision.actor.role                  1..1
-* provision.actor.role                  from http://fhir.ch/ig/ch-epr-term/ValueSet/EprRole (required)
+* provision.actor.role                  from http://fhir.ch/ig/ch-term/ValueSet/EprRole (required)
 * provision.actor.role.coding.system    1..1
 * provision.actor.role.coding.system    = "urn:oid:2.16.756.5.30.1.127.3.10.6"
 * provision.actor.role.coding.code      1..1
@@ -130,7 +130,7 @@ Description: "Swiss EPR Policy Set as a Consent"
 
 * provision.action          0..0
 * provision.securityLabel   0..0
-* provision.purpose         from http://fhir.ch/ig/ch-epr-term/ValueSet/EprPurposeOfUse (required)
+* provision.purpose         from http://fhir.ch/ig/ch-term/ValueSet/EprPurposeOfUse (required)
 * provision.purpose.system  1..1
 * provision.purpose.system  = "urn:oid:2.16.756.5.30.1.127.3.10.5"
 * provision.purpose.code    1..1

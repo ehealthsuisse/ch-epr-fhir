@@ -178,7 +178,7 @@
             <mustSupport value="true" />
             <binding>
                 <strength value="required"/>
-                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.mimeType"/>
+                <valueSet value="http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.mimeType"/>
             </binding>
         </element>
         <element id="DocumentReference.content.attachment.language">
@@ -188,7 +188,7 @@
             <binding>
                 <strength value="required"/>
                 <!--				<strength value="preferred"/> -->
-                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.languageCode"/>
+                <valueSet value="http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.languageCode"/>
             </binding>
         </element>
         <element id="DocumentReference.content.attachment.data">
@@ -226,7 +226,7 @@
             <binding>
                 <strength value="required"/>
                 <description value="Document Format Codes."/>
-                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.formatCode"/>
+                <valueSet value="http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.formatCode"/>
             </binding>
         </element>
         <element id="DocumentReference.context">
@@ -247,7 +247,7 @@
                 </extension>
                 <strength value="required"/>
                 <description value="XDS Facility Type."/>
-                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.healthcareFacilityTypeCode"/>
+                <valueSet value="http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.healthcareFacilityTypeCode"/>
             </binding>
         </element>
         <element id="DocumentReference.context.practiceSetting">
@@ -260,7 +260,7 @@
                 </extension>
                 <strength value="required"/>
                 <description value="Additional details about where the content was created (e.g. clinical specialty)."/>
-                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.practiceSettingCode"/>
+                <valueSet value="http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.practiceSettingCode"/>
             </binding>
         </element>
         <element id="DocumentReference.context.sourcePatientInfo">

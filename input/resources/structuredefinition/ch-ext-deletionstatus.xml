@@ -53,7 +53,7 @@
             </type>
             <binding>
                 <strength value="required"/>
-                <valueSet value="http://fhir.ch/ig/ch-epr-term/ValueSet/DocumentEntry.Ext.EprDeletionStatus"/>
+                <valueSet value="http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.Ext.EprDeletionStatus"/>
             </binding>
             <mustSupport value="true" />
         </element>

@@ -9,12 +9,12 @@
         </div>
     </text>
     <url value="http://fhir.ch/ig/ch-epr-fhir/ImplementationGuide/ch.fhir.ig.ch-epr-fhir"/>
-    <version value="4.0.0-ci-build"/>
+    <version value="4.0.0-ballot"/>
     <name value="CHEprFhir"/>
     <title value="CH EPR FHIR (R4)"/>
     <status value="active"/>
     <experimental value="false"/>
-    <date value="2025-05-10"/>
+    <date value="2024-05-16"/>
     <publisher value="eHealth Suisse"/>
     <contact>
         <name value="eHealth Suisse"/>
@@ -38,12 +38,12 @@
     <dependsOn id="terminology">
         <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
         <packageId value="hl7.terminology"/>
-      <version value="5.4.0"/>
+      <version value="5.5.0"/>
     </dependsOn>
-  <dependsOn id="cheprterm">
-    <uri value="http://fhir.ch/ig/ch-epr-term/ImplementationGuide/ch.fhir.ig.ch-epr-term"/>
-    <packageId value="ch.fhir.ig.ch-epr-term"/>
-     <version value="2.0.x"/>
+  <dependsOn id="chterm">
+    <uri value="http://fhir.ch/ig/ch-term/ImplementationGuide/ch.fhir.ig.ch-term"/>
+    <packageId value="ch.fhir.ig.ch-term"/>
+     <version value="3.0.x"/>
     </dependsOn>
     <dependsOn id="chcore">
         <uri value="http://fhir.ch/ig/ch-core/ImplementationGuide/ch.fhir.ig.ch-core"/>
@@ -53,12 +53,12 @@
     <dependsOn id="ihepixmfhir">
         <uri value="https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm"/>
         <packageId value="ihe.iti.pixm"/>
-        <version value="3.0.3"/>
+        <version value="3.0.4"/>
     </dependsOn>
     <dependsOn id="ihepdqmfhir">
         <uri value="https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pdqm"/>
         <packageId value="ihe.iti.pdqm"/>
-        <version value="2.4.0"/>
+        <version value="3.0.0"/>
     </dependsOn>
     <dependsOn id="ihemhdfhir">
         <uri value="https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd"/>
@@ -801,8 +801,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <!-- IG Parameters -->
         <parameter>
             <code value="releaselabel"/>
-            <value value="DSTU3"/>
-            <!--<value value="DSTU2 Informative Ballot"/>-->
+            <value value="ballot"/>
         </parameter>
         <parameter>
             <code value="path-pages"/>

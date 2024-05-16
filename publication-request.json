@@ -1,11 +1,11 @@
 {
   "package-id" : "ch.fhir.ig.ch-epr-fhir",
-  "version" : "4.0.0-ci-build",
-  "path" : "http://fhir.ch/ig/ch-epr-fhir/4.0.0",
+  "version" : "4.0.0-ballot",
+  "path" : "http://fhir.ch/ig/ch-epr-fhir/4.0.0-ballot",
   "mode" : "milestone",
-  "status" : "ci-build",
-  "sequence" : "DSTU",
-  "desc" : "eHealth Suissse",
+  "status" : "ballot",
+  "sequence" : "DSTU 4",
+  "desc" : "eHealth Suissse DSTU 4 Ballot",
   "changes" : "changelog.html",
   "first": false
 }

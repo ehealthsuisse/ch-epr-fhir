@@ -10,7 +10,7 @@ and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.
 
 <div markdown="1" class="stu-note">
 
-This implementation guide is under an informative ballot by [HL7 Switzerland](https://www.hl7.ch/) until September 30th, 2024 midnight.
+This implementation guide is under an informative ballot by [HL7 Switzerland](https://www.hl7.ch/) until September 30th, 2024 midnight.   
 Please add your feedback via the ‘Propose a change’-link in the footer on the page where you have comments. 
 
 The following items are under current development:
@@ -18,7 +18,7 @@ The following items are under current development:
 * mCSD additional transaction for Feed [#158](https://github.com/ehealthsuisse/ch-epr-fhir/issues/158)
 * Audit Examples together with IUA and adapted to EPR requirements [#186](https://github.com/ehealthsuisse/ch-epr-fhir/issues/186)
 
-[Significant changes, open and closed Issues](changelog.html)
+[Significant changes, open and closed issues.](changelog.html)
 
 </div>
 
