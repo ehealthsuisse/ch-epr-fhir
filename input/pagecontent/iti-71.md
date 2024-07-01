@@ -201,7 +201,7 @@ This section specifies the OAuth 2.1 authorization code grant flow of the IUA Ge
     <td>R</td>
     <td>IUA</td>
     <td>An unguessable value used by the Authorization Client to track the state between the authorization request and
-     the callback.</td>
+     the callback to the redirect_uri.</td>
    </tr>
    <tr>
     <td>&nbsp;</td>
@@ -246,7 +246,7 @@ This section specifies the OAuth 2.1 authorization code grant flow of the IUA Ge
    </tr>
    <tr>
     <td>02, 03</td>
-    <td>The Authorization Server performs an HTTP GET on the Authorization Client callback URL (redirect_uri) conveying
+    <td>The Authorization Server performs an HTTP GET on the Authorization Client redirect_uri conveying
      the authorization code.</td>
     <td>code</td>
     <td>R</td>
@@ -260,7 +260,7 @@ This section specifies the OAuth 2.1 authorization code grant flow of the IUA Ge
     <td>R</td>
     <td>IUA</td>
     <td>The unguessable value used by the Authorization Client to track the state between the authorization request and
-     the callback.</td>
+     the callback (redirect_uri).</td>
    </tr>
    <tr>
     <td>04</td>
@@ -567,7 +567,7 @@ The Authorization Server SHALL authorize the Authorization Client to access the 
 
 The Authorization Server SHALL enforce that the user is authenticated compliant to the regulations of the Swiss EHR and has a valid browser session with an certified Identity Provider. If the user is not authenticated the Authorization Server SHALL respond with an error page or redirect the user to a Identity Provider. 
 
-If the IUA Authorization Client receives the request from the IUA Authorization Server on the callback URL conveying the authorization code, the Authorization Client SHALL perform the HTTP POST request with the client_id and client_secret in the HTTP authorization header field to resolve the authorization code to the access token.
+If the IUA Authorization Client receives the request from the IUA Authorization Server on the redirect-uri conveying the authorization code, the Authorization Client SHALL perform the HTTP POST request with the client_id and client_secret in the HTTP authorization header field to resolve the authorization code to the access token.
 
 The Authorization Server SHALL respond with the Get Access Token response as defined in [Get Access Token Response](#get-access-token-response) only if all checks are successful. If one of the above checks fails, the Authorization Server SHALL respond with HTTP 401 (Unauthorized) error.
 
