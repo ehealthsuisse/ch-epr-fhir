@@ -1,4 +1,4 @@
-This section specifies Swiss national extensions to the Mobile Access to Health Documents (MHD) with XDS on FHIR Profile, which is [published](https://profiles.ihe.net/ITI/MHD/index.html) as an IHE ITI Trial Implementation profile.
+This section specifies Swiss national extensions to the Mobile Access to Health Documents (MHD), which is [published](https://profiles.ihe.net/ITI/MHD/index.html) as an IHE ITI Trial Implementation profile.
 
 The national extensions adds an additional transaction to≈from the Document Source to the Document Recipient. 
 
@@ -26,10 +26,9 @@ This figure shows the actors directly involved in the _Mobile Access to Health D
 transactions between them.
 
 ### Actor options  
-For all actors the Comprehensive Metadata Option and the XDS on FHIR Option SHALL be supported. For all actors the Metadata as defined in Annex 3 SHALL be supported.
+For all actors the Comprehensive Metadata Option SHALL be supported. For all actors the Metadata as defined in Annex 3 SHALL be supported.
 
 ### Required Actor Groupings  
-The Actors Document Recipient and Document Responder MUST be grouped according to the XDS on FHIR grouping condition see Table 33.3-1: MHD - Actors Required Grouping.
 This national extension enforces authentication and authorization for access control. Therefore actors of this profile must be grouped with actors of other profiles according to the following table: 
 
 
