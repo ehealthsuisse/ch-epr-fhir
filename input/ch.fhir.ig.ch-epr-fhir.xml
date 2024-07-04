@@ -652,7 +652,7 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                 </page>
                 <page>
                     <nameUrl value="iti-mhd.html"/>
-                    <title value="Mobile Access to Health Documents (MHD) with XDS on FHIR"/>
+                    <title value="Mobile Access to Health Documents (MHD)"/>
                     <generation value="markdown"/>
                 </page>
                 <page>

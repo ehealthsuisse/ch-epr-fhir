@@ -1,3 +1,7 @@
+### DSTU4 Informative Ballot 2024 - Resolved Issues
+*  Remove XDS on FHIR option requirment for MHD [#193](https://github.com/ehealthsuisse/ch-epr-fhir/issues/193)
+
+
 ### DSTU4 Informative Ballot 2024
 
 * clarified the use of the redirect-uri as callback URL

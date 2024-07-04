@@ -43,8 +43,6 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 The response Bundle SHALL follow the [CH MHD SubmissionSet Comprehensive Bundle](StructureDefinition-ch-mhd-submissionset-comprehensive-bundle.html)
 Profile ([example: MHD Find DocumentSubmissionSet (List)](Bundle-Bundle-FindSubmissionSets.html)).
 
-The **Document Responder** does not need to support the FindFolders Query from the XDS on FHIR Option.
-
 #### CapabilityStatement Resource
 
 The CapabilityStatement resource for the **Document Consumer** is [MHD Document Consumer](CapabilityStatement-CH.MHD.DocumentConsumer.html).
