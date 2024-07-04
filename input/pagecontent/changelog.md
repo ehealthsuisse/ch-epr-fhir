@@ -1,10 +1,10 @@
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
-*  Remove XDS on FHIR option requirment for MHD [#193](https://github.com/ehealthsuisse/ch-epr-fhir/issues/193)
-
+* Remove XDS on FHIR option requirment for MHD [#193](https://github.com/ehealthsuisse/ch-epr-fhir/issues/193)
+* clarified the use of the redirect-uri as callback URL [#189](https://github.com/ehealthsuisse/ch-epr-fhir/issues/189)
+* new sequence diagram for publication hcp and tcu [#192](https://github.com/ehealthsuisse/ch-epr-fhir/issues/192)
 
 ### DSTU4 Informative Ballot 2024
 
-* clarified the use of the redirect-uri as callback URL
 * 4.0.1 technical corrector because plantuml files were not generated
 major updates on the IG have been made:
 * Renamed the ImplementationGuide from `ch-epr-mhealth` to `ch-epr-fhir` [#159](https://github.com/ehealthsuisse/ch-epr-fhir/issues/159)
