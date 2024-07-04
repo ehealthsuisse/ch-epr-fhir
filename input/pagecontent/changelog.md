@@ -1,4 +1,5 @@
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
+* Adapt IHE profiles for the Trace Context support [#153](https://github.com/ehealthsuisse/ch-epr-fhir/issues/153)
 * Remove XDS on FHIR option requirment for MHD [#193](https://github.com/ehealthsuisse/ch-epr-fhir/issues/193)
 * clarified the use of the redirect-uri as callback URL [#189](https://github.com/ehealthsuisse/ch-epr-fhir/issues/189)
 * new sequence diagram for publication hcp and tcu [#192](https://github.com/ehealthsuisse/ch-epr-fhir/issues/192)
