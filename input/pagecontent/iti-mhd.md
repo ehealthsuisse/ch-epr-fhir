@@ -1,6 +1,6 @@
 This section specifies Swiss national extensions to the Mobile Access to Health Documents (MHD), which is [published](https://profiles.ihe.net/ITI/MHD/index.html) as an IHE ITI Trial Implementation profile.
 
-The national extensions adds an additional transaction to≈from the Document Source to the Document Recipient. 
+The national extensions adds an additional transaction from the Document Source to the Document Recipient. 
 
 ### Scope  
 An EPR App can query, retrieve or publish data to an EPR community using the transaction of the MHD profile. 
@@ -24,6 +24,8 @@ A patient wants to change the confidentiality code of one of his documents. The 
 </div>
 This figure shows the actors directly involved in the _Mobile Access to Health Documents_ Profile and the relevant 
 transactions between them.
+
+The Find Document Lists [[ITI-66]](https://profiles.ihe.net/ITI/MHD/ITI-66.html) transaction defined in [MHD](https://profiles.ihe.net/ITI/MHD/index.html) SHALL not be made available in this context.
 
 ### Actor options  
 For all actors the Comprehensive Metadata Option SHALL be supported. For all actors the Metadata as defined in Annex 3 SHALL be supported.
