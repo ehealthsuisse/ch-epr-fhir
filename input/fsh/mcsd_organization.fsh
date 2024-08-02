@@ -38,6 +38,21 @@ Title:    "LDAP schema"
 * contact.telecom -> "HCRegulatedOrganization.hpdMedicalRecordsDeliveryEmailAddress"
 
 
+Instance: ChmCSDOrganizationCommunityA
+InstanceOf: CHmCSDOrganization
+Title: "CH mCSD Organization Community A"
+Description: "An example of CHmCSDOrganization that contains the same information as Community A in the Swiss examples
+(uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch)"
+* id = "CommunityA"
+* identifier[+].system = "urn:ietf:rfc:4514"
+* identifier[=].value = "uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch"
+* identifier[+].system = "urn:ietf:rfc:3986"
+* identifier[=].value = "urn:oid:2.16.10.89"
+* active = true
+* type[+].coding = http://terminology.hl7.org/CodeSystem/organization-type#cg "Community Group"
+* name = "Community A"
+
+
 Instance: CHmCSDOrganizationSpitalX
 InstanceOf: CHmCSDOrganization
 Title: "CH mCSD Organization Spital X"
