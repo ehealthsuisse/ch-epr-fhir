@@ -38,6 +38,18 @@ Title:    "LDAP schema"
 * contact.telecom -> "HCRegulatedOrganization.hpdMedicalRecordsDeliveryEmailAddress"
 
 
+Instance: ChmCSDOrganizationCommunityA
+InstanceOf: CHmCSDOrganization
+Title: "CH mCSD Organization Community A"
+Description: "An example of CHmCSDOrganization that contains the same information as Community A in the Swiss examples
+(uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch)"
+* id = "CommunityA"
+* identifier[+].value = "uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch"
+* identifier[+].value = "CommunityA"
+* active = true
+* name = "Community A"
+
+
 Instance: CHmCSDOrganizationSpitalX
 InstanceOf: CHmCSDOrganization
 Title: "CH mCSD Organization Spital X"
@@ -62,6 +74,7 @@ Description: "An example of CHmCSDOrganization that contains the same informatio
 * address[=].state = "SG"
 * address[=].postalCode = "9007"
 * address[=].country = "CH"
+* partOf = Reference(ChmCSDOrganizationCommunityA)
 
 
 Instance: CHmCSDOrganizationSpitalXDept3
@@ -115,3 +128,4 @@ examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=c
 * address[=].state = "SG"
 * address[=].postalCode = "9000"
 * address[=].country = "CH"
+* partOf = Reference(ChmCSDOrganizationCommunityA)
