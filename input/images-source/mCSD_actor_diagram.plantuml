@@ -3,5 +3,10 @@
 title mCSD Actor Diagram
 agent "Care Services Selective Supplier" as SelectiveSupplier
 agent "Care Services Selective Consumer" as SelectiveConsumer
+agent "Care Services Source" as Source
+agent "Care Services Directory" as Directory
+
 SelectiveConsumer -down-> SelectiveSupplier : "[[iti-90.html ITI-90 Find Matching Care Services]]"
+Source -down-> Directory : "[[ch-mcsd-1.html CH:mCSD-1 Care Services Feed]]"
+
 @enduml

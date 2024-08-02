@@ -1,3 +1,7 @@
+### Resolved Issues
+
+* mCSD: add the feed transaction (CH:mCSD-1) [#158](https://github.com/ehealthsuisse/ch-epr-fhir/issues/158)
+
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
 * Adapt IHE profiles for the Trace Context support [#153](https://github.com/ehealthsuisse/ch-epr-fhir/issues/153)
 * Remove XDS on FHIR option requirment for MHD [#193](https://github.com/ehealthsuisse/ch-epr-fhir/issues/193)

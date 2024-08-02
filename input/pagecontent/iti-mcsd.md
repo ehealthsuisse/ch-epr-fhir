@@ -3,8 +3,9 @@ mCSD is [published](https://profiles.ihe.net/ITI/mCSD/index.html) as an IHE ITI 
 
 ### Scope
 
-In the Swiss EPR, the mCSD profile ensures that different systems can search for healthcare organizations and/or
+In the Swiss EPR, the mCSD profile ensures that different systems can search for healthcare organizations and
 professionals.
+It also allows systems to provide updated information about healthcare organizations and professionals.
 
 ### Use Cases
 
@@ -14,6 +15,11 @@ with its identifier.
 It offers an alternative to the HPD ITI-58 transaction, which is SOAP-based.
 
 The _Request Care Services Updates_ [ITI-91] transaction is not used in this national extension.
+
+A primary system wants to provide updated information about its healthcare organizations or professionals to a 
+directory.
+It can perform a [CH:mCSD-1](ch-mcsd-1.html) request to update a resource.
+It offers an alternative to the HPD ITI-59 transaction, which is SOAP-based.
 
 ### Actors and Transactions, Content Specifications
 
@@ -36,6 +42,8 @@ Therefore, actors of this profile must be grouped with actors of other profiles 
 |----------------------------------|--------------------------|-------------|
 | Care Services Selective Consumer | IUA Authorization Client | R           |
 | Care Services Selective Supplier | IUA Resource Server      | R           |
+| Care Services Source             | IUA Authorization Client | R           |
+| Care Services Directory          | IUA Resource Server      | R           |
 {:class="table table-bordered"}
 
 <figcaption ID="1">Table 1: Grouping of mCSD actors required by this national extension.</figcaption>
