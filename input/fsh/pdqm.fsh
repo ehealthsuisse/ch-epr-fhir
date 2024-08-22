@@ -34,6 +34,7 @@ Description: "The patient demographics and identifier information which can be p
 * name[BirthName] only $ch-epr-fhir-birthname
 * name[BirthName] ^short = "The birthname of the patient"
 * name[BirthName] ^comment = "The birthname is added  with the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR"
+* contact 0..0
 * managingOrganization only Reference(CHPDQmProviderOrganization)
 * managingOrganization MS
 * managingOrganization ^short = "Provider organization of the patient"
