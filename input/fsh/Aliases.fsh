@@ -12,4 +12,5 @@ Alias: $ehealthRole = urn:oid:2.16.756.5.30.1.127.3.10.6
 Alias: $ch-core-patient = http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient
 Alias: $ch-epr-fhir-humanname = http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-humanname
 Alias: $ch-epr-fhir-birthname = http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-birthname
-Alias: $ch-pdqm-provider-organization = http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-provider-organization
+Alias: $IHE.PIXm.Query.Parameters.In = https://profiles.ihe.net/ITI/PIXm/StructureDefinition/IHE.PIXm.Query.Parameters.In
+Alias: $IHE.PIXm.Query.Parameters.Out = https://profiles.ihe.net/ITI/PIXm/StructureDefinition/IHE.PIXm.Query.Parameters.Out
