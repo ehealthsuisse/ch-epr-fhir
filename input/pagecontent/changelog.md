@@ -1,5 +1,6 @@
 ### Resolved Issues
 
+* mCSD: set the system for LDAP DNs and add a slice to identifiers [#209](https://github.com/ehealthsuisse/ch-epr-fhir/issues/209)
 * mCSD: add the community as example [#200](https://github.com/ehealthsuisse/ch-epr-fhir/issues/200)
 
 ### DSTU4 Informative Ballot 2024 - Resolved Issues

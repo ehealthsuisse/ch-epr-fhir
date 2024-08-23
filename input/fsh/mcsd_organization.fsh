@@ -5,6 +5,14 @@ Title: "CH mCSD Organization"
 Description: "CH mCSD profile on Organization"
 * obeys ch-mcsd-organization-ihe-conformance
 * identifier 2.. // uid and hcIdentifier are required
+* identifier contains OID 0..1 and LDAP 0..1
+* identifier[OID] only OidIdentifier
+* identifier[OID] ^short = "The OID of the organization in the community"
+* identifier[OID] ^patternIdentifier.system = "urn:ietf:rfc:3986"
+* identifier[LDAP] only LdapIdentifier
+* identifier[LDAP] ^short = "LDAP DN (Distinguished Name), if the organization is stored in an HPD"
+* identifier[LDAP] ^patternIdentifier.system = "urn:ietf:rfc:4514"
+
 
 
 Invariant: ch-mcsd-organization-ihe-conformance
@@ -44,10 +52,10 @@ Title: "CH mCSD Organization Community A"
 Description: "An example of CHmCSDOrganization that contains the same information as Community A in the Swiss examples
 (uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch)"
 * id = "CommunityA"
-* identifier[+].system = "urn:ietf:rfc:4514"
-* identifier[=].value = "uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch"
-* identifier[+].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:oid:2.16.10.89"
+* identifier[LDAP].system = "urn:ietf:rfc:4514"
+* identifier[LDAP].value = "uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch"
+* identifier[OID].system = "urn:ietf:rfc:3986"
+* identifier[OID].value = "urn:oid:2.16.10.89"
 * active = true
 * type[+].coding = http://terminology.hl7.org/CodeSystem/organization-type#cg "Community Group"
 * name = "Community A"
@@ -59,9 +67,10 @@ Title: "CH mCSD Organization Spital X"
 Description: "An example of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
 (uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"
 * id = "SpitalX"
-* identifier[+].value = "uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
-* identifier[+].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:oid:2.16.10.89.201"
+* identifier[LDAP].system = "urn:ietf:rfc:4514"
+* identifier[LDAP].value = "uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
+* identifier[OID].system = "urn:ietf:rfc:3986"
+* identifier[OID].value = "urn:oid:2.16.10.89.201"
 * active = true
 * type[+].coding = $sct#394802001 "General medicine"
 * type[+].coding = $sct#22232009 "Hospital"
@@ -85,9 +94,10 @@ Title: "CH mCSD Organization Spital X Dept. 3"
 Description: "An example of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss
 examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"
 * id = "SpitalXDept3"
-* identifier[+].value = "uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
-* identifier[+].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:oid:2.16.10.89.203"
+* identifier[LDAP].system = "urn:ietf:rfc:4514"
+* identifier[LDAP].value = "uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
+* identifier[OID].system = "urn:ietf:rfc:3986"
+* identifier[OID].value = "urn:oid:2.16.10.89.203"
 * active = true
 * type[+].coding = $sct#225728007 "Accident and Emergency department"
 * type[+].coding = $sct#22232009 "Hospital"
@@ -112,9 +122,10 @@ Title: "CH mCSD Organization Praxis P"
 Description: "An example of CHmCSDOrganization that contains the same information as Praxis P in the Swiss
 examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)"
 * id = "PraxisP"
-* identifier[+].value = "uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
-* identifier[+].system = "urn:ietf:rfc:3986"
-* identifier[=].value = "urn:oid:2.16.10.89.210"
+* identifier[LDAP].system = "urn:ietf:rfc:4514"
+* identifier[LDAP].value = "uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
+* identifier[OID].system = "urn:ietf:rfc:3986"
+* identifier[OID].value = "urn:oid:2.16.10.89.210"
 * active = true
 * type[+].coding = $sct#35971002 "Ambulatory care site"
 * type[+].coding = $sct#394802001 "General medicine"

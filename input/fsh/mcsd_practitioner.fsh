@@ -5,6 +5,10 @@ Title: "CH mCSD Practitioner"
 Description: "CH mCSD profile on Practitioner"
 * obeys ch-mcsd-practitioner-ihe-conformance
 * qualification 1.. // hcProfession is required
+* identifier contains LDAP 0..1
+* identifier[LDAP] only LdapIdentifier
+* identifier[LDAP] ^short = "LDAP DN (Distinguished Name), if the practitioner is stored in an HPD"
+* identifier[LDAP] ^patternIdentifier.system = "urn:ietf:rfc:4514"
 
 
 Invariant: ch-mcsd-practitioner-ihe-conformance
@@ -50,9 +54,10 @@ Title: "CH mCSD Practitioner Dr. Peter Pan"
 Description: "An example of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
 (uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)"
 * id = "DrPeterPan"
-* identifier[+].system = "urn:oid:2.51.1.3"
-* identifier[=].value = "7601000102737"
-* identifier[+].value = "uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch"
+* identifier[GLN].system = "urn:oid:2.51.1.3"
+* identifier[GLN].value = "7601000102737"
+* identifier[LDAP].system = "urn:ietf:rfc:4514"
+* identifier[LDAP].value = "uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch"
 * active = true
 * name.text = "Peter Pan"
 * name.family = "Pan"
