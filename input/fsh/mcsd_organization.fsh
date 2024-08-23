@@ -4,7 +4,7 @@ Id: CH.mCSD.Organization
 Title: "CH mCSD Organization"
 Description: "CH mCSD profile on Organization"
 * obeys ch-mcsd-organization-ihe-conformance
-* identifier 2.. // uid and hcIdentifier are required
+* identifier 1..
 * identifier contains OID 0..1 and LDAP 0..1
 * identifier[OID] only OidIdentifier
 * identifier[OID] ^short = "The OID of the organization in the community"
