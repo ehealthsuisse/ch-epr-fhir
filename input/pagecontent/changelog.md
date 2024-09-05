@@ -1,4 +1,11 @@
+### Resolved Issues
+
+* mCSD: require only one identifier for organizations [#210](https://github.com/ehealthsuisse/ch-epr-fhir/issues/210)
+* mCSD: set the system for LDAP DNs and add a slice to identifiers [#209](https://github.com/ehealthsuisse/ch-epr-fhir/issues/209)
+* mCSD: add the community as example [#200](https://github.com/ehealthsuisse/ch-epr-fhir/issues/200)
+
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
+
 * Adapt IHE profiles for the Trace Context support [#153](https://github.com/ehealthsuisse/ch-epr-fhir/issues/153)
 * Remove XDS on FHIR option requirment for MHD [#193](https://github.com/ehealthsuisse/ch-epr-fhir/issues/193)
 * clarified the use of the redirect-uri as callback URL [#189](https://github.com/ehealthsuisse/ch-epr-fhir/issues/189)

@@ -236,6 +236,15 @@
         </resource>
         <resource>
             <reference>
+                <reference value="Organization/CommunityA"/>
+            </reference>
+            <name value="mCSD Organization Community A"/>
+            <description value="An example of CHmCSDOrganization that contains the same information as Community A in the Swiss examples
+(uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch)"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"/>
+        </resource>
+        <resource>
+            <reference>
                 <reference value="Organization/SpitalX"/>
             </reference>
             <name value="mCSD Organization Spital X"/>
