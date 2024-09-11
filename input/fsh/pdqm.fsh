@@ -1,3 +1,44 @@
+Profile: CHPDQmProviderOrganization
+Parent: Organization
+Id: ch-pdqm-provider-organization
+Title: "CH PDQm Provider Organization"
+Description: "Organization"
+* obeys ch-epr-fhir-org-1
+* . ^short = "CH PDQm Provider Organization"
+* identifier 1.. MS
+* identifier ^short = "The value shall be expressed as an ISO OID"
+
+Invariant: ch-epr-fhir-org-1
+Description: "The organization SHALL have at least one of telecom, address, or contact person to be present."
+* severity = #error
+* expression = "(telecom.count() + address.count() + contact.name.count()) > 0"
+
+Profile: CHPDQmPatient
+Parent: $ch-core-patient
+Id: ch-pdqm-patient
+Title: "CH PDQm Patient"
+Description: "The patient demographics and identifier information which can be provided in the PDQm response according to the EPR. If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID as an identifier MAY be added. The birthname can be added with the  ISO 21090 qualifier extension."
+* extension[PatReligion] 0..0
+* identifier MS
+* identifier[EPR-SPID] 1..1 MS
+* identifier[LocalPid] 0..* MS
+* name MS
+* name ^slicing.discriminator.type = #profile
+* name ^slicing.discriminator.path = "$this"
+* name ^slicing.rules = #open
+* name contains
+    HumanName 1..* MS and
+    BirthName 0..1 MS
+* name[HumanName] only $ch-epr-fhir-humanname
+* name[HumanName] ^short = "A name associated with the patient"
+* name[BirthName] only $ch-epr-fhir-birthname
+* name[BirthName] ^short = "The birthname of the patient"
+* name[BirthName] ^comment = "The birthname is added  with the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR"
+* contact 0..0
+* managingOrganization only Reference(CHPDQmProviderOrganization)
+* managingOrganization MS
+* managingOrganization ^short = "Provider organization of the patient"
+
 CodeSystem: ChEhealthCodesystemPqdMoreAttriburesRequested
 Id: 2.16.756.5.30.1.127.3.10.17
 Title: "CH Codesystem PDQ More Attributes Requested"
