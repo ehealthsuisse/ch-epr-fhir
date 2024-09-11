@@ -44,6 +44,21 @@ For the `traceparent` header handling refer to [Trace Context header](traceconte
 
 #### Security Audit Considerations
 
+The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with
+server certificates.
+
+The transaction SHALL use client authentication and authorization using extended authorization token as defined
+in the [IUA profile](https://profiles.ihe.net/ITI/IUA). The extended authorization token SHALL be conveyed as
+defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
+transaction.
+
+The Document Responder actor SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
+defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for
+every Provide Document Bundle [ITI-65] request.
+
+The Document Responder actor SHALL enforce a `traceparent` header to enable inspection of cross community
+transactions as defined in section [Trace Context header](tracecontext.html).
+
 ##### Document Consumer Audit
 
 The **Document Consumer** shall record a

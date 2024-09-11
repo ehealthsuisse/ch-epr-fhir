@@ -85,12 +85,16 @@ The CapabilityStatement resource for the **Patient Demographics Supplier** is
 
 ### Security Consideration
 
-TLS SHALL be used. This national extension enforces authentication and authorization of access to the
-Patient Identifier Cross-reference Manager using the IUA profile with basic access token. Consequently
-the _Mobile Patient Identifier Cross-reference Query_ [ITI-83] request must authorize using the
-[[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA profile.
+The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with
+server certificates.
 
-For the `traceparent` header handling refer to [Trace Context header](tracecontext.html).
+The transaction SHALL use client authentication and authorization using basic authorization token as defined
+in the [IUA profile](https://profiles.ihe.net/ITI/IUA). The extended authorization token SHALL be conveyed as
+defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
+transaction.
+
+The Patient Demographics Supplier actor SHALL enforce a `traceparent` header to enable inspection of cross community
+transactions as defined in section [Trace Context header](tracecontext.html).
 
 #### Security Audit Considerations
 
