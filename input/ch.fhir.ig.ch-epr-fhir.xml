@@ -70,6 +70,11 @@
         <packageId value="ihe.iti.mcsd"/>
         <version value="3.8.0"/>
     </dependsOn>
+    <dependsOn id="ihebalp">
+        <uri value="https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp"/>
+        <packageId value="ihe.iti.balp"/>
+        <version value="1.1.3"/>
+    </dependsOn>
     <definition>
 
         <!-- examples -->
@@ -157,26 +162,17 @@
             <exampleCanonical
                     value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
         </resource>
-<resource>
+        <resource>            
             <reference>
-                <reference value="Bundle/2-7-BundleProvideDocument-Response"/>
-            </reference>
-            <name value="MHD Provide Document Bundle Response for MedicationCard"/>
-            <description value="MHD Provide Document Bundle Response for MedicationCard"/>
-            <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
+            <reference value="Bundle/2-7-BundleProvideDocument-Response"/>
+        </reference>
+        <name value="MHD Provide Document Bundle Response for MedicationCard"/>
+        <description value="MHD Provide Document Bundle Response for MedicationCard"/>
+        <exampleCanonical
+                value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
         </resource>
         <resource>
-            <reference>
-                <reference value="Bundle/Bundle-FindSubmissionSets"/>
-            </reference>
-            <name value="MHD Find DocumentSubmissionSet (List)"/>
-            <description value="MHD Find Document SubmissionSet- Bundle as Response"/>
-            <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
-        </resource>
-        <resource>
-            <reference>
+             <reference>
                 <reference value="Bundle/Bundle-FindDocumentReferences"/>
             </reference>
             <name value="MHD Find DocumentReferences"/>
@@ -233,6 +229,15 @@
             <description value="An example of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
 (uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/CommunityA"/>
+            </reference>
+            <name value="mCSD Organization Community A"/>
+            <description value="An example of CHmCSDOrganization that contains the same information as Community A in the Swiss examples
+(uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch)"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"/>
         </resource>
         <resource>
             <reference>
@@ -429,12 +434,6 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"/>
             </reference>
             <exampleBoolean value="false"/>
@@ -478,6 +477,24 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <resource>
             <reference>
                 <reference value="StructureDefinition/ch-epr-fhir-auditevent"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/mCSD.Add.Audit"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/mCSD.Update.Audit"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/mCSD.Delete.Audit"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
@@ -706,11 +723,6 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="iti-66.html"/>
-                    <title value="Find Document Lists [ITI-66]"/>
-                    <generation value="markdown"/>
-                </page>
-                <page>
                     <nameUrl value="iti-67.html"/>
                     <title value="Find Document References [ITI-67]"/>
                     <generation value="markdown"/>
@@ -733,6 +745,11 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                 <page>
                     <nameUrl value="iti-90.html"/>
                     <title value="Find Matching Care Services [ITI-90]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="ch-mcsd-1.html"/>
+                    <title value="Care Services Feed [CH:mCSD-1]"/>
                     <generation value="markdown"/>
                 </page>
                 <page>

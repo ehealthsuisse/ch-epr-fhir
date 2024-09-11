@@ -1,4 +1,4 @@
-// Server Actor
+// Server Actor for ITI-90
 Instance: CH.mCSD.CareServicesSelectiveSupplier
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -90,7 +90,7 @@ Usage: #definition
 * rest.searchParam[=].documentation = "The values for this shall support these prefixes: ge and le"
 
 
-// Client Actor
+// Client Actor for ITI-90
 Instance: CH.mCSD.CareServicesSelectiveConsumer
 InstanceOf: CapabilityStatement
 Usage: #definition
@@ -180,3 +180,86 @@ Usage: #definition
 * rest.searchParam[+].name = "_lastUpdated"
 * rest.searchParam[=].type = #token
 * rest.searchParam[=].documentation = "The values for this shall support these prefixes: ge and le"
+
+
+
+// Server Actor for CH:mCSD-1
+Instance: CH.mCSD.CareServicesDirectory
+InstanceOf: CapabilityStatement
+Usage: #definition
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesDirectory"
+* name = "CH_mCSD_Care_Services_Directory"
+* title = "mCSD Care Services Directory (server)"
+* status = #active
+* experimental = false
+* date = "2024-08-13"
+* description = "CapabilityStatement for Server Actor in the Swiss mCSD profile extension."
+* kind = #requirements
+* fhirVersion = #4.0.1
+* format[0] = #application/fhir+xml
+* format[+] = #application/fhir+json
+* rest.mode = #server
+* rest.documentation = "CH:mCSD-1 endpoint"
+* rest.interaction[+].code = #batch
+
+* rest.resource[+].type = #Organization
+* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
+* rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #update
+* rest.resource[=].interaction[+].code = #delete
+* rest.resource[=].versioning = #no-version
+
+* rest.resource[+].type = #Practitioner
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
+* rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #update
+* rest.resource[=].interaction[+].code = #delete
+* rest.resource[=].versioning = #no-version
+
+* rest.resource[+].type = #PractitionerRole
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
+* rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #update
+* rest.resource[=].interaction[+].code = #delete
+* rest.resource[=].versioning = #no-version
+
+
+// Client Actor for CH:mCSD-1
+Instance: CH.mCSD.CareServicesSource
+InstanceOf: CapabilityStatement
+Usage: #definition
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesSource"
+* name = "CH_mCSD_Care_Services_Source"
+* title = "mCSD Care Services Source (client)"
+* status = #active
+* experimental = false
+* date = "2024-08-13"
+* description = "CapabilityStatement for Server Actor in the Swiss mCSD profile extension."
+* kind = #requirements
+* fhirVersion = #4.0.1
+* format[0] = #application/fhir+xml
+* format[+] = #application/fhir+json
+* rest.mode = #client
+* rest.documentation = "CH:mCSD-1 endpoint"
+* rest.interaction[+].code = #batch
+
+* rest.resource[+].type = #Organization
+* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
+* rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #update
+* rest.resource[=].interaction[+].code = #delete
+* rest.resource[=].versioning = #no-version
+
+* rest.resource[+].type = #Practitioner
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
+* rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #update
+* rest.resource[=].interaction[+].code = #delete
+* rest.resource[=].versioning = #no-version
+
+* rest.resource[+].type = #PractitionerRole
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
+* rest.resource[=].interaction[+].code = #create
+* rest.resource[=].interaction[+].code = #update
+* rest.resource[=].interaction[+].code = #delete
+* rest.resource[=].versioning = #no-version

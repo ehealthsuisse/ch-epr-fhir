@@ -21,6 +21,7 @@ component "EPR App" {
   [RESTful ATNA Secure Node] as ATNANode
 
   [Care Services Selective Consumer] as mCSDSelectiveConsumer
+  [Care Services Source] as mCSDSelectiveSource
 
   [Policy Source] as PPQmPolicySource
   [Policy Consumer] as PPQmPolicyConsumer
@@ -43,13 +44,15 @@ component "EPR API" {
   MHDSource --> MHDRecipient : Provide Document Bundle [ITI-65], \nUpdate Document Metadata [CH:MHD-1]
 
   [MHD Document Responder] as MHDResponder
-  MHDConsumer --> MHDResponder : Find Document Lists [ITI-66], \nFind Document References [ITI-67], \nRetrieve Document [ITI-68] 
+  MHDConsumer --> MHDResponder : nFind Document References [ITI-67], \nRetrieve Document [ITI-68] 
 
   [RESTful ATNA Audit Record Repository] as ATNARepository
   ATNANode --> ATNARepository : Record Audit Event [ITI-20]
 
   [Care Services Selective Supplier] as mCSDSelectiveSupplier
   mCSDSelectiveConsumer --> mCSDSelectiveSupplier : Find Matching Care Services [ITI-90]
+  [Care Services Directory] as mCSDSelectiveDirectory
+  mCSDSelectiveSource --> mCSDSelectiveDirectory : Care Services Feed [CH:mCSD-1]
 
   [Policy Repository] as PPQmPolicyRepository
   PPQmPolicySource --> PPQmPolicyRepository : Mobile Privacy Policy Feed [PPQ-3],\nMobile Privacy Policy Bundle Feed [PPQ-4]
