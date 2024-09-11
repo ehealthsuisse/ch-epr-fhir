@@ -349,7 +349,7 @@ Title: "EPR policy set based on template 304"
 Description: "EPR policy set based on template 304 -- gives a particular healthcare professional read access to the patient's EPR, with delegation rights."
 * identifier[templateId].value = "304"
 * provision.period.end 1..1
-* policyRule.coding from PpqmReferencedPolicySetFullAccess (required)
+* policyRule.coding from PpqmReferencedPolicySetHcpWithDelegation (required)
 * provision.actor.role.coding = $ehealthRole#HCP
 * provision.actor.reference.identifier 1..1
 * provision.actor.reference.identifier only GLNIdentifier
@@ -368,7 +368,7 @@ Usage: #example
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 304 - Read access for a healthcare professional, with delegation</p></div>"
 * identifier[policySetId].value = "urn:uuid:f1e1ed8e-0582-4e47-a76e-5e8f6cc09304"
 * patient.identifier.value = "761337610000000002"
-* policyRule.coding = $URI#urn:e-health-suisse:2015:policies:access-level:full
+* policyRule.coding = $URI#urn:e-health-suisse:2015:policies:access-level:delegation-and-normal
 * provision.period.start = "2024-05-01"
 * provision.period.end = "2024-05-31"
 * provision.actor.reference.identifier.value = "7600000000005"
