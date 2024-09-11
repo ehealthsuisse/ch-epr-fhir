@@ -70,6 +70,11 @@
         <packageId value="ihe.iti.mcsd"/>
         <version value="3.8.0"/>
     </dependsOn>
+    <dependsOn id="ihebalp">
+        <uri value="https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp"/>
+        <packageId value="ihe.iti.balp"/>
+        <version value="1.1.3"/>
+    </dependsOn>
     <definition>
 
         <!-- examples -->
@@ -475,6 +480,24 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             </reference>
             <exampleBoolean value="false"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/mCSD.Add.Audit"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/mCSD.Update.Audit"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/mCSD.Delete.Audit"/>
+            </reference>
+            <exampleBoolean value="false"/>
+        </resource>
 
         <!-- CH EPR FHIR: Data Type Profiles -->
         <resource>
@@ -722,6 +745,11 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                 <page>
                     <nameUrl value="iti-90.html"/>
                     <title value="Find Matching Care Services [ITI-90]"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="ch-mcsd-1.html"/>
+                    <title value="Care Services Feed [CH:mCSD-1]"/>
                     <generation value="markdown"/>
                 </page>
                 <page>

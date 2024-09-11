@@ -36,6 +36,10 @@
             <p>CapabilityStatement for Actor mCSD Care Services Selective Consumer (client).</p>
           </li>
           <li>
+            <a href="CapabilityStatement-CH.mCSD.CareServicesSource.html">mCSD Care Services Source (client)</a>
+            <p>CapabilityStatement for Actor mCSD Care Services Source (client).</p>
+          </li>
+          <li>
             <a href="CapabilityStatement-CH.PPQm.PolicySourceConsumer.html">CH:PPQm Policy Source and Consumer (client)</a>
             <p>CapabilityStatement for the Policy Source and Policy Consumer actors in the CH:PPQm profile (client).</p>
           </li>
@@ -69,6 +73,10 @@
           <li>
             <a href="CapabilityStatement-CH.mCSD.CareServicesSelectiveSupplier.html">mCSD Care Services Selective Supplier (server)</a>
             <p>CapabilityStatement for Actor mCSD Care Services Selective Supplier (server).</p>
+          </li>
+          <li>
+            <a href="CapabilityStatement-CH.mCSD.CareServicesDirectory.html">mCSD Care Services Directory (server)</a>
+            <p>CapabilityStatement for Actor mCSD Care Services Directory (server).</p>
           </li>
           <li>
             <a href="CapabilityStatement-CH.mCSD.CareServicesSelectiveSupplier.html">CH:PPQm Policy Repository (server)</a>
