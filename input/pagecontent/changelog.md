@@ -1,12 +1,17 @@
 ### Resolved Issues
 
 * mCSD: add the feed transaction (CH:mCSD-1) [#158](https://github.com/ehealthsuisse/ch-epr-fhir/issues/158)
+* mCSD: require only one identifier for organizations [#210](https://github.com/ehealthsuisse/ch-epr-fhir/issues/210)
+* mCSD: set the system for LDAP DNs and add a slice to identifiers [#209](https://github.com/ehealthsuisse/ch-epr-fhir/issues/209)
+* mCSD: add the community as example [#200](https://github.com/ehealthsuisse/ch-epr-fhir/issues/200)
 
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
+
 * Adapt IHE profiles for the Trace Context support [#153](https://github.com/ehealthsuisse/ch-epr-fhir/issues/153)
 * Remove XDS on FHIR option requirment for MHD [#193](https://github.com/ehealthsuisse/ch-epr-fhir/issues/193)
 * clarified the use of the redirect-uri as callback URL [#189](https://github.com/ehealthsuisse/ch-epr-fhir/issues/189)
 * new sequence diagram for publication hcp and tcu [#192](https://github.com/ehealthsuisse/ch-epr-fhir/issues/192)
+* MHD Find Document Lists transaction [ITI-66] not applicable for EPR [#180](https://github.com/ehealthsuisse/ch-epr-fhir/issues/180)
 
 ### DSTU4 Informative Ballot 2024
 

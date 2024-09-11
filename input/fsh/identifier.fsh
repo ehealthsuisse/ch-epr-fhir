@@ -13,3 +13,13 @@ Invariant:   oid-start
 Description: "value must start with urn:oid:"
 Expression:  "value.startsWith('urn:oid:')"
 Severity:    #error
+
+Profile: LdapIdentifier
+Parent: Identifier
+Id: LdapIdentifier
+Title: "LDAP Identifier"
+Description: "Identifier with an LDAP DN"
+* ^url = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/LdapIdentifier"
+* system 1..
+* system = "urn:ietf:rfc:4514" (exactly)
+* value 1..

@@ -162,26 +162,17 @@
             <exampleCanonical
                     value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"/>
         </resource>
-<resource>
+        <resource>            
             <reference>
-                <reference value="Bundle/2-7-BundleProvideDocument-Response"/>
-            </reference>
-            <name value="MHD Provide Document Bundle Response for MedicationCard"/>
-            <description value="MHD Provide Document Bundle Response for MedicationCard"/>
-            <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
+            <reference value="Bundle/2-7-BundleProvideDocument-Response"/>
+        </reference>
+        <name value="MHD Provide Document Bundle Response for MedicationCard"/>
+        <description value="MHD Provide Document Bundle Response for MedicationCard"/>
+        <exampleCanonical
+                value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
         </resource>
         <resource>
-            <reference>
-                <reference value="Bundle/Bundle-FindSubmissionSets"/>
-            </reference>
-            <name value="MHD Find DocumentSubmissionSet (List)"/>
-            <description value="MHD Find Document SubmissionSet- Bundle as Response"/>
-            <exampleCanonical
-                    value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
-        </resource>
-        <resource>
-            <reference>
+             <reference>
                 <reference value="Bundle/Bundle-FindDocumentReferences"/>
             </reference>
             <name value="MHD Find DocumentReferences"/>
@@ -238,6 +229,15 @@
             <description value="An example of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
 (uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/CommunityA"/>
+            </reference>
+            <name value="mCSD Organization Community A"/>
+            <description value="An example of CHmCSDOrganization that contains the same information as Community A in the Swiss examples
+(uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch)"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"/>
         </resource>
         <resource>
             <reference>
@@ -429,12 +429,6 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <resource>
             <reference>
                 <reference value="StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"/>
-            </reference>
-            <exampleBoolean value="false"/>
-        </resource>
-        <resource>
-            <reference>
-                <reference value="StructureDefinition/ch-mhd-submissionset-comprehensive-bundle"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
@@ -726,11 +720,6 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                 <page>
                     <nameUrl value="iti-65.html"/>
                     <title value="Provide Document Bundle [ITI-65]"/>
-                    <generation value="markdown"/>
-                </page>
-                <page>
-                    <nameUrl value="iti-66.html"/>
-                    <title value="Find Document Lists [ITI-66]"/>
                     <generation value="markdown"/>
                 </page>
                 <page>
