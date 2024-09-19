@@ -55,7 +55,7 @@ To set the default confidientiality level, the patient portal updates the follow
 #### Patient changes the emergency access setting 
 A patient wants to change the current setting of the emergency access, which grants all healthcare professionals access to the EHR in a emergency situation. 
 The patient authenticates in the patient portal and opens the view of the emergency access setting. The patient disallows emergency access at all or sets the 
-maximum confidientiality level of documents accessible in emergency situations in the form of the emergency seetings.
+maximum confidientiality level of documents accessible in emergency situations in the form of the emergency settings.
 
 To disallow or allow emergency access of documents up to a confidentiality level, the patient portal deletes or updates the following policy in the policy repository 
 with the Mobile Privacy Policy Feed (PPQ-3) transaction:
@@ -65,8 +65,8 @@ with the Mobile Privacy Policy Feed (PPQ-3) transaction:
 A healthcare professional previously authorized by the patient to delegate access rights (e.g., substitution during holidays, second opinions), delegates the 
 access rights to another healthcare professional registered in the community. The healthcare professional authenticates in the portal or primary and 
 opens the view with the delgation settings. The healthcare opens the form to change the delegation settings and searches for the data of the healthcare 
-professional to delegate the access rights to. The healthcare professional selects the healthcare professional data to be authorized and optionally sets 
-an delgation end date.
+professional to delegate the access rights to. The healthcare professional selects the healthcare professional to be authorized and optionally sets 
+a delgation end date.
 
 To ddeleghate the access rights the portal or primary system adds or updates the following policy in the policy repository with the Mobile Privacy Policy 
 Feed (PPQ-3) transaction:
