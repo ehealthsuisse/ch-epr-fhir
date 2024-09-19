@@ -44,8 +44,14 @@ professional is authorized to delegate the access rights.
 To authorize the group of healthcare professionals, the patient portal adds the following policy to the policy repository with the Mobile Privacy Policy Feed (PPQ-3) transaction:
 * [EPR policy set based on template 302](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate302.html)
 
-#### Patient sets the default confidentiality code 
-TBD 
+#### Patient updates the default confidentiality level
+A patient wants to enforce, that all documents stored in the EHR are stored with a minimal confidentiality level. The patient authenticates in 
+the patient portal and opens the view to the default confidientiality level. The patient set the default confidientiality level in form provided by 
+the patient portal. 
+
+To set the default confidientiality level, the patient portal updates the following policy in the policy repository with the Mobile Privacy Policy Feed (PPQ-3) transaction:
+* [EPR policy set based on template 203](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate203.html)
+
 
 #### Patient authorizes emergency access 
 TBD 
