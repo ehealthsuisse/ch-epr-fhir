@@ -52,15 +52,25 @@ the patient portal.
 To set the default confidientiality level, the patient portal updates the following policy in the policy repository with the Mobile Privacy Policy Feed (PPQ-3) transaction:
 * [EPR policy set based on template 203](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate203.html)
 
+#### Patient changes the emergency access setting 
+A patient wants to change the current setting of the emergency access, which grants all healthcare professionals access to the EHR in a emergency situation. 
+The patient authenticates in the patient portal and opens the view of the emergency access setting. The patient disallows emergency access at all or sets the 
+maximum confidientiality level of documents accessible in emergency situations in the form of the emergency seetings.
 
-#### Patient authorizes emergency access 
-TBD 
-
-#### Patient authorizes a healthcare professional to delegate access rights 
-TBD
+To disallow or allow emergency access of documents up to a confidentiality level, the patient portal deletes or updates the following policy in the policy repository 
+with the Mobile Privacy Policy Feed (PPQ-3) transaction:
+* [EPR policy set based on template 202](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate202.html)
 
 #### Healthcare professional delegates the access rights
-TBD
+A healthcare professional previously authorized by the patient to delegate access rights (e.g., substitution during holidays, second opinions), delegates the 
+access rights to another healthcare professional registered in the community. The healthcare professional authenticates in the portal or primary and 
+opens the view with the delgation settings. The healthcare opens the form to change the delegation settings and searches for the data of the healthcare 
+professional to delegate the access rights to. The healthcare professional selects the healthcare professional data to be authorized and optionally sets 
+an delgation end date.
+
+To ddeleghate the access rights the portal or primary system adds or updates the following policy in the policy repository with the Mobile Privacy Policy 
+Feed (PPQ-3) transaction:
+* [EPR policy set based on template 301](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate301.html)
 
 #### Policy Administrator sets a representative 
 TBD
