@@ -11,7 +11,17 @@ The national integration profile CH:PPQm â€” "Privacy Policy Query for Mobile" â
 ### Use Cases 
 
 #### EPR Onboarding
-TBD
+A patient contacts a community to open an EHR in the community. The patient runs through the inforamtion and identification 
+process of the community and consents to open an EHR in the community. The policy administrator of the community documents 
+the patient consent by adding the patient policies to the policy repository. 
+
+The policy administrator of the community adds the following policies to the policy repository with the 
+Mobile Privacy Policy Feed (PPQ-3) transaction:
+* an EPR policy set based on template 201 to grant the patient access the the EHR.
+* an EPR policy set based on template 203 to set the default confidentiality level for new documents.
+
+When both of the above policies are stored in the policy repository of the community, healthcare professionals must pupload 
+all new treatment documents to the patients EHR with the minimal confidentiality of the default confidentiality level. 
 
 #### Patient authorizes a healthcare professional 
 TBD
@@ -27,6 +37,10 @@ TBD
 
 #### Healthcare professional delegates the access rights
 TBD
+
+#### Policy Administrator sets a representative 
+TBD
+
 
 ### Actors and Transactions
 
