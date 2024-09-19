@@ -1,11 +1,32 @@
+### Scope
 According to Swiss EPR regulations, patients have the right to decide who is allowed to access and modify data in 
 their EPR, and under which circumstances (cf. emergency access). The national integration profile "Privacy Policy 
 Query" (CH:PPQ, see Amendment 2.1 of Annex 5 EPRO-FDHA) defines how to specify these decisions as access policies in 
 the XACML 2.0 format and interchange them using the SOAP transport protocol. For mobile applications, this 
-combination of standards is only restrictedly suitable, therefore a more lightweight solution like HL7 FHIR® is 
+combination of standards is only restrictedly suitable, therefore a more lightweight solution based on HL7 FHIR® is 
 required instead. 
 
 The national integration profile CH:PPQm — "Privacy Policy Query for Mobile" — is a FHIR-based counterpart of CH:PPQ.
+
+### Use Cases 
+
+#### EPR Onboarding
+TBD
+
+#### Patient authorizes a healthcare professional 
+TBD
+
+#### Patient authorizes a group of healthcare professionals
+TBD 
+
+#### Patient sets the default confidentiality code 
+TBD 
+
+#### Patient authorizes a healthcare professional to delegate access rights 
+TBD
+
+#### Healthcare professional delegates the access rights
+TBD
 
 ### Actors and Transactions
 
