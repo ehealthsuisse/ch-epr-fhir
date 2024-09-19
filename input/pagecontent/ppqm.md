@@ -11,25 +11,43 @@ The national integration profile CH:PPQm â€” "Privacy Policy Query for Mobile" â
 ### Use Cases 
 
 #### EPR Onboarding
-A patient contacts a community to open an EHR in the community. The patient runs through the inforamtion and identification 
+A patient contacts a community to open an EHR in the community. The patient passes the inforamtion and identification 
 process of the community and consents to open an EHR in the community. The policy administrator of the community documents 
 the patient consent by adding the patient policies to the policy repository. 
 
 The policy administrator of the community adds the following policies to the policy repository with the 
 Mobile Privacy Policy Feed (PPQ-3) transaction:
-* an EPR policy set based on template 201 to grant the patient access the the EHR.
-* an EPR policy set based on template 203 to set the default confidentiality level for new documents.
+* [EPR policy set based on template 201](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate201.html) to grant the patient access the the EHR.
+* [EPR policy set based on template 203](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate203.html) to set the default confidentiality level for new documents.
 
 When both of the above policies are stored in the policy repository of the community, healthcare professionals must pupload 
 all new treatment documents to the patients EHR with the minimal confidentiality of the default confidentiality level. 
 
 #### Patient authorizes a healthcare professional 
-TBD
+A patient wants to authorize a healthcare professional to access the patients EHR and to view the documents on a specific access level. 
+The patient authenticates in the patient portal and opens the view to the access policy settings. The patient opens the form to authorize 
+a individual healthcare professional and searches for the healthcare professional data. The patient selects the healthcare professional 
+data to be authorized, optionally sets an autorization end date and selects whether the healthcare professional is authorized 
+to delegate the access rights.  
+
+To authorize the healthcare professional, the patient portal adds the following policies to the policy repository with the 
+Mobile Privacy Policy Feed (PPQ-3) transaction: 
+* [EPR policy set based on template 304](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate304.html), if the healthcare professional is authorized to delegate the access rights,  
+* [EPR policy set based on template 301](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate301.html), otherwise. 
 
 #### Patient authorizes a group of healthcare professionals
-TBD 
+A patient wants to authorize a group of healthcare professional to access the patients EHR and to view the documents on a specific access level. 
+The patient authenticates in the patient portal and opens the view to the access policy settings. The patient opens the form to authorize groups 
+and searches for the group data. The patient selects the group to be authorized, sets an autorization end date and selects whether the healthcare 
+professional is authorized to delegate the access rights.
+
+To authorize the group of healthcare professionals, the patient portal adds the following policy to the policy repository with the Mobile Privacy Policy Feed (PPQ-3) transaction:
+* [EPR policy set based on template 302](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate302.html)
 
 #### Patient sets the default confidentiality code 
+TBD 
+
+#### Patient authorizes emergency access 
 TBD 
 
 #### Patient authorizes a healthcare professional to delegate access rights 
