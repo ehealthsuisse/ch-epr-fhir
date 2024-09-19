@@ -20,8 +20,8 @@ Mobile Privacy Policy Feed (PPQ-3) transaction:
 * [EPR policy set based on template 201](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate201.html) to grant the patient access the the EHR.
 * [EPR policy set based on template 203](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate203.html) to set the default confidentiality level for new documents.
 
-When both of the above policies are stored in the policy repository of the community, healthcare professionals must pupload 
-all new treatment documents to the patients EHR with the minimal confidentiality of the default confidentiality level. 
+When both of the above policies are stored in the policy repository of the community, healthcare professionals must upload 
+all new treatment documents to the patients EHR with the confidentiality set as the default confidentiality level, or higher. 
 
 #### Patient authorizes a healthcare professional 
 A patient wants to authorize a healthcare professional to access the patients EHR and to view the documents on a specific access level. 
@@ -68,12 +68,18 @@ opens the view with the delgation settings. The healthcare opens the form to cha
 professional to delegate the access rights to. The healthcare professional selects the healthcare professional to be authorized and optionally sets 
 a delgation end date.
 
-To ddeleghate the access rights the portal or primary system adds or updates the following policy in the policy repository with the Mobile Privacy Policy 
+To delegate the access rights, the portal or primary system adds or updates the following policy in the policy repository with the Mobile Privacy Policy 
 Feed (PPQ-3) transaction:
 * [EPR policy set based on template 301](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate301.html)
 
-#### Policy Administrator sets a representative 
-TBD
+#### Policy Administrator sets a patient representative 
+A policy administrator of the home community intends to set a person as a patient representative. The policy administrator authenticates to the community 
+portal and selects the view of patient representatives. The policy administrator opens the form to add a representative to the patient and enters the 
+required data.
+
+To add the person as patient representative, the portal adds the following policy in the policy repository with the Mobile Privacy Policy 
+Feed (PPQ-3) transaction:
+* [EPR policy set based on template 303](http://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-PpqmConsentTemplate303.html)
 
 
 ### Actors and Transactions
