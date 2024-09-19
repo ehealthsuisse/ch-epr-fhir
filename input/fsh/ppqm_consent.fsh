@@ -187,7 +187,7 @@ Profile: PpqmConsentTemplate202
 Parent: PpqmConsent
 Id: PpqmConsentTemplate202
 Title: "EPR policy set based on template 202"
-Description: "EPR policy set based on template 202 -- grants healthcare professionals accass to the patient's EPR in emergency mode.  This policy set shall be created during the patient's onboarding, but can be modified later."
+Description: "EPR policy set based on template 202 -- grants healthcare professionals access to the patient's EPR in emergency mode.  This policy set shall be created during the patient's onboarding, but can be modified later."
 * identifier[templateId].value = "202"
 * policyRule.coding from PpqmReferencedPolicySetGroupEmergency (required)
 * provision.period 0..0
@@ -201,7 +201,7 @@ Description: "EPR policy set based on template 202 -- grants healthcare professi
 Instance: PpqmConsentTemplate202Example
 InstanceOf: PpqmConsentTemplate202
 Title: "EPR policy set based on template 202"
-Description: "EPR policy set based on template 202 -- grants healthcare professionals accass to the patient's EPR in emergency mode.  This policy set shall be created during the patient's onboarding, but can be modified later."
+Description: "EPR policy set based on template 202 -- grants healthcare professionals access to the patient's EPR in emergency mode.  This policy set shall be created during the patient's onboarding, but can be modified later."
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 202 - Read access in emergency mode</p></div>"
