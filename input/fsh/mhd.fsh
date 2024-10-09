@@ -243,7 +243,7 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * content.attachment.url 1..1 MS
 * content.attachment.size MS
 * content.attachment.hash MS
-* content.attachment.title MS
+* content.attachment.title 1..1 MS
 * content.attachment.creation 1.. MS
 * content.format 1.. MS
 * content.format from $DocumentEntry.formatCode (required)
