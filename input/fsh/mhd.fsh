@@ -365,7 +365,7 @@ Parent: $IHE.MHD.UnContained.Comprehensive.SubmissionSet
 Id: ch-mhd-submissionset-comprehensive
 Title: "CH MHD SubmissionSet Comprehensive"
 Description: "CH MHD SubmissionSet Comprehensive"
-* extension 3..
+* extension 2..
 * extension contains $ch-ext-author-authorrole named authorAuthorRole 0..1 MS
 * extension[designationType].value[x] from $SubmissionSet.contentTypeCode (required)
 * extension[designationType] ^sliceName = "designationType"
