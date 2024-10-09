@@ -151,12 +151,12 @@ Usage: #inline
 Instance: PDQm-QueryResponse
 InstanceOf: ChPDQmQueryPatientResourceResponseMessage
 Title: "PDQm Query response message"               // need to be put it ig.xml
-Description: "CH PDQm Query response message example result for Franz Muster, 27.1.1955"           // need to be put it ig.xml
+Description: "CH PDQm Query response message example result for Franz Muster, 27.1.1995"           // need to be put it ig.xml
 Usage: #example
 * type = #searchset
 * total = 1
 * link.relation = "self"
-* link.url = "http://example.com/fhir/Patient?birthdate=1995-01-27&name=Muster"
+* link.url = "http://example.com/fhir/Patient?family=Muster&birthdate=1995-01-27"
 * entry.fullUrl = "http://example.com/fhir/Patient/FranzMuster"
 * entry.resource = FranzMuster
 * entry.search.mode = #match
@@ -169,7 +169,7 @@ Usage: #example
 * type = #searchset
 * total = 0
 * link.relation = "self"
-* link.url = "http://example.com/fhir/Patient?name=M"
+* link.url = "http://example.com/fhir/Patient?family=M"
 * entry.fullUrl = "urn:uuid:13c56fd3-f2f1-4174-ae56-c91f027ffddf"
 * entry.resource = PDQmResponseMoreAttributesRequested
 * entry.search.mode = #outcome

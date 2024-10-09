@@ -5,6 +5,7 @@
 * mCSD: set the system for LDAP DNs and add a slice to identifiers [#209](https://github.com/ehealthsuisse/ch-epr-fhir/issues/209)
 * mCSD: add the community as example [#200](https://github.com/ehealthsuisse/ch-epr-fhir/issues/200)
 * MHD: make the DocumentReference title mandatory [#219](https://github.com/ehealthsuisse/ch-epr-fhir/issues/219)
+* PDQm: fix the name search parameter [#212](https://github.com/ehealthsuisse/ch-epr-fhir/issues/212)
 
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
 * Relax Document Reference masterIdentifier requirements [#199](https://github.com/ehealthsuisse/ch-epr-fhir/issues/199)

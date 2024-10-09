@@ -44,19 +44,19 @@ The _Patient Demographics Supplier_ SHALL reference the _PDQm Patient_ profile o
 
 ##### Message Example
 
-Query for a patient with name Muster and birthdate 1995-01-27.
+Query for a patient with family name Muster and birthdate 1995-01-27.
 
 ```http
-GET [base]/Patient?name=Muster&birthdate=1995-01-27
+GET [base]/Patient?family=Muster&birthdate=1995-01-27
 Accept: application/fhir+json
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 ```
 [Example response to above query](Bundle-PDQm-QueryResponse.json.html)
 
-Query for a patient with name M returning too many results:
+Query for a patient with family name M returning too many results:
 
 ```http
-GET [base]/Patient?name=M
+GET [base]/Patient?family=M
 Accept: application/fhir+json
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 ```
