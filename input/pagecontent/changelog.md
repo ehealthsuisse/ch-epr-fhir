@@ -6,6 +6,7 @@
 * mCSD: add the community as example [#200](https://github.com/ehealthsuisse/ch-epr-fhir/issues/200)
 * MHD: make the DocumentReference title mandatory [#219](https://github.com/ehealthsuisse/ch-epr-fhir/issues/219)
 * PDQm: fix the name search parameter [#212](https://github.com/ehealthsuisse/ch-epr-fhir/issues/212)
+* MHD: fix minimal cardinality of extension slice in the SubmissionSet [#211](https://github.com/ehealthsuisse/ch-epr-fhir/issues/211)
 
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
 * Relax Document Reference masterIdentifier requirements [#199](https://github.com/ehealthsuisse/ch-epr-fhir/issues/199)
