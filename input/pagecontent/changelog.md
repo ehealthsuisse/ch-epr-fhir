@@ -8,6 +8,7 @@
 * PDQm: fix the name search parameter [#212](https://github.com/ehealthsuisse/ch-epr-fhir/issues/212)
 * MHD: fix minimal cardinality of extension slice in the SubmissionSet [#211](https://github.com/ehealthsuisse/ch-epr-fhir/issues/211)
 * MHD: specify usage of token search parameters in ITI-67 [#221](https://github.com/ehealthsuisse/ch-epr-fhir/issues/221)
+* PIXm: allow requesting the EPR-SPID as only targetSystem in PIXm queries [#223](http://github.com/ehealthsuisse/ch-epr-fhir/issues/223)
 
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
 * Relax Document Reference masterIdentifier requirements [#199](https://github.com/ehealthsuisse/ch-epr-fhir/issues/199)
