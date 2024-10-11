@@ -29,6 +29,7 @@ query parameters.
 #### Find Document References Request Message
 
 The Document Consumer SHALL include the search parameter patient.identifier with the oid of the EPR-SPID.
+The search parameters of type [token](https://hl7.org/fhir/R4/search.html#token) SHALL contain both the system and the code.
 
 _Find Document Reference_ example **request**:
 ```http
