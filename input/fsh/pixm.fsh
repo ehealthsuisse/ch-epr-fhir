@@ -18,7 +18,7 @@ Description: "The StructureDefinition defines the Input Parameters for the $ihe-
 * parameter[sourceIdentifier].valueIdentifier only Identifier
 * parameter[sourceIdentifier].valueIdentifier.system 1..
 * parameter[sourceIdentifier].valueIdentifier.value 1..
-* parameter[targetSystem] 2..2
+* parameter[targetSystem] 1..2
 * parameter[targetSystem] ^short = "targetSystem"
 * parameter[targetSystem].name = "targetSystem" (exactly)
 * parameter[targetSystem].valueUri 1..
