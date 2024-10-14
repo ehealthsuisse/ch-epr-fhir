@@ -14,7 +14,7 @@ a patient participating in the Swiss EPR.
 
 ### Referenced Standards
 
-1. [Patient Demographics Query for mobile (PDQm) Rev. 2.4.0](https://profiles.ihe.net/ITI/PDQm/index.html)
+1. [Patient Demographics Query for mobile (PDQm) {{site.data.fhir.ver.ihepdqmfhir | split: "/" | last}}]({{site.data.fhir.ver.ihepdqmfhir}})
 2. This PDQm Profile is based on Release 4 of the emerging [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
 
 ### Messages

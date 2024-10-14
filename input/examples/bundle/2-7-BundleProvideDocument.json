@@ -10,18 +10,6 @@
     "type": "transaction",
     "entry": [
         {
-            "fullUrl": "urn:uuid:d8d1fe44-07e9-4a84-985f-fde97d77d54b",
-            "resource": {
-                "resourceType": "Binary",
-                "contentType": "text/xml",
-                "data": "PENsaW5pY2FsRG9jdW1lbnQgeG1sbnM9InVybjpobDctb3JnOnYzIj4NCgk8dGl0bGU+SGVsbG88L3RpdGxlPg0KPC9DbGluaWNhbERvY3VtZW50PiA="
-            },
-            "request": {
-                "method": "POST",
-                "url": "Binary"
-            }
-        },
-        {
             "fullUrl": "urn:uuid:68a928c0-df48-4743-a291-bfb0609bbddc",
             "resource": {
                 "resourceType": "List",
@@ -182,7 +170,9 @@
                             "contentType": "text/xml",
                             "language": "de-CH",
                             "url": "urn:uuid:d8d1fe44-07e9-4a84-985f-fde97d77d54b",
-                            "creation": "2020-06-29T11:58:00+00:00"
+                            "creation": "2020-06-29T11:58:00+00:00",
+                            "title": "Medicationlist"
+
                         },
                         "format": {
                             "system": "http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode",
@@ -218,6 +208,18 @@
             "request": {
                 "method": "POST",
                 "url": "DocumentReference"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:d8d1fe44-07e9-4a84-985f-fde97d77d54b",
+            "resource": {
+                "resourceType": "Binary",
+                "contentType": "text/xml",
+                "data": "PENsaW5pY2FsRG9jdW1lbnQgeG1sbnM9InVybjpobDctb3JnOnYzIj4NCgk8dGl0bGU+SGVsbG88L3RpdGxlPg0KPC9DbGluaWNhbERvY3VtZW50PiA="
+            },
+            "request": {
+                "method": "POST",
+                "url": "Binary"
             }
         }
     ]
