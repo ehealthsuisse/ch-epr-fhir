@@ -1,5 +1,5 @@
 This section describes the additional requirements for the Swiss EPR of the [Find Document References
-[ITI-67]](https://profiles.ihe.net/ITI/MHD/ITI-67.html) transaction defined in the MHD Profile published in the IHE ITI
+[ITI-67]](https://profiles.ihe.net/ITI/MHD/iti-67.html) transaction defined in the MHD Profile published in the IHE ITI
 Trial Implementation “Mobile Access to Health Documents”.
 
 ### Scope
