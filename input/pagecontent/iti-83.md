@@ -111,7 +111,7 @@ The transaction SHALL be secured by Transport Layer Security (TLS) encryption an
 server certificates.
 
 The transaction SHALL use client authentication and authorization using basic authorization token as defined
-in the [IUA profile](https://profiles.ihe.net/ITI/IUA). The extended authorization token SHALL be conveyed as
+in the [IUA profile](https://profiles.ihe.net/ITI/IUA). The authorization token SHALL be conveyed as
 defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
 transaction.
 
