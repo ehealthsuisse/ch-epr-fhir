@@ -1,22 +1,5 @@
 ### Introduction
 
-{{site}}
-
-site.data.fhir.path: {{site.data.fhir.path}}
-
-site.data.fhir.ihemhdfhir: {{site.data.fhir.ihemhdfhir}}
-
-
-{% sqlToData itemQuery
-SELECT count(*) as n from metadata
-%}
-
-Number of Metadata Items: {{ itemQuery[0].n }}
-
-{% sql select * from Metadata %}
-{% sql select * from Properties %}
-{% sql select * from Resources %}
-
 The national extensions documented in this implementation guide shall be used in conjunction with the definitions of integration 
 profiles, actors and transactions provided in Volumes 1 through 3 of the IHE IT Infrastructure Technical Framework.
 

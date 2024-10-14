@@ -13,7 +13,7 @@ Trial Implementation with the working title ”Add RESTful ATNA (Query and Feed)
 
 ### Referenced Standards
 
-1. [Add RESTful ATNA (Query and Feed), Rev. 3.3 – Trial Implementation, July 2, 2021](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)  
+1. [Add RESTful ATNA (Query and Feed), Rev. 3.3](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)  
 2. This RESTful ATNA profile is based on Release 4 of the [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
 
 ### Messages
