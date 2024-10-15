@@ -16,6 +16,8 @@ This national extension adds restrictions to the amount of query results if too 
 This figure shows the actors directly involved in the _Patient Demographics Query for Mobile_ Profile and the 
 relevant transactions between them.
 
+The Patient Demographics Supplier is not required to implement the _Mobile Patient Demographics Query_ [ITI-78] transaction.
+
 ### Actor Options  
 No extensions or restrictions to the profile actor options are specified in the Swiss national extension. 
 
