@@ -284,6 +284,14 @@ Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC
 Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch)"/>
             <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ExampleAuditFindDocumentReferencesConsumer"/>
+            </reference>
+            <name value="Audit Example of ITI-67 at Consumer"/>
+            <description value="Audit Example for a Find Document References [ITI-67] from the Consumer perspective"/>
+            <exampleBoolean value="true" />
+        </resource>
 <resource>
             <reference>
                 <reference value="Bundle/FindMatchingCareServicesResponse"/>
