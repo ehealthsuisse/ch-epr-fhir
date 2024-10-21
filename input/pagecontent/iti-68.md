@@ -23,9 +23,14 @@ document from the Document Responder.
 
 <div>{% include MHD_ActorDiagram_ITI-68.svg %}</div>
 
-#### Retrieve Document Request Message
+####  Expected Actions
 
-#### Retrieve Document Response Message
+##### Federated Cross Community Access Option
+
+{% include iti-mhd-fxca-retrieve.html %}
+
+If the Document Responder supports the Federated Cross Community Access Option the Document Responder must be able to identify if a document retrieve 
+targets another community. If this is the case, it will need to forward the request to the target community, otherwise the request can be handled directly.
 
 #### CapabilityStatement Resource
 
@@ -54,7 +59,7 @@ transaction.
 
 The Document Responder actor SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
 defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for
-every Provide Document Bundle [ITI-65] request.
+every Retrieve Document [ITI-68] request.
 
 The Document Responder actor SHALL enforce a `traceparent` header to enable inspection of cross community
 transactions as defined in section [Trace Context header](tracecontext.html).

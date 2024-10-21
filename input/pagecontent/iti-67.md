@@ -38,10 +38,31 @@ Accept: application/fhir+json
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 ```
 
+####  Expected Actions
+
+The Document Responder shall process the query to discover the DocumentReference entries that match the search parameters given.
+
+Document Responder should support search page count requests from the Document Consumer of up to 100 resources.
+
+##### Federated Cross Community Access Option
+
+If the Document Responder supports the Federated Cross Community Access Option the Document Responder needs to delegate the queries
+to the different connected communities and aggregate and sort the results including the results of his own community.
+
+The Document Responder shall freeze the the result set from the queries and allow paged access, but return current resources as results are accessed. 
+
+{% include iti-mhd-fxca-query.html %}
+
 #### Find Document References Response Message
 
 The response Bundle SHALL follow the [CH MHD Find Document References Comprehensive Response message](StructureDefinition-ch-mhd-documentreference-comprehensive-bundle.html)
 Profile ([example: MHD Find DocumentReferences](Bundle-Bundle-FindDocumentReferences.html)).
+
+##### Federated Cross Community Access Option
+
+If a Document Responder does not respond, an OperationOutcome with a severity warning shall be added to the aggregated results indicating the community does not respond.
+
+For matching DocumentReferences returned by the Document Responder, the Document Responder must ensure by rewriting the id and attachment.url that follow-up reads, updates or document retrieval will be handled by same Document Responder actor. Any id, url rewrite should be kept for at least an hour.
 
 #### CapabilityStatement Resource
 
@@ -61,7 +82,7 @@ transaction.
 
 The Document Responder actor SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
 defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for
-every Provide Document Bundle [ITI-65] request.
+every Find Document References [ITI-67] response.
 
 The Document Responder actor SHALL enforce a `traceparent` header to enable inspection of cross community
 transactions as defined in section [Trace Context header](tracecontext.html).
