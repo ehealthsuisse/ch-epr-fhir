@@ -108,9 +108,8 @@ profile.
 
 The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
 
-The involved actors SHALL record audit events. The Policy Source SHALL use the ATNA FHIR Feed option thereby, the
-Policy Repository SHALL use either the ATNA FHIR Feed option or the ATNA TLS Syslog option.
+The **Policy Source** and **Policy Repository** SHALL record the right audit event for the operations:
 
-The audit records correspond to the ones of PPQ-1, with the following adaptations:
--	`EventTypeCode` SHALL be set to `EV("PPQ-3", "e-health-suisse", "Mobile Privacy Policy Feed")`.
--	The Destination User ID SHALL be the FHIR endpoint URI of the Policy Repository.
+- [CH Audit Event for [PPQ-3] **Create** Privacy Policy](StructureDefinition-ChAuditEventPpq3Create.html)
+- [CH Audit Event for [PPQ-3] **Update** Privacy Policy](StructureDefinition-ChAuditEventPpq3Update.html)
+- [CH Audit Event for [PPQ-3] **Delete** Privacy Policy](StructureDefinition-ChAuditEventPpq3Delete.html)

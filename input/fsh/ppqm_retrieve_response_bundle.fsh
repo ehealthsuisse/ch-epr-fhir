@@ -18,7 +18,7 @@ Usage: #example
 * type = http://hl7.org/fhir/bundle-type#searchset
 * total = 3
 * link.relation = "self"
-* link.url = "https://fhir.ch/ppqm/Consent?patient:identifier=urn:oid:2.16.756.5.30.1.127.3.10.3|123456789012345678"
+* link.url = "https://fhir.ch/ppqm/Consent?patient:identifier=urn:oid:2.16.756.5.30.1.127.3.10.3|761337610411353650"
 * entry[+].resource     = PpqmConsentTemplate201Example
 * entry[=].fullUrl      = "https://fhir.ch/ppqm/Consent/PpqmConsentTemplate201Example"
 * entry[=].search.mode  = #match

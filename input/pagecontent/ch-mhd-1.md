@@ -220,10 +220,11 @@ transactions as defined in section [Trace Context header](tracecontext.html).
 ##### Document Source Audit
 
 The **Document Source** shall record an
-[Audit Event for Update Document Metadata Transaction at Source](StructureDefinition-ch-mhd-updatedocumentmetadata-audit-source.html).
+[CH Audit Event for [CH:MHD-1] Document Source](StructureDefinition-ch-mhd-updatedocumentmetadata-audit-source.html)
+([example](AuditEvent-ChAuditEventChMhd1SourceExample.html)).
 
 ##### Document Recipient Audit
 
-
 The **Document Recipient** shall record an
-[Audit Event for Update Document Metadata Transaction at Recipient](StructureDefinition-ch-mhd-updatedocumentmetadata-audit-recipient.html).
+[CH Audit Event for [CH:MHD-1] Document Recipient](StructureDefinition-ch-mhd-updatedocumentmetadata-audit-recipient.html)
+([example](AuditEvent-ChAuditEventChMhd1RecipientExample.html)).

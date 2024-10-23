@@ -32,7 +32,14 @@ Repository.
 
 ##### Message Semantics
 
-[Audit Example for a Provide Bundle Transaction from source perspective](AuditEvent-ex-auditProvideBundle-source.html)
+The base profiles for the Swiss AuditEvents in the EPR are:
+
+- [CH Audit Event with a Basic Auth Token](StructureDefinition-ChAuditEventBasicToken.html) when a transaction is 
+  secured with a Basic IUA Token.
+- [CH Audit Event with an Extended Token](StructureDefinition-ChAuditEventExtendedToken.html) when a transaction is 
+  secured with an Extended IUA Token.
+
+[Audit Example for a Provide Bundle Transaction from source perspective](AuditEvent-ChAuditEventIti65SourceExample.html)
 
 ##### Expected Actions
 

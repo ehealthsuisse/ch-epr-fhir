@@ -123,7 +123,7 @@ these resources may not yield any result. Some example queries are given here:
 The response message is a [Search Results Bundle](http://hl7.org/fhir/R4/bundle.html#searchset) that contains
 **[Organizations](StructureDefinition-CH.mCSD.Organization.html)**,
 **[Practitioners](StructureDefinition-CH.mCSD.Practitioner.html)** and
-**[PractitionerRoles](StructureDefinition-CH.mCSD.Practitionerrole.html)**.
+**[PractitionerRoles](StructureDefinition-CH.mCSD.PractitionerRole.html)**.
 [An example of response message](Bundle-FindMatchingCareServicesResponse.html) is provided.
 
 #### Retrieve Care Services Resource Message
@@ -144,7 +144,7 @@ instance.
 - If the _Care Services Selective Supplier_ finds the resource, `HTTP 200 OK` is returned with the resource (an
   **[Organization](StructureDefinition-CH.mCSD.Organization.html)**,
   **[Practitioner](StructureDefinition-CH.mCSD.Practitioner.html)** or
-  **[PractitionerRole](StructureDefinition-CH.mCSD.Practitionerrole.html)**).
+  **[PractitionerRole](StructureDefinition-CH.mCSD.PractitionerRole.html)**).
 - If the _Care Services Selective Supplier_ does not find the resource, `HTTP 404 Not Found` is returned with an
   **[OperationOutcome](https://www.hl7.org/fhir/r4/operationoutcome.html)** resource.
 
@@ -170,7 +170,7 @@ Note that the same audit message is recorded by both **Care Services Selective S
 Selective Consumer**. The difference being the Audit Source element. Both sides record to show consistency between 
 the message sent by the Consumer and the action taken at the Supplier.
 
-The actors involved shall record audit events according to the [Audit Event for Find Matching Care Services for Read by
-the Care Services Selective Supplier and Consumer](https://profiles.ihe.net/ITI/mCSD/3.8.0/StructureDefinition-IHE.mCSD.Audit.CareServices.Read.html)
-or the [Audit Event for Find Matching Care Services for Query by the Care Services Selective Supplier and
-Consumer](https://profiles.ihe.net/ITI/mCSD/3.8.0/StructureDefinition-IHE.mCSD.Audit.CareServices.Query.html).
+The actors involved shall record audit events according to the
+[CH Audit Event for [ITI-90] Care Services Selective Consumer & Supplier, for a **Read** operation](StructureDefinition-ChAuditEventIti90Read.html)
+or the
+[CH Audit Event for [ITI-90] Care Services Selective Consumer & Supplier, for a **Query** operation](StructureDefinition-ChAuditEventIti90Query.html).

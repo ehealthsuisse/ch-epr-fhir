@@ -43,6 +43,10 @@
             <a href="CapabilityStatement-CH.PPQm.PolicySourceConsumer.html">CH:PPQm Policy Source and Consumer (client)</a>
             <p>CapabilityStatement for the Policy Source and Policy Consumer actors in the CH:PPQm profile (client).</p>
           </li>
+          <li>
+            <a href="CapabilityStatement-CH.ATNA.AuditCreator.html">ATNA Audit Creator (client)</a>
+            <p>CapabilityStatement for Client Actor in the IHE IT Infrastructure Technical Framework Supplement Add RESTful ATNA.</p>
+          </li>
         </ul>
       </li>
     </ul>
@@ -81,6 +85,10 @@
           <li>
             <a href="CapabilityStatement-CH.mCSD.CareServicesSelectiveSupplier.html">CH:PPQm Policy Repository (server)</a>
             <p>CapabilityStatement for the Policy Repository actor in the CH:PPQm profile (server).</p>
+          </li>
+          <li>
+            <a href="CapabilityStatement-CH.ATNA.AuditRecordRepository.html">ATNA Audit Record Repository (server)</a>
+            <p>CapabilityStatement for Server Actor in the IHE IT Infrastructure Technical Framework Supplement Add RESTful ATNA.</p>
           </li>
         </ul>
       </li>
