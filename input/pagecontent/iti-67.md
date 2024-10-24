@@ -38,10 +38,32 @@ Accept: application/fhir+json
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 ```
 
+####  Expected Actions
+
+The Document Responder SHALL process the query to discover the DocumentReference entries that match the search parameters given.
+
+Document Responder SHALL support search page count requests from the Document Consumer of up to 100 resources.
+
+##### Federated Cross Community Access Option
+
+If the Document Responder supports the Federated Cross Community Access Option the Document Responder SHALL delegate the queries
+to the different connected communities and aggregate and sort the results including the results of his own community.
+
+The Document Responder SHALL freeze the result set from the federated cross community queries and allow paged access by the Document Consumer. 
+Subsequent query to an individual result by the Document Consumer SHALL return the current resource, not the frozen one. 
+
+{% include iti-mhd-fxca-query.html %}
+
 #### Find Document References Response Message
 
 The response Bundle SHALL follow the [CH MHD Find Document References Comprehensive Response message](StructureDefinition-ch-mhd-documentreference-comprehensive-bundle.html)
 Profile ([example: MHD Find DocumentReferences](Bundle-Bundle-FindDocumentReferences.html)).
+
+##### Federated Cross Community Access Option
+
+If a Document Responder does not respond, an OperationOutcome with a severity warning SHALL be added to the aggregated results indicating the community does not respond.
+
+For matching DocumentReferences returned by the Document Responder, the Document Responder SHALL ensure by rewriting the id and attachment.url that follow-up reads, updates or document retrieval will be handled by same Document Responder actor. Any id, url rewrite SHALL be resolvable for at least an hour.
 
 #### CapabilityStatement Resource
 
@@ -52,16 +74,16 @@ The CapabilityStatement resource for the **Document Responder** is [MHD Document
 ### Security Consideration
 
 The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with
-server certificates.
+server certificates. Transactions across communities SHALL use mTLS.
 
 The transaction SHALL use client authentication and authorization using extended authorization token as defined
 in the [IUA profile](https://profiles.ihe.net/ITI/IUA). The extended authorization token SHALL be conveyed as
 defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
 transaction.
 
-The Document Responder actor SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
+All Document Responders except the one with the Federated Cross Community Access Option SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
 defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for
-every Provide Document Bundle [ITI-65] request.
+every Find Document References [ITI-67] response.
 
 The Document Responder actor SHALL enforce a `traceparent` header to enable inspection of cross community
 transactions as defined in section [Trace Context header](tracecontext.html).

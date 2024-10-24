@@ -1,0 +1,17 @@
+<div class="mermaid">
+%%{
+    init: {
+        'theme': 'neutral',
+        'themeVariables': {
+            'fontSize': '14px'
+        }
+    }
+}%%
+flowchart LR
+    A[Document Source] -->|Update Doc Metadata| B(DocumentRecipient
+    Option FXCA
+    Grouped with Document Source)
+    B --> C{own Community?}
+    C -->|yes| D(Document Recipient own community)
+    C -->|no| E(Document Recipient federated community)
+</div>
