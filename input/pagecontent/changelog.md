@@ -10,6 +10,7 @@
 * MHD: specify usage of token search parameters in ITI-67 [#221](https://github.com/ehealthsuisse/ch-epr-fhir/issues/221)
 * PIXm: allow requesting the EPR-SPID as only targetSystem in PIXm queries [#223](http://github.com/ehealthsuisse/ch-epr-fhir/issues/223)
 * MHD: update the MHD version and date in references [#213](https://github.com/ehealthsuisse/ch-epr-fhir/issues/213)
+* PDQm: replace the ITI-78 transaction with the ITI-119 transaction [#224](https://github.com/ehealthsuisse/ch-epr-fhir/issues/224)
 
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
 * Relax Document Reference masterIdentifier requirements [#199](https://github.com/ehealthsuisse/ch-epr-fhir/issues/199)

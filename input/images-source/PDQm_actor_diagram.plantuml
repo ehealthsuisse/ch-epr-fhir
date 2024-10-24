@@ -3,5 +3,5 @@
 title PDQm Actor Diagram
 agent "Patient Demographics Consumer" as Client
 agent "Patient Demographics Supplier" as Server
-Client -down-> Server  : "[[iti-78.html ITI-78 Mobile Patient Demographics Query]]"
+Client -down-> Server  : "[[iti-119.html ITI-119 Patient Demographics Match]]"
 @enduml

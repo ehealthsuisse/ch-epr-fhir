@@ -2,7 +2,7 @@ The extensions, restrictions and translations to the IHE IT Infrastructure (ITI)
 
 * [Get Access Token [ITI-71]](iti-71.html)
 * [Get Authorization Server Metadata [ITI-103]](iti-103.html)
-* [Mobile Patient Demographics Query [ITI-78]](iti-78.html)
+* [Patient Demographics Match [ITI-119]](iti-119.html)
 * [Mobile Patient Identifier Cross-reference Query [ITI-83]](iti-83.html)
 * [Patient Identity Feed FHIR [ITI-104]](iti-104.html)
 * [Provide Document Bundle [ITI-65]](iti-65.html)

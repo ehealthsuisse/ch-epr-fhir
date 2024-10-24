@@ -1,0 +1,15 @@
+@startuml
+hide footbox
+
+title Interaction Diagram for [ITI-119]
+
+hide footbox
+autoactivate on
+
+participant "Patient Demographics\nConsumer" as Client
+participant "Patient Demographics\nSupplier" as Server
+
+Client -> Server : Match Patient Resource
+Server --> Client : Match Patient Resource Response
+
+@enduml
