@@ -29,8 +29,8 @@ document from the Document Responder.
 
 {% include iti-mhd-fxca-retrieve.html %}
 
-If the Document Responder supports the Federated Cross Community Access Option the Document Responder must be able to identify if a document retrieve 
-targets another community. If this is the case, it will need to forward the request to the target community, otherwise the request can be handled directly.
+All Document Responders except the one with the Federated Cross Community Access Option SHALL identify if the document retrieve 
+targets another community. If this is the case, it SHALL forward the request to the target community, otherwise the request can be handled directly.
 
 #### CapabilityStatement Resource
 
@@ -40,29 +40,21 @@ The CapabilityStatement resource for the **Document Responder** is [MHD Document
 
 ### Security Consideration
 
-TLS SHALL be used. This national extension enforces authentication and authorization of access to the
-Document Responder using the IUA profile with extended access token. Consequently
-the _Retrieve Document_ [ITI-68] request must authorize using the [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
-transaction of the IUA profile.
-
-For the `traceparent` header handling refer to [Trace Context header](tracecontext.html).
-
-#### Security Audit Considerations
-
-The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with
-server certificates.
+The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with server certificates. Transactions across communities SHALL use mTLS.
 
 The transaction SHALL use client authentication and authorization using extended authorization token as defined
 in the [IUA profile](https://profiles.ihe.net/ITI/IUA). The extended authorization token SHALL be conveyed as
 defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
 transaction.
 
-The Document Responder actor SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
+All Document Responders except the one with the Federated Cross Community Access Option SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
 defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for
 every Retrieve Document [ITI-68] request.
 
 The Document Responder actor SHALL enforce a `traceparent` header to enable inspection of cross community
 transactions as defined in section [Trace Context header](tracecontext.html).
+
+#### Security Audit Considerations
 
 ##### Document Consumer Audit
 

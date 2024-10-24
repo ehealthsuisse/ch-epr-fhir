@@ -40,16 +40,17 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 
 ####  Expected Actions
 
-The Document Responder shall process the query to discover the DocumentReference entries that match the search parameters given.
+The Document Responder SHALL process the query to discover the DocumentReference entries that match the search parameters given.
 
-Document Responder should support search page count requests from the Document Consumer of up to 100 resources.
+Document Responder SHALL support search page count requests from the Document Consumer of up to 100 resources.
 
 ##### Federated Cross Community Access Option
 
-If the Document Responder supports the Federated Cross Community Access Option the Document Responder needs to delegate the queries
+If the Document Responder supports the Federated Cross Community Access Option the Document Responder SHALL delegate the queries
 to the different connected communities and aggregate and sort the results including the results of his own community.
 
-The Document Responder shall freeze the result set from the queries and allow paged access, but return current resources as results are accessed. 
+The Document Responder SHALL freeze the result set from the federated cross community queries and allow paged access by the Document Consumer. 
+Subsequent query to an individual result by the Document Consumer SHALL return the current resource, not the frozen one. 
 
 {% include iti-mhd-fxca-query.html %}
 
@@ -60,9 +61,9 @@ Profile ([example: MHD Find DocumentReferences](Bundle-Bundle-FindDocumentRefere
 
 ##### Federated Cross Community Access Option
 
-If a Document Responder does not respond, an OperationOutcome with a severity warning shall be added to the aggregated results indicating the community does not respond.
+If a Document Responder does not respond, an OperationOutcome with a severity warning SHALL be added to the aggregated results indicating the community does not respond.
 
-For matching DocumentReferences returned by the Document Responder, the Document Responder must ensure by rewriting the id and attachment.url that follow-up reads, updates or document retrieval will be handled by same Document Responder actor. Any id, url rewrite should be kept for at least an hour.
+For matching DocumentReferences returned by the Document Responder, the Document Responder SHALL ensure by rewriting the id and attachment.url that follow-up reads, updates or document retrieval will be handled by same Document Responder actor. Any id, url rewrite SHALL be resolvable for at least an hour.
 
 #### CapabilityStatement Resource
 
@@ -73,14 +74,14 @@ The CapabilityStatement resource for the **Document Responder** is [MHD Document
 ### Security Consideration
 
 The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with
-server certificates.
+server certificates. Transactions across communities SHALL use mTLS.
 
 The transaction SHALL use client authentication and authorization using extended authorization token as defined
 in the [IUA profile](https://profiles.ihe.net/ITI/IUA). The extended authorization token SHALL be conveyed as
 defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
 transaction.
 
-The Document Responder actor SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
+All Document Responders except the one with the Federated Cross Community Access Option SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
 defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for
 every Find Document References [ITI-67] response.
 
