@@ -9,9 +9,9 @@
 }%%
 flowchart LR
     A[Document Source] -->|Update Doc Metadata| B(DocumentRecipient
-    Opt FXCA
+    Option FXCA
     Grouped with Document Source)
-    B --> C(own Community?)
-    C -->|yes| B 
-    C -->|no| D(Document Recipient federated community)
+    B --> C{own Community?}
+    C -->|yes| D(Document Recipient own community)
+    C -->|no| E(Document Recipient federated community)
 </div>

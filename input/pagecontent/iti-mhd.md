@@ -55,7 +55,8 @@ The Federated Cross Community Access Option allows querying, retrieving document
 
 ##### Querying, retrieving documents and updating document metadata over multiple communities
 
- A community and reference community SHALL support one Document Responder with the Federated Cross Community Access and one Document Responder without the Federated Cross Community Access option. 
+A community and reference community SHALL support one Document Responder with the Federated Cross Community Access Option for EPR Apps.
+In addition a community and reference community SHALL support one Document Responder without the Federated Cross Community Access Option for other communities.
 
 {% include iti-mhd-fxca-query.html %}
 

@@ -49,7 +49,7 @@ Document Responder should support search page count requests from the Document C
 If the Document Responder supports the Federated Cross Community Access Option the Document Responder needs to delegate the queries
 to the different connected communities and aggregate and sort the results including the results of his own community.
 
-The Document Responder shall freeze the the result set from the queries and allow paged access, but return current resources as results are accessed. 
+The Document Responder shall freeze the result set from the queries and allow paged access, but return current resources as results are accessed. 
 
 {% include iti-mhd-fxca-query.html %}
 
