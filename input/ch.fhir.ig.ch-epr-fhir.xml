@@ -132,17 +132,17 @@
             <reference>
                 <reference value="Bundle/PDQm-QueryResponse"/>
             </reference>
-            <name value="PDQm Query response message"/>
-            <description value="CH PDQm Query response message example result for Franz Muster, 27.1.1955"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-querypatientresourceresponsemessage"/>
+            <name value="PDQm Match response message"/>
+            <description value="CH PDQm Match response message example result for Franz Muster, 27.1.1955"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-matchparametersout"/>
         </resource>
         <resource>
             <reference>
                 <reference value="Bundle/PDQm-QueryResponseTooManyResults"/>
             </reference>
-            <name value="PDQm Query response message too many results"/>
-            <description value="CH PDQm Query response message with too many results indication"/>
-            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-querypatientresourceresponsemessage"/>
+            <name value="PDQm Match response message too many results"/>
+            <description value="CH PDQm Match response message with too many results indication"/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-matchparametersout"/>
         </resource>
         <resource>
             <reference>
@@ -705,8 +705,8 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="iti-78.html"/>
-                    <title value="Mobile Patient Demographics Query [ITI-78]"/>
+                    <nameUrl value="iti-119.html"/>
+                    <title value="Patient Demographics Match [ITI-119]"/>
                     <generation value="markdown"/>
                 </page>
                 <page>

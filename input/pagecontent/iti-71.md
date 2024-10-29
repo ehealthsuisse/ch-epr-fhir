@@ -770,7 +770,7 @@ The IUA Authorization Server SHALL store the access token and the assigned autho
 
 ##### Message Example
 
-A JWT access token returned by the IUA Authorization Server and to be used to retrieve patient data may look like:
+A basic JWT access token returned by the IUA Authorization Server and to be used to retrieve patient data may look like:
 
 ```json
 {
@@ -793,7 +793,7 @@ A JWT access token returned by the IUA Authorization Server and to be used to re
 }
 ```
 
-A extend JWT access token to be used to access patient documents SHALL have the additional attributes of the purpose of use, subject role, the EPR-SPID of the patient and may look like:
+An extended JWT access token to be used to access patient documents SHALL have the additional attributes of the purpose of use, subject role, the EPR-SPID of the patient and may look like:
 
 ```json
 {
@@ -840,7 +840,7 @@ A extend JWT access token to be used to access patient documents SHALL have the 
 }
 ```
 
-A JWT access token to be used to access by an assistant acting behalf on a healthcare professional for a patient SHALL have the additional extension ch_delegation:
+An extended JWT access token to be used to access by an assistant acting behalf on a healthcare professional for a patient SHALL have the additional extension ch_delegation:
 
 ```json
 {

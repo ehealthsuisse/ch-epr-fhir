@@ -34,7 +34,7 @@ component "EPR API" {
   IUAClient --> IUAResourceServer : Incorporate Access Token [ITI-72]
 
   [Patient Demographics Supplier] as PDQmSupplier
-  PDQmConsumer --> PDQmSupplier : Mobile Patient Demographics Query [ITI-78]
+  PDQmConsumer --> PDQmSupplier : Patient Demographics Match [ITI-119]
 
   [PIXm Patient Identifier Cross-reference Manager] as PIXmManager
   PIXmConsumer --> PIXmManager : Mobile Patient Identifier Cross-reference Query [ITI-83]
