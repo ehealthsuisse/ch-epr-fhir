@@ -4,13 +4,14 @@
 * mCSD: require only one identifier for organizations [#210](https://github.com/ehealthsuisse/ch-epr-fhir/issues/210)
 * mCSD: set the system for LDAP DNs and add a slice to identifiers [#209](https://github.com/ehealthsuisse/ch-epr-fhir/issues/209)
 * mCSD: add the community as example [#200](https://github.com/ehealthsuisse/ch-epr-fhir/issues/200)
-* MHD: make the DocumentReference title mandatory [#219](https://github.com/ehealthsuisse/ch-epr-fhir/issues/219)
+* PIXm: allow requesting the EPR-SPID as only targetSystem in PIXm queries [#223](http://github.com/ehealthsuisse/ch-epr-fhir/issues/223)
 * PDQm: fix the name search parameter [#212](https://github.com/ehealthsuisse/ch-epr-fhir/issues/212)
+* PDQm: replace the ITI-78 transaction with the ITI-119 transaction [#224](https://github.com/ehealthsuisse/ch-epr-fhir/issues/224)
 * MHD: fix minimal cardinality of extension slice in the SubmissionSet [#211](https://github.com/ehealthsuisse/ch-epr-fhir/issues/211)
 * MHD: specify usage of token search parameters in ITI-67 [#221](https://github.com/ehealthsuisse/ch-epr-fhir/issues/221)
-* PIXm: allow requesting the EPR-SPID as only targetSystem in PIXm queries [#223](http://github.com/ehealthsuisse/ch-epr-fhir/issues/223)
+* MHD: make the DocumentReference title mandatory [#219](https://github.com/ehealthsuisse/ch-epr-fhir/issues/219)
 * MHD: update the MHD version and date in references [#213](https://github.com/ehealthsuisse/ch-epr-fhir/issues/213)
-* PDQm: replace the ITI-78 transaction with the ITI-119 transaction [#224](https://github.com/ehealthsuisse/ch-epr-fhir/issues/224)
+* Audit: add example of AuditEvent with Trace Context [#186](https://github.com/ehealthsuisse/ch-epr-fhir/issues/186)
 
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
 * Relax Document Reference masterIdentifier requirements [#199](https://github.com/ehealthsuisse/ch-epr-fhir/issues/199)
