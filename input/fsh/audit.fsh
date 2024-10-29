@@ -76,7 +76,7 @@ Usage: #example
     * code = #24
     * display = "Query"
   * description = "GET http://example.org/fhir/DocumentReference?patient.identifier=urn:oid:2.16.756.5.30.1.127.3.10.3|761337610411353650&status=current"
-  * query = "aHR0cDovL2V4YW1wbGUub3JnL2ZoaXIvRG9jdW1lbnRSZWZlcmVuY2U_cGF0aWVudC5pZGVudGlmaWVyPXVybjpvaWQ6Mi4xNi43NTYuNS4zMC4xLjEyNy4zLjEwLjN8NzYxMzM3NjEwNDExMzUzNjUwJnN0YXR1cz1jdXJyZW50"
+  * query = "R0VUIGh0dHA6Ly9leGFtcGxlLm9yZy9maGlyL0RvY3VtZW50UmVmZXJlbmNlP3BhdGllbnQuaWRlbnRpZmllcj11cm46b2lkOjIuMTYuNzU2LjUuMzAuMS4xMjcuMy4xMC4zfDc2MTMzNzYxMDQxMTM1MzY1MCZzdGF0dXM9Y3VycmVudA=="
 * entity[patient]
   * what
     * identifier
