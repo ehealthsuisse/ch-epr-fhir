@@ -93,11 +93,11 @@ transactions as defined in section [Trace Context header](tracecontext.html).
 ##### Document Consumer Audit
 
 The **Document Consumer** shall record a
-[Find Document References Consumer Audit Event Log](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Consumer.html).
-[Audit Example for a Find Document References transaction from consumer perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditFindDocumentReferences-consumer.html).
+[CH Audit Event for [ITI-67] Document Consumer](StructureDefinition-ChAuditEventIti67Consumer.html) 
+([example](AuditEvent-ChAuditEventIti67ConsumerExample.html)).
 
 ##### Document Responder Audit
 
 The **Document Responder** shall record a
-[Find Document References Responder Audit Event Log](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.FindDocumentReferences.Audit.Responder.html).
-[Audit Example for a Find Document Lists Transaction from responder perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditFindDocumentReferences-responder.html).
+[CH Audit Event for [ITI-67] Document Responder](StructureDefinition-ChAuditEventIti67Responder.html)
+([example](AuditEvent-ChAuditEventIti67ResponderExample.html)).

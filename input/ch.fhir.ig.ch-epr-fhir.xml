@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <ImplementationGuide xmlns="http://hl7.org/fhir">
     <id value="ch.fhir.ig.ch-epr-fhir"/>
     <text>
@@ -182,15 +181,6 @@
         </resource>
         <resource>
             <reference>
-                <reference value="AuditEvent/ex-auditProvideBundle-source"/>
-            </reference>
-            <name value="ATNA Audit Event for Provide Bundle Transaction at Source"/>
-            <description value="Audit Example for a Provide Bundle Transaction from source perspective"/>
-            <exampleCanonical
-                    value="https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.ProvideBundle.Audit.Source"/>
-        </resource>
-        <resource>
-            <reference>
                 <reference value="OperationOutcome/PDQmResponseMoreAttributesRequested"/>
             </reference>
             <name value="PDQm OperationOutcome More Attributes Requested Example"/>
@@ -286,14 +276,6 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         </resource>
         <resource>
             <reference>
-                <reference value="AuditEvent/ExampleAuditFindDocumentReferencesConsumer"/>
-            </reference>
-            <name value="Audit Example of ITI-67 at Consumer"/>
-            <description value="Audit Example for a Find Document References [ITI-67] from the Consumer perspective"/>
-            <exampleBoolean value="true" />
-        </resource>
-<resource>
-            <reference>
                 <reference value="Bundle/FindMatchingCareServicesResponse"/>
             </reference>
             <name value="mCSD Find Matching Care Services Response Bundle"/>
@@ -383,6 +365,244 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             </reference>
             <name value="PPQm Consent for template 304"/>
             <description value="CH:PPQm Consent for template 304 -- Read access for a healthcare professional, with delegation"/>
+        </resource>
+
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti65SourceExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-65] transaction at Source"/>
+            <description
+                    value="This example shows an  made by the Document Source for an ITI-65 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti65Source"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti65RecipientExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-65] transaction at Recipient"/>
+            <description
+                    value="This example shows an  made by the Document Recipient for an ITI-65 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti65Recipient"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti67ConsumerExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-67] transaction at Consumer"/>
+            <description
+                    value="This example shows an  made by the Document Consumer for an ITI-67 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti67Consumer"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti67ResponderExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-67] transaction at Responder"/>
+            <description
+                    value="This example shows an  made by the Document Responder for an ITI-67 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti67Responder"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti68ConsumerExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-68] transaction at Consumer"/>
+            <description
+                    value="This example shows an  made by the Document Consumer for an ITI-68 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti68Consumer"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti68ResponderExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-68] transaction at Responder"/>
+            <description
+                    value="This example shows an  made by the Document Responder for an ITI-68 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti68Responder"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventChMhd1SourceExample"/>
+            </reference>
+            <name value="Example of audit event for a [CH:MHD-1] transaction at Source"/>
+            <description value="This example shows an  made by the Document Source for a CH:MHD-1 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-source"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventChMhd1RecipientExample"/>
+            </reference>
+            <name value="Example of audit event for a [CH:MHD-1] transaction at Recipient"/>
+            <description
+                    value="This example shows an  made by the Document Recipient for a CH:MHD-1 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-recipient"/>
+        </resource>
+
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti83ConsumerExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-83] transaction at Consumer"/>
+            <description
+                    value="This example shows an  made by the Patient Identifier Cross-reference Consumer for an ITI-83 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti83Consumer"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti83ManagerExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-83] transaction at Manager"/>
+            <description
+                    value="This example shows an  made by the Patient Identifier Cross-reference Manager for an ITI-83 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti83Manager"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti104SourceExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-104] transaction at Source"/>
+            <description
+                    value="This example shows an  made by the Patient Identity Source for an ITI-104 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti104Source"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti104ManagerCreateExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-104] add transaction at Manager"/>
+            <description
+                    value="This example shows an  made by the Patient Identifier Cross-reference Manager for an ITI-104 transaction that added a new Patient."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti104ManagerCreate"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti104ManagerUpdateExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-104] update transaction at Manager"/>
+            <description
+                    value="This example shows an  made by the Patient Identifier Cross-reference Manager for an ITI-104 transaction that revised an existing Patient."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti104ManagerUpdate"/>
+        </resource>
+
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti119ConsumerExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-119] transaction at Consumer"/>
+            <description
+                    value="This example shows an  made by the Patient Demographics Consumer for an ITI-119 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti119Consumer"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti119SupplierExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-119] transaction at Supplier"/>
+            <description
+                    value="This example shows an  made by the Patient Demographics Supplier for an ITI-119 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti119Supplier"/>
+        </resource>
+
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventPpq3CreateExample"/>
+            </reference>
+            <name value="Example of audit event for a [PPQ-3] create transaction"/>
+            <description
+                    value="This example shows an  made by the Policy Source for a PPQ-3 transaction that added a new Consent."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq3Create"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventPpq3UpdateExample"/>
+            </reference>
+            <name value="Example of audit event for a [PPQ-3] update transaction"/>
+            <description
+                    value="This example shows an  made by the Policy Repository for a PPQ-3 transaction that updated an existing Consent."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq3Update"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventPpq3DeleteExample"/>
+            </reference>
+            <name value="Example of audit event for a [PPQ-3] delete transaction"/>
+            <description
+                    value="This example shows an AuditEvent made by the Policy Source for a PPQ-3 transaction that deleted a Consent."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq3Delete"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/ChAuditEventPpq4Example"/>
+            </reference>
+            <name value="Example of bundle of audit events for a [PPQ-4] transaction"/>
+            <description
+                    value="This example shows a Bundle of AuditEvents made by the Policy Source for a PPQ-4 transaction."/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventPpq5ConsumerExample"/>
+            </reference>
+            <name value="Example of audit event for a [PPQ-5] transaction at Consumer"/>
+            <description
+                    value="This example shows an  made by the Policy Consumer for a PPQ-5 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq5Consumer"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventPpq5RepositoryExample"/>
+            </reference>
+            <name value="Example of audit event for a [PPQ-5] transaction at Repository"/>
+            <description
+                    value="This example shows an  made by the Policy Repository for a PPQ-5 transaction."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq5Repository"/>
+        </resource>
+
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti90ReadExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-90] read transaction"/>
+            <description
+                    value="This example shows an  made by the Care Services Selective Consumer for an ITI-90 transaction that read an Organization."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti90Read"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventIti90QueryExample"/>
+            </reference>
+            <name value="Example of audit event for an [ITI-90] query transaction"/>
+            <description
+                    value="This example shows an  made by the Care Services Selective Supplier for an ITI-90 transaction that searched Practitioners."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti90Query"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventmCSD1CreateExample"/>
+            </reference>
+            <name value="Example of audit event for a [CH:mCSD-1] create transaction"/>
+            <description
+                    value="This example shows an AuditEvent made by the Care Services Source for a CH:mCSD-1 transaction that added a new PractitionerRole (relationship)."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventmCSD1Create"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventmCSD1UpdateExample"/>
+            </reference>
+            <name value="Example of audit event for a [CH:mCSD-1] update transaction"/>
+            <description
+                    value="This example shows an AuditEvent made by the Care Services Directory for a CH:mCSD-1 transaction that updated an existing Practitioner."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventmCSD1Update"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="AuditEvent/ChAuditEventmCSD1DeleteExample"/>
+            </reference>
+            <name value="Example of audit event for a [CH:mCSD-1] delete transaction"/>
+            <description
+                    value="This example shows an AuditEvent made by the Care Services Directory for a CH:mCSD-1 transaction that deleted an Organization."/>
+            <exampleCanonical value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventmCSD1Delete"/>
         </resource>
 
         <!-- CH EPR FHIR: Resource Profiles -->
@@ -490,19 +710,19 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/mCSD.Add.Audit"/>
+                <reference value="StructureDefinition/ChAuditEventmCSD1Create"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/mCSD.Update.Audit"/>
+                <reference value="StructureDefinition/ChAuditEventmCSD1Update"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>
         <resource>
             <reference>
-                <reference value="StructureDefinition/mCSD.Delete.Audit"/>
+                <reference value="StructureDefinition/ChAuditEventmCSD1Delete"/>
             </reference>
             <exampleBoolean value="false"/>
         </resource>

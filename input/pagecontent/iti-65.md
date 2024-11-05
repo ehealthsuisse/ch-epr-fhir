@@ -94,11 +94,11 @@ transactions as defined in section [Trace Context header](tracecontext.html).
 ##### Document Source Audit
 
 The **Document Source** shall record an
-[Audit Event for Provide Bundle Transaction at Source](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.ProvideBundle.Audit.Source.html).
-[Audit Example for a Provide Bundle Transaction from source perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditProvideBundle-source.html).
+[CH Audit Event for [ITI-65] Document Source](StructureDefinition-ChAuditEventIti65Source.html) 
+([example](AuditEvent-ChAuditEventIti65SourceExample.html)).
 
 ##### Document Recipient Audit
 
 The **Document Recipient** shall record an
-[Audit Event for Provide Bundle Transaction at Recipient](https://profiles.ihe.net/ITI/MHD/StructureDefinition-IHE.MHD.ProvideBundle.Audit.Recipient.html).
-[Audit Example for a Provide Bundle Transaction from recipient perspective](https://profiles.ihe.net/ITI/MHD/AuditEvent-ex-auditProvideBundle-recipient.html).
+[CH Audit Event for [ITI-65] Document Recipient](StructureDefinition-ChAuditEventIti65Recipient.html)
+([example](AuditEvent-ChAuditEventIti65RecipientExample.html)).

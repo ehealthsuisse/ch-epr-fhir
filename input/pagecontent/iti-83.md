@@ -123,11 +123,11 @@ transactions as defined in section [Trace Context header](tracecontext.html).
 ##### Patient Identifier Cross-reference Consumer Audit
 
 The **Patient Identifier Cross-reference Consumer** shall record a
-[PIXm Query Consumer Audit Event Log](https://profiles.ihe.net/ITI/PIXm/StructureDefinition-IHE.PIXm.Query.Audit.Consumer.html).
-[Audit Example for a PIXm Query transaction from consumer perspective](https://profiles.ihe.net/ITI/PIXm/AuditEvent-ex-auditPixmQuery-consumer.html).
+[CH Audit Event for [ITI-83] Patient Identifier Cross-reference Consumer](StructureDefinition-ChAuditEventIti83Consumer.html)
+([example](AuditEvent-ChAuditEventIti83ConsumerExample.html)).
 
 ##### Patient Identifier Cross-reference Manager Audit
 
 The **Patient Identifier Cross-reference Manager** shall record a
-[PIXm Query Manager Audit Event Log](https://profiles.ihe.net/ITI/PIXm/StructureDefinition-IHE.PIXm.Query.Audit.Manager.html).
-[Audit Example for a PIXm Query transaction from manager perspective](https://profiles.ihe.net/ITI/PIXm/AuditEvent-ex-auditPixmQuery-manager.html).
+[CH Audit Event for [ITI-83] Patient Identifier Cross-reference Manager](StructureDefinition-ChAuditEventIti83Manager.html)
+([example](AuditEvent-ChAuditEventIti83ManagerExample.html)).

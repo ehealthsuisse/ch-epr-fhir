@@ -256,8 +256,8 @@ Usage: #example
 * type = #searchset
 * total = 1
 * link.relation = "self"
-* link.url = "http://example.com/fhir/Patient/$match"
-* entry[Patient][+].fullUrl = "http://example.com/fhir/Patient/FranzMuster"
+* link.url = "https://example.org/fhir/Patient/$match"
+* entry[Patient][+].fullUrl = "https://example.org/fhir/Patient/FranzMuster"
 * entry[Patient][=].resource = FranzMuster
 * entry[Patient][=].search.mode = #match
 * entry[Patient][=].search.score = 1
@@ -272,7 +272,64 @@ Usage: #example
 * type = #searchset
 * total = 0
 * link.relation = "self"
-* link.url = "http://example.com/fhir/Patient/$match"
+* link.url = "https://example.org/fhir/Patient/$match"
 * entry[OperationOutcome].fullUrl = "urn:uuid:13c56fd3-f2f1-4174-ae56-c91f027ffddf"
 * entry[OperationOutcome].resource = PDQmResponseMoreAttributesRequested
 * entry[OperationOutcome].search.mode = #outcome
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Audit events
+Profile:     ChAuditEventIti119Consumer
+Parent:      AuditPdqmMatchConsumer
+Title:       "CH Audit Event for [ITI-119] Patient Demographics Consumer"
+Description: "This profile is used to define the CH Audit Event for the [ITI-119] transaction and the actor 'Patient
+              Demographics Consumer'."
+* insert ChAuditEventExtendedRules
+* agent[client] ^short = "The 'Patient Demographics Consumer' actor (EPR application)"
+* agent[server] ^short = "The 'Patient Demographics Supplier' actor (EPR API)"
+* entity[patient].what.identifier 1..1
+  * value 1..1
+  * system 1..1
+
+
+Profile:     ChAuditEventIti119Supplier
+Parent:      AuditPdqmMatchSupplier
+Title:       "CH Audit Event for [ITI-119] Patient Demographics Supplier"
+Description: "This profile is used to define the CH Audit Event for the [ITI-119] transaction and the actor 'Patient
+Demographics Supplier'."
+* insert ChAuditEventExtendedRules
+* agent[client] ^short = "The 'Patient Demographics Consumer' actor (EPR application)"
+* agent[server] ^short = "The 'Patient Demographics Supplier' actor (EPR API)"
+* entity[patient].what.identifier 1..1
+  * value 1..1
+  * system 1..1
+
+
+Instance:   ChAuditEventIti119ConsumerExample
+InstanceOf: ChAuditEventIti119Consumer
+Usage:      #example
+* insert ChAuditEventIti119ExampleRules
+* insert ChExampleAuditEventClientRules
+* insert ChExampleAuditEventEntityPatientRules
+
+
+Instance:   ChAuditEventIti119SupplierExample
+InstanceOf: ChAuditEventIti119Supplier
+Usage:      #example
+* insert ChAuditEventIti119ExampleRules
+* insert ChExampleAuditEventServerRules
+* insert ChExampleAuditEventEntityPatientRules
+
+
+RuleSet: ChAuditEventIti119ExampleRules
+* insert ChExampleAuditEventBaseRules(client, server)
+* insert ChExampleAuditEventHcpRules
+* type = $auditEventType#rest
+* subtype[anySearch] = $restfulInteraction#search "search"
+* subtype[iti119] = $eventTypeCode#ITI-119 "Patient Demographics Match"
+* agent[server].network.address = "https://example.org/fhir/"
+* entity[query]
+  * type = $auditEntityType#2
+  * role = $objectRole#24
+  * query = "ewogICJyZXNvdXJjZVR5cGUiIDogIlBhcmFtZXRlcnMiLAogICJwYXJhbWV0ZXIiIDogWwogICAgewogICAgICAibmFtZSIgOiAicmVzb3VyY2UiLAogICAgICAicmVzb3VyY2UiIDogewogICAgICAgICJyZXNvdXJjZVR5cGUiIDogIlBhdGllbnQiLAogICAgICAgICJuYW1lIiA6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgImZhbWlseSIgOiAiTXVzdGVyIiwKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJiaXJ0aERhdGUiIDogIjE5OTUtMDEtMjciCiAgICAgIH0KICAgIH0KICBdCn0="

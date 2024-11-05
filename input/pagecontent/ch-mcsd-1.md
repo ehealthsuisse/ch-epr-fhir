@@ -167,9 +167,12 @@ For the `traceparent` header handling, refer to [Trace Context header](tracecont
 
 The **Care Services Source** and **Care Services Directory** shall record the right audit event for the operations:
 
-- [mCSD Audit Event: CH:mCSD-1 **Add** Care Service by the Source and Directory actors](StructureDefinition-mCSD.Add.Audit.html)
-- [mCSD Audit Event: CH:mCSD-1 **Update** Care Service by the Source and Directory actors](StructureDefinition-mCSD.Update.Audit.html)
-- [mCSD Audit Event: CH:mCSD-1 **Delete** Care Service by the Source and Directory actors](StructureDefinition-mCSD.Delete.Audit.html)
+- [CH Audit Event for [CH:mCSD-1] Care Services Source & Directory / **Add**](StructureDefinition-ChAuditEventmCSD1Create.html)
+  ([example](AuditEvent-ChAuditEventmCSD1CreateExample.html)).
+- [CH Audit Event for [CH:mCSD-1] Care Services Source & Directory / **Update**](StructureDefinition-ChAuditEventmCSD1Update.html)
+  ([example](AuditEvent-ChAuditEventmCSD1UpdateExample.html)).
+- [CH Audit Event for [CH:mCSD-1] Care Services Source & Directory / **Delete**](StructureDefinition-ChAuditEventmCSD1Delete.html)
+  ([example](AuditEvent-ChAuditEventmCSD1DeleteExample.html)).
 
 ### Consideration when implementing the mCSD profile with an LDAP backend (HPD)
 
