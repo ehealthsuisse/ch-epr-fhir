@@ -48,7 +48,7 @@ RuleSet: ChAuditEventRules
 * source
   * site 1..1
   * site ^short = "The OID of the audit source"
-* entity contains traceparent 1..1
+* entity contains traceparent 0..1
 * entity[traceparent]
   * ^short = "The 'traceparent' header value of the transaction"
   * what 1..1
