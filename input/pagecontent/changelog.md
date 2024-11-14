@@ -12,6 +12,7 @@
 * MHD: make the DocumentReference title mandatory [#219](https://github.com/ehealthsuisse/ch-epr-fhir/issues/219)
 * MHD: update the MHD version and date in references [#213](https://github.com/ehealthsuisse/ch-epr-fhir/issues/213)
 * Audit: add example of AuditEvent with Trace Context [#186](https://github.com/ehealthsuisse/ch-epr-fhir/issues/186)
+* Uniformize the _traceparent_ requirement wording on transaction pages [#236](https://github.com/ehealthsuisse/ch-epr-fhir/issues/236)
 
 ### DSTU4 Informative Ballot 2024 - Resolved Issues
 * Relax Document Reference masterIdentifier requirements [#199](https://github.com/ehealthsuisse/ch-epr-fhir/issues/199)

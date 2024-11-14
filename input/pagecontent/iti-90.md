@@ -162,7 +162,7 @@ TLS SHALL be used. This national extension enforces authentication and authoriza
 Selective Supplier_ using the IUA profile with basic access token. Consequently, the _Find Matching Care Services_
 [ITI-90] request must authorize using the [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA profile.
 
-For the `traceparent` header handling refer to [Trace Context header](tracecontext.html).
+The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 #### Security Audit Considerations
 

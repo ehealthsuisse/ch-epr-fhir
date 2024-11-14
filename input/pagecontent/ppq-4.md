@@ -46,7 +46,7 @@ as described in the Amendment mHealth of Annex 5, Section 3.2. Consequently, the
 [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA
 profile.
 
-The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
+The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 The **Policy Source** and **Policy Repository** SHALL record the right [PPQ-3] audit event for each operation in the 
 transaction:

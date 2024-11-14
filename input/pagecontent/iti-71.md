@@ -901,7 +901,7 @@ There are no CapabilityStatement resources defined for this transaction.
 IUA Authorization Clients, Authorization Servers and Resource Server actors SHALL use the JWS (signed) alternative 
 of the JWT token as specified in the IUA Trial Implementation. The JWE alternative SHALL not be used.
 
-For the `traceparent` header handling refer to [Trace Context header](tracecontext.html).
+The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 #### Security Audit Considerations
 

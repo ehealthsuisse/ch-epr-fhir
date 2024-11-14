@@ -59,4 +59,4 @@ The CapabilityStatement resource for the **Audit Record Repository** is
 
 TLS SHALL be used.
 
-For the `traceparent` header handling refer to [Trace Context header](tracecontext.html).
+The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).

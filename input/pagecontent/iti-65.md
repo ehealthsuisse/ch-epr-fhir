@@ -86,8 +86,7 @@ The Document Recipient actor SHALL be grouped with the Authorization Decision Co
 defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for 
 every Provide Document Bundle [ITI-65] request.
 
-The Document Recipient actor SHALL enforce a `traceparent` header to enable inspection of cross community 
-transactions as defined in section [Trace Context header](tracecontext.html).
+The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 #### Security Audit Considerations
 
