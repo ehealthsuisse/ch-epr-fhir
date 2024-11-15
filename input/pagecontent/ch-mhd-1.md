@@ -212,8 +212,7 @@ All Document Recipients except the one with the Federated Cross Community Access
 defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for
 every update document metadata [CH:MHD-1] request.
 
-The Document Recipient actor SHALL enforce a `traceparent` header to enable inspection of cross community
-transactions as defined in section [Trace Context header](tracecontext.html).
+The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 #### Security Audit Considerations
 

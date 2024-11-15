@@ -161,7 +161,7 @@ _Care Services Directory_ using the IUA profile with basic access token. Consequ
 _Add/Update/Delete Care Services_ [CH:mCSD-1] request must authorize using the
 [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA profile.
 
-For the `traceparent` header handling, refer to [Trace Context header](tracecontext.html).
+The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 #### Security Audit Considerations
 

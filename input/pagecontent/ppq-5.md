@@ -42,8 +42,7 @@ transaction SHALL be combined with the Incorporate Access Token
 [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA
 profile.
 
-The `traceparent` header is required, as described in [Trace Context header](tracecontext.html).
-
+The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 The **Policy Consumer** shall record a
 [CH Audit Event for [PPQ-5] Policy Consumer](StructureDefinition-ChAuditEventPpq5Consumer.html).
