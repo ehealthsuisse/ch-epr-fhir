@@ -1,7 +1,7 @@
 {
   "package-id" : "ch.fhir.ig.ch-epr-fhir",
-  "version" : "4.0.1-ballot",
-  "path" : "http://fhir.ch/ig/ch-epr-fhir/4.0.1-ballot",
+  "version" : "4.0.1-ballot-2",
+  "path" : "http://fhir.ch/ig/ch-epr-fhir/4.0.1-ballot-2",
   "mode" : "milestone",
   "status" : "ballot",
   "sequence" : "DSTU 4",

@@ -8,12 +8,12 @@
         </div>
     </text>
     <url value="http://fhir.ch/ig/ch-epr-fhir/ImplementationGuide/ch.fhir.ig.ch-epr-fhir"/>
-    <version value="4.0.1-ci-build"/>
+    <version value="4.0.1-ballot-2"/>
     <name value="CHEprFhir"/>
     <title value="CH EPR FHIR (R4)"/>
     <status value="active"/>
     <experimental value="false"/>
-    <date value="2024-05-16"/>
+    <date value="2024-11-18"/>
     <publisher value="eHealth Suisse"/>
     <contact>
         <name value="eHealth Suisse"/>
@@ -1040,7 +1040,8 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <!-- IG Parameters -->
         <parameter>
             <code value="releaselabel"/>
-            <value value="ci-build"/>
+<!--            <value value="ci-build"/> -->
+            <value value="ballot"/>
         </parameter>
         <parameter>
             <code value="path-pages"/>
