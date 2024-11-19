@@ -13,7 +13,7 @@ Title:       "CH Audit Event for [PPQ-3] Update privacy policy"
 Description: "This profile is used to define the CH Audit Event for the [PPQ-3] transaction and the actors 'Policy
 Source' and 'Policy Repository' when updating a privacy policy."
 * insert ChAuditEventPpq3Rules
-* subtype[anyUpdate] = $restfulInteraction#update "update"
+//* subtype[anyUpdate] = $restfulInteraction#update "update" (exactly) // Needed for BALP 1.1.3
 
 
 Profile:     ChAuditEventPpq3Delete
@@ -144,7 +144,7 @@ RuleSet: ChAuditEventPpq5Rules
 * agent[client] ^short = "The 'Policy Consumer' actor (EPR application)"
 * agent[server] ^short = "The 'Policy Repository' actor (EPR API)"
 * subtype contains ppq5 1..1
-* subtype[anySearch] = $restfulInteraction#search "search"
+//* subtype[anySearch] = $restfulInteraction#search "search" (exactly) // Needed for BALP 1.1.3
 * subtype[ppq5] = urn:e-health-suisse:event-type-code#PPQ-5 "Mobile Privacy Policy Retrieve"
 * entity[query] ^short = "The privacy policy query"
 // * entity[query].role = $objectRole#13 "Security Resource" TODO: #24 in BALP, #13 in PPQ-2
@@ -172,6 +172,7 @@ RuleSet: ChAuditEventPpq5ExampleRules
 * insert ChExampleAuditEventEntityPatientRules
 * type = $auditEventType#rest "Restful Operation"
 * subtype[ppq5] = urn:e-health-suisse:event-type-code#PPQ-5 "Mobile Privacy Policy Retrieve"
+* subtype[anySearch] = $restfulInteraction#search "search"
 * agent[server].network.address = "https://example.org/fhir/"
 * entity[query]
   * type = $auditEntityType#2 "System Object"
