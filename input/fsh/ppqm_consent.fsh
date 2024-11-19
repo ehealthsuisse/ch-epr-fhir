@@ -70,7 +70,10 @@ Description: "Swiss EPR Policy Set as a Consent"
 
 * organization  0..0
 
-* source[x]     0..0
+* sourceReference               0..0
+* sourceAttachment              0..1
+* sourceAttachment.contentType  1..1
+* sourceAttachment.contentType  = urn:ietf:bcp:13#application/xacml+xml
 
 * policy        0..0
 
@@ -187,7 +190,7 @@ Profile: PpqmConsentTemplate202
 Parent: PpqmConsent
 Id: PpqmConsentTemplate202
 Title: "EPR policy set based on template 202"
-Description: "EPR policy set based on template 202 -- grants healthcare professionals access to the patient's EPR in emergency mode.  This policy set shall be created during the patient's onboarding, but can be modified later."
+Description: "EPR policy set based on template 202 -- grants healthcare professionals access to the patient's EPR in emergency mode.  This policy set can be created during the patient's onboarding or later, and can be modified."
 * identifier[templateId].value = "202"
 * policyRule.coding from PpqmReferencedPolicySetGroupEmergency (required)
 * provision.period 0..0
@@ -201,7 +204,7 @@ Description: "EPR policy set based on template 202 -- grants healthcare professi
 Instance: PpqmConsentTemplate202Example
 InstanceOf: PpqmConsentTemplate202
 Title: "EPR policy set based on template 202"
-Description: "EPR policy set based on template 202 -- grants healthcare professionals access to the patient's EPR in emergency mode.  This policy set shall be created during the patient's onboarding, but can be modified later."
+Description: "EPR policy set based on template 202 -- grants healthcare professionals access to the patient's EPR in emergency mode.  This policy set can be created during the patient's onboarding or later, and can be modified."
 Usage: #example
 * text.status = #empty
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Template 202 - Read access in emergency mode</p></div>"
@@ -278,7 +281,9 @@ Usage: #example
 * provision.actor.reference.identifier.type.coding = $URI#urn:gs1:gln
 * provision.actor.reference.identifier.value = "7600000000005"
 * provision.actor.reference.identifier.system = "urn:oid:2.51.1.3"
-
+* sourceAttachment.contentType = urn:ietf:bcp:13#application/xacml+xml
+* sourceAttachment.data = "PFBvbGljeVNldA0KCXhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiDQoJeG1sbnM6aGw3PSJ1cm46aGw3LW9yZzp2MyINCgl4bWxucz0idXJuOm9hc2lzOm5hbWVzOnRjOnhhY21sOjIuMDpwb2xpY3k6c2NoZW1hOm9zIg0KCVBvbGljeVNldElkPSJ1cm46dXVpZDplNjkzNjU3Yy01MGJlLTQ2YTYtYmRjZC0wNTI2OTE0N2YzMDQiDQoJUG9saWN5Q29tYmluaW5nQWxnSWQ9InVybjpvYXNpczpuYW1lczp0Yzp4YWNtbDoxLjA6cG9saWN5LWNvbWJpbmluZy1hbGdvcml0aG06ZGVueS1vdmVycmlkZXMiPiANCg0KLi4uDQo="
+* sourceAttachment.title = "Let this doctor access my restricted documents"
 
 Profile: PpqmConsentTemplate302
 Parent: PpqmConsent
