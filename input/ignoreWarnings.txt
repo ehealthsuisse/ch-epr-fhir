@@ -24,3 +24,9 @@ The definition for the element 'Consent.provision.code' binds to the value set '
 
 # IG Publisher limitations
 No types could be determined from the search string, so the types can't be checked
+
+# Raised JIRA on hl7 side to add to THO, see issue UP-621 https://jira.hl7.org/browse/UP-621 or https://github.com/ehealthsuisse/ch-epr-fhir/issues/190
+Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0'
+
+# Wait for update to BALP
+The discriminator type 'pattern' is deprecated in R5+. For future compatibility, you could consider using type=value with a pattern[x] instead (if this is not an inherited slicing)
