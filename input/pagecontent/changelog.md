@@ -1,5 +1,9 @@
-### Resolved Issues
+### DSTU4 Informative Ballot Release 2024 
 
+
+#### Resolved Issues
+
+* set status for extensions, profiles and datatypes to active [#244](https://github.com/ehealthsuisse/ch-epr-fhir/issues/244)
 * mCSD: add the feed transaction (CH:mCSD-1) [#158](https://github.com/ehealthsuisse/ch-epr-fhir/issues/158)
 * mCSD: require only one identifier for organizations [#210](https://github.com/ehealthsuisse/ch-epr-fhir/issues/210)
 * mCSD: set the system for LDAP DNs and add a slice to identifiers [#209](https://github.com/ehealthsuisse/ch-epr-fhir/issues/209)

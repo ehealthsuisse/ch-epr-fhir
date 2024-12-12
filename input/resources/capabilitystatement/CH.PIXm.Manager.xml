@@ -3,7 +3,7 @@
     <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PIXm.Manager" />
     <name value="CH_PIXm_Manager" />
     <title value="PIXm Patient Identifier Cross-reference Manager (server)" />
-    <status value="draft" />
+    <status value="active" />
     <date value="2020-07-07" />
     <publisher value="eHealth Suisse"/>
     <contact>

@@ -3,7 +3,7 @@
     <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PIXm.Source" />
     <name value="CH_PIXm_Source" />
     <title value="PIXm Patient Identity Source (client)" />
-    <status value="draft" />
+    <status value="active" />
     <date value="2020-07-09" />
     <publisher value="eHealth Suisse"/>
     <contact>

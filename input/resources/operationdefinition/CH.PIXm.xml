@@ -4,7 +4,7 @@
     <url value="http://fhir.ch/ig/ch-epr-fhir/OperationDefinition/CH.PIXm"/>
     <name value="CH_PIXm" />
     <title value="PIXm Find patient matches"/>
-    <status value="draft"/>
+    <status value="active"/>
     <kind value="operation"/>
     <date value="2020-07-07"/>
     <publisher value="eHealth Suisse"/>

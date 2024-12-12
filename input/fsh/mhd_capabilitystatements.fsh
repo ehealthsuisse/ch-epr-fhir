@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentConsumer"
 * name = "CH_MHD_DocumentConsumer"
 * title = "MHD Document Consumer (client)"
-* status = #draft
+* status = #active
 * date = "2020-07-08"
 * publisher = "eHealth Suisse"
 * contact.name = "eHealth Suisse"
@@ -129,7 +129,7 @@ Usage: #definition
 * url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentResponder"
 * name = "CH_MHD_DocumentResponder"
 * title = "MHD Document Responder (server)"
-* status = #draft
+* status = #active
 * date = "2020-07-08"
 * publisher = "eHealth Suisse"
 * contact.name = "eHealth Suisse"
@@ -227,7 +227,7 @@ Usage: #definition
 * url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentRecipient"
 * name = "CH_MHD_DocumentRecipient"
 * title = "MHD Document Recipient (server)"
-* status = #draft
+* status = #active
 * date = "2020-07-08"
 * publisher = "eHealth Suisse"
 * contact.name = "eHealth Suisse"
@@ -254,7 +254,7 @@ Usage: #definition
 * url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentSource"
 * name = "CH_MHD_DocumentSource"
 * title = "MHD Document Source (client)"
-* status = #draft
+* status = #active
 * date = "2020-07-07"
 * publisher = "eHealth Suisse"
 * contact.name = "eHealth Suisse"
