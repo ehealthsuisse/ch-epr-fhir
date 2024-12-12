@@ -3,6 +3,7 @@
 
 #### Resolved Issues
 
+* switch deprecated discriminator type 'pattern' to 'value' [#239](https://github.com/ehealthsuisse/ch-epr-fhir/issues/239)
 * set status for extensions, profiles and datatypes to active [#244](https://github.com/ehealthsuisse/ch-epr-fhir/issues/244)
 * mCSD: add the feed transaction (CH:mCSD-1) [#158](https://github.com/ehealthsuisse/ch-epr-fhir/issues/158)
 * mCSD: require only one identifier for organizations [#210](https://github.com/ehealthsuisse/ch-epr-fhir/issues/210)

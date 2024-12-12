@@ -4,11 +4,11 @@ Profile:     ChAuditEventBasicToken
 Parent:      AuditEvent
 Title:       "CH Audit Event with a Basic Auth Token"
 Description: "This is the profile for Swiss Audit Events when a transaction is secured with a Basic Authorization Token."
-* agent ^slicing.discriminator.type = #pattern
+* agent ^slicing.discriminator.type = #value
 * agent ^slicing.discriminator.path = "type"
 * agent ^slicing.rules = #open
 * agent contains mainUser 0..1 and delegatedUser 0..1
-* entity ^slicing.discriminator.type = #pattern
+* entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
 * entity ^slicing.rules = #open
 * insert ChAuditEventRules

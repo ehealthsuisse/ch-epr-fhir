@@ -9,7 +9,7 @@ Description: "CH mCSD profile on PractitionerRole"
 * organization only Reference(CHmCSDOrganization)
 * organization 1.. // From HPD
 * code 1.. // From mCSD
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
 * identifier contains LDAP 0..1
