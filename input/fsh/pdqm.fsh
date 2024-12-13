@@ -52,7 +52,7 @@ and to constring the output parameters to use the [PDQm Patient Profile](Structu
 """
 * base = "http://hl7.org/fhir/OperationDefinition/Patient-match"
 * name = "Find_Patient_Matches_PDQm"
-* status = #draft
+* status = #active
 * kind = #operation
 * affectsState = false
 * resource = #Patient

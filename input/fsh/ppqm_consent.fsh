@@ -6,7 +6,7 @@ Description: "Swiss EPR Policy Set as a Consent"
 
 * obeys ch-epr-ppqm-template-structure
 
-* identifier ^slicing.discriminator.type    = #pattern
+* identifier ^slicing.discriminator.type    = #value
 * identifier ^slicing.discriminator.path    = "type.coding"
 * identifier ^slicing.rules                 = #open
 * identifier ^slicing.description           = "PpqmConsent Identifiers"

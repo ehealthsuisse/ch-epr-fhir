@@ -3,7 +3,7 @@
     <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.EPR.App" />
     <name value="CH_EPR_App" />
     <title value="EPR App (client)" />
-    <status value="draft" />
+    <status value="active" />
     <date value="2020-07-08" />
     <publisher value="eHealth Suisse"/>
     <contact>

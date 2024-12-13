@@ -215,7 +215,7 @@ Source'."
 * outcome 1..1
 * outcomeDesc MS // encouraged
 // source is already required, see invariant val-audit-source use
-* agent ^slicing.discriminator.type = #pattern
+* agent ^slicing.discriminator.type = #value
 * agent ^slicing.discriminator.path = "type"
 * agent ^slicing.rules = #open
 * agent ^slicing.description = "source, recipient, and possibly the user who participated"
@@ -232,7 +232,7 @@ Source'."
 * agent[documentRecipient].network 1..1
 * agent[documentSource] ^short = "Document Source"
 * agent[documentRecipient] ^short = "Document Recipient"
-* entity ^slicing.discriminator.type = #pattern
+* entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
 * entity ^slicing.rules = #closed
 * entity ^slicing.description = "patient and submission set involved"
@@ -275,7 +275,7 @@ Recipient'."
 * outcome 1..1
 * outcomeDesc MS // encouraged
 // source is already required, see invariant val-audit-source use
-* agent ^slicing.discriminator.type = #pattern
+* agent ^slicing.discriminator.type = #value
 * agent ^slicing.discriminator.path = "type"
 * agent ^slicing.rules = #open
 * agent ^slicing.description = "source, recipient, and possibly the user who participated"
@@ -292,7 +292,7 @@ Recipient'."
 * agent[documentRecipient].network 1..1
 * agent[documentSource] ^short = "Document Source"
 * agent[documentRecipient] ^short = "Document Recipient"
-* entity ^slicing.discriminator.type = #pattern
+* entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
 * entity ^slicing.rules = #closed
 * entity ^slicing.description = "patient and submission set involved"

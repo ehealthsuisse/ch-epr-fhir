@@ -1,9 +1,9 @@
 {
   "package-id" : "ch.fhir.ig.ch-epr-fhir",
-  "version" : "4.0.1-ballot-2",
-  "path" : "http://fhir.ch/ig/ch-epr-fhir/4.0.1-ballot-2",
+  "version" : "4.0.1",
+  "path" : "http://fhir.ch/ig/ch-epr-fhir/4.0.1",
   "mode" : "milestone",
-  "status" : "ballot",
+  "status" : "trial-use",
   "sequence" : "DSTU 4",
   "desc" : "eHealth Suissse DSTU 4 Ballot",
   "changes" : "changelog.html",

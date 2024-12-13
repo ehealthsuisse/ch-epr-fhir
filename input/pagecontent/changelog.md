@@ -1,5 +1,14 @@
-### Resolved Issues
+### DSTU4 Informative Ballot Release 2024-12-17 
 
+#### Open Issues
+
+* Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
+* in review: ITI-71: Conflict between OAuth2 scope and ITI-71 scope [#245](https://github.com/ehealthsuisse/ch-epr-fhir/issues/245)  
+
+#### Resolved Issues
+
+* switch deprecated discriminator type 'pattern' to 'value' [#239](https://github.com/ehealthsuisse/ch-epr-fhir/issues/239)
+* set status for extensions, profiles and datatypes to active [#244](https://github.com/ehealthsuisse/ch-epr-fhir/issues/244)
 * mCSD: add the feed transaction (CH:mCSD-1) [#158](https://github.com/ehealthsuisse/ch-epr-fhir/issues/158)
 * mCSD: require only one identifier for organizations [#210](https://github.com/ehealthsuisse/ch-epr-fhir/issues/210)
 * mCSD: set the system for LDAP DNs and add a slice to identifiers [#209](https://github.com/ehealthsuisse/ch-epr-fhir/issues/209)

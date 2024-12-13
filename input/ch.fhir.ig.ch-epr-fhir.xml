@@ -8,12 +8,12 @@
         </div>
     </text>
     <url value="http://fhir.ch/ig/ch-epr-fhir/ImplementationGuide/ch.fhir.ig.ch-epr-fhir"/>
-    <version value="4.0.1-ballot-2"/>
+    <version value="4.0.1"/>
     <name value="CHEprFhir"/>
     <title value="CH EPR FHIR (R4)"/>
     <status value="active"/>
     <experimental value="false"/>
-    <date value="2024-11-18"/>
+    <date value="2024-12-17"/>
     <publisher value="eHealth Suisse"/>
     <contact>
         <name value="eHealth Suisse"/>
