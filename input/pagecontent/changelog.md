@@ -1,4 +1,4 @@
-### DSTU4 Informative Ballot Release 2024-12-17 
+### DSTU4 Informative Ballot Release 2024-12-18 
 
 #### Open Issues
 
