@@ -8,7 +8,7 @@
         </div>
     </text>
     <url value="http://fhir.ch/ig/ch-epr-fhir/ImplementationGuide/ch.fhir.ig.ch-epr-fhir"/>
-    <version value="4.0.1"/>
+    <version value="5.0.0-ballot-ci-build"/>
     <name value="CHEprFhir"/>
     <title value="CH EPR FHIR (R4)"/>
     <status value="active"/>
@@ -1040,8 +1040,8 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
         <!-- IG Parameters -->
         <parameter>
             <code value="releaselabel"/>
-<!--            <value value="ci-build"/> -->
-            <value value="trial-use"/>
+            <value value="ci-build"/>
+            <!--<value value="trial-use"/>-->
         </parameter>
         <parameter>
             <code value="path-pages"/>
