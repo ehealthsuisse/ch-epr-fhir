@@ -137,19 +137,18 @@ See also:
 - CH:PPQ specification in the [Amendment 2.1 of Annex 5 EPRO-FDHA](https://www.fedlex.admin.ch/eli/oc/2023/221/de/annexes).
 - [Policy set templates](https://github.com/ehealthsuisse/ch-epr-adr-ppq/tree/main/Privacy%20Policy%20Stack/Patient%20Specific%20via%20Policy%20Manager)
   in the official EPR policy stack.
-- [Description of the official EPR policy stack](https://github.com/ehealthsuisse/ch-epr-adr-ppq/blob/main/docs/Policies.md).
+- [Description of the official EPR policy stack](https://github.com/ehealthsuisse/ch-epr-adr-ppq/tree/HEAD/docs/Policies.md).
 
 ### Relation between CH:PPQm and CH:PPQ
 
 _This section is not normative._
 
-Implementers may decide to implement CH:PPQm transactions on top of CH:PPQ ones, i.e. to create a FHIR layer over an 
-existing XACML-based Policy Repository. The CH:PPQm specification supports this approach by defining transactions 
-and data structures in a way which allows an efficient bridging between CH:PPQ and CH:PPQm, and by providing message 
-transformation rules (see the page [Mappings](StructureDefinition-PpqmConsent-mappings.html)).
-
-In terms of actor grouping, this would mean that the Policy Repository may be optionally grouped with CH:PPQ Policy 
-Source and CH:PPQ Policy Consumer in order to communicate over PPQ-1 and PPQ-2 with itself.
+The CH:PPQm specification defines transactions and data structures in a way which allows an efficient 
+bridging between CH:PPQ and CH:PPQm, and by providing message transformation rules 
+(see the page [Mappings](StructureDefinition-PpqmConsent-mappings.html)).  This allows to implement 
+CH:PPQm transactions on top of CH:PPQ ones (i.e. to create a FHIR layer over an existing XACML-based 
+Policy Repository), or vice versa.  In the latter case, original XACML contents may be stored in the 
+attribute `sourceAttachment` of a FHIR Consent. 
 
 Note that CH:PPQm is not intended to handle base policies and policy sets, i.e. the ones provided in the official 
 Policy Stack and not related to any particular patients.
