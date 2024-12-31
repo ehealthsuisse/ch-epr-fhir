@@ -384,6 +384,122 @@ Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC
             <name value="PPQm Consent for template 304"/>
             <description value="CH:PPQm Consent for template 304 -- Read access for a healthcare professional, with delegation"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/mCSD-Peer-to-peer-Organization-Auryn-Spital"/>
+            </reference>
+            <name value="mCSD-Peer-to-peer-Organization-Auryn-Spital"/>
+            <description value="Resource Organization 'Auryn-Spital' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/mCSD-No-peer-Organization-SpitalX-Osteopathie"/>
+            </reference>
+            <name value="mCSD-No-peer-mcsd-Organization-SpitalX-Osteopathie"/>
+            <description value="Resource Organization 'SpitalX-Osteopathie' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/mCSD-No-peer-Organization-SpitalX"/>
+            </reference>
+            <name value="mCSD-No-peer-Organization-SpitalX"/>
+            <description value="Resource Organization 'SpitalX' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/mCSD-Peer-to-peer-Organization-Fuchur-Klinik"/>
+            </reference>
+            <name value="mCSD-Peer-to-peer-Organization-Fuchur-Klinik"/>
+            <description value="Resource Organization 'Fuchur-Klinik' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/mCSD-No-peer-Practitioner-DrAndrews"/>
+            </reference>
+            <name value="mCSD-No-peer-Practitioner-DrAndrews"/>
+            <description value="Resource Practitioner 'DrAndrews' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/mCSD-No-peer-Practitioner-DrMeier"/>
+            </reference>
+            <name value="mCSD-No-peer-Practitioner-DrMeier"/>
+            <description value="Resource Practitioner 'DrMeier' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/mCSD-No-peer-Practitioner-DrReynolds"/>
+            </reference>
+            <name value="mCSD-No-peer-Practitioner-DrReynolds"/>
+            <description value="Resource Practitioner 'DrReynolds' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/mCSD-Peer-to-peer-Practitioner-DrBux"/>
+            </reference>
+            <name value="mCSD-Peer-to-peer-Practitioner-DrBux"/>
+            <description value="Resource Practitioner 'DrBux' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/mCSD-Peer-to-peer-Practitioner-DrGmork"/>
+            </reference>
+            <name value="mCSD-Peer-to-peer-Practitioner-DrGmork"/>
+            <description value="Resource Practitioner 'DrGmork' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/mCSD-Peer-to-peer-Practitioner-DrKoreander"/>
+            </reference>
+            <name value="mCSD-Peer-to-peer-Practitioner-DrKoreander"/>
+            <description value="Resource Practitioner 'DrKoreander' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PractitionerRole/mCSD-No-peer-PractitionerRole-AnnAndrewsSpitalXOsteopathie"/>
+            </reference>
+            <name value="mCSD-No-peer-PractitionerRole-AnnAndrewsSpitalXOsteopathie"/>
+            <description value="Resource PractitionerRole 'AnnAndrewsSpitalXOsteopathie' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PractitionerRole/mCSD-No-peer-PractitionerRole-HansMeierSpitalX"/>
+            </reference>
+            <name value="mCSD-No-peer-PractitionerRole-HansMeierSpitalX"/>
+            <description value="Resource PractitionerRole 'HansMeierSpitalX' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PractitionerRole/mCSD-No-peer-PractitionerRole-RichardReynoldsSpitalX"/>
+            </reference>
+            <name value="mCSD-No-peer-PractitionerRole-RichardReynoldsSpitalX"/>
+            <description value="Resource PractitionerRole 'RichardReynoldsSpitalX' "/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PractitionerRole/mCSD-Peer-to-peer-PractitionerRole-BastianBuxAuryn-Spital"/>
+            </reference>
+            <name value="mCSD-Peer-to-peer-PractitionerRole-BastianBuxAuryn-Spital"/>
+            <description value="Resource PractitionerRole 'BastianBuxAuryn-Spital' "/>
+        </resource>
+                <resource>
+            <reference>
+                <reference value="PractitionerRole/mCSD-Peer-to-peer-PractitionerRole-GisiGmorkFurchur-Klinik"/>
+            </reference>
+            <name value="mCSD-Peer-to-peer-PractitionerRole-GisiGmorkFurchur-Klinik"/>
+            <description value="Resource PractitionerRole 'GisiGmorkFurchur-Klinik' "/>
+        </resource>
+                     <resource>
+            <reference>
+                <reference value="PractitionerRole/mCSD-Peer-to-peer-PractitionerRole-KarlKoreanderFurchur-Klinik"/>
+            </reference>
+            <name value="mCSD-Peer-to-peer-PractitionerRole-KarlKoreanderFurchur-Klinik"/>
+            <description value="Resource PractitionerRole 'KarlKoreanderFuchur-Klinik' "/>
+        </resource>
+   
+
+
+
 
         <!-- CH EPR FHIR: Resource Profiles -->
         <resource>

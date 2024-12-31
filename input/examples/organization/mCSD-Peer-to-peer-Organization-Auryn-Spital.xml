@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Organization xmlns="http://hl7.org/fhir">
+    <id value="mCSD-Peer-to-peer-Organization-Auryn-Spital"/>
+    <meta>
+        <lastUpdated value="2024-03-16T21:49:21+00:00"/>
+        <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>
+                <b>
+                    Generated Narrative: Organization
+                </b>
+                <a name="Auryn-Spital"/>
+                <a name="hcAurynSpital"/>
+            </p>
+            <div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%">
+                <p style="margin-bottom: 0px">
+                    Resource Organization "Auryn-Spital"
+                </p>
+                <p style="margin-bottom: 0px">
+                    Profile:
+                    <a href="StructureDefinition-CH.mCSD.Organization.html">
+                        CH mCSD Organization
+                    </a>
+                </p>
+            </div>
+            <p>
+                <b>
+                    identifier
+                </b>
+                : uid=CommunityA:00000003000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch,
+                <a href="http://terminology.hl7.org/3.1.0/NamingSystem-uri.html" title="As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt 
+
+This oid is used as an identifier II.root to indicate the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: 
+
+Note that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.
+
+This OID may also be used in CD.codeSystem.">
+                    URI
+                </a>
+                /urn:oid:2.16.10.89.201
+            </p>
+            <p>
+                <b>
+                    inactive
+                </b>
+                : true
+            </p>
+            <p>
+                <b>
+                    type
+                </b>
+                : Hospital
+                <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
+                    (
+                    <a href="https://browser.ihtsdotools.org/">
+                        SNOMED CT
+                    </a>
+                    #22232009)
+                </span>
+            </p>
+            <p>
+                <b>
+                    name
+                </b>
+                : Auryn-Spital
+            </p>
+        </div>
+    </text>
+    <identifier>
+        <value value="uid=CommunityA:00000003000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"/>
+    </identifier>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.10.89.201"/>
+    </identifier>
+    <active value="true"/>
+    <type>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="22232009"/>
+            <display value="Hospital"/>
+        </coding>
+    </type>
+    <name value="Auryn-Spital"/>
+</Organization>
