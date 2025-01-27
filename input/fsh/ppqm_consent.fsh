@@ -287,7 +287,7 @@ Title: "EPR policy set based on template 302"
 Description: "EPR policy set based on template 302 -- gives a group of healthcare professionals read access to the patient's EPR, without delegation rights."
 * identifier[templateId].value = "302"
 * policyRule.coding from PpqmReferencedPolicySetGroupEmergency (required)
-* provision.period.end 1..1
+* provision.period 1..1
 * provision.actor.role.coding = $ehealthRole#HCP
 * provision.actor.reference.identifier 1..1
 * provision.actor.reference.identifier.type.coding = $URI#urn:oasis:names:tc:xspa:1.0:subject:organization-id
@@ -319,7 +319,6 @@ Title: "EPR policy set based on template 303"
 Description: "EPR policy set based on template 303 -- gives a representative full access to the patient's EPR."
 * identifier[templateId].value = "303"
 * policyRule.coding from PpqmReferencedPolicySetFullAccess (required)
-* provision.period 0..0
 * provision.actor.role.coding = $ehealthRole#REP
 * provision.actor.reference.identifier.type.coding = $URI#urn:e-health-suisse:representative-id
 * provision.actor.reference.identifier obeys ch-epr-ppqm-no-space
@@ -348,7 +347,7 @@ Id: PpqmConsentTemplate304
 Title: "EPR policy set based on template 304"
 Description: "EPR policy set based on template 304 -- gives a particular healthcare professional read access to the patient's EPR, with delegation rights."
 * identifier[templateId].value = "304"
-* provision.period.end 1..1
+* provision.period 1..1
 * policyRule.coding from PpqmReferencedPolicySetHcpWithDelegation (required)
 * provision.actor.role.coding = $ehealthRole#HCP
 * provision.actor.reference.identifier 1..1
