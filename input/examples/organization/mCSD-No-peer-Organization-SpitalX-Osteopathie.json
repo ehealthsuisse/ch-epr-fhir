@@ -1,0 +1,51 @@
+{
+  "resourceType" : "Organization",
+  "id" : "mCSD-No-peer-Organization-SpitalX-Osteopathie",
+  "meta" : {
+    "profile" : ["http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"SpitalX-Osteopathie\"> </a><a name=\"hcSpitalXOsteopathie\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4;border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;SpitalX-Osteopathie&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-CH.mCSD.Organization.html\">CH mCSD Organization</a></p></div><p><b>identifier</b>: uid=CommunityA:00000001007,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch, <ahref=\"http://terminology.hl7.org/3.1.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986(http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt \r\n\r\nThis oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid:\r\n\r\nNote that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.\r\n\r\nThis OID may also be used in CD.codeSystem.\">URI</a>/urn:oid:2.16.10.89.202</p><p><b>active</b>: true</p><p><b>type</b>: Osteopathic manipulative medicine <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solidkhaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#416304004)</span>, Hospital <spanstyle=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#22232009)</span></p><p><b>name</b>: Spital X - Osteopathie</p><p><b>telecom</b><a href=\"tel:+41711112324\">+41 71 111 23 24</a></p><p><b>address</b>: Spital X - Osteopathie,95 Rorschacher Strasse St. Gallen SG 9007 CH (WORK)</p></div>"
+  },
+  "identifier" : [{
+    "value" : "uid=CommunityA:00000001007,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
+  },
+  {
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:2.16.10.89.202"
+  }],
+  "active" : true,
+  "type" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "416304004",
+      "display" : "Osteopathic manipulative medicine"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "22232009",
+      "display" : "Hospital"
+    }]
+  }],
+  "name" : "Spital X - Osteopathie",
+  "telecom" : [
+  {
+    "system" : "phone",
+    "value" : "+41 71 111 23 24"
+  }],
+  "address" : [{
+    "use" : "work",
+    "line" : ["Spital X - Osteopathie",
+    "95 Rorschacher Strasse"],
+    "city" : "St. Gallen",
+    "state" : "SG",
+    "postalCode" : "9007",
+    "country" : "CH"
+  }],
+  "partOf" : {
+    "reference" : "Organization/a06fdde7-17e6-435e-9ba2-ceb79d4d1f5d"
+  }
+}
