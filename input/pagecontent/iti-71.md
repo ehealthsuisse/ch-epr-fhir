@@ -346,7 +346,9 @@ A clinical archive system aims to access the EPR to write documents.
 
 ###### Message Semantics
 
-The Authorization Client SHALL send an IUA compliant Authorization Request for the client credential flow. The Authorization Request SHALL set the scope parameter with one or many scope values as defined in the table below.
+The Authorization Client SHALL send an IUA compliant Authorization Request for the client credential flow.
+
+The Authorization Request SHALL set the scope parameter with one or many scope values as defined in the table below.
 
 <table class="table table-bordered">
   <thead>
@@ -394,13 +396,6 @@ The Authorization Client SHALL send an IUA compliant Authorization Request for t
       <td>See sections below.</td>
       <td>GLN of the legal responsible healthcare professional the technical user is acting on behalf of. According to the law and regulations the healthcare professional shall be the individual who is resposible for the rules to be used by the clinial archive to filter documents to be uploaded to the Swiss EHR.</td>
     </tr>
-    <tr>
-      <td>access_token_format</td>
-      <td>O/O</td>
-      <td>Strings</td>
-      <td> </td>
-      <td>SHALL be of value “urn:ietf:params:oauth:token-type:jwt”.</td>
-    </tr>
   </tbody>
 </table>
 
@@ -432,7 +427,7 @@ Accept: application/json
 Content-type: application/x-www-form-urlencoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 grant_type=client_credentials&
-access_token_format=urn:ietf:params:oauth:token-type:jwt&
+requested-token-type=urn:ietf:params:oauth:token-type:jwt&
 scope=user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CAUTO+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CTCU+person_id%3D761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO
 ```
 
@@ -444,7 +439,9 @@ A user launches a portal or primary system, or a SMART on FHIR App to access dat
 
 ###### Message Semantics
 
-The Authorization Client SHALL send an IUA compliant Authorization Request for the authorization code flow. The Authorization Request SHALL set the scope parameter with one or many scope values as defined in the table below.
+The Authorization Client SHALL send an IUA compliant Authorization Request for the authorization code flow. 
+
+The Authorization Request SHALL set the scope parameter with one or many scope values as defined in the table below.
 
 <table class="table table-bordered">
   <thead>
@@ -512,13 +509,6 @@ The Authorization Client SHALL send an IUA compliant Authorization Request for t
       <td>string</td>
       <td>See sections below.</td>
       <td>OID of the organization or group an assistant is acting on behalf of.</td>
-    </tr>
-    <tr>
-      <td>access_token_format</td>
-      <td>O/O</td>
-      <td>Strings</td>
-      <td> </td>
-      <td>SHALL be of value “urn:ietf:params:oauth:token-type:jwt”.</td>
     </tr>
   </tbody>
 </table>
@@ -622,7 +612,7 @@ Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 grant_type=authorization_code&
 code=98wrghuwuogerg97&
 code_verifier=qskt4342of74bkncmicdpv2qd143iqd822j41q2gupc5n3o6f1clxhpd2x11&
-access_token_format=urn:ietf:params:oauth:token-type:jwt
+requested-token-type=urn:ietf:params:oauth:token-type:jwt
 ```
 
 #### Get Access Token Response
