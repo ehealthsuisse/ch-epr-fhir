@@ -4,96 +4,16 @@
     <meta>
         <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"/>
     </meta>
-    <text>
-        <status value="generated"/>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <p>
-                <b>
-                    Generated Narrative: PractitionerRole
-                </b>
-                <a name="AnnAndrewsSpitalXOsteopathie"/>
-                <a name="AnnAndrewsSpitalXOsteopathie"/>
-            </p>
-            <div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%">
-                <p style="margin-bottom: 0px">
-                    Resource PractitionerRole "AnnAndrewsSpitalXOsteopathie"
-                </p>
-                <p style="margin-bottom: 0px">
-                    Profile:
-                    <a href="StructureDefinition-CH.mCSD.PractitionerRole.html">
-                        CH mCSD PractitionerRole
-                    </a>
-                </p>
-            </div>
-            <p>
-                <b>
-                    identifier
-                </b>
-                : CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch
-            </p>
-            <p>
-                <b>
-                    active
-                </b>
-                : true
-            </p>
-            <p>
-                <b>
-                    practitioner
-                </b>
-                :
-                <a href="Practitioner-DrAnnAndrews.html">
-                    Practitioner/DrAnnAndrews
-                </a>
-                " ANDREWS"
-            </p>
-            <p>
-                <b>
-                    organization
-                </b>
-                :
-                <a href="Organization-SpitalXOsteopathie.html">
-                    Organization/SpitalXOsteopathie
-                </a>
-                "Osteopathie"
-            </p>
-            <p>
-                <b>
-                    code
-                </b>
-                : Chiropractor
-                <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                    (
-                    <a href="https://browser.ihtsdotools.org/">
-                        SNOMED CT
-                    </a>
-                    #3842006)
-                </span>
-            </p>
-            <p>
-                <b>
-                    specialty
-                </b>
-                : Chiropractic specialist
-                <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                    (
-                    <a href="http://fhir.ch/ig/ch-epr-term/2.0.10/CodeSystem-2.16.756.5.30.1.127.3.5.html">
-                        ch-ehealth-codesystem-medreg
-                    </a>
-                    #1011)
-                </span>
-            </p>
-        </div>
-    </text>
     <identifier>
+        <system value="urn:ietf:rfc:4514"></system>
         <value value="CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch"/>
     </identifier>
     <active value="true"/>
     <practitioner>
-        <reference value="Practitioner/a88a2914-d449-4c81-bcd0-574ef825d875"/>
+        <reference value="Practitioner/mCSD-No-peer-Practitioner-DrAndrews"/>
     </practitioner>
     <organization>
-        <reference value="Organization/c159b739-ab89-49d8-b8da-4875b1b16cf5"/>
+        <reference value="Organization/mCSD-No-peer-Organization-SpitalX-Osteopathie"/>
     </organization>
     <code>
         <coding>

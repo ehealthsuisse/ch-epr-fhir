@@ -5,96 +5,16 @@
         <lastUpdated value="2024-02-16T21:49:21+00:00"/>
         <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"/>
     </meta>
-    <text>
-        <status value="generated"/>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <p>
-                <b>
-                    Generated Narrative: PractitionerRole
-                </b>
-                <a name="BastianBuxAuryn-Spital"/>
-                <a name="hcBastianBuxAuryn-Spital"/>
-            </p>
-            <div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%">
-                <p style="margin-bottom: 0px">
-                    Resource PractitionerRole "BastianBuxAuryn-Spital"
-                </p>
-                <p style="margin-bottom: 0px">
-                    Profile:
-                    <a href="StructureDefinition-CH.mCSD.PractitionerRole.html">
-                        CH mCSD PractitionerRole
-                    </a>
-                </p>
-            </div>
-            <p>
-                <b>
-                    identifier
-                </b>
-                : CN=CommunityA:00000003000,OU=Relationship,DC=HPD,O=BAG,C=ch
-            </p>
-            <p>
-                <b>
-                    active
-                </b>
-                : true
-            </p>
-            <p>
-                <b>
-                    practitioner
-                </b>
-                :
-                <a href="Practitioner-DrBastianBux.html">
-                    Practitioner/ef8fae9c-65dc-4d9b-a565-ee157e772b19
-                </a>
-                " Bux"
-            </p>
-            <p>
-                <b>
-                    organization
-                </b>
-                :
-                <a href="Organization-Auryn-Spital.html">
-                    Organization/9caddbc2-d471-43bc-8a18-e04207f92a5c
-                </a>
-                "Spital X"
-            </p>
-            <p>
-                <b>
-                    code
-                </b>
-                : Physician
-                <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                    (
-                    <a href="https://browser.ihtsdotools.org/">
-                        SNOMED CT
-                    </a>
-                    #309343006)
-                </span>
-            </p>
-            <p>
-                <b>
-                    specialty
-                </b>
-                : General internal medicine
-                <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki">
-                    (
-                    <a href="http://fhir.ch/ig/ch-epr-term/2.0.10/CodeSystem-2.16.756.5.30.1.127.3.5.html">
-                        ch-ehealth-codesystem-medreg
-                    </a>
-                    #1051)
-                </span>
-            </p>
-        </div>
-    </text>
     <identifier>
+        <system value="urn:ietf:rfc:4514"/>
         <value value="CN=CommunityA:00000003000,OU=Relationship,DC=HPD,O=BAG,C=ch"/>
     </identifier>
     <active value="true"/>
     <practitioner>
-        <reference value="Practitioner/ef8fae9c-65dc-4d9b-a565-ee157e772b19"/>
+        <reference value="Practitioner/mCSD-No-peer-Practitioner-DrAndrews"/>
     </practitioner>
     <organization>
-        <reference value="Organization/9caddbc2-d471-43bc-8a18-e04207f92a5c"/>
+        <reference value="Organization/mCSD-No-peer-Organization-SpitalX-Osteopathie"/>
     </organization>
     <code>
         <coding>
