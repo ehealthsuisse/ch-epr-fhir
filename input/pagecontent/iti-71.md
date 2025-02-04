@@ -346,7 +346,9 @@ A clinical archive system aims to access the EPR to write documents.
 
 ###### Message Semantics
 
-The Authorization Client SHALL send an IUA compliant Authorization Request for the client credential flow.
+The Authorization Client SHALL send an IUA compliant Authorization Request for the client credential flow. 
+
+TODO: list of attributes
 
 The Authorization Request SHALL set the scope parameter with one or many scope values as defined in the table below.
 
@@ -440,6 +442,8 @@ A user launches a portal or primary system, or a SMART on FHIR App to access dat
 ###### Message Semantics
 
 The Authorization Client SHALL send an IUA compliant Authorization Request for the authorization code flow. 
+
+TODO: list of attributes
 
 The Authorization Request SHALL set the scope parameter with one or many scope values as defined in the table below.
 
