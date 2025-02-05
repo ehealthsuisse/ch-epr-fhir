@@ -7,6 +7,7 @@
 
 #### Resolved Issues
 
+* IUA: moved all parameter not known by the authorization server from the scope to an extension of the Get Access Token \[ITI-71\] transaction to match the requirements of the underlying OAuth 2.1 specification [#245](https://github.com/ehealthsuisse/ch-epr-fhir/issues/245)
 * switch deprecated discriminator type 'pattern' to 'value' [#239](https://github.com/ehealthsuisse/ch-epr-fhir/issues/239)
 * set status for extensions, profiles and datatypes to active [#244](https://github.com/ehealthsuisse/ch-epr-fhir/issues/244)
 * mCSD: add the feed transaction (CH:mCSD-1) [#158](https://github.com/ehealthsuisse/ch-epr-fhir/issues/158)

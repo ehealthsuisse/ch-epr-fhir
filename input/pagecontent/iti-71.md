@@ -346,9 +346,20 @@ A clinical archive system aims to access the EPR to write documents.
 
 ###### Message Semantics
 
-The Authorization Client SHALL send an IUA compliant Authorization Request for the client credential flow.
+The Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization Request for the client credential grant type with Swiss extensions: 
 
-The Authorization Request SHALL set the scope parameter with one or many scope values as defined in the table below.
+- grant_type (required): The value of the parameter shall be client_credentials.
+- scope (required): The scope claimed by the Authorization Client, as defined in the table below.
+- resource (optional): Single valued identifier of the Resource Server api endpoint to be accessed.
+- requested_token_type (optional): The requested token format shall be urn:ietf:params:oauth:token-type:jwt.
+
+The Authorization Request SHALL use the following Swiss extension:
+
+- principal (optional): The name of the healthcare professional an assistant may act on behalf of.
+- principal_id (required): The GLN of the healthcare professional an assistant may act on behalf of.
+- person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax, required for requesting extended access token.
+
+The following table lists the scope values to be send in the Authorization Request:
 
 <table class="table table-bordered">
   <thead>
@@ -375,27 +386,6 @@ The Authorization Request SHALL set the scope parameter with one or many scope v
       <td>See sections below.</td>
       <td>Shall be the value TCU as defined in the code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH: EPR value set.</td>
     </tr>
-    <tr>
-      <td>person_id</td>
-      <td>O/R</td>
-      <td>string, CX</td>
-      <td>See sections below.</td>
-      <td>EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax.</td>
-    </tr>
-    <tr>
-      <td>principal</td>
-      <td>R/R</td>
-      <td>token</td>
-      <td>See sections below.</td>
-      <td>Name of the legal responsible healthcare professional the technical user is acting on behalf of. According to the law and regulations the healthcare professional shall be the individual who is resposiblethe rules to be used by the clinial archive to filter documents to be uploaded to the Swiss EHR.</td>
-    </tr>
-    <tr>
-      <td>principal_id</td>
-      <td>R/R</td>
-      <td>token</td>
-      <td>See sections below.</td>
-      <td>GLN of the legal responsible healthcare professional the technical user is acting on behalf of. According to the law and regulations the healthcare professional shall be the individual who is resposible for the rules to be used by the clinial archive to filter documents to be uploaded to the Swiss EHR.</td>
-    </tr>
   </tbody>
 </table>
 
@@ -403,13 +393,13 @@ The Authorization Request SHALL set the scope parameter with one or many scope v
 
 <figcaption ID="16">Request’s scope parameter for the client credential flow.</figcaption>  
 
+
 ###### Expected Actions
 
-When receiving a Get Access Token Request with purpose of use set to AUTO and subject role set to TCU, the Authorization Server SHALL identify and authenticate the Authorization Client with the client_id, client_secret and the client's certificate of the TLS connection. 
-
-The Authorization Server SHALL verify that the Authorization Client was registered during onboading with the same client_id, client_secret and the client's certificate of the TLS connection and is authorized to access the EHR. 
-
-The Authorization Server SHALL verify that the principal_id matches the GLN of the legal responsible healthcare professional the Authorization Client was registered during onboading. 
+When receiving a Get Access Token Request with purpose of use set to AUTO and subject role set to TCU, the Authorization Server SHALL: 
+- identify and authenticate the Authorization Client with the client_id, client_secret and the client's certificate of the TLS connection. 
+- verify, that the Authorization Client was registered during onboading with the same client_id, client_secret and the client's certificate of the TLS connection and is authorized to access the EHR. 
+- verify that the principal_id matches the GLN of the legal responsible healthcare professional the Authorization Client was registered during onboading. 
 
 The Authorization Server SHALL respond with the Get Access Token response as defined in [Get Access Token Response](#get-access-token-response) only if all checks are successful. If one of the above checks fails, the Authorization Server SHALL respond with HTTP 401 (Unauthorized) error.
 
@@ -428,7 +418,9 @@ Content-type: application/x-www-form-urlencoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 grant_type=client_credentials&
 requested-token-type=urn:ietf:params:oauth:token-type:jwt&
-scope=user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CAUTO+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CTCU+person_id%3D761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO
+person_id=761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO&
+principal_id=9801000050702&
+scope=user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CAUTO+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CTC
 ```
 
 #### Authorization Code Grant Type
@@ -439,9 +431,22 @@ A user launches a portal or primary system, or a SMART on FHIR App to access dat
 
 ###### Message Semantics
 
-The Authorization Client SHALL send an IUA compliant Authorization Request for the authorization code flow. 
+The Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization Request for the client credential grant type with Swiss extensions: 
 
-The Authorization Request SHALL set the scope parameter with one or many scope values as defined in the table below.
+- grant_type (required): The value of the parameter shall be client_credentials.
+- scope (required): The scope claimed by the Authorization Client, as defined in the table below.
+- resource (optional): Single valued identifier of the Resource Server api endpoint to be accessed.
+- requested_token_type (optional): The requested token format shall be urn:ietf:params:oauth:token-type:jwt.
+
+The Authorization Request SHALL use the following Swiss extension:
+
+- person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax, required for requesting extended access token.
+- principal (optional): The name of the healthcare professional an assistant may act on behalf of.
+- principal_id (optional): The GLN of the healthcare professional an assistant may act on behalf of.
+- group (optional): The name of the organization or group an assistant may act on behalf of
+- group_id (optional): The OID of the organization or group an assistant is acting on behalf of.
+
+The following table lists the scope values to be send in the Authorization Request:
 
 <table class="table table-bordered">
   <thead>
@@ -475,41 +480,6 @@ The Authorization Request SHALL set the scope parameter with one or many scope v
       <td>See sections below.</td>
       <td>One of the values for Healthcare Professionals, Assistants, Patients and Representatives as defined in the code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH: EPR value set.</td>
     </tr>
-    <tr>
-      <td>person_id</td>
-      <td>O/R</td>
-      <td>string, CX</td>
-      <td>See sections below.</td>
-      <td>EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax.</td>
-    </tr>
-    <tr>
-      <td>principal</td>
-      <td>O/O</td>
-      <td>token</td>
-      <td>See sections below.</td>
-      <td>Name of the healthcare professional an assistant is acting on behalf of.</td>
-    </tr>
-    <tr>
-      <td>principal_id</td>
-      <td>O/O</td>
-      <td>token</td>
-      <td>See sections below.</td>
-      <td>GLN of the healthcare professional an assistant is acting on behalf of.</td>
-    </tr>
-    <tr>
-      <td>group</td>
-      <td>O/O</td>
-      <td>string</td>
-      <td>See sections below.</td>
-      <td>Name of the organization or group an assistant is acting on behalf of.</td>
-    </tr>
-    <tr>
-      <td>group_id</td>
-      <td>O/O</td>
-      <td>string</td>
-      <td>See sections below.</td>
-      <td>OID of the organization or group an assistant is acting on behalf of.</td>
-    </tr>
   </tbody>
 </table>
 
@@ -521,7 +491,7 @@ The scope parameter of the request MAY claim the following attributes:
 - There MAY be a scope with name “launch”. If present, it indicates the permission of SMART on FHIR Apps to obtain launch context from a portal or primary system authorized to access the EPR.
 - There MAY be a scope with name "purpose_of_use=token". If present, the token SHALL convey the coded value of the current transaction’s purpose of use. Allowed values are NORM (normal access) and EMER (emergency access) from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. e.g. purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5\|NORM
 - There MAY be a scope with name "subject_role=token". If present, the token SHALL convey the coded value of the subject’s role. The value SHALL be either HCP (healthcare professional), ASS (assistant), REP (representative) or PAT (patient) from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. e.g.: subject_role=urn:oid:2.16.756.5.30.1.127.3.10.6\|HCP
-- There MAY be a scope with name "person_id=value". If present, the value SHALL convey the EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax. e.g: person_id=761337610411353650^^^&2.16.756.5.30.1.109.6.5.3.1.1&ISO
+
 
 Note: The parameters need to be url encoded, see above message example. 
 
@@ -581,7 +551,7 @@ GET authorize?
     code_challenge_method=S256
 ```
 
-An extended access token where at least purpose_of_use (NORM), subject_role (HCP) and person_id are added to the scope may look like:
+An extended access token where at least purpose_of_use (NORM), subject_role (HCP) and person_id are specified may look like:
 
 ```http
 GET authorize?
@@ -589,7 +559,8 @@ GET authorize?
     client_id=app-client-id&
     redirect_uri=http%3A%2F%2Flocalhost%3A9000%2Fcallback&
     launch=xyz123&
-    scope=launch+user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CNORM+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CHCP+person_id%3D761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO&
+    person_id=761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO&
+    scope=launch+user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CNORM+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CHCP&
     code_challenge=ZmVjMmIwMWYyYTNjZWJiNTgyNTgxYzlmOGYyMWM0MWI3YmZhMjQ4YjU5MDc3Mzk4MDBmYTk0OThlNzZiNjAwMw&
     code_challenge_method=S256
 ```
@@ -890,6 +861,11 @@ There are no CapabilityStatement resources defined for this transaction.
 
 IUA Authorization Clients, Authorization Servers and Resource Server actors SHALL use the JWS (signed) alternative 
 of the JWT token as specified in the IUA Trial Implementation. The JWE alternative SHALL not be used.
+
+if the EPR-SPID is provided in the IUA token and in the transaction then you SHALL verify that both are the same
+
+When receiving requests of transactions where the EPR-SPID is provided in the IUA token and in the transaction body, 
+the Resource Servers SHALL verify that both are the same.     
 
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
