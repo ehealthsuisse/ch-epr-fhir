@@ -355,8 +355,8 @@ The Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization Req
 
 The Authorization Request SHALL use the following Swiss extension:
 
-- principal (required): 
-- principal_id (required): 
+- principal (optional): The name of the healthcare professional an assistant may act on behalf of.
+- principal_id (required): The GLN of the healthcare professional an assistant may act on behalf of.
 - person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax, required for requesting extended access token.
 
 The following table lists the scope values to be send in the Authorization Request:
@@ -418,7 +418,9 @@ Content-type: application/x-www-form-urlencoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 grant_type=client_credentials&
 requested-token-type=urn:ietf:params:oauth:token-type:jwt&
-scope=user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CAUTO+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CTCU+person_id%3D761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO
+person_id= 761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO&
+principal_id= 9801000050702&
+scope=user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CAUTO+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CTC
 ```
 
 #### Authorization Code Grant Type
@@ -549,7 +551,7 @@ GET authorize?
     code_challenge_method=S256
 ```
 
-An extended access token where at least purpose_of_use (NORM), subject_role (HCP) and person_id are added to the scope may look like:
+An extended access token where at least purpose_of_use (NORM), subject_role (HCP) and person_id are specified may look like:
 
 ```http
 GET authorize?
@@ -557,7 +559,8 @@ GET authorize?
     client_id=app-client-id&
     redirect_uri=http%3A%2F%2Flocalhost%3A9000%2Fcallback&
     launch=xyz123&
-    scope=launch+user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CNORM+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CHCP+person_id%3D761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO&
+    person_id= 761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO&
+    scope=launch+user%2F*.*+openid+fhirUser+purpose_of_use%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.5%7CNORM+subject_role%3Durn%3Aoid%3A2.16.756.5.30.1.127.3.10.6%7CHCP&
     code_challenge=ZmVjMmIwMWYyYTNjZWJiNTgyNTgxYzlmOGYyMWM0MWI3YmZhMjQ4YjU5MDc3Mzk4MDBmYTk0OThlNzZiNjAwMw&
     code_challenge_method=S256
 ```
@@ -858,6 +861,11 @@ There are no CapabilityStatement resources defined for this transaction.
 
 IUA Authorization Clients, Authorization Servers and Resource Server actors SHALL use the JWS (signed) alternative 
 of the JWT token as specified in the IUA Trial Implementation. The JWE alternative SHALL not be used.
+
+if the EPR-SPID is provided in the IUA token and in the transaction then you SHALL verify that both are the same
+
+When receiving requests of transactions where the EPR-SPID is provided in the IUA token and in the transaction body, 
+the Resource Servers SHALL verify that both are the same.     
 
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
