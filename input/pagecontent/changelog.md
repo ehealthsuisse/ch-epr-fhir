@@ -1,3 +1,18 @@
+### DSTU5 Informative Ballot 2025 
+
+#### Open Issues
+
+* Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
+* in review: ITI-71: Conflict between OAuth2 scope and ITI-71 scope [#245](https://github.com/ehealthsuisse/ch-epr-fhir/issues/245)  
+
+#### Resolved Issues
+
+* add SCT edition in the expansion parameters [#256](https://github.com/ehealthsuisse/ch-epr-fhir/issues/256)
+* Wrong optionality of the attribute Consent.provision.period [#255](https://github.com/ehealthsuisse/ch-epr-fhir/issues/255)
+
+
+
+
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
 #### Open Issues

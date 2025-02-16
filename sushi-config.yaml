@@ -1,0 +1,369 @@
+id: ch.fhir.ig.ch-epr-fhir
+canonical: http://fhir.ch/ig/ch-epr-fhir
+url: http://fhir.ch/ig/ch-epr-fhir/ImplementationGuide/ch.fhir.ig.ch-epr-fhir
+name: CHEprFhir
+title: CH EPR FHIR (R4)
+description: FHIR implementation guide to the Swiss EPR (Electronic Patient Record)
+status: active
+experimental: false
+date: 2025-02-05
+version: 5.0.0-ballot-ci-build
+fhirVersion: 4.0.1
+copyrightYear: 2020+
+releaselabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+publisher:
+  name: eHealth Suisse
+  url: https://www.e-health-suisse.ch
+contact:
+  - name: eHealth Suisse
+    telecom:
+      - system: url
+        value: https://www.e-health-suisse.ch
+        use: work
+license: CC0-1.0
+copyright: CC0-1.0
+jurisdiction: urn:iso:std:iso:3166#CH
+
+dependencies:
+  ch.fhir.ig.ch-term: current # 3.1.x
+  ch.fhir.ig.ch-core: current # 3.1.x
+  ihe.iti.pixm: 3.0.4
+  ihe.iti.pdqm: 3.0.0
+  ihe.iti.mhd: 4.2.2
+  ihe.iti.mcsd: 3.8.0
+  ihe.iti.balp: 1.1.3
+  hl7.terminology: 6.2.0
+
+pages:
+  index.md:
+    title: Home
+  volume1.md:
+    title: Volume 1
+  iti-iua.md:
+    title: Internet User Authorization (IUA)
+  iti-pdqm.md:
+    title: Patient Demographics Query for Mobile (PDQm)
+  iti-pixm.md:
+    title: Patient Identifier Cross-reference for Mobile (PIXm)
+  iti-mhd.md:
+    title: Mobile Access to Health Documents (MHD)"
+  iti-restful-atna.md:
+    title: RESTful ATNA
+  iti-mcsd.md:
+    title: Mobile Care Services Discovery (mCSD)
+  ppqm.md:
+    title: Privacy Policy Query for Mobile (CH:PPQm)
+  volume2.md:
+    title: Volume 2
+  iti-71.md:
+    title: Get Access Token [ITI-71]
+  iti-103.md:
+    title: Get Authorization Server Metadata [ITI-103]
+  iti-119.md:
+    title: Patient Demographics Match [ITI-119]
+  iti-83.md:
+    title: Mobile Patient Identifier Cross-reference Query [ITI-83]
+  iti-104.md:
+    title: Patient Identity Feed FHIR [ITI-104]
+  iti-65.md:
+    title: Provide Document Bundle [ITI-65]
+  iti-67.md:
+    title: Find Document References [ITI-67]
+  iti-68.md:
+    title: Retrieve Document [ITI-68]
+  ch-mhd-1.md:
+    title: Update Document Metadata
+  iti-20.md:
+    title: Record Audit Event [ITI-20]
+  iti-90.md:
+    title: Find Matching Care Services [ITI-90]
+  ch-mcsd-1.md:
+    title: Care Services Feed [CH:mCSD-1]
+  ppq-3.md:
+    title: Mobile Privacy Policy Feed [PPQ-3]
+  ppq-4.md:
+    title: Mobile Privacy Policy Bundle Feed [PPQ-4]
+  ppq-5.md:
+    title: Mobile Privacy Policy Retrieve [PPQ-5]
+  appendix.md:
+    title: Appendix
+  profiles.md:
+    title: Profiles
+  extensions.xml:
+    title: Extensions
+  terminology.xml:
+    title: Terminology
+  capstatements.xml:
+    title: Capability Statements
+  operations.xml:
+    title: Operations
+  sequencediagrams.md:
+    title: Sequence Diagrams
+  tracecontext.md:
+    title: Trace Context
+  changelog.md:
+    title: Open Issues / Change Log
+
+resources:
+  Parameters/ParametersPIXmInput:
+    name: PIXm Parameters Query Input
+    description: Example Input Parameters Mobile Patient Identifier Cross-reference Query
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-in-parameters
+  Parameters/ParametersPIXmOutput:
+    name: PIXm Parameters Query Output
+    description: Example Output Parameters Mobile Patient Identifier Cross-reference Query
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-out-parameters
+  Patient/PatientPIXmFeed:
+    name: PIXm Patient Feed
+    description: Example PIXm Patient for Feed
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-patient-feed
+  Patient/FranzMusterNeedsAbsoluteUrl:
+    name: PDQm Patient Franz Muster (Full URL)
+    description: Example Patient
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-patient
+  Organization/GruppenpraxisCH:
+    name: PDQm Provider Organization Gruppenpraxis
+    description: Example Organization
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-provider-organization
+  Bundle/2-7-BundleProvideDocument:
+    name: MHD Provide Document Bundle for MedicationCard
+    description: MHD Provide Document Bundle for MedicationCard
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive
+  Bundle/PDQm-QueryResponse:
+    name: PDQm Match response message
+    description: CH PDQm Match response message example result for Franz Muster, 27.1.1955
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-matchparametersout
+  Bundle/PDQm-QueryResponseTooManyResults:
+    name: PDQm Match response message too many results
+    description: CH PDQm Match response message with too many results indication
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-matchparametersout
+  List/2-7-DocSubMedicationCard:
+    name: MHD SubmissionSet (List) for MedicationCard
+    description: Example SubmissionSet for a MedicationCard
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-submissionset-comprehensive
+  DocumentReference/2-7-DocRefMedicationCard:
+    name: MHD DocumentReference for MedicationCard
+    description: Example DocumentReference for a MedicationCard
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive
+  Bundle/2-7-BundleProvideDocument-Response:
+    name: MHD Provide Document Bundle Response for MedicationCard
+    description: MHD Provide Document Bundle Response for MedicationCard
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response
+  Bundle/Bundle-FindDocumentReferences:
+    name: MHD Find DocumentReferences
+    description: MHD Find DocumentReferences - Bundle as Response
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle
+  OperationOutcome/PDQmResponseMoreAttributesRequested:
+    name: PDQm OperationOutcome More Attributes Requested Example
+    description: An example on the OperationOutcome for indicating which additional
+      attributes are requested to lower the results number.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-moreattributesrequested
+  OperationOutcome/MhdOperationOutcomeErrorUnmodifiableMetadataError:
+    name: MHD OperationOutcome DocumentReference udpate error unmodifiable metadata
+    description: Error OperationOutcome that the updated DocumentReference changed
+      unmodifiable metadata
+    exampleBoolean: true
+  OperationOutcome/MhdOperationOutcomeErrorXDSPatientIDReconciliationError:
+    name: MHD OperationOutcome DocumentReference udpate error patient id reconciliation
+    description: Error OperationOutcome that the updated DocumentReference references not the same patient
+    exampleBoolean: true
+  OperationOutcome/MhdOperationOutcomeErrorXdsMetadataIdentifier:
+    name: MHD OperationOutcome DocumentReference udpate error identifiers
+    description: Error OperationOutcome that the updated DocumentReference has not same values for the identifiers
+    exampleBoolean: true
+  Practitioner/DrPeterPan:
+    name: mCSD Practitioner Dr. Peter Pan
+    description: An example of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples (uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner
+  Organization/CommunityA:
+    name: mCSD Organization Community A
+    description: An example of CHmCSDOrganization that contains the same information as Community A in the Swiss examples (uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch)
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization
+  Organization/SpitalX:
+    name: mCSD Organization Spital X
+    description: An example of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples (uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization
+  Organization/SpitalXDept3:
+    name: mCSD Organization Spital X Dept. 3
+    description: An example of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization
+  Organization/PraxisP:
+    name: mCSD Organization Praxis P
+    description: An example of CHmCSDOrganization that contains the same information as Praxis P in the Swiss examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization
+  PractitionerRole/PeterPanSpitalXDept3:
+    name: mCSD PractitionerRole Dr. Peter Pan at Spital X Dept. 3
+    description: An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Spital X, Dept. 3 Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch)
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole
+  PractitionerRole/PeterPanPraxisP:
+    name: mCSD PractitionerRole Dr. Peter Pan at Praxis P
+    description: An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Praxis P Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch)
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole
+  Bundle/FindMatchingCareServicesResponse:
+    name: mCSD Find Matching Care Services Response Bundle
+    description: An example of ITI-90 response Bundle in the profile CH mCSD
+  Bundle/PpqmFeedRequestBundleAdd:
+    name: PPQm Feed Request Bundle (POST)
+    description: CH:PPQm Feed Request Bundle for HTTP method POST -- add new policy sets
+  Bundle/PpqmFeedRequestBundleUpdate:
+    name: PPQm Feed Request Bundle (PUT)
+    description: CH:PPQm Feed Request Bundle for HTTP method PUT -- conditionally
+      update policy sets
+  Bundle/PpqmFeedRequestBundleDelete:
+    name: PPQm Feed Request Bundle (DELETE)
+    description: CH:PPQm Feed Request Bundle for HTTP method DELETE -- delete policy sets
+  Bundle/6de90529-3baa-4157-9bef-e945363b2c39:
+    name: PPQm Feed Response Bundle
+    description: CH:PPQm Feed Response Bundle
+    exampleBoolean: true
+  Bundle/PpqmRetrieveResponseBundle:
+    name: PPQm Retrieve Response Bundle
+    description: CH:PPQm Retrieve Response Bundle
+  Consent/PpqmConsentTemplate201Example:
+    name: PPQm Consent for template 201
+    description: CH:PPQm Consent for template 201 -- Full access for the patient
+  Consent/PpqmConsentTemplate202Example:
+    name: PPQm Consent for template 202
+    description: CH:PPQm Consent for template 202 -- Read access in emergency mode
+  Consent/PpqmConsentTemplate203Example:
+    name: PPQm Consent for template 203
+    description: CH:PPQm Consent for template 203 -- Default provide level
+  Consent/PpqmConsentTemplate301Example:
+    name: PPQm Consent for template 301
+    description: CH:PPQm Consent for template 301 -- Read access for a healthcare professional, without delegation
+  Consent/PpqmConsentTemplate302Example:
+    name: PPQm Consent for template 302
+    description: CH:PPQm Consent for template 302 -- Read access for a group of healthcare professionals
+  Consent/PpqmConsentTemplate303Example:
+    name: PPQm Consent for template 303
+    description: CH:PPQm Consent for template 303 -- Full access for a representative
+  Consent/PpqmConsentTemplate304Example:
+    name: PPQm Consent for template 304
+    description: CH:PPQm Consent for template 304 -- Read access for a healthcare professional, with delegation
+  AuditEvent/ChAuditEventIti65SourceExample:
+    name: Example of audit event for an [ITI-65] transaction at Source
+    description: This example shows an  made by the Document Source for an ITI-65 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti65Source
+  AuditEvent/ChAuditEventIti65RecipientExample:
+    name: Example of audit event for an [ITI-65] transaction at Recipient
+    description: This example shows an  made by the Document Recipient for an ITI-65 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti65Recipient
+  AuditEvent/ChAuditEventIti67ConsumerExample:
+    name: Example of audit event for an [ITI-67] transaction at Consumer
+    description: This example shows an  made by the Document Consumer for an ITI-67 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti67Consumer
+  AuditEvent/ChAuditEventIti67ResponderExample:
+    name: Example of audit event for an [ITI-67] transaction at Responder
+    description: This example shows an  made by the Document Responder for an ITI-67 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti67Responder
+  AuditEvent/ChAuditEventIti68ConsumerExample:
+    name: Example of audit event for an [ITI-68] transaction at Consumer
+    description: This example shows an  made by the Document Consumer for an ITI-68 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti68Consumer
+  AuditEvent/ChAuditEventIti68ResponderExample:
+    name: Example of audit event for an [ITI-68] transaction at Responder
+    description: This example shows an  made by the Document Responder for an ITI-68 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti68Responder
+  AuditEvent/ChAuditEventChMhd1SourceExample:
+    name: Example of audit event for a [CH:MHD-1] transaction at Source
+    description: This example shows an  made by the Document Source for a CH:MHD-1 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-source
+  AuditEvent/ChAuditEventChMhd1RecipientExample:
+    name: Example of audit event for a [CH:MHD-1] transaction at Recipient
+    description: This example shows an  made by the Document Recipient for a CH:MHD-1 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-recipient
+  AuditEvent/ChAuditEventIti83ConsumerExample:
+    name: Example of audit event for an [ITI-83] transaction at Consumer
+    description: This example shows an  made by the Patient Identifier Cross-reference Consumer for an ITI-83 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti83Consumer
+  AuditEvent/ChAuditEventIti83ManagerExample:
+    name: Example of audit event for an [ITI-83] transaction at Manager
+    description: This example shows an  made by the Patient Identifier Cross-reference Manager for an ITI-83 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti83Manager
+  AuditEvent/ChAuditEventIti104SourceExample:
+    name: Example of audit event for an [ITI-104] transaction at Source
+    description: This example shows an  made by the Patient Identity Source for an ITI-104 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti104Source
+  AuditEvent/ChAuditEventIti104ManagerCreateExample:
+    name: Example of audit event for an [ITI-104] add transaction at Manager
+    description: This example shows an  made by the Patient Identifier Cross-reference Manager for an ITI-104 transaction that added a new Patient.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti104ManagerCreate
+  AuditEvent/ChAuditEventIti104ManagerUpdateExample:
+    name: Example of audit event for an [ITI-104] update transaction at Manager
+    description: This example shows an  made by the Patient Identifier Cross-reference Manager for an ITI-104 transaction that revised an existing Patient.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti104ManagerUpdate
+  AuditEvent/ChAuditEventIti119ConsumerExample:
+    name: Example of audit event for an [ITI-119] transaction at Consumer
+    description: This example shows an  made by the Patient Demographics Consumer for an ITI-119 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti119Consumer
+  AuditEvent/ChAuditEventIti119SupplierExample:
+    name: Example of audit event for an [ITI-119] transaction at Supplier
+    description: This example shows an  made by the Patient Demographics Supplier for an ITI-119 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti119Supplier
+  AuditEvent/ChAuditEventPpq3CreateExample:
+    name: Example of audit event for a [PPQ-3] create transaction
+    description: This example shows an  made by the Policy Source for a PPQ-3 transaction that added a new Consent.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq3Create
+  AuditEvent/ChAuditEventPpq3UpdateExample:
+    name: Example of audit event for a [PPQ-3] update transaction
+    description: This example shows an  made by the Policy Repository for a PPQ-3 transaction that updated an existing Consent.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq3Update
+  AuditEvent/ChAuditEventPpq3DeleteExample:
+    name: Example of audit event for a [PPQ-3] delete transaction
+    description: This example shows an AuditEvent made by the Policy Source for a PPQ-3 transaction that deleted a Consent.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq3Delete
+  Bundle/ChAuditEventPpq4Example:
+    name: Example of bundle of audit events for a [PPQ-4] transaction
+    description: This example shows a Bundle of AuditEvents made by the Policy Source for a PPQ-4 transaction.
+    exampleBoolean: true
+  AuditEvent/ChAuditEventPpq5ConsumerExample:
+    name: Example of audit event for a [PPQ-5] transaction at Consumer
+    description: This example shows an  made by the Policy Consumer for a PPQ-5 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq5Consumer
+  AuditEvent/ChAuditEventPpq5RepositoryExample:
+    name: Example of audit event for a [PPQ-5] transaction at Repository
+    description: This example shows an  made by the Policy Repository for a PPQ-5 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq5Repository
+  AuditEvent/ChAuditEventIti90ReadExample:
+    name: Example of audit event for an [ITI-90] read transaction
+    description: This example shows an  made by the Care Services Selective Consumer for an ITI-90 transaction that read an Organization.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti90Read
+  AuditEvent/ChAuditEventIti90QueryExample:
+    name: Example of audit event for an [ITI-90] query transaction
+    description: This example shows an  made by the Care Services Selective Supplier for an ITI-90 transaction that searched Practitioners.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti90Query
+  AuditEvent/ChAuditEventmCSD1CreateExample:
+    name: Example of audit event for a [CH:mCSD-1] create transaction
+    description: This example shows an AuditEvent made by the Care Services Source for a CH:mCSD-1 transaction that added a new PractitionerRole (relationship).
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventmCSD1Create
+  AuditEvent/ChAuditEventmCSD1UpdateExample:
+    name: Example of audit event for a [CH:mCSD-1] update transaction
+    description: This example shows an AuditEvent made by the Care Services Directory for a CH:mCSD-1 transaction that updated an existing Practitioner.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventmCSD1Update
+  AuditEvent/ChAuditEventmCSD1DeleteExample:
+    name: Example of audit event for a [CH:mCSD-1] delete transaction
+    description: This example shows an AuditEvent made by the Care Services Directory for a CH:mCSD-1 transaction that deleted an Organization.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventmCSD1Delete
+      
+# For parameters defined by core FHIR see: 
+# http://build.fhir.org/codesystem-guide-parameter-code.html.
+# For parameters defined by the FHIR Tools IG  see:
+# http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
+parameters:
+  excludettl: true
+  special-url:
+    - http://ihe.net/fhir/
+    - urn:oid:2.16.756.5.30.1.127.3.10.17
+    - urn:oid:1.3.6.1.4.1.19376.1.2.27.1
+  allow-extensible-warnings: true
+  display-warnings: true  
+  path-pages:
+    - input/pages
+  path-expansion-params: '../../expansion-params.json'  # for using SNOMED CT Swiss Extension
+
+FSHOnly: false
+applyExtensionMetadataToRoot: false
+instanceOptions:
+  setMetaProfile: always
+  setId: always
+  manualSliceOrdering: true
