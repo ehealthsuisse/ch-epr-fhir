@@ -1,0 +1,95 @@
+<AuditEvent xmlns="http://hl7.org/fhir">
+    <id value="atc-hpd-group-entry-notify"/>
+    <meta>
+        <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/HpdAuditEvent" />
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+             10.10.2020 10:05: Healthcare professional Dr. med. Sabine Musterfrau has been added to Group Kardiologie Universitätsspital Musterstadt and patient Jakob Wieder-Gesund has been notified 
+        </div>
+    </text>
+    <type>
+        <system value="http://dicom.nema.org/resources/ontology/DCM"/>
+        <code value="110106"/>
+        <display value="Export"/>
+    </type>
+    <subtype>
+        <system value="urn:oid:2.16.756.5.30.1.127.3.10.7"/>
+        <code value="ATC_HPD_GROUP_ENTRY_NOTIFY"/>
+        <display value="Entry of healthcare professionals into a group"/>
+    </subtype>
+    <action value="C"/>
+    <recorded value="2022-10-10T10:05:00Z"/>
+    <outcome value="0"/>
+    <agent>
+        <name value="Notifikations-Dienst" />
+        <requestor value="false" />
+    </agent>
+    <source>
+        <observer>
+            <identifier>
+                <system value="urn:ietf:rfc:3986"/>
+                <value value="urn:oid:7.8.9.10.11"/>
+            </identifier>
+        </observer>
+    </source>
+    <!-- Patient -->
+    <entity>
+        <what>
+            <identifier>
+                <system value="urn:oid:2.16.756.5.30.1.127.3.10.3" />
+                <value value="761337610469261945" />
+            </identifier>
+        </what>
+        <type>
+            <system value="http://terminology.hl7.org/CodeSystem/audit-entity-type"/>
+            <code value="1"/>
+            <display value="Person"/>
+        </type>
+        <role>
+            <system value="http://terminology.hl7.org/CodeSystem/object-role"/>
+            <code value="1"/>
+            <display value="Patient"/>
+        </role>
+    </entity>
+    <!-- Healthcare professional  -->
+    <entity>
+        <what>
+            <identifier>
+                <system value="urn:oid:2.51.1.3"/>
+                <value value="7601000050717"/>
+            </identifier>
+        </what>
+        <type>
+            <system value="http://terminology.hl7.org/CodeSystem/audit-entity-type"/>
+            <code value="1"/>
+            <display value="Person"/>
+        </type>
+        <role>
+            <system value="urn:oid:2.16.756.5.30.1.127.3.10.6"/>
+            <code value="HCP"/>
+            <display value="Healthcare professional"/>
+        </role>
+        <name value="Dr. med. Sabine Musterfrau"/>
+    </entity>
+    <!-- Group -->
+    <entity>
+        <what>
+            <identifier>
+                <value value="urn:oid:1.1.1.1.1"/>
+            </identifier>
+        </what>
+        <type>
+            <system value="http://terminology.hl7.org/CodeSystem/audit-entity-type"/>
+            <code value="3"/>
+            <display value="Organization"/>
+        </type>
+        <role>
+            <system value="urn:oid:2.16.756.5.30.1.127.3.10.14"/>
+            <code value="GRP"/>
+            <display value="Group"/>
+        </role>
+        <name value="Kardiologie Universitätsspital Musterstadt"/>
+    </entity>
+</AuditEvent>
