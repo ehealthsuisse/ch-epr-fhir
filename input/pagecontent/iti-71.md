@@ -1,4 +1,5 @@
-This section describes the national extension for the Swiss EPR to the [Get Access Token [ITI-71]](https://profiles.ihe.net/ITI/IUA/index.html#371-get-access-token-iti-71) transaction
+This section describes the national extension for the Swiss EPR to
+the [Get Access Token [ITI-71]](https://profiles.ihe.net/ITI/IUA/index.html#371-get-access-token-iti-71) transaction
 defined in the IUA profile published in the IHE IT Infrastructure Technical Framework Trial Implementation “Internet
 User Authorization”.
 
@@ -30,8 +31,7 @@ and launch information.
 **Actor:** IUA Authorization Server  
 **Role:** Identifies the Authorization Client, authorizes the access on behalf of the user, verifies claims, optionally
 enforces user authentication by redirecting the Authorization Client to a certified IdP and responds a JWT Access Token
-to the IUA Authorization Client to be incorporated into the transactions
-to access protected resources.
+to the IUA Authorization Client to be incorporated into the transactions to access protected resources.
 
 ### Referenced Standards
 
@@ -245,7 +245,7 @@ be used by portals and primary systems.
     <td>code_challenge</td>
     <td>R</td>
     <td>IUA</td>
-    <td>Transformed version of code_verifier with code_challenge_method</td>
+    <td>Transformed version of code_verifier with code_challenge_method.</td>
    </tr>
    <tr>
     <td>&nbsp;</td>
@@ -280,7 +280,8 @@ be used by portals and primary systems.
     <td>client_id</td>
     <td>R</td>
     <td>IUA</td>
-    <td>The ID the Authorization Client is registered at the IUA Authorization Server<sup><a href="#1">1</a></sup>.</td>
+    <td>The ID the Authorization Client is registered at the IUA Authorization Server<sup><a href="#1">1</a></sup>.
+    </td>
    </tr>
    <tr>
     <td>&nbsp;</td> 
@@ -306,7 +307,6 @@ be used by portals and primary systems.
     <td>IUA</td>
     <td>The original code verifier string.</td>
    </tr>
-  <!-- TODO: add optional IdP assertion -->
    <tr>
     <td>&nbsp;</td> 
     <td>&nbsp;</td>
@@ -327,7 +327,6 @@ be used by portals and primary systems.
         of the user, either a signed JWT, or a base64url encoded SAML 2 assertion <sup><a href="#2">2</a></sup>.
     </td>
    </tr>
-  <!-- end change -->
    <tr>
     <td>05</td>
     <td>The Authorization Server responds with the access token in the HTML body element.</td>
@@ -579,7 +578,7 @@ In the representative extension, the scope subject_role SHALL be the code REP fr
 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. The token of the purpose_of_use scope SHALL be the code NORM from
 code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.
 
-###### Expected Actions <!-- TODO -->
+###### Expected Actions
 
 The IUA Authorization Client and Authorization Server SHALL support the HTTP conversation of the OAuth 2.1 Authorization
 Code grant type.
@@ -612,32 +611,19 @@ In case of success, the IUA Authorization Server SHALL send the authorization co
 redirect-uri via the user agent.
 
 The Authorization Client SHALL perform the HTTP POST request to the Authorization token endpoint to resolve the
-authorization
-code to the access token, sending the client_id and client_secret in the HTTP authorization header field.
+authorization code to the access token, sending the client_id and client_secret in the HTTP authorization header field.
 
-When retrieving the token request, the Authorization Server
-
-- SHALL verify that the user is authenticated compliant to the regulations of the Swiss
-  EPR. <!-- TODO explain options -->
-
-If the user is not authenticated the Authorization Server SHALL respond with an error page.
-
-
-<!-- TODO -->
-The Authorization Server
-
-If the IUA Authorization Server receives a request, it SHALL authenticate the user by redirecting the request to an
-Identity Provider using the Open ID Connect protocol. The Identity Provider authenticates the user based on its internal
-session management (i.e. by checking the requests cookies or other methods) or by validating the user authentication
-means and returns the identity token to the IUA Authorization Server.
-
-<!-- end TODO -->
+When retrieving the token request, the Authorization Server SHALL verify that the user is authenticated compliant to the
+regulations of the Swiss EPR, either by validating the identity token send with the token request or by redirecting the
+Authorization Client's user agent to an certified Identity Provider. In the latter case, the Identity Provider
+authenticates the user based on its internal session management (i.e. by checking the requests cookies or other methods)
+or by validating the user authentication means and returns the identity token to the IUA Authorization Server.
 
 The Authorization Server SHALL respond with the Get Access Token response as defined
 in [Get Access Token Response](#get-access-token-response)
 only if all checks are successful.
 
-If one of the above checks fails, the Authorization Server SHALL respond with HTTP 401 (Unauthorized) error.
+In case of failure, the IUA Authorization Server SHALL respond with HTTP error code 401 ‘Not authorized’.
 
 The IUA Authorization Client SHALL use the access token as defined in IUA Incorporate Access Token transaction, when
 performing requests to resources of the Swiss EPR.
