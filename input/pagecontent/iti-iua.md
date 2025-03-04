@@ -67,13 +67,13 @@ The IUA Authorization Server verifies that the portal or primary system is autho
 connect to the EPR on behalf of the user by checking that the portal or primary system has been registered beforehand
 during the onboarding process of the portal or primary system application.
 
-<!-- TODO present form to consent -->
-The IUA Authorization Server verifies that the patient or healthcare professional has a valid session at the Identity
-Provider and retrieves the Identity Assertion from the Identity Provider. The Authorization Server validates the claims
-together with the data from the Identity Assertion and resolves additional information the SMART on FHIR App requires to
-access the EPR (e.g., resolve the digital identity to the EPR-SPID).
+The IUA Authorization Server reflects the community policy which requires the user's consent for SMART on FHIR Apps to 
+access their protected data with a given scope. The IUA Authorization Server verifies that the user has a valid session 
+at the Identity Provider and retrieves the Identity Assertion from the Identity Provider to identity the user. 
+The Authorization Server validates the Authorization Client claims and resolves additional information the SMART on 
+FHIR App requires to access the EPR (e.g., resolve the digital identity to the EPR-SPID).
 
-The IUA Authorization Server responds an IUA Authorization Token the SMART on FHIR App shall incorporate to any
+The IUA Authorization Server responds an IUA Authorization Token which the SMART on FHIR App shall incorporate to any
 transaction to retrieve the data and documents from the patients EPR.
 
 #### Writing documents from clinical archives
