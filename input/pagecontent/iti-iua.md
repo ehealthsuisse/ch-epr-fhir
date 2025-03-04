@@ -131,20 +131,11 @@ see [sequence diagrams](sequencediagrams.html).
 
 ### Security Consideration
 
-<!-- TODO -->
-Portals and primary systems SHALL be identified and authorized either on the TLS connection level or by digital
-signatures of the messages exchanged, or both. See section Expected Actions of
-the [Get Access Token transaction](iti-71.html#expected-actions-1) for further details.
+Portals and primary systems SHALL be identified by the client_id and client_secret registered during onboarding. All 
+requests to the IUA Authorization Server SHALL be authenticated by the digital signatures.
 
-This national extension enforces client authentication of the TLS network layer with X.509 client certificates. The TLS
-client certificate shall be used together with the OAuth 2 client ID to identify the client when granting access to the
-EPR. The client certificates shall match the requirements of EPRO-FDHA, Annex 2, Section 4.15.3b.
+Implementers SHALL register the combination of the OAuth client ID, the URLs and the certificate used for message 
+signatures during the onboarding process and keep the data up to date.
 
-Communities shall verify and register the combination of the OAuth client ID, the URLs and the client certificate during
-the onboarding process.
-
-Communities shall verify the combination of the OAuth client ID, the URLs and the client certificate of all requests
+Implementers shall verify the combination of the OAuth client ID, the URLs and the certificate of all requests
 against the registered values and shall reject requests in case of mismatch.
-
-The Swiss national extension does not define further additional security requirements beyond those specified in the
-underlying [IUA Trial Implementation](https://profiles.ihe.net/ITI/IUA/index.html).
