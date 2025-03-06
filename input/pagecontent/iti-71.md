@@ -509,9 +509,9 @@ The following table lists the scope values to be sent in the Authorization Reque
     <tr>
       <td>launch</td>
       <td>O/R</td>
-      <td> </td>
+      <td>&nbsp;</td>
       <td>SMART on FHIR</td>
-      <td>The opaque identifier the SMART on FHIR App was launched with in an EHR launch. The claim is required for SMART on FHIR Apps launched from a portal or primary system.</td>
+      <td>An opaque identifier of a SMART on FHIR App launched in an EHR launch. The claim is required for SMART on FHIR Apps launched from a portal or primary system.</td>
     </tr>
     <tr>
       <td>purpose_of_use</td>
@@ -592,18 +592,16 @@ When receiving the request the Authorization Server
   presented in the request.
 - SHALL validate the requests parameter (i.e.: person_id). Depending on the parameter, the IUA Authorization Server
   SHALL either build a Basic Access Token authorizing basic access to the EPR (i.e. PIXm), or an Extended Access Token
-  to
-  authorize access to resources protected by the role and attribute based EPR authorization (i.e. read and write
+  to authorize access to resources protected by the role and attribute based EPR authorization (i.e. read and write
   documents).
 - SHALL validate the launch scope parameter. For SMART on FHIR Apps launched in an EPR Launch, the IUA Authorization
   Server SHALL verify that the portal or primary system which launched the SMART on FHIR App has been registered with
-  this
-  launch parameter value by the community during the onboarding process.
-- SHALL verify that the Authorization Client is authorized to access the EPR on behalf of the user by a community policy
-  or by the user's consent. To retrieve the user's consent, the IUA Authorization server SHALL authenticate the user by
-  redirecting the user agent to an EPR compliant Identity Provider and present a form to the user to authorize the
-  IUA Authorization Client to act on behalf of the user with a given scope. The Authorization Server MAY persist the
-  users consent for future access by the Authorization Client.
+  this launch parameter value by the community during the onboarding process.
+- SHALL verify that the Authorization Client is authorized to access the EPR on behalf of the user by community policy
+  or by the user's consent. 
+- MAY retrieve the user's consent by redirecting the user agent to an EPR compliant Identity Provider to authenticate 
+  the user and present a form to the user to authorize the IUA Authorization Client to act on behalf of the user with 
+  a given scope. The Authorization Server MAY persist the users consent for future access by the Authorization Client.
 
 In case of failure, the IUA Authorization Server SHALL respond with HTTP error code 401 ‘Not authorized’.
 
@@ -615,9 +613,7 @@ authorization code to the access token, sending the client_id and client_secret 
 
 When retrieving the token request, the Authorization Server SHALL verify that the user is authenticated compliant to the
 regulations of the Swiss EPR, either by validating the identity token send with the token request or by redirecting the
-Authorization Client's user agent to an certified Identity Provider. In the latter case, the Identity Provider
-authenticates the user based on its internal session management (i.e. by checking the requests cookies or other methods)
-or by validating the user authentication means and returns the identity token to the IUA Authorization Server.
+Authorization Client's user agent to an certified Identity Provider.
 
 The Authorization Server SHALL respond with the Get Access Token response as defined
 in [Get Access Token Response](#get-access-token-response)
@@ -660,15 +656,16 @@ GET authorize?
     code_challenge_method=S256
 ```
 
-The second step of the conversation is an HTTP GET callback from the Authorization Server to the Authorization Client's
-user agent conveying the authorization code, e.g.:
+In the second step of the conversation, the IUA Authorization Server send a HTTP GET to the Authorization Client's user 
+agent conveying the authorization code, e.g.:
 
 ```http
 GET /callback?code=8V1pr0rJ&state=98wrghuwuogerg97
 ```
 
-The third step of the conversation is an HTTP POST sending the authorization code to retrieve the authorization token in
-the response, e.g.:
+In the third step of the conversation, the IUA Authorization Client sends a HTTP POST request to the token endpoint of 
+IUA Authorization Server to exchange the authorization code and optional identity token (signed JWT or SAML 2) to the 
+access token, e.g.:
 
 ```http
 POST /token HTTP/1.1 
@@ -680,7 +677,9 @@ Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 grant_type=authorization_code&
 code=98wrghuwuogerg97&
 code_verifier=qskt4342of74bkncmicdpv2qd143iqd822j41q2gupc5n3o6f1clxhpd2x11&
-requested-token-type=urn:ietf:params:oauth:token-type:jwt
+requested_token_type=urn:ietf:params:oauth:token-type:jwt
+client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
+client_assertion=eyJraWQiOiIxZTlnZGs3IiwiYWxnIjoiUlMyNTYifQ[...omitted for brevity...]
 ```
 
 #### Get Access Token Response
@@ -800,9 +799,8 @@ The Authorization Server and Resource Server shall support the following extensi
 - principal_id (optional) GLN of the healthcare professional an assistant is acting on behalf of.
 
 The ch_delegation extension claims shall be wrapped in an "extensions" object with key 'ch_delegation' and a JSON value
-object containing the claims.
-The claim content for the JWT CH:EPR extensions shall correspond to the content defined in the XUA specification (see
-1.6.4.2 Get X-User Assertion, A5E1).
+object containing the claims. The claim content for the JWT CH:EPR extensions shall correspond to the content defined 
+in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 
 | JWT Claim (Extension) | Optionality (Basic/ Extended) | XUA Attribute EPR                  | Remark                                                                   |
 |-----------------------|-------------------------------|------------------------------------|--------------------------------------------------------------------------|
@@ -816,8 +814,8 @@ The claim content for the JWT CH:EPR extensions shall correspond to the content 
 ##### Expected Actions
 
 The business rules for the IUA Authorization Server for the Healthcare Professional, Assistant, Patient and
-Representative
-Extension SHALL be the same as for Annex 5E1 1.6.4.2.4.4 Expected Actions X-Assertion Provider Extensions.
+Representative Extension SHALL be the same as for Annex 5E1 1.6.4.2.4.4 Expected Actions X-Assertion Provider 
+Extensions.
 
 ##### Message Example
 
