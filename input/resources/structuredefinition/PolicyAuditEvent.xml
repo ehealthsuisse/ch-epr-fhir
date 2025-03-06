@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="PolicyAuditEvent" />
+	<text>
+		<status value="additional" />
+		<div xmlns="http://www.w3.org/1999/xhtml">
+	StructureDefinition for the PolicyAuditEvent.
+		</div>
+	</text>
+	<url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/PolicyAuditEvent" />
+	<name value="PolicyAuditEvent" />
+	<title value="PolicyAuditEvent" />
+	<status value="active" />
+	<experimental value="false" />
+	<date value="2018-05-28" />
+	<publisher value="eHealth Suisse"/>
+	<contact>
+		<name value="eHealth Suisse"/>
+		<telecom>
+			<system value="url"/>
+			<value value="https://www.e-health-suisse.ch/"/>
+		</telecom>
+	</contact>
+	<contact>
+		<name value="Oliver Egger"/>
+		<telecom>
+			<system value="email"/>
+			<value value="oliver.egger@ahdis.ch"/>
+		</telecom>
+	</contact>
+	<description value="This profile defines the content of the policy audit events which a community has to provide for a patients audit trail." />
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="CH"/>
+		</coding>
+	</jurisdiction>
+	<copyright value="CC0-1.0" />
+	<fhirVersion value="4.0.1" />
+	<mapping>
+		<identity value="ch-atc" />
+		<uri value="https://www.bag.admin.ch/bag/en/home.html" />
+		<name value="CH ATC" />
+	</mapping>
+	<kind value="resource" />
+	<abstract value="false" />
+	<type value="AuditEvent" />
+	<baseDefinition value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-auditevent" />
+	<derivation value="constraint" />
+	<differential>
+		<element id="AuditEvent">
+			<path value="AuditEvent"/>
+			<short value="Policy Audit Trail Content Profile"/>
+			<constraint>
+				<key value="ch-atc-pae-2"/>
+				<severity value="error"/>
+				<human value="subtype needs to be fixed to ValueSet PolicyAuditEventType"/>
+				<!-- <expression value="subtype.exists() and subtype.count()=1 and subtype[0].memberOf('http://fhir.ch/ig/ch-epr-fhir/ValueSet/PolicyAuditEventType')"/>  member of not implemented yet -->
+				<expression value="subtype.exists() and subtype.count()=1 and subtype[0].code.startsWith('ATC_POL')"/>
+			</constraint>
+		</element>
+
+		<element id="AuditEvent.type">
+			<path value="AuditEvent.type"/>
+			<binding>
+				<extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+					<valueString value="AuditEventType"/>
+				</extension>
+				<strength value="extensible"/>
+				<description value="Type of event."/>
+				<valueSet value="http://hl7.org/fhir/ValueSet/audit-event-type"/>
+			</binding>
+		</element>
+
+		<element id="AuditEvent.subtype">
+			<path value="AuditEvent.subtype"/>
+			<slicing>
+				<discriminator>
+					<type value="value" />
+					<path value="system" />
+				</discriminator>
+				<rules value="open"/>
+			</slicing>
+			<min value="1"/>
+		</element>
+		<element id="AuditEvent.subtype:PolicyAuditEventType">
+			<path value="AuditEvent.subtype"/>
+			<sliceName value="PolicyAuditEventType"/>
+			<short value="PolicyAuditEventType" />
+			<min value="1"/>
+			<max value="1"/>
+			<binding>
+				<extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+					<valueString value="ConditionKind"/>
+				</extension>
+				<strength value="required"/>
+				<description value="Policy Audit Event Type"/>
+				<valueSet value="http://fhir.ch/ig/ch-epr-fhir/ValueSet/PolicyAuditEventType"/>
+			</binding>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="Event Type"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.subtype.system:PolicyAuditEventType">
+			<path value="AuditEvent.subtype.system"/>
+			<min value="1"/>
+			<fixedUri value="urn:oid:2.16.756.5.30.1.127.3.10.7"/>
+		</element>
+
+		<element id="AuditEvent.recorded">
+			<path value="AuditEvent.recorded"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="Event Date and Time"/>
+			</mapping>
+		</element>
+
+		<element id="AuditEvent.agent">
+			<path value="AuditEvent.agent"/>
+			<short value="Participants"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="Participants"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.agent.role">
+			<path value="AuditEvent.agent.role"/>
+			<min value="1"/>
+			<max value="1"/>
+			<binding>
+				<extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+					<valueString value="ConditionKind"/>
+				</extension>
+				<strength value="required"/>
+				<description value="EPR Participant"/>
+				<valueSet value="http://fhir.ch/ig/ch-epr-fhir/ValueSet/EprParticipant"/>
+			</binding>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="role (PAT, HCP, ASS, REP, GRP, PADM)"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.agent.who">
+			<path value="AuditEvent.agent.who"/>
+			<min value="0"/>
+			<max value="1"/>
+		</element>
+		<element id="AuditEvent.agent.who.identifier">
+			<path value="AuditEvent.agent.who.identifier"/>
+			<min value="1"/>
+			<max value="1"/>
+			<type>
+				<code value="Identifier"/>
+			</type>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="Identifier if applicable"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.agent.name">
+			<path value="AuditEvent.agent.name"/>
+			<definition value="AttributeStatement/Attribute[@Name='urn:oasis:names:tc:xspa:1.0:subject:subject- id']/AttributeValue"/>
+			<min value="1"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="Name"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.agent.requestor">
+			<path value="AuditEvent.agent.requestor"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="if participant is Initiator"/>
+			</mapping>
+		</element>
+
+		<element id="AuditEvent.entity">
+			<path value="AuditEvent.entity"/>
+			<slicing>
+				<discriminator>
+					<type value="value" />
+					<path value="type.code" />
+				</discriminator>
+				<discriminator>
+					<type value="value" />
+					<path value="role.code" />
+				</discriminator>
+				<rules value="open"/>
+			</slicing>
+		</element>
+
+		<!-- Slice Patient -->
+		<element id="AuditEvent.entity:Patient">
+			<path value="AuditEvent.entity"/>
+			<sliceName value="Patient"/>
+			<min value="1"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="Patient"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.entity:Patient.what.identifier">
+			<path value="AuditEvent.entity.what.identifier"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="EPR-SPID"/>
+			</mapping>
+		</element>
+
+		<!-- Slice  Resource -->
+		<element id="AuditEvent.entity:Resource">
+			<path value="AuditEvent.entity"/>
+			<sliceName value="Resource"/>
+			<short value="Resource (HCP, Group, Representative of Patient)" />
+			<min value="0"/>
+			<max value="1"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="Resource"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.entity:Resource.what.identifier">
+			<path value="AuditEvent.entity.what.identifier"/>
+			<short value="Identifier: HCP (GLN), Group (OID)" />
+			<min value="0"/>
+			<max value="1"/>
+			<type>
+				<code value="Identifier"/>
+			</type>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="Identifier: GLN for HCP, OID for Group"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.entity:Resource.type">
+			<path value="AuditEvent.entity.type"/>
+			<min value="1"/>
+		</element>
+		<element id="AuditEvent.entity:Resource.type.code">
+			<path value="AuditEvent.entity.type.code"/>
+			<min value="1"/>
+			<fixedCode value="2"/>
+		</element>
+		<element id="AuditEvent.entity:Resource.role">
+			<path value="AuditEvent.entity.role"/>
+			<min value="1"/>
+			<binding>
+				<extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+					<valueString value="ConditionKind"/>
+				</extension>
+				<strength value="required"/>
+				<description value="EPR Participant"/>
+				<valueSet value="http://fhir.ch/ig/ch-epr-fhir/ValueSet/EprParticipant"/>
+			</binding>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="role (HCP, REP, GRP)"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.entity:Resource.name">
+			<path value="AuditEvent.entity.name"/>
+			<min value="1"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="Name of HCP, Group or Representative of Patient"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.entity:Resource.detail">
+			<path value="AuditEvent.entity.detail"/>
+			<slicing>
+				<discriminator>
+					<type value="value" />
+					<path value="type" />
+				</discriminator>
+				<rules value="open"/>
+			</slicing>
+		</element>
+
+		<!-- Slice Resource Detail: AccessLevel  -->
+		<element id="AuditEvent.entity:Resource.detail:AccessLevel">
+			<path value="AuditEvent.entity.detail"/>
+			<sliceName value="AccessLevel"/>
+			<short value="AccessLevel if subtype is Create or Update" />
+			<definition value="The type of extra detail provided in the value."/>
+			<max value="1"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="AccessLevel"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.entity:Resource.detail.type:AccessLevel">
+			<path value="AuditEvent.entity.detail.type"/>
+			<short value="The type of extra detail provided in the value"/>
+			<fixedString value="AccessLevel"/>
+		</element>
+		<element id="AuditEvent.entity:Resource.detail.value:AccessLevel">
+			<path value="AuditEvent.entity.detail.value"/>
+			<short value="one of urn:e-health-suisse:2015:policies:access-level: normal, restricted, delegation-and-restricted, delegation-and-normal or full"/>
+			<definition value="The details, base64 encoded. Used to carry bulk information."/>
+			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
+			<type>
+				<code value="base64Binary"/>
+			</type>
+		</element>
+
+		<!-- Slice Document Detail: AccessLimitedToDate  -->
+		<element id="AuditEvent.entity:Resource.detail:AccessLimitedToDate">
+			<path value="AuditEvent.entity.detail"/>
+			<sliceName value="AccessLimitedToDate"/>
+			<short value="AccessLimitedToDate if subtype is Create or Update" />
+			<max value="1"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="AccessLimitedToDate"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.entity:Resource.detail.type:AccessLimitedToDate">
+			<path value="AuditEvent.entity.detail.type"/>
+			<fixedString value="AccessLimitedToDate"/>
+		</element>
+		<element id="AuditEvent.entity:Resource.detail.value:AccessLimitedToDate">
+			<path value="AuditEvent.entity.detail.value"/>
+			<short value="Date in property value"/>
+			<definition value="The details, base64 encoded. Used to carry bulk information."/>
+			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
+			<type>
+				<code value="base64Binary"/>
+			</type>
+		</element>
+
+		<!-- Slice Resource: Detail: ProvideLevel  -->
+		<element id="AuditEvent.entity:Resource.detail:ProvideLevel">
+			<path value="AuditEvent.entity.detail"/>
+			<sliceName value="ProvideLevel"/>
+			<short value="ProvideLevel if subtype is ATC_POL_DEF_CONFLEVEL" />
+			<max value="1"/>
+			<mapping>
+				<identity value="ch-atc"/>
+				<map value="ProvideLevel"/>
+			</mapping>
+		</element>
+		<element id="AuditEvent.entity:Resource.detail.type:ProvideLevel">
+			<path value="AuditEvent.entity.detail.type"/>
+			<fixedString value="ProvideLevel"/>
+		</element>
+		<element id="AuditEvent.entity.detail.value:ProvideLevel">
+			<path value="AuditEvent.entity.detail.value"/>
+			<short value="one of urn:e-health-suisse:2015:policies:provide-level: normal, restricted or secret"/>
+			<definition value="The details, base64 encoded. Used to carry bulk information."/>
+			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
+			<type>
+				<code value="base64Binary"/>
+			</type>
+		</element>
+	</differential>
+</StructureDefinition>

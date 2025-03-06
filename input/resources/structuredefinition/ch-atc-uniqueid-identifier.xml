@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+    <id value="ch-atc-uniqueid-identifier"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-atc-uniqueid-identifier"/>
+    <name value="UniqueidIdentifier"/>
+    <title value="Identifier for XDSDocumentEntry.uniqueId"/>
+    <status value="active"/>
+    <description value="Identifier holding the XDSDocumentEntry.uniqueId"/>
+    <fhirVersion value="4.0.1"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <type value="Identifier"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Identifier"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Identifier.system">
+            <path value="Identifier.system"/>
+            <min value="1"/>
+            <fixedUri value="urn:ihe:iti:xds:2013:uniqueId"/>
+        </element>
+        <element id="Identifier.value">
+            <path value="Identifier.value"/>
+            <min value="1"/>
+            <example>
+                <label value="General"/>
+                <valueString value="2.999.1.2.3.4"/>
+              </example>
+            <mapping>
+				<identity value="ch-atc"/>
+				<map value="XDSDocumentEntry.uniqueId"/>
+			</mapping>
+        </element>
+    </differential>
+</StructureDefinition>

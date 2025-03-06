@@ -15,7 +15,7 @@
             <value value="https://www.e-health-suisse.ch"/>
         </telecom>
     </contact>
-    <description value="The humanname WITHOUT the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR"/>
+    <description value="The human name WITHOUT the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR"/>
     <jurisdiction>
         <coding>
             <system value="urn:iso:std:iso:3166"/>

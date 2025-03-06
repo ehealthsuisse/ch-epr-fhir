@@ -53,6 +53,8 @@ pages:
     title: Mobile Care Services Discovery (mCSD)
   ppqm.md:
     title: Privacy Policy Query for Mobile (CH:PPQm)
+  ch-atc.md:
+    title: Audit Trail Consumption (CH:ATC)
   volume2.md:
     title: Volume 2
   iti-71.md:
@@ -71,6 +73,8 @@ pages:
     title: Find Document References [ITI-67]
   iti-68.md:
     title: Retrieve Document [ITI-68]
+  iti-81.md:
+    title: Retrieve Document [ITI-68]
   ch-mhd-1.md:
     title: Update Document Metadata
   iti-20.md:
@@ -85,6 +89,8 @@ pages:
     title: Mobile Privacy Policy Bundle Feed [PPQ-4]
   ppq-5.md:
     title: Mobile Privacy Policy Retrieve [PPQ-5]
+  volume3.md:
+    title: Volume 3
   appendix.md:
     title: Appendix
   profiles.md:
@@ -105,6 +111,132 @@ pages:
     title: Open Issues / Change Log
 
 resources:
+  CapabilityStatement/CH.EPR.App:
+    exampleBoolean: false
+  CapabilityStatement/CH.PDQm.Consumer:
+    exampleBoolean: false
+  CapabilityStatement/CH.PDQm.Supplier:
+    exampleBoolean: false
+  CapabilityStatement/CH.PIXm.Consumer:
+    exampleBoolean: false
+  CapabilityStatement/CH.PIXm.Source:
+    exampleBoolean: false
+  CapabilityStatement/CH.MHD.DocumentSource:
+    exampleBoolean: false
+  CapabilityStatement/CH.MHD.DocumentConsumer:
+    exampleBoolean: false
+  CapabilityStatement/CH.EPR.API:
+    exampleBoolean: false
+  CapabilityStatement/CH.PIXm.Manager:
+    exampleBoolean: false
+  CapabilityStatement/CH.MHD.DocumentRecipient:
+    exampleBoolean: false
+  CapabilityStatement/CH.MHD.DocumentResponder:
+    exampleBoolean: false
+  CapabilityStatement/CH.mCSD.CareServicesSelectiveSupplier:
+    exampleBoolean: false
+  CapabilityStatement/CH.mCSD.CareServicesSelectiveConsumer:
+    exampleBoolean: false
+  CapabilityStatement/CH.PPQm.PolicyRepository:
+    exampleBoolean: false
+  CapabilityStatement/CH.PPQm.PolicySourceConsumer:
+    exampleBoolean: false
+  CapabilityStatement/PatientAuditRecordRepositoryCapabilityStatement:
+    name: CapabilityStatement for the Patient Audit Record Repository
+    description: Defines the CapabilityStatement for the Patient Audit Record Repository actor of ITI-81.
+    exampleBoolean: false
+  SearchParameter/AuditEvent-entity-identifier:
+    name: Search Parameter AuditEvent entity.identifier
+    description: Defines the IHE RESTFul ATNA Query Parameter entity.identifier for an AuditEvent.
+    exampleBoolean: false
+  StructureDefinition/ch-epr-fhir-auditevent:
+    name: CH EPR FHIR AuditEvent
+    description: CH EPR FHIR profile on AuditEvent
+    exampleBoolean: false
+  StructureDefinition/ch-epr-fhir-birthname:
+    name: CH EPR FHIR BirthName
+    description: The birthname with the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR
+    exampleBoolean: false
+  StructureDefinition/ch-epr-fhir-humanname:
+    name: CH EPR FHIR HumanName
+    description: The human name WITHOUT the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR
+    exampleBoolean: false
+  StructureDefinition/DocumentAuditEvent:
+    name: Profile on DocumentAuditEvent for CH ATC
+    description: This profile defines the content of the document audit events which a community has to provide for a patients audit trail.
+    exampleBoolean: false
+  StructureDefinition/PolicyAuditEvent:
+    name: Profile on PolicyAuditEvent for CH ATC
+    description: This profile defines the content of the policy audit events which a community has to provide for a patients audit trail.
+    exampleBoolean: false
+  StructureDefinition/AccessAuditTrailEvent:
+    name: Profile on AccessAuditTrailEvent for CH ATC
+    description: This profile defines the content of the access audit trail event which a community has to provide for a patients audit trail.
+    exampleBoolean: false
+  StructureDefinition/HpdAuditEvent:
+    name: Profile on HpdAuditEvent for CH ATC
+    description: This profile defines the content of the HPD audit events which a community has to provide for a patients audit trail.
+    exampleBoolean: false
+  StructureDefinition/CH-ATC.ITI-81.Response:
+    name: Retrieve CH ATC ATNA Audit Event [ITI-81] Response
+    description: This profile defines the response to the [ITI-81] query. The response is a search set including all audit events which a community has to provide for a patients audit trail.
+    exampleBoolean: false
+  StructureDefinition/ch-atc-uniqueid-identifier:
+    name: Identifier for XDSDocumentEntry.uniqueId
+    description: Identifier for XDSDocumentEntry.uniqueId
+    exampleBoolean: false
+  ValueSet/EprParticipant:
+    name: EprParticipant
+    description: EprParticipant
+    exampleBoolean: false
+  ValueSet/DocumentAuditEventType:
+    name: DocumentAuditEventType
+    description: DocumentAuditEventType
+    exampleBoolean: false
+  ValueSet/PolicyAuditEventType:
+    name: PolicyAuditEventType
+    description: PolicyAuditEventType
+    exampleBoolean: false
+  ValueSet/AccessAuditTrailEventType:
+    name: AccessAuditTrailEventType
+    description: AccessAuditTrailEventType
+    exampleBoolean: false
+  ValueSet/HpdAuditEventType:
+    name: HpdAuditEventType
+    description: HpdAuditEventType
+    exampleBoolean: false
+  AuditEvent/atc-doc-create-rep-pat:
+    name: CH ATC - Creation of a Document
+    description: CH ATC - Creation of a Document for a patient by a representative of this patient
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/DocumentAuditEvent
+  AuditEvent/atc-doc-read-ass-hpc:
+    name: CH ATC - Retrieveal of a Document
+    description: CH ATC - Retrieveal of a Document from a patient by an assitant for a healthcare professional
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/DocumentAuditEvent
+  AuditEvent/atc-pol-create-acc-right:
+    name: CH ATC - Create Access Right for Healthcare professional
+    description: CH ATC - Create Access Right for Healthcare professional
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/PolicyAuditEvent
+  AuditEvent/atc-pol-create-rep:
+    name: CH ATC - Create Access Right for a representative
+    description: CH ATC - Create Access Right a representative
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/PolicyAuditEvent
+  AuditEvent/atc-log-read:
+    name: CH ATC - Access of Audit Trail Repository
+    description: CH ATC - Access of Audit Trail Repository
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/AccessAuditTrailEvent
+  AuditEvent/atc-doc-search:
+    name: CH ATC - Audit Event for Document Search
+    description: CH ATC - Audit Event for Document Search
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/DocumentAuditEvent
+  AuditEvent/atc-hpd-group-entry-notify:
+    name: CH ATC - Audit Event for Group Entry Audit Event Content Profile
+    description: CH ATC - AuditEvent of Healthcare professional which has been added to a group and patient has been notified
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/HpdAuditEvent
+  Bundle/ch-atc-iti-81-response-sample:
+    name: CH ATC - Reponse Audit Trail
+    description: CH ATC - Reponse Audit Trail
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH-ATC.ITI-81.Response
   Parameters/ParametersPIXmInput:
     name: PIXm Parameters Query Input
     description: Example Input Parameters Mobile Patient Identifier Cross-reference Query

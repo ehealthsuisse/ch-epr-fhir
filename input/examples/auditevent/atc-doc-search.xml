@@ -1,0 +1,105 @@
+<AuditEvent xmlns="http://hl7.org/fhir">
+    <id value="atc-doc-search"/>
+    <meta>
+        <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/DocumentAuditEvent" />
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">Search for documents 10.10.2022 18:49 Dr. med. Sabine Musterfrau requesting documents in Emergency Access from Kardiologie Universitätsspital Musterstadt 
+        </div>
+    </text>
+    <type>
+        <system value="http://dicom.nema.org/resources/ontology/DCM"/>
+        <code value="110106"/>
+        <display value="Export"/>
+    </type>
+    <subtype>
+        <system value="urn:oid:2.16.756.5.30.1.127.3.10.7"/>
+        <code value="ATC_DOC_SEARCH"/>
+        <display value="Document search"/>
+    </subtype>
+    <action value="E"/>
+    <recorded value="2022-10-10T18:49:00Z"/>
+    <outcome value="0"/>
+    <purposeOfEvent>
+        <coding>
+            <system value="urn:oid:2.16.756.5.30.1.127.3.10.5"/>
+            <code value="EMER"/>
+            <display value="Emergency Access"/>
+        </coding>
+    </purposeOfEvent>
+    <agent>
+        <role>
+            <coding>
+                <system value="urn:oid:2.16.756.5.30.1.127.3.10.6"/>
+                <code value="HCP"/>
+                <display value="Healthcare professional"/>
+            </coding>
+        </role>
+        <name value="Dr. med. Sabine Musterfrau" />
+        <requestor value="true" />
+    </agent>
+    <agent>
+        <role>
+            <coding>
+                <system value="urn:oid:2.16.756.5.30.1.127.3.10.14"/>
+                <code value="GRP"/>
+                <display value="Group"/>
+            </coding>
+        </role>
+        <who>
+            <identifier>
+                <value value="urn:oid:1.1.1.1.1"/>
+            </identifier>
+        </who>
+        <name value="Kardiologie Universitätsspital Musterstadt"/>
+        <requestor value="false"/>
+    </agent>
+    <source>
+        <observer>
+            <identifier>
+                <system value="urn:ietf:rfc:3986"/>
+                <value value="urn:oid:7.8.9.10.11"/>
+            </identifier>
+        </observer>
+    </source>
+    <!-- Patient -->
+    <entity>
+        <what>
+            <identifier>
+                <system value="urn:oid:2.16.756.5.30.1.127.3.10.3" />
+                <value value="761337610469261945" />
+            </identifier>
+        </what>
+        <type>
+            <system value="http://terminology.hl7.org/CodeSystem/audit-entity-type"/>
+            <code value="1"/>
+            <display value="Person"/>
+        </type>
+        <role>
+            <system value="http://terminology.hl7.org/CodeSystem/object-role"/>
+            <code value="1"/>
+            <display value="Patient"/>
+        </role>
+    </entity>
+    <!-- Query -->
+    <entity>
+        <what>
+            <identifier>
+                <system value="urn:ietf:rfc:3986" />
+                <value value="urn:uuid:14d4debf-8f97-4251-9a74-a90016b0af0d" />
+                <!-- Stored Query Id: https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.4 -->
+            </identifier>
+        </what>
+        <type>
+            <system value="http://terminology.hl7.org/CodeSystem/audit-entity-type"/>
+            <code value="2"/>
+            <display value="System Object"/>
+        </type>
+        <role>
+            <system value="http://terminology.hl7.org/CodeSystem/object-role"/>
+            <code value="24"/>
+            <display value="Query"/>
+        </role>
+    </entity>
+</AuditEvent>

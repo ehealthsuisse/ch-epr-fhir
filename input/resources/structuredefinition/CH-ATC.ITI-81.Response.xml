@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Problem with ig publisher: Validating against slices with discriminators based on profiles is not yet supported by the FHIRPath engine: resource -->
+<StructureDefinition xmlns="http://hl7.org/fhir">
+	<id value="CH-ATC.ITI-81.Response" />
+	<text>
+		<status value="additional" />
+		<div xmlns="http://www.w3.org/1999/xhtml">
+	StructureDefinition for Provide Document Bundle (ITI-65) transaction response of 									
+			<a href="http://wiki.ihe.net/index.php/Mobile_access_to_Health_Documents_(MHD)">Mobile access to Health Documents (MHD) Rev. 2.3</a>.
+	The IHE MHD Profile text is Normative, this conformance resource is Informative.						
+		</div>
+	</text>
+	<url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH-ATC.ITI-81.Response" />
+	<name value="ChAtcIti81Response" />
+	<title value="ChAtcIti81Response" />
+	<status value="active" />
+	<experimental value="false" />
+	<date value="2018-05-14" />
+	<publisher value="eHealth Suisse"/>
+	<contact>
+		<name value="eHealth Suisse"/>
+		<telecom>
+			<system value="url"/>
+			<value value="https://www.e-health-suisse.ch/"/>
+		</telecom>
+	</contact>
+	<contact>
+		<name value="Oliver Egger"/>
+		<telecom>
+			<system value="email"/>
+			<value value="oliver.egger@ahdis.ch"/>
+		</telecom>
+	</contact>
+	<description value="This profile defines the response to the [ITI-81] query. The response is a search set including all audit events which a community has to provide for a patients audit trail." />
+	<jurisdiction>
+		<coding>
+			<system value="urn:iso:std:iso:3166"/>
+			<code value="CH"/>
+		</coding>
+	</jurisdiction>
+	<copyright value="CC0-1.0" />
+	<fhirVersion value="4.0.1" />
+	<kind value="resource" />
+	<abstract value="false" />
+	<type value="Bundle" />
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
+	<derivation value="constraint" />
+	<differential>
+		<element id="Bundle">
+			<path value="Bundle"/>
+			<min value="0"/>
+			<max value="*"/>
+		</element>
+		<element id="Bundle.type">
+			<path value="Bundle.type" />
+			<short value="searchset" />
+			<fixedCode value="searchset" />
+		</element>
+		<element id="Bundle.entry">
+			<path value="Bundle.entry" />
+			<slicing>
+				<discriminator>
+					<type value="profile" />
+					<path value="resource" />
+				</discriminator>
+				<rules value="open" />
+			</slicing>
+		</element>
+		<element id="Bundle.entry:DocumentAuditEvent">
+			<path value="Bundle.entry" />
+			<sliceName value="DocumentAuditEvent" />
+			<short value="AuditEvent" />
+			<min value="0" />
+			<max value="*" />
+		</element>
+		<element id="Bundle.entry:DocumentAuditEvent.fullUrl">
+			<path value="Bundle.entry.fullUrl" />
+			<min value="0" />
+		</element>
+		<element id="Bundle.entry:DocumentAuditEvent.resource">
+			<path value="Bundle.entry.resource" />
+			<min value="1" />
+			<type>
+				<code value="AuditEvent" />
+				<profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/DocumentAuditEvent" />
+			</type>
+			<mustSupport value="true" />
+		</element>
+		<element id="Bundle.entry:PolicyAuditEvent">
+			<path value="Bundle.entry" />
+			<sliceName value="PolicyAuditEvent" />
+			<short value="AuditEvent" />
+			<min value="0" />
+			<max value="*" />
+		</element>
+		<element id="Bundle.entry:PolicyAuditEvent.fullUrl">
+			<path value="Bundle.entry.fullUrl" />
+			<min value="0" />
+		</element>
+		<element id="Bundle.entry:PolicyAuditEvent.resource">
+			<path value="Bundle.entry.resource" />
+            <min value="1" />
+			<type>
+				<code value="AuditEvent" />
+				<profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/PolicyAuditEvent" />
+			</type>
+			<mustSupport value="true" />
+		</element>
+		<element id="Bundle.entry:AccessAuditTrailEvent">
+			<path value="Bundle.entry" />
+			<sliceName value="AccessAuditTrailEvent" />
+			<short value="AuditEvent" />
+			<min value="0" />
+			<max value="*" />
+		</element>
+		<element id="Bundle.entry:AccessAuditTrailEvent.fullUrl">
+			<path value="Bundle.entry.fullUrl" />
+			<min value="0" />
+		</element>
+		<element id="Bundle.entry:AccessAuditTrailEvent.resource">
+			<path value="Bundle.entry.resource" />
+            <min value="1" />
+			<type>
+				<code value="AuditEvent" />
+				<profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/AccessAuditTrailEvent" />
+			</type>
+			<mustSupport value="true" />
+		</element>
+		<element id="Bundle.entry:HpdAuditEvent">
+			<path value="Bundle.entry" />
+			<sliceName value="HpdAuditEvent" />
+			<short value="AuditEvent" />
+			<min value="0" />
+			<max value="*" />
+		</element>
+		<element id="Bundle.entry:HpdAuditEvent.fullUrl">
+			<path value="Bundle.entry.fullUrl" />
+			<min value="0" />
+		</element>
+		<element id="Bundle.entry:HpdAuditEvent.resource">
+			<path value="Bundle.entry.resource" />
+            <min value="1" />
+			<type>
+				<code value="AuditEvent" />
+				<profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/HpdAuditEvent" />
+			</type>
+			<mustSupport value="true" />
+		</element>
+		<element id="Bundle.entry:OperationOutcome">
+			<path value="Bundle.entry" />
+			<sliceName value="OperationOutcome" />
+			<short value="OperationOutcome" />
+			<min value="0" />
+			<max value="*" />
+		</element>
+		<element id="Bundle.entry:OperationOutcome.fullUrl">
+			<path value="Bundle.entry.fullUrl" />
+            <min value="1" />
+		</element>
+		<element id="Bundle.entry:OperationOutcome.resource">
+			<path value="Bundle.entry.resource" />
+			<short value="OperationOutcome can indicate a warning like a partial result" />
+			<min value="0" />
+			<type>
+				<code value="OperationOutcome" />
+				<profile value="http://hl7.org/fhir/StructureDefinition/OperationOutcome" />
+			</type>
+			<mustSupport value="true" />
+		</element>
+	</differential>
+</StructureDefinition>
