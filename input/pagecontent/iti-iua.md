@@ -9,19 +9,19 @@ to authorize client applications when accessing protected resources.
 This profile is based on the IUA Trial Implementation and adds certain restrictions to be compliant to the ordinances of
 the Swiss EPR.
 
-The scope of this national extension is limited to provide FHIR based interfaces for primary systems and portals
-connected to the Swiss EPR, as well as for SMART on FHIR components launched from the portals or primary systems.
+This national extension is scoped for client authorization for FHIR based interfaces for primary systems, portals and
+SMART on FHIR Apps launched from the portals or primary systems and to convey the information required to enforce the
+privacy policy settings when accessing protected resources from the EPR.
 
-SMART on FHIR Apps launched from a portal or primary system require a launch context which identifies the portal or 
-primary system the app is launched from. The portal or primary system shall be registered with "client_id" and 
-"client-secret" during onboarding, while the SMART on FHIR App may require an user consent for given scopes. When the 
-user consent is requested in a form provided by the Authorization Server, users must be authenticated compliant to 
-EPRO Annex 8.
+This national extension covers:
 
-Portals and primary systems registered during onboarding, shall provide the identity token received from a certified 
-identity provider after user authentication in the access token request send to the IUA Authorization Server. 
-The IUA Authorization Server shall verify the identity token and accept the user identity data of the authenticated 
-user.  
+- SMART on FHIR Apps launched from a portal or primary system, which require a launch context identifying the portal or
+  primary system the app is launched from. This requires the portal or primary system to be registered with "client_id"
+  and "client-secret" during onboarding. This may require an user consent which authorizes the SMART on FHIR to act on
+  behalf for given scopes and the authentication of the user compliant to EPRO Annex 8.
+
+- Portals and primary systems which shall be registered during onboarding, authenticate the user compliant to EPRO Annex
+  8 and provide the identity token in the access token request send to the IUA Authorization Server.
 
 ### Use Cases
 
@@ -29,20 +29,22 @@ user.
 
 A patient uses a portal which is integrated to the Swiss EPR using the profiles to access and share data and documents
 with healthcare professionals. To access documents from the EPR, the patient authenticates at a certified Identity
-Provider. The portal sends the identity token and the required claims to the IUA Authorization Server 
+Provider. The portal sends the identity token and the required claims to the IUA Authorization Server
 to retrieve an authorization token to access the EPR.
 
-The Authorization Server validates the claims together with the data from the identity token and resolves additional 
-information required to access the EPR (e.g., resolve the digital identity to the EPR-SPID). The IUA Authorization Server 
-responds an IUA Authorization Token the portal shall incorporate to any transaction to retrieve the data and documents 
+The Authorization Server validates the claims together with the data from the identity token and resolves additional
+information required to access the EPR (e.g., resolve the digital identity to the EPR-SPID). The IUA Authorization
+Server
+responds an IUA Authorization Token the portal shall incorporate to any transaction to retrieve the data and documents
 from the patients EPR.
 
 #### User Access from an integrated Primary System
 
 A healthcare professional uses a primary system which is integrated to the Swiss EPR using the profiles to access and
 share data and documents with her patients or other healthcare professionals. To access documents from the EPR the
-healthcare professional authenticates at a certified identity provider from her primary system, selects the patient 
-and switches to the user interface to display the patients documents. The primary system connects to the IUA Authorization 
+healthcare professional authenticates at a certified identity provider from her primary system, selects the patient
+and switches to the user interface to display the patients documents. The primary system connects to the IUA
+Authorization
 Server and sends the identity token and the required claims to access the patients EPR.
 
 The IUA Authorization Server verifies if the primary system is authorized to access the EPR on behalf of the user by
@@ -67,10 +69,10 @@ The IUA Authorization Server verifies that the portal or primary system is autho
 connect to the EPR on behalf of the user by checking that the portal or primary system has been registered beforehand
 during the onboarding process of the portal or primary system application.
 
-The IUA Authorization Server reflects the community policy which requires the user's consent for SMART on FHIR Apps to 
-access their protected data with a given scope. The IUA Authorization Server verifies that the user has a valid session 
-at the Identity Provider and retrieves the Identity Assertion from the Identity Provider to identity the user. 
-The Authorization Server validates the Authorization Client claims and resolves additional information the SMART on 
+The IUA Authorization Server reflects the community policy which requires the user's consent for SMART on FHIR Apps to
+access their protected data with a given scope. The IUA Authorization Server verifies that the user has a valid session
+at the Identity Provider and retrieves the Identity Assertion from the Identity Provider to identity the user.
+The Authorization Server validates the Authorization Client claims and resolves additional information the SMART on
 FHIR App requires to access the EPR (e.g., resolve the digital identity to the EPR-SPID).
 
 The IUA Authorization Server responds an IUA Authorization Token which the SMART on FHIR App shall incorporate to any
@@ -131,10 +133,10 @@ see [sequence diagrams](sequencediagrams.html).
 
 ### Security Consideration
 
-Portals and primary systems SHALL be identified by the client_id and client_secret registered during onboarding. All 
+Portals and primary systems SHALL be identified by the client_id and client_secret registered during onboarding. All
 requests to the IUA Authorization Server SHALL be authenticated by the digital signatures.
 
-Implementers SHALL register the combination of the OAuth client ID, the URLs and the certificate used for message 
+Implementers SHALL register the combination of the OAuth client ID, the URLs and the certificate used for message
 signatures during the onboarding process and keep the data up to date.
 
 Implementers shall verify the combination of the OAuth client ID, the URLs and the certificate of all requests

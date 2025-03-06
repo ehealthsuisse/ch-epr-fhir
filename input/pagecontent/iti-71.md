@@ -664,8 +664,8 @@ GET /callback?code=8V1pr0rJ&state=98wrghuwuogerg97
 ```
 
 In the third step of the conversation, the IUA Authorization Client sends a HTTP POST request to the token endpoint of 
-IUA Authorization Server to exchange the authorization code and optional identity token (signed JWT or SAML 2) to the 
-access token, e.g.:
+IUA Authorization Server to exchange the authorization code and optional identity token (signed JWT or SAML 2 Assertion) 
+to the access token, e.g.:
 
 ```http
 POST /token HTTP/1.1 
