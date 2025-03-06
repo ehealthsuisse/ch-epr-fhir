@@ -203,7 +203,7 @@ Description: "This profile is used to define the CH Audit Event for the [CH:MHD-
 Source'."
 * modifierExtension 0..0
 * type = DCM#110106 "Export"
-* action = #R
+* action = #U
 * subtype ^slicing.discriminator.type = #value
 * subtype ^slicing.discriminator.path = "$this"
 * subtype ^slicing.rules = #open // allow other codes
@@ -263,7 +263,7 @@ Description: "This profile is used to define the CH Audit Event for the [CH:MHD-
 Recipient'."
 * modifierExtension 0..0
 * type = DCM#110107 "Import"
-* action = #C
+* action = #U
 * subtype ^slicing.discriminator.type = #value
 * subtype ^slicing.discriminator.path = "$this"
 * subtype ^slicing.rules = #open // allow other codes
