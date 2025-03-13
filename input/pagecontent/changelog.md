@@ -16,7 +16,7 @@
 * Update the PPQm-3 and PPQm-5 AuditEvents to BALP v1.1.3 [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
 * Upgrade to IHE PDQm v3.1.0 [#281](https://github.com/ehealthsuisse/ch-epr-fhir/issues/281)
 * Remove targetId from the ITI-83 response [#269](https://github.com/ehealthsuisse/ch-epr-fhir/issues/269)
-
+* Use a logical reference (EPR-SPID) to the patient in MHD [#269](https://github.com/ehealthsuisse/ch-epr-fhir/issues/269)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
