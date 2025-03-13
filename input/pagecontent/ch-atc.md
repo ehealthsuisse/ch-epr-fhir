@@ -88,7 +88,7 @@ An actor from this profile (Column 1) shall implement all of the required transa
 				<p>Patient Audit Consumer</p>
 			</td>
 			<td>
-				<p>Required</p>
+				<p>Required¹</p>
 			</td>
 			<td>
 				<p>ATNA - Secure Node</p>
@@ -124,7 +124,7 @@ An actor from this profile (Column 1) shall implement all of the required transa
 				<p>Patient Audit Record Repository</p>
 			</td>
 			<td>
-				<p>Required</p>
+				<p>Required¹</p>
 			</td>
 			<td>
 				<p>ATNA - Secure Node</p>
@@ -160,6 +160,9 @@ An actor from this profile (Column 1) shall implement all of the required transa
 
 _Table 3: Actor Grouping_
 
+¹: The Secure Node grouping is only required when a XUA token is used. See Section
+[Security Considerations](#security-considerations) for more details.
+
 Section [Security Considerations](#security-considerations) describes the groupings required for security considerations.
 
 
@@ -176,7 +179,22 @@ This profile supports the following Use Cases:
 
 ### Security Considerations
 
-The transaction is used to exchange sensitive information and requires authentication and authorization. This profile requires all actors to be grouped with Secure Node or Secure Application implementing the "STX: TLS 1.2 floor using BCP195 Option" defined in the [IHE ITI TF-2, chapter 3.19.6.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ITI-19.html#3.19.6.2.3).
+The transaction is used to exchange sensitive information and requires authentication and authorization.
+This profile allows two authentication mechanisms; The Patient Audit Record Repository shall support both options,
+the Patient Audit Consumer shall select one option.
+
+<ol>
+<li>
+  Option 1: both actors are grouped with Secure Node or Secure Application implementing the "STX: TLS 1.2 floor using 
+  BCP195 Option" defined in the [IHE ITI TF-2, chapter 3.19.6.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ITI-19.html#3.19.6.2.3);
+  the token incorporated with ITI-72 is a XUA token, as described in the Amendment 1 of Annex 5 EPRO-FDHA.
+</li>
+<li>
+  Option 2: the token incorporated with ITI-72 is an [Extended Access Token](Get Access Token [ITI-71]); the
+  transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with server 
+  certificates.
+</li>
+</ol>
 
 Access control shall be implemented by grouping the CH:ATC Audit Consumer and Audit Record Repository with the Authorization Client and Resource Server from the IUA trial implementation profile using the SAML Token option (see [IHE ITI Supplement IUA, chapter 3.72.4.3.2](https://profiles.ihe.net/ITI/IUA/index.html#372432-saml-token-option)). As defined therein, the CH:ATC Audit Consumer and Audit Record Repository shall implement the Incorporate Authorization Token [ITI-72] transaction to convey the XUA token.
 
