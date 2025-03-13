@@ -348,10 +348,10 @@ A clinical archive system aims to access the EPR to write documents.
 
 The Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization Request for the client credential grant type with Swiss extensions: 
 
-- grant_type (required): The value of the parameter shall be client_credentials.
+- grant_type (required): The value of the parameter shall be `client_credentials`.
 - scope (required): The scope claimed by the Authorization Client, as defined in the table below.
-- resource (optional): Single valued identifier of the Resource Server api endpoint to be accessed.
-- requested_token_type (optional): The requested token format shall be urn:ietf:params:oauth:token-type:jwt.
+- resource (optional): Single valued identifier of the Resource Server API endpoint to be accessed.
+- requested_token_type (optional): The requested token format shall be `urn:ietf:params:oauth:token-type:jwt`.
 
 The Authorization Request SHALL use the following Swiss extension:
 
@@ -359,7 +359,7 @@ The Authorization Request SHALL use the following Swiss extension:
 - principal_id (required): The GLN of the healthcare professional an assistant may act on behalf of.
 - person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax, required for requesting extended access token.
 
-The following table lists the scope values to be send in the Authorization Request:
+The following table lists the scope values to be sent in the Authorization Request:
 
 <table class="table table-bordered">
   <thead>
@@ -377,14 +377,14 @@ The following table lists the scope values to be send in the Authorization Reque
       <td>R/R</td>
       <td>token<sup><a href="#3">3</a></sup></td>
       <td>See sections below.</td>
-      <td>Shall be AUTO as defined in the code system 2.16.756.5.30.1.127.3.10.5 of the CH: EPR value set.</td>
+      <td>Shall be AUTO as defined in the code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.</td>
     </tr>
     <tr>
       <td>subject_role</td>
       <td>R/R</td>
       <td>token</td>
       <td>See sections below.</td>
-      <td>Shall be the value TCU as defined in the code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH: EPR value set.</td>
+      <td>Shall be the value TCU as defined in the code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH:EPR value set.</td>
     </tr>
   </tbody>
 </table>
@@ -398,8 +398,8 @@ The following table lists the scope values to be send in the Authorization Reque
 
 When receiving a Get Access Token Request with purpose of use set to AUTO and subject role set to TCU, the Authorization Server SHALL: 
 - identify and authenticate the Authorization Client with the client_id, client_secret and the client's certificate of the TLS connection. 
-- verify, that the Authorization Client was registered during onboading with the same client_id, client_secret and the client's certificate of the TLS connection and is authorized to access the EHR. 
-- verify that the principal_id matches the GLN of the legal responsible healthcare professional the Authorization Client was registered during onboading. 
+- verify, that the Authorization Client was registered during onboarding with the same client_id, client_secret and the client's certificate of the TLS connection and is authorized to access the EHR. 
+- verify that the principal_id matches the GLN of the legal responsible healthcare professional the Authorization Client was registered during onboarding. 
 
 The Authorization Server SHALL respond with the Get Access Token response as defined in [Get Access Token Response](#get-access-token-response) only if all checks are successful. If one of the above checks fails, the Authorization Server SHALL respond with HTTP 401 (Unauthorized) error.
 
@@ -446,7 +446,7 @@ The Authorization Request SHALL use the following Swiss extension:
 - group (optional): The name of the organization or group an assistant may act on behalf of
 - group_id (optional): The OID of the organization or group an assistant is acting on behalf of.
 
-The following table lists the scope values to be send in the Authorization Request:
+The following table lists the scope values to be sent in the Authorization Request:
 
 <table class="table table-bordered">
   <thead>
@@ -464,7 +464,7 @@ The following table lists the scope values to be send in the Authorization Reque
       <td>O/R</td>
       <td> </td>
       <td>SMART on FHIR</td>
-      <td>The opaque identifier the SMART on FHIR App was launched with in an EHR launch. The claim is required for SMART on FHIR Apps launched from an portal or primary system.</td>
+      <td>The opaque identifier the SMART on FHIR App was launched with in an EHR launch. The claim is required for SMART on FHIR Apps launched from a portal or primary system.</td>
     </tr>
     <tr>
       <td>purpose_of_use</td>
@@ -478,7 +478,7 @@ The following table lists the scope values to be send in the Authorization Reque
       <td>O/R</td>
       <td>token</td>
       <td>See sections below.</td>
-      <td>One of the values for Healthcare Professionals, Assistants, Patients and Representatives as defined in the code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH: EPR value set.</td>
+      <td>One of the values for Healthcare Professionals, Assistants, Patients and Representatives as defined in the code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH:EPR value set.</td>
     </tr>
   </tbody>
 </table>
@@ -521,11 +521,11 @@ The IUA Authorization Client SHALL support the HTTP conversation of the OAuth 2.
 
 When launched, the IUA Authorization Client SHALL perform HTTP GET request with the URL query parameter as defined in [Table](#5) and with the scope claims described in [Table](#6).
 
-When receiving the request the Authorization Server, the Authorization Server SHALL verify that the Authorization Client was registered during onboading with the same client_id and the client certificate of the TLS connection. 
+When receiving the request the Authorization Server, the Authorization Server SHALL verify that the Authorization Client was registered during onboarding with the same client_id and the client certificate of the TLS connection. 
 
-The Authorization Server SHALL authorize the Authorization Client to access the EHR by either verifying that the Authorization Client request is authorized by a policy or by presenting a form to the user to consent to the access by the Authorization Client on behalf of the user. The Authorization Server MAY cache the users decision for for future access by the same Authorization Client. 
+The Authorization Server SHALL authorize the Authorization Client to access the EHR by either verifying that the Authorization Client request is authorized by a policy or by presenting a form to the user to consent to the access by the Authorization Client on behalf of the user. The Authorization Server MAY cache the users decision for future access by the same Authorization Client. 
 
-The Authorization Server SHALL enforce that the user is authenticated compliant to the regulations of the Swiss EHR and has a valid browser session with an certified Identity Provider. If the user is not authenticated the Authorization Server SHALL respond with an error page or redirect the user to a Identity Provider. 
+The Authorization Server SHALL enforce that the user is authenticated compliant to the regulations of the Swiss EHR and has a valid browser session with a certified Identity Provider. If the user is not authenticated the Authorization Server SHALL respond with an error page or redirect the user to a Identity Provider. 
 
 If the IUA Authorization Client receives the request from the IUA Authorization Server on the redirect-uri conveying the authorization code, the Authorization Client SHALL perform the HTTP POST request with the client_id and client_secret in the HTTP authorization header field to resolve the authorization code to the access token.
 

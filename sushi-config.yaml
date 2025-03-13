@@ -159,16 +159,16 @@ resources:
       attributes are requested to lower the results number.
     exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-moreattributesrequested
   OperationOutcome/MhdOperationOutcomeErrorUnmodifiableMetadataError:
-    name: MHD OperationOutcome DocumentReference udpate error unmodifiable metadata
+    name: MHD OperationOutcome DocumentReference update error unmodifiable metadata
     description: Error OperationOutcome that the updated DocumentReference changed
       unmodifiable metadata
     exampleBoolean: true
   OperationOutcome/MhdOperationOutcomeErrorXDSPatientIDReconciliationError:
-    name: MHD OperationOutcome DocumentReference udpate error patient id reconciliation
+    name: MHD OperationOutcome DocumentReference update error patient id reconciliation
     description: Error OperationOutcome that the updated DocumentReference references not the same patient
     exampleBoolean: true
   OperationOutcome/MhdOperationOutcomeErrorXdsMetadataIdentifier:
-    name: MHD OperationOutcome DocumentReference udpate error identifiers
+    name: MHD OperationOutcome DocumentReference update error identifiers
     description: Error OperationOutcome that the updated DocumentReference has not same values for the identifiers
     exampleBoolean: true
   Practitioner/DrPeterPan:

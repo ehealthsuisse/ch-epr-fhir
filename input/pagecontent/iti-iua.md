@@ -55,7 +55,7 @@ The healthcare professional reports medical information of a treatment in her pr
 
 To access the patient EHR the clinical archive system first request a basic authorization token using the client credential flow and uses the basic authorization token in the PIXm or PDQm transactions used to retrieve the EHR-SPID and the XAD PID of the patient. 
 
-The Authorization server returns the basic access token if the clincial archive systems is reqistered beforehand and is authorized to access the Swiss EHR. 
+The Authorization server returns the basic access token if the clinical archive systems is registered beforehand and is authorized to access the Swiss EHR. 
 
 The clinical archive system then requests a extended authorization token to be used with the MHD transaction to store the document in the patients EHR.
 

@@ -17,7 +17,7 @@ Profile: CHPDQmPatient
 Parent: $ch-core-patient
 Id: ch-pdqm-patient
 Title: "CH PDQm Patient"
-Description: "The patient demographics and identifier information which can be provided in the PDQm response according to the EPR. If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID as an identifier MAY be added. The birthname can be added with the  ISO 21090 qualifier extension."
+Description: "The patient demographics and identifier information which can be provided in the PDQm response according to the EPR. If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID as an identifier MAY be added. The birthname can be added with the ISO 21090 qualifier extension."
 * extension[PatReligion] 0..0
 * identifier MS
 * identifier[EPR-SPID] 1..1 MS
@@ -48,7 +48,7 @@ Description: """
 This operation implements the [Patient Demographics Match \[ITI-119\]](iti-119.html) transaction.
 It is fully compatible with the [$match Operation on Patient](http://hl7.org/fhir/R4/patient-operation-match.html).
 The only changes are to constrain the input parameters to use the [PDQm Patient Profile for $match Input](StructureDefinition-CHPDQmMatchInput.html) profile
-and to constring the output parameters to use the [PDQm Patient Profile](StructureDefinition-ch-pdqm-patient.html) profile.
+and to constrain the output parameters to use the [PDQm Patient Profile](StructureDefinition-ch-pdqm-patient.html) profile.
 """
 * base = "http://hl7.org/fhir/OperationDefinition/Patient-match"
 * name = "Find_Patient_Matches_PDQm"
@@ -88,7 +88,7 @@ and to constring the output parameters to use the [PDQm Patient Profile](Structu
   * use = #out
   * min = 1
   * max = "1"
-  * documentation = "A bundle contain a set of Patient records that represent possible matches, optionally it MAY also contain an OperationOutcome with further information about the search results (such as warnings or information messages, such as a count of records that were close but eliminated) If the operation was unsuccessful, then an OperationOutcome MAY be returned along with a BadRequest status Code (e.g. security issue, or insufficient properties in patient fragment - check against profile).\n\nNote: as this is the only out parameter, it is a resource, and it has the name 'return', the result of this operation is returned directly as a resource"
+  * documentation = "A bundle contain a set of Patient records that represent possible matches, optionally it MAY also contain an OperationOutcome with further information about the search results (such as warnings or information messages, such as a count of records that were close but eliminated) If the operation was unsuccessful, then an OperationOutcome MAY be returned along with a BadRequest status Code (e.g. security issue, or insufficient properties in patient fragment - check against profile). Note: as this is the only out parameter, it is a resource, and it has the name 'return', the result of this operation is returned directly as a resource"
   * type = #Bundle
 
 // https://github.com/IHE/ITI.PDQm/blob/main/input/fsh/PDQmMatch.fsh
@@ -160,7 +160,7 @@ The PDQm Patient Profile for $match Input SHALL be provided as input to the ITI-
 * identifier MS                               // LivingSubjectId
 * telecom ..0                                 // PatientTelecom, forbidden
 
-CodeSystem: ChEhealthCodesystemPqdMoreAttriburesRequested
+CodeSystem: ChEhealthCodesystemPqdMoreAttributesRequested
 Id: 2.16.756.5.30.1.127.3.10.17
 Title: "CH Codesystem PDQ More Attributes Requested"
 Description: "Codes for indicating which additional attributes are requested to lower the results number."
@@ -177,7 +177,7 @@ Description: "Codes for indicating which additional attributes are requested to 
 * ^content = #complete
 * #BirthNameRequested "BirthNameRequested"
 
-CodeSystem: IheXcpdMoreAttriburesRequested
+CodeSystem: IheXcpdMoreAttributesRequested
 Id: 1.3.6.1.4.1.19376.1.2.27.1
 Title: "IHE XCPD Codesystem more attributes requested"
 Description: "Codes for indicating which additional attributes are requested to lower the results number."
@@ -196,16 +196,16 @@ Description: "Codes for indicating which additional attributes are requested to 
 * #PatientAddressRequested "PatientAddressRequested"
 * #LivingSubjectBirthPlaceNameRequested "LivingSubjectBirthPlaceNameRequested"
 
-ValueSet: ChPdqmMoreAttriburesRequested
-Id: ChPdqmMoreAttriburesRequested
+ValueSet: ChPdqmMoreAttributesRequested
+Id: ChPdqmMoreAttributesRequested
 Title: "CH PDQm ValueSet More Attributes Requested"
 Description: "Coded Values for indicating which additional attributes are requested to lower the results number."
 * ^status = #active
 * ^experimental = false
-* IheXcpdMoreAttriburesRequested#LivingSubjectAdministrativeGenderRequested
-* IheXcpdMoreAttriburesRequested#PatientAddressRequested 
-* IheXcpdMoreAttriburesRequested#LivingSubjectBirthPlaceNameRequested
-* ChEhealthCodesystemPqdMoreAttriburesRequested#BirthNameRequested
+* IheXcpdMoreAttributesRequested#LivingSubjectAdministrativeGenderRequested
+* IheXcpdMoreAttributesRequested#PatientAddressRequested
+* IheXcpdMoreAttributesRequested#LivingSubjectBirthPlaceNameRequested
+* ChEhealthCodesystemPqdMoreAttributesRequested#BirthNameRequested
 
 Profile: ChPdqmResponseMoreAttributesRequested
 Parent: OperationOutcome
@@ -214,7 +214,7 @@ Title: "CH PDQm OperationOutcome More Attributes Requested"   // need to be put 
 Description: "A profile on the OperationOutcome for indicating which additional attributes are requested to lower the results number."   // need to be put it ig.xml
 * issue.severity = #warning 
 * issue.code = #incomplete
-* issue.details from ChPdqmMoreAttriburesRequested (required)
+* issue.details from ChPdqmMoreAttributesRequested (required)
 
 Instance: PDQmResponseMoreAttributesRequested
 InstanceOf: ch-pdqm-moreattributesrequested

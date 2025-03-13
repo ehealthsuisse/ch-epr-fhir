@@ -2,7 +2,7 @@ Profile: CHPIXmPatientFeed
 Parent: CHPDQmPatient
 Id: ch-pixm-patient-feed
 Title: "CH PIXm Patient Feed"
-Description: "The patient demographics and identifier information which can be provided in the PIXm Feed according to the EPR. The EPR-SPID as an identifier SHALL be added. The birthname can be added with the  ISO 21090 qualifier extension."
+Description: "The patient demographics and identifier information which can be provided in the PIXm Feed according to the EPR. The EPR-SPID as an identifier SHALL be added. The birthname can be added with the ISO 21090 qualifier extension."
 * identifier 2..
 * identifier[LocalPid] ^sliceName = "LocalPid"
 

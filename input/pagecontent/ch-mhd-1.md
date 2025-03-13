@@ -26,7 +26,7 @@ The Update Document Metadata Request Message provides the ability to submit upda
 
 ##### Trigger Events
 
-The Update Document Metadata Request Message is triggered when an Document Source needs to transmit updated DocumentReference metadata.
+The Update Document Metadata Request Message is triggered when a Document Source needs to transmit updated DocumentReference metadata.
 
 ##### Message Semantics
 
