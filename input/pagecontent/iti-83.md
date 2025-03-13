@@ -68,15 +68,16 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 <div><figcaption>$ihe-pix Message response</figcaption></div>
 
 | Parameter                    | Cardinality | Data Type          | Description                                                                                                                                                               |
-|------------------------------|-------------|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **FHIR Parameters Resource** |             |                    |                                                                                                                                                                           |
-| targetIdentifier             | **0..2**    | Identifier         | The identifier found. Constraints to include the assigning authority as specified in [ITI TF-2: Appendix E.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#page=16). |
-| targetId                     | **0..1**    | Reference(Patient) | The URL of the Patient Resource                                                                                                                                           |
+|------------------------------|------------|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **FHIR Parameters Resource** |            |                    |                                                                                                                                                                           |
+| targetIdentifier             | **0..2**   | Identifier         | The identifier found. Constraints to include the assigning authority as specified in [ITI TF-2: Appendix E.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#page=16). |
 {:class="table table-bordered"}
 
 See [Output Parameters example](Parameters-ParametersPIXmOutput.html) (and the corresponding 
 [profile](StructureDefinition-ch-pixm-out-parameters.html)) as response to the Mobile Patient Identifier 
 Cross-reference Query.
+
+For privacy reasons, the **targetId** parameter shall not be returned.
 
 ###### Target Domain not recognized
 
