@@ -87,7 +87,6 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * subject only Reference($ch-core-patient)
 * subject ^comment = "Not a contained resource. URL Points to an existing Patient Resource representing the XDS Affinity Domain Patient."
 * subject ^type.aggregation = #referenced
-* date 1.. MS
 * author only Reference
 * author MS
 * author ^comment = "Contained resource."
