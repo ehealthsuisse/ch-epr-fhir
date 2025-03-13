@@ -84,7 +84,7 @@ An actor from this profile (Column 1) shall implement all of the required transa
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="4">
+			<td rowspan="3">
 				<p>Patient Audit Consumer</p>
 			</td>
 			<td>
@@ -95,17 +95,6 @@ An actor from this profile (Column 1) shall implement all of the required transa
 			</td>
 			<td>
 				<p>Amendment 1 of Annex 5 EPRO-FDHA</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p>Required</p>
-			</td>
-			<td>
-				<p>CT - Time Client</p>
-			</td>
-			<td>
-				<p><a href="https://profiles.ihe.net/ITI/TF/Volume1/index.html">IHE ITI TF-1</a></p>
 			</td>
 		</tr>
 		<tr>
@@ -131,7 +120,7 @@ An actor from this profile (Column 1) shall implement all of the required transa
 			</td>
 		</tr>
 		<tr>
-			<td rowspan="4">
+			<td rowspan="3">
 				<p>Patient Audit Record Repository</p>
 			</td>
 			<td>
@@ -142,17 +131,6 @@ An actor from this profile (Column 1) shall implement all of the required transa
 			</td>
 			<td>
 				<p>Amendment 1 of Annex 5 EPRO-FDHA</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p>Required</p>
-			</td>
-			<td>
-				<p>CT - Time Client</p>
-			</td>
-			<td>
-				<p><a href="https://profiles.ihe.net/ITI/TF/Volume1/index.html">IHE ITI TF-1</a></p>
 			</td>
 		</tr>
 		<tr>
