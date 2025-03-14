@@ -30,7 +30,7 @@ dependencies:
   ihe.iti.pixm: 3.0.4
   ihe.iti.pdqm: 3.0.0
   ihe.iti.mhd: 4.2.2
-  ihe.iti.mcsd: 3.8.0
+  ihe.iti.mcsd: 3.9.0
   ihe.iti.balp: 1.1.3
   hl7.terminology: 6.2.0
 
