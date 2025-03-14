@@ -10,8 +10,8 @@
 * add SCT edition in the expansion parameters [#256](https://github.com/ehealthsuisse/ch-epr-fhir/issues/256)
 * Wrong optionality of the attribute Consent.provision.period [#255](https://github.com/ehealthsuisse/ch-epr-fhir/issues/255)
 * Wrong AuditEvent action for the CH:MHD-1 transaction [#270](https://github.com/ehealthsuisse/ch-epr-fhir/issues/270)
-
-
+* Upgrade to IHE mCSD v3.9.0 [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
+* Update the PPQm-3 and PPQm-5 AuditEvents to BALP v1.1.3 [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
 
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
