@@ -16,7 +16,7 @@ Usage: #definition
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * rest.mode = #client
-* rest.documentation = "MHD client requests a list of DocumentReference Resources, matching the supplied set of criteria, from the Document Responder [ITI-67].\n        MHD client requests a document from the Document Responder [ITI-68]."
+* rest.documentation = "MHD client requests a list of DocumentReference Resources, matching the supplied set of criteria, from the Document Responder [ITI-67]. MHD client requests a document from the Document Responder [ITI-68]."
 * rest.security.cors = false
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.resource[0].type = #DocumentReference
@@ -141,7 +141,7 @@ Usage: #definition
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * rest.mode = #server
-* rest.documentation = "MHD server returns DocumentReference Resources that match the search criteria provided by the Document Consumer [ITI-67].\n        MHD server serves the document to the Document Consumer [ITI-68]."
+* rest.documentation = "MHD server returns DocumentReference Resources that match the search criteria provided by the Document Consumer [ITI-67]. MHD server serves the document to the Document Consumer [ITI-68]."
 * rest.security.cors = false
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.resource[0].type = #DocumentReference
