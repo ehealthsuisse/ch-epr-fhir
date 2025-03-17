@@ -12,6 +12,7 @@
 * Wrong AuditEvent action for the CH:MHD-1 transaction [#270](https://github.com/ehealthsuisse/ch-epr-fhir/issues/270)
 * Upgrade to IHE mCSD v3.9.0 [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
 * Update the PPQm-3 and PPQm-5 AuditEvents to BALP v1.1.3 [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
+* Upgrade to IHE PDQm v3.1.0 [#281](https://github.com/ehealthsuisse/ch-epr-fhir/issues/281)
 
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
