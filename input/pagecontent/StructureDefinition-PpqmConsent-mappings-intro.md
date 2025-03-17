@@ -156,7 +156,7 @@ rules defined for each template in the table below:
 			<td><em>not populated</em></td>
 			<td><em>not populated</em></td>
 			<td>fixed value: "urn:gs1:gln"</td>
-			<td>fixed value: "urn:oasis: names:tc:xspa: 1.0:subject:organization-id"</td>
+			<td>fixed value: "urn:oasis:names:tc:xspa:1.0:subject:organization-id"</td>
 			<td>fixed value: "urn:e-health-suisse:representative-id"</td>
 			<td>fixed value: "urn:gs1:gln"</td>
 		</tr>

@@ -13,7 +13,7 @@ Title:       "CH Audit Event for [PPQ-3] Update privacy policy"
 Description: "This profile is used to define the CH Audit Event for the [PPQ-3] transaction and the actors 'Policy
 Source' and 'Policy Repository' when updating a privacy policy."
 * insert ChAuditEventPpq3Rules
-//* subtype[anyUpdate] = $restfulInteraction#update "update" (exactly) // Needed for BALP 1.1.3
+* subtype[anyUpdate] = $restfulInteraction#update "update"
 
 
 Profile:     ChAuditEventPpq3Delete
@@ -35,7 +35,10 @@ RuleSet: ChAuditEventPpq3Rules
     * value 1..1
     * system 1..1
     * system = "urn:ietf:rfc:3986"
-  * role = $objectRole#4 "Domain Resource" // TODO: 13 is not allowed here
+  // About the role: the CH:PPQ-1 profile specifies the role as "Security Resource" (13), but BALP currently only
+  // allows 3, 4 and 20 for that slice.
+  // https://profiles.ihe.net/ITI/BALP/1.1.3/ValueSet-RestObjectRoles.html
+  * role = $objectRole#4 "Domain Resource"
 * entity[patient] ^short = "The patient whose privacy policies are being managed"
 
 
@@ -144,10 +147,9 @@ RuleSet: ChAuditEventPpq5Rules
 * agent[client] ^short = "The 'Policy Consumer' actor (EPR application)"
 * agent[server] ^short = "The 'Policy Repository' actor (EPR API)"
 * subtype contains ppq5 1..1
-//* subtype[anySearch] = $restfulInteraction#search "search" (exactly) // Needed for BALP 1.1.3
+* subtype[anySearch] = $restfulInteraction#search "search"
 * subtype[ppq5] = urn:e-health-suisse:event-type-code#PPQ-5 "Mobile Privacy Policy Retrieve"
 * entity[query] ^short = "The privacy policy query"
-// * entity[query].role = $objectRole#13 "Security Resource" TODO: #24 in BALP, #13 in PPQ-2
 * entity[patient] ^short = "The patient whose privacy policies are being accessed"
 
 

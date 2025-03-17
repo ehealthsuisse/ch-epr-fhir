@@ -66,8 +66,8 @@ The scope of this extension covers the following use cases:
 6.  Read audit trails for a patient according the EPR requirements.
 
 This extension covers two options:
-1. Generic EPR API option – This option adresses primary systems or portals using the basic EPR flows replacing the XDS.b related and PIX/PDQ V3 profiles with the FHIR based profiles;
-2. SMART on FHIR – This option adresses modular portals or primary systems that want to connect to the Swiss EPR using SMART on FHIR.
+1. Generic EPR API option – This option addresses primary systems or portals using the basic EPR flows replacing the XDS.b related and PIX/PDQ V3 profiles with the FHIR based profiles;
+2. SMART on FHIR – This option addresses modular portals or primary systems that want to connect to the Swiss EPR using SMART on FHIR.
 
 #### Profiles, actors and transactions
 
