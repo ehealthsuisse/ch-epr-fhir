@@ -10,7 +10,7 @@
 * add SCT edition in the expansion parameters [#256](https://github.com/ehealthsuisse/ch-epr-fhir/issues/256)
 * Wrong optionality of the attribute Consent.provision.period [#255](https://github.com/ehealthsuisse/ch-epr-fhir/issues/255)
 * Wrong AuditEvent action for the CH:MHD-1 transaction [#270](https://github.com/ehealthsuisse/ch-epr-fhir/issues/270)
-
+* Upgrade to IHE PDQm v3.1.0 [#281](https://github.com/ehealthsuisse/ch-epr-fhir/issues/281)
 
 
 
