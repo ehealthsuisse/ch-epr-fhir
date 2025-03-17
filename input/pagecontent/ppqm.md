@@ -1,7 +1,7 @@
 ### Scope
 According to Swiss EPR regulations, patients shall decide who is authorized to view the documents and data in 
 their EPR, and under which circumstances (cf. emergency access). The national integration profile "Privacy Policy 
-Query" (CH:PPQ, see Amendment 2.1 of Annex 5 EPRO-FDHA) defines how this decisions are transmitted as patient privacy policies in 
+Query" (CH:PPQ, see Amendment 2.1 of Annex 5 EPRO-FDHA) defines how these decisions are transmitted as patient privacy policies in 
 XACML 2.0 format and the SOAP transport protocol. This profile offers the same functionality based on lightweight HL7 FHIR® resources 
 and RESTFul transactions. 
 
@@ -14,7 +14,7 @@ the patient consent by adding the patient policies to the policy repository.
 
 The policy administrator of the community adds the following patient privacy policies to the policy repository with the 
 Mobile Privacy Policy Feed (PPQ-3) or Mobile Privacy Policy Bundle Feed (PPQ-4) transaction:
-* [EPR policy set based on template 201](StructureDefinition-PpqmConsentTemplate201.html) to grant the patient access the the EHR.
+* [EPR policy set based on template 201](StructureDefinition-PpqmConsentTemplate201.html) to grant the patient access the EHR.
 * [EPR policy set based on template 203](StructureDefinition-PpqmConsentTemplate203.html) to set the default confidentiality level for new documents.
 
 When both of the above policies are stored in the policy repository of the community, healthcare professionals upload 

@@ -384,10 +384,10 @@ A clinical archive system aims to access the EPR to write documents.
 The Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization Request for the client credential grant
 type with Swiss extensions:
 
-- grant_type (required): The value of the parameter shall be client_credentials.
+- grant_type (required): The value of the parameter shall be `client_credentials`.
 - scope (required): The scope claimed by the Authorization Client, as defined in the table below.
-- resource (optional): Single valued identifier of the Resource Server api endpoint to be accessed.
-- requested_token_type (optional): The requested token format shall be urn:ietf:params:oauth:token-type:jwt.
+- resource (optional): Single valued identifier of the Resource Server API endpoint to be accessed.
+- requested_token_type (optional): The requested token format shall be `urn:ietf:params:oauth:token-type:jwt`.
 
 The Authorization Request SHALL use the following Swiss extension:
 
@@ -414,14 +414,14 @@ The following table lists the scope values to be sent in the Authorization Reque
       <td>R/R</td>
       <td>token<sup><a href="#3">3</a></sup></td>
       <td>See sections below.</td>
-      <td>Shall be AUTO as defined in the code system 2.16.756.5.30.1.127.3.10.5 of the CH: EPR value set.</td>
+      <td>Shall be AUTO as defined in the code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.</td>
     </tr>
     <tr>
       <td>subject_role</td>
       <td>R/R</td>
       <td>token</td>
       <td>See sections below.</td>
-      <td>Shall be the value TCU as defined in the code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH: EPR value set.</td>
+      <td>Shall be the value TCU as defined in the code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH:EPR value set.</td>
     </tr>
   </tbody>
 </table>

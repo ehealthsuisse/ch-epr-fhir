@@ -1,6 +1,6 @@
 Instance: MhdOperationOutcomeErrorXdsMetadataIdentifier
 InstanceOf: OperationOutcome
-Title: "MHD OperationOutcome DocumentReference udpate error identifiers"
+Title: "MHD OperationOutcome DocumentReference update error identifiers"
 Description: "Error OperationOutcome that the updated DocumentReference has not same values for the identifiers"
 Usage: #example
 * issue[0].severity = #error
@@ -9,7 +9,7 @@ Usage: #example
 
 Instance: MhdOperationOutcomeErrorXDSPatientIDReconciliationError
 InstanceOf: OperationOutcome
-Title: "MHD OperationOutcome DocumentReference udpate error patient id reconciliation"
+Title: "MHD OperationOutcome DocumentReference update error patient id reconciliation"
 Description: "Error OperationOutcome that the updated DocumentReference references not the same patient"
 Usage: #example
 * issue[0].severity = #error
@@ -18,7 +18,7 @@ Usage: #example
 
 Instance: MhdOperationOutcomeErrorUnmodifiableMetadataError
 InstanceOf: OperationOutcome
-Title: "MHD OperationOutcome DocumentReference udpate error unmodifiable metadata"
+Title: "MHD OperationOutcome DocumentReference update error unmodifiable metadata"
 Description: "Error OperationOutcome that the updated DocumentReference changed unmodifiable metadata"
 Usage: #example
 * issue[0].severity = #error
@@ -28,7 +28,7 @@ Usage: #example
 Extension: ChMhdHomeCommunityId
 Id: ch-mhd-home-community-id
 Title: "CH MHD Extension to provide the homeCommunityId"
-Description: "This CH MHD extension enables to proivde homeCommunityId in an OperationOutcome"
+Description: "This CH MHD extension enables to provide homeCommunityId in an OperationOutcome"
 * ^context[+].type = #element
 * ^context[=].expression = "OperationOutcome.issue.details"
 * . ^short = "CH MHD Extension: homeCommunityId"
@@ -87,7 +87,6 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * subject only Reference($ch-core-patient)
 * subject ^comment = "Not a contained resource. URL Points to an existing Patient Resource representing the XDS Affinity Domain Patient."
 * subject ^type.aggregation = #referenced
-* date 1.. MS
 * author only Reference
 * author MS
 * author ^comment = "Contained resource."
@@ -243,7 +242,7 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * extension[sourceId] ^mustSupport = true
 * extension[authorAuthorRole] ^short = "The SubmissionSet.Author element MAY be used to track the user who made the latest changes to the document metadata."
 * identifier MS
-* identifier ^short = "identifier, for uniqueID set use to ususal"
+* identifier ^short = "identifier, for uniqueID set use to usual"
 * status MS
 * mode MS
 * code MS
