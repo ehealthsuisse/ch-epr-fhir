@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Practitioner xmlns="http://hl7.org/fhir">
+    <id value="mCSD-No-peer-Practitioner-DrReynolds"/>
+    <meta>
+        <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"/>
+    </meta>
+    <identifier>
+        <system value="urn:oid:2.51.1.3"/>
+        <value value="7601002467377"/>
+    </identifier>
+    <identifier>
+        <system value="urn:ietf:rfc:4514"/>
+        <value value="uid=CommunityA:00000000103,OU=HCProfessional,DC=HPD,O=BAG,C=ch"/>
+    </identifier>
+    <active value="true"/>
+    <name>
+        <text value="Richard Reynolds"/>
+        <family value="Reynolds"/>
+        <given value="Richard"/>
+        <prefix value="Dr."/>
+    </name>
+    <telecom>
+        <system value="email"/>
+        <value value="rreynolds@email.com"/>
+    </telecom>
+    <telecom>
+        <system value="phone"/>
+        <value value="+41 32 001 00 99"/>
+    </telecom>
+    <gender value="male"/>
+    <qualification>
+        <code>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="309343006"/>
+                <display value="Physician"/>
+            </coding>
+        </code>
+    </qualification>
+    <qualification>
+        <code>
+            <coding>
+                <system value="urn:oid:2.16.756.5.30.1.127.3.5"/>
+                <code value="1051"/>
+                <display value="General internal medicine"/>
+            </coding>
+        </code>
+    </qualification>
+    <communication>
+        <coding>
+            <system value="urn:ietf:bcp:47"/>
+            <code value="fr"/>
+        </coding>
+    </communication>
+    <communication>
+        <coding>
+            <system value="urn:ietf:bcp:47"/>
+            <code value="en"/>
+        </coding>
+    </communication>
+    <communication>
+        <coding>
+            <system value="urn:ietf:bcp:47"/>
+            <code value="it"/>
+        </coding>
+    </communication>
+</Practitioner>
