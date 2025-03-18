@@ -476,7 +476,54 @@ resources:
     name: Example of audit event for a [CH:mCSD-1] delete transaction
     description: This example shows an AuditEvent made by the Care Services Directory for a CH:mCSD-1 transaction that deleted an Organization.
     exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventmCSD1Delete
-      
+  Organization/mCSD-Peer-to-peer-Organization-Auryn-Spital:
+    name: mCSD-Peer-to-peer-Organization-Auryn-Spital
+    description: Resource Organization Auryn-Spital 
+  Organization/mCSD-No-peer-Organization-SpitalX-Osteopathie:
+    name: mCSD-No-peer-mcsd-Organization-SpitalX-Osteopathie
+    description: Resource Organization SpitalX-Osteopathie 
+  Organization/mCSD-No-peer-Organization-SpitalX:
+    name: mCSD-No-peer-Organization-SpitalX
+    description: Resource Organization SpitalX 
+  Organization/mCSD-Peer-to-peer-Organization-Fuchur-Klinik:
+    name: mCSD-Peer-to-peer-Organization-Fuchur-Klinik
+    description: Resource Organization Fuchur-Klinik 
+  Practitioner/mCSD-No-peer-Practitioner-DrAndrews:
+    name: mCSD-No-peer-Practitioner-DrAndrews
+    description: Resource Practitioner DrAndrews 
+  Practitioner/mCSD-No-peer-Practitioner-DrMeier:
+    name: mCSD-No-peer-Practitioner-DrMeier
+    description: Resource Practitioner DrMeier 
+  Practitioner/mCSD-No-peer-Practitioner-DrReynolds:
+    name: mCSD-No-peer-Practitioner-DrReynolds
+    description: Resource Practitioner DrReynolds 
+  Practitioner/mCSD-Peer-to-peer-Practitioner-DrBux:
+    name: mCSD-Peer-to-peer-Practitioner-DrBux
+    description: Resource Practitioner DrBux 
+  Practitioner/mCSD-Peer-to-peer-Practitioner-DrGmork:
+    name: mCSD-Peer-to-peer-Practitioner-DrGmork
+    description: Resource Practitioner DrGmork 
+  Practitioner/mCSD-Peer-to-peer-Practitioner-DrKoreander:
+    name: mCSD-Peer-to-peer-Practitioner-DrKoreander
+    description: Resource Practitioner DrKoreander 
+  PractitionerRole/mCSD-No-peer-PractitionerRole-AnnAndrewsSpitalXOsteopathie:
+    name: mCSD-No-peer-PractitionerRole-AnnAndrewsSpitalXOsteopathie
+    description: Resource PractitionerRole AnnAndrewsSpitalXOsteopathie 
+  PractitionerRole/mCSD-No-peer-PractitionerRole-HansMeierSpitalX:
+    name: mCSD-No-peer-PractitionerRole-HansMeierSpitalX
+    description: Resource PractitionerRole HansMeierSpitalX 
+  PractitionerRole/mCSD-No-peer-PractitionerRole-RichardReynoldsSpitalX:
+    name: mCSD-No-peer-PractitionerRole-RichardReynoldsSpitalX
+    description: Resource PractitionerRole RichardReynoldsSpitalX 
+  PractitionerRole/mCSD-Peer-to-peer-PractitionerRole-BastianBuxAuryn-Spital:
+    name: mCSD-Peer-to-peer-PractitionerRole-BastianBuxAuryn-Spital
+    description: Resource PractitionerRole BastianBuxAuryn-Spital 
+  PractitionerRole/mCSD-Peer-to-peer-PractitionerRole-GisiGmorkFurchur-Klinik:
+    name: mCSD-Peer-to-peer-PractitionerRole-GisiGmorkFurchur-Klinik
+    description: Resource PractitionerRole GisiGmorkFurchur-Klinik 
+  PractitionerRole/mCSD-Peer-to-peer-PractitionerRole-KarlKoreanderFurchur-Klinik:
+    name: mCSD-Peer-to-peer-PractitionerRole-KarlKoreanderFurchur-Klinik
+    description: Resource PractitionerRole KarlKoreanderFuchur-Klinik       
 # For parameters defined by core FHIR see: 
 # http://build.fhir.org/codesystem-guide-parameter-code.html.
 # For parameters defined by the FHIR Tools IG  see:
