@@ -19,8 +19,7 @@
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PDQm.Supplier"/>
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentRecipient"/>
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.MHD.DocumentResponder"/>
-    <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesSelectiveSupplier"/>
-    <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesDirectory"/>
+    <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.Directory"/>
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PPQm.PolicyRepository"/>
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.ATNA.AuditRecordRepository"/>
     <fhirVersion value="4.0.1" />
