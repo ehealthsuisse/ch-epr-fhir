@@ -109,6 +109,10 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * content.attachment.data ..0
 * content.attachment.data ^comment = "These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values."
 * content.attachment.url 1..1 MS
+* content.attachment.url ^short = "The ITI-68 endpoint to use, or a reference to the Binary resource in the Bundle."
+* content.attachment.url ^comment = "When providing the document, this URL SHALL point to the Binary resource wrapping
+the document content (which SHALL be included in the Bundle). When retrieving the DocumentReference, this URL SHALL
+be the the one to use in ITI-68 transactions to retrieve the document content."
 * content.attachment.size MS
 * content.attachment.hash MS
 * content.attachment.title 1..1 MS
