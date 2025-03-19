@@ -145,7 +145,7 @@ The mapping between FHIR and HPD is as follows:
 | `retired`                              | `false`                    | `#retired`                                                       |
 | `deceased`                             | `false`                    | `#deceased`                                                      |
 
-NB: HPD `HCRegulatedOrganization.status` has only two possible values &mdash; `active` and `inactive` &mdash;
+NB: HPD `HCRegulatedOrganization.hpdProviderStatus` has only two possible values &mdash; `active` and `inactive` &mdash;
 and thus does not need any additional definitions to be mapped to FHIR `Organization.active` of type `boolean`.
 
 
@@ -154,7 +154,7 @@ and thus does not need any additional definitions to be mapped to FHIR `Organiza
 HPD `HCRegulatedOrganization` defines two types of organization names &mdash; legal names (`hcRegisteredName`) and
 other names (`O`), both with cardinalities 0..n. In FHIR `Organization` resource, their counterparts are
 `name` and `alias`, respectively. But `name` has the cardinality 0..1. Additional legal organization names in FHIR
-can be placed into `Organization.name.extension[HpdOrganizationRegisteredNamesExtension].valueString`.
+can be placed into `Organization.name.extension[registeredNames].valueString`.
 
 
 ## Mapping of HPD Relationship objects
@@ -191,7 +191,7 @@ them.  Particular algorithms for that are intentionally not prescribed.
 ## Mapping of HPD HCProfessional object
 
 Attributes of an HPD `HCProfessional` are scattered between one FHIR resource `Practitioner` and 0..* FHIR resources
-`PractitionerRole` referencing it.  
+`PractitionerRole` referencing it.
 
 HPD attributes covered by FHIR `PractitionerRole` are `hcProfession`, `hcSpecialization`, and `memberOf`.
 

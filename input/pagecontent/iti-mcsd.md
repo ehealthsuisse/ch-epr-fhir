@@ -62,4 +62,4 @@ The Swiss extension uses [examples from eHealthSuisse](https://ehealthsuisse.ihe
 
 ### Mapping between mCSD and HPD data models
 
-This mappint is described in a [separate document](mcsd-hpd-mapping.html).
+This mapping is described in a [separate document](mcsd-hpd-mapping.html).
