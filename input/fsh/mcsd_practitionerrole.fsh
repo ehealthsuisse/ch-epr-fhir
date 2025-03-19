@@ -12,10 +12,11 @@ Description: "CH mCSD profile on PractitionerRole"
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
-* identifier contains LDAP 0..1
-* identifier[LDAP] only LdapIdentifier
-* identifier[LDAP] ^short = "LDAP DN (Distinguished Name), if the relationship is stored in an HPD"
-* identifier[LDAP] ^patternIdentifier.system = "urn:ietf:rfc:4514"
+* identifier contains memberOf 1..1
+* identifier[memberOf] only HpdUidIdentifier
+* identifier[memberOf] ^short = "CN of the HPD Relationship where the referenced Practitioner is a member"
+* code from HCProfessionalHcProfession (required)
+* specialty from HCProfessionalHcSpecialisation (required)
 
 
 Invariant: ch-mcsd-practitionerrole-ihe-conformance
@@ -27,10 +28,9 @@ Severity: #error
 Mapping:  CHmCSDPractitionerRoleToRelationship
 Source:   CHmCSDPractitionerRole
 Target:   "https://www.bag.admin.ch/epra"
-Title:    "LDAP schema"
+Title:    "HPD schema (DSMLv2/LDAP)"
 * -> "Relationship"
-* identifier -> "Relationship.cn"
-* active -> "HCProfessional.hpdProviderStatus"
+* identifier[memberOf] -> "Relationship.cn"
 * organization -> "Relationship.owner"
 * practitioner -> "Relationship.member"
 * code -> "HCProfessional.hcProfession"
@@ -43,8 +43,7 @@ Title: "CH mCSD PractitionerRole Dr. Peter Pan at Spital X Dept. 3"
 Description: "An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Spital X, Dept. 3
 Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch)"
 * id = "PeterPanSpitalXDept3"
-* identifier[LDAP].system = "urn:ietf:rfc:4514"
-* identifier[LDAP].value = "CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch"
+* identifier[memberOf].value = "CommunityA:SpitalXDept3Relationship"
 * active = true
 * practitioner = Reference(CHmCSDPractitionerDrPeterPan)
 * organization = Reference(CHmCSDOrganizationSpitalXDept3)
@@ -58,8 +57,7 @@ Title: "CH mCSD PractitionerRole Dr. Peter Pan at Praxis P"
 Description: "An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Praxis P
 Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch)"
 * id = "PeterPanPraxisP"
-* identifier[LDAP].system = "urn:ietf:rfc:4514"
-* identifier[LDAP].value = "CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch"
+* identifier[memberOf].value = "CommunityA:PraxisPRelationship"
 * active = true
 * practitioner = Reference(CHmCSDPractitionerDrPeterPan)
 * organization = Reference(CHmCSDOrganizationPraxisP)

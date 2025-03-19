@@ -83,6 +83,8 @@ pages:
     title: Find Matching Care Services [ITI-90]
   ch-mcsd-1.md:
     title: Care Services Feed [CH:mCSD-1]
+  mcsd-hpd-mapping.md:
+    title: Mapping between mCSD and HPD data models
   ppq-3.md:
     title: Mobile Privacy Policy Feed [PPQ-3]
   ppq-4.md:

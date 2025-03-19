@@ -59,3 +59,7 @@ The Swiss extension uses [examples from eHealthSuisse](https://ehealthsuisse.ihe
 <img alt="LDAP examples"
      style="max-width:100%"
      src="assets/images/ehealthsuisse_HPD_Structure.png" />
+
+### Mapping between mCSD and HPD data models
+
+This mappint is described in a [separate document](mcsd-hpd-mapping.html).
