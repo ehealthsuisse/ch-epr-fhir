@@ -117,9 +117,7 @@ The IUA Trial Implementation supports three options for the Authorization Token 
 and the Token Introspection option. Since this national extension will apply to cross community communication, the Token
 Introspection Option SHALL NOT be used.
 
-This national extension intends to simplify and modernize the technologies used to connect to the Swiss EPR. The legacy
-SAML Token option SHALL NOT be used. To support automated client configuration the Authorization Server actor SHALL
-support the Authorization Metadata option.
+To support automated client configuration the Authorization Server actor SHALL support the Authorization Metadata option.
 
 ### Grouping
 
