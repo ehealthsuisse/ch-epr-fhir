@@ -29,13 +29,9 @@ Parent: $IHE.PIXm.Query.Parameters.Out
 Id: ch-pixm-out-parameters
 Title: "CH PIXm OUT Parameters"
 Description: "The StructureDefinition defines the Output Parameters for the $ihe-pix operation: "
-* parameter ..3
-* parameter[targetId] 0..1
+* parameter 0..2
+* parameter[targetId] 0..0
 * parameter[targetId] ^short = "targetId"
-* parameter[targetId].name = "targetId" (exactly)
-* parameter[targetId].valueReference only Reference(CHPDQmPatient)
-* parameter[targetId].valueReference ^type.aggregation = #referenced
-* parameter[targetId].valueReference.reference ^short = "Absolute URL"
 * parameter[targetIdentifier] 0..2
 * parameter[targetIdentifier] ^short = "targetIdentifier"
 * parameter[targetIdentifier].name = "targetIdentifier" (exactly)

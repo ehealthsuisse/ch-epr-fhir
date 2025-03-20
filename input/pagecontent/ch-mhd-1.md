@@ -117,7 +117,10 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
     }
   ],
   "subject": {
-    "reference": "http://example.org/Patient/FranzMusterNeedsAbsoluteUrl"
+    "identifier": {
+      "system": "urn:oid:2.16.756.5.30.1.127.3.10.3",
+      "value": "761337610411353650"
+    }
   },
   "date": "2020-06-29T11:58:00+00:00",
   "description": "Changed Description for -MedicationCard",
