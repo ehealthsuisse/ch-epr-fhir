@@ -4,7 +4,6 @@
 
 * Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
 * in review: ITI-71: Conflict between OAuth2 scope and ITI-71 scope [#245](https://github.com/ehealthsuisse/ch-epr-fhir/issues/245)  
-* Remove `DocumentReference.date` from the MHD profile [#274](https://github.com/ehealthsuisse/ch-epr-fhir/issues/274)
 
 #### Resolved Issues
 
@@ -12,9 +11,10 @@
 * Wrong optionality of the attribute Consent.provision.period [#255](https://github.com/ehealthsuisse/ch-epr-fhir/issues/255)
 * integrate CH:ATC into this implementation guide [#257](https://github.com/ehealthsuisse/ch-epr-fhir/issues/257)
 * Wrong AuditEvent action for the CH:MHD-1 transaction [#270](https://github.com/ehealthsuisse/ch-epr-fhir/issues/270)
-* Upgrade to IHE mCSD v3.9.0 [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
+* Upgrade to IHE mCSD v4.0.0-comment [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
 * Update the PPQm-3 and PPQm-5 AuditEvents to BALP v1.1.3 [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
 * Upgrade to IHE PDQm v3.1.0 [#281](https://github.com/ehealthsuisse/ch-epr-fhir/issues/281)
+* Remove `DocumentReference.date` from the MHD profile [#274](https://github.com/ehealthsuisse/ch-epr-fhir/issues/274)
 
 
 ### DSTU4 Informative Ballot Release 2024-12-18 

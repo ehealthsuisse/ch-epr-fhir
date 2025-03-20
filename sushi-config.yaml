@@ -30,7 +30,7 @@ dependencies:
   ihe.iti.pixm: 3.0.4
   ihe.iti.pdqm: 3.1.0
   ihe.iti.mhd: 4.2.2
-  ihe.iti.mcsd: 3.9.0
+  ihe.iti.mcsd: 4.0.0
   ihe.iti.balp: 1.1.3
   hl7.terminology: 6.2.0
 
@@ -81,8 +81,8 @@ pages:
     title: Record Audit Event [ITI-20]
   iti-90.md:
     title: Find Matching Care Services [ITI-90]
-  ch-mcsd-1.md:
-    title: Care Services Feed [CH:mCSD-1]
+  iti-130.md:
+    title: Care Services Feed [ITI-130]
   ppq-3.md:
     title: Mobile Privacy Policy Feed [PPQ-3]
   ppq-4.md:
@@ -133,9 +133,11 @@ resources:
     exampleBoolean: false
   CapabilityStatement/CH.MHD.DocumentResponder:
     exampleBoolean: false
-  CapabilityStatement/CH.mCSD.CareServicesSelectiveSupplier:
+  CapabilityStatement/CH.mCSD.Directory:
     exampleBoolean: false
-  CapabilityStatement/CH.mCSD.CareServicesSelectiveConsumer:
+  CapabilityStatement/CH.mCSD.QueryClient:
+    exampleBoolean: false
+  CapabilityStatement/CH.mCSD.DataSource:
     exampleBoolean: false
   CapabilityStatement/CH.PPQm.PolicyRepository:
     exampleBoolean: false
@@ -458,72 +460,72 @@ resources:
     exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq5Repository
   AuditEvent/ChAuditEventIti90ReadExample:
     name: Example of audit event for an [ITI-90] read transaction
-    description: This example shows an  made by the Care Services Selective Consumer for an ITI-90 transaction that read an Organization.
+    description: This example shows an  made by the Query Client for an ITI-90 transaction that read an Organization.
     exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti90Read
   AuditEvent/ChAuditEventIti90QueryExample:
     name: Example of audit event for an [ITI-90] query transaction
-    description: This example shows an  made by the Care Services Selective Supplier for an ITI-90 transaction that searched Practitioners.
+    description: This example shows an  made by the Directory for an ITI-90 transaction that searched Practitioners.
     exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti90Query
-  AuditEvent/ChAuditEventmCSD1CreateExample:
-    name: Example of audit event for a [CH:mCSD-1] create transaction
-    description: This example shows an AuditEvent made by the Care Services Source for a CH:mCSD-1 transaction that added a new PractitionerRole (relationship).
-    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventmCSD1Create
-  AuditEvent/ChAuditEventmCSD1UpdateExample:
-    name: Example of audit event for a [CH:mCSD-1] update transaction
-    description: This example shows an AuditEvent made by the Care Services Directory for a CH:mCSD-1 transaction that updated an existing Practitioner.
-    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventmCSD1Update
-  AuditEvent/ChAuditEventmCSD1DeleteExample:
-    name: Example of audit event for a [CH:mCSD-1] delete transaction
-    description: This example shows an AuditEvent made by the Care Services Directory for a CH:mCSD-1 transaction that deleted an Organization.
-    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventmCSD1Delete
+  AuditEvent/ChAuditEventIti130CreateExample:
+    name: Example of audit event for a [ITI-130] create transaction
+    description: This example shows an AuditEvent made by the Data Source for a ITI-130 transaction that created a new PractitionerRole (relationship).
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti130Create
+  AuditEvent/ChAuditEventIti130UpdateExample:
+    name: Example of audit event for a [ITI-130] update transaction
+    description: This example shows an AuditEvent made by the Directory for a ITI-130 transaction that updated an existing Practitioner.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti130Update
+  AuditEvent/ChAuditEventIti130DeleteExample:
+    name: Example of audit event for a [ITI-130] delete transaction
+    description: This example shows an AuditEvent made by the Directory for a ITI-130 transaction that deleted an Organization.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti130Delete
   Organization/mCSD-Peer-to-peer-Organization-Auryn-Spital:
     name: mCSD-Peer-to-peer-Organization-Auryn-Spital
-    description: Resource Organization Auryn-Spital 
+    description: Resource Organization Auryn-Spital
   Organization/mCSD-No-peer-Organization-SpitalX-Osteopathie:
     name: mCSD-No-peer-mcsd-Organization-SpitalX-Osteopathie
-    description: Resource Organization SpitalX-Osteopathie 
+    description: Resource Organization SpitalX-Osteopathie
   Organization/mCSD-No-peer-Organization-SpitalX:
     name: mCSD-No-peer-Organization-SpitalX
-    description: Resource Organization SpitalX 
+    description: Resource Organization SpitalX
   Organization/mCSD-Peer-to-peer-Organization-Fuchur-Klinik:
     name: mCSD-Peer-to-peer-Organization-Fuchur-Klinik
-    description: Resource Organization Fuchur-Klinik 
+    description: Resource Organization Fuchur-Klinik
   Practitioner/mCSD-No-peer-Practitioner-DrAndrews:
     name: mCSD-No-peer-Practitioner-DrAndrews
-    description: Resource Practitioner DrAndrews 
+    description: Resource Practitioner DrAndrews
   Practitioner/mCSD-No-peer-Practitioner-DrMeier:
     name: mCSD-No-peer-Practitioner-DrMeier
-    description: Resource Practitioner DrMeier 
+    description: Resource Practitioner DrMeier
   Practitioner/mCSD-No-peer-Practitioner-DrReynolds:
     name: mCSD-No-peer-Practitioner-DrReynolds
-    description: Resource Practitioner DrReynolds 
+    description: Resource Practitioner DrReynolds
   Practitioner/mCSD-Peer-to-peer-Practitioner-DrBux:
     name: mCSD-Peer-to-peer-Practitioner-DrBux
-    description: Resource Practitioner DrBux 
+    description: Resource Practitioner DrBux
   Practitioner/mCSD-Peer-to-peer-Practitioner-DrGmork:
     name: mCSD-Peer-to-peer-Practitioner-DrGmork
-    description: Resource Practitioner DrGmork 
+    description: Resource Practitioner DrGmork
   Practitioner/mCSD-Peer-to-peer-Practitioner-DrKoreander:
     name: mCSD-Peer-to-peer-Practitioner-DrKoreander
-    description: Resource Practitioner DrKoreander 
+    description: Resource Practitioner DrKoreander
   PractitionerRole/mCSD-No-peer-PractitionerRole-AnnAndrewsSpitalXOsteopathie:
     name: mCSD-No-peer-PractitionerRole-AnnAndrewsSpitalXOsteopathie
-    description: Resource PractitionerRole AnnAndrewsSpitalXOsteopathie 
+    description: Resource PractitionerRole AnnAndrewsSpitalXOsteopathie
   PractitionerRole/mCSD-No-peer-PractitionerRole-HansMeierSpitalX:
     name: mCSD-No-peer-PractitionerRole-HansMeierSpitalX
-    description: Resource PractitionerRole HansMeierSpitalX 
+    description: Resource PractitionerRole HansMeierSpitalX
   PractitionerRole/mCSD-No-peer-PractitionerRole-RichardReynoldsSpitalX:
     name: mCSD-No-peer-PractitionerRole-RichardReynoldsSpitalX
-    description: Resource PractitionerRole RichardReynoldsSpitalX 
+    description: Resource PractitionerRole RichardReynoldsSpitalX
   PractitionerRole/mCSD-Peer-to-peer-PractitionerRole-BastianBuxAuryn-Spital:
     name: mCSD-Peer-to-peer-PractitionerRole-BastianBuxAuryn-Spital
-    description: Resource PractitionerRole BastianBuxAuryn-Spital 
+    description: Resource PractitionerRole BastianBuxAuryn-Spital
   PractitionerRole/mCSD-Peer-to-peer-PractitionerRole-GisiGmorkFurchur-Klinik:
     name: mCSD-Peer-to-peer-PractitionerRole-GisiGmorkFurchur-Klinik
-    description: Resource PractitionerRole GisiGmorkFurchur-Klinik 
+    description: Resource PractitionerRole GisiGmorkFurchur-Klinik
   PractitionerRole/mCSD-Peer-to-peer-PractitionerRole-KarlKoreanderFurchur-Klinik:
     name: mCSD-Peer-to-peer-PractitionerRole-KarlKoreanderFurchur-Klinik
-    description: Resource PractitionerRole KarlKoreanderFuchur-Klinik       
+    description: Resource PractitionerRole KarlKoreanderFuchur-Klinik
 # For parameters defined by core FHIR see: 
 # http://build.fhir.org/codesystem-guide-parameter-code.html.
 # For parameters defined by the FHIR Tools IG  see:
