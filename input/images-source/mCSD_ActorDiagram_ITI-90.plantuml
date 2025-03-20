@@ -3,8 +3,8 @@ hide footbox
 
 title Interaction Diagram for [ITI-90]
 
-participant "Care Services Selective\nConsumer" as Client
-participant "Care Services Selective\nSupplier" as Server
+participant "Query Client" as Client
+participant "Directory" as Server
 
 hide footbox
 autoactivate on

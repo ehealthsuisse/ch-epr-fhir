@@ -84,9 +84,10 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * category 1..1 MS
 * category ^binding.strength = #required
 * subject 1.. MS
-* subject only Reference($ch-core-patient)
-* subject ^comment = "Not a contained resource. URL Points to an existing Patient Resource representing the XDS Affinity Domain Patient."
-* subject ^type.aggregation = #referenced
+* subject.identifier 1..1
+* subject.identifier only EPRSPIDIdentifier
+* subject ^comment = "Not a contained resource. The identifier points to an existing patient in the XDS Affinity Domain."
+* date 1.. MS
 * author only Reference
 * author MS
 * author ^comment = "Contained resource."
@@ -251,9 +252,9 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * mode MS
 * code MS
 * subject 1.. MS
-* subject only Reference($ch-core-patient)
-* subject ^comment = "Not a contained resource. URL Points to an existing Patient Resource representing the XDS Affinity Domain Patient."
-* subject ^type.aggregation[0] = #referenced
+* subject.identifier 1..1
+* subject.identifier only EPRSPIDIdentifier
+* subject ^comment = "Not a contained resource. The identifier points to an existing patient in the XDS Affinity Domain."
 * date MS
 * source MS
 * source.extension[authorOrg] 0..0

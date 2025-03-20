@@ -1,0 +1,24 @@
+@startuml
+hide footbox
+
+title Interaction Diagram for [ITI-130]
+
+participant "Data Source" as Client
+participant "Directory" as Server
+
+hide footbox
+autoactivate on
+
+== Add ==
+Client -> Server : Create Care Service Resource Request
+Server --> Client : Create Care Services Resource Response
+
+== Update ==
+Client -> Server : Update Care Service Resource Request
+Server --> Client : Update Care Services Resource Response
+
+== Delete ==
+Client -> Server : Delete Care Service Resource Request
+Server --> Client : Delete Care Services Resource Response
+
+@enduml
