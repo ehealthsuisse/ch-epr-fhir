@@ -37,6 +37,9 @@ The additional Swiss EPR metadata is defined with:
 The request Bundle SHALL follow the [CH MHD Provide Document Bundle Comprehensive](StructureDefinition-ch-mhd-providedocumentbundle-comprehensive.html)
 Profile ([example: Bundle: 2-7-BundleProvideDocument](Bundle-2-7-BundleProvideDocument.html)).
 
+The `DocumentReference.content.attachment.url` value SHALL point to a Binary resource included in the Bundle (see
+[Resolving references in Bundles](https://hl7.org/fhir/R4/bundle.html#references) for how to create a valid reference).
+
 ##### DeletionStatus
 
 The optional metadata about the DeletionStatus of the document is represented in the DocumentReference using the
