@@ -1,265 +1,296 @@
 // Server Actor for ITI-90
-Instance: CH.mCSD.CareServicesSelectiveSupplier
+Instance: CH.mCSD.Directory
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesSelectiveSupplier"
-* name = "CH_mCSD_Care_Services_Selective_Supplier"
-* title = "mCSD Care Services Selective Supplier (server)"
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.Directory"
+* name = "CH_mCSD_Directory"
+* title = "mCSD Directory (server)"
 * status = #active
 * experimental = false
-* date = "2023-05-09"
+* date = "2024-03-18"
 * description = "CapabilityStatement for Server Actor in the IHE IT Infrastructure Technical Framework Supplement IHE mCSD."
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
-* rest.mode = #server
-* rest.documentation = "IHE ITI mCSD ITI-90 endpoint"
-* rest.resource[+].type = #Organization
-* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
-* rest.resource[=].interaction[+].code = #read
-* rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].versioning = #no-version
-* rest.resource[=].searchInclude = "Organization.endpoint"
-* rest.resource[=].searchRevInclude[0] = "Location:organization"
-* rest.resource[=].searchRevInclude[+] = "OrganizationAffiliation:participating-organization"
-* rest.resource[=].searchRevInclude[+] = "OrganizationAffiliation:primary-organization"
-* rest.resource[=].searchParam[0].name = "active"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "name"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "name:contains"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "name:exact"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "partof"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].name = "type"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[+].type = #Practitioner
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
-* rest.resource[=].interaction[+].code = #read
-* rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].versioning = #no-version
-* rest.resource[=].searchParam[0].name = "active"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "name"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "name:contains"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "name:exact"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "given"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "given:contains"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "given:exact"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "family"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "family:contains"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "family:exact"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[+].type = #PractitionerRole
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
-* rest.resource[=].interaction[+].code = #read
-* rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].versioning = #no-version
-* rest.resource[=].searchInclude = "PractitionerRole:practitioner"
-* rest.resource[=].searchParam[0].name = "active"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "location"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].name = "organization"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].name = "role"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "service"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].name = "specialty"
-* rest.resource[=].searchParam[=].type = #token
-* rest.searchParam[0].name = "_id"
-* rest.searchParam[=].type = #token
-* rest.searchParam[+].name = "_lastUpdated"
-* rest.searchParam[=].type = #token
-* rest.searchParam[=].documentation = "The values for this shall support these prefixes: ge and le"
+* rest
+  * mode = #server
+  * documentation = "IHE ITI mCSD ITI-90 & ITI-130 endpoints"
+  * interaction[+].code = #batch
+  * resource[+]
+    * type = #Organization
+    * profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
+    * interaction[+].code = #create
+    * interaction[+].code = #update
+    * interaction[+].code = #delete
+    * interaction[+].code = #read
+    * interaction[+].code = #search-type
+    * versioning = #no-version
+    * searchInclude = "Organization.endpoint"
+    * searchRevInclude[0] = "Location:organization"
+    * searchRevInclude[+] = "OrganizationAffiliation:participating-organization"
+    * searchRevInclude[+] = "OrganizationAffiliation:primary-organization"
+    * searchParam[+]
+      * name = "active"
+      * type = #token
+    * searchParam[+]
+      * name = "identifier"
+      * type = #token
+    * searchParam[+]
+      * name = "name"
+      * type = #string
+    * searchParam[+]
+      * name = "name:contains"
+      * type = #string
+    * searchParam[+]
+      * name = "name:exact"
+      * type = #string
+    * searchParam[+]
+      * name = "partof"
+      * type = #reference
+    * searchParam[+]
+      * name = "type"
+      * type = #token
+  * resource[+]
+    * type = #Practitioner
+    * profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
+    * interaction[+].code = #create
+    * interaction[+].code = #update
+    * interaction[+].code = #delete
+    * interaction[+].code = #read
+    * interaction[+].code = #search-type
+    * versioning = #no-version
+    * searchParam[+]
+      * name = "active"
+      * type = #token
+    * searchParam[+]
+      * name = "identifier"
+      * type = #token
+    * searchParam[+]
+      * name = "name"
+      * type = #string
+    * searchParam[+]
+      * name = "name:contains"
+      * type = #string
+    * searchParam[+]
+      * name = "name:exact"
+      * type = #string
+    * searchParam[+]
+      * name = "given"
+      * type = #string
+    * searchParam[+]
+      * name = "given:contains"
+      * type = #string
+    * searchParam[+]
+      * name = "given:exact"
+      * type = #string
+    * searchParam[+]
+      * name = "family"
+      * type = #string
+    * searchParam[+]
+      * name = "family:contains"
+      * type = #string
+    * searchParam[+]
+      * name = "family:exact"
+      * type = #string
+  * resource[+]
+    * type = #PractitionerRole
+    * profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
+    * interaction[+].code = #create
+    * interaction[+].code = #update
+    * interaction[+].code = #delete
+    * interaction[+].code = #read
+    * interaction[+].code = #search-type
+    * versioning = #no-version
+    * searchInclude = "PractitionerRole:practitioner"
+    * searchParam[+]
+      * name = "active"
+      * type = #token
+    * searchParam[+]
+      * name = "location"
+      * type = #reference
+    * searchParam[+]
+      * name = "organization"
+      * type = #reference
+    * searchParam[+]
+      * name = "role"
+      * type = #token
+    * searchParam[+]
+      * name = "service"
+      * type = #reference
+    * searchParam[+]
+      * name = "specialty"
+      * type = #token
+  // Global search parameters
+  * searchParam[+]
+    * name = "_id"
+    * type = #token
+  * searchParam[+]
+    * name = "_lastUpdated"
+    * type = #token
+    * documentation = "The values for this shall support these prefixes: ge and le"
 
 
 // Client Actor for ITI-90
-Instance: CH.mCSD.CareServicesSelectiveConsumer
+Instance: CH.mCSD.QueryClient
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesSelectiveConsumer"
-* name = "CH_mCSD_Care_Services_Selective_Consumer"
-* title = "mCSD Care Services Selective Consumer (client)"
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.QueryClient"
+* name = "CH_mCSD_Query_Client"
+* title = "mCSD Query Client (client)"
 * status = #active
 * experimental = false
-* date = "2023-05-09"
+* date = "2024-03-18"
 * description = "CapabilityStatement for Client Actor in the IHE IT Infrastructure Technical Framework Supplement IHE mCSD."
 * kind = #requirements
 * fhirVersion = #4.0.1
-* format[0] = #application/fhir+xml
+* format[+] = #application/fhir+xml
 * format[+] = #application/fhir+json
-* rest.mode = #client
-* rest.documentation = "IHE ITI mCSD ITI-90 endpoint"
-* rest.resource[+].type = #Organization
-* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
-* rest.resource[=].interaction[+].code = #read
-* rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].versioning = #no-version
-* rest.resource[=].searchInclude = "Organization.endpoint"
-* rest.resource[=].searchRevInclude[0] = "Location:organization"
-* rest.resource[=].searchRevInclude[+] = "OrganizationAffiliation:participating-organization"
-* rest.resource[=].searchRevInclude[+] = "OrganizationAffiliation:primary-organization"
-* rest.resource[=].searchParam[0].name = "active"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "name"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "name:contains"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "name:exact"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "partof"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].name = "type"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[+].type = #Practitioner
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
-* rest.resource[=].interaction[+].code = #read
-* rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].versioning = #no-version
-* rest.resource[=].searchParam[0].name = "active"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "name"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "name:contains"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "name:exact"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "given"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "given:contains"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "given:exact"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "family"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "family:contains"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[=].searchParam[+].name = "family:exact"
-* rest.resource[=].searchParam[=].type = #string
-* rest.resource[+].type = #PractitionerRole
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
-* rest.resource[=].interaction[+].code = #read
-* rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].versioning = #no-version
-* rest.resource[=].searchInclude = "PractitionerRole:practitioner"
-* rest.resource[=].searchParam[0].name = "active"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "location"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].name = "organization"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].name = "role"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[+].name = "service"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[+].name = "specialty"
-* rest.resource[=].searchParam[=].type = #token
-* rest.searchParam[0].name = "_id"
-* rest.searchParam[=].type = #token
-* rest.searchParam[+].name = "_lastUpdated"
-* rest.searchParam[=].type = #token
-* rest.searchParam[=].documentation = "The values for this shall support these prefixes: ge and le"
+* rest
+  * mode = #client
+  * documentation = "IHE ITI mCSD ITI-90 endpoint"
+  * resource[+]
+    * type = #Organization
+    * profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
+    * interaction[+].code = #read
+    * interaction[+].code = #search-type
+    * versioning = #no-version
+    * searchInclude = "Organization.endpoint"
+    * searchRevInclude[+] = "Location:organization"
+    * searchRevInclude[+] = "OrganizationAffiliation:participating-organization"
+    * searchRevInclude[+] = "OrganizationAffiliation:primary-organization"
+    * searchParam[+]
+      * name = "active"
+      * type = #token
+    * searchParam[+]
+      * name = "identifier"
+      * type = #token
+    * searchParam[+]
+      * name = "name"
+      * type = #string
+    * searchParam[+]
+      * name = "name:contains"
+      * type = #string
+    * searchParam[+]
+      * name = "name:exact"
+      * type = #string
+    * searchParam[+]
+      * name = "partof"
+      * type = #reference
+    * searchParam[+]
+      * name = "type"
+      * type = #token
+  * resource[+]
+    * type = #Practitioner
+    * profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
+    * interaction[+].code = #read
+    * interaction[+].code = #search-type
+    * versioning = #no-version
+    * searchParam[+]
+      * name = "active"
+      * type = #token
+    * searchParam[+]
+      * name = "identifier"
+      * type = #token
+    * searchParam[+]
+      * name = "name"
+      * type = #string
+    * searchParam[+]
+      * name = "name:contains"
+      * type = #string
+    * searchParam[+]
+      * name = "name:exact"
+      * type = #string
+    * searchParam[+]
+      * name = "given"
+      * type = #string
+    * searchParam[+]
+      * name = "given:contains"
+      * type = #string
+    * searchParam[+]
+      * name = "given:exact"
+      * type = #string
+    * searchParam[+]
+      * name = "family"
+      * type = #string
+    * searchParam[+]
+      * name = "family:contains"
+      * type = #string
+    * searchParam[+]
+      * name = "family:exact"
+      * type = #string
+  * resource[+]
+    * type = #PractitionerRole
+    * profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
+    * interaction[+].code = #read
+    * interaction[+].code = #search-type
+    * versioning = #no-version
+    * searchInclude = "PractitionerRole:practitioner"
+    * searchParam[+]
+      * name = "active"
+      * type = #token
+    * searchParam[+]
+      * name = "location"
+      * type = #reference
+    * searchParam[+]
+      * name = "organization"
+      * type = #reference
+    * searchParam[+]
+      * name = "role"
+      * type = #token
+    * searchParam[+]
+      * name = "service"
+      * type = #reference
+    * searchParam[+]
+      * name = "specialty"
+      * type = #token
+  // Global search parameters
+  * searchParam[+]
+    * name = "_id"
+    * type = #token
+  * searchParam[+]
+    * name = "_lastUpdated"
+    * type = #token
+    * documentation = "The values for this shall support these prefixes: ge and le"
 
 
-
-// Server Actor for CH:mCSD-1
-Instance: CH.mCSD.CareServicesDirectory
+// Client Actor for ITI-130
+Instance: CH.mCSD.DataSource
 InstanceOf: CapabilityStatement
 Usage: #definition
-* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesDirectory"
-* name = "CH_mCSD_Care_Services_Directory"
-* title = "mCSD Care Services Directory (server)"
+* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.DataSource"
+* name = "CH_mCSD_Data_Source"
+* title = "mCSD Data Source (client)"
 * status = #active
 * experimental = false
-* date = "2024-08-13"
-* description = "CapabilityStatement for Server Actor in the Swiss mCSD profile extension."
+* date = "2024-03-18"
+* description = "CapabilityStatement for Data Source Actor in the IHE IT Infrastructure Technical Framework Supplement IHE mCSD."
 * kind = #requirements
 * fhirVersion = #4.0.1
-* format[0] = #application/fhir+xml
+* format[+] = #application/fhir+xml
 * format[+] = #application/fhir+json
-* rest.mode = #server
-* rest.documentation = "CH:mCSD-1 endpoint"
-* rest.interaction[+].code = #batch
-
-* rest.resource[+].type = #Organization
-* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
-* rest.resource[=].interaction[+].code = #create
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[+].code = #delete
-* rest.resource[=].versioning = #no-version
-
-* rest.resource[+].type = #Practitioner
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
-* rest.resource[=].interaction[+].code = #create
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[+].code = #delete
-* rest.resource[=].versioning = #no-version
-
-* rest.resource[+].type = #PractitionerRole
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
-* rest.resource[=].interaction[+].code = #create
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[+].code = #delete
-* rest.resource[=].versioning = #no-version
-
-
-// Client Actor for CH:mCSD-1
-Instance: CH.mCSD.CareServicesSource
-InstanceOf: CapabilityStatement
-Usage: #definition
-* url = "http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.CareServicesSource"
-* name = "CH_mCSD_Care_Services_Source"
-* title = "mCSD Care Services Source (client)"
-* status = #active
-* experimental = false
-* date = "2024-08-13"
-* description = "CapabilityStatement for Server Actor in the Swiss mCSD profile extension."
-* kind = #requirements
-* fhirVersion = #4.0.1
-* format[0] = #application/fhir+xml
-* format[+] = #application/fhir+json
-* rest.mode = #client
-* rest.documentation = "CH:mCSD-1 endpoint"
-* rest.interaction[+].code = #batch
-
-* rest.resource[+].type = #Organization
-* rest.resource[=].profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
-* rest.resource[=].interaction[+].code = #create
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[+].code = #delete
-* rest.resource[=].versioning = #no-version
-
-* rest.resource[+].type = #Practitioner
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
-* rest.resource[=].interaction[+].code = #create
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[+].code = #delete
-* rest.resource[=].versioning = #no-version
-
-* rest.resource[+].type = #PractitionerRole
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
-* rest.resource[=].interaction[+].code = #create
-* rest.resource[=].interaction[+].code = #update
-* rest.resource[=].interaction[+].code = #delete
-* rest.resource[=].versioning = #no-version
+* rest
+  * mode = #client
+  * documentation = "IHE ITI mCSD ITI-130 endpoint"
+  * interaction[+].code = #batch
+  * resource[+]
+    * type = #Organization
+    * profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
+    * interaction[+].code = #create
+    * interaction[+].code = #update
+    * interaction[+].code = #delete
+    * versioning = #no-version
+  * resource[+]
+    * type = #Practitioner
+    * profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
+    * interaction[+].code = #create
+    * interaction[+].code = #update
+    * interaction[+].code = #delete
+    * versioning = #no-version
+  * resource[+]
+    * type = #PractitionerRole
+    * profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.PractitionerRole"
+    * interaction[+].code = #create
+    * interaction[+].code = #update
+    * interaction[+].code = #delete
+    * versioning = #no-version

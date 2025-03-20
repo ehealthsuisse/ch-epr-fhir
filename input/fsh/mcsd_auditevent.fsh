@@ -1,12 +1,12 @@
 // Audit events [ITI-90]
 Profile:     ChAuditEventIti90Read
 Parent:      AuditMcsdCareServicesRead
-Title:       "CH Audit Event for [ITI-90] Care Services Selective Consumer & Supplier / Read"
-Description: "This profile is used to define the CH Audit Event for the [ITI-90] transaction and the actors 'Care
-Services Selective Consumer' & Supplier, when reading care service resources."
+Title:       "CH Audit Event for [ITI-90] Query Client & Directory / Read"
+Description: "This profile is used to define the CH Audit Event for the [ITI-90] transaction and the actors 'Query
+Client' & Directory, when reading care service resources."
 * insert ChAuditEventBasicRules
-* agent[client] ^short = "The 'Care Services Selective Consumer' actor (EPR application)"
-* agent[server] ^short = "The 'Care Services Selective Supplier' actor (EPR API)"
+* agent[client] ^short = "The 'Query Client' actor (EPR application)"
+* agent[server] ^short = "The 'Directory' actor (EPR API)"
 * entity[data].what only Reference(IHE.mCSD.Practitioner or IHE.mCSD.PractitionerRole or IHE.mCSD.Organization)
   * type 1..1
   * identifier 0..1
@@ -17,12 +17,12 @@ Services Selective Consumer' & Supplier, when reading care service resources."
 
 Profile:     ChAuditEventIti90Query
 Parent:      AuditMcsdCareServicesQuery
-Title:       "CH Audit Event for [ITI-90] Care Services Selective Consumer & Supplier / Query"
-Description: "This profile is used to define the CH Audit Event for the [ITI-90] transaction and the actors 'Care
-Services Selective Consumer' & Supplier, when querying care service resources."
+Title:       "CH Audit Event for [ITI-90] Query Client & Directory / Query"
+Description: "This profile is used to define the CH Audit Event for the [ITI-90] transaction and the actors 'Query
+Client' & Directory, when querying care service resources."
 * insert ChAuditEventBasicRules
-* agent[client] ^short = "The 'Care Services Selective Consumer' actor (EPR application)"
-* agent[server] ^short = "The 'Care Services Selective Supplier' actor (EPR API)"
+* agent[client] ^short = "The 'Query Client' actor (EPR application)"
+* agent[server] ^short = "The 'Directory' actor (EPR API)"
 
 
 Instance:   ChAuditEventIti90ReadExample
@@ -62,116 +62,76 @@ RuleSet: ChAuditEventIti90ExampleRules
 * subtype[iti90] = $eventTypeCode#ITI-90 "Find Matching Care Services"
 
 
-// Audit events [CH:mCSD-1]
+// Audit events [ITI-130]
 
-Profile:      ChAuditEventmCSD1Create
-Parent:       Create // https://profiles.ihe.net/ITI/BALP/1.1.3/StructureDefinition-IHE.BasicAudit.Create.html
-Title:       "CH Audit Event for [CH:mCSD-1] Care Services Source & Directory / Add"
-Description: "This profile is used to define the CH Audit Event for the [CH:mCSD-1] transaction and the actors 'Care
-Services Source' & Directory, when adding care service resources."
-* insert ChAuditEventmCSD1Rules
-
-
-Profile:     ChAuditEventmCSD1Update
-Parent:      Update // https://profiles.ihe.net/ITI/BALP/1.1.3/StructureDefinition-IHE.BasicAudit.Update.html
-Title:       "CH Audit Event for [CH:mCSD-1] Care Services Source & Directory / Update"
-Description: "This profile is used to define the CH Audit Event for the [CH:mCSD-1] transaction and the actors 'Care
-Services Source' & Directory, when updating care service resources."
-* insert ChAuditEventmCSD1Rules
+Profile:      ChAuditEventIti130Create
+Parent:       IHE.mCSD.Audit.CareServices.Create
+Title:       "CH Audit Event for [ITI-130] Data Source & Directory / Create"
+Description: "This profile is used to define the CH Audit Event for the [ITI-130] transaction and the actors 'Data
+Source' & Directory, when adding care service resources."
+* insert ChAuditEventIti130Rules
 
 
-Profile:      ChAuditEventmCSD1Delete
-Parent:       Delete // https://profiles.ihe.net/ITI/BALP/1.1.3/StructureDefinition-IHE.BasicAudit.Delete.html
-Title:       "CH Audit Event for [CH:mCSD-1] Care Services Source & Directory / Delete"
-Description: "This profile is used to define the CH Audit Event for the [CH:mCSD-1] transaction and the actors 'Care
-Services Source' & Directory, when deleting care service resources."
-* insert ChAuditEventmCSD1Rules
+Profile:     ChAuditEventIti130Update
+Parent:      IHE.mCSD.Audit.CareServices.Update
+Title:       "CH Audit Event for [ITI-130] Data Source & Directory / Update"
+Description: "This profile is used to define the CH Audit Event for the [ITI-130] transaction and the actors 'Data
+Source' & Directory, when updating care service resources."
+* insert ChAuditEventIti130Rules
 
 
-RuleSet: ChAuditEventmCSD1Rules
+Profile:      ChAuditEventIti130Delete
+Parent:       IHE.mCSD.Audit.CareServices.Delete
+Title:       "CH Audit Event for [ITI-130] Data Source & Directory / Delete"
+Description: "This profile is used to define the CH Audit Event for the [ITI-130] transaction and the actors 'Data
+Source' & Directory, when deleting care service resources."
+* insert ChAuditEventIti130Rules
+
+
+RuleSet: ChAuditEventIti130Rules
 * insert ChAuditEventBasicRules
-* agent[client] ^short = "The 'Care Services Source' actor (EPR application)"
-* agent[server] ^short = "The 'Care Services Directory' actor (EPR API)"
-* entity contains practitioner 0..1 and organization 0..1
-* entity[data].what
-  * type 1..1
-  * identifier 0..1
-    * ^short = "The identifier of the care service resource, required for a Practitioner or Organization"
-    * value 1..1
-    * system 1..1
-* entity[practitioner] ^short = "The Practitioner referenced in the created/updated/deleted PractitionerRole"
-  * what 1..1
-  * what ^short = "The practitioner identifier"
-    * identifier 1..1
-      * value 1..1
-      * system 1..1
-  * type = $auditEntityType#1 "Person"
-  * role = $objectRole#15 "Practitioner"
-* entity[organization] ^short = "The Organization referenced in the created/updated/deleted PractitionerRole"
-  * what 1..1
-  * what ^short = "The organization identifier"
-    * identifier 1..1
-      * value 1..1
-      * system 1..1
-  * type = $auditEntityType#3 "Organization"
-  * role = $objectRole#15 "Practitioner"
+* agent[client] ^short = "The 'Data Source' actor (EPR application)"
+* agent[server] ^short = "The 'Directory' actor (EPR API)"
+* entity[data].what only Reference(IHE.mCSD.Practitioner or IHE.mCSD.PractitionerRole or IHE.mCSD.Organization)
 
 
-Instance:   ChAuditEventmCSD1CreateExample
-InstanceOf: ChAuditEventmCSD1Create
+Instance:   ChAuditEventIti130CreateExample
+InstanceOf: ChAuditEventIti130Create
 Usage:      #example
-* insert ChAuditEventmCSD1ExampleRules
+* insert ChAuditEventIti130ExampleRules
 * insert ChExampleAuditEventClientRules
 * subtype[anyCreate] = $restfulInteraction#create "create"
 * agent[client].type = DCM#110153 "Source Role ID"
 * agent[server].network.address = "https://example.org/fhir/"
 * agent[server].type = DCM#110152 "Destination Role ID"
-* entity[data].what
-  * type = "PractitionerRole"
-  * identifier
-    * value = "CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch"
-    * system = "urn:ietf:rfc:4514"
-* entity[practitioner].what.identifier
-  * value = "7601000102737"
-  * system = "urn:oid:2.51.1.3"
-* entity[organization].what.identifier
-  * value = "urn:oid:2.16.10.89.210"
-  * system = "urn:ietf:rfc:3986"
+* entity[data].what.reference = "PractitionerRole/PeterPanSpitalXDept3"
 
 
-Instance:   ChAuditEventmCSD1UpdateExample
-InstanceOf: ChAuditEventmCSD1Update
+Instance:   ChAuditEventIti130UpdateExample
+InstanceOf: ChAuditEventIti130Update
 Usage:      #example
-* insert ChAuditEventmCSD1ExampleRules
+* insert ChAuditEventIti130ExampleRules
 * insert ChExampleAuditEventServerRules
 * subtype[anyUpdate] = $restfulInteraction#update "update"
 * agent[server].network.address = "https://example.org/fhir/"
-* entity[data].what
-  * type = "Practitioner"
-  * identifier
-    * value = "7601000102737"
-    * system = "urn:oid:2.51.1.3"
+* entity[data].what.reference = "Practitioner/DrPeterPan"
 * agent[client].type = DCM#110153 "Source Role ID"
 * agent[server].type = DCM#110152 "Destination Role ID"
 
 
-Instance:   ChAuditEventmCSD1DeleteExample
-InstanceOf: ChAuditEventmCSD1Delete
+Instance:   ChAuditEventIti130DeleteExample
+InstanceOf: ChAuditEventIti130Delete
 Usage:      #example
-* insert ChAuditEventmCSD1ExampleRules
+* insert ChAuditEventIti130ExampleRules
 * insert ChExampleAuditEventServerRules
 * subtype[anyDelete] = $restfulInteraction#delete "delete"
 * agent[server].network.address = "https://example.org/fhir/"
-* entity[data].what
-  * type = "Organization"
-  * identifier
-    * system = "urn:ietf:rfc:3986"
-    * value = "urn:oid:2.16.10.89.203"
+* entity[data].what.reference = "Organization/SpitalX"
 * agent[client].type = DCM#110150 "Application"
 * agent[server].type = $provenanceParticipantType#custodian "Custodian"
 
 
-RuleSet: ChAuditEventmCSD1ExampleRules
+RuleSet: ChAuditEventIti130ExampleRules
 // Copy of ChExampleAuditEventBaseRules, with agent codes fixed
 * recorded = "2024-10-28T09:43:56Z"
 * outcome = #0

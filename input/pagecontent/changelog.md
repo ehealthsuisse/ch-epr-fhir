@@ -4,7 +4,6 @@
 
 * Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
 * in review: ITI-71: Conflict between OAuth2 scope and ITI-71 scope [#245](https://github.com/ehealthsuisse/ch-epr-fhir/issues/245)  
-* Remove `DocumentReference.date` from the MHD profile [#274](https://github.com/ehealthsuisse/ch-epr-fhir/issues/274)
 
 #### Resolved Issues
 
@@ -12,11 +11,12 @@
 * Wrong optionality of the attribute Consent.provision.period [#255](https://github.com/ehealthsuisse/ch-epr-fhir/issues/255)
 * integrate CH:ATC into this implementation guide [#257](https://github.com/ehealthsuisse/ch-epr-fhir/issues/257)
 * Wrong AuditEvent action for the CH:MHD-1 transaction [#270](https://github.com/ehealthsuisse/ch-epr-fhir/issues/270)
-* Upgrade to IHE mCSD v3.9.0 [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
+* Upgrade to IHE mCSD v4.0.0-comment [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
 * Update the PPQm-3 and PPQm-5 AuditEvents to BALP v1.1.3 [#278](https://github.com/ehealthsuisse/ch-epr-fhir/issues/278)
 * Upgrade to IHE PDQm v3.1.0 [#281](https://github.com/ehealthsuisse/ch-epr-fhir/issues/281)
 * Remove targetId from the ITI-83 response [#269](https://github.com/ehealthsuisse/ch-epr-fhir/issues/269)
 * Use a logical reference (EPR-SPID) to the patient in MHD [#269](https://github.com/ehealthsuisse/ch-epr-fhir/issues/269)
+* Remove `DocumentReference.date` from the MHD profile [#274](https://github.com/ehealthsuisse/ch-epr-fhir/issues/274)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
@@ -27,7 +27,10 @@
 
 #### Resolved Issues
 
-* IUA: moved all parameter not known by the authorization server from the scope to an extension of the Get Access Token \[ITI-71\] transaction to match the requirements of the underlying OAuth 2.1 specification [#245](https://github.com/ehealthsuisse/ch-epr-fhir/issues/245)
+* IUA: The Get Access Token Request [ITI-71] authorization code flow is extended with the option, to send an identity assertion (SAML or OpenID Connect) in the token request message, required to support SAML authentication [#258](https://github.com/ehealthsuisse/ch-epr-fhir/issues/258).
+* IUA: The requirement to use mTLS in the Get Access Token Request [ITI-71] is removed. Client identification is now based on the client id, client secret and the signature of the request [#258](https://github.com/ehealthsuisse/ch-epr-fhir/issues/258).
+* IUA: The use case descriptions are updated [#258](https://github.com/ehealthsuisse/ch-epr-fhir/issues/258).
+* IUA: Moved all parameter not known by the authorization server from the scope to an extension of the Get Access Token \[ITI-71\] transaction to match the requirements of the underlying OAuth 2.1 specification [#245](https://github.com/ehealthsuisse/ch-epr-fhir/issues/245)
 * switch deprecated discriminator type 'pattern' to 'value' [#239](https://github.com/ehealthsuisse/ch-epr-fhir/issues/239)
 * set status for extensions, profiles and datatypes to active [#244](https://github.com/ehealthsuisse/ch-epr-fhir/issues/244)
 * mCSD: add the feed transaction (CH:mCSD-1) [#158](https://github.com/ehealthsuisse/ch-epr-fhir/issues/158)

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Organization xmlns="http://hl7.org/fhir">
+    <id value="mCSD-Peer-to-peer-Organization-Fuchur-Klinik"/>
+    <meta>
+        <lastUpdated value="2024-05-16T21:49:21+00:00"/>
+        <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"/>
+    </meta>
+    <identifier>
+        <system value="urn:ietf:rfc:4514"/>
+        <value value="uid=CommunityA:00000003001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"/>
+    </identifier>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.10.89.214"/>
+    </identifier>
+    <active value="false"/>
+    <type>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="22232009"/>
+            <display value="Hospital"/>
+        </coding>
+    </type>
+    <name value="Fuchur-Klinik"/>
+</Organization>
