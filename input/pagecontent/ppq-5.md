@@ -22,6 +22,8 @@ The request SHALL be sent:
 - For querying by patient ID — to `[baseUrl]/Consent?patient:identifier=urn:oid:2.16.756.5.30.1.127.3.10.3|[epr-spid]`.
 - For querying by policy set ID — to `[baseUrl]/Consent?identifier=[uuid]`.
 
+In the both cases, additional search criteria MAY be provided.
+
 #### Expected Actions
 
 Upon receiving the HTTP `GET` request, the Policy Repository SHALL create a PPQ-5 response according to the transaction
