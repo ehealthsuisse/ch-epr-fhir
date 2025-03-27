@@ -8,7 +8,7 @@ Description: "CH mCSD profile on Organization"
 * identifier[OID] only OidIdentifier
 * identifier[OID] ^short = "The OID of the organization in the community"
 * identifier[HpdUid] only HpdUidIdentifier
-* identifier[HpdUid] ^short = "UID (unique identifier) of the practitioner stored in an HPD"
+* identifier[HpdUid] ^short = "UID (unique identifier) of the provider stored in an HPD"
 * identifier.extension contains HcIdentifierStatusExtension named status 0..1   // if not present, assume status "active"
 * name.extension contains HcOrganizationRegisteredNamesExtension named registeredName 0..*
 * extension contains HpdProviderCreationTimeExtension named creationTime 1..1 and

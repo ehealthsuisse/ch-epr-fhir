@@ -7,7 +7,7 @@ Description: "CH mCSD profile on Practitioner"
 * obeys ch-mcsd-practitioner-only-one-legal-address 
 * identifier contains HpdUid 1..1
 * identifier[HpdUid] only HpdUidIdentifier
-* identifier[HpdUid] ^short = "UID (unique identifier) of the practitioner stored in an HPD"
+* identifier[HpdUid] ^short = "UID (unique identifier) of the provider stored in an HPD"
 * identifier.extension contains HcIdentifierStatusExtension named status 0..1   // if not present, assume "active"
 * active.extension contains HcProfessionalInactivityReasonExtension named inactivityReason 0..1   // to be ignored on "active", optional for "inactive"
 * name.extension contains HcProfessionalInitialsExtension named initials 0..*
