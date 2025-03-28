@@ -87,8 +87,8 @@ The healthcare professional reports medical information of a treatment in her pr
 a structured or unstructured document from the data and stores them in the clinical archive system. The clinical archive
 system decides whether the document shall be stored in the patients EHR using the policies defined in the clinic.
 
-To access the patient EHR the clinical archive system first request a basic authorization token using the client
-credential flow and uses the basic authorization token in the PIXm or PDQm transactions used to retrieve the EHR-SPID
+To access the patient EHR the clinical archive system first request a basic access token using the client
+credential flow and uses the basic access token in the PIXm or PDQm transactions used to retrieve the EHR-SPID
 and the XAD PID of the patient.
 
 The Authorization server returns the basic access token if the clinical archive systems is registered beforehand and is
