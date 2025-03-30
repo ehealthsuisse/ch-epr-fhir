@@ -30,7 +30,7 @@ Context: Practitioner.name
 Extension: HpdProviderCreationTimeExtension
 Id: HpdProviderCreationTimeExtension
 Title: "HpdProviderCreationTimeExtension"
-Description: "Extension for specifying a provider's creation time"
+Description: "Extension for specifying a provider's creation time.  Same as for Meta.lastUpdated, this value is set by the server/resource manager; what a client provides is irrelevant."
 Context: Practitioner, Organization
 * ^status = #active
 * ^experimental = false

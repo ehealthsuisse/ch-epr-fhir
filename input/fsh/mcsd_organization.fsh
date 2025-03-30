@@ -4,18 +4,37 @@ Id: CH.mCSD.Organization
 Title: "CH mCSD Organization"
 Description: "CH mCSD profile on Organization"
 * obeys ch-mcsd-organization-ihe-conformance
-* identifier contains OID 1..1 and HpdUid 1..1
+* identifier.system 1..1
+* identifier.value 1..1
+* identifier contains OID 1..1 and HpdUid 0..1
 * identifier[OID] only OidIdentifier
 * identifier[OID] ^short = "The OID of the organization in the community"
 * identifier[HpdUid] only HpdUidIdentifier
 * identifier[HpdUid] ^short = "UID (unique identifier) of the provider stored in an HPD"
 * identifier.extension contains HcIdentifierStatusExtension named status 0..1   // if not present, assume status "active"
+* name 1..
 * name.extension contains HcOrganizationRegisteredNamesExtension named registeredName 0..*
+* alias 1..
+* address.extension contains HpdProviderPostalAddressStatusExtension named status 0..1  // if not present, assume "primary"
+* contact.address.extension contains HpdProviderPostalAddressStatusExtension named status 0..1  // if not present, assume "primary"
+
+* telecom contains telephoneNumber 0..* and
+                   facsimileTelephoneNumber 0..*
+* telecom ^slicing.discriminator[0].type = #value
+* telecom ^slicing.discriminator[=].path = "system"
+* telecom ^slicing.discriminator[+].type = #value
+* telecom ^slicing.discriminator[=].path = "use"
+* telecom ^slicing.rules = #open
+* telecom ^slicing.ordered = false
+* telecom[telephoneNumber].system               = #phone (exactly)
+* telecom[telephoneNumber].use                  = #work (exactly)
+* telecom[facsimileTelephoneNumber].system      = #fax (exactly)
+* telecom[facsimileTelephoneNumber].use         = #work (exactly)
+
 * extension contains HpdProviderCreationTimeExtension named creationTime 1..1 and
         HcOrganizationCommunicationLanguageExtension named languagesSupported 0..* and
         HcOrganizationSpecialisationExtension named specialisation 0..* and
         HcOrganizationOwnerOfExtension named ownerOf 0..*
-* telecom[email] 0..1 
 * partOf.extension contains HcOrganizationMemberOfExtension named memberOf 1..1
 
 
@@ -42,8 +61,8 @@ Title:    "HPD schema (DSMLv2/LDAP)"
 * contact.address -> "HCRegulatedOrganization.hpdProviderMailingAddress"
 * extension[languagesSupported] -> "HCRegulatedOrganization.hpdProviderLanguageSupported"
 * type -> "HCRegulatedOrganization.HcSpecialisation"
-* telecom -> "HCRegulatedOrganization.telephoneNumber"
-* telecom -> "HCRegulatedOrganization.facsimileTelephoneNumber"
+* telecom[telephoneNumber] -> "HCRegulatedOrganization.telephoneNumber"
+* telecom[facsimileTelephoneNumber] -> "HCRegulatedOrganization.facsimileTelephoneNumber"
 * partOf -> "HCRegulatedOrganization.memberOf"
 * partOf.extension[memberOf] -> "Relationship.cn"
 * extension[creationTime] -> "HCRegulatedOrganization.createTimestamp"
@@ -66,6 +85,7 @@ Description: "An example of CHmCSDOrganization that contains the same informatio
 * active = true
 * type[+].coding = http://terminology.hl7.org/CodeSystem/organization-type#cg "Community Group"
 * name = "Community A"
+* alias = "Community A"
 * extension[creationTime].valueDateTime = "2025-03-17T16:37:20+01:00"
 
 
@@ -82,6 +102,7 @@ Description: "An example of CHmCSDOrganization that contains the same informatio
 * active = true
 * type[+].coding = $sct#22232009 "Hospital"
 * name = "Spital X"
+* alias = "Psychiatrisches Klinikum X"
 * telecom[+].system = #fax
 * telecom[=].value = "+41 71 111 22 99"
 * telecom[+].system = #phone
@@ -116,6 +137,8 @@ examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=c
 * extension[specialisation][+].valueCodeableConcept.coding = $sct#225728007 "Accident and Emergency department"
 * type[+].coding = $sct#22232009 "Hospital"
 * name = "Dept. 3"
+* alias = "Station Three"
+* alias = "Station Drei"
 * telecom[+].system = #fax
 * telecom[=].value = "+41 71 111 22 27"
 * telecom[+].system = #phone
@@ -147,6 +170,7 @@ examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=c
 * type[+].coding = $sct#35971002 "Ambulatory care site"
 * extension[specialisation][+].valueCodeableConcept.coding = $sct#394802001 "General medicine"
 * name = "Praxis P"
+* alias = "Praxis P"
 * telecom[+].system = #fax
 * telecom[=].value = "+41 71 271 22 99"
 * telecom[+].system = #phone

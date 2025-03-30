@@ -10,7 +10,12 @@ HPD objects may have three types of identifiers:
   consisting from issuing authority ID, ID type, ID value, and status, divided by colons.
 
 Unique IDs of providers are mapped to values of `Practitioner.identifier` and `Organization.identifier`
-with `system` equal to `urn:ietf:rfc:4514`.
+with `system` equal to `urn:ietf:rfc:4514`.  The following additional requirements apply: 
+* Values of identifiers of this type shall be globally unique in the context of a given resource type
+  (i.e. there shall be no two practitioners with the same UID, and no two organizations with the same UID,
+  but there may be a practitioner and an organization with the same UID).
+* If a `Practitioner` or an `Organization` being submitted over ITI-130 does not contain an identifier 
+  of this type, the server shall create it, in the format defined in the HPD specification.
 
 DNs are not mapped to any FHIR attribute, because they are derived from unique IDs, and, moreover,
 not used as search parameters.
@@ -78,11 +83,11 @@ map to `ContactPoint` structures as shown in the table below:
 
 | HPD communication channel  | FHIR `ContactPoint.system` | FHIR `ContactPoint.use` |
 |----------------------------|----------------------------|-------------------------|
-| `mail`                     | `#email`                   | any                     |
+| `mail`                     | `#email`                   | `#work`                 |
 | `telephoneNumber`          | `#phone`                   | `#work`                 |
 | `mobile`                   | `#phone`                   | `#mobile`               |
-| `pager`                    | `#pager`                   | any                     |
-| `facsimileTelephoneNumber` | `#fax`                     | any                     |
+| `pager`                    | `#pager`                   | `#work`                 |
+| `facsimileTelephoneNumber` | `#fax`                     | `#work`                 |
 
 HPD `HCProfessional.hpdMedicalRecordsDeliveryEmailAddress` constitutes a special case. The cardinality of this
 attribute is 0..1, as opposed to 0..n for all other telecommunication channels, and it does not map conveniently
@@ -152,7 +157,7 @@ and thus does not need any additional definitions to be mapped to FHIR `Organiza
 ## Mapping of organization names
 
 HPD `HCRegulatedOrganization` defines two types of organization names &mdash; legal names (`hcRegisteredName`) and
-other names (`O`), both with cardinalities 0..n. In FHIR `Organization` resource, their counterparts are
+other names (`O`), both with cardinalities 1..n. In FHIR `Organization` resource, their counterparts are
 `name` and `alias`, respectively. But `name` has the cardinality 0..1. Additional legal organization names in FHIR
 can be placed into `Organization.name.extension[registeredNames].valueString`.
 
