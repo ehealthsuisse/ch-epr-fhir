@@ -49,7 +49,7 @@ Source:   CHmCSDOrganization
 Target:   "https://www.bag.admin.ch/epra"
 Title:    "HPD schema (DSMLv2/LDAP)"
 * -> "HCRegulatedOrganization"
-* identifier -> "HCRegulatedOrganization.uid"
+* identifier[HpdUid] -> "HCRegulatedOrganization.uid"
 * identifier -> "HCRegulatedOrganization.hcIdentifier"
 * name -> "HCRegulatedOrganization.hcRegisteredName"
 * name.extension[registeredName] -> "HCRegulatedOrganization.hcRegisteredName"
