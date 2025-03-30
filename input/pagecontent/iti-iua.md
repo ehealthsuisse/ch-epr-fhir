@@ -132,7 +132,7 @@ see [sequence diagrams](sequencediagrams.html).
 ### Security Consideration
 
 Portals and primary systems SHALL be identified by the client_id and client_secret registered during onboarding. All
-requests to the IUA Authorization Server SHALL be authenticated by the digital signatures.
+requests to the IUA Authorization Server SHALL be authenticated by the digital signatures of the messages.
 
 Implementers SHALL register the combination of the OAuth client ID, the URLs and the certificate used for message
 signatures during the onboarding process and keep the data up to date.

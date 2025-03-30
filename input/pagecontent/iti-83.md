@@ -111,10 +111,9 @@ The CapabilityStatement resource for the **Patient Identifier Cross-reference Ma
 The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with
 server certificates.
 
-The transaction SHALL use client authentication and authorization using basic access token as defined
-in the [IUA profile](https://profiles.ihe.net/ITI/IUA). The authorization token SHALL be conveyed as
-defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
-transaction.
+The transaction SHALL use client authentication and authorization using one of the following strategies:
+1. Use a basic access token defined in [IUA](iti-71.html) conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
+2. or, use mutual authentication (mTLS) on the transport layer.
 
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 

@@ -40,13 +40,16 @@ The PPQ-4 response SHALL be created according to the section
 
 ### Security Considerations
 
-TLS SHALL be used. For user authentication and authorization, the IUA profile with extended access token SHALL be used
-as described in the Amendment mHealth of Annex 5, Section 3.2. Consequently, the Mobile Privacy Policy Bundle Feed
-[PPQ-4] transaction SHALL be combined with Incorporate Access Token
-[[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA
-profile.
+The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with
+server certificates.
+
+The transaction SHALL use client authentication and authorization using one of the following strategies:
+1. Use an extended access token defined in [IUA](iti-71.html) conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
+2. or, use mutual authentication (mTLS) on the transport layer in combination with a XUA token for authorization. The XUA token SHALL be conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
 
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
+
+#### Security Audit Considerations
 
 The **Policy Source** and **Policy Repository** SHALL record the right [PPQ-3] audit event for each operation in the 
 transaction:
