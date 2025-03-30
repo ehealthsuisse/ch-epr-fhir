@@ -78,7 +78,7 @@ Source:   CHmCSDPractitioner
 Target:   "https://www.bag.admin.ch/epra"
 Title:    "HPD schema (DSMLv2/LDAP)"
 * -> "HCProfessional"
-* identifier -> "HCProfessional.uid"
+* identifier[HpdUid] -> "HCProfessional.uid"
 * identifier -> "HCProfessional.hcIdentifier"
 * identifier.extension[status] -> "HCProfessional.hcIdentifier.status"
 * active -> "HCProfessional.hpdProviderStatus (active, inactive)" 
@@ -103,6 +103,7 @@ Title:    "HPD schema (DSMLv2/LDAP)"
 * telecom[mobile] -> "HCProfessional.mobile"
 * telecom[pager] -> "HCProfessional.pager"
 * telecom[facsimileTelephoneNumber] -> "HCProfessional.facsimileTelephoneNumber" // [system='fax']
+
 
 
 Instance: CHmCSDPractitionerDrPeterPan
