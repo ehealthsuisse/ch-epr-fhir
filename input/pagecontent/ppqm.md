@@ -140,7 +140,7 @@ See also:
 - [Description of the official EPR policy stack](https://github.com/ehealthsuisse/ch-epr-adr-ppq/blob/main/docs/Policies.md).
 
 ### Security Consideration
-This national extension enforces authentication and authorization of access using the IUA profile with basic access token as described in [IUA](iti-71.html).
+This national extension enforces authentication and authorization of access using the IUA profile as described in [IUA](iti-71.html).
 
 ### Relation between CH:PPQm and CH:PPQ
 

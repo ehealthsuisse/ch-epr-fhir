@@ -49,8 +49,8 @@ Therefore, actors of this profile must be grouped with actors of other profiles 
 
 ### Security Consideration
 
-This national extension enforces authentication and authorization of access to the _Directory_
-using the IUA profile with basic access token as described in [IUA](iti-71.html).
+This national extension enforces authentication and authorization of access to the _Care Services Selective Supplier_
+using the IUA profile as described in [IUA](iti-71.html).
 
 ### Examples
 

@@ -178,4 +178,4 @@ This profile supports the following Use Cases:
 </ol>
 
 ### Security Considerations
-This national extension enforces authentication and authorization of access using the IUA profile with basic access token as described in [IUA](iti-71.html).
+This national extension enforces authentication and authorization of access using the IUA profile as described in [IUA](iti-71.html).

@@ -33,4 +33,5 @@ This national extension enforces authentication and authorization for access con
 <figcaption ID="1">Table 1: Grouping of PDQm actors required by this national extension. </figcaption>
 
 ###	Security Consideration
-This national extension enforces authentication and authorization of access to the Patient Demographics Supplier using the IUA profile with basic access token as described in [IUA](iti-71.html).
+This national extension enforces authentication and authorization of access to the Patient Demographics Supplier using 
+the IUA profile as described in [IUA](iti-71.html).
