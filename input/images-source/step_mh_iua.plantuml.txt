@@ -1,4 +1,4 @@
-opt IUA with JWT or SAML Token option
+opt IUA with JWT option
 app -[#black]> AuthorizationClient: Get Access Token
 activate AuthorizationClient
 AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Access Token\n[Extended access token]
