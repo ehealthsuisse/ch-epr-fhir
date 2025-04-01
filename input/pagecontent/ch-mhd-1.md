@@ -117,7 +117,10 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
     }
   ],
   "subject": {
-    "reference": "http://example.org/Patient/FranzMusterNeedsAbsoluteUrl"
+    "identifier": {
+      "system": "urn:oid:2.16.756.5.30.1.127.3.10.3",
+      "value": "761337610411353650"
+    }
   },
   "date": "2020-06-29T11:58:00+00:00",
   "description": "Changed Description for -MedicationCard",
@@ -203,10 +206,9 @@ See http://hl7.org/fhir/http.html#update for response.
 The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with
 server certificates. Transactions across communities SHALL use mTLS.
 
-The transaction SHALL use client authentication and authorization using extended authorization token as defined
-in the [IUA profile](https://profiles.ihe.net/ITI/IUA). The extended authorization token SHALL be conveyed as
-defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72)
-transaction.
+The transaction SHALL use client authentication and authorization using one of the following strategies:
+1. Use an extended access token defined in [IUA](iti-71.html) conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
+2. or, use mutual authentication (mTLS) on the transport layer in combination with a XUA token for authorization. The XUA token SHALL be conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
 
 All Document Recipients except the one with the Federated Cross Community Access Option SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
 defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for

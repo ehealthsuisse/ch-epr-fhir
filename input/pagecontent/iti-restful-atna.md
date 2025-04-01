@@ -23,4 +23,5 @@ The Audit Record Repository SHALL support the ATX: FHIR Feed Option.
 The Swiss national extension does not define requirements on the grouping of actors in this profile, which extend or restrict the grouping required from the ATNA profile.
 
 ### Security Consideration
-The Swiss national extension does not define additional requirements on ATNA Security Considerations.
+This national extension enforces authentication and authorization of access to the Patient Identifier Cross-reference
+Manager using the IUA profile as described in [IUA](iti-71.html).
