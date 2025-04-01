@@ -84,9 +84,10 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * category 1..1 MS
 * category ^binding.strength = #required
 * subject 1.. MS
-* subject only Reference($ch-core-patient)
-* subject ^comment = "Not a contained resource. URL Points to an existing Patient Resource representing the XDS Affinity Domain Patient."
-* subject ^type.aggregation = #referenced
+* subject.identifier 1..1
+* subject.identifier only EPRSPIDIdentifier
+* subject ^comment = "Not a contained resource. The identifier points to an existing patient in the XDS Affinity Domain."
+* date 1.. MS
 * author only Reference
 * author MS
 * author ^comment = "Contained resource."
@@ -109,6 +110,10 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * content.attachment.data ..0
 * content.attachment.data ^comment = "These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values."
 * content.attachment.url 1..1 MS
+* content.attachment.url ^short = "The ITI-68 endpoint to use, or a reference to the Binary resource in the Bundle."
+* content.attachment.url ^comment = "When providing the document, this URL SHALL point to the Binary resource wrapping
+the document content (which SHALL be included in the Bundle). When retrieving the DocumentReference, this URL SHALL
+be the the one to use in ITI-68 transactions to retrieve the document content."
 * content.attachment.size MS
 * content.attachment.hash MS
 * content.attachment.title 1..1 MS
@@ -247,9 +252,9 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * mode MS
 * code MS
 * subject 1.. MS
-* subject only Reference($ch-core-patient)
-* subject ^comment = "Not a contained resource. URL Points to an existing Patient Resource representing the XDS Affinity Domain Patient."
-* subject ^type.aggregation[0] = #referenced
+* subject.identifier 1..1
+* subject.identifier only EPRSPIDIdentifier
+* subject ^comment = "Not a contained resource. The identifier points to an existing patient in the XDS Affinity Domain."
 * date MS
 * source MS
 * source.extension[authorOrg] 0..0

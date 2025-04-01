@@ -107,7 +107,7 @@ Title:   "CH JWT Basic/Extended Token"
 // Rule Sets for examples
 
 // Base rules for all examples
-// Also update the copy of this rule set in ChAuditEventmCSD1ExampleRules (mcsd_auditevent.fsh)
+// Also update the copy of this rule set in ChAuditEventIti130ExampleRules (mcsd_auditevent.fsh)
 // Also update the copy of this rule set in ChAuditEventIti68ExampleRules (mhd_auditevent.fsh)
 RuleSet: ChExampleAuditEventBaseRules(sourceSlice, destinationSlice)
 * recorded = "2024-10-28T09:43:56Z"

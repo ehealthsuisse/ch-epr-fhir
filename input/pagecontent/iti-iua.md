@@ -87,8 +87,8 @@ The healthcare professional reports medical information of a treatment in her pr
 a structured or unstructured document from the data and stores them in the clinical archive system. The clinical archive
 system decides whether the document shall be stored in the patients EHR using the policies defined in the clinic.
 
-To access the patient EHR the clinical archive system first request a basic authorization token using the client
-credential flow and uses the basic authorization token in the PIXm or PDQm transactions used to retrieve the EHR-SPID
+To access the patient EHR the clinical archive system first request a basic access token using the client
+credential flow and uses the basic access token in the PIXm or PDQm transactions used to retrieve the EHR-SPID
 and the XAD PID of the patient.
 
 The Authorization server returns the basic access token if the clinical archive systems is registered beforehand and is
@@ -117,9 +117,7 @@ The IUA Trial Implementation supports three options for the Authorization Token 
 and the Token Introspection option. Since this national extension will apply to cross community communication, the Token
 Introspection Option SHALL NOT be used.
 
-This national extension intends to simplify and modernize the technologies used to connect to the Swiss EPR. The legacy
-SAML Token option SHALL NOT be used. To support automated client configuration the Authorization Server actor SHALL
-support the Authorization Metadata option.
+To support automated client configuration the Authorization Server actor SHALL support the Authorization Metadata option.
 
 ### Grouping
 
@@ -134,7 +132,7 @@ see [sequence diagrams](sequencediagrams.html).
 ### Security Consideration
 
 Portals and primary systems SHALL be identified by the client_id and client_secret registered during onboarding. All
-requests to the IUA Authorization Server SHALL be authenticated by the digital signatures.
+requests to the IUA Authorization Server SHALL be authenticated by the digital signatures of the messages.
 
 Implementers SHALL register the combination of the OAuth client ID, the URLs and the certificate used for message
 signatures during the onboarding process and keep the data up to date.

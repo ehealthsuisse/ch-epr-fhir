@@ -32,12 +32,12 @@
             <p>CapabilityStatement for Actor MHD Document Consumer (client).</p>
           </li>
           <li>
-            <a href="CapabilityStatement-CH.mCSD.CareServicesSelectiveConsumer.html">mCSD Care Services Selective Consumer (client)</a>
-            <p>CapabilityStatement for Actor mCSD Care Services Selective Consumer (client).</p>
+            <a href="CapabilityStatement-CH.mCSD.QueryClient.html">mCSD Query Client (client)</a>
+            <p>CapabilityStatement for Actor mCSD Query Client (client).</p>
           </li>
           <li>
-            <a href="CapabilityStatement-CH.mCSD.CareServicesSource.html">mCSD Care Services Source (client)</a>
-            <p>CapabilityStatement for Actor mCSD Care Services Source (client).</p>
+            <a href="CapabilityStatement-CH.mCSD.DataSource.html">mCSD Data Source (client)</a>
+            <p>CapabilityStatement for Actor mCSD Data Source (client).</p>
           </li>
           <li>
             <a href="CapabilityStatement-CH.PPQm.PolicySourceConsumer.html">CH:PPQm Policy Source and Consumer (client)</a>
@@ -75,15 +75,11 @@
             <p>CapabilityStatement for Actor MHD Document Responder (server).</p>
           </li>
           <li>
-            <a href="CapabilityStatement-CH.mCSD.CareServicesSelectiveSupplier.html">mCSD Care Services Selective Supplier (server)</a>
-            <p>CapabilityStatement for Actor mCSD Care Services Selective Supplier (server).</p>
+            <a href="CapabilityStatement-CH.mCSD.Directory.html">mCSD Directory (server)</a>
+            <p>CapabilityStatement for Actor mCSD Directory (server).</p>
           </li>
           <li>
-            <a href="CapabilityStatement-CH.mCSD.CareServicesDirectory.html">mCSD Care Services Directory (server)</a>
-            <p>CapabilityStatement for Actor mCSD Care Services Directory (server).</p>
-          </li>
-          <li>
-            <a href="CapabilityStatement-CH.mCSD.CareServicesSelectiveSupplier.html">CH:PPQm Policy Repository (server)</a>
+            <a href="CapabilityStatement-CH.PPQm.PolicyRepository.html">CH:PPQm Policy Repository (server)</a>
             <p>CapabilityStatement for the Policy Repository actor in the CH:PPQm profile (server).</p>
           </li>
           <li>

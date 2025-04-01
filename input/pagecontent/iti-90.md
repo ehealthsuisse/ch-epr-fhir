@@ -11,9 +11,9 @@ It offers an alternative to the HPD ITI-58 transaction.
 
 ### Actor Roles
 
-**Actor:** Care Services Selective Consumer<br>
-**Role:** Requests a list of resources from the Care Services Selective Supplier based on query parameters.<br>
-**Actor:** Care Services Selective Supplier<br>
+**Actor:** Query Client<br>
+**Role:** Requests a list of resources from the Directory based on query parameters.<br>
+**Actor:** Directory<br>
 **Role:** Accepts the query request and returns a list of matching resources.<br>
 
 ### Referenced Standards
@@ -30,7 +30,7 @@ It offers an alternative to the HPD ITI-58 transaction.
 
 The _Find Matching Care Services_ message is a FHIR search operation on the mCSD Resources.
 
-A _Care Services Selective Consumer_ initiates a search request using HTTP GET or POST:
+A _Query Client_ initiates a search request using HTTP GET or POST:
 
 ```http
 GET [base]/[resource]?[parameters] HTTP/1.1
@@ -51,7 +51,7 @@ param1=value&param2=value
 
 ##### Semantics
 
-The _Care Services Selective Supplier_ shall support the following search parameters for all resources:
+The _Directory_ shall support the following search parameters for all resources:
 
 | Parameter    | Type   | Path                      | Modifiers | Description                                                                                                                           |
 |--------------|--------|---------------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,7 +62,7 @@ The _Care Services Selective Supplier_ shall support the following search parame
 | _count       | number | N/A                       |           | For [paging](https://www.hl7.org/fhir/R4/search.html#count)                                                                           |
 {:class="table table-bordered"}
 
-The _Care Services Selective Supplier_ shall support the following search parameters on the
+The _Directory_ shall support the following search parameters on the
 **[Organization](StructureDefinition-CH.mCSD.Organization.html)** resource:
 
 | Parameter                                                      | Type      | Path                       | Modifiers         | Description      |
@@ -78,7 +78,7 @@ The _Care Services Selective Supplier_ shall support the following search parame
 | _revInclude=OrganizationAffiliation:primary-organization       |           |                            |                   | It has no effect |
 {:class="table table-bordered"}
 
-The _Care Services Selective Supplier_ shall support the following search parameters on the
+The _Directory_ shall support the following search parameters on the
 **[Practitioner](StructureDefinition-CH.mCSD.Practitioner.html)** resource:
 
 | Parameter  | Type   | Path                     | Modifiers         | Description                                                                      |
@@ -90,7 +90,7 @@ The _Care Services Selective Supplier_ shall support the following search parame
 | family     | string | Practitioner.name.family | :contains, :exact |                                                                                  |
 {:class="table table-bordered"}
 
-The _Care Services Selective Supplier_ shall support the following search parameters on the
+The _Directory_ shall support the following search parameters on the
 **[PractitionerRole](StructureDefinition-CH.mCSD.PractitionerRole.html)** resource:
 
 | Parameter                              | Type      | Path                               | Modifiers | Description                                           |
@@ -105,7 +105,7 @@ The _Care Services Selective Supplier_ shall support the following search parame
 | _include=PractitionerRole:practitioner |           |                                    |           | Includes the referenced Practitioners in the response |
 {:class="table table-bordered"}
 
-The _Care Services Selective Supplier_ may not support other resources (**Endpoint**, **HealthcareService**,
+The _Directory_ may not support other resources (**Endpoint**, **HealthcareService**,
 **Location** and **OrganizationAffiliation**), as they are not used in this national extension. Any search query on
 these resources may not yield any result. Some example queries are given here:
 
@@ -128,8 +128,8 @@ The response message is a [Search Results Bundle](http://hl7.org/fhir/R4/bundle.
 
 #### Retrieve Care Services Resource Message
 
-The _Retrieve Care Services Resource_ is conducted by executing an HTTP GET against the _Care Services Selective
-Supplier_'s Care Services Resource URL, providing the resource id of the resource being retrieved. The target is
+The _Retrieve Care Services Resource_ is conducted by executing an HTTP GET against the _Directory_'s Care Services 
+Resource URL, providing the resource id of the resource being retrieved. The target is
 formatted as: `GET [base]/[resource]/[resourceId]`. Some examples are
 
 1. Retrieve the **Organization** 'Spital X Dept. 3': `GET [base]/Organization/SpitalXDept3`.
@@ -138,39 +138,42 @@ formatted as: `GET [base]/[resource]/[resourceId]`. Some examples are
 
 #### Retrieve Care Services Resource Response Message
 
-The _Care Services Selective Supplier_ shall respond to this query by sending a single _Care Services Resource_
+The _Directory_ shall respond to this query by sending a single _Care Services Resource_
 instance.
 
-- If the _Care Services Selective Supplier_ finds the resource, `HTTP 200 OK` is returned with the resource (an
+- If the _Directory_ finds the resource, `HTTP 200 OK` is returned with the resource (an
   **[Organization](StructureDefinition-CH.mCSD.Organization.html)**,
   **[Practitioner](StructureDefinition-CH.mCSD.Practitioner.html)** or
   **[PractitionerRole](StructureDefinition-CH.mCSD.PractitionerRole.html)**).
-- If the _Care Services Selective Supplier_ does not find the resource, `HTTP 404 Not Found` is returned with an
+- If the _Directory_ does not find the resource, `HTTP 404 Not Found` is returned with an
   **[OperationOutcome](https://www.hl7.org/fhir/r4/operationoutcome.html)** resource.
 
 #### CapabilityStatement Resource
 
-The CapabilityStatement resource for the **Care Services Selective Consumer** is
-[mCSD Care Services Selective Consumer](CapabilityStatement-CH.mCSD.CareServicesSelectiveConsumer.html).
+The CapabilityStatement resource for the **Query Client** is
+[mCSD Query Client](CapabilityStatement-CH.mCSD.QueryClient.html). TODO
 
-The CapabilityStatement resource for the **Care Services Selective Supplier** is
-[mCSD Care Services Selective Supplier](CapabilityStatement-CH.mCSD.CareServicesSelectiveSupplier.html).
+The CapabilityStatement resource for the **Directory** is
+[mCSD Directory](CapabilityStatement-CH.mCSD.Directory.html). TODO
 
 ### Security Considerations
 
-TLS SHALL be used. This national extension enforces authentication and authorization of access to the _Care Services
-Selective Supplier_ using the IUA profile with basic access token. Consequently, the _Find Matching Care Services_
-[ITI-90] request must authorize using the [[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA profile.
+The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with
+server certificates.
+
+The transaction SHALL use client authentication and authorization using one of the following strategies:
+1. Use a basic access token defined in [IUA](iti-71.html) conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
+2. or, use mutual authentication (mTLS) on the transport layer.
 
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 #### Security Audit Considerations
 
-Note that the same audit message is recorded by both **Care Services Selective Supplier** and **Care Services 
-Selective Consumer**. The difference being the Audit Source element. Both sides record to show consistency between 
-the message sent by the Consumer and the action taken at the Supplier.
+Note that the same audit message is recorded by both **Directory** and **Query Client**. The difference being the 
+Audit Source element. Both sides record to show consistency between the message sent by the Query Client and the action 
+taken at the Directory.
 
 The actors involved shall record audit events according to the
-[CH Audit Event for [ITI-90] Care Services Selective Consumer & Supplier, for a **Read** operation](StructureDefinition-ChAuditEventIti90Read.html)
+[CH Audit Event for [ITI-90] Query Client & Directory, for a **Read** operation](StructureDefinition-ChAuditEventIti90Read.html)
 or the
-[CH Audit Event for [ITI-90] Care Services Selective Consumer & Supplier, for a **Query** operation](StructureDefinition-ChAuditEventIti90Query.html).
+[CH Audit Event for [ITI-90] Query Client & Directory, for a **Query** operation](StructureDefinition-ChAuditEventIti90Query.html).

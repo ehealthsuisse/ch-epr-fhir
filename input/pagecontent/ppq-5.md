@@ -36,13 +36,20 @@ is a Bundle, then it SHALL comply to the
 
 ### Security Considerations
 
-TLS SHALL be used. For user authentication and authorization, the IUA profile with extended access token SHALL be used
-as described in the Amendment mHealth of Annex 5, Section 3.2. Consequently, the Mobile Privacy Policy Retrieve [PPQ-5]
-transaction SHALL be combined with the Incorporate Access Token
-[[ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction of the IUA
-profile.
+The transaction SHALL be secured by Transport Layer Security (TLS) encryption and server authentication with
+server certificates.
+
+The transaction SHALL use client authentication and authorization using one of the following strategies:
+1. Use an extended access token defined in [IUA](iti-71.html) conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
+2. or, use mutual authentication (mTLS) on the transport layer in combination with a XUA token for authorization. The XUA token SHALL be conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
+
+The Policy Repository actor shall be grouped with CH:ADR, i.e. the Policy Repository shall use the CH:ADR Authorization
+Decision Request transaction to authorize the transaction and enforce the authorization decision retrieved from CH:ADR
+Authorization Decision Response.
 
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
+
+#### Security Audit Considerations
 
 The **Policy Consumer** shall record a
 [CH Audit Event for [PPQ-5] Policy Consumer](StructureDefinition-ChAuditEventPpq5Consumer.html).
