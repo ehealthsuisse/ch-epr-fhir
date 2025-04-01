@@ -115,7 +115,7 @@ of the Swiss EPR.
 
 The IUA Trial Implementation supports three options for the Authorization Token format; the JWT Token, the SAML Token
 and the Token Introspection option. Since this national extension will apply to cross community communication, the Token
-Introspection Option SHALL NOT be used.
+Introspection Option SHALL NOT be used. The JWT Token option SHALL be supported by the Authorization Server and Resource Server.
 
 To support automated client configuration the Authorization Server actor SHALL support the Authorization Metadata option.
 
