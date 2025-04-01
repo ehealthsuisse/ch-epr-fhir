@@ -3,6 +3,7 @@ title IUA Actor Diagram
 agent "Authorization Client" as Client
 agent "Resource Server" as ResourceServer
 agent "Authorization Server" as Server
+Client -> ResourceServer: "[[iti-72.html ITI-72 Incorporate Access Token]]"
 Client -down-> Server : "[[iti-71.html ITI-71 Get Access Token]]\n[[iti-103.html ITI-103 Get Authorization Server Metadata]]"
 ResourceServer -down-> Server : "[[iti-103.html ITI-103 Get Authorization Server Metadata]]"
 @enduml

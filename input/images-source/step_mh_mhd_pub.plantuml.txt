@@ -1,6 +1,6 @@
 activate docsource
-loop For the access decision enforcement, the EPR relies on the Confidentiality Code within the document metadata to be stored in the patient’s Health Record.\nA patient can set the default Confidentiality Codeand a document source needs to iterate over the different confidentiality code until successful 
-docsource -[#black]> mp_doc_recipient: publish document [ITI-65]
+loop For the access decision enforcement, the EPR relies on the Confidentiality Code within the document metadata to be stored in the patient’s Health Record.\nA patient can set the default Confidentiality Code and a document source needs to iterate over the different confidentiality code until successful 
+docsource -[#black]> mp_doc_recipient: publish document [ITI-65] with extended access token
 activate mp_doc_recipient
 docsource <[#black]- mp_doc_recipient
 deactivate mp_doc_recipient
