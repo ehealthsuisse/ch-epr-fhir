@@ -1,5 +1,3 @@
-
-
 app -> mp_AuthorizationServer: GET /.well-known/smart-configuration
 activate mp_AuthorizationServer
 app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
@@ -13,4 +11,3 @@ app -> idp_user_authentication_provider: Exchange code for access token
 activate idp_user_authentication_provider
 app <- idp_user_authentication_provider: access token for response
 deactivate idp_user_authentication_provider
-

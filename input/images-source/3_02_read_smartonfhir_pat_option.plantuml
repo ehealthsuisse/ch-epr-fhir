@@ -34,23 +34,7 @@ activate mp_AuthorizationServer
 app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
 deactivate mp_AuthorizationServer
 
-' Get Access Token (Basic)
-app -[#black]> AuthorizationClient: Get Access Token
-activate AuthorizationClient
-AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Access Token Request \n[Basic access token]
-activate mp_AuthorizationServer
-mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
-activate idp_user_authentication_provider
-mp_AuthorizationServer <- idp_user_authentication_provider
-deactivate idp_user_authentication_provider
-mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
-AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Access Token Response \n[Basic access token]
-deactivate mp_AuthorizationServer
-app <[#black]- AuthorizationClient:
-deactivate AuthorizationClient
-
-' Get Patient Identifiers (PIXm)
-!include_many step_mh_pixm.plantuml.txt
+!include_many step_mh_iua_pixm.plantuml.txt
 
 ' SMART on FHIR App launch
 app -> app2: launch app
@@ -69,9 +53,9 @@ app2 <- mp_AuthorizationServer: [ITI-71] Get Access Token Response\n[Extended ac
 deactivate mp_AuthorizationServer
 
 ' Get Document Metadata
-app2 -[#black]> docconsumer: query documents
+app2 -[#black]> docconsumer: query documents\nwith extended access token
 activate docconsumer
-docconsumer -[#black]> mp_doc_responder: query documents [ITI-67]
+docconsumer -[#black]> mp_doc_responder: query documents [ITI-67] with extended access token
 activate mp_doc_responder
 docconsumer <[#black]- mp_doc_responder
 deactivate mp_doc_responder
@@ -79,9 +63,9 @@ app2 <[#black]- docconsumer
 deactivate docconsumer
 
 ' Retrieve Document
-app2 -[#black]> docconsumer: retrieve document
+app2 -[#black]> docconsumer: retrieve document\nwith extended access token
 activate docconsumer
-docconsumer -[#black]> mp_doc_responder: retrieve document [ITI-68]
+docconsumer -[#black]> mp_doc_responder: retrieve document [ITI-68] with extended access token
 activate mp_doc_responder
 docconsumer <[#black]- mp_doc_responder
 deactivate mp_doc_responder

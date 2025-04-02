@@ -30,29 +30,13 @@ activate mp_AuthorizationServer
 app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
 deactivate mp_AuthorizationServer
 
-' Get Access Token (Basic)
-app -[#black]> AuthorizationClient: Get Access Token
-activate AuthorizationClient
-AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Access Token Request \n[Basic access token]
-activate mp_AuthorizationServer
-mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
-activate idp_user_authentication_provider
-mp_AuthorizationServer <- idp_user_authentication_provider
-deactivate idp_user_authentication_provider
-mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
-AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Access Token Response \n[Basic access token]
-deactivate mp_AuthorizationServer
-app <[#black]- AuthorizationClient: 
-deactivate AuthorizationClient
-
-' Get Patient Identifiers (PIXm)
-!include_many step_mh_pixm.plantuml.txt
+!include_many step_mh_iua_pixm.plantuml.txt
 
 ' Get Access Token (Extended)
 !include_many step_mh_iua.plantuml.txt
 
 ' Publish Documents
-app -> docsource: publish document
+app -> docsource: publish document\nwith extended access token
 !include_many step_mh_mhd_pub.plantuml.txt
 docsource <- app
 deactivate docsource
