@@ -396,7 +396,7 @@ The Authorization Request SHALL use the following Swiss extension:
 - person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority
   formatted in CX syntax, required for requesting extended access token.
 
-The following table lists the scope values to be sent in the Authorization Request:
+Authorization Clients SHALL sent the scope values in the Authorization Request:
 
 <table class="table table-bordered">
   <thead>
@@ -493,7 +493,7 @@ The Authorization Request SHALL use the following Swiss extension:
 - group (optional): The name of the organization or group an assistant may act on behalf of
 - group_id (optional): The OID of the organization or group an assistant is acting on behalf of.
 
-The following table lists the scope values to be sent in the Authorization Request:
+Authorization Clients SHALL sent the scope values in the Authorization Request:
 
 <table class="table table-bordered">
   <thead>
@@ -539,11 +539,12 @@ The scope parameter of the request MAY claim the following attributes:
 - There MAY be a scope with name "purpose_of_use=token". If present, the token SHALL convey the coded value of the
   current transaction’s purpose of use. Allowed values are NORM (normal access) and EMER (emergency access) from code
   system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. e.g. purpose_of_use=urn:oid:
-  2.16.756.5.30.1.127.3.10.5\|NORM
+  2.16.756.5.30.1.127.3.10.5\|NORM.
 - There MAY be a scope with name "subject_role=token". If present, the token SHALL convey the coded value of the
   subject’s role. The value SHALL be either HCP (healthcare professional), ASS (assistant), REP (representative) or
   PAT (patient) from code system 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. e.g.: subject_role=urn:oid:
-  2.16.756.5.30.1.127.3.10.6\|HCP
+  2.16.756.5.30.1.127.3.10.6\|HCP.
+- Authorization Clients may claim other scopes as defined in the SMART on FHIR specification.
 
 Note: The parameters need to be url encoded, see above message example.
 
