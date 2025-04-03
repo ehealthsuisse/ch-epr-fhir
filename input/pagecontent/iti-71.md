@@ -73,7 +73,7 @@ be used by clinical archive systems to retrieve an Access Token.
    <tr>
     <td>00</td>
     <td>The Authorization Client sends an HTTP POST request to the IUA Authorization Server endpoint.</td>
-    <td>response_type</td>
+    <td>grant_type</td>
     <td>R</td>
     <td>IUA</td>
     <td>The value SHALL be client_credentials.</td>
