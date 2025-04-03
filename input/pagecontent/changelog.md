@@ -30,6 +30,7 @@
 
 #### Resolved Issues
 
+* IUA: fixed the supported scopes and grant_types in IUA Get Authorization Server Metadata [ITI-103] transaction [#292](https://github.com/ehealthsuisse/ch-epr-fhir/issues/292) and [#293](https://github.com/ehealthsuisse/ch-epr-fhir/issues/293). 
 * IUA: The Get Access Token Request [ITI-71] authorization code flow is extended with the option, to send an identity assertion (SAML or OpenID Connect) in the token request message, required to support SAML authentication [#258](https://github.com/ehealthsuisse/ch-epr-fhir/issues/258).
 * IUA: The requirement to use mTLS in the Get Access Token Request [ITI-71] is removed. Client identification is now based on the client id, client secret and the signature of the request [#258](https://github.com/ehealthsuisse/ch-epr-fhir/issues/258).
 * IUA: The use case descriptions are updated [#258](https://github.com/ehealthsuisse/ch-epr-fhir/issues/258).
