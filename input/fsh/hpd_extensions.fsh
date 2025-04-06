@@ -53,6 +53,8 @@ Context: Practitioner
 * ^status = #active
 * ^experimental = false
 * value[x] only Reference(Practitioner)
+* . ^isModifier = true
+* . ^isModifierReason = "This extension converts a practitioner to an assistant which cannot work on their own"
 
 Extension: HcProfessionalMedicalRecordsDeliveryEmailAddressExtension
 Id: HcProfessionalMedicalRecordsDeliveryEmailAddressExtension
