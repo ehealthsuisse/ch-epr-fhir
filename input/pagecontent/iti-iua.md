@@ -108,6 +108,10 @@ Implementation to comply to the legal requirements of the Swiss EPR.
 This figure shows the actors directly involved in the _Internet User Authorization_ Profile and the relevant 
 transactions between them.
 
+The IUA Authorization Client SHALL use the Authenticate User transaction defined in Annex 5 EPRO-FDHA to pass identity claims to the User
+Authentication provider. The User Authentication Provider authenticates the user and returns a SAML 2 Authentication Assertion or an OpenID Connect ID Token. 
+For details of the transaction and message semantics see Annex 8 EPRO-FDHA.
+
 ### Actor Options
 
 This national extension restricts the Actor options of the IUA Trial Implementation to comply to the legal requirements
@@ -115,7 +119,8 @@ of the Swiss EPR.
 
 The IUA Trial Implementation supports three options for the Authorization Token format; the JWT Token, the SAML Token
 and the Token Introspection option. Since this national extension will apply to cross community communication, the Token
-Introspection Option SHALL NOT be used. The JWT Token option SHALL be supported by the Authorization Server and Resource Server.
+Introspection Option SHALL NOT be used. The SAML Token option is not specified in this profile. 
+The JWT Token option SHALL be supported by the Authorization Server and Resource Server.
 
 To support automated client configuration the Authorization Server actor SHALL support the Authorization Metadata option.
 

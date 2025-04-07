@@ -19,7 +19,8 @@
 * Use a logical reference (EPR-SPID) to the patient in MHD [#269](https://github.com/ehealthsuisse/ch-epr-fhir/issues/269)
 * Remove `DocumentReference.date` from the MHD profile [#274](https://github.com/ehealthsuisse/ch-epr-fhir/issues/274)
 * Fix dependency to hl7.terminology [#290](https://github.com/ehealthsuisse/ch-epr-fhir/issues/290)
-* Incorporate Access Token [ITI-72] not mentioned in the IUA profile [#249](https://github.com/ehealthsuisse/ch-epr-fhir/issues/249)
+* IUA: Incorporate Access Token [ITI-72] not mentioned in the IUA profile [#249](https://github.com/ehealthsuisse/ch-epr-fhir/issues/249)
+* IUA: Add Authenticate User transaction [#302](https://github.com/ehealthsuisse/ch-epr-fhir/issues/302) and upgrade versions [#300](https://github.com/ehealthsuisse/ch-epr-fhir/issues/300)   
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
