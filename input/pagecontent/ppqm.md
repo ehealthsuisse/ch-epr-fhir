@@ -89,13 +89,17 @@ CH:PPQm comprises the following actors and transactions:
   <figcaption>Figure 1: CH:PPQm actor diagram</figcaption>
 </figure>
 
+<br>
 
 **Actor:** Policy Repository<br>
 **Role:** Stores policies and policy sets and provides the possibility to add, query, update and delete them<br>
+
 **Actor:** Policy Source<br>
 **Role:** Initiates addition, update and deletion of policies and policy sets<br>
+
 **Actor:** Policy Consumer<br>
-**Role:** Retrieves policies and policy sets
+**Role:** Retrieves policies and policy sets<br>
+
 
 Table 1 lists the transactions for each actor directly involved in the CH:PPQm Profile. To claim compliance with 
 this profile, an actor shall support all required transactions (labeled "R") and may support the optional 
