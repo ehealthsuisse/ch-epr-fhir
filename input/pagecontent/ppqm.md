@@ -124,11 +124,8 @@ The required actor groupings are shown in Table 2:
 | Actors            | Actor to be grouped with |
 |-------------------|--------------------------|
 | Policy Repository | IUA Resource Server      |
-|                   | ATNA Secure Application  |
 | Policy Source     | IUA Authorization Client |
-|                   | ATNA Secure Application  | 
 | Policy Consumer   | IUA Authorization Client |
-|                   | ATNA Secure Application  |
 {:class="table table-bordered"}
 
 Table 2: CH:PPQm required actors groupings
