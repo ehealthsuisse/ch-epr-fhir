@@ -30,6 +30,7 @@
 
 #### Resolved Issues
 
+* PPQm: removed required grouping with ATNA Secure Application [#256](https://github.com/ehealthsuisse/ch-epr-fhir/issues/265).
 * IUA: fixed the supported scopes and grant_types in IUA Get Authorization Server Metadata [ITI-103] transaction [#292](https://github.com/ehealthsuisse/ch-epr-fhir/issues/292) and [#293](https://github.com/ehealthsuisse/ch-epr-fhir/issues/293). 
 * IUA: fixed parameter naming in Get Access Token [ITI-71] transaction [#291](https://github.com/ehealthsuisse/ch-epr-fhir/issues/291).
 * IUA: The Get Access Token Request [ITI-71] authorization code flow is extended with the option, to send an identity assertion (SAML or OpenID Connect) in the token request message, required to support SAML authentication [#258](https://github.com/ehealthsuisse/ch-epr-fhir/issues/258).
