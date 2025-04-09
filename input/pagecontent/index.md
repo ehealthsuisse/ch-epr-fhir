@@ -39,7 +39,7 @@ The extensions, restrictions and translations specified apply to the following I
 
 The following national integration profiles are included in this implementation guide:
 
-* [PPQm](ppqm.html)
+* [CH:PPQm](ppqm.html)
 * [CH:ATC](ch-atc.html)
 
 
