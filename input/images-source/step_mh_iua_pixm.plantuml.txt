@@ -3,12 +3,12 @@ alt IUA JWT Token option
 ' Get Access Token (Basic)
 app -[#black]> AuthorizationClient: Get Access Token
 activate AuthorizationClient
+AuthorizationClient -> idp_user_authentication_provider: CH:XUA Authenticate User
+activate idp_user_authentication_provider
+AuthorizationClient <- idp_user_authentication_provider
+deactivate idp_user_authentication_provider
 AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Access Token Request \n[Basic access token]
 activate mp_AuthorizationServer
-mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
-activate idp_user_authentication_provider
-mp_AuthorizationServer <- idp_user_authentication_provider
-deactivate idp_user_authentication_provider
 mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
 AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Access Token Response \n[Basic access token]
 deactivate mp_AuthorizationServer

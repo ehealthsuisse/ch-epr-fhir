@@ -24,7 +24,7 @@ Introspection Option SHALL NOT be used.
 
 ### Referenced Standards
 
-1. [IHE ITI Technical Framework Supplement Internet User Authorization (IUA) Revision 2.2](https://profiles.ihe.net/ITI/IUA/index.html)
+1. [IHE ITI Technical Framework Supplement Internet User Authorization (IUA) Revision 2.3](https://profiles.ihe.net/ITI/IUA/index.html)
 
 ### Security Consideration
 

@@ -29,6 +29,11 @@ component "EPR App" {
   [Patient Audit Consumer] as ATCPatientAuditConsumer
 }
 
+component "IdP" {
+  [User Authentication Provider] as UAProvider
+  IUAClient --> UAProvider : CH:XUA Authenticate User
+}
+
 component "EPR API" {
   [IUA Authorization Server] as IUAAuthServer
   IUAClient -> IUAAuthServer : Get Access Token [ITI-71], \nGet Authorization Server Metadata [ITI-103]
@@ -63,7 +68,5 @@ component "EPR API" {
   ATCPatientAuditConsumer --> ATCPatientAuditRecordRepository : Retrieve Audit Event [ITI-81]	
 }
 
-[User Authentication Provider] as UAProvider
-IUAAuthServer --> UAProvider : Authenticate User
 
 @enduml
