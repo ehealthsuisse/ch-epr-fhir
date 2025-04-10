@@ -46,6 +46,12 @@ activate mp_AuthorizationServer
 app2 <- mp_AuthorizationServer: Conformance statement \nincl. OAuth 2.1 endpoints
 deactivate mp_AuthorizationServer
 
+' authenticate user
+app2 -> idp_user_authentication_provider: CH:XUA Authenticate User
+activate idp_user_authentication_provider
+app2 <- idp_user_authentication_provider
+deactivate idp_user_authentication_provider
+
 ' Get Access Token (Extended)
 app2 -> mp_AuthorizationServer: [ITI-71] Get Access Token\n[Extended access token]
 activate mp_AuthorizationServer
