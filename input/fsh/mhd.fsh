@@ -87,7 +87,6 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * subject.identifier 1..1
 * subject.identifier only EPRSPIDIdentifier
 * subject ^comment = "Not a contained resource. The identifier points to an existing patient in the XDS Affinity Domain."
-* date 1.. MS
 * author only Reference
 * author MS
 * author ^comment = "Contained resource."
