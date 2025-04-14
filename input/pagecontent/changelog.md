@@ -17,6 +17,7 @@
 * Upgrade to IHE PDQm v3.1.0 [#281](https://github.com/ehealthsuisse/ch-epr-fhir/issues/281)
 * MHD: document the use of `DocumentReference.content.attachment.url` [#276](https://github.com/ehealthsuisse/ch-epr-fhir/issues/276)
 * MHD: invalid mapping of the creation time, remove date [#299](https://github.com/ehealthsuisse/ch-epr-fhir/issues/299)
+* MHD: define the mapping of referenceIdList to context.related [#294](https://github.com/ehealthsuisse/ch-epr-fhir/issues/294)
 * Remove targetId from the ITI-83 response [#269](https://github.com/ehealthsuisse/ch-epr-fhir/issues/269)
 * Use a logical reference (EPR-SPID) to the patient in MHD [#269](https://github.com/ehealthsuisse/ch-epr-fhir/issues/269)
 * Remove `DocumentReference.date` from the MHD profile [#274](https://github.com/ehealthsuisse/ch-epr-fhir/issues/274)

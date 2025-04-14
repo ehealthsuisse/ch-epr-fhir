@@ -139,6 +139,7 @@ be the the one to use in ITI-68 transactions to retrieve the document content."
 * context.related MS
 * context.related ^comment = "May be filled with URL pointers to Resources or Identifiers found in referenceIdList"
 * context.related.identifier MS
+* context.related.identifier only DicomStudyInstanceUidIdentifier
 * context.related.identifier ^short = "Requirements on XDS-I.b (Swiss context): When a Imaging Document Source provides a document to the Document Repository, it must provide the StudyInstanceUID, found in the to be registered KOS object, in the referenceIdList (urn:ihe:iti:xds:2013:referenceIdList) attribute of the documentEntry metadata."
 
 Invariant: ch-mhd
