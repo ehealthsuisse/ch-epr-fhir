@@ -19,8 +19,16 @@ between them.
 ### ATNA Actor Options
 The Audit Record Repository SHALL support the ATX: FHIR Feed Option.
 
-### Grouping 
-The Swiss national extension does not define requirements on the grouping of actors in this profile, which extend or restrict the grouping required from the ATNA profile.
+### Required Actor Grouping  
+This national extension enforces authentication and authorization for access control. Therefore actors of this profile must be grouped with actors of other profiles according to the following table: 
+
+| Actor                                                     | Required Grouping                                                | Optionality | Remark |
+|-----------------------------------------------------------|------------------------------------------------------------------|-------------|--------|
+| Audit Record Repository                                   |[IUA Resource Server](iti-iua.html#actors-and-transactions)       | R           | -      |
+| Any Actor grouped with Secure Node or Secure Application  |[IUA Authorization Client](iti-iua.html#actors-and-transactions)  | R           | -      |
+{:class="table table-bordered"}
+
+<figcaption ID="1">Table 1: Grouping of actors required by this national extension. </figcaption>
 
 ### Security Consideration
 This national extension enforces authentication and authorization of access to the Patient Identifier Cross-reference

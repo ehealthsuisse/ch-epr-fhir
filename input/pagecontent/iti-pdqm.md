@@ -24,10 +24,10 @@ No extensions or restrictions to the profile actor options are specified in the 
 ### Required Actor Grouping  
 This national extension enforces authentication and authorization for access control. Therefore actors of this profile must be grouped with actors of other profiles according to the following table: 
 
-| Actor                                         | Required Grouping         | Optionality |
-|-----------------------------------------------|---------------------------|-------------|
-| Patient Demographics Supplier                 | IUA Resource Server       | R           |
-| Patient Demographics Consumer                 | IUA Authorization Client  | R           |
+| Actor                                         | Required Grouping                                                 | Optionality | Remark |
+|-----------------------------------------------|-------------------------------------------------------------------|-------------|--------|
+| Patient Demographics Supplier                 | [IUA Resource Server](iti-iua.html#actors-and-transactions)       | R           | -      |  
+| Patient Demographics Consumer                 | [IUA Authorization Client](iti-iua.html#actors-and-transactions)  | R           | -      |
 {:class="table table-bordered"}
 
 <figcaption ID="1">Table 1: Grouping of PDQm actors required by this national extension. </figcaption>

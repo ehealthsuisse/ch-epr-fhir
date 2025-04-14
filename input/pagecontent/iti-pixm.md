@@ -23,11 +23,11 @@ No extensions or restrictions to the profile actor options are specified in the 
 ### Required Actor Grouping  
 This national extension enforces authentication and authorization for access control. Therefore actors of this profile must be grouped with actors of other profiles according to the following table: 
 
-| Actor                                         | Required Grouping         | Optionality |
-|-----------------------------------------------|---------------------------|-------------|
-| Patient Identifier   Cross-reference Manager  | IUA Resource Server       | R           |
-| Patient Identity Source                       | IUA Authorization Client  | R           |
-| Patient Identifier Cross-reference Consumer   | IUA Authorization Client  | R           |
+| Actor                                         |Required Grouping                                                 | Optionality | Remark |
+|-----------------------------------------------|------------------------------------------------------------------|-------------|--------|
+| Patient Identifier   Cross-reference Manager  |[IUA Resource Server](iti-iua.html#actors-and-transactions)       | R           | -      |
+| Patient Identity Source                       |[IUA Authorization Client](iti-iua.html#actors-and-transactions)  | R           | -      |
+| Patient Identifier Cross-reference Consumer   |[IUA Authorization Client](iti-iua.html#actors-and-transactions)  | R           | -      |
 {:class="table table-bordered"}
 
 <figcaption ID="1">Table 1: Grouping of PIXm actors required by this national extension. </figcaption>
