@@ -18,9 +18,13 @@ The Policy Consumer sends this message to retrieve existing policy sets from the
 
 The request body SHALL be empty.
 
-The request SHALL be sent:
-- For querying by patient ID — to `[baseUrl]/Consent?patient:identifier=urn:oid:2.16.756.5.30.1.127.3.10.3|[epr-spid]`.
-- For querying by policy set ID — to `[baseUrl]/Consent?identifier=[uuid]`.
+The _Policy Repository_ shall support the following search parameters on the [Consent](StructureDefinition-PpqmConsent.html) resource:
+
+| Parameter            | Type   | Path                       | Description                                                          |
+|----------------------|--------|----------------------------|----------------------------------------------------------------------|
+| patient:identifier   | token  | Consent.patient.identifier | For querying by patient ID (EPR-SPID) <br /> `Consent?patient:identifier=urn:oid:2.16.756.5.30.1.127.3.10.3|[epr-spid]`|                                    
+| identifier           | token  | Consent.identifier         | For querying by policy set ID<br /> `Consent?identifier=[uuid]`|                                    
+{:class="table table-bordered"}
 
 #### Expected Actions
 

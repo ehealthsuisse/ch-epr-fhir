@@ -23,6 +23,7 @@
 * Fix dependency to hl7.terminology [#290](https://github.com/ehealthsuisse/ch-epr-fhir/issues/290)
 * IUA: Incorporate Access Token [ITI-72] not mentioned in the IUA profile [#249](https://github.com/ehealthsuisse/ch-epr-fhir/issues/249)
 * IUA: Add Authenticate User transaction [#302](https://github.com/ehealthsuisse/ch-epr-fhir/issues/302) and upgrade versions [#300](https://github.com/ehealthsuisse/ch-epr-fhir/issues/300)   
+* PPQm: Allow additional search criteria in CH:PPQ-5 [#289](https://github.com/ehealthsuisse/ch-epr-fhir/issues/289)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
