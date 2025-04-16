@@ -137,10 +137,15 @@ be the the one to use in ITI-68 transactions to retrieve the document content."
 * context.sourcePatientInfo ^comment = "Contained Patient resource with Patient.identifier.use element set to ‘usual’.\r\n\r\nIndicates that the data within the XDS document entry be represented as a contained resource. See Section 4.5.4.4.7"
 * context.sourcePatientInfo ^type.aggregation = #contained
 * context.related MS
+* context.related ^slicing.discriminator.type = #value
+* context.related ^slicing.discriminator.path = "identifier"
+* context.related ^slicing.rules = #open
 * context.related ^comment = "May be filled with URL pointers to Resources or Identifiers found in referenceIdList"
-* context.related.identifier MS
-* context.related.identifier only DicomStudyInstanceUidIdentifier
-* context.related.identifier ^short = "Requirements on XDS-I.b (Swiss context): When a Imaging Document Source provides a document to the Document Repository, it must provide the StudyInstanceUID, found in the to be registered KOS object, in the referenceIdList (urn:ihe:iti:xds:2013:referenceIdList) attribute of the documentEntry metadata."
+* context.related contains
+    StudyInstanceUID 0..1
+* context.related[StudyInstanceUID].identifier MS
+* context.related[StudyInstanceUID].identifier only DicomStudyInstanceUidIdentifier
+* context.related[StudyInstanceUID].identifier ^short = "Requirements on XDS-I.b (Swiss context): When a Imaging Document Source provides a document to the Document Repository, it must provide the StudyInstanceUID, found in the to be registered KOS object, in the referenceIdList (urn:ihe:iti:xds:2013:referenceIdList) attribute of the documentEntry metadata."
 
 Invariant: ch-mhd
 Description: "The DocumentReference needs to conform to IHE.MHD.Comprehensive.DocumentReference"
