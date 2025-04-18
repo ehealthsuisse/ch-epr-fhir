@@ -83,8 +83,8 @@ This national extension enforces authentication and authorization for access con
 {:class="table table-bordered"}
 | Actor                                         | Required Grouping         | Optionality | Remark                                                             |
 |-----------------------------------------------|---------------------------|-------------|--------------------------------------------------------------------|
-| Document Recipient                            | IUA Resource Server       | R           | Proxy Option if FXCA Option is claimed, no Option otherwise        |
-| Document Responder                            | IUA Authorization Client  | R           | Proxy Option if FXCA Option is claimed, no Option otherwise        |
+| Document Recipient                            | IUA Resource Server       | R           | Proxy Option if Federated Cross Community Access Option is claimed, no Option otherwise        |
+| Document Responder                            | IUA Authorization Client  | R           | Proxy Option if Federated Cross Community Access Option is claimed, no Option otherwise        |
 | Document Source                               | IUA Authorization Client  | R           | Workflow Initiator Option or Technical User Option                 |
 | Document Consumer                             | IUA Authorization Client  | R           | Workflow Initiator Option                                          |
 

@@ -76,7 +76,7 @@ The following national integration profiles are included in this implementation 
 
 The Swiss EPR is a federated system with multiple communities publishing documents for a patient. A patient has a reference community but documents can be published for a patient in other communities too. Each patient has one active national identifier (EPR-SPID) which shall be used to correlate the patient between the different communities. This impacts the FHIR API in the following way:
 
-##### logical reference for patients and health care professionals, contained resources
+#### logical reference for patients and health care professionals, contained resources
 
 1. No addressable patient resources: All references to patients are made by the identifier EPR-SPID since there is no national master patient which could be referenced. This is the reason that IHE PIXm and PDQm with the $match transaction have been selected and not IHE MHDS/PMIR. Systems are not allowed to store the EPR-SPID, and need to feed their local identifier (localID) and EPR-SPID to the community to resolve the localID to the EPR-SPID later on. Therefore FHIR APIs require the support of the patient logical identifier as a query parameter (e.g. MHD, CH:PPQm) and the resources are profiled that a logical reference with the EPR-SPID identifier have to be provided.
 2. The same principle applies for health care professionals, they are identified by the GLN number and references to them need to include also the the logical reference from other resources (e.g. DocumentReference).
@@ -89,7 +89,7 @@ For Authorization IUA and XUA are supported. In addition client identification i
 or identifies the client application network node by mTLS. 
 This implementation guide defines how they can be combined with the security considerations on the different transactions.
 
-##### interoperability specification
+#### interoperability specification
 
 This Implementation Guide profiles elements, cardinalities and bindings that are required by the use cases, law and annexes of the Swiss EPR, to ensure that the systems are interoperable. The specification defines the requirements on the API and exchange messages required by law. Other elements, cardinalities and bindings are left as-is. E.g., a solution can add additional support with search parameters (which the FHIR specifications allows) or add additional transactions/profiles, as long as the law and annexes of the Swiss EPR are respected.
 
