@@ -121,14 +121,11 @@ Note 1: The actor SHALL support at least one transaction.
 
 The required actor groupings are shown in Table 2:
 
-| Actors            | Actor to be grouped with |
-|-------------------|--------------------------|
-| Policy Repository | IUA Resource Server      |
-|                   | ATNA Secure Application  |
-| Policy Source     | IUA Authorization Client |
-|                   | ATNA Secure Application  | 
-| Policy Consumer   | IUA Authorization Client |
-|                   | ATNA Secure Application  |
+| Actors            | Actor to be grouped with | Optionality | Remark                                                             |
+|-------------------|--------------------------|-------------|--------------------------------------------------------------------|
+| Policy Repository | IUA Resource Server      | R           | -                                                                  |
+| Policy Source     | IUA Authorization Client | R           | Workflow Initiator Option                                          |
+| Policy Consumer   | IUA Authorization Client | R           | Workflow Initiator Option                                          |
 {:class="table table-bordered"}
 
 Table 2: CH:PPQm required actors groupings

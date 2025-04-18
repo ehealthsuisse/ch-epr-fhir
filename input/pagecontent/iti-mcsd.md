@@ -38,11 +38,11 @@ The Swiss national extension does not implement the 'Location Distance Option'.
 This national extension enforces authentication and authorization for access control.
 Therefore, actors of this profile must be grouped with actors of other profiles according to the following table:
 
-| Actor                        | Required Grouping        | Optionality |
-|------------------------------|--------------------------|-------------|
-| Query Client                 | IUA Authorization Client | R           |
-| Data Source                  | IUA Authorization Client | R           |
-| Directory (with Feed Option) | IUA Resource Server      | R           |
+| Actor                        | Required Grouping        | Optionality | Remark |
+|------------------------------|--------------------------|-------------|--------|
+| Query Client                 | IUA Authorization Client | R           | -      |
+| Data Source                  | IUA Authorization Client | R           | -      |
+| Directory (with Feed Option) | IUA Resource Server      | R           | -      |
 {:class="table table-bordered"}
 
 <figcaption ID="1">Table 1: Grouping of mCSD actors required by this national extension.</figcaption>

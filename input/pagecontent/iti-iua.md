@@ -124,10 +124,113 @@ The JWT Token option SHALL be supported by the Authorization Server and Resource
 
 To support automated client configuration the Authorization Server actor SHALL support the Authorization Metadata option.
 
+This national extension adds the Actor options Workflow Initiator Option, Technical User Option and Proxy Option to comply 
+to the legal requirements of the Swiss EPR.
+
+#### Workflow Initiator Option
+
+The Workflow Initiator option SHALL be claimed by all implementations, which require user
+authentication and requests to retrieve a EPR compliant access token, i.e., patient and healthcare
+professional portals, primary systems, etc. The implementations usually initiate workflows to access
+data and documents, e.g. read or write documents from the EPR, which are triggered by a user
+interaction. Actors SHALL implement the following required transactions (labelled "R") when claiming the
+Workflow Initiator option:
+
+{:class="table table-bordered"}
+| Actor                                         | Transaction                       | Optionality |
+|-----------------------------------------------|-----------------------------------|-------------|
+| Authorization Client                          | CH:XUA Authenticate User          | R           |
+| Authorization Client                          | Get Access Token                  | R           |
+| Authorization Client                          | Get Authorization Server Metadata | O           |
+| Authorization Client                          | Incorporate Access Token          | R           |
+| User Authentication Provider                  | CH:XUA Authenticate User          | R           |
+| Authorization Server                          | Get Access Token                  | R           |
+| Authorization Server                          | Get Authorization Server Metadata | R           |
+| Resource Server                               | Incorporate Access Token          | R           |
+| Resource Server                               | Get Authorization Server Metadata | O           |
+
+
+#### Technical User Option
+
+The Technical User option SHALL be claimed by all implementations, which do not require user
+authentication, but request to retrieve a EPR compliant access token, i.e. archive systems or other
+primary systems accessing EPR data and documents, which are not initiated by a user interaction.
+Actors SHALL perform the following required transactions (labelled "R") when claiming the Technical
+User option:
+
+{:class="table table-bordered"}
+| Actor                                         | Transaction                       | Optionality |
+|-----------------------------------------------|-----------------------------------|-------------|
+| Authorization Client                          | Get Access Token                  | R           |
+| Authorization Client                          | Get Authorization Server Metadata | O           |
+| Authorization Client                          | Incorporate Access Token          | R           |
+| Authorization Server                          | Get Access Token                  | R           |
+| Authorization Server                          | Get Authorization Server Metadata | R           |
+| Resource Server                               | Incorporate Access Token          | R           |
+| Resource Server                               | Get Authorization Server Metadata | O           |
+
+
+#### Proxy Option
+
+The Proxy option SHALL be claimed by all implementations, which use EPR compliant access token from
+other transactions and use the access token when acting as an agent to request protected data
+from other actors, i.e. Document Source or Consumers with the Federated Cross Community Access Option.
+Actors shall perform the following required transactions (labelled "R") when claiming the Proxy
+option:
+
+{:class="table table-bordered"}
+| Actor                                         | Transaction                       | Optionality |
+|-----------------------------------------------|-----------------------------------|-------------|
+| Authorization Client                          | Incorporate Access Token          | R           |
+| Authorization Client                          | Get Authorization Server Metadata | O           |
+| Resource Server                               | Incorporate Access Token          | R           |
+| Resource Server                               | Get Authorization Server Metadata | O           |
+
 ### Grouping
 
-The Swiss national extension does not define requirements on the grouping of actors in this profile, which extend or
-restrict the grouping required from the IUA profile.
+The actors SHALL be grouped with other actors as follows:
+
+<table border="1" style="border: 1px solid black; border-collapse: collapse">
+    <thead>
+        <tr style="background: gray;" class="odd">
+            <td>Actor</td>
+            <td>Optionality</td>
+            <td>Actor to be grouped with</td>
+        </tr>
+    </thead>
+    <tbody>        
+        <tr>        
+            <td rowspan='2'>Authorization Client</td>       
+            <td>R</td>
+            <td>CT Time Client</td>
+            <tr>
+            <td>R</td>
+            <td>ATNA Secure Node with <a href="https://profiles.ihe.net/ITI/IUA/index.html#9267-stx-https-iua-option">STX:HTTPS IUA</a> <a href="https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html#9.2">Option</a></td>
+            </tr>
+        </tr>
+        <tr>        
+            <td rowspan='2'>Resource server</td>       
+            <td>R</td>
+            <td>CT Time Client</td>
+            <tr>
+            <td>R</td>
+            <td>ATNA Secure Node with <a href="https://profiles.ihe.net/ITI/IUA/index.html#9267-stx-https-iua-option">STX:HTTPS IUA</a> <a href="https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html#9.2">Option</a></td>
+            </tr>
+        </tr>
+        <tr>        
+            <td>Authorization Server</td>       
+            <td>R</td>
+            <td>CT Time Client</td>
+        </tr>
+        <tr>        
+            <td>User Authentication Provider</td>       
+            <td>R</td>
+            <td>CT Time Client</td>
+        </tr>
+    </tbody>
+</table>
+
+The grouping of actors of actors with IUA Authorization Client and Resource Server actor are defined in the respective profile sections.
 
 ### Process Flow
 

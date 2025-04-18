@@ -16,35 +16,6 @@ and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.
 
 **Download**: You can download this implementation guide in [NPM format](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification) from [here](package.tgz).
 
-### Conformance Expectations
-
-The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, 
-*RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in
-[[RFC2119](https://www.ietf.org/rfc/rfc2119.txt)].
-
-This implementation guide uses `Must Support` in StructureDefinitions with the definition found in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir). This is equivalent to the IHE use of **R2** as defined in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir).
-
-#### Scope of precisions
-The extensions, restrictions and translations specified apply to the following IHE IT Infrastructure (ITI) Integration profiles:
-
-* [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/)
-* [IUA](https://profiles.ihe.net/ITI/IUA/index.html)
-* [PDQm](https://profiles.ihe.net/ITI/PDQm/index.html)
-* [PIXm](https://profiles.ihe.net/ITI/PIXm/index.html)
-* [MHD](https://profiles.ihe.net/ITI/MHD/index.html)
-* [mCSD](https://profiles.ihe.net/ITI/mCSD/index.html)
-* [RESTful ATNA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)
-
-#### National integration profiles
-
-The following national integration profiles are included in this implementation guide:
-
-* [PPQm](ppqm.html)
-* [CH:ATC](ch-atc.html)
-
-
-#### Related profiles, actors and transactions
-
 ### Overview
 
 #### Introduction
@@ -74,6 +45,53 @@ This extension covers two options:
 The following figure shows the profiles, actors and transactions specified or referenced in this national extension:
 
 <div>{% include overview.svg %}</div>
+
+### Conformance Expectations
+
+The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, 
+*RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in
+[[RFC2119](https://www.ietf.org/rfc/rfc2119.txt)].
+
+This implementation guide uses `Must Support` in StructureDefinitions with the definition found in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir). This is equivalent to the IHE use of **R2** as defined in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir).
+
+#### Scope of precisions
+The extensions, restrictions and translations specified apply to the following IHE IT Infrastructure (ITI) Integration profiles:
+
+* [SMART on FHIR](http://www.hl7.org/fhir/smart-app-launch/)
+* [IUA](https://profiles.ihe.net/ITI/IUA/index.html)
+* [PDQm](https://profiles.ihe.net/ITI/PDQm/index.html)
+* [PIXm](https://profiles.ihe.net/ITI/PIXm/index.html)
+* [MHD](https://profiles.ihe.net/ITI/MHD/index.html)
+* [mCSD](https://profiles.ihe.net/ITI/mCSD/index.html)
+* [RESTful ATNA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf)
+
+#### National integration profiles
+
+The following national integration profiles are included in this implementation guide:
+
+* [PPQm](ppqm.html)
+* [CH:ATC](ch-atc.html)
+
+### Design considerations 
+
+The Swiss EPR is a federated system with multiple communities publishing documents for a patient. A patient has a reference community but documents can be published for a patient in other communities too. Each patient has one active national identifier (EPR-SPID) which shall be used to correlate the patient between the different communities. This impacts the FHIR API in the following way:
+
+#### logical reference for patients and health care professionals, contained resources
+
+1. No addressable patient resources: All references to patients are made by the identifier EPR-SPID since there is no national master patient which could be referenced. This is the reason that IHE PIXm and PDQm with the $match transaction have been selected and not IHE MHDS/PMIR. Systems are not allowed to store the EPR-SPID, and need to feed their local identifier (localID) and EPR-SPID to the community to resolve the localID to the EPR-SPID later on. Therefore FHIR APIs require the support of the patient logical identifier as a query parameter (e.g. MHD, CH:PPQm) and the resources are profiled that a logical reference with the EPR-SPID identifier have to be provided.
+2. The same principle applies for health care professionals, they are identified by the GLN number and references to them need to include also the the logical reference from other resources (e.g. DocumentReference).
+3. Information which has to be provided and has no own identity in the Swiss EPR (e.g. as local patient demographics in document publishing) are represented as contained resources. 
+
+#### authentication and authorization
+
+Annex 8 allows two different standards for user authentication with SAML 2.0 and OpenID Connect (JWT). 
+For Authorization IUA and XUA are supported. In addition client identification in IUA identifies the client application by message signature 
+or identifies the client application network node by mTLS. 
+This implementation guide defines how they can be combined with the security considerations on the different transactions.
+
+#### interoperability specification
+
+This Implementation Guide profiles elements, cardinalities and bindings that are required by the use cases, law and annexes of the Swiss EPR, to ensure that the systems are interoperable. The specification defines the requirements on the API and exchange messages required by law. Other elements, cardinalities and bindings are left as-is. E.g., a solution can add additional support with search parameters (which the FHIR specifications allows) or add additional transactions/profiles, as long as the law and annexes of the Swiss EPR are respected.
 
 ### IP Statements
 This document is licensed under Creative Commons "No Rights Reserved" ([CC0](https://creativecommons.org/publicdomain/zero/1.0/)).
