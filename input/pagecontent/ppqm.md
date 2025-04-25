@@ -89,13 +89,17 @@ CH:PPQm comprises the following actors and transactions:
   <figcaption>Figure 1: CH:PPQm actor diagram</figcaption>
 </figure>
 
+<br>
 
 **Actor:** Policy Repository<br>
 **Role:** Stores policies and policy sets and provides the possibility to add, query, update and delete them<br>
+
 **Actor:** Policy Source<br>
 **Role:** Initiates addition, update and deletion of policies and policy sets<br>
+
 **Actor:** Policy Consumer<br>
-**Role:** Retrieves policies and policy sets
+**Role:** Retrieves policies and policy sets<br>
+
 
 Table 1 lists the transactions for each actor directly involved in the CH:PPQm Profile. To claim compliance with 
 this profile, an actor shall support all required transactions (labeled "R") and may support the optional 
@@ -117,14 +121,11 @@ Note 1: The actor SHALL support at least one transaction.
 
 The required actor groupings are shown in Table 2:
 
-| Actors            | Actor to be grouped with |
-|-------------------|--------------------------|
-| Policy Repository | IUA Resource Server      |
-|                   | ATNA Secure Application  |
-| Policy Source     | IUA Authorization Client |
-|                   | ATNA Secure Application  | 
-| Policy Consumer   | IUA Authorization Client |
-|                   | ATNA Secure Application  |
+| Actors            | Actor to be grouped with | Optionality | Remark                                                             |
+|-------------------|--------------------------|-------------|--------------------------------------------------------------------|
+| Policy Repository | IUA Resource Server      | R           | -                                                                  |
+| Policy Source     | IUA Authorization Client | R           | Workflow Initiator Option                                          |
+| Policy Consumer   | IUA Authorization Client | R           | Workflow Initiator Option                                          |
 {:class="table table-bordered"}
 
 Table 2: CH:PPQm required actors groupings

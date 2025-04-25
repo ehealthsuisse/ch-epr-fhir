@@ -18,7 +18,7 @@ Parent: $ch-core-patient
 Id: ch-pdqm-patient
 Title: "CH PDQm Patient"
 Description: "The patient demographics and identifier information which can be provided in the PDQm response according to the EPR. If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID as an identifier MAY be added. The birthname can be added with the ISO 21090 qualifier extension."
-* extension[PatReligion] 0..0
+* extension[religion] 0..0
 * identifier MS
 * identifier[EPR-SPID] 1..1 MS
 * identifier[LocalPid] 0..* MS

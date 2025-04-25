@@ -32,7 +32,7 @@ The Find Document Lists [[ITI-66]](https://profiles.ihe.net/ITI/MHD/ITI-66.html)
 
 ### Actor options  
 
-Options that can be selected for each actor in this profile,are listed in the table below. 
+Options that can be selected for each actor in this profile, are listed in the table below. 
 
 {:class="table table-bordered"}
 | Actor                                         | Option Name         | Optionality  |
@@ -81,12 +81,12 @@ This national extension enforces authentication and authorization for access con
 
 
 {:class="table table-bordered"}
-| Actor                                         | Required Grouping         | Optionality |
-|-----------------------------------------------|---------------------------|-------------|
-| Document Recipient                            | IUA Resource Server       | R           |
-| Document Responder                            | IUA Authorization Client  | R           |
-| Document Source                               | IUA Authorization Client  | R           |
-| Document Consumer                             | IUA Authorization Client  | R           |
+| Actor                                         | Required Grouping         | Optionality | Remark                                                             |
+|-----------------------------------------------|---------------------------|-------------|--------------------------------------------------------------------|
+| Document Recipient                            | IUA Resource Server       | R           | Proxy Option if Federated Cross Community Access Option is claimed, no Option otherwise        |
+| Document Responder                            | IUA Authorization Client  | R           | Proxy Option if Federated Cross Community Access Option is claimed, no Option otherwise        |
+| Document Source                               | IUA Authorization Client  | R           | Workflow Initiator Option or Technical User Option                 |
+| Document Consumer                             | IUA Authorization Client  | R           | Workflow Initiator Option                                          |
 
 <figcaption ID="2">Table 2: Grouping of MHD actors required by this national extension.</figcaption>
 

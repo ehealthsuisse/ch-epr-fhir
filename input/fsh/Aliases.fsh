@@ -21,6 +21,7 @@ Alias: $ch-core-patient = http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-
 Alias: $ch-epr-fhir-humanname = http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-humanname
 Alias: $ch-epr-fhir-birthname = http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-birthname
 Alias: $ch-ext-deletionstatus = http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-deletionstatus
+Alias: $ch-ext-patient-religion = http://hl7.org/fhir/StructureDefinition/patient-religion
 Alias: $ch-ext-author-authorrole = http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-author-authorrole
 Alias: $IHE.MHD.UniqueIdIdentifier = https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UniqueIdIdentifier
 Alias: $IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage = https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage
