@@ -54,8 +54,6 @@ Description: "Swiss EPR Policy Set as a Consent"
 * category.coding   1..1
 
 * patient                       1..1
-* patient.reference             0..0
-* patient.type                  0..0
 * patient.identifier            1..1
 * patient.identifier            only EPRSPIDIdentifier
 * patient.identifier.use        0..0
@@ -105,8 +103,6 @@ Description: "Swiss EPR Policy Set as a Consent"
 * provision.actor.role.coding.code      ^short = "EPR actor role code"
 
 * provision.actor.reference                                     1..1
-* provision.actor.reference.reference                           0..0
-* provision.actor.reference.type                                0..0
 * provision.actor.reference.identifier                          0..1
 * provision.actor.reference.identifier                          ^short = "This element is present only in policy sets which reference a particular healthcare professional, group of healthcare professionals, patient, or representative"
 * provision.actor.reference.identifier.use                      0..0
@@ -161,11 +157,13 @@ Description: "EPR policy set based on template 201 -- grants the patient the ful
 * policyRule.coding from PpqmReferencedPolicySetFullAccess (required)
 * provision.period 0..0
 * provision.actor.role.coding = $ehealthRole#PAT
+* provision.actor.reference only Reference(Patient)
 * provision.actor.reference.identifier only EPRSPIDIdentifier
 * provision.actor.reference.identifier.type.coding = $URI#urn:e-health-suisse:2015:epr-spid
 * provision.actor.reference.display 0..0
 * provision.purpose 0..0
 * obeys ch-epr-ppqm-provision-actor-is-patient
+* obeys ch-epr-ppqm-patient-references-equal
 
 
 Instance: PpqmConsentTemplate201Example
@@ -192,6 +190,8 @@ Description: "EPR policy set based on template 202 -- grants healthcare professi
 * policyRule.coding from PpqmReferencedPolicySetGroupEmergency (required)
 * provision.period 0..0
 * provision.actor.role.coding = $ehealthRole#HCP
+* provision.actor.reference only Reference(Practitioner)
+* provision.actor.reference.reference 0..0
 * provision.actor.reference.identifier 0..0
 * provision.actor.reference.display = "all"
 * provision.purpose 1..1
@@ -221,6 +221,8 @@ Description: "EPR policy set based on template 203 -- defines the minimal confid
 * policyRule.coding from PpqmReferencedPolicySetDefaultProvide (required)
 * provision.period 0..0
 * provision.actor.role.coding = $ehealthRole#HCP
+* provision.actor.reference only Reference(Practitioner)
+* provision.actor.reference.reference 0..0
 * provision.actor.reference.identifier 0..0
 * provision.actor.reference.display = "all"
 * provision.purpose 3..3
@@ -256,6 +258,7 @@ Description: "EPR policy set based on template 301 -- gives a particular healthc
 * identifier[templateId].value = "301"
 * policyRule.coding from PpqmReferencedPolicySetHcpWithoutDelegation (required)
 * provision.actor.role.coding = $ehealthRole#HCP
+* provision.actor.reference only Reference(Practitioner)
 * provision.actor.reference.identifier 1..1
 * provision.actor.reference.identifier only GLNIdentifier
 * provision.actor.reference.display 0..0
@@ -289,6 +292,7 @@ Description: "EPR policy set based on template 302 -- gives a group of healthcar
 * policyRule.coding from PpqmReferencedPolicySetGroupEmergency (required)
 * provision.period 1..1
 * provision.actor.role.coding = $ehealthRole#HCP
+* provision.actor.reference only Reference(Organization)
 * provision.actor.reference.identifier 1..1
 * provision.actor.reference.identifier.type.coding = $URI#urn:oasis:names:tc:xspa:1.0:subject:organization-id
 * provision.actor.reference.identifier obeys ch-epr-ppqm-oid-format
@@ -320,6 +324,7 @@ Description: "EPR policy set based on template 303 -- gives a representative ful
 * identifier[templateId].value = "303"
 * policyRule.coding from PpqmReferencedPolicySetFullAccess (required)
 * provision.actor.role.coding = $ehealthRole#REP
+* provision.actor.reference only Reference(Patient or Practitioner or RelatedPerson)
 * provision.actor.reference.identifier.type.coding = $URI#urn:e-health-suisse:representative-id
 * provision.actor.reference.identifier obeys ch-epr-ppqm-no-space
 * provision.actor.reference.display 0..0
@@ -350,6 +355,7 @@ Description: "EPR policy set based on template 304 -- gives a particular healthc
 * provision.period 1..1
 * policyRule.coding from PpqmReferencedPolicySetHcpWithDelegation (required)
 * provision.actor.role.coding = $ehealthRole#HCP
+* provision.actor.reference only Reference(Practitioner)
 * provision.actor.reference.identifier 1..1
 * provision.actor.reference.identifier only GLNIdentifier
 * provision.actor.reference.identifier.type.coding = $URI#urn:gs1:gln
@@ -378,6 +384,11 @@ Usage: #example
 Invariant:      ch-epr-ppqm-provision-actor-is-patient
 Description:    "The provision.actor and patient SHALL be the same"
 Expression:     "provision[0].actor.reference.identifier[0].value = patient.identifier.value"
+Severity:       #error
+
+Invariant:      ch-epr-ppqm-patient-references-equal
+Description:    "If literal references are provided for the patient in 201, they shall be equal"
+Expression:     "provision[0].actor.reference.reference.empty() or patient.reference.empty() or provision[0].actor.reference.reference = patient.reference"
 Severity:       #error
 
 Invariant:      ch-epr-ppqm-oid-format
