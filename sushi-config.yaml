@@ -86,9 +86,9 @@ pages:
   iti-68.md:
     title: Retrieve Document [ITI-68]
   iti-81.md:
-    title: Retrieve Document [ITI-68]
+    title: Retrieve ATNA Audit Event [ITI-81]
   ch-mhd-1.md:
-    title: Update Document Metadata
+    title: Update Document Metadata [CH:MHD-1]
   iti-20.md:
     title: Record Audit Event [ITI-20]
   iti-90.md:
