@@ -141,13 +141,14 @@ Usage: #definition
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * rest.mode = #server
-* rest.documentation = "MHD server returns DocumentReference Resources that match the search criteria provided by the Document Consumer [ITI-67]. MHD server serves the document to the Document Consumer [ITI-68]."
+* rest.documentation = "MHD server returns DocumentReference Resources that match the search criteria provided by the Document Consumer [ITI-67]. MHD supports update of DocumentReference Resources by the Document Source [CH:MHD-1]. MHD server serves the document to the Document Consumer [ITI-68]."
 * rest.security.cors = false
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.resource[0].type = #DocumentReference
 * rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[+].code = #search-type
+* rest.resource[=].interaction[+].code = #update
 * rest.resource[=].searchParam[0].name = "_id"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
 * rest.resource[=].searchParam[=].type = #token
@@ -244,9 +245,6 @@ Usage: #definition
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.interaction.code = #transaction
 * rest.interaction.documentation = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"
-* rest.resource[+].type = #DocumentReference
-* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"
-* rest.resource[=].interaction.code = #update
 
 Instance: CH.MHD.DocumentSource
 InstanceOf: CapabilityStatement
@@ -271,6 +269,3 @@ Usage: #definition
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.interaction.code = #transaction
 * rest.interaction.documentation = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"
-* rest.resource[+].type = #DocumentReference
-* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"
-* rest.resource[=].interaction.code = #update

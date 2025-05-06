@@ -25,6 +25,7 @@
 * IUA: Incorporate Access Token [ITI-72] not mentioned in the IUA profile [#249](https://github.com/ehealthsuisse/ch-epr-fhir/issues/249)
 * IUA: Add Authenticate User transaction [#302](https://github.com/ehealthsuisse/ch-epr-fhir/issues/302) and upgrade versions [#300](https://github.com/ehealthsuisse/ch-epr-fhir/issues/300)   
 * ATNA: precise use of STX:HTTPS IUA [#307](https://github.com/ehealthsuisse/ch-epr-fhir/issues/307), [#267](https://github.com/ehealthsuisse/ch-epr-fhir/issues/267), [#265](https://github.com/ehealthsuisse/ch-epr-fhir/issues/265)
+* CH MHD-1: wrong actor Document Recipient, should be Document Responder [#317](https://github.com/ehealthsuisse/ch-epr-fhir/issues/317)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 

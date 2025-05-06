@@ -414,10 +414,10 @@ resources:
     name: Example of audit event for a [CH:MHD-1] transaction at Source
     description: This example shows an  made by the Document Source for a CH:MHD-1 transaction.
     exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-source
-  AuditEvent/ChAuditEventChMhd1RecipientExample:
-    name: Example of audit event for a [CH:MHD-1] transaction at Recipient
-    description: This example shows an  made by the Document Recipient for a CH:MHD-1 transaction.
-    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-recipient
+  AuditEvent/ChAuditEventChMhd1ResponderExample:
+    name: Example of audit event for a [CH:MHD-1] transaction at Responder
+    description: This example shows an  made by the Document Responder for a CH:MHD-1 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-responder
   AuditEvent/ChAuditEventIti83ConsumerExample:
     name: Example of audit event for an [ITI-83] transaction at Consumer
     description: This example shows an  made by the Patient Identifier Cross-reference Consumer for an ITI-83 transaction.

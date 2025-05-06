@@ -45,7 +45,7 @@ RuleSet: CH.ATNA.AuditRules
     * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti67Responder"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti68Consumer"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti68Responder"
-    * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-recipient"
+    * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-responder"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-source"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti83Consumer"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti83Manager"
