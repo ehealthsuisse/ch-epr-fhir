@@ -26,6 +26,7 @@
 * IUA: Add Authenticate User transaction [#302](https://github.com/ehealthsuisse/ch-epr-fhir/issues/302) and upgrade versions [#300](https://github.com/ehealthsuisse/ch-epr-fhir/issues/300)   
 * ATNA: precise use of STX:HTTPS IUA [#307](https://github.com/ehealthsuisse/ch-epr-fhir/issues/307), [#267](https://github.com/ehealthsuisse/ch-epr-fhir/issues/267), [#265](https://github.com/ehealthsuisse/ch-epr-fhir/issues/265)
 * CH MHD-1: wrong actor Document Recipient, should be Document Responder [#317](https://github.com/ehealthsuisse/ch-epr-fhir/issues/317)
+* mCSD: add Bundle profile and allow only transaction in bundle [#315](https://github.com/ehealthsuisse/ch-epr-fhir/issues/315)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
