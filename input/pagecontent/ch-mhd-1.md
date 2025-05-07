@@ -35,7 +35,7 @@ A Document Source initiates a FHIR request using Update as defined at http://hl7
 A Document Source shall send a request for either the JSON or the XML format as defined in FHIR. A Document Responder shall support the JSON and the XML format.
 
 The Document Source shall be capable of accepting elements specified in profile [CH MHD DocumentReference Comprehensive](StructureDefinition-ch-mhd-documentreference-comprehensive.html).
-The DocumentReference elements which are allowed to be updated are defined in Annex 5.1 1.12.1. The [Mappings tab](StructureDefinition-ch-mhd-documentreference-comprehensive-mappings.html#mappings-for-xds-metadata-equivalent-http-ihe-netxds), indicates the mapping between DocumentReference elements and the XDS elements defined in Annex 5.1 1.12.1.
+The DocumentReference elements which are allowed to be updated are defined in Annex 5.1 1.12. The [Mappings tab](StructureDefinition-ch-mhd-documentreference-comprehensive-mappings.html#mappings-for-xds-metadata-equivalent-http-ihe-netxds), indicates the mapping between DocumentReference elements and the XDS elements defined in Annex 5.1 1.12.
 
 ##### Example
 
@@ -180,15 +180,15 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 
 The Document Responder shall provide a [CapabilityStatement](CapabilityStatement-CH.MHD.DocumentResponder.html) with the capabilities interaction and indicate that update is available on the DocumentReference.
 
-The Update Responder shall process the Update Document Metadata Request message and return the updated DocumentReference.
+The Document Responder shall process the Update Document Metadata Request message and return the updated DocumentReference.
 
 Any error that occurs during the processing of the Update Document Metadata Request message shall cause the entire transaction to fail and 
-no change made to the existing DocumentReference. The DocumentReference Responder shall return the status and any error codes incurred during the processing of
+no change made to the existing DocumentReference. The Document Responder shall return the status and any error codes incurred during the processing of
 the request in its response message. 
 
 1. Verify the submitted and existing DocumentReference have the same values for the identifiers. If these values are not identical, an OperationOutcome with the error code [XDSMetadataIdentifierError](OperationOutcome-MhdOperationOutcomeErrorXdsMetadataIdentifier.html) should be returned.
 2. Verify the submitted and existing DocumentReference reference the same Patient. If these values are not identical, an OperationOutcome with the error code [XDSPatientIDReconciliationError](OperationOutcome-MhdOperationOutcomeErrorXDSPatientIDReconciliationError.html) should be returned.
-3. Check the submitted DocumentReference and determine if it contains only changes to modifiable attributes, as described in Annex 5.1 1.12.1. If not, an OperationOutcome with the error code [UnmodifiableMetadataError](OperationOutcome-MhdOperationOutcomeErrorUnmodifiableMetadataError.html) should be returned.
+3. Check the submitted DocumentReference and determine if it contains only changes to modifiable attributes, as described in Annex 5.1 1.12. If not, an OperationOutcome with the error code [UnmodifiableMetadataError](OperationOutcome-MhdOperationOutcomeErrorUnmodifiableMetadataError.html) should be returned.
 
 ###### Federated Cross Community Access Option
 
@@ -209,9 +209,9 @@ The transaction SHALL use client authentication and authorization using one of t
 1. Use an extended access token defined in [IUA](iti-71.html) conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
 2. or, use mutual authentication (mTLS) on the transport layer in combination with a XUA token for authorization from the Get X-User Assertion transaction (Annex 5.1 1.6.4.2). The XUA token SHALL be conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
 
-All Document Responders except the one with the Federated Cross Community Access Option SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
+Document Responders SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
 defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for
-every update document metadata [CH:MHD-1] request.
+every update document metadata [CH:MHD-1] request in the own community.
 
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 

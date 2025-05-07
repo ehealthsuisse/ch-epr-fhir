@@ -1,3 +1,12 @@
+ValueSet: RestrictedHTTPVerbVS
+Id: restricted-http-verb-vs
+Title: "Restricted HTTP Verb Value Set"
+Description: "Value set for allowed HTTP verbs, excluding GET operations."
+* ^experimental = false
+* http://hl7.org/fhir/http-verb#POST "POST"
+* http://hl7.org/fhir/http-verb#PUT "PUT"
+* http://hl7.org/fhir/http-verb#DELETE "DELETE"
+
 Profile:        ChmCSDProcessCareServices
 // Parent:         MCSDProcessCareServices we cannot inherit from the IHE profile because multiple inheritance is not supported (our Practitioner is derived from the CHmCSDPractitioner and is only indirectly conforming to IHE mCSD Practitioner)
 Parent:         Bundle
