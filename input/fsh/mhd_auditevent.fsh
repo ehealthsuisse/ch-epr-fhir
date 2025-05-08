@@ -252,7 +252,7 @@ Source'."
 * entity[documentReference] ^short = "DocumentReference"
 * insert ChAuditEventExtendedRules
 * agent[documentSource] ^short = "The 'Document Source' actor (EPR application)"
-* agent[documentResponder] ^short = "The 'Document Recipient' actor (EPR API)"
+* agent[documentResponder] ^short = "The 'Document Responder' actor (EPR API)"
 
 
 Profile:     ChAuditEventChMhd1Responder
@@ -278,7 +278,7 @@ Responder'."
 * agent ^slicing.discriminator.type = #value
 * agent ^slicing.discriminator.path = "type"
 * agent ^slicing.rules = #open
-* agent ^slicing.description = "source, recipient, and possibly the user who participated"
+* agent ^slicing.description = "source, responder, and possibly the user who participated"
 * agent contains
 	documentSource 1..1 and
 	documentResponder 1..1
