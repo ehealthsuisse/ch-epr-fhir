@@ -221,17 +221,17 @@ Source'."
 * agent ^slicing.description = "source, recipient, and possibly the user who participated"
 * agent contains
 	documentSource 1..1 and
-	documentRecipient 1..1
+	documentResponder 1..1
 	// may be many including app identity, user identity, etc
 * agent[documentSource].type = DCM#110153 "Source Role ID"
 * agent[documentSource].who 1..1
 * agent[documentSource] obeys val-audit-source
 * agent[documentSource].network 1..1
-* agent[documentRecipient].type = DCM#110152 "Destination Role ID"
-* agent[documentRecipient].who 1..1
-* agent[documentRecipient].network 1..1
+* agent[documentResponder].type = DCM#110152 "Destination Role ID"
+* agent[documentResponder].who 1..1
+* agent[documentResponder].network 1..1
 * agent[documentSource] ^short = "Document Source"
-* agent[documentRecipient] ^short = "Document Recipient"
+* agent[documentResponder] ^short = "Document Responder"
 * entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
 * entity ^slicing.rules = #closed
@@ -252,15 +252,15 @@ Source'."
 * entity[documentReference] ^short = "DocumentReference"
 * insert ChAuditEventExtendedRules
 * agent[documentSource] ^short = "The 'Document Source' actor (EPR application)"
-* agent[documentRecipient] ^short = "The 'Document Recipient' actor (EPR API)"
+* agent[documentResponder] ^short = "The 'Document Responder' actor (EPR API)"
 
 
-Profile:     ChAuditEventChMhd1Recipient
+Profile:     ChAuditEventChMhd1Responder
 Parent:      AuditEvent
-Id:          ch-mhd-updatedocumentmetadata-audit-recipient
-Title:       "CH Audit Event for [CH:MHD-1] Document Recipient"
+Id:          ch-mhd-updatedocumentmetadata-audit-responder
+Title:       "CH Audit Event for [CH:MHD-1] Document Responder"
 Description: "This profile is used to define the CH Audit Event for the [CH:MHD-1] transaction and the actor 'Document
-Recipient'."
+Responder'."
 * modifierExtension 0..0
 * type = DCM#110107 "Import"
 * action = #U
@@ -278,20 +278,20 @@ Recipient'."
 * agent ^slicing.discriminator.type = #value
 * agent ^slicing.discriminator.path = "type"
 * agent ^slicing.rules = #open
-* agent ^slicing.description = "source, recipient, and possibly the user who participated"
+* agent ^slicing.description = "source, responder, and possibly the user who participated"
 * agent contains
 	documentSource 1..1 and
-	documentRecipient 1..1
+	documentResponder 1..1
 	// may be many including app identity, user identity, etc
 * agent[documentSource].type = DCM#110153 "Source Role ID"
 * agent[documentSource].who 1..1
 * agent[documentSource].network 1..1
-* agent[documentRecipient].type = DCM#110152 "Destination Role ID"
-* agent[documentRecipient].who 1..1
-* agent[documentRecipient] obeys val-audit-source
-* agent[documentRecipient].network 1..1
+* agent[documentResponder].type = DCM#110152 "Destination Role ID"
+* agent[documentResponder].who 1..1
+* agent[documentResponder] obeys val-audit-source
+* agent[documentResponder].network 1..1
 * agent[documentSource] ^short = "Document Source"
-* agent[documentRecipient] ^short = "Document Recipient"
+* agent[documentResponder] ^short = "Document Responder"
 * entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
 * entity ^slicing.rules = #closed
@@ -312,7 +312,7 @@ Recipient'."
 * entity[documentReference] ^short = "DocumentReference"
 * insert ChAuditEventExtendedRules
 * agent[documentSource] ^short = "The 'Document Source' actor (EPR application)"
-* agent[documentRecipient] ^short = "The 'Document Recipient' actor (EPR API)"
+* agent[documentResponder] ^short = "The 'Document Responder' actor (EPR API)"
 
 
 Instance:   ChAuditEventChMhd1SourceExample
@@ -323,8 +323,8 @@ Usage:      #example
 * type = DCM#110106 "Export"
 
 
-Instance:   ChAuditEventChMhd1RecipientExample
-InstanceOf: ChAuditEventChMhd1Recipient
+Instance:   ChAuditEventChMhd1ResponderExample
+InstanceOf: ChAuditEventChMhd1Responder
 Usage:      #example
 * insert ChAuditEventChMhd1ExampleRules
 * insert ChExampleAuditEventServerRules
@@ -332,11 +332,11 @@ Usage:      #example
 
 
 RuleSet: ChAuditEventChMhd1ExampleRules
-* insert ChExampleAuditEventBaseRules(documentSource, documentRecipient)
+* insert ChExampleAuditEventBaseRules(documentSource, documentResponder)
 * insert ChExampleAuditEventHcpRules
 * insert ChExampleAuditEventEntityPatientRules
 * subtype[chmhd1] = urn:e-health-suisse:event-type-code#CH-MHD-1 "Update Document Metadata"
-* agent[documentRecipient].network.address = "https://example.org/fhir/"
+* agent[documentResponder].network.address = "https://example.org/fhir/"
 * entity[documentReference]
   * what.reference = "https://example.org/fhir/DocumentReference/1c8d1f74-1686-4188-9c35-0c5727c771cc"
   * type = $auditEntityType#2 "System Object"

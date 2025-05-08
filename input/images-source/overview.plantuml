@@ -48,9 +48,11 @@ component "EPR API" {
   PIXmSource --> PIXmManager : Patient Identity Feed FHIR [ITI-104]
 
   [MHD Document Recipient] as MHDRecipient
-  MHDSource --> MHDRecipient : Provide Document Bundle [ITI-65], \nUpdate Document Metadata [CH:MHD-1]
-
   [MHD Document Responder] as MHDResponder
+  MHDSource --> MHDRecipient : Provide Document Bundle [ITI-65]
+
+  MHDSource --> MHDResponder : Update Document Metadata [CH:MHD-1]
+
   MHDConsumer --> MHDResponder : Find Document References [ITI-67], \nRetrieve Document [ITI-68]
 
   [RESTful ATNA Audit Record Repository] as ATNARepository

@@ -16,7 +16,7 @@ Usage: #definition
 * rest
   * mode = #server
   * documentation = "IHE ITI mCSD ITI-90 & ITI-130 endpoints"
-  * interaction[+].code = #batch
+  * interaction[+].code = #transaction
   * resource[+]
     * type = #Organization
     * profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
@@ -272,7 +272,7 @@ Usage: #definition
 * rest
   * mode = #client
   * documentation = "IHE ITI mCSD ITI-130 endpoint"
-  * interaction[+].code = #batch
+  * interaction[+].code = #transaction
   * resource[+]
     * type = #Organization
     * profile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Organization"
