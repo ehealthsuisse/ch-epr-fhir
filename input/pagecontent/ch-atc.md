@@ -84,20 +84,9 @@ An actor from this profile (Column 1) shall implement all of the required transa
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="3">
+			<td rowspan="2">
 				<p>Patient Audit Consumer</p>
 			</td>
-			<td>
-				<p>Required¹</p>
-			</td>
-			<td>
-				<p>ATNA - Secure Node</p>
-			</td>
-			<td>
-				<p>Amendment 1 of Annex 5 EPRO-FDHA</p>
-			</td>
-		</tr>
-		<tr>
 			<td>
 				<p>Required</p>
 			</td>
@@ -105,7 +94,7 @@ An actor from this profile (Column 1) shall implement all of the required transa
 				<p>IUA - Authorization Client</p>
 			</td>
 			<td>
-				<p><a href="https://profiles.ihe.net/ITI/IUA/index.html">IHE ITI Suppl IUA</a></p>
+				<p><a href="iti-iua.html">IHE ITI Suppl IUA</a></p>
 			</td>
 		</tr>
 		<tr>
@@ -120,20 +109,9 @@ An actor from this profile (Column 1) shall implement all of the required transa
 			</td>
 		</tr>
 		<tr>
-			<td rowspan="3">
+			<td rowspan="2">
 				<p>Patient Audit Record Repository</p>
 			</td>
-			<td>
-				<p>Required¹</p>
-			</td>
-			<td>
-				<p>ATNA - Secure Node</p>
-			</td>
-			<td>
-				<p>Amendment 1 of Annex 5 EPRO-FDHA</p>
-			</td>
-		</tr>
-		<tr>
 			<td>
 				<p>Required</p>
 			</td>
@@ -152,16 +130,13 @@ An actor from this profile (Column 1) shall implement all of the required transa
 				<p>IUA - Resource Server</p>
 			</td>
 			<td>
-				<p><a href="https://profiles.ihe.net/ITI/IUA/index.html">IHE ITI Suppl IUA</a></p>
+				<p><a href="iti-iua.html">IHE ITI Suppl IUA</a></p>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
 _Table 3: Actor Grouping_
-
-¹: The Secure Node grouping is only required when a XUA token is used. See Section
-[Security Considerations](#security-considerations) for more details.
 
 Section [Security Considerations](#security-considerations) describes the groupings required for security considerations.
 
@@ -178,4 +153,4 @@ This profile supports the following Use Cases:
 </ol>
 
 ### Security Considerations
-This national extension enforces authentication and authorization of access using the IUA profile as described in [IUA](iti-71.html).
+This national extension enforces authentication and authorization of access using the IUA profile as described in [IUA](iti-iua.html).

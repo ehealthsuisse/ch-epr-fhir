@@ -6,9 +6,9 @@ hide footbox
 autoactivate on
 
 participant "Document Source" as DocumentSource
-participant "Document Recipient" as DocumentRecipient
+participant "Document Responder" as DocumentResponder
 
-"DocumentSource" -> "DocumentRecipient" : Request to Update Document Metadata
-"DocumentRecipient" --> "DocumentSource" : Updated DocumentReference Response
+"DocumentSource" -> "DocumentResponder" : Request to Update Document Metadata
+"DocumentResponder" --> "DocumentSource" : Updated DocumentReference Response
 
 @enduml 

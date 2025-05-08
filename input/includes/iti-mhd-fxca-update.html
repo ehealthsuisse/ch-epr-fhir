@@ -8,10 +8,10 @@
     }
 }%%
 flowchart LR
-    A[Document Source] -->|Update Doc Metadata| B(DocumentRecipient
-    Option FXCA
+    A[Document Source] -->|Update Doc Metadata| B(Document Responder
+    Option Federated Cross Community Access
     Grouped with Document Source)
     B --> C{own Community?}
-    C -->|yes| D(Document Recipient own community)
-    C -->|no| E(Document Recipient federated community)
+    C -->|yes| D(Document Responder own community)
+    C -->|no| E(Document Responder federated community)
 </div>

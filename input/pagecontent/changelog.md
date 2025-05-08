@@ -17,6 +17,7 @@
 * Upgrade to IHE PDQm v3.1.0 [#281](https://github.com/ehealthsuisse/ch-epr-fhir/issues/281)
 * MHD: document the use of `DocumentReference.content.attachment.url` [#276](https://github.com/ehealthsuisse/ch-epr-fhir/issues/276)
 * MHD: invalid mapping of the creation time, remove date [#299](https://github.com/ehealthsuisse/ch-epr-fhir/issues/299)
+* MHD: define the mapping of referenceIdList to context.related [#294](https://github.com/ehealthsuisse/ch-epr-fhir/issues/294)
 * Remove targetId from the ITI-83 response [#269](https://github.com/ehealthsuisse/ch-epr-fhir/issues/269)
 * Use a logical reference (EPR-SPID) to the patient in MHD [#269](https://github.com/ehealthsuisse/ch-epr-fhir/issues/269)
 * Remove `DocumentReference.date` from the MHD profile [#274](https://github.com/ehealthsuisse/ch-epr-fhir/issues/274)
@@ -24,6 +25,9 @@
 * IUA: Incorporate Access Token [ITI-72] not mentioned in the IUA profile [#249](https://github.com/ehealthsuisse/ch-epr-fhir/issues/249)
 * IUA: Add Authenticate User transaction [#302](https://github.com/ehealthsuisse/ch-epr-fhir/issues/302) and upgrade versions [#300](https://github.com/ehealthsuisse/ch-epr-fhir/issues/300)   
 * PPQm: Allow additional search criteria in CH:PPQ-5 [#289](https://github.com/ehealthsuisse/ch-epr-fhir/issues/289)
+* ATNA: precise use of STX:HTTPS IUA [#307](https://github.com/ehealthsuisse/ch-epr-fhir/issues/307), [#267](https://github.com/ehealthsuisse/ch-epr-fhir/issues/267), [#265](https://github.com/ehealthsuisse/ch-epr-fhir/issues/265)
+* CH MHD-1: wrong actor Document Recipient, should be Document Responder [#317](https://github.com/ehealthsuisse/ch-epr-fhir/issues/317)
+* mCSD: add Bundle profile and allow only transaction in bundle [#315](https://github.com/ehealthsuisse/ch-epr-fhir/issues/315)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
