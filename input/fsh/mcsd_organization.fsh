@@ -30,11 +30,11 @@ Description: "CH mCSD profile on Organization"
 
 * telecom[phone].use = #work (exactly)
 
-* extension contains HpdProviderCreationTimeExtension named creationTime 1..1 and
+* extension contains HpdProviderCreationTimeExtension named creationTime 0..1 and
         HcOrganizationCommunicationLanguageExtension named languagesSupported 0..* and
         HcOrganizationSpecialisationExtension named specialisation 0..* and
         HcOrganizationOwnerOfExtension named ownerOf 0..*
-* partOf.extension contains HcOrganizationMemberOfExtension named memberOf 1..1
+* partOf.extension contains HcOrganizationMemberOfExtension named memberOf 0..1
 
 
 Invariant: ch-mcsd-organization-ihe-conformance

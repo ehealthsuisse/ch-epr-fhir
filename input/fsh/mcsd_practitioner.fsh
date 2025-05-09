@@ -54,7 +54,7 @@ Description: "CH mCSD profile on Practitioner"
 * telecom[email].use = #work (exactly)
 * telecom[phone].use = #work (exactly)
 
-* extension contains HpdProviderCreationTimeExtension named creationTime 1..1 and 
+* extension contains HpdProviderCreationTimeExtension named creationTime 0..1 and 
         HcProfessionalPhysicalDeliveryOfficeNameExtension named physicalDeliveryOfficeName 0..* and
         HcProfessionalMedicalRecordsDeliveryEmailAddressExtension named medicalRecordsDeliveryEmailAddress 0..1 
 * modifierExtension contains HcProfessionalAssistantToExtension named assistantTo 0..*

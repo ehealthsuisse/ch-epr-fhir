@@ -35,7 +35,6 @@ table, th, td {
 |----------------------------------------------------|--------------------------|-------------------|
 | `urn:ietf:rfc:3986`                                | `RefData`                | `OID`             |
 | `urn:oid:2.51.1.3`                                 | `RefData`                | `GLN`             |
-| `urn:oid:2.16.756.5.30.1.123.100.2.1.1`            | tbd (ZSR)                | tbd (ZSR)         |
 | Other values matching the template `urn:${A}:${B}` | `${A}`                   | `${B}`            |
 | Values not matching the above template             | no mapping to HPD        | no mapping to HPD |
 

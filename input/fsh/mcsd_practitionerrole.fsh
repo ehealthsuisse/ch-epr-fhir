@@ -12,7 +12,7 @@ Description: "CH mCSD profile on PractitionerRole"
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
-* identifier contains memberOf 1..1
+* identifier contains memberOf 0..1
 * identifier[memberOf] only HpdUidIdentifier
 * identifier[memberOf] ^short = "CN of the HPD Relationship where the referenced Practitioner is a member"
 * code from HCProfessionalHcProfession (required)
