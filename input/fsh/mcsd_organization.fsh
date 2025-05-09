@@ -18,18 +18,17 @@ Description: "CH mCSD profile on Organization"
 * address.extension contains HpdProviderPostalAddressStatusExtension named status 0..1  // if not present, assume "primary"
 * contact.address.extension contains HpdProviderPostalAddressStatusExtension named status 0..1  // if not present, assume "primary"
 
-* telecom contains telephoneNumber 0..* and
-                   facsimileTelephoneNumber 0..*
+* telecom contains facsimileTelephoneNumber 0..*
 * telecom ^slicing.discriminator[0].type = #value
 * telecom ^slicing.discriminator[=].path = "system"
 * telecom ^slicing.discriminator[+].type = #value
 * telecom ^slicing.discriminator[=].path = "use"
 * telecom ^slicing.rules = #open
 * telecom ^slicing.ordered = false
-* telecom[telephoneNumber].system               = #phone (exactly)
-* telecom[telephoneNumber].use                  = #work (exactly)
 * telecom[facsimileTelephoneNumber].system      = #fax (exactly)
 * telecom[facsimileTelephoneNumber].use         = #work (exactly)
+
+* telecom[phone].use = #work (exactly)
 
 * extension contains HpdProviderCreationTimeExtension named creationTime 1..1 and
         HcOrganizationCommunicationLanguageExtension named languagesSupported 0..* and
@@ -61,7 +60,7 @@ Title:    "HPD schema (DSMLv2/LDAP)"
 * contact.address -> "HCRegulatedOrganization.hpdProviderMailingAddress"
 * extension[languagesSupported] -> "HCRegulatedOrganization.hpdProviderLanguageSupported"
 * type -> "HCRegulatedOrganization.HcSpecialisation"
-* telecom[telephoneNumber] -> "HCRegulatedOrganization.telephoneNumber"
+* telecom[phone] -> "HCRegulatedOrganization.telephoneNumber"
 * telecom[facsimileTelephoneNumber] -> "HCRegulatedOrganization.facsimileTelephoneNumber"
 * partOf -> "HCRegulatedOrganization.memberOf"
 * partOf.extension[memberOf] -> "Relationship.cn"

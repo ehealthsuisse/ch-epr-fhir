@@ -35,9 +35,7 @@ Description: "CH mCSD profile on Practitioner"
 * address[hpdProviderLegalAddress].type         = #both (exactly)
 * address[hpdProviderLegalAddress].use          = #work (exactly)
 
-* telecom contains mail 0..* and
-                   telephoneNumber 0..* and
-                   mobile 0..* and
+* telecom contains mobile 0..* and
                    pager 0..* and
                    facsimileTelephoneNumber 0..*
 * telecom ^slicing.discriminator[0].type = #value
@@ -46,16 +44,15 @@ Description: "CH mCSD profile on Practitioner"
 * telecom ^slicing.discriminator[=].path = "use"
 * telecom ^slicing.rules = #open
 * telecom ^slicing.ordered = false
-* telecom[mail].system                          = #email (exactly)
-* telecom[mail].use                             = #work (exactly)
-* telecom[telephoneNumber].system               = #phone (exactly)
-* telecom[telephoneNumber].use                  = #work (exactly)
 * telecom[mobile].system                        = #phone (exactly)
 * telecom[mobile].use                           = #mobile (exactly)
 * telecom[pager].system                         = #pager (exactly)
 * telecom[pager].use                            = #work (exactly)
 * telecom[facsimileTelephoneNumber].system      = #fax (exactly)
 * telecom[facsimileTelephoneNumber].use         = #work (exactly)
+
+* telecom[email].use = #work (exactly)
+* telecom[phone].use = #work (exactly)
 
 * extension contains HpdProviderCreationTimeExtension named creationTime 1..1 and 
         HcProfessionalPhysicalDeliveryOfficeNameExtension named physicalDeliveryOfficeName 0..* and
@@ -71,7 +68,7 @@ Severity: #error
 Invariant: practitioner-inactivity-reason-extension-implies-inactivity
 Description: "Practitioner.active.extension[inactivityReason] may be present only when Practitioner.active is 'false'"
 Severity: #error
-Expression: "active.extension('http://post.ch/windseeker/epr/StructureDefinition/PractitionerStatus').exists() implies (active = false)"
+Expression: "active.extension('http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/HcProfessionalInactivityReasonExtension').exists() implies (active = false)"
 
 Mapping:  CHmCSDPractitionerToHCProfessional
 Source:   CHmCSDPractitioner
@@ -99,10 +96,10 @@ Title:    "HPD schema (DSMLv2/LDAP)"
 * address[hpdProviderPracticeAddress] -> "HCProfessional.hpdProviderPracticeAddress"
 * address[hpdProviderLegalAddress] -> "HCProfessional.hpdProviderLegalAddress"
 * extension[physicalDeliveryOfficeName] -> "HCProfessional.physicalDeliveryOfficeName"
-* telecom[telephoneNumber] -> "HCProfessional.telephoneNumber" // [system='phone']
+* telecom[phone] -> "HCProfessional.telephoneNumber" 
 * telecom[mobile] -> "HCProfessional.mobile"
 * telecom[pager] -> "HCProfessional.pager"
-* telecom[facsimileTelephoneNumber] -> "HCProfessional.facsimileTelephoneNumber" // [system='fax']
+* telecom[facsimileTelephoneNumber] -> "HCProfessional.facsimileTelephoneNumber" 
 
 
 

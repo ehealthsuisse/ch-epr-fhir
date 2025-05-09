@@ -60,16 +60,16 @@ attributes `type` and `use` as shown in the table below:
 
 The next table shows how address elements are mapped between FHIR and HPD:
 
-| HPD address element | Attribute of FHIR `Address`                                                                                                                                             |
-|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `status`            | `extension[status].valueCode` (if not present, status "primary" is assumed)                                                                                             |
-| `addr`              | `line[0]`                                                                                                                                                               |
-| `streetNumber`      | `line[0].extension[houseNumber].valueString` (this extension is defined in the [CH-Core](https://fhir.ch/ig/ch-core/5.0.0/StructureDefinition-ch-core-address.html) IG) |
-| `streetName`        | `line[0].extension[streetName].valueString` (this extension is defined in the [CH-Core](https://fhir.ch/ig/ch-core/5.0.0/StructureDefinition-ch-core-address.html) IG)  |
-| `city`              | `city`                                                                                                                                                                  |
-| `state`             | `state`                                                                                                                                                                 |
-| `postalCode`        | `postalCode`                                                                                                                                                            |
-| `country`           | `country`                                                                                                                                                               |
+| HPD address element | Attribute of FHIR `Address`                                                                                                                                       |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `status`            | `extension[status].valueCode` (if not present, status "primary" is assumed)                                                                                       |
+| `addr`              | `line[0]`                                                                                                                                                         |
+| `streetNumber`      | `line[0].extension[houseNumber].valueString` (this extension is defined in the [CH-Core](https://fhir.ch/ig/ch-core/StructureDefinition-ch-core-address.html) IG) |
+| `streetName`        | `line[0].extension[streetName].valueString` (this extension is defined in the [CH-Core](https://fhir.ch/ig/ch-core/StructureDefinition-ch-core-address.html) IG)  |
+| `city`              | `city`                                                                                                                                                            |
+| `state`             | `state`                                                                                                                                                           |
+| `postalCode`        | `postalCode`                                                                                                                                                      |
+| `country`           | `country`                                                                                                                                                         |
 
 Note that HPD `HCProfessional.physicalDeliveryOfficeName` does not represent an address data
 structure, and is therefore mapped to FHIR `Practitioner.extension[physicalDeliveryOfficeName].valueString`.
@@ -101,13 +101,13 @@ to FHIR `ContactPoint`. Therefore, it is mapped to FHIR
 For the mapping between HPD and FHIR, due to element cardinalities in the HPD specification, only the first repetition
 of FHIR `Practitioner.name` is used.
 
-| HPD name element   | Attribute of FHIR `Practitioner.name[0]` (`HumanName`)                                                                                                                               |
-|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `displayName`      | `text`                                                                                                                                                                               |
-| `title`            | `prefix` with `extension[ENQualifier].valueCode == #AC` (this extension is defined in the [CH-Core](https://fhir.ch/ig/ch-core/5.0.0/StructureDefinition-ch-core-humanname.html) IG) |
-| `givenName`        | `given`                                                                                                                                                                              |
-| `initials`         | `extension[initials].valueString`                                                                                                                                                    |
-| `sn` (family name) | `family`                                                                                                                                                                             |
+| HPD name element   | Attribute of FHIR `Practitioner.name[0]` (`HumanName`)                                                                                                                         |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `displayName`      | `text`                                                                                                                                                                         |
+| `title`            | `prefix` with `extension[ENQualifier].valueCode == #AC` (this extension is defined in the [CH-Core](https://fhir.ch/ig/ch-core/StructureDefinition-ch-core-humanname.html) IG) |
+| `givenName`        | `given`                                                                                                                                                                        |
+| `initials`         | `extension[initials].valueString`                                                                                                                                              |
+| `sn` (family name) | `family`                                                                                                                                                                       |
 
 Note that the value of HPD `HCProfessional.cn` is dynamically derived from the practitioner's UID and names, and
 therefore not mapped to anything in FHIR.
@@ -210,14 +210,14 @@ All attributes of an HPD `HCRegulatedOrganization` are covered by a FHIR `Organi
 
 ## What is not mapped
 
-There are three groups of HPD attributes that are intentionally omitted from mapping to FHIR.
+There are three groups of HPD attributes for that, intentionally, no FHIR mapping is defined.
 
-Group 1: omitted, because the value is derived from others:
+Group 1: no mapping defined, because the attribute value is derived from others:
 
 * `DN` of all HPD objects &mdash; derived from identifier, object class, and a fixed suffix.
 * `HCProfessional.cn` &mdash; derived from identifier, last name, and first name.
 
-Group 2: omitted, because not used in the EPR context:
+Group 2: no mapping defined, because the attribute is not used in the EPR context:
 
 * `HCProfessional.userSMIMECertificate`.
 * `HCProfessional.hcSigningCertificate`.
@@ -227,7 +227,7 @@ Group 2: omitted, because not used in the EPR context:
 * `HCRegulatedOrganization.hcSigningCertificate`.
 * `HCRegulatedOrganization.hcOrganizationCertificates`.
 
-Group 3: omitted, because the value is constants:
+Group 3: no mapping defined, because the attribute value is constant:
 
 * Issuing authority ID of all codes ("BAG").
 * `HCProfessional.hcRegistrationStatus` ("unknown").
