@@ -7,6 +7,7 @@
 
 #### Resolved Issues
 
+* CH:ATC: Updated references and minor textual corrections in CH:ATC, ITI-81 and Volume 3 [#323](https://github.com/ehealthsuisse/ch-epr-fhir/issues/323), [#324](https://github.com/ehealthsuisse/ch-epr-fhir/issues/324), [#326](https://github.com/ehealthsuisse/ch-epr-fhir/issues/326), [#327](https://github.com/ehealthsuisse/ch-epr-fhir/issues/327)
 * fix mCSD capability statement expected actions for update, delete [#310](https://github.com/ehealthsuisse/ch-epr-fhir/issues/310)
 * add SCT edition in the expansion parameters [#256](https://github.com/ehealthsuisse/ch-epr-fhir/issues/256)
 * Wrong optionality of the attribute Consent.provision.period [#255](https://github.com/ehealthsuisse/ch-epr-fhir/issues/255)
