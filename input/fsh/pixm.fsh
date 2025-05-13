@@ -123,7 +123,7 @@ Parent:      AuditPixmFeedManagerUpdate
 Title:       "CH Audit Event for [ITI-104] Patient Identifier Cross-reference Manager / Update patient"
 Description: "This profile is used to define the CH Audit Event for the [ITI-104] transaction and the actor 'Patient
 Identifier Cross-reference Manager' when updating a patient."
-* insert ChAuditEventExtendedRules
+* insert ChAuditEventBasicRules
 * agent[client] ^short = "The 'Patient Identifier Source' actor (EPR application)"
 * agent[server] ^short = "The 'Patient Identifier Cross-reference Manager' actor (EPR API)"
 * entity[patient].what.identifier 1..1
