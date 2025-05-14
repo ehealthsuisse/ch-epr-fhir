@@ -2,24 +2,20 @@
   <!--<id value="56562bcf-2a5a-48d4-9a83-0f0dbbef74cc"/>-->
   <id value="ch-atc-iti-81-response-sample"/>
   <meta>
-    <lastUpdated value="2020-03-11T22:25:25.507+00:00"/>
     <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH-ATC.ITI-81.Response" />
   </meta>
   <type value="searchset"/>
   <total value="3"/>
   <link>
     <relation value="self"/>
-    <url value="/r4/*/AuditEvent"/>
+    <url value="http://example.com/AuditEvent"/>
   </link>
   <entry>
-    <fullUrl value="http://fhir.ch/r4/AuditEvent/1"/>
+    <fullUrl value="http://example.com/AuditEvent/1"/>
     <resource>
       <AuditEvent xmlns="http://hl7.org/fhir">
         <id value="1"/>
         <meta>
-          <versionId value="1"/>
-          <lastUpdated value="2020-03-11T22:23:48.511+00:00"/>
-          <source value="#7FDh4yxxyvETdamP"/>
           <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/DocumentAuditEvent"/>
         </meta>
         <text>
@@ -148,14 +144,11 @@
     </search>
   </entry>
   <entry>
-    <fullUrl value="http://fhir.ch/r4/AuditEvent/2"/>
+    <fullUrl value="http://example.com/AuditEvent/2"/>
     <resource>
       <AuditEvent xmlns="http://hl7.org/fhir">
         <id value="2"/>
         <meta>
-          <versionId value="1"/>
-          <lastUpdated value="2020-03-11T22:24:23.670+00:00"/>
-          <source value="#qP0MBxruH7EoT2Wk"/>
           <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/AccessAuditTrailEvent"/>
         </meta>
         <text>
@@ -222,14 +215,11 @@
     </search>
   </entry>
   <entry>
-    <fullUrl value="http://fhir.ch/r4/AuditEvent/3"/>
+    <fullUrl value="http://example.com/AuditEvent/3"/>
     <resource>
       <AuditEvent xmlns="http://hl7.org/fhir">
         <id value="3"/>
         <meta>
-          <versionId value="1"/>
-          <lastUpdated value="2020-03-11T22:24:45.116+00:00"/>
-          <source value="#0nwVbjxxC0ZrSG2w"/>
           <profile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/PolicyAuditEvent"/>
         </meta>
         <text>

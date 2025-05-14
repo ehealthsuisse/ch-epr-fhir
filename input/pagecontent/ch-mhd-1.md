@@ -62,7 +62,7 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
               }
             ]
           },
-          "system": "urn:oid:2.16.756.888888.3.1",
+          "system": "urn:oid:2.999.1.2.3.4",
           "value": "8734"
         }
       ]

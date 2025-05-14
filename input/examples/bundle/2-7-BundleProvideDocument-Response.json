@@ -10,7 +10,7 @@
   "link": [
     {
       "relation": "self",
-      "url": "http://example.com/fhir"
+      "url": "http://example.com"
     }
   ],
   "entry": [
