@@ -19,11 +19,11 @@ Description:    "A profile on the Bundle transaction for ITI-130 Process Care Se
 * entry ^slicing.discriminator[0].path = "resource"
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* entry.resource MS
 * entry contains 
-    MCSDPractitioner 0..* and
-    MCSDPractitionerRole 0..* and
-    MCSDOrganization 0..* 
+    MCSDPractitioner 0..* MS and
+    MCSDPractitionerRole 0..* MS and
+    MCSDOrganization 0..* MS
 * entry[MCSDPractitioner].resource only CHmCSDPractitioner
 * entry[MCSDPractitioner] ^short = "Practitioner"
 * entry[MCSDPractitionerRole].resource only CHmCSDPractitionerRole 

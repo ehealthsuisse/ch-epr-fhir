@@ -136,13 +136,12 @@ be the the one to use in ITI-68 transactions to retrieve the document content."
 * context.sourcePatientInfo only Reference($ch-core-patient)
 * context.sourcePatientInfo ^comment = "Contained Patient resource with Patient.identifier.use element set to ‘usual’.\r\n\r\nIndicates that the data within the XDS document entry be represented as a contained resource. See Section 4.5.4.4.7"
 * context.sourcePatientInfo ^type.aggregation = #contained
-* context.related MS
 * context.related ^slicing.discriminator.type = #value
 * context.related ^slicing.discriminator.path = "identifier"
 * context.related ^slicing.rules = #open
 * context.related ^comment = "May be filled with URL pointers to Resources or Identifiers found in referenceIdList"
 * context.related contains
-    StudyInstanceUID 0..1
+    StudyInstanceUID 0..1 MS
 * context.related[StudyInstanceUID].identifier MS
 * context.related[StudyInstanceUID].identifier only DicomStudyInstanceUidIdentifier
 * context.related[StudyInstanceUID].identifier ^short = "Requirements on XDS-I.b (Swiss context): When a Imaging Document Source provides a document to the Document Repository, it must provide the StudyInstanceUID, found in the to be registered KOS object, in the referenceIdList (urn:ihe:iti:xds:2013:referenceIdList) attribute of the documentEntry metadata."
@@ -160,16 +159,16 @@ Title: "CH MHD Find Document References Comprehensive Response message"
 Description: "A profile on the Find Document References Comprehensive Response message for ITI-68"
 * type = #searchset (exactly)
 * total 1..
-* entry MS
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry.fullUrl 1.. MS
 * entry.fullUrl obeys ch-mhd-bdl-1
 
-* entry contains DocumentReference 0..* and OperationOutcome 0..1
+* entry contains 
+    DocumentReference 0..* MS and 
+    OperationOutcome 0..1
 * entry[DocumentReference] ^short = "DocumentReference"
-* entry[DocumentReference] ^mustSupport = true
 * entry[DocumentReference].resource 1.. MS
 * entry[DocumentReference].resource only CHMhdDocumentReferenceComprehensive
 
@@ -251,7 +250,8 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * extension[sourceId] ^sliceName = "sourceId"
 * extension[sourceId] ^mustSupport = true
 * extension[authorAuthorRole] ^short = "The SubmissionSet.Author element MAY be used to track the user who made the latest changes to the document metadata."
-* identifier MS
+* identifier[uniqueId] MS
+* identifier[entryUUID] MS
 * identifier ^short = "identifier, for uniqueID set use to usual"
 * status MS
 * mode MS
