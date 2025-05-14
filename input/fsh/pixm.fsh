@@ -86,7 +86,7 @@ RuleSet: ChAuditEventIti83ExampleRules
 * type = $auditEventType#rest
 * subtype[anySearch] = $restfulInteraction#search "search"
 * subtype[iti83] = $eventTypeCode#ITI-83 "Mobile Patient Identifier Cross-reference Query"
-* agent[server].network.address = "https://example.org/fhir/"
+* agent[server].network.address = "http://example.com"
 * entity[query]
   * type = $auditEntityType#2
   * role = $objectRole#24
@@ -161,7 +161,7 @@ RuleSet: ChAuditEventIti104ExampleRules
 * insert ChExampleAuditEventEntityPatientRules
 * type = $auditEventType#rest
 * subtype[iti104] = $eventTypeCode#ITI-104 "Patient Identity Feed FHIR"
-* agent[server].network.address = "https://example.org/fhir/"
+* agent[server].network.address = "http://example.com"
 * entity[data]
   * what.identifier
     * value = "761337610411353650"

@@ -12,10 +12,10 @@
         <mode value="server"/>
         <resource>
             <type value="AuditEvent"/>
-            <supportedProfile value="http://fhir.ch/ig/ch-atc/StructureDefinition/AccessAuditTrailEvent"/>
-            <supportedProfile value="http://fhir.ch/ig/ch-atc/StructureDefinition/DocumentAuditEvent"/>
-            <supportedProfile value="http://fhir.ch/ig/ch-atc/StructureDefinition/HpdAuditEvent"/>
-            <supportedProfile value="http://fhir.ch/ig/ch-atc/StructureDefinition/PolicyAuditEvent"/>
+            <supportedProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/AccessAuditTrailEvent"/>
+            <supportedProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/DocumentAuditEvent"/>
+            <supportedProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/HpdAuditEvent"/>
+            <supportedProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/PolicyAuditEvent"/>
             <interaction>
                 <code value="search-type"/>
                 <documentation value="ITI-81"/>

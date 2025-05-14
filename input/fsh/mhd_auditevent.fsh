@@ -48,7 +48,7 @@ RuleSet: ChAuditEventIti65ExampleRules
 * insert ChExampleAuditEventHcpRules
 * insert ChExampleAuditEventEntityPatientRules
 * subtype[iti65] = $eventTypeCode#ITI-65 "Provide Document Bundle"
-* agent[documentRecipient].network.address = "https://example.org/fhir/"
+* agent[documentRecipient].network.address = "https://example.com"
 * entity[submissionSet]
   * what.identifier
     * value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.6.2949"
@@ -100,7 +100,7 @@ RuleSet: ChAuditEventIti67ExampleRules
 * type = $auditEventType#rest
 * subtype[anySearch] = $restfulInteraction#search "search"
 * subtype[iti67] = $eventTypeCode#ITI-67 "Find Document References"
-* agent[server].network.address = "https://example.org/fhir/"
+* agent[server].network.address = "https://example.com"
 * entity[query]
   * type = $auditEntityType#2 "System Object"
   * role = $objectRole#24 "Query"
@@ -336,8 +336,8 @@ RuleSet: ChAuditEventChMhd1ExampleRules
 * insert ChExampleAuditEventHcpRules
 * insert ChExampleAuditEventEntityPatientRules
 * subtype[chmhd1] = urn:e-health-suisse:event-type-code#CH-MHD-1 "Update Document Metadata"
-* agent[documentResponder].network.address = "https://example.org/fhir/"
+* agent[documentResponder].network.address = "http://example.com"
 * entity[documentReference]
-  * what.reference = "https://example.org/fhir/DocumentReference/1c8d1f74-1686-4188-9c35-0c5727c771cc"
+  * what.reference = "http://example.com/DocumentReference/1c8d1f74-1686-4188-9c35-0c5727c771cc"
   * type = $auditEntityType#2 "System Object"
   * role = $objectRole#20 "Job"

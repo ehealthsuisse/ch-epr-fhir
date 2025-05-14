@@ -2,7 +2,6 @@
   "resourceType": "Bundle",
   "id": "Bundle-FindDocumentReferences",
   "meta": {
-    "lastUpdated": "2020-10-14T07:56:23.916+00:00",
     "profile": [
       "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"
     ]
@@ -36,7 +35,7 @@
                     }
                   ]
                 },
-                "system": "urn:oid:2.16.756.888888.3.1",
+                "system": "urn:oid:2.999.1.2.3.4",
                 "value": "8734"
               }
             ]
