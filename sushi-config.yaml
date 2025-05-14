@@ -553,6 +553,7 @@ parameters:
   path-pages:
     - input/pages
   path-expansion-params: '../../expansion-params.json'  # for using SNOMED CT Swiss Extension
+  pin-canonicals: pin-multiples
 
 FSHOnly: false
 applyExtensionMetadataToRoot: false

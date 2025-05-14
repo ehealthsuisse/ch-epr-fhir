@@ -31,6 +31,7 @@
 * CH MHD-1: wrong actor Document Recipient, should be Document Responder [#317](https://github.com/ehealthsuisse/ch-epr-fhir/issues/317)
 * mCSD: add Bundle profile and allow only transaction in bundle [#315](https://github.com/ehealthsuisse/ch-epr-fhir/issues/315)
 * PIXm: fix cardinality of the main user agent in ITI-104 Manager Update audit event [#330](https://github.com/ehealthsuisse/ch-epr-fhir/issues/330)
+* Add [pin-canonicals](http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html#:~:text=for%20further%20information-,pin%2Dcanonicals,-Pin%20Canonical%20Versions) parameter to define the handling of unversioned canonical references [#336](https://github.com/ehealthsuisse/ch-epr-fhir/issues/336)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
