@@ -31,6 +31,7 @@
 * CH MHD-1: wrong actor Document Recipient, should be Document Responder [#317](https://github.com/ehealthsuisse/ch-epr-fhir/issues/317)
 * mCSD: add Bundle profile and allow only transaction in bundle [#315](https://github.com/ehealthsuisse/ch-epr-fhir/issues/315)
 * PIXm: fix cardinality of the main user agent in ITI-104 Manager Update audit event [#330](https://github.com/ehealthsuisse/ch-epr-fhir/issues/330)
+* Fix the level for MustSupport in case of slicing for consistency [#332](https://github.com/ehealthsuisse/ch-epr-fhir/issues/332)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
