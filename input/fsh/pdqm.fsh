@@ -239,7 +239,7 @@ Usage: #inline
 * identifier[LocalPid][+].system = "urn:oid:2.999.5.6.7"
 * identifier[LocalPid][=].value = "value of MPI-PID"
 * identifier[LocalPid][+].type = $v2-0203#MR
-* identifier[LocalPid][=].system = "urn:oid:2.16.756.888888.3.1"
+* identifier[LocalPid][=].system = "urn:oid:2.999.1.2.3.4"
 * identifier[LocalPid][=].value = "8734"
 * name.family = "Muster"
 * name.given = "Franz"
@@ -256,8 +256,8 @@ Usage: #example
 * type = #searchset
 * total = 1
 * link.relation = "self"
-* link.url = "https://example.org/fhir/Patient/$match"
-* entry[Patient][+].fullUrl = "https://example.org/fhir/Patient/FranzMuster"
+* link.url = "http://example.com/Patient/$match"
+* entry[Patient][+].fullUrl = "http://example.com/Patient/FranzMuster"
 * entry[Patient][=].resource = FranzMuster
 * entry[Patient][=].search.mode = #match
 * entry[Patient][=].search.score = 1
@@ -272,7 +272,7 @@ Usage: #example
 * type = #searchset
 * total = 0
 * link.relation = "self"
-* link.url = "https://example.org/fhir/Patient/$match"
+* link.url = "http://example.com/Patient/$match"
 * entry[OperationOutcome].fullUrl = "urn:uuid:13c56fd3-f2f1-4174-ae56-c91f027ffddf"
 * entry[OperationOutcome].resource = PDQmResponseMoreAttributesRequested
 * entry[OperationOutcome].search.mode = #outcome
@@ -328,7 +328,7 @@ RuleSet: ChAuditEventIti119ExampleRules
 * type = $auditEventType#rest
 * subtype[anySearch] = $restfulInteraction#search "search"
 * subtype[iti119] = $eventTypeCode#ITI-119 "Patient Demographics Match"
-* agent[server].network.address = "https://example.org/fhir/"
+* agent[server].network.address = "http://example.com"
 * entity[query]
   * type = $auditEntityType#2
   * role = $objectRole#24

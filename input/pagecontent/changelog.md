@@ -28,6 +28,7 @@
 * ATNA: precise use of STX:HTTPS IUA [#307](https://github.com/ehealthsuisse/ch-epr-fhir/issues/307), [#267](https://github.com/ehealthsuisse/ch-epr-fhir/issues/267), [#265](https://github.com/ehealthsuisse/ch-epr-fhir/issues/265)
 * CH MHD-1: wrong actor Document Recipient, should be Document Responder [#317](https://github.com/ehealthsuisse/ch-epr-fhir/issues/317)
 * mCSD: add Bundle profile and allow only transaction in bundle [#315](https://github.com/ehealthsuisse/ch-epr-fhir/issues/315)
+* Add NamingSystems, update example URLs (http://example.com, urn:oid:2.999) to fix unresolved URLs and add these which are not expected to resolve to the suppressed messages [#329](https://github.com/ehealthsuisse/ch-epr-fhir/issues/329)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 

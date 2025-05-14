@@ -32,7 +32,7 @@ Usage:      #example
 * insert ChExampleAuditEventBaseRules(server, client)
 * insert ChExampleAuditEventClientRules
 * subtype[anyRead] = $restfulInteraction#read "read"
-* agent[client].network.address = "https://example.org/fhir/"
+* agent[client].network.address = "https://example.com"
 * entity[data]
   * what
     * type = "Organization"
@@ -50,7 +50,7 @@ Usage:      #example
 * insert ChExampleAuditEventBaseRules(client, server)
 * insert ChExampleAuditEventServerRules
 * subtype[anySearch] = $restfulInteraction#search "search"
-* agent[server].network.address = "https://example.org/fhir/"
+* agent[server].network.address = "https://example.com"
 * entity[query]
   * type = $auditEntityType#2 "System Object"
   * role = $objectRole#24 "Query"
@@ -102,7 +102,7 @@ Usage:      #example
 * insert ChExampleAuditEventClientRules
 * subtype[anyCreate] = $restfulInteraction#create "create"
 * agent[client].type = DCM#110153 "Source Role ID"
-* agent[server].network.address = "https://example.org/fhir/"
+* agent[server].network.address = "https://example.com"
 * agent[server].type = DCM#110152 "Destination Role ID"
 * entity[data].what.reference = "PractitionerRole/PeterPanSpitalXDept3"
 
@@ -113,7 +113,7 @@ Usage:      #example
 * insert ChAuditEventIti130ExampleRules
 * insert ChExampleAuditEventServerRules
 * subtype[anyUpdate] = $restfulInteraction#update "update"
-* agent[server].network.address = "https://example.org/fhir/"
+* agent[server].network.address = "https://example.com"
 * entity[data].what.reference = "Practitioner/DrPeterPan"
 * agent[client].type = DCM#110153 "Source Role ID"
 * agent[server].type = DCM#110152 "Destination Role ID"
@@ -125,7 +125,7 @@ Usage:      #example
 * insert ChAuditEventIti130ExampleRules
 * insert ChExampleAuditEventServerRules
 * subtype[anyDelete] = $restfulInteraction#delete "delete"
-* agent[server].network.address = "https://example.org/fhir/"
+* agent[server].network.address = "https://example.com"
 * entity[data].what.reference = "Organization/SpitalX"
 * agent[client].type = DCM#110150 "Application"
 * agent[server].type = $provenanceParticipantType#custodian "Custodian"
