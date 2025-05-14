@@ -40,7 +40,7 @@ For the CH:ATC profile the entity.identifier has to be the EPR-SPID:
 
 #### Message Semantics for Response
 
-The returned AuditEvent FHIR resources in the Bundle shall conform the CH:ATC AuditEvent profile, see [Volume 3 - Content Profiles](volume-3.html).
+The returned AuditEvent FHIR resources in the Bundle shall conform the CH:ATC AuditEvent profile, see [Volume 3 - CH:ATC Audit Event Content Profiles](volume3.html).
 
 
 #### Security Considerations
@@ -49,7 +49,7 @@ The transaction SHALL be secured by Transport Layer Security (TLS) encryption an
 server certificates.
 
 The transaction SHALL use client authentication and authorization using one of the following strategies:
-1. Use an extended access token defined in [IUA](iti-71.html) conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
+1. Use an extended access token defined in [IUA](iti-iua.html) conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
 2. or, use mutual authentication (mTLS) on the transport layer in combination with a XUA token for authorization from the Get X-User Assertion transaction (Annex 5.1 1.6.4.2). The XUA token SHALL be conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
 
 The CH:ATC Patient Audit Record Repository shall be grouped with CH:ADR, i.e. the CH:ATC Patient Audit Record Repository shall use the CH:ADR Authorization Decision Request transaction to authorize the transaction and enforce the authorization decision retrieved from CH:ADR Authorization Decision Response.
@@ -57,4 +57,4 @@ The CH:ATC Patient Audit Record Repository shall be grouped with CH:ADR, i.e. th
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 #### Security Audit Considerations
-An audit event as specified in [Access Audit Trail Content Profile](volume-3.html#access-audit-trail-content-profile) shall be returned by a query to Patient Audit Record Repository after the Patient Audit Record Repository has been queried by a Patient Audit Consumer.
+An audit event as specified in [Access Audit Trail Content Profile](volume3.html#access-audit-trail-content-profile) shall be returned by a query to Patient Audit Record Repository after the Patient Audit Record Repository has been queried by a Patient Audit Consumer.

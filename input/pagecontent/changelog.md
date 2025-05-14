@@ -7,6 +7,7 @@
 
 #### Resolved Issues
 
+* CH:ATC: Updated references and minor textual corrections in CH:ATC, ITI-81 and Volume 3 [#323](https://github.com/ehealthsuisse/ch-epr-fhir/issues/323), [#324](https://github.com/ehealthsuisse/ch-epr-fhir/issues/324), [#326](https://github.com/ehealthsuisse/ch-epr-fhir/issues/326), [#327](https://github.com/ehealthsuisse/ch-epr-fhir/issues/327)
 * fix mCSD capability statement expected actions for update, delete [#310](https://github.com/ehealthsuisse/ch-epr-fhir/issues/310)
 * add SCT edition in the expansion parameters [#256](https://github.com/ehealthsuisse/ch-epr-fhir/issues/256)
 * Wrong optionality of the attribute Consent.provision.period [#255](https://github.com/ehealthsuisse/ch-epr-fhir/issues/255)
@@ -25,10 +26,12 @@
 * IUA: Incorporate Access Token [ITI-72] not mentioned in the IUA profile [#249](https://github.com/ehealthsuisse/ch-epr-fhir/issues/249)
 * IUA: Add Authenticate User transaction [#302](https://github.com/ehealthsuisse/ch-epr-fhir/issues/302) and upgrade versions [#300](https://github.com/ehealthsuisse/ch-epr-fhir/issues/300)   
 * PPQm: Allow additional search criteria in CH:PPQ-5 [#289](https://github.com/ehealthsuisse/ch-epr-fhir/issues/289)
+* PPQm: Minor textual corrections and updates of links [#334](https://github.com/ehealthsuisse/ch-epr-fhir/issues/334)
 * ATNA: precise use of STX:HTTPS IUA [#307](https://github.com/ehealthsuisse/ch-epr-fhir/issues/307), [#267](https://github.com/ehealthsuisse/ch-epr-fhir/issues/267), [#265](https://github.com/ehealthsuisse/ch-epr-fhir/issues/265)
 * CH MHD-1: wrong actor Document Recipient, should be Document Responder [#317](https://github.com/ehealthsuisse/ch-epr-fhir/issues/317)
 * mCSD: add Bundle profile and allow only transaction in bundle [#315](https://github.com/ehealthsuisse/ch-epr-fhir/issues/315)
 * Add NamingSystems, update example URLs (http://example.com, urn:oid:2.999) to fix unresolved URLs and add these which are not expected to resolve to the suppressed messages [#329](https://github.com/ehealthsuisse/ch-epr-fhir/issues/329)
+* PIXm: fix cardinality of the main user agent in ITI-104 Manager Update audit event [#330](https://github.com/ehealthsuisse/ch-epr-fhir/issues/330)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
