@@ -121,6 +121,8 @@ be the the one to use in ITI-68 transactions to retrieve the document content."
 * content.format from $DocumentEntry.formatCode (required)
 * content.format ^binding.description = "Document Format Codes."
 * context 1..
+* context.event MS
+* context.event from $DocumentEntry.eventCodeList (required)
 * context.period MS
 * context.facilityType 1.. MS
 * context.facilityType from $DocumentEntry.healthcareFacilityTypeCode (required)

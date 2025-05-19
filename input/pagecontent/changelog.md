@@ -3,7 +3,6 @@
 #### Open Issues
 
 * Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
-* in review: ITI-71: Conflict between OAuth2 scope and ITI-71 scope [#245](https://github.com/ehealthsuisse/ch-epr-fhir/issues/245)  
 
 #### Resolved Issues
 
@@ -35,6 +34,8 @@
 * Fix the level for MustSupport in case of slicing for consistency [#332](https://github.com/ehealthsuisse/ch-epr-fhir/issues/332)
 * Add [pin-canonicals](http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html#:~:text=for%20further%20information-,pin%2Dcanonicals,-Pin%20Canonical%20Versions) parameter to define the handling of unversioned canonical references [#336](https://github.com/ehealthsuisse/ch-epr-fhir/issues/336)
 * Fixed OperationDefinitions for PDQm and PIXm [#340](https://github.com/ehealthsuisse/ch-epr-fhir/issues/340)
+* Conflict between OAuth2 scope and ITI-71 scope [#245](https://github.com/ehealthsuisse/ch-epr-fhir/issues/245)  
+* ValueSet binding for DocumentReference.context.event in CH MHD DocumentReference Comprehensive [#318](https://github.com/ehealthsuisse/ch-epr-fhir/issues/318)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 
