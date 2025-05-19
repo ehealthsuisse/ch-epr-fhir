@@ -34,6 +34,7 @@
 * PIXm: fix cardinality of the main user agent in ITI-104 Manager Update audit event [#330](https://github.com/ehealthsuisse/ch-epr-fhir/issues/330)
 * Fix the level for MustSupport in case of slicing for consistency [#332](https://github.com/ehealthsuisse/ch-epr-fhir/issues/332)
 * Add [pin-canonicals](http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html#:~:text=for%20further%20information-,pin%2Dcanonicals,-Pin%20Canonical%20Versions) parameter to define the handling of unversioned canonical references [#336](https://github.com/ehealthsuisse/ch-epr-fhir/issues/336)
+* Fixed OperationDefinitions for PDQm and PIXm [#340](https://github.com/ehealthsuisse/ch-epr-fhir/issues/340)
 
 ### DSTU4 Informative Ballot Release 2024-12-18 
 

@@ -36,6 +36,51 @@ Description: "The StructureDefinition defines the Output Parameters for the $ihe
 * parameter[targetIdentifier] ^short = "targetIdentifier"
 * parameter[targetIdentifier].name = "targetIdentifier" (exactly)
 
+Instance: CH.PIXm
+InstanceOf: OperationDefinition
+Title: "PIXm Find patient matches"
+Usage: #definition
+Description: """
+Find patient matches using IHE-PIXm Profile
+"""
+
+* base = "http://fhir.ch/ig/ch-epr-fhir/OperationDefinition/CH.PIXm"
+* name = "CH_PIXm"
+* status = #active
+* kind = #operation
+* affectsState = false
+* resource = #Patient
+* system = false
+* type = true
+* instance = false
+* code = #ihe-pix
+* parameter[0].name = #sourceIdentifier
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "1"
+* parameter[=].documentation = "The Patient identifier search parameter that will be used by the Patient Identifier Cross-reference Manager to find cross matching identifiers associated with the Patient Resource. See Section 3.83.4.1.2.1"
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #targetSystem
+* parameter[=].use = #in
+* parameter[=].min = 1
+* parameter[=].max = "2"
+* parameter[=].documentation = "The Assigning Authorities for the Patient Identity Domains from which the returned identifiers shall be selected. See Section 3.83.4.1.2.2."
+* parameter[=].type = #string
+* parameter[=].searchType = #uri
+* parameter[+].name = #_format
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "The requested format of the response from the mime-type value set. See ITI TF-2: Appendix Z.6"
+* parameter[=].type = #string
+* parameter[=].searchType = #token
+* parameter[+].name = #targetIdentifier
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "2"
+* parameter[=].documentation = "The identifier found. Constraints to include the assigning authority as specified in ITI TF-2: Appendix E.3"
+* parameter[=].type = #Identifier
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Audit events [ITI-83]
