@@ -29,6 +29,7 @@ Alias: $IHE.MHD.Comprehensive.ProvideBundle = https://profiles.ihe.net/ITI/MHD/S
 Alias: $IHE.MHD.UnContained.Comprehensive.SubmissionSet = https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet
 Alias: $IHE.PIXm.Query.Parameters.In = https://profiles.ihe.net/ITI/PIXm/StructureDefinition/IHE.PIXm.Query.Parameters.In
 Alias: $IHE.PIXm.Query.Parameters.Out = https://profiles.ihe.net/ITI/PIXm/StructureDefinition/IHE.PIXm.Query.Parameters.Out
+Alias: $DocumentEntry.eventCodeList = http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.eventCodeList
 Alias: $DocumentEntry.mimeType = http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.mimeType
 Alias: $DocumentEntry.languageCode = http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.languageCode
 Alias: $DocumentEntry.formatCode = http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.formatCode
