@@ -72,7 +72,7 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * extension[deletionStatus] ^short = "Deletion status of the document"
 * extension[originalProviderRole] ^short = "Original ProviderRole: This extra metadata attribute SHALL be set by the Document Source actor to the role value of the current user and SHALL NOT be updated by Update Initiator or Document Administrator actors."
 * masterIdentifier 1.. MS
-* masterIdentifier only $IHE.MHD.UniqueIdIdentifier
+* masterIdentifier only ch-atc-uniqueid-identifier
 * identifier MS
 * status MS
 * status ^short = "current | superseded"
