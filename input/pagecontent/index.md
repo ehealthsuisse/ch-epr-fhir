@@ -10,7 +10,10 @@ and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.
 
 <div markdown="1" class="stu-note">
 
-[Significant changes, open and closed issues.](changelog.html)
+This implementation guide is under informative ballot by [HL7 Switzerland](https://www.hl7.ch/) until September 30th, 2025 midnight.   
+Please add your feedback via the ‘Propose a change’-link in the footer on the page where you have comments.
+
+[Changelog](changelog.html) with significant changes, open and closed issues.
 
 </div>
 
