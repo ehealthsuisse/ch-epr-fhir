@@ -57,7 +57,6 @@ Description: "CH mCSD profile on Practitioner"
 * extension contains HpdProviderCreationTimeExtension named creationTime 0..1 and 
         HcProfessionalPhysicalDeliveryOfficeNameExtension named physicalDeliveryOfficeName 0..* and
         HcProfessionalMedicalRecordsDeliveryEmailAddressExtension named medicalRecordsDeliveryEmailAddress 0..1 
-* modifierExtension contains HcProfessionalAssistantToExtension named assistantTo 0..*
 
 
 Invariant: ch-mcsd-practitioner-ihe-conformance

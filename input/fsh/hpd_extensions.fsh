@@ -45,17 +45,6 @@ Context: Practitioner
 * ^experimental = false
 * value[x] only string
 
-Extension: HcProfessionalAssistantToExtension
-Id: HcProfessionalAssistantToExtension
-Title: "HcProfessionalAssistantToExtension"
-Description: "Extension for specifying whom a given Practitioner may assist"
-Context: Practitioner
-* ^status = #active
-* ^experimental = false
-* value[x] only Reference(Practitioner)
-* . ^isModifier = true
-* . ^isModifierReason = "This extension converts a practitioner to an assistant which cannot work on their own"
-
 Extension: HcProfessionalMedicalRecordsDeliveryEmailAddressExtension
 Id: HcProfessionalMedicalRecordsDeliveryEmailAddressExtension
 Title: "HcProfessionalMedicalRecordsDeliveryEmailAddressExtension"
