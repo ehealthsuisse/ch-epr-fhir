@@ -148,27 +148,24 @@ be the the one to use in ITI-68 transactions to retrieve the document content."
 * context.related[StudyInstanceUID].identifier only DicomStudyInstanceUidIdentifier
 * context.related[StudyInstanceUID].identifier ^short = "Requirements on XDS-I.b (Swiss context): When a Imaging Document Source provides a document to the Document Repository, it must provide the StudyInstanceUID, found in the to be registered KOS object, in the referenceIdList (urn:ihe:iti:xds:2013:referenceIdList) attribute of the documentEntry metadata."
 
-
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 371531000, VS_DocType_371531000, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 721927009, VS_DocType_721927009, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 721963009, VS_DocType_721963009, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 422735006, VS_DocType_422735006, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 371525003, VS_DocType_371525003, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 734163000, VS_DocType_734163000, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 440545006, VS_DocType_440545006, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 184216000, VS_DocType_184216000, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 371537001, VS_DocType_371537001, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 371538006, VS_DocType_371538006, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 722160009, VS_DocType_722160009, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 722216001, VS_DocType_722216001, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 772790007, VS_DocType_772790007, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 405624007, VS_DocType_405624007, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 417319006, VS_DocType_417319006, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 2171000195109, VS_DocType_2171000195109, extensible)
-* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, category, DocumentReference.type, 419891008, VS_DocType_419891008, extensible)
-
-
-
+//Tying type based on category
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 371531000, VS_DocType_371531000, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 721927009, VS_DocType_721927009, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 721963009, VS_DocType_721963009, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 422735006, VS_DocType_422735006, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 371525003, VS_DocType_371525003, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 734163000, VS_DocType_734163000, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 440545006, VS_DocType_440545006, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 184216000, VS_DocType_184216000, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 371537001, VS_DocType_371537001, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 371538006, VS_DocType_371538006, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 722160009, VS_DocType_722160009, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 722216001, VS_DocType_722216001, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 772790007, VS_DocType_772790007, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 405624007, VS_DocType_405624007, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 417319006, VS_DocType_417319006, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 2171000195109, VS_DocType_2171000195109, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 419891008, VS_DocType_419891008, required)
 
 Invariant: ch-mhd
 Description: "The DocumentReference needs to conform to IHE.MHD.Comprehensive.DocumentReference"
@@ -301,13 +298,12 @@ RuleSet: AdditionalBinding(profile, elementPath, usagePath, usageCategory, value
 * {elementPath} ^binding.extension[=].extension[0].url = "purpose"
 * {elementPath} ^binding.extension[=].extension[=].valueCode = #{binding}
 * {elementPath} ^binding.extension[=].extension[+].url = "valueSet"
-* {elementPath} ^binding.extension[=].extension[=].valueCanonical = {valueSet}
+* {elementPath} ^binding.extension[=].extension[=].valueCanonical = Canonical({valueSet})
 * {elementPath} ^binding.extension[=].extension[+].url = "usage"
 * {elementPath} ^binding.extension[=].extension[=].valueUsageContext.code.system = Canonical({profile})
 * {elementPath} ^binding.extension[=].extension[=].valueUsageContext.code.code = #{usagePath}
 * {elementPath} ^binding.extension[=].extension[=].valueUsageContext.valueCodeableConcept = $sct#{usageCategory} // This is not official display. Need to support display? "{profile} {usageCategory} ValueSet"
 * {elementPath} ^binding.extension[=].extension[=].valueUsageContext.valueCodeableConcept.text = "{usageCategory}"
-
 
 // Group 1 — 371531000 Report of clinical encounter
 ValueSet: VS_DocType_371531000
