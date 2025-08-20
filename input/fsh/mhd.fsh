@@ -295,7 +295,9 @@ Description: "CH MHD SubmissionSet Comprehensive"
 
 RuleSet: AdditionalBinding(profile, elementPath, usagePath, usageCategory, valueSet, binding)
 * {elementPath} ^binding.extension[+].url = $add-binding
-* {elementPath} ^binding.extension[=].extension[0].url = "purpose"
+* {elementPath} ^binding.extension[=].extension[0].url = "key"
+* {elementPath} ^binding.extension[=].extension[=].valueId = category-to-type
+* {elementPath} ^binding.extension[=].extension[+].url = "purpose"
 * {elementPath} ^binding.extension[=].extension[=].valueCode = #{binding}
 * {elementPath} ^binding.extension[=].extension[+].url = "valueSet"
 * {elementPath} ^binding.extension[=].extension[=].valueCanonical = Canonical({valueSet})
