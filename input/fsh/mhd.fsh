@@ -312,6 +312,7 @@ Id: doccategory-371531000
 Title: "DocType for DocCategory 371531000"
 Description: "Target typeCodes for classCode SCT 371531000 (Report of clinical encounter)"
 * ^status = #active
+* ^experimental = false
 * $sct#371530004
 * $sct#371529009
 * $sct#371532007
@@ -323,6 +324,7 @@ Id: doccategory-721927009
 Title: "DocType for DocCategory 721927009"
 Description: "Target typeCodes for classCode SCT 721927009 (Referral note)"
 * ^status = #active
+* ^experimental = false
 * $sct#419891008
 
 // Group 3 — 721963009 Order
@@ -331,6 +333,7 @@ Id: doccategory-721963009
 Title: "DocType for DocCategory 721963009"
 Description: "Target typeCodes for classCode SCT 721963009 (Order)"
 * ^status = #active
+* ^experimental = false
 * $sct#721965002
 * $sct#721966001
 * $sct#2161000195103
@@ -342,6 +345,7 @@ Id: doccategory-422735006
 Title: "DocType for DocCategory 422735006"
 Description: "Target typeCodes for classCode SCT 422735006 (Summary clinical document)"
 * ^status = #active
+* ^experimental = false
 * $sct#373942005
 * $sct#371535009
 * $sct#721912009
@@ -354,6 +358,7 @@ Id: doccategory-371525003
 Title: "DocType for DocCategory 371525003"
 Description: "Target typeCodes for classCode SCT 371525003 (Clinical procedure report)"
 * ^status = #active
+* ^experimental = false
 * $sct#371526002
 * $sct#4241000179101
 * $sct#371528001
@@ -368,6 +373,7 @@ Id: doccategory-734163000
 Title: "DocType for DocCategory 734163000"
 Description: "Target typeCodes for classCode SCT 734163000 (Care plan)"
 * ^status = #active
+* ^experimental = false
 * $sct#737427001
 * $sct#773130005
 * $sct#736055001
@@ -380,6 +386,7 @@ Id: doccategory-440545006
 Title: "DocType for DocCategory 440545006"
 Description: "Target typeCodes for classCode SCT 440545006 (Prescription record)"
 * ^status = #active
+* ^experimental = false
 * $sct#761938008
 * $sct#765492005
 * $sct#419891008
@@ -390,6 +397,7 @@ Id: doccategory-184216000
 Title: "DocType for DocCategory 184216000"
 Description: "Target typeCodes for classCode SCT 184216000 (Patient record type)"
 * ^status = #active
+* ^experimental = false
 * $sct#722446000
 * $sct#41000179103
 * $sct#419891008
@@ -400,6 +408,7 @@ Id: doccategory-371537001
 Title: "DocType for DocCategory 371537001"
 Description: "Target typeCodes for classCode SCT 371537001 (Consent report)"
 * ^status = #active
+* ^experimental = false
 * $sct#419891008
 
 // Group 10 — 371538006 Advance directive report
@@ -408,6 +417,7 @@ Id: doccategory-371538006
 Title: "DocType for DocCategory 371538006"
 Description: "Target typeCodes for classCode SCT 371538006 (Advance directive report)"
 * ^status = #active
+* ^experimental = false
 * $sct#419891008
 
 // Group 11 — 722160009 Audit trail report
@@ -416,6 +426,7 @@ Id: doccategory-722160009
 Title: "DocType for DocCategory 722160009"
 Description: "Target typeCodes for classCode SCT 722160009 (Audit trail report)"
 * ^status = #active
+* ^experimental = false
 * $sct#419891008
 
 // Group 12 — 722216001 Emergency medical identification record
@@ -424,6 +435,7 @@ Id: doccategory-722216001
 Title: "DocType for DocCategory 722216001"
 Description: "Target typeCodes for classCode SCT 722216001 (Emergency medical identification record)"
 * ^status = #active
+* ^experimental = false
 * $sct#419891008
 
 // Group 13 — 772790007 Organ donor card
@@ -432,6 +444,7 @@ Id: doccategory-772790007
 Title: "DocType for DocCategory 772790007"
 Description: "Target typeCodes for classCode SCT 772790007 (Organ donor card)"
 * ^status = #active
+* ^experimental = false
 * $sct#419891008
 
 // Group 14 — 405624007 Administrative documentation
@@ -440,6 +453,7 @@ Id: doccategory-405624007
 Title: "DocType for DocCategory 405624007"
 Description: "Target typeCodes for classCode SCT 405624007 (Administrative documentation)"
 * ^status = #active
+* ^experimental = false
 * $sct#772786005
 * $sct#419891008
 
@@ -449,6 +463,7 @@ Id: doccategory-417319006
 Title: "DocType for DocCategory 417319006"
 Description: "Target typeCodes for classCode SCT 417319006 (Record of health event)"
 * ^status = #active
+* ^experimental = false
 * $sct#445300006
 * $sct#445418005
 * $sct#82291000195104
@@ -460,6 +475,7 @@ Id: doccategory-2171000195109
 Title: "DocType for DocCategory 2171000195109"
 Description: "Target typeCodes for classCode SCT 2171000195109 (Obstetrical record)"
 * ^status = #active
+* ^experimental = false
 * $sct#419891008
 
 // Group 18 — 419891008 Record artifact (self-map)
@@ -468,4 +484,5 @@ Id: doccategory-419891008
 Title: "DocType for DocCategory 419891008"
 Description: "Target typeCodes for classCode SCT 419891008 (Record artifact)"
 * ^status = #active
+* ^experimental = false
 * $sct#419891008
