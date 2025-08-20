@@ -1,3 +1,6 @@
+
+* Sequence Diagrams - mention mTLS for ITI-65, 67, 68 [#357](https://github.com/ehealthsuisse/ch-epr-fhir/issues/357)
+
 ### DSTU5 Informative Ballot 2025 
 
 #### Open Issues

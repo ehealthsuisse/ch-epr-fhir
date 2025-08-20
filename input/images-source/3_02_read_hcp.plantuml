@@ -36,6 +36,8 @@ deactivate mp_AuthorizationServer
 !include_many step_mh_iua.plantuml.txt
 
 ' Get Document Metadata
+alt IUA JWT Token option
+
 app -> docconsumer: query documents\nwith extended access token
 activate docconsumer
 docconsumer -[#black]> mp_doc_responder: query documents [ITI-67] with extended access token
@@ -54,6 +56,28 @@ docconsumer <[#black]- mp_doc_responder
 deactivate mp_doc_responder
 docconsumer <- app
 deactivate docconsumer
+
+else mTLS
+app -> docconsumer: query documents\nusing XUA token and mTLS
+activate docconsumer
+docconsumer -[#black]> mp_doc_responder: query documents [ITI-67] with XUA token and mTLS
+activate mp_doc_responder
+docconsumer <[#black]- mp_doc_responder
+deactivate mp_doc_responder
+docconsumer <- app
+deactivate docconsumer
+
+' Retrieve Document
+app -> docconsumer: retrieve documents\nusing XUA token and mTLS
+activate docconsumer
+docconsumer -[#black]> mp_doc_responder: retrieve document [ITI-68] with XUA token and mTLS
+activate mp_doc_responder
+docconsumer <[#black]- mp_doc_responder
+deactivate mp_doc_responder
+docconsumer <- app
+deactivate docconsumer
+
+end
 
 user <[#black]- app
 deactivate app
