@@ -302,8 +302,7 @@ RuleSet: AdditionalBinding(profile, elementPath, usagePath, usageCategory, value
 * {elementPath} ^binding.extension[=].extension[+].url = "usage"
 * {elementPath} ^binding.extension[=].extension[=].valueUsageContext.code.system = Canonical({profile})
 * {elementPath} ^binding.extension[=].extension[=].valueUsageContext.code.code = #{usagePath}
-* {elementPath} ^binding.extension[=].extension[=].valueUsageContext.valueCodeableConcept = $sct#{usageCategory} // This is not official display. Need to support display? "{profile} {usageCategory} ValueSet"
-* {elementPath} ^binding.extension[=].extension[=].valueUsageContext.valueCodeableConcept.text = "{usageCategory}"
+* {elementPath} ^binding.extension[=].extension[=].valueUsageContext.valueCodeableConcept = $sct#{usageCategory}
 
 // Group 1 — 371531000 Report of clinical encounter
 ValueSet: VS_DocType_371531000
