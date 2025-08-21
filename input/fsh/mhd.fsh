@@ -292,7 +292,6 @@ Description: "CH MHD SubmissionSet Comprehensive"
 
 
 
-
 RuleSet: AdditionalBinding(profile, elementPath, usagePath, usageCategory, valueSet, binding)
 * {elementPath} ^binding.extension[+].url = $add-binding
 * {elementPath} ^binding.extension[=].extension[0].url = "key"
