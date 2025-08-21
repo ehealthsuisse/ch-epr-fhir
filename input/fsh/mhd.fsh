@@ -184,6 +184,47 @@ Description: "The fullUrl must be an absolute URL server address or an URI for U
 * severity = #error
 * expression = "startsWith('http') or startsWith('urn:uuid:') = true"
 
+Profile: CHMhdUpdateDocumentBundleComprehensive
+Parent: Bundle
+Id: ch-mhd-updatedocumentbundle-comprehensive
+Title: "CH MHD Update Document Metadata Bundle Comprehensive"
+Description: "CH MHD profile on the Update Document Metadata [CH-MHD-1] transaction, supporting multiple document updates with Comprehensive Metadata for the Swiss EPR."
+* meta 1..
+* meta.profile MS
+* meta.profile ^slicing.discriminator.type = #value
+* meta.profile ^slicing.discriminator.path = "$this"
+* meta.profile ^slicing.rules = #open
+* type = http://hl7.org/fhir/bundle-type#transaction
+
+* entry ^slicing.discriminator[0].type = #profile
+* entry ^slicing.discriminator[0].path = "resource"
+* entry ^slicing.discriminator[1].type = #value
+* entry ^slicing.discriminator[1].path = "request.method"
+* entry ^slicing.rules = #closed
+* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
+* entry and entry.resource MS
+
+* entry 2..
+* entry contains
+    SubmissionSet 1..1 and
+    UpdateDocumentRefs 1..*
+* entry[SubmissionSet] ^sliceName = "SubmissionSet"
+* entry[SubmissionSet] ^mustSupport = true
+* entry[SubmissionSet] ^short = "the SubmissionSet"
+* entry[SubmissionSet].resource 1..1 MS
+* entry[SubmissionSet].resource ^type.profile = $ch-mhd-submissionset-comprehensive
+* entry[SubmissionSet].request 1..1 MS
+* entry[SubmissionSet].request.method = #POST
+* entry[SubmissionSet].request.method MS
+* entry[UpdateDocumentRefs] ^sliceName = "UpdateDocumentRefs"
+* entry[UpdateDocumentRefs] ^mustSupport = true
+* entry[UpdateDocumentRefs] ^short = "the updated DocumentReference resources"
+* entry[UpdateDocumentRefs].resource 1..1 MS
+* entry[UpdateDocumentRefs].resource ^type.profile = Canonical(CHMhdDocumentReferenceComprehensive)
+* entry[UpdateDocumentRefs].request MS
+* entry[UpdateDocumentRefs].request.method = #PUT
+* entry[UpdateDocumentRefs].request.method MS
+
 Profile: CHMhdProvideDocumentBundleComprehensive
 Parent: $IHE.MHD.Comprehensive.ProvideBundle
 Id: ch-mhd-providedocumentbundle-comprehensive
