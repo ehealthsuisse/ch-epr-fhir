@@ -148,6 +148,25 @@ be the the one to use in ITI-68 transactions to retrieve the document content."
 * context.related[StudyInstanceUID].identifier only DicomStudyInstanceUidIdentifier
 * context.related[StudyInstanceUID].identifier ^short = "Requirements on XDS-I.b (Swiss context): When a Imaging Document Source provides a document to the Document Repository, it must provide the StudyInstanceUID, found in the to be registered KOS object, in the referenceIdList (urn:ihe:iti:xds:2013:referenceIdList) attribute of the documentEntry metadata."
 
+//Tying type based on category
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 371531000, VS_DocCategory_371531000, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 721927009, VS_DocCategory_721927009, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 721963009, VS_DocCategory_721963009, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 422735006, VS_DocCategory_422735006, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 371525003, VS_DocCategory_371525003, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 734163000, VS_DocCategory_734163000, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 440545006, VS_DocCategory_440545006, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 184216000, VS_DocCategory_184216000, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 371537001, VS_DocCategory_371537001, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 371538006, VS_DocCategory_371538006, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 722160009, VS_DocCategory_722160009, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 722216001, VS_DocCategory_722216001, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 772790007, VS_DocCategory_772790007, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 405624007, VS_DocCategory_405624007, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 417319006, VS_DocCategory_417319006, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 2171000195109, VS_DocCategory_2171000195109, required)
+* insert AdditionalBinding(CHMhdDocumentReferenceComprehensive, type, DocumentReference.category, 419891008, VS_DocCategory_419891008, required)
+
 Invariant: ch-mhd
 Description: "The DocumentReference needs to conform to IHE.MHD.Comprehensive.DocumentReference"
 * severity = #error
@@ -270,3 +289,199 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * entry.item MS
 * entry.item ^type.aggregation[0] = #referenced
 * entry.item ^type.aggregation[+] = #bundled
+
+
+
+RuleSet: AdditionalBinding(profile, elementPath, usagePath, usageCategory, valueSet, binding)
+* {elementPath} ^binding.extension[+].url = $add-binding
+* {elementPath} ^binding.extension[=].extension[0].url = "key"
+* {elementPath} ^binding.extension[=].extension[=].valueId = type-for-category
+* {elementPath} ^binding.extension[=].extension[+].url = "purpose"
+* {elementPath} ^binding.extension[=].extension[=].valueCode = #{binding}
+* {elementPath} ^binding.extension[=].extension[+].url = "valueSet"
+* {elementPath} ^binding.extension[=].extension[=].valueCanonical = Canonical({valueSet})
+* {elementPath} ^binding.extension[=].extension[+].url = "usage"
+* {elementPath} ^binding.extension[=].extension[=].valueUsageContext.code.system = Canonical({profile})
+* {elementPath} ^binding.extension[=].extension[=].valueUsageContext.code.code = #{usagePath}
+* {elementPath} ^binding.extension[=].extension[=].valueUsageContext.valueCodeableConcept = $sct#{usageCategory}
+
+// Group 1 — 371531000 Report of clinical encounter
+ValueSet: VS_DocCategory_371531000
+Id: doccategory-371531000
+Title: "DocType for DocCategory 371531000"
+Description: "Target typeCodes for classCode SCT 371531000 (Report of clinical encounter)"
+* ^status = #active
+* ^experimental = false
+* $sct#371530004
+* $sct#371529009
+* $sct#371532007
+* $sct#419891008
+
+// Group 2 — 721927009 Referral note
+ValueSet: VS_DocCategory_721927009
+Id: doccategory-721927009
+Title: "DocType for DocCategory 721927009"
+Description: "Target typeCodes for classCode SCT 721927009 (Referral note)"
+* ^status = #active
+* ^experimental = false
+* $sct#419891008
+
+// Group 3 — 721963009 Order
+ValueSet: VS_DocCategory_721963009
+Id: doccategory-721963009
+Title: "DocType for DocCategory 721963009"
+Description: "Target typeCodes for classCode SCT 721963009 (Order)"
+* ^status = #active
+* ^experimental = false
+* $sct#721965002
+* $sct#721966001
+* $sct#2161000195103
+* $sct#419891008
+
+// Group 4 — 422735006 Summary clinical document
+ValueSet: VS_DocCategory_422735006
+Id: doccategory-422735006
+Title: "DocType for DocCategory 422735006"
+Description: "Target typeCodes for classCode SCT 422735006 (Summary clinical document)"
+* ^status = #active
+* ^experimental = false
+* $sct#373942005
+* $sct#371535009
+* $sct#721912009
+* $sct#736378000
+* $sct#419891008
+
+// Group 5 — 371525003 Clinical procedure report
+ValueSet: VS_DocCategory_371525003
+Id: doccategory-371525003
+Title: "DocType for DocCategory 371525003"
+Description: "Target typeCodes for classCode SCT 371525003 (Clinical procedure report)"
+* ^status = #active
+* ^experimental = false
+* $sct#371526002
+* $sct#4241000179101
+* $sct#371528001
+* $sct#4201000179104
+* $sct#900000000000471006
+* $sct#787148009
+* $sct#419891008
+
+// Group 6 — 734163000 Care plan
+ValueSet: VS_DocCategory_734163000
+Id: doccategory-734163000
+Title: "DocType for DocCategory 734163000"
+Description: "Target typeCodes for classCode SCT 734163000 (Care plan)"
+* ^status = #active
+* ^experimental = false
+* $sct#737427001
+* $sct#773130005
+* $sct#736055001
+* $sct#761931002
+* $sct#419891008
+
+// Group 7 — 440545006 Prescription record
+ValueSet: VS_DocCategory_440545006
+Id: doccategory-440545006
+Title: "DocType for DocCategory 440545006"
+Description: "Target typeCodes for classCode SCT 440545006 (Prescription record)"
+* ^status = #active
+* ^experimental = false
+* $sct#761938008
+* $sct#765492005
+* $sct#419891008
+
+// Group 8 — 184216000 Patient record type
+ValueSet: VS_DocCategory_184216000
+Id: doccategory-184216000
+Title: "DocType for DocCategory 184216000"
+Description: "Target typeCodes for classCode SCT 184216000 (Patient record type)"
+* ^status = #active
+* ^experimental = false
+* $sct#722446000
+* $sct#41000179103
+* $sct#419891008
+
+// Group 9 — 371537001 Consent report
+ValueSet: VS_DocCategory_371537001
+Id: doccategory-371537001
+Title: "DocType for DocCategory 371537001"
+Description: "Target typeCodes for classCode SCT 371537001 (Consent report)"
+* ^status = #active
+* ^experimental = false
+* $sct#419891008
+
+// Group 10 — 371538006 Advance directive report
+ValueSet: VS_DocCategory_371538006
+Id: doccategory-371538006
+Title: "DocType for DocCategory 371538006"
+Description: "Target typeCodes for classCode SCT 371538006 (Advance directive report)"
+* ^status = #active
+* ^experimental = false
+* $sct#419891008
+
+// Group 11 — 722160009 Audit trail report
+ValueSet: VS_DocCategory_722160009
+Id: doccategory-722160009
+Title: "DocType for DocCategory 722160009"
+Description: "Target typeCodes for classCode SCT 722160009 (Audit trail report)"
+* ^status = #active
+* ^experimental = false
+* $sct#419891008
+
+// Group 12 — 722216001 Emergency medical identification record
+ValueSet: VS_DocCategory_722216001
+Id: doccategory-722216001
+Title: "DocType for DocCategory 722216001"
+Description: "Target typeCodes for classCode SCT 722216001 (Emergency medical identification record)"
+* ^status = #active
+* ^experimental = false
+* $sct#419891008
+
+// Group 13 — 772790007 Organ donor card
+ValueSet: VS_DocCategory_772790007
+Id: doccategory-772790007
+Title: "DocType for DocCategory 772790007"
+Description: "Target typeCodes for classCode SCT 772790007 (Organ donor card)"
+* ^status = #active
+* ^experimental = false
+* $sct#419891008
+
+// Group 14 — 405624007 Administrative documentation
+ValueSet: VS_DocCategory_405624007
+Id: doccategory-405624007
+Title: "DocType for DocCategory 405624007"
+Description: "Target typeCodes for classCode SCT 405624007 (Administrative documentation)"
+* ^status = #active
+* ^experimental = false
+* $sct#772786005
+* $sct#419891008
+
+// Group 15/16 — 417319006 Record of health event
+ValueSet: VS_DocCategory_417319006
+Id: doccategory-417319006
+Title: "DocType for DocCategory 417319006"
+Description: "Target typeCodes for classCode SCT 417319006 (Record of health event)"
+* ^status = #active
+* ^experimental = false
+* $sct#445300006
+* $sct#445418005
+* $sct#82291000195104
+* $sct#419891008
+
+// Group 17 — 2171000195109 Obstetrical record
+ValueSet: VS_DocCategory_2171000195109
+Id: doccategory-2171000195109
+Title: "DocType for DocCategory 2171000195109"
+Description: "Target typeCodes for classCode SCT 2171000195109 (Obstetrical record)"
+* ^status = #active
+* ^experimental = false
+* $sct#419891008
+
+// Group 18 — 419891008 Record artifact (self-map)
+ValueSet: VS_DocCategory_419891008
+Id: doccategory-419891008
+Title: "DocType for DocCategory 419891008"
+Description: "Target typeCodes for classCode SCT 419891008 (Record artifact)"
+* ^status = #active
+* ^experimental = false
+* $sct#419891008

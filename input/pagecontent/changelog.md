@@ -1,3 +1,9 @@
+### DSTU5 Informative Ballot Release 2025-12
+
+#### Resolved Issues
+* Additional bindings on DocumentReference [#354](https://github.com/ehealthsuisse/ch-epr-fhir/issues/354)
+
+
 ### DSTU5 Informative Ballot 2025 
 
 #### Open Issues
