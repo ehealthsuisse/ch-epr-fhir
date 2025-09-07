@@ -35,11 +35,23 @@ deactivate mp_AuthorizationServer
 ' Get Access Token (Extended)
 !include_many step_mh_iua.plantuml.txt
 
+alt IUA JWT Token option
+
 ' Publish Documents
 app -> docsource: publish document\nwith extended access token
 !include_many step_mh_mhd_pub.plantuml.txt
 docsource <- app
 deactivate docsource
+
+else mTLS
+
+' Publish Documents
+app -> docsource: publish document\nwith XUA token and mTLS
+!include_many step_mh_mhd_pub.plantuml.txt
+docsource <- app
+deactivate docsource
+
+end
 
 user <[#black]- app
 deactivate app

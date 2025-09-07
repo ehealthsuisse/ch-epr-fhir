@@ -23,6 +23,7 @@ activate mp_AuthorizationServer
 app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
 deactivate mp_AuthorizationServer
 
+opt IUA JWT Token option
 ' Get Access Token (Basic)
 app -[#black]> AuthorizationClient: Get Access Token
 activate AuthorizationClient
@@ -32,6 +33,7 @@ AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Access Token Respons
 deactivate mp_AuthorizationServer
 app <[#black]- AuthorizationClient: 
 deactivate AuthorizationClient
+end
 
 ' Get Patient Identifiers (PIXm)
 !include_many step_mh_pixm.plantuml.txt
@@ -39,10 +41,21 @@ deactivate AuthorizationClient
 ' Get Access Token (Extended)
 !include_many step_mh_iua.plantuml.txt
 
+alt IUA JWT Token option
+
 ' Publish Documents
 app -> docsource: publish document\nwith extended access token
 !include_many step_mh_mhd_pub.plantuml.txt
 docsource <- app
+
+else mTLS
+
+app -> docsource: publish document\nwith XUA token and mTLS
+!include_many step_mh_mhd_pub.plantuml.txt
+docsource <- app
+
+end
+
 deactivate docsource
 deactivate app
 
