@@ -5,6 +5,7 @@ Title: "CH mCSD Practitioner"
 Description: "CH mCSD profile on Practitioner"
 * obeys ch-mcsd-practitioner-ihe-conformance
 * qualification 1.. // hcProfession is required
+* qualification.code from http://fhir.ch/ig/ch-term/ValueSet/HCProfessional.hcProfession (extensible)
 * identifier contains LDAP 0..1
 * identifier[LDAP] only LdapIdentifier
 * identifier[LDAP] ^short = "LDAP DN (Distinguished Name), if the practitioner is stored in an HPD"
@@ -77,6 +78,8 @@ Description: "An example of CHmCSDPractitioner that contains the same informatio
 * gender = #male
 * qualification[+].code = $sct#309343006 "Physician"
 * qualification[+].code = $medreg#1051 "General internal medicine"
+* qualification[+].code.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+* qualification[=].code.extension.valueCode = #unknown
 * communication[+].coding = $bcp47#de
 * communication[+].coding = $bcp47#fr
 * communication[+].coding = $bcp47#en
