@@ -1,4 +1,4 @@
-### Constraints on Retrieve ATNA Audit Event [ITI-81]
+### Constraints on Retrieve ATNA Audit Event [ITI-81] for CH:ATC
 
 The Retrieve ATNA Audit Event [ITI-81] transaction is defined in [IHE ITI TF-2](https://profiles.ihe.net/ITI/TF/Volume2/index.html) and the [IHE ITI Supplement Add RESTful Query to ATNA](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_RESTful-ATNA.pdf). The following rules shall be applied for the CH:ATC profile.
 
