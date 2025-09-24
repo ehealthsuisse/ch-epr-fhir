@@ -270,3 +270,114 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * entry.item MS
 * entry.item ^type.aggregation[0] = #referenced
 * entry.item ^type.aggregation[+] = #bundled
+
+Profile: CHMhd1UpdateDocumentMetadataTransactionRequest
+Id: ch-mhd-1-updatedocumentmetadatatransactionrequest
+Parent: Bundle
+Title: "Process"
+Description: "A profile for Update Document Metadata (CH:MHD-1) transaction request"
+* type = #transaction
+* entry.request 1..1 MS
+* entry.request.method = #PUT 
+* entry.request.url 1..1 
+* entry ^slicing.discriminator[0].type = #profile
+* entry ^slicing.discriminator[0].path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
+* entry.resource MS
+* entry contains 
+    DocumentReference 0..* MS 
+* entry[DocumentReference] ^short = "DocumentReference"
+* entry[DocumentReference].resource only CHMhdDocumentReferenceComprehensive
+
+Profile: CHMhd1UpdateDocumentMetadataTransactionResponse
+Id: ch-mhd-1-updatedocumentmetadatatransactionresponse
+Parent: Bundle
+Title: "Process"
+Description: "A profile for Update Document Metadata (CH:MHD-1) transaction response"
+* type = #transaction-response
+* entry.response 1..1 MS
+* entry ^slicing.discriminator[0].type = #profile
+* entry ^slicing.discriminator[0].path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
+* entry.resource MS
+* entry contains 
+    DocumentReference 0..*  MS and 
+    OperationOutcome 0..1
+ 
+* entry[DocumentReference] ^short = "DocumentReference"
+* entry[DocumentReference].resource 1.. MS
+* entry[DocumentReference].resource only CHMhdDocumentReferenceComprehensive
+
+* entry[OperationOutcome] ^short = "OperationOutcome"
+* entry[OperationOutcome].resource 1..
+* entry[OperationOutcome].resource ^type.code = "OperationOutcome"
+* entry[OperationOutcome].resource ^type.profile = Canonical(OperationOutcome)
+
+
+Alias: $sct = http://snomed.info/sct
+Alias: $formatcode = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode
+Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+
+Instance: 2-7-DocRefMedicationCard
+InstanceOf: ch-mhd-documentreference-comprehensive
+Title: "MHD Provide Document Bundle for MedicationCard"
+Description: "MHD Provide Document Bundle for MedicationCard"
+Usage: #example
+* meta.profile[0] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"
+* meta.profile[+] = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference"
+* contained = 1
+* extension[0].url = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-deletionstatus"
+* extension[=].valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.18#urn:e-health-suisse:2019:deletionStatus:deletionNotRequested
+* extension[+].url = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-author-authorrole"
+* extension[=].valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.6#HCP "Healthcare professional"
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2951"
+* status = #current
+* type = $sct#721912009 "Medication summary document (record artifact)"
+* category = $sct#422735006 "Summary clinical document (record artifact)"
+* subject.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
+* subject.identifier.value = "761337610411353650"
+* description = "2-7-MedicationCard"
+* securityLabel = $sct#17621005 "Normal (qualifier value)"
+* content.attachment.contentType = #text/xml
+* content.attachment.language = #de-CH
+* content.attachment.url = "http://example.com/xdsretrieve?uniqueId=urn:uuid:413eb0f7-aa72-4405-86a4-7793a23fcc27&repositoryUniqueId=2.999.756.42.1"
+* content.attachment.creation = "2020-06-29T11:58:00+00:00"
+* content.attachment.title = "Medikationsplan"
+* content.format = $formatcode#urn:ihe:pharm:pml:2013 "Pharmacy PML"
+* context.facilityType = $sct#264358009 "General practice premises (environment)"
+* context.practiceSetting = $sct#394802001 "General medicine (qualifier value)"
+* context.sourcePatientInfo = Reference(1)
+
+Instance: 1
+InstanceOf: Patient
+Usage: #inline
+* identifier.use = #usual
+* identifier.type = $v2-0203#MR
+* identifier.system = "urn:oid:2.999.1.2.3.4"
+* identifier.value = "8734"
+
+Instance: CHMhd1UpdateDocumentMetadataTransactionRequestExample
+InstanceOf: CHMhd1UpdateDocumentMetadataTransactionRequest
+Title: "CH MHD-1 Update Document Metadata Transaction Request Example"
+Description: "Example of a CH MHD-1 Update Document Metadata Transaction Request"
+Usage: #example
+* type = http://hl7.org/fhir/bundle-type#transaction
+* entry[+].request.method = #PUT
+* entry[=].request.url = "DocumentReference/2-7-DocRefMedicationCard"
+* entry[=].resource = 2-7-DocRefMedicationCard
+
+
+Instance: CHMhd1UpdateDocumentMetadataTransactionResponseExample
+InstanceOf: CHMhd1UpdateDocumentMetadataTransactionResponse
+Title: "CH MHD-1 Update Document Metadata Transaction Response Example"
+Description: "Example of a CH MHD-1 Update Document Metadata Transaction Response"
+Usage: #example
+* type = #transaction-response
+* link.relation = "self"
+* link.url = "http://example.org/fhir"
+* entry.response.status = "200 OK"
+* entry.response.location = "DocumentReference/2-7-DocRefMedicationCard/_history/2"
+* entry.response.etag = "2"
