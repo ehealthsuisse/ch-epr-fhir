@@ -365,9 +365,9 @@ Title: "CH MHD-1 Update Document Metadata Transaction Request Example"
 Description: "Example of a CH MHD-1 Update Document Metadata Transaction Request"
 Usage: #example
 * type = http://hl7.org/fhir/bundle-type#transaction
-* entry[+].request.method = #PUT
-* entry[=].request.url = "DocumentReference/2-7-DocRefMedicationCard"
-* entry[=].resource = 2-7-DocRefMedicationCard
+* entry[DocumentReference].request.method = #PUT
+* entry[DocumentReference].request.url = "DocumentReference/2-7-DocRefMedicationCard"
+* entry[DocumentReference].resource = 2-7-DocRefMedicationCard
 
 
 Instance: CHMhd1UpdateDocumentMetadataTransactionResponseExample
