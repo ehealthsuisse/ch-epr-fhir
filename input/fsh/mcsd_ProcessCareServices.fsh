@@ -7,11 +7,12 @@ Description: "Value set for allowed HTTP verbs, excluding GET operations."
 * http://hl7.org/fhir/http-verb#PUT "PUT"
 * http://hl7.org/fhir/http-verb#DELETE "DELETE"
 
-Profile:        ChmCSDProcessCareServices
+Profile: ChmCSDProcessCareServices
 // Parent:         MCSDProcessCareServices we cannot inherit from the IHE profile because multiple inheritance is not supported (our Practitioner is derived from the CHmCSDPractitioner and is only indirectly conforming to IHE mCSD Practitioner)
-Parent:         Bundle
-Title:          "Process"
-Description:    "A profile on the Bundle transaction for ITI-130 Process Care Services Resources Request Message"
+Id: CH.mCSD.ProcessCareServices
+Parent: Bundle
+Title: "Transaction Bundle Profile for ITI-130 Process Care Services Resources Request Message"
+Description: "A profile on the Bundle transaction for ITI-130 Process Care Services Resources Request Message"
 * type = #transaction
 * entry.request 1..1 MS
 * entry.request.method from RestrictedHTTPVerbVS (required)
