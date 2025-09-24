@@ -286,7 +286,7 @@ Description: "A profile for Update Document Metadata (CH:MHD-1) transaction requ
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry.resource MS
 * entry contains 
-    DocumentReference 0..* MS 
+    DocumentReference 1..* MS 
 * entry[DocumentReference] ^short = "DocumentReference"
 * entry[DocumentReference].resource only CHMhdDocumentReferenceComprehensive
 
