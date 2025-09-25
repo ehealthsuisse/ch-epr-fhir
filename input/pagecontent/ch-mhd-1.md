@@ -40,12 +40,12 @@ The DocumentReference elements which are allowed to be updated are defined in An
 ##### Example
 
 ```http
-PUT [base]/DocumentReference/1c8d1f74-1686-4188-9c35-0c5727c771cc HTTP/1.1
+PUT [base]/DocumentReference/DocRefPdf HTTP/1.1
 Accept: application/fhir+json
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 
 ```
-{% fragment DocumentReference/2-7-DocRefMedicationCard JSON %}
+{% fragment DocumentReference/DocRefPdf JSON %}
 
 
 

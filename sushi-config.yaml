@@ -280,22 +280,6 @@ resources:
     name: PDQm Match response message too many results
     description: CH PDQm Match response message with too many results indication
     exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-matchparametersout
-  List/2-7-DocSubMedicationCard:
-    name: MHD SubmissionSet (List) for MedicationCard
-    description: Example SubmissionSet for a MedicationCard
-    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-submissionset-comprehensive
-  DocumentReference/2-7-DocRefMedicationCard:
-    name: MHD DocumentReference for MedicationCard
-    description: Example DocumentReference for a MedicationCard
-    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive
-  Bundle/2-7-BundleProvideDocument-Response:
-    name: MHD Provide Document Bundle Response for MedicationCard
-    description: MHD Provide Document Bundle Response for MedicationCard
-    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response
-  Bundle/Bundle-FindDocumentReferences:
-    name: MHD Find DocumentReferences
-    description: MHD Find DocumentReferences - Bundle as Response
-    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle
   OperationOutcome/PDQmResponseMoreAttributesRequested:
     name: PDQm OperationOutcome More Attributes Requested Example
     description: An example on the OperationOutcome for indicating which additional
