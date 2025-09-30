@@ -49,7 +49,9 @@ The transaction SHALL use client authentication and authorization using one of t
 
 The Policy Repository actor shall be grouped with CH:ADR, i.e. the Policy Repository shall use the CH:ADR Authorization
 Decision Request transaction to authorize the transaction and enforce the authorization decision retrieved from CH:ADR
-Authorization Decision Response.
+Authorization Decision Response (when the CH:PPQ-5 response is delivered as multiple pages, the Policy Repository
+SHALL issue an Authorization Decision Request [CH:ADR] for the first page, and for each subsequent 
+page either reuse the obtained Authorization Decision or repeat the Authorization Decision Request).
 
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
