@@ -274,7 +274,7 @@ Description: "CH MHD SubmissionSet Comprehensive"
 Profile: CHMhd1UpdateDocumentMetadataTransactionRequest
 Id: ch-mhd-1-updatedocumentmetadatatransactionrequest
 Parent: Bundle
-Title: "Process"
+Title: "CH MHD-1 Update Document Metadata Transaction Request"
 Description: "A profile for Update Document Metadata (CH:MHD-1) transaction request"
 * type = #transaction
 * entry.request 1..1 MS
@@ -282,7 +282,7 @@ Description: "A profile for Update Document Metadata (CH:MHD-1) transaction requ
 * entry.request.url 1..1 
 * entry ^slicing.discriminator[0].type = #profile
 * entry ^slicing.discriminator[0].path = "resource"
-* entry ^slicing.rules = #open
+* entry ^slicing.rules = #closed
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry.resource MS
 * entry contains 
@@ -293,7 +293,7 @@ Description: "A profile for Update Document Metadata (CH:MHD-1) transaction requ
 Profile: CHMhd1UpdateDocumentMetadataTransactionResponse
 Id: ch-mhd-1-updatedocumentmetadatatransactionresponse
 Parent: Bundle
-Title: "Process"
+Title: "CH MHD-1 Update Document Metadata Transaction Response"
 Description: "A profile for Update Document Metadata (CH:MHD-1) transaction response"
 * type = #transaction-response
 * entry.response 1..1 MS

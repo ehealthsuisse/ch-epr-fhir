@@ -31,6 +31,9 @@ The Update Document Metadata Request Message is triggered when a Document Source
 ##### Message Semantics
 
 A Document Source initiates a FHIR request using Update as defined at http://hl7.org/fhir/http.html#update on DocumentReference Resources.
+A Document Source initiates a FHIR request using Update as defined at [http://hl7.org/fhir/http.html#update](http://hl7.org/fhir/http.html#update) on DocumentReference Resources, with a standalone HTTP request or a [transaction](https://hl7.org/fhir/R4/http.html#transaction).
+
+
 
 A Document Source shall send a request for either the JSON or the XML format as defined in FHIR. A Document Responder shall support the JSON and the XML format.
 
@@ -53,7 +56,7 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 
 The Document Responder shall provide a [CapabilityStatement](CapabilityStatement-CH.MHD.DocumentResponder.html) with the capabilities interaction and indicate that update is available on the DocumentReference.
 
-The Document Responder shall process the Update Document Metadata Request message and return the updated DocumentReferences.
+The Document Responder shall process the Update Document Metadata Request message and return the updated DocumentReference.
 
 Any error that occurs during the processing of the Update Document Metadata Request message shall cause the entire transaction to fail and 
 no change made to the existing DocumentReference. The Document Responder shall return the status and any error codes incurred during the processing of
