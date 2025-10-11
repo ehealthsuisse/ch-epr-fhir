@@ -166,7 +166,7 @@ be used by portals and primary systems.
    <col span="1" style="width: 15%;">
    <col span="1" style="width: 15%;">
    <col span="1" style="width: 25%;">
-</colgroup>
+ </colgroup>
 
   <thead>
    <tr>
@@ -763,14 +763,32 @@ user:
 
 - user_id: subject identifier according to Annex 5 E1, section 1.6.4.3.4.2 Message Semantics.
 
-| JWT Claim (Extension) | Optionality (Basic/ Extended) | XUA Attribute EPR                                   | Remark |
-|-----------------------|-------------------------------|-----------------------------------------------------|--------|
-| user_id               | O/R                           | &lt;NameID&gt; child element of the &lt;Subject&gt; |        |
-| user_id_qualifier     | O/R                           | Name qualifier attribute of &lt;NameID&gt;          |        |
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>JWT Claim (Extension)</th>
+      <th>Optionality (Basic/ Extended)</th>
+      <th>XUA Attribute EPR</th>
+      <th>Remark</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>user_id</td>
+      <td>O/R</td>
+      <td>&lt;NameID&gt; child element of the &lt;Subject&gt;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>user_id_qualifier</td>
+      <td>O/R</td>
+      <td>Name qualifier attribute of &lt;NameID&gt;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
 
-{:class="table table-bordered"}
-
-<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_delegation.</figcaption>
+<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_epr.</figcaption>
 
 ###### The JWT ch_group extension
 
@@ -783,14 +801,32 @@ of groups a subject is member of:
 The ch_group extension claims shall be wrapped in an "extensions" object with key "ch_group" and a JSON array containing
 the JSON objects with properties name and id. The id SHALL be an OID in the format of a URN.
 
-| ch_group array element | Optionality (Basic/ Extended) | XUA Attribute EPR                                   | Remark                                          |
-|------------------------|-------------------------------|-----------------------------------------------------|-------------------------------------------------|
-| name                   | O/R                           | urn:oasis:names:tc:xspa:1.0:subject:organization    | An array of groups with properties name and id. |
-| id                     | O/R                           | urn:oasis:names:tc:xspa:1.0:subject:organization-id | An array of group names and group ids.          |
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ch_group array element</th>
+      <th>Optionality (Basic/ Extended)</th>
+      <th>XUA Attribute EPR</th>
+      <th>Remark</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>O/R</td>
+      <td>urn:oasis:names:tc:xspa:1.0:subject:organization</td>
+      <td>An array of groups with properties name and id.</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>O/R</td>
+      <td>urn:oasis:names:tc:xspa:1.0:subject:organization-id</td>
+      <td>An array of group names and group ids.</td>
+    </tr>
+  </tbody>
+</table>
 
-{:class="table table-bordered"}
-
-<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_group.</figcaption>  
+<figcaption class="table table-bordered">Table: Attributes of the IUA Get Access Token response in the JWT extension ch_group.</figcaption>
 
 ###### The JWT ch_delegation extension
 
@@ -803,14 +839,32 @@ The ch_delegation extension claims shall be wrapped in an "extensions" object wi
 object containing the claims. The claim content for the JWT CH:EPR extensions shall correspond to the content defined 
 in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 
-| JWT Claim (Extension) | Optionality (Basic/ Extended) | XUA Attribute EPR                  | Remark                                                                   |
-|-----------------------|-------------------------------|------------------------------------|--------------------------------------------------------------------------|
-| principal             | O/R                           | urn:e-health-suisse:principal-name | Name of the healthcare professional an assistant is acting on behalf of. |
-| principal_id          | O/R                           | urn:e-health-suisse:principal-id   | GLN of the healthcare professional an assistant is acting on behalf of.  |
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>JWT Claim (Extension)</th>
+      <th>Optionality (Basic/ Extended)</th>
+      <th>XUA Attribute EPR</th>
+      <th>Remark</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>principal</td>
+      <td>O/R</td>
+      <td>urn:e-health-suisse:principal-name</td>
+      <td>Name of the healthcare professional an assistant is acting on behalf of.</td>
+    </tr>
+    <tr>
+      <td>principal_id</td>
+      <td>O/R</td>
+      <td>urn:e-health-suisse:principal-id</td>
+      <td>GLN of the healthcare professional an assistant is acting on behalf of.</td>
+    </tr>
+  </tbody>
+</table>
 
-{:class="table table-bordered"}
-
-<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_delegation.</figcaption>
+<figcaption class="table table-bordered">Table: Attributes of the IUA Get Access Token response in the JWT extension ch_delegation.</figcaption>
 
 ##### Expected Actions
 
