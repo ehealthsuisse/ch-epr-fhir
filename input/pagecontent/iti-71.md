@@ -166,7 +166,7 @@ be used by portals and primary systems.
    <col span="1" style="width: 15%;">
    <col span="1" style="width: 15%;">
    <col span="1" style="width: 25%;">
-</colgroup>
+ </colgroup>
 
   <thead>
    <tr>
@@ -767,10 +767,9 @@ user:
 |-----------------------|-------------------------------|-----------------------------------------------------|--------|
 | user_id               | O/R                           | &lt;NameID&gt; child element of the &lt;Subject&gt; |        |
 | user_id_qualifier     | O/R                           | Name qualifier attribute of &lt;NameID&gt;          |        |
-
 {:class="table table-bordered"}
 
-<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_delegation.</figcaption>
+<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_epr.</figcaption>
 
 ###### The JWT ch_group extension
 
@@ -787,10 +786,9 @@ the JSON objects with properties name and id. The id SHALL be an OID in the form
 |------------------------|-------------------------------|-----------------------------------------------------|-------------------------------------------------|
 | name                   | O/R                           | urn:oasis:names:tc:xspa:1.0:subject:organization    | An array of groups with properties name and id. |
 | id                     | O/R                           | urn:oasis:names:tc:xspa:1.0:subject:organization-id | An array of group names and group ids.          |
-
 {:class="table table-bordered"}
 
-<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_group.</figcaption>  
+<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_group.</figcaption> 
 
 ###### The JWT ch_delegation extension
 
@@ -807,7 +805,6 @@ in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
 |-----------------------|-------------------------------|------------------------------------|--------------------------------------------------------------------------|
 | principal             | O/R                           | urn:e-health-suisse:principal-name | Name of the healthcare professional an assistant is acting on behalf of. |
 | principal_id          | O/R                           | urn:e-health-suisse:principal-id   | GLN of the healthcare professional an assistant is acting on behalf of.  |
-
 {:class="table table-bordered"}
 
 <figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_delegation.</figcaption>
