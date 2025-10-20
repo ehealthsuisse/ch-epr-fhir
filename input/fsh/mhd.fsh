@@ -299,7 +299,7 @@ Description: "A profile for Update Document Metadata (CH:MHD-1) transaction resp
 * entry.response 1..1 MS
 * entry ^slicing.discriminator[0].type = #profile
 * entry ^slicing.discriminator[0].path = "resource"
-* entry ^slicing.rules = #open
+* entry ^slicing.rules = #closed
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry.resource MS
 * entry contains 
