@@ -7,7 +7,7 @@ Description: "Swiss EPR Policy Set as a Consent"
 * obeys ch-epr-ppqm-template-structure
 
 * identifier ^slicing.discriminator.type    = #value
-* identifier ^slicing.discriminator.path    = "type.coding"
+* identifier ^slicing.discriminator.path    = "system"
 * identifier ^slicing.rules                 = #open
 * identifier ^slicing.description           = "PpqmConsent Identifiers"
 * identifier ^slicing.ordered               = false
@@ -21,7 +21,7 @@ Description: "Swiss EPR Policy Set as a Consent"
 * identifier[policySetId].type          1..1
 * identifier[policySetId].type.coding   1..1
 * identifier[policySetId].type.coding   = PpqmConsentIdentifierType#policySetId
-* identifier[policySetId].system        0..0
+* identifier[policySetId].system        = "policySetId"
 * identifier[policySetId].value         1..1
 * identifier[policySetId].value         ^short = "UUID of the policy set in URN format"
 * identifier[policySetId].value         obeys ch-epr-ppqm-uuid-format
@@ -33,7 +33,7 @@ Description: "Swiss EPR Policy Set as a Consent"
 * identifier[templateId].type           1..1
 * identifier[templateId].type.coding    1..1
 * identifier[templateId].type.coding    = PpqmConsentIdentifierType#templateId
-* identifier[templateId].system         0..0
+* identifier[templateId].system         = "templateId"
 * identifier[templateId].value          1..1
 * identifier[templateId].value          ^short = "Template ID of the policy set"
 * identifier[templateId].value          from PpqmPolicySetTemplateId (required)
