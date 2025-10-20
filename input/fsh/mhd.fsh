@@ -193,7 +193,7 @@ Description: "IHE MHD profile on Provide Document Bundle (ITI-65) transaction wi
 * meta.profile MS
 * meta.profile ^slicing.discriminator.type = #value
 * meta.profile ^slicing.discriminator.path = "$this"
-* meta.profile ^slicing.rules = #open
+* meta.profile ^slicing.rules = #closed
 * meta.profile contains comprehensiveMetadata 1..1 MS
 * meta.profile[comprehensiveMetadata] = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
 * entry 3..
