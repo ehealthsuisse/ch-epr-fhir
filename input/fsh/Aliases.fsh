@@ -42,3 +42,4 @@ Alias: $ch-mhd-documentreference-comprehensive = http://fhir.ch/ig/ch-epr-fhir/S
 Alias: $ch-mhd-documentreference-comprehensive = http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive
 Alias: $SubmissionSet.contentTypeCode = http://fhir.ch/ig/ch-term/ValueSet/SubmissionSet.contentTypeCode
 Alias: $purposeOfUse = urn:oid:2.16.756.5.30.1.127.3.10.5
+Alias: $add-binding = http://hl7.org/fhir/tools/StructureDefinition/additional-binding
