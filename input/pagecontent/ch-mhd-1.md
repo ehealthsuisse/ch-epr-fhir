@@ -105,4 +105,4 @@ The **Document Responder** shall record an
 [CH Audit Event for [CH:MHD-1] Document Responder](StructureDefinition-ch-mhd-updatedocumentmetadata-audit-responder.html)
 ([example](AuditEvent-ChAuditEventChMhd1ResponderExample.html)).
 
-For a [transaction](StructureDefinition-ch-mhd-1-updatedocumentmetadatatransactionrequest.html) instead of a direct PUT interaction, the actors shall also be able to record audit events for the individual entries in the Bundle.
+For a [transaction](StructureDefinition-ch-mhd-1-updatedocumentmetadatatransactionrequest.html) instead of a direct PUT interaction, the actors shall also be able to record audit events for each Update Document Metadata Request Message in the Bundle.
