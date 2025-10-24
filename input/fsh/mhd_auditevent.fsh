@@ -336,8 +336,8 @@ RuleSet: ChAuditEventChMhd1ExampleRules
 * insert ChExampleAuditEventHcpRules
 * insert ChExampleAuditEventEntityPatientRules
 * subtype[chmhd1] = urn:e-health-suisse:event-type-code#CH-MHD-1 "Update Document Metadata"
-* agent[documentResponder].network.address = "http://example.com"
+* agent[documentResponder].network.address = "http://example.org"
 * entity[documentReference]
-  * what.reference = "http://example.com/DocumentReference/1c8d1f74-1686-4188-9c35-0c5727c771cc"
+  * what.reference = "http://example.org/DocumentReference/DocRefPdf"
   * type = $auditEntityType#2 "System Object"
   * role = $objectRole#20 "Job"
