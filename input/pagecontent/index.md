@@ -87,7 +87,7 @@ The Swiss EPR is a federated system with multiple communities publishing documen
 
 #### authentication and authorization
 
-Annex 8 allows two different standards for user authentication with SAML 2.0 and OpenID Connect (JWT). 
+Annex 8 EPRO-FDHA allows two different standards for user authentication with SAML 2.0 and OpenID Connect (JWT). 
 For Authorization IUA and XUA are supported. In addition client identification in IUA identifies the client application by message signature 
 or identifies the client application network node by mTLS. 
 This implementation guide defines how they can be combined with the security considerations on the different transactions.
