@@ -270,3 +270,110 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * entry.item MS
 * entry.item ^type.aggregation[0] = #referenced
 * entry.item ^type.aggregation[+] = #bundled
+
+Invariant: ch-mhd-uncontained
+Description: "The DocumentReference needs to conform to IHE.MHD.Comprehensive.DocumentReference"
+* severity = #error
+* expression = "conformsTo('https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.DocumentReference')"
+
+Profile: LogicalID
+Parent: Identifier
+Id: LogicalID
+Title: "LogicalID Identifier"
+* ^status = #active
+* ^experimental = false
+* system 1..
+* system = "http://fhir.ch/ig/ch-epr-fhir/xds-logical-id" (exactly)
+* value 1..
+
+
+Profile: CHMhdDocumentReferenceUnRestrictedComprehensive
+Parent: CHCoreDocumentReference
+Id: ch-mhd-documentreference-uncontained-comprehensive
+Title: "CH MHD DocumentReference Comprehensive (UnRestricted)"
+Description: "CH MHD Profile on CH Core DocumentReference (UnRestricted)"
+* obeys ch-mhd-uncontained
+* extension contains
+     ChExtDeletionStatus named deletionStatus 0..1 MS and
+     ChExtAuthorAuthorRole named originalProviderRole 1..1 MS
+* extension[deletionStatus] ^short = "Deletion status of the document"
+* extension[originalProviderRole] ^short = "Original ProviderRole: This extra metadata attribute SHALL be set by the Document Source actor to the role value of the current user and SHALL NOT be updated by Update Initiator or Document Administrator actors."
+* masterIdentifier 1.. MS
+* masterIdentifier only https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UniqueIdIdentifier
+
+* identifier 1..
+  * ^slicing.discriminator.type = #value
+  * ^slicing.discriminator.path = "system"
+  * ^slicing.rules = #open
+* identifier contains
+    LogicalID 1..1
+* identifier[LogicalID] only LogicalID
+
+* identifier MS
+* status MS
+* status ^short = "current | superseded"
+* status ^comment = "approved -> status=current, deprecated -> status=superseded"
+* docStatus ..0
+* docStatus ^comment = "These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values."
+* type 1.. MS
+* type ^binding.strength = #required
+* category 1..1 MS
+* category ^binding.strength = #required
+* subject 1.. MS
+* subject only Reference(http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient or http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-practitioner or http://hl7.org/fhir/StructureDefinition/Group or http://hl7.org/fhir/StructureDefinition/Device)
+* subject ^comment = "Not a contained resource. URL Points to an existing Patient Resource representing the XDS Affinity Domain Patient."
+//* subject ^type.aggregation = #referenced
+* date 1.. MS
+* author only Reference
+* author MS
+//* author ^comment = "Contained resource."
+//* author ^type.aggregation = #contained
+* authenticator only Reference
+//* authenticator ^type.aggregation = #contained
+* custodian ..0
+* relatesTo MS
+* relatesTo ^comment = "See ITI TF-2c: 3.65.4.1.2.3"
+* relatesTo.id ^short = "Mapping of Association.entryUUID"
+* relatesTo.id 1..1
+//* relatesTo.id obeys DocumentReferenceRelatesToUuid
+* relatesTo.target ^short = "Mapping of Association.targetObject"
+* description MS
+* securityLabel 1.. MS
+* securityLabel ^comment = "Note: This is NOT the DocumentReference.meta, as that holds the meta tags for the DocumentReference itself."
+* securityLabel ^binding.strength = #required
+* content ..1
+* content.attachment MS
+* content.attachment.contentType 1.. MS
+* content.attachment.contentType from http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.mimeType (required)
+* content.attachment.language 1.. MS
+* content.attachment.language from http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.languageCode (required)
+* content.attachment.data ..0
+* content.attachment.data ^comment = "These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values."
+* content.attachment.url 1..1 MS
+* content.attachment.size MS
+* content.attachment.hash MS
+* content.attachment.title 1..1 MS
+* content.attachment.creation 1.. MS
+* content.format 1.. MS
+* content.format from http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.formatCode (required)
+* content.format ^binding.description = "Document Format Codes."
+* context 1..
+* context.period MS
+* context.facilityType 1.. MS
+* context.facilityType from $DocumentEntry.healthcareFacilityTypeCode (required)
+* context.facilityType ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
+* context.facilityType ^binding.extension.valueString = "DocumentC80FacilityType"
+* context.facilityType ^binding.description = "XDS Facility Type."
+* context.practiceSetting 1.. MS
+* context.practiceSetting from $DocumentEntry.practiceSettingCode (required)
+* context.practiceSetting ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
+* context.practiceSetting ^binding.extension.valueString = "DocumentC80PracticeSetting"
+* context.practiceSetting ^binding.description = "Additional details about where the content was created (e.g. clinical specialty)."
+* context.sourcePatientInfo 1.. MS
+* context.sourcePatientInfo only Reference(http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-patient)
+//* context.sourcePatientInfo ^comment = "Contained Patient resource with Patient.identifier.use element set to ‘usual’.\r\n\r\nIndicates that the data within the XDS document entry be represented as a contained resource. See Section 4.5.4.4.7"
+//* context.sourcePatientInfo ^type.aggregation = #contained
+* context.related MS
+* context.related ^comment = "May be filled with URL pointers to Resources or Identifiers found in referenceIdList"
+* context.related.identifier MS
+* context.related.identifier ^short = "Requirements on XDS-I.b (Swiss context): When a Imaging Document Source provides a document to the Document Repository, it must provide the StudyInstanceUID, found in the to be registered KOS object, in the referenceIdList (urn:ihe:iti:xds:2013:referenceIdList) attribute of the documentEntry metadata."
