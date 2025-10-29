@@ -85,7 +85,9 @@ The transaction SHALL use client authentication and authorization using one of t
 
 All Document Responders except the one with the Federated Cross Community Access Option SHALL be grouped with the Authorization Decision Consumer actor of the CH:ADR profile
 defined in Extension 2.1 to Annex 5 of the ordinances and perform an Authorization Decision Request [CH:ADR] for
-every Find Document References [ITI-67] response.
+every Find Document References [ITI-67] response (when the response is delivered as multiple pages, the Document
+Responder SHALL issue an Authorization Decision Request [CH:ADR] for the first page, and for each subsequent 
+page either reuse the obtained Authorization Decision or repeat the Authorization Decision Request).
 
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
