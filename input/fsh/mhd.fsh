@@ -263,8 +263,6 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * subject.identifier only EPRSPIDIdentifier
 * subject ^comment = "Not a contained resource. The identifier points to an existing patient in the XDS Affinity Domain."
 * date MS
-* source MS
-* source.extension[authorOrg] 0..0
 * entry 1.. MS
 * entry.item only Reference($ch-mhd-documentreference-comprehensive)
 * entry.item MS
