@@ -193,7 +193,7 @@ Description: "IHE MHD profile on Provide Document Bundle (ITI-65) transaction wi
 * meta.profile MS
 * meta.profile ^slicing.discriminator.type = #value
 * meta.profile ^slicing.discriminator.path = "$this"
-* meta.profile ^slicing.rules = #closed
+* meta.profile ^slicing.rules = #open
 * meta.profile contains comprehensiveMetadata 1..1 MS
 * meta.profile[comprehensiveMetadata] = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
 * entry 3..
@@ -263,8 +263,6 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * subject.identifier only EPRSPIDIdentifier
 * subject ^comment = "Not a contained resource. The identifier points to an existing patient in the XDS Affinity Domain."
 * date MS
-* source MS
-* source.extension[authorOrg] 0..0
 * entry 1.. MS
 * entry.item only Reference($ch-mhd-documentreference-comprehensive)
 * entry.item MS
