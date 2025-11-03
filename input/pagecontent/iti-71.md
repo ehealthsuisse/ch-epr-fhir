@@ -478,8 +478,7 @@ Authorization Clients SHALL sent the scope values in the Authorization Request:
 When receiving a Get Access Token Request with purpose of use set to AUTO and subject role set to TCU, the Authorization
 Server SHALL:
 
-- identify and authenticate the Authorization Client with the client_id, client_secret and the client's certificate of
-  the TLS connection.
+- identify and authenticate the Authorization Client with the client_id and client_secret.
 - verify, that the Authorization Client was registered during onboarding with the same client_id, client_secret and the
   client's certificate of the TLS connection and is authorized to access the EPR.
 - verify that the principal_id matches the GLN of the legal responsible healthcare professional the Authorization Client
