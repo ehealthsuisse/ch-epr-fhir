@@ -310,6 +310,14 @@ be used by portals and primary systems.
    <tr>
     <td>&nbsp;</td> 
     <td>&nbsp;</td>
+    <td>requested_token_type</td>
+    <td>O</td>
+    <td>IUA</td>
+    <td>If present, the value shall be `urn:ietf:params:oauth:token-type:jwt`.</td>
+   </tr>
+   <tr>
+    <td>&nbsp;</td> 
+    <td>&nbsp;</td>
     <td>client_assertion_type</td>
     <td>O</td>
     <td>Swiss extension</td>
@@ -320,7 +328,7 @@ be used by portals and primary systems.
    <tr>
     <td>&nbsp;</td> 
     <td>&nbsp;</td>
-    <td>assertion</td>
+    <td>client-assertion</td>
     <td>O</td>
     <td>Swiss extension</td>
     <td>The identity token the Authorization client retrieved from the certified Identity Provider after successful authentication 
@@ -384,10 +392,9 @@ A clinical archive system aims to access the EPR to write documents.
 The Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization Request for the client credential grant
 type with Swiss extensions:
 
-- grant_type (required): The value of the parameter shall be `client_credentials`.
 - scope (required): The scope claimed by the Authorization Client, as defined in the table below.
 - resource (optional): Single valued identifier of the Resource Server API endpoint to be accessed.
-- requested_token_type (optional): The requested token format shall be `urn:ietf:params:oauth:token-type:jwt`.
+- requested_token_type (optional): If present, the value shall be `urn:ietf:params:oauth:token-type:jwt`.
 
 The Authorization Request SHALL use the following Swiss extension:
 
@@ -428,7 +435,7 @@ Authorization Clients SHALL sent the scope values in the Authorization Request:
 
 <sup id="3">3</sup>Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
 
-<figcaption ID="16">Table: Request’s scope parameter for the client credential flow.</figcaption>  
+<figcaption ID="16">Table: Authorization Request’s scope parameter for the client credential flow.</figcaption>  
 
 ###### Expected Actions
 
@@ -476,21 +483,17 @@ A user launches a portal, primary system or a SMART on FHIR App to access data a
 
 ###### Message Semantics
 
-The Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization Request for the client credential grant
-type with Swiss extensions:
+In the first step of the conversation the Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization 
+Request for the authorization code grant type with the following Swiss extension:
 
-- grant_type (required): The value of the parameter shall be client_credentials.
 - scope (required): The scope claimed by the Authorization Client, as defined in the table below.
-- resource (optional): Single valued identifier of the Resource Server api endpoint to be accessed.
-- requested_token_type (optional): The requested token format shall be urn:ietf:params:oauth:token-type:jwt.
-
-The Authorization Request SHALL use the following Swiss extension:
-
+- resource (optional): If present, the single valued identifier of the Resource Server api endpoint to be accessed.
+- requested_token_type (optional): If present, the requested token format shall be urn:ietf:params:oauth:token-type:jwt.
 - person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority
   formatted in CX syntax, required for requesting extended access token.
 - principal (optional): The name of the healthcare professional an assistant may act on behalf of.
 - principal_id (optional): The GLN of the healthcare professional an assistant may act on behalf of.
-- group (optional): The name of the organization or group an assistant may act on behalf of
+- group (optional): The name of the organization or group an assistant may act on behalf of.
 - group_id (optional): The OID of the organization or group an assistant is acting on behalf of.
 
 Authorization Clients SHALL sent the following values in the scope attribute of the Authorization Request:
@@ -530,14 +533,14 @@ Authorization Clients SHALL sent the following values in the scope attribute of 
   </tbody>
 </table>
 
-<figcaption ID="6">Table: Request’s scope parameter for the authorization code flow.</figcaption>  
+<figcaption ID="6">Table: Authorization Request’s scope parameter for the authorization code flow.</figcaption>  
 
 The scope parameter of the request MAY claim the following attributes:
 
 - There MAY be a scope with name “launch”. If present, it indicates the permission of SMART on FHIR Apps to obtain
   launch context from a portal or primary system authorized to access the EPR.
 - There MAY be a scope with name "purpose_of_use=token". If present, the token SHALL convey the coded value of the
-  current transaction’s purpose of use. Allowed values are NORM (normal access) and EMER (emergency access) from code
+  current transaction’s purpose_of_use. Allowed values are NORM (normal access) and EMER (emergency access) from code
   system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. e.g. purpose_of_use=urn:oid:
   2.16.756.5.30.1.127.3.10.5\|NORM.
 - There MAY be a scope with name "subject_role=token". If present, the token SHALL convey the coded value of the
@@ -548,36 +551,39 @@ The scope parameter of the request MAY claim the following attributes:
 
 Note: The parameters need to be url encoded, see above message example.
 
-Depending on the value of the _subject-role_ scope additional scopes are required, as described in the following
-sections.
+Additional scopes are required depending on the user's role:
 
-**Healthcare Professional Extension**
-
-In the healthcare professional extension, the scope subject_role SHALL be the code HCP from code system
+For healthcare professionals, the scope subject_role SHALL be the code HCP from code system
 2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set.
 
-**Assistant Extension**
+For assistants, the scope subject_role SHALL be the code ASS from code system 2.16.756.5.30.1.127.3.10.6 of
+the CH:EPR value set. There SHALL be a scope with name principal_id, the value of which SHALL be the GLN of the
+healthcare professional an assistant is acting on behalf of. There SHALL be a scope with name principal, the value of 
+which SHALL be the name of the healthcare professional an assistant is acting on behalf of. There MAY be one or more 
+pairs with name group_id and group, the value of which SHALL be the ID and name of the subject’s organization 
+or group as registered in the EPR HPD. The value of group_id SHALL be an OID in the format of a URN.
 
-In the assistant extension, the scope subject_role SHALL be the code ASS from code system 2.16.756.5.30.1.127.3.10.6 of
-the CH:EPR value set. There SHALL be a scope with name principal_id=value. The value SHALL convey the GLN of the
-healthcare professional an assistant is acting on behalf of. There SHALL be a scope with name principal=value. The value
-SHALL convey the name of the healthcare professional an assistant is acting on behalf of.
+For patients, the scope subject_role SHALL be the code PAT from code system 2.16.756.5.30.1.127.3.10.6 of
+the CH:EPR value set. The value of the purpose_of_use scope SHALL be the code NORM from code system
+2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. 
 
-There MAY be one or more scopes with name group_id=value and corresponding group=value. If present each value SHALL
-convey the ID and name of the subject’s organization or group as registered in the EPR HPD. The ID SHALL be an OID in
-the format of a URN.
+For representatives, the scope subject_role SHALL be the code REP from code system 2.16.756.5.30.1.127.3.10.6 and 
+the scope purpose_of_use SHALL be the code NORM from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.
 
-**Patient Extension**
+In the second step of the conversation the Authorization Client SHALL perform an IUA compliant OAuth 2.1 Access 
+Token Request for the authorization code grant type with the following Swiss extension:
 
-In the patient extension, the scope subject_role SHALL be the code PAT from code system 2.16.756.5.30.1.127.3.10.6 of
-the CH:EPR value set. The value of the purpose of use scope SHALL be the code NORM from code system
-2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.
+The POST request SHALL contain the following attributes:
+- grant_type (required): The value of the parameter shall be client_credentials.
+- code (required): The authorization code received from the Authorization Server in the authorization response.
+- code_verifier (required): The original code verifier string.
+- client_id (required): The client identifier the Authorization Client is registered with at the Authorization Server.
+- requested_token_type (optional): If present, the value shall be urn:ietf:params:oauth:token-type:jwt.
+- client_assertion_type (required/optional): If present, the value shall be urn:ietf:params:oauth:client-assertion-type:jwt-bearer if the client assertion is JWT, or urn:ietf:params:oauth:client-assertion-type:saml2-bearer for base64url encoded SAML 2 assertions.
+- client_assertion (required/optional): The identity token the Authorization Client retrieved from the certified Identity Provider after successful authentication of the user.
 
-**Representative Extension**
-
-In the representative extension, the scope subject_role SHALL be the code REP from code system
-2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set. The token of the purpose_of_use scope SHALL be the code NORM from
-code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.
+Note: The presentation of the IdP token in the client_assertion field and the format declaration 
+in field client_assertion_type is mandatory for IUA Authorization Clients which do not use SMART on FHIR EHR launch.
 
 ###### Expected Actions
 
@@ -678,6 +684,7 @@ Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 grant_type=authorization_code&
 code=98wrghuwuogerg97&
 code_verifier=qskt4342of74bkncmicdpv2qd143iqd822j41q2gupc5n3o6f1clxhpd2x11&
+client_id=app-client-id&
 requested_token_type=urn:ietf:params:oauth:token-type:jwt
 client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
 client_assertion=eyJraWQiOiIxZTlnZGs3IiwiYWxnIjoiUlMyNTYifQ[...omitted for brevity...]
