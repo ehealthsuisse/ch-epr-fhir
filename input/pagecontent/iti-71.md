@@ -493,7 +493,7 @@ The Authorization Request SHALL use the following Swiss extension:
 - group (optional): The name of the organization or group an assistant may act on behalf of
 - group_id (optional): The OID of the organization or group an assistant is acting on behalf of.
 
-Authorization Clients SHALL sent the scope values in the Authorization Request:
+Authorization Clients SHALL sent the following values in the scope attribute of the Authorization Request:
 
 <table class="table table-bordered">
   <thead>
