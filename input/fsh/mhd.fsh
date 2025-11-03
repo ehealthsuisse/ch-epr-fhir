@@ -263,8 +263,6 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * subject.identifier only EPRSPIDIdentifier
 * subject ^comment = "Not a contained resource. The identifier points to an existing patient in the XDS Affinity Domain."
 * date MS
-* source MS
-* source.extension[authorOrg] 0..0
 * entry 1.. MS
 * entry.item only Reference($ch-mhd-documentreference-comprehensive)
 * entry.item MS
@@ -299,7 +297,7 @@ Description: "A profile for Update Document Metadata (CH:MHD-1) transaction resp
 * entry.response 1..1 MS
 * entry ^slicing.discriminator[0].type = #profile
 * entry ^slicing.discriminator[0].path = "resource"
-* entry ^slicing.rules = #closed
+* entry ^slicing.rules = #open
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry.resource MS
 * entry contains 
