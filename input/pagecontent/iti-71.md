@@ -113,6 +113,46 @@ be used by clinical archive systems to retrieve an Access Token.
     <td>The URL or array of URL of the Resource Servers the token is intended to be used for.</td>
    </tr>
    <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>resource</td>
+    <td>O</td>
+    <td>IUA</td>
+    <td>Single valued identifier of the Resource Server API endpoint to be accessed..</td>
+   </tr>
+   <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>requested_token_type</td>
+    <td>O</td>
+    <td>IUA</td>
+    <td>The requested token format with value urn:ietf:params:oauth:token-type:jwt.</td>
+   </tr>
+   <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>principal</td>
+    <td>O</td>
+    <td>Swiss extension</td>
+    <td>The name of the healthcare professional the technical user acts on behalf of.</td>
+   </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>principal_id</td>
+    <td>O</td>
+    <td>Swiss extension</td>
+    <td>The GLN of the healthcare professional the technical user acts on behalf of.</td>
+   </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>person_id</td>
+    <td>O/R</td>
+    <td>Swiss extension</td>
+    <td>EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax</td>
+   </tr>
+   <tr>
     <td>01</td>
     <td>The Authorization Server responds with the access token in the HTML body element.</td>
     <td>access_token</td>
@@ -392,14 +432,18 @@ A clinical archive system aims to access the EPR to write documents.
 The Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization Request for the client credential grant
 type with Swiss extensions:
 
+- grant_type (required): The value of the parameter shall be `client_credentials`.
+- client_id (required): The ID the Authorization Client is registered at the IUA Authorization Server.
+- client_secret (required): The secret the Authorization Client is registered at the IUA Authorization Server.
 - scope (required): The scope claimed by the Authorization Client, as defined in the table below.
+- aud (optional, required): The URL or array of URL of the Resource Servers the token is intended to be used for, required for SMART on FHIR.
 - resource (optional): Single valued identifier of the Resource Server API endpoint to be accessed.
 - requested_token_type (optional): If present, the value shall be `urn:ietf:params:oauth:token-type:jwt`.
 
 The Authorization Request SHALL use the following Swiss extension:
 
-- principal (optional): The name of the healthcare professional an assistant may act on behalf of.
-- principal_id (required): The GLN of the healthcare professional an assistant may act on behalf of.
+- principal (optional): The name of the healthcare professional the technical user acts on behalf of.
+- principal_id (required): The GLN of the healthcare professional the technical user acts act on behalf of.
 - person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority
   formatted in CX syntax, required for requesting extended access token.
 
@@ -442,8 +486,7 @@ Authorization Clients SHALL sent the scope values in the Authorization Request:
 When receiving a Get Access Token Request with purpose of use set to AUTO and subject role set to TCU, the Authorization
 Server SHALL:
 
-- identify and authenticate the Authorization Client with the client_id, client_secret and the client's certificate of
-  the TLS connection.
+- identify and authenticate the Authorization Client with the client_id and client_secret.
 - verify, that the Authorization Client was registered during onboarding with the same client_id, client_secret and the
   client's certificate of the TLS connection and is authorized to access the EPR.
 - verify that the principal_id matches the GLN of the legal responsible healthcare professional the Authorization Client
