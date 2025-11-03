@@ -42,9 +42,7 @@ traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00
 
 The Document Responder SHALL process the query to discover the DocumentReference entries that match the search parameters given.
 
-The Document Responder SHALL support search page count requests from the Document Consumer of up to 100 resources.
-
-The Document Responder SHALL set the `DocumentReference.content.attachment.url` value to the URL used in ITI-68 
+The Document Responder SHALL set the `DocumentReference.content.attachment.url` value to the URL used in ITI-68
 transactions to retrieve that document's content.
 
 ##### Federated Cross Community Access Option
