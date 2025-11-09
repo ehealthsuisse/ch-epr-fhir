@@ -107,14 +107,6 @@ be used by clinical archive systems to retrieve an Access Token.
    <tr>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>aud</td>
-    <td>R</td>
-    <td>SMART on FHIR</td>
-    <td>The URL or array of URL of the Resource Servers the token is intended to be used for.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
     <td>resource</td>
     <td>O</td>
     <td>IUA</td>
@@ -436,7 +428,6 @@ type with Swiss extensions:
 - client_id (required): The ID the Authorization Client is registered at the IUA Authorization Server.
 - client_secret (required): The secret the Authorization Client is registered at the IUA Authorization Server.
 - scope (required): The scope claimed by the Authorization Client, as defined in the table below.
-- aud (optional, required): The URL or array of URL of the Resource Servers the token is intended to be used for, required for SMART on FHIR.
 - resource (optional): Single valued identifier of the Resource Server API endpoint to be accessed.
 - requested_token_type (optional): If present, the value shall be `urn:ietf:params:oauth:token-type:jwt`.
 
