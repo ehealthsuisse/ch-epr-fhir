@@ -46,140 +46,41 @@ This section specifies the OAuth 2.1 client credential grant flow of the IUA Get
 be used by clinical archive systems to retrieve an Access Token.
 
 <div>{% include IUA_ActorDiagram_ITI-71-cc.svg %}</div>
-<figcaption ID="10">Figure: Sequence diagram of the transaction.</figcaption>  
+<figcaption ID="10">Figure: Sequence diagram of the transaction.</figcaption>
 
 <table class="table table-bordered">
+    <colgroup>
+        <col span="1" style="width: 5%;">
+        <col span="1" style="width: 25%;">
+        <col span="1" style="width: 25%;">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>Step</th>
+        <th>Action</th>
+        <th>Remark</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>00</td>
+        <td>The Authorization Client sends an Access Token request to the IUA Authorization Server endpoint.</td>
+        <td>see
+            [MessageSemantics](#client-credential-grant-type-1)
+        </td>
+    </tr>
+    <tr>
+        <td>01</td>
+        <td>The Authorization Server responds with the access token in the HTML body element.</td>
+        <td>See [Message
+            Semantics](#message-semantics-2)
+        </td>
+    </tr>
+    </tbody>
+</table>
 
-  <colgroup>
-   <col span="1" style="width: 5%;">
-   <col span="1" style="width: 25%;">
-   <col span="1" style="width: 15%;">
-   <col span="1" style="width: 15%;">
-   <col span="1" style="width: 15%;">
-   <col span="1" style="width: 25%;">
-</colgroup>
+<figcaption ID="11">Table: Description of the HTTP conversation of the transaction.</figcaption>
 
-  <thead>
-   <tr>
-    <th>Step</th>
-    <th>Action</th>
-    <th>Parameter</th>
-    <th>Opt (Basic/ Extended).</th>
-    <th>Reference</th>
-    <th>Remark</th>
-   </tr>
-  </thead>
-  <tbody>
-   <tr>
-    <td>00</td>
-    <td>The Authorization Client sends an HTTP POST request to the IUA Authorization Server endpoint.</td>
-    <td>grant_type</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The value SHALL be client_credentials.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>client_id</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The ID, the Authorization Client is registered at the IUA Authorization Server.
-    </td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>client_secret</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>An unguessable value registered for the Authorization Client during onboarding.
-    </td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>scope</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>Attributes the Authorization Client claims (see detailed description below).</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>resource</td>
-    <td>O</td>
-    <td>IUA</td>
-    <td>Single valued identifier of the Resource Server API endpoint to be accessed..</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>requested_token_type</td>
-    <td>O</td>
-    <td>IUA</td>
-    <td>The requested token format with value urn:ietf:params:oauth:token-type:jwt.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>principal</td>
-    <td>O</td>
-    <td>Swiss extension</td>
-    <td>The name of the healthcare professional the technical user acts on behalf of.</td>
-   </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>principal_id</td>
-    <td>O</td>
-    <td>Swiss extension</td>
-    <td>The GLN of the healthcare professional the technical user acts on behalf of.</td>
-   </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>person_id</td>
-    <td>O/R</td>
-    <td>Swiss extension</td>
-    <td>EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax</td>
-   </tr>
-   <tr>
-    <td>01</td>
-    <td>The Authorization Server responds with the access token in the HTML body element.</td>
-    <td>access_token</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>A string containing the access token which SHALL be a JWT token.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>token_type</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The value of the parameter shall be Bearer.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>scope</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The scope granted by the Authorization Server.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>expires_in</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>Maximum duration of 5 minutes.</td>
-   </tr>
-  </tbody>
- </table>
-
-<figcaption ID="11">Table: Description of the HTTP conversation of the transaction.</figcaption>  
 
 #### Authorization Code Grant Type
 
