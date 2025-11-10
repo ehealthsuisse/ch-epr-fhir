@@ -811,8 +811,8 @@ The claim content for the JWT IUA extensions SHALL correspond to the content def
 The Authorization Server and Resource Server SHALL support this extension to convey the user's EPR identifier 
 in the JWT access token of the Get Access Token Response. It's attributes are: 
 
-- user_id: The EPR subject identifier as defined in the table below. 
-- user_id_qualifier: The subject identifier qualifier as defined in the table below.
+- user_id (required): The EPR subject identifier as defined in the table below. 
+- user_id_(required): The subject identifier qualifier as defined in the table below.
 
 <br/>
 
@@ -843,8 +843,10 @@ The Authorization Server and Resource Server SHALL support this extension in the
 the subject is a member of. Groups SHALL be wrapped in a JSON array containing a JSON object per group with the following 
 properties:
 
-- name: Name of the organization/group. The name SHALL be a string.
-- id: The id of the organization/group.The id SHALL be an OID in the format of a URN.
+- id (required/optional): The id of the group. Required for users of role healthcare professional and assistant. 
+  The id SHALL be an OID in the format of a URN.
+- name (required/optional): Name of the group. Required for users of role healthcare professional and assistant.
+  The name SHALL be a string.
 
 Note: This extension corresponds to the list of urn:oasis:names:tc:xspa:1.0:subject:organization and 
 urn:oasis:names:tc:xspa:1.0:subject:organization-id elements of SAML 2.0 formatted X-User Assertions described in
