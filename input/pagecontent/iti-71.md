@@ -105,7 +105,7 @@ be used by portals and primary systems.
    <tr>
     <td>00, 01</td>
     <td>The Authorization Client sends an HTTP GET request to the IUA Authorization Server endpoint.</td>
-    <td>See TODO</td>
+    <td>See [Message Semantics](#message-semantics-1)</td>
    </tr>
    <tr>
     <td>02, 03</td>
@@ -117,7 +117,7 @@ be used by portals and primary systems.
     <td>04</td>
     <td>The Authorization Client performs an HTTP POST with parameter as a form-encoded HTTP entity body, passing its
      client_id and client_secret as an HTTP authorization header field.</td>
-    <td>See TODO</td>
+    <td>See [Message Semantics](#message-semantics-1)</td>
    </tr>
    <tr>
     <td>05</td>
