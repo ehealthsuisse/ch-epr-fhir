@@ -830,27 +830,25 @@ in the JWT access token of the Get Access Token Response. It's attributes are:
 
 <br/>
 
-Note: The extension corresponds to the NameID element of SAML 2.0 formatted X-User Assertions described in
+Note: This extension corresponds to the NameID element of SAML 2.0 formatted X-User Assertions described in
 Annex 5 E1, section 1.6.4.2.4.2.
 
 ###### The JWT ch_group extension
 
-The Authorization Server and Resource Server SHALL support the following extensions to the JWT access token for a list
-of groups a subject is member of:
+Groups are the central objects in the access management of the Swiss EPR. Patients and representatives may assign access
+rights to groups which typically are sub-organizations of the institutions, but may also be cross institution boundaries, 
+e.g., a tumorboard with healthcare professionals from more than one institution. 
+
+The Authorization Server and Resource Server SHALL support this extension in the JWT access token for a list of groups 
+the subject is a member of. Groups SHALL be wrapped in a JSON array containing a JSON object per group with the following 
+properties:
 
 - name: Name of the organization/group. The name SHALL be a string.
-- id: The id of the organization/group.The id SHALL be an OID in the format of a URN
+- id: The id of the organization/group.The id SHALL be an OID in the format of a URN.
 
-The ch_group extension claims shall be wrapped in an "extensions" object with key "ch_group" and a JSON array containing
-the JSON objects with properties name and id. The id SHALL be an OID in the format of a URN.
-
-| ch_group array element | Optionality (Basic/ Extended) | XUA Attribute EPR                                   | Remark                                          |
-|------------------------|-------------------------------|-----------------------------------------------------|-------------------------------------------------|
-| name                   | O/R                           | urn:oasis:names:tc:xspa:1.0:subject:organization    | An array of groups with properties name and id. |
-| id                     | O/R                           | urn:oasis:names:tc:xspa:1.0:subject:organization-id | An array of group names and group ids.          |
-{:class="table table-bordered"}
-
-<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_group.</figcaption> 
+Note: This extension corresponds to the list of urn:oasis:names:tc:xspa:1.0:subject:organization and 
+urn:oasis:names:tc:xspa:1.0:subject:organization-id elements of SAML 2.0 formatted X-User Assertions described in
+Annex 5 E1, section 1.6.4.2.4.2.
 
 ###### The JWT ch_delegation extension
 
