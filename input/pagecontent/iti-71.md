@@ -808,18 +808,30 @@ The claim content for the JWT IUA extensions SHALL correspond to the content def
 
 ###### The JWT ch_epr extension
 
-The Authorization Server and Resource Server SHALL support the following extensions to the JWT access token for an EPR
-user:
+The Authorization Server and Resource Server SHALL support this extension to convey the user's EPR identifier 
+in the JWT access token of the Get Access Token Response. It's attributes are: 
 
-- user_id: subject identifier according to Annex 5 E1, section 1.6.4.3.4.2 Message Semantics.
+- user_id: The EPR subject identifier as defined in the table below. 
+- user_id_qualifier: The subject identifier qualifier as defined in the table below.
 
-| JWT Claim (Extension) | Optionality (Basic/ Extended) | XUA Attribute EPR                                   | Remark |
-|-----------------------|-------------------------------|-----------------------------------------------------|--------|
-| user_id               | O/R                           | &lt;NameID&gt; child element of the &lt;Subject&gt; |        |
-| user_id_qualifier     | O/R                           | Name qualifier attribute of &lt;NameID&gt;          |        |
+<br/>
+
+| user role               | user_id  | user_id_qualifier                              | Remark |
+|-------------------------|----------|------------------------------------------------|--------|
+| Patient                 | EPR-SPID | urn:e-health-suisse:2015:epr-spid              |        |
+| Healthcare Professional | GLN      | urn:gs1:gln                                    |        |
+| Assistent               | GLN      | urn:gs1:gln                                    |        |
+| Representative          | IdP-ID   | urn:e-health-suisse:representative-id          |        |
+| Document Administrator  | IdP-ID   | urn:e-health-suisse:policy-administrator-id    |        |
+| Policy Administrator    | IdP-ID   | urn:e-health-suisse:document-administrator-id  |        |
 {:class="table table-bordered"}
 
-<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_epr.</figcaption>
+<figcaption>Table: user_id and user_id_qualifier of EPR user.</figcaption>
+
+<br/>
+
+Note: The extension corresponds to the NameID element of SAML 2.0 formatted X-User Assertions described in
+Annex 5 E1, section 1.6.4.2.4.2.
 
 ###### The JWT ch_group extension
 
