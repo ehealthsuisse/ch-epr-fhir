@@ -840,12 +840,14 @@ rights to groups which typically are sub-organizations of the institutions, but 
 e.g., a tumorboard with healthcare professionals from more than one institution. 
 
 The Authorization Server and Resource Server SHALL support this extension in the JWT access token for a list of groups 
-the subject is a member of. Groups SHALL be wrapped in a JSON array containing a JSON object per group with the following 
-properties:
+a subject of role healthcare professional is a member of. For users of role assistant, the groups are the groups of 
+the healthcare professional the assistant is acting on behalf of.
 
-- id (required/optional): The id of the group. Required for users of role healthcare professional and assistant. 
+Groups SHALL be wrapped in a JSON array containing a JSON object per group with the following properties:
+
+- id (required): The id of the group. Required for users of role healthcare professional and assistant. 
   The id SHALL be an OID in the format of a URN.
-- name (required/optional): Name of the group. Required for users of role healthcare professional and assistant.
+- name (required): Name of the group. Required for users of role healthcare professional and assistant.
   The name SHALL be a string.
 
 Note: This extension corresponds to the list of urn:oasis:names:tc:xspa:1.0:subject:organization and 
