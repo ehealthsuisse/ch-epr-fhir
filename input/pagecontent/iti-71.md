@@ -48,7 +48,6 @@ be used by clinical archive systems to retrieve an Access Token.
 <div>{% include IUA_ActorDiagram_ITI-71-cc.svg %}</div>
 <figcaption ID="10">Figure: Sequence diagram of the transaction.</figcaption>  
 
-|| 
 
 <table class="table table-bordered">
 
@@ -191,7 +190,6 @@ be used by clinical archive systems to retrieve an Access Token.
 
 <figcaption ID="11">Table: Description of the HTTP conversation of the transaction.</figcaption>  
 
-||
 
 #### Authorization Code Grant Type
 
@@ -201,7 +199,6 @@ be used by portals and primary systems.
 <div>{% include IUA_ActorDiagram_ITI-71.svg %}</div>
 <figcaption ID="1">Figure: Sequence diagram of the transaction.</figcaption>  
 
-||
 
 <table class="table table-bordered">
 
@@ -582,9 +579,8 @@ Authorization Clients SHALL sent the following values in the scope attribute of 
   </tbody>
 </table>
 
-<figcaption ID="6">Table: Authorization Request’s scope parameter for the authorization code flow.</figcaption>  
+<figcaption ID="6">Table: Authorization Request’s scope parameter for the authorization code flow.</figcaption>
 
-||
 
 The scope parameter of the request MAY claim the following attributes:
 
@@ -822,7 +818,6 @@ in the JWT access token of the Get Access Token Response. It's attributes are:
 - user_id (required): The EPR subject identifier as defined in the table below. 
 - user_id_(required): The subject identifier qualifier as defined in the table below.
 
-||
 
 | user role               | user_id  | user_id_qualifier                              | Remark |
 |-------------------------|----------|------------------------------------------------|--------|
@@ -836,7 +831,6 @@ in the JWT access token of the Get Access Token Response. It's attributes are:
 
 <figcaption>Table: user_id and user_id_qualifier of EPR user.</figcaption>
 
-||
 
 Note: This extension corresponds to the NameID element of SAML 2.0 formatted X-User Assertions described in
 Annex 5 E1, section 1.6.4.2.4.2.
