@@ -46,148 +46,16 @@ This section specifies the OAuth 2.1 client credential grant flow of the IUA Get
 be used by clinical archive systems to retrieve an Access Token.
 
 <div>{% include IUA_ActorDiagram_ITI-71-cc.svg %}</div>
-<figcaption ID="10">Figure: Sequence diagram of the transaction.</figcaption>  
+<figcaption ID="10">Figure: Sequence diagram of the transaction.</figcaption>
 
-<table class="table table-bordered">
+| Step | Action                                                                                           | Remark                                                  | 
+|------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| 00   | The Authorization Client sends an Access Token request to the IUA Authorization Server endpoint. | See [MessageSemantics](#client-credential-grant-type-1) | 
+| 01   | The Authorization Server responds with the access token in the HTML body element.                | See [Message Semantics](#message-semantics-2)           |
+{:class="table table-bordered"}
 
-  <colgroup>
-   <col span="1" style="width: 5%;">
-   <col span="1" style="width: 25%;">
-   <col span="1" style="width: 15%;">
-   <col span="1" style="width: 15%;">
-   <col span="1" style="width: 15%;">
-   <col span="1" style="width: 25%;">
-</colgroup>
+<figcaption ID="11">Table: Actions in the HTTP sequence of the transaction.</figcaption>
 
-  <thead>
-   <tr>
-    <th>Step</th>
-    <th>Action</th>
-    <th>Parameter</th>
-    <th>Opt (Basic/ Extended).</th>
-    <th>Reference</th>
-    <th>Remark</th>
-   </tr>
-  </thead>
-  <tbody>
-   <tr>
-    <td>00</td>
-    <td>The Authorization Client sends an HTTP POST request to the IUA Authorization Server endpoint.</td>
-    <td>grant_type</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The value SHALL be client_credentials.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>client_id</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The ID, the Authorization Client is registered at the IUA Authorization Server.
-    </td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>client_secret</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>An unguessable value registered for the Authorization Client during onboarding.
-    </td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>scope</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>Attributes the Authorization Client claims (see detailed description below).</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>aud</td>
-    <td>R</td>
-    <td>SMART on FHIR</td>
-    <td>The URL or array of URL of the Resource Servers the token is intended to be used for.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>resource</td>
-    <td>O</td>
-    <td>IUA</td>
-    <td>Single valued identifier of the Resource Server API endpoint to be accessed..</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>requested_token_type</td>
-    <td>O</td>
-    <td>IUA</td>
-    <td>The requested token format with value urn:ietf:params:oauth:token-type:jwt.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>principal</td>
-    <td>O</td>
-    <td>Swiss extension</td>
-    <td>The name of the healthcare professional the technical user acts on behalf of.</td>
-   </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>principal_id</td>
-    <td>O</td>
-    <td>Swiss extension</td>
-    <td>The GLN of the healthcare professional the technical user acts on behalf of.</td>
-   </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>person_id</td>
-    <td>O/R</td>
-    <td>Swiss extension</td>
-    <td>EPR-SPID identifier of the patient’s record and the patient assigning authority formatted in CX syntax</td>
-   </tr>
-   <tr>
-    <td>01</td>
-    <td>The Authorization Server responds with the access token in the HTML body element.</td>
-    <td>access_token</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>A string containing the access token which SHALL be a JWT token.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>token_type</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The value of the parameter shall be Bearer.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>scope</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The scope granted by the Authorization Server.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>expires_in</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>Maximum duration of 5 minutes.</td>
-   </tr>
-  </tbody>
- </table>
-
-<figcaption ID="11">Table: Description of the HTTP conversation of the transaction.</figcaption>  
 
 #### Authorization Code Grant Type
 
@@ -197,227 +65,17 @@ be used by portals and primary systems.
 <div>{% include IUA_ActorDiagram_ITI-71.svg %}</div>
 <figcaption ID="1">Figure: Sequence diagram of the transaction.</figcaption>  
 
-<table class="table table-bordered">
+| Step  | Action                                                                                                                                                                           | Remark                                         | 
+|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| 00,01 | The Authorization Client sends an HTTP GET request to the IUA Authorization Server endpoint.                                                                                     | See [Message Semantics](#message-semantics-1)  | 
+| 02,03 | The Authorization Server performs an HTTP GET on the Authorization Client redirect_uri conveying the authorization code.                                                         |                                                |
+| 04    | The Authorization Client performs an HTTP POST with parameter as a form-encoded HTTP entity body, passing its client_id and client_secret as an HTTP authorization header field. | See [Message Semantics](#message-semantics-1)  |
+| 05    | The Authorization Server responds with the access token in the HTML body element.                                                                                                | See [Message Semantics](#message-semantics-2)  |
+|       |                                                                                                                                                                                  |                                                |
+{:class="table table-bordered"}
 
-  <colgroup>
-   <col span="1" style="width: 5%;">
-   <col span="1" style="width: 25%;">
-   <col span="1" style="width: 15%;">
-   <col span="1" style="width: 15%;">
-   <col span="1" style="width: 15%;">
-   <col span="1" style="width: 25%;">
- </colgroup>
+<figcaption ID="5">Table: Actions in the HTTP sequence of the transaction.</figcaption>
 
-  <thead>
-   <tr>
-    <th>Step</th>
-    <th>Action</th>
-    <th>Parameter</th>
-    <th>Opt (Basic/ Extended).</th>
-    <th>Reference</th>
-    <th>Remark</th>
-   </tr>
-  </thead>
-  <tbody>
-   <tr>
-    <td>00, 01</td>
-    <td>The Authorization Client sends an HTTP GET request to the IUA Authorization Server endpoint.</td>
-    <td>response_type</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The value SHALL be code.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>client_id</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The ID, the Authorization Client is registered at the IUA Authorization Server<sup><a href="#1">1</a></sup>.
-    </td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>redirect_uri</td>
-    <td>R</td>
-    <td>IUA / SMART on FHIR</td>
-    <td>Used as the callback URL the IUA Authorization Server will send the authorization code to. The URL SHALL match
-     one of the client’s pre-registered redirect URIs.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>state</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>An unguessable value used by the Authorization Client to track the state between the authorization request and
-     the callback to the redirect_uri.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>scope</td>
-    <td>R</td>
-    <td>IUA / SMART on FHIR</td>
-    <td>Attributes the Authorization Client claims (see detailed description below).</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>aud</td>
-    <td>R</td>
-    <td>SMART on FHIR</td>
-    <td>The URL or array of URL of the Resource Servers the token is intended to be used for.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>launch</td>
-    <td>R</td>
-    <td>SMART on FHIR</td>
-    <td>An opaque identifier which indicates that a SMART on FHIR App was launched from a portal or primary system which
-     is authorized to access the Swiss EPR as EHR launch.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>code_challenge</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>Transformed version of code_verifier with code_challenge_method.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>code_challenge_method</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>SHALL be “S256”.</td>
-   </tr>
-   <tr>
-    <td>02, 03</td>
-    <td>The Authorization Server performs an HTTP GET on the Authorization Client redirect_uri conveying
-     the authorization code.</td>
-    <td>code</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The authorization code generated by the Authorization Server.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>state</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The unguessable value used by the Authorization Client to track the state between the authorization request and
-     the callback (redirect_uri).</td>
-   </tr>
-   <tr>
-    <td>04</td>
-    <td>The Authorization Client performs an HTTP POST with parameter as a form-encoded HTTP entity body, passing its
-     client_id and client_secret as an HTTP authorization header field.</td>
-    <td>client_id</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The ID the Authorization Client is registered at the IUA Authorization Server<sup><a href="#1">1</a></sup>.
-    </td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>grant_type</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>Value shall be “authorization_code”.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>code</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The authorization</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>code_verifier</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The original code verifier string.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>requested_token_type</td>
-    <td>O</td>
-    <td>IUA</td>
-    <td>If present, the value shall be `urn:ietf:params:oauth:token-type:jwt`.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>client_assertion_type</td>
-    <td>O</td>
-    <td>Swiss extension</td>
-    <td>An identifier of the client assertion type, either "urn:ietf:params:oauth:client-assertion-type:jwt-bearer" if a signed 
-        JWT is presented, or "urn:ietf:params:oauth:client-assertion-type:saml2-bearer" for base64url encoded SAML 2 assertions <sup><a href="#2">2</a></sup>.
-    </td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>client-assertion</td>
-    <td>O</td>
-    <td>Swiss extension</td>
-    <td>The identity token the Authorization client retrieved from the certified Identity Provider after successful authentication 
-        of the user, either a signed JWT, or a base64url encoded SAML 2 assertion <sup><a href="#2">2</a></sup>.
-    </td>
-   </tr>
-   <tr>
-    <td>05</td>
-    <td>The Authorization Server responds with the access token in the HTML body element.</td>
-    <td>access_token</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The access token which SHALL be a signed JWT token.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>token_type</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The value of the parameter shall be Bearer.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>scope</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>The scope granted by the Authorization Server.</td>
-   </tr>
-   <tr>
-    <td>&nbsp;</td> 
-    <td>&nbsp;</td>
-    <td>expires_in</td>
-    <td>R</td>
-    <td>IUA</td>
-    <td>Maximum duration of 5 minutes.</td>
-   </tr>
-  </tbody>
- </table>
-
-<figcaption ID="5">Table: Description of the HTTP conversation of the transaction.</figcaption>  
-
-
-<sup id="1">1</sup>For SMART on FHIR Apps launched in EPR mode the client_id SHALL be the ID of the portal or primary
-system which launched the App.
-
-<sup id="2">2</sup>The presentation of the IdP token is recommended for IUA Authorization Clients which do not use SMART
-on FHIR EHR launch.
 
 #### Get Access Token Request
 
@@ -436,7 +94,6 @@ type with Swiss extensions:
 - client_id (required): The ID the Authorization Client is registered at the IUA Authorization Server.
 - client_secret (required): The secret the Authorization Client is registered at the IUA Authorization Server.
 - scope (required): The scope claimed by the Authorization Client, as defined in the table below.
-- aud (optional, required): The URL or array of URL of the Resource Servers the token is intended to be used for, required for SMART on FHIR.
 - resource (optional): Single valued identifier of the Resource Server API endpoint to be accessed.
 - requested_token_type (optional): If present, the value shall be `urn:ietf:params:oauth:token-type:jwt`.
 
@@ -526,12 +183,24 @@ A user launches a portal, primary system or a SMART on FHIR App to access data a
 
 ###### Message Semantics
 
-In the first step of the conversation the Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization 
+In the first step of the sequence the Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization 
 Request for the authorization code grant type with the following Swiss extension:
 
-- scope (required): The scope claimed by the Authorization Client, as defined in the table below.
+- response_type (required): The value of the parameter shall be code.
+- client_id (required): The ID the Authorization Client is registered at the IUA Authorization Server. For SMART on FHIR 
+  Apps launched in EPR mode the client_id SHALL be the ID of the portal or primary system which launched the App.
+- state (required): The state parameter is used to protect against cross-site request forgery attacks. The value of the
+  parameter is passed through unmodified from the request to the response.
 - resource (optional): If present, the single valued identifier of the Resource Server api endpoint to be accessed.
+- code_challenge (optional): The code challenge is a cryptographic challenge used to protect against cross-site request
+  forgery attacks. The value of the parameter is passed through unmodified from the request to the response.
+- code_challenge_method (optional): The code challenge method is the cryptographic method used to protect against cross-site 
+  request forgery attacks. If present, the value of it SHALL be S256.
+- redirect_uri (required): The URL the Authorization Client is registered at the IUA Authorization Server.
+- scope (required): The scope claimed by the Authorization Client, as defined in the table below.
 - requested_token_type (optional): If present, the requested token format shall be urn:ietf:params:oauth:token-type:jwt.
+
+The Authorization Request SHALL use the following Swiss extension:
 - person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority
   formatted in CX syntax, required for requesting extended access token.
 - principal (optional): The name of the healthcare professional an assistant may act on behalf of.
@@ -539,44 +208,18 @@ Request for the authorization code grant type with the following Swiss extension
 - group (optional): The name of the organization or group an assistant may act on behalf of.
 - group_id (optional): The OID of the organization or group an assistant is acting on behalf of.
 
-Authorization Clients SHALL sent the following values in the scope attribute of the Authorization Request:
+Authorization Clients SHALL send the following values in the scope attribute of the Authorization Request:
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Scope</th>
-      <th>Optionality (Basic/ Extended)</th>
-      <th>Type</th>
-      <th>Reference</th>
-      <th>Remark</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>launch</td>
-      <td>O/R</td>
-      <td>&nbsp;</td>
-      <td>SMART on FHIR</td>
-      <td>An opaque identifier of a SMART on FHIR App launched in an EHR launch. The claim is required for SMART on FHIR Apps launched from a portal or primary system.</td>
-    </tr>
-    <tr>
-      <td>purpose_of_use</td>
-      <td>O/R</td>
-      <td>token</td>
-      <td>See sections below.</td>
-      <td>Value taken from code system 2.16.756.5.30.1.127.3.10.5 of the CH: EPR value set in [FHIR token type](https://www.hl7.org/fhir/search.html#token) format.</td>
-    </tr>
-    <tr>
-      <td>subject_role</td>
-      <td>O/R</td>
-      <td>token</td>
-      <td>See sections below.</td>
-      <td>Value taken from code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH: EPR value set in [FHIR token type](https://www.hl7.org/fhir/search.html#token) format.</td>
-    </tr>
-  </tbody>
-</table>
+| Scope          | Optionality (Basic/ Extended) | Type  | Reference            | Remark                                                                                                                                                         |
+|----------------|-------------------------------|-------|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| launch         | O/R                           |       | SMART on FHIR        | An opaque identifier of a SMART on FHIR App launched in an EHR launch. The claim is required for SMART on FHIR Apps launched from a portal or primary system.  | 
+| purpose_of_use | O/R                           | token | See sections below.  | Value taken from code system 2.16.756.5.30.1.127.3.10.5 of the CH: EPR value set in [FHIR token type](https://www.hl7.org/fhir/search.html#token) format.      |
+| subject_role   | O/R                           | token | See sections below.  | Value taken from code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH: EPR value set in [FHIR token type](https://www.hl7.org/fhir/search.html#token) format.  |
+{:class="table table-bordered"}
 
 <figcaption ID="6">Table: Authorization Request’s scope parameter for the authorization code flow.</figcaption>  
+
+||
 
 The scope parameter of the request MAY claim the following attributes:
 
@@ -613,7 +256,7 @@ the CH:EPR value set. The value of the purpose_of_use scope SHALL be the code NO
 For representatives, the scope subject_role SHALL be the code REP from code system 2.16.756.5.30.1.127.3.10.6 and 
 the scope purpose_of_use SHALL be the code NORM from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.
 
-In the second step of the conversation the Authorization Client SHALL perform an IUA compliant OAuth 2.1 Access 
+In the second step of the sequence the Authorization Client SHALL perform an IUA compliant OAuth 2.1 Access 
 Token Request for the authorization code grant type with the following Swiss extension:
 
 The POST request SHALL contain the following attributes:
@@ -622,11 +265,11 @@ The POST request SHALL contain the following attributes:
 - code_verifier (required): The original code verifier string.
 - client_id (required): The client identifier the Authorization Client is registered with at the Authorization Server.
 - requested_token_type (optional): If present, the value shall be urn:ietf:params:oauth:token-type:jwt.
-- client_assertion_type (required/optional): If present, the value shall be urn:ietf:params:oauth:client-assertion-type:jwt-bearer if the client assertion is JWT, or urn:ietf:params:oauth:client-assertion-type:saml2-bearer for base64url encoded SAML 2 assertions.
-- client_assertion (required/optional): The identity token the Authorization Client retrieved from the certified Identity Provider after successful authentication of the user.
-
-Note: The presentation of the IdP token in the client_assertion field and the format declaration 
-in field client_assertion_type is mandatory for IUA Authorization Clients which do not use SMART on FHIR EHR launch.
+- client_assertion_type (required/optional): If present, the value shall be urn:ietf:params:oauth:client-assertion-type:jwt-bearer 
+  if the client assertion is JWT, or urn:ietf:params:oauth:client-assertion-type:saml2-bearer for base64url encoded SAML 2 assertions.
+  Required for IUA Authorization Clients which do not use SMART on FHIR EHR launch.
+- client_assertion (required/optional): The identity token the Authorization Client retrieved from the certified Identity Provider 
+  after successful authentication of the user. Required for IUA Authorization Clients which do not use SMART on FHIR EHR launch.
 
 ###### Expected Actions
 
