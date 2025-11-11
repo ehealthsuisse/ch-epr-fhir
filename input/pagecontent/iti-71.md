@@ -747,7 +747,7 @@ The Authorization Server and Resource Server SHALL support the IUA JWT extension
 Table <a href="#jwttiua">below</a>.
 
 The claim content for the JWT IUA extensions SHALL correspond to the content defined in the XUA specification (see
-1.6.4.2 Get X-User Assertion, A5E1).
+Annex 5 Addendum 1, section 1.6.4.2 Get X-User Assertion).
 
 <table class="table table-bordered">
   <thead>
@@ -835,7 +835,7 @@ Annex 5 E1, section 1.6.4.2.4.2.
 
 ###### The JWT ch_group extension
 
-Groups are the central objects in the access management of the Swiss EPR. Patients and representatives may assign access
+Groups are the objects used in the access management of the Swiss EPR. Patients and representatives may assign access
 rights to groups which typically are sub-organizations of the institutions, but may also be cross institution boundaries, 
 e.g., a tumorboard with healthcare professionals from more than one institution. 
 
@@ -843,7 +843,8 @@ The Authorization Server and Resource Server SHALL support this extension in the
 a subject of role healthcare professional is a member of. For users of role assistant, the groups SHALL be the groups of 
 the healthcare professional the assistant is acting on behalf of.
 
-Groups SHALL be wrapped in a JSON array containing a JSON object per group with the following properties:
+Groups SHALL be wrapped in an "extensions" object with key 'ch_group' with a JSON array containing one JSON object 
+per group with the following attributes:
 
 - id (required): The id of the group. Required for users of role healthcare professional and assistant. 
   The id SHALL be an OID in the format of a URN.
@@ -852,31 +853,27 @@ Groups SHALL be wrapped in a JSON array containing a JSON object per group with 
 
 Note: This extension corresponds to the list of urn:oasis:names:tc:xspa:1.0:subject:organization and 
 urn:oasis:names:tc:xspa:1.0:subject:organization-id elements of SAML 2.0 formatted X-User Assertions described in
-Annex 5 E1, section 1.6.4.2.4.2.
+Annex 5 Addendum 1, section 1.6.4.2.4.2.
 
 ###### The JWT ch_delegation extension
 
-The Authorization Server and Resource Server shall support the following extensions to the JWT access token:
+Delegation is used used in the access management of the Swiss EPR to indicate that a user of role Assistant is acting on 
+behalf of a healthcare professional. The Authorization Server and Resource Server SHALL support this extension in the 
+JWT access token to name the healthcare professional (principal) the assistant is acting on behalf of.
+
+Principals SHALL be wrapped in an "extensions" object with key 'ch_delegation' and a JSON value
+object with attributes:
 
 - principal (optional) Name of the healthcare professional an assistant is acting on behalf of.
 - principal_id (optional) GLN of the healthcare professional an assistant is acting on behalf of.
 
-The ch_delegation extension claims shall be wrapped in an "extensions" object with key 'ch_delegation' and a JSON value
-object containing the claims. The claim content for the JWT CH:EPR extensions shall correspond to the content defined 
-in the XUA specification (see 1.6.4.2 Get X-User Assertion, A5E1).
-
-| JWT Claim (Extension) | Optionality (Basic/ Extended) | XUA Attribute EPR                  | Remark                                                                   |
-|-----------------------|-------------------------------|------------------------------------|--------------------------------------------------------------------------|
-| principal             | O/R                           | urn:e-health-suisse:principal-name | Name of the healthcare professional an assistant is acting on behalf of. |
-| principal_id          | O/R                           | urn:e-health-suisse:principal-id   | GLN of the healthcare professional an assistant is acting on behalf of.  |
-{:class="table table-bordered"}
-
-<figcaption>Table: Attributes of the IUA Get Access Token response in the JWT extension ch_delegation.</figcaption>
+Note: This extension corresponds to the attributes urn:e-health-suisse:principal-name and urn:e-health-suisse:principal-id
+in the XUA specification in Annex 5 Addendum 1, section 1.6.4.2.4.2.2.
 
 ##### Expected Actions
 
 The business rules for the IUA Authorization Server for the Healthcare Professional, Assistant, Patient and
-Representative Extension SHALL be the same as for Annex 5E1 1.6.4.2.4.4 Expected Actions X-Assertion Provider 
+Representative Extension SHALL be the same as for Annex 5 Addendum 1, section 1.6.4.2.4.4 Expected Actions X-Assertion Provider 
 Extensions.
 
 ##### Message Example
