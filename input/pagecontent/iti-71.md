@@ -840,7 +840,7 @@ rights to groups which typically are sub-organizations of the institutions, but 
 e.g., a tumorboard with healthcare professionals from more than one institution. 
 
 The Authorization Server and Resource Server SHALL support this extension in the JWT access token for a list of groups 
-a subject of role healthcare professional is a member of. For users of role assistant, the groups are the groups of 
+a subject of role healthcare professional is a member of. For users of role assistant, the groups SHALL be the groups of 
 the healthcare professional the assistant is acting on behalf of.
 
 Groups SHALL be wrapped in a JSON array containing a JSON object per group with the following properties:
