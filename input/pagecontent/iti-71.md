@@ -213,20 +213,18 @@ The scope parameter of the request MAY claim the following attributes:
 
 Note: The parameters need to be url encoded, see above message example.
 
-Additional scopes are required depending on the user's role:
-
-For assistants, there SHALL be a scope with name principal_id, the value of which SHALL be the GLN of the
-healthcare professional an assistant is acting on behalf of. There SHALL be a scope with name principal, the value of 
-which SHALL be the name of the healthcare professional an assistant is acting on behalf of. There MAY be a scope 
-with name group_id and group, the value of which SHALL be the ID and name of the organization or group the user is 
-acting on behalf of. The value of group_id SHALL be an OID in the format of a URN and the organization or group 
-shall be registered in the EPR HPD.
+Additional scopes are required depending on the user's role: For assistants, there SHALL be a scope with name principal_id, 
+the value of which SHALL be the GLN of the healthcare professional an assistant is acting on behalf of. There SHALL be 
+a scope with name principal, the value of which SHALL be the name of the healthcare professional an assistant is 
+acting on behalf of. There MAY be a scope with name group_id and group, the value of which SHALL be the ID and name of 
+the organization or group the user is acting on behalf of. The value of group_id SHALL be an OID in the format of a URN 
+and the organization or group shall be registered in the EPR HPD.
 
 
 In the second step of the sequence the IUA Authorization Client SHALL perform an IUA compliant Access 
 Token Request for the authorization code grant type with the following Swiss extension:
 
-The POST request SHALL contain the following attributes:
+The IUA Access Token Request request SHALL contain the following attributes:
 - grant_type (required): The value of the parameter shall be client_credentials.
 - code (required): The authorization code received from the IUA Authorization Server in the authorization response.
 - code_verifier (required): The original code verifier string.
@@ -244,9 +242,9 @@ The IUA Authorization Client and IUA Authorization Server SHALL support the HTTP
 Code grant type.
 
 When launched, the IUA Authorization Client SHALL send an HTTP GET request to the IUA Authorization Server authorization
-endpoint with query parameter as defined in section [Message Semantics](#message-semantics-1).
+endpoint with query parameter defined in section [Message Semantics](#message-semantics-1).
 
-When receiving the request the IUA Authorization Server
+When receiving the request, the IUA Authorization Server
 
 - SHALL verify that the IUA Authorization Client was registered during onboarding with the client_id and client secret
   presented in the request.
@@ -266,7 +264,7 @@ When receiving the request the IUA Authorization Server
 In case of failure, the IUA Authorization Server SHALL respond with HTTP error code 401 ‘Not authorized’.
 
 In case of success, the IUA Authorization Server SHALL send the authorization code to the IUA Authorization Client
-redirect-uri via the user agent.
+redirect_uri via the user agent.
 
 The IUA Authorization Client SHALL perform the HTTP POST request to the Authorization token endpoint to resolve the
 authorization code to the access token, sending the client_id and client_secret in the HTTP authorization header field.
@@ -279,12 +277,13 @@ The IUA Authorization Server SHALL respond with the IUA Get Access Token Respons
 
 In case of failure, the IUA Authorization Server SHALL respond with HTTP error code 401 ‘Not authorized’.
 
-The IUA Authorization Client SHALL use the access token as defined in IUA Incorporate Access Token transaction, when
-performing requests to resources of the Swiss EPR.
+The IUA Authorization Client SHALL use the access token as defined in the 
+[IUA Incorporate Access Token](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) 
+transaction, when performing requests to resources of the Swiss EPR.
 
 ###### Message Example
 
-The first step of the conversation is an HTTP GET which may look like for a Basic Access Token:
+The first step of the sequence is an HTTP GET which may look like for a Basic Access Token:
 
 ```http
 GET authorize?
@@ -314,14 +313,14 @@ GET authorize?
     code_challenge_method=S256
 ```
 
-In the second step of the conversation, the IUA Authorization Server send a HTTP GET to the IUA Authorization Client's user 
+In the second step of the sequence, the IUA Authorization Server SHALL send a HTTP GET to the IUA Authorization Client's user 
 agent conveying the authorization code, e.g.:
 
 ```http
 GET /callback?code=8V1pr0rJ&state=98wrghuwuogerg97
 ```
 
-In the third step of the conversation, the IUA Authorization Client sends a HTTP POST request to the token endpoint of 
+In the third step of the sequence, the IUA Authorization Client sends a HTTP POST request to the token endpoint of 
 IUA Authorization Server to exchange the authorization code and optional identity token (signed JWT or SAML 2 Assertion) 
 to the access token, e.g.:
 
@@ -345,72 +344,28 @@ client_assertion=eyJraWQiOiIxZTlnZGs3IiwiYWxnIjoiUlMyNTYifQ[...omitted for brevi
 
 ##### Message Semantics
 
-The response SHALL either convey a Basic Access Token in JWT format, granting basic access to the EPR (i.e. to access
+The response SHALL either convey a Basic Access Token in JWT format which grants basic access to the EPR (i.e., to access
 patient data), or an Extended Access Token to access resources protected by the role and attribute based EPR
-authorization (i.e. read and write documents).
+authorization (i.e., read and write documents).
 
 ###### JSON Web Token Option
 
 The IUA Authorization Server and IUA Resource Server SHALL support the IUA JWT extension with the following claims as defined in
-Table <a href="#jwttiua">below</a>.
+the following Table. 
 
-The claim content for the JWT IUA extensions SHALL correspond to the content defined in the XUA specification (see
+Note: The claim content for the JWT IUA extensions SHALL correspond to the content defined in the XUA specification (see
 Annex 5 Addendum 1, section 1.6.4.2 Get X-User Assertion).
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>JWT Claim (Extension)</th>
-      <th>Optionality (Basic/ Extended)</th>
-      <th>XUA Attribute EPR</th>
-      <th>Remark</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>subject_name</td>
-      <td>R/R</td>
-      <td>urn:oasis:names:tc:xspa:1.0:subject:subject-id</td>
-      <td>Plain text's username.</td>
-    </tr>
-    <tr>
-      <td>subject_organization</td>
-      <td>O/O</td>
-      <td>urn:oasis:names:tc:xspa:1.0:subject:organization</td>
-      <td>The name of the user’s organization or institution as text.</td>
-    </tr>
-    <tr>
-      <td>subject_organization_id</td>
-      <td>O/O</td>
-      <td>urn:oasis:names:tc:xspa:1.0:subject:organization-id</td>
-      <td>The OID of the user’s organization in URN notation.</td>
-    </tr>
-    <tr>
-      <td>subject_role</td>
-      <td>O/R</td>
-      <td>urn:oasis:names:tc:xacml:2.0:subject:role</td>
-      <td>Code indicating the user role. In the Swiss EPR the value SHALL be taken from the EPR Role Code Value Set.</td>
-    </tr>
-    <tr>
-      <td>purpose_of_use</td>
-      <td>O/R</td>
-      <td>urn:oasis:names:tc:xspa:1.0:subject:purposeofuse</td>
-      <td>Code indicating the purpose of use. In the Swiss EPR the value SHALL be taken from the EPR Purpose Of Use Value Set.</td>
-    </tr>
-    <tr>
-      <td>home_community_id</td>
-      <td>O/R</td>
-      <td>urn:ihe:iti:xca:2010:homeCommunityId</td>
-      <td>The user’s home community identifier where the request originated. Its value should be an OID in URN notation.</td>
-    </tr>
-    <tr>
-      <td>person_id</td>
-      <td>O/R</td>
-      <td>urn:oasis:names:tc:xacml:2.0:resource:resource-id</td>
-      <td>SHALL be the EPR-SPID of the patients EPR.</td>
-    </tr>
-  </tbody>
-</table>
+| JWT Claim (Extension)   | Optionality (Basic/ Extended) | XUA Attribute                                       | Remark                                                                    |
+|-------------------------|-------------------------------|-----------------------------------------------------|---------------------------------------------------------------------------|
+| subject_name            | R/R                           | urn:oasis:names:tc:xspa:1.0:subject:subject-id      | The username as text.                                                     | 
+| subject_organization    | O/O                           | urn:oasis:names:tc:xspa:1.0:subject:organization    | The name of the user’s organization or institution as text.               |
+| subject_organization_id | O/O                           | urn:oasis:names:tc:xspa:1.0:subject:organization-id | The OID of the user’s organization in URN notation.                       |
+| subject_role            | O/R                           | urn:oasis:names:tc:xacml:2.0:subject:role           | Code indicating the user role from the EPR Role Code Value Set.           |
+| purpose_of_use          | O/R                           | urn:oasis:names:tc:xspa:1.0:subject:purposeofuse    | Code indicating the purpose of use from the EPR Purpose Of Use Value Set. |
+| home_community_id       | O/R                           | urn:ihe:iti:xca:2010:homeCommunityId                | OID of the user’s home community in URN notation.                         |
+| person_id               | O/R                           | urn:oasis:names:tc:xacml:2.0:resource:resource-id   | SHALL be the EPR-SPID of the patients EPR.                                |
+{:class="table table-bordered"}
 
 <figcaption id='jwttiua'>Table: Attributes of the IUA Get Access Token response in the JWT extension ihe_iua.</figcaption>  
 
