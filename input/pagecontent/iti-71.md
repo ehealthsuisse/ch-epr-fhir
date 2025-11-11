@@ -48,36 +48,13 @@ be used by clinical archive systems to retrieve an Access Token.
 <div>{% include IUA_ActorDiagram_ITI-71-cc.svg %}</div>
 <figcaption ID="10">Figure: Sequence diagram of the transaction.</figcaption>
 
-<table class="table table-bordered">
-    <colgroup>
-        <col span="1" style="width: 5%;">
-        <col span="1" style="width: 25%;">
-        <col span="1" style="width: 25%;">
-    </colgroup>
-    <thead>
-    <tr>
-        <th>Step</th>
-        <th>Action</th>
-        <th>Remark</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>00</td>
-        <td>The Authorization Client sends an Access Token request to the IUA Authorization Server endpoint.</td>
-        <td>see [MessageSemantics](#client-credential-grant-type-1)
-        </td>
-    </tr>
-    <tr>
-        <td>01</td>
-        <td>The Authorization Server responds with the access token in the HTML body element.</td>
-        <td>See [Message Semantics](#message-semantics-2)
-        </td>
-    </tr>
-    </tbody>
-</table>
+| Step | Action                                                                                           | Remark                                                  | 
+|------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| 00   | The Authorization Client sends an Access Token request to the IUA Authorization Server endpoint. | See [MessageSemantics](#client-credential-grant-type-1) | 
+| 01   | The Authorization Server responds with the access token in the HTML body element.                | See [Message Semantics](#message-semantics-2)           |
+{:class="table table-bordered"}
 
-<figcaption ID="11">Table: Description of the HTTP conversation of the transaction.</figcaption>
+<figcaption ID="11">Table: Actions in the HTTP sequence of the transaction.</figcaption>
 
 
 #### Authorization Code Grant Type
@@ -88,46 +65,17 @@ be used by portals and primary systems.
 <div>{% include IUA_ActorDiagram_ITI-71.svg %}</div>
 <figcaption ID="1">Figure: Sequence diagram of the transaction.</figcaption>  
 
-<table class="table table-bordered">
-  <colgroup>
-   <col span="1" style="width: 5%;">
-   <col span="1" style="width: 25%;">
-   <col span="1" style="width: 25%;">
- </colgroup>
-  <thead>
-   <tr>
-    <th>Step</th>
-    <th>Action</th>
-    <th>Remark</th>
-   </tr>
-  </thead>
-  <tbody>
-   <tr>
-    <td>00, 01</td>
-    <td>The Authorization Client sends an HTTP GET request to the IUA Authorization Server endpoint.</td>
-    <td>See [Message Semantics](#message-semantics-1)</td>
-   </tr>
-   <tr>
-    <td>02, 03</td>
-    <td>The Authorization Server performs an HTTP GET on the Authorization Client redirect_uri conveying
-     the authorization code.</td>
-    <td></td>
-   </tr>
-   <tr>
-    <td>04</td>
-    <td>The Authorization Client performs an HTTP POST with parameter as a form-encoded HTTP entity body, passing its
-     client_id and client_secret as an HTTP authorization header field.</td>
-    <td>See [Message Semantics](#message-semantics-1)</td>
-   </tr>
-   <tr>
-    <td>05</td>
-    <td>The Authorization Server responds with the access token in the HTML body element.</td>
-    <td>See [Message Semantics](#message-semantics-2)</td>
-   </tr>
-  </tbody>
- </table>
+| Step  | Action                                                                                                                                                                           | Remark                                         | 
+|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| 00,01 | The Authorization Client sends an HTTP GET request to the IUA Authorization Server endpoint.                                                                                     | See [Message Semantics](#message-semantics-1)  | 
+| 02,03 | The Authorization Server performs an HTTP GET on the Authorization Client redirect_uri conveying the authorization code.                                                         |                                                |
+| 04    | The Authorization Client performs an HTTP POST with parameter as a form-encoded HTTP entity body, passing its client_id and client_secret as an HTTP authorization header field. | See [Message Semantics](#message-semantics-1)  |
+| 05    | The Authorization Server responds with the access token in the HTML body element.                                                                                                | See [Message Semantics](#message-semantics-2)  |
+|       |                                                                                                                                                                                  |                                                |
+{:class="table table-bordered"}
 
-<figcaption ID="5">Table: Description of the HTTP conversation of the transaction.</figcaption>
+<figcaption ID="5">Table: Actions in the HTTP sequence of the transaction.</figcaption>
+
 
 #### Get Access Token Request
 
