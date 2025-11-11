@@ -13,9 +13,9 @@ Depending on the claims made by the IUA Authorization Client, two different flav
 by the IUA Authorization Server:
 
 - Basic Access Token – IUA compliant access token authorizing access to the EPR end-points which are NOT protected by
-  the EPR role and attribute based authorization (i.e. for the PIXm endpoints).
+  the EPR role and attribute based authorization (i.e., for the PIXm endpoints).
 - Extended Access Token – IUA compliant access token for the EPR endpoints which are protected by the EPR role and
-  attribute based authorization (i.e. for the MHD endpoints).
+  attribute based authorization (i.e., for the MHD endpoints).
 
 When an IUA Authorization Client is authorized, it may launch SMART on FHIR Apps using the EHR launch by claiming a
 launch indicator. When launched the SMART on FHIR Apps inherit the basic access authorization from the launching app and
