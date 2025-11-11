@@ -194,8 +194,8 @@ Request for the authorization code grant type with the following Swiss extension
 - resource (optional): If present, the single valued identifier of the Resource Server api endpoint to be accessed.
 - code_challenge (optional): The code challenge is a cryptographic challenge used to protect against cross-site request
   forgery attacks. The value of the parameter is passed through unmodified from the request to the response.
-- code_challenge_method (optional): The code challenge method is the cryptographic method used to protect against cross-site
-  request forgery attacks. The value of the parameter is passed through unmodified from the request to the response.
+- code_challenge_method (optional): The code challenge method is the cryptographic method used to protect against cross-site 
+  request forgery attacks. If present, the value of it SHALL be S256.
 - redirect_uri (required): The URL the Authorization Client is registered at the IUA Authorization Server.
 - scope (required): The scope claimed by the Authorization Client, as defined in the table below.
 - requested_token_type (optional): If present, the requested token format shall be urn:ietf:params:oauth:token-type:jwt.
