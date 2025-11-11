@@ -210,42 +210,16 @@ The Authorization Request SHALL use the following Swiss extension:
 
 Authorization Clients SHALL send the following values in the scope attribute of the Authorization Request:
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Scope</th>
-      <th>Optionality (Basic/ Extended)</th>
-      <th>Type</th>
-      <th>Reference</th>
-      <th>Remark</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>launch</td>
-      <td>O/R</td>
-      <td>&nbsp;</td>
-      <td>SMART on FHIR</td>
-      <td>An opaque identifier of a SMART on FHIR App launched in an EHR launch. The claim is required for SMART on FHIR Apps launched from a portal or primary system.</td>
-    </tr>
-    <tr>
-      <td>purpose_of_use</td>
-      <td>O/R</td>
-      <td>token</td>
-      <td>See sections below.</td>
-      <td>Value taken from code system 2.16.756.5.30.1.127.3.10.5 of the CH: EPR value set in [FHIR token type](https://www.hl7.org/fhir/search.html#token) format.</td>
-    </tr>
-    <tr>
-      <td>subject_role</td>
-      <td>O/R</td>
-      <td>token</td>
-      <td>See sections below.</td>
-      <td>Value taken from code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH: EPR value set in [FHIR token type](https://www.hl7.org/fhir/search.html#token) format.</td>
-    </tr>
-  </tbody>
-</table>
+| Scope          | Optionality (Basic/ Extended) | Type  | Reference            | Remark                                                                                                                                                         |
+|----------------|-------------------------------|-------|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| launch         | O/R                           |       | SMART on FHIR        | An opaque identifier of a SMART on FHIR App launched in an EHR launch. The claim is required for SMART on FHIR Apps launched from a portal or primary system.  | 
+| purpose_of_use | O/R                           | token | See sections below.  | Value taken from code system 2.16.756.5.30.1.127.3.10.5 of the CH: EPR value set in [FHIR token type](https://www.hl7.org/fhir/search.html#token) format.      |
+| subject_role   | O/R                           | token | See sections below.  | Value taken from code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH: EPR value set in [FHIR token type](https://www.hl7.org/fhir/search.html#token) format.  |
+{:class="table table-bordered"}
 
 <figcaption ID="6">Table: Authorization Request’s scope parameter for the authorization code flow.</figcaption>  
+
+||
 
 The scope parameter of the request MAY claim the following attributes:
 
