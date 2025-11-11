@@ -6,8 +6,7 @@ User Authorization”.
 ### Scope
 
 The transaction is used by an IUA Authorization Client (e.g., portal and primary system) to pass claims to the
-IUA Authorization Server and to retrieve an access token to be used for authorization of the access to protected
-resources of the Swiss EPR.
+IUA Authorization Server and to retrieve an access token authorizing access to protected resources of the Swiss EPR.
 
 Depending on the claims made by the IUA Authorization Client, two different flavors of access tokens SHALL be provided
 by the IUA Authorization Server:
@@ -42,36 +41,36 @@ to the IUA Authorization Client to be incorporated into the transactions to acce
 
 #### Client Credential Grant Type
 
-This section specifies the OAuth 2.1 client credential grant flow of the IUA Get Access Token transaction, which shall
+This section specifies the client credential grant flow of the IUA Get Access Token transaction, which shall
 be used by clinical archive systems to retrieve an Access Token.
 
 <div>{% include IUA_ActorDiagram_ITI-71-cc.svg %}</div>
 <figcaption ID="10">Figure: Sequence diagram of the transaction.</figcaption>
 <br/>>
 
-| Step | Action                                                                                               | Remark                                                  | 
-|------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
-| 00   | The IUA Authorization Client sends an Access Token request to the IUA Authorization Server endpoint. | See [MessageSemantics](#client-credential-grant-type-1) | 
-| 01   | The IUA Authorization Server responds with the access token in the HTML body element.                | See [Message Semantics](#message-semantics-2)           |
+| Step | Action                                                                                                   | Remark                                                  | 
+|------|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| 00   | The IUA Authorization Client sends an Get Access Token Request to the IUA Authorization Server endpoint. | See [MessageSemantics](#client-credential-grant-type-1) | 
+| 01   | The IUA Authorization Server responds with the access token in the HTML body element.                    | See [Message Semantics](#message-semantics-2)           |
 {:class="table table-bordered"}
 
 <figcaption ID="11">Table: Actions in the HTTP sequence of the transaction.</figcaption>
 
 #### Authorization Code Grant Type
 
-This section specifies the OAuth 2.1 authorization code grant flow of the IUA Get Access Token transaction, which shall
+This section specifies the authorization code grant flow of the IUA Get Access Token transaction, which shall
 be used by portals and primary systems.
 
 <div>{% include IUA_ActorDiagram_ITI-71.svg %}</div>
-<figcaption ID="1">Figure: Sequence diagram of the transaction.</figcaption>  
+<figcaption ID="1">Figure: Sequence diagram of the transaction.</figcaption>
 <br/>
 
-| Step  | Action                                                                                                                                                                               | Remark                                         | 
-|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
-| 00,01 | The IUA Authorization Client sends an HTTP GET request to the IUA Authorization Server endpoint.                                                                                     | See [Message Semantics](#message-semantics-1)  | 
-| 02,03 | The IUA Authorization Server performs an HTTP GET on the IUA Authorization Client redirect_uri conveying the authorization code.                                                     |                                                |
-| 04    | The IUA Authorization Client performs an HTTP POST with parameter as a form-encoded HTTP entity body, passing its client_id and client_secret as an HTTP authorization header field. | See [Message Semantics](#message-semantics-1)  |
-| 05    | The IUA Authorization Server responds with the access token in the HTML body element.                                                                                                    | See [Message Semantics](#message-semantics-2)  |                                               |
+| Step  | Action                                                                                                                                                                                 | Remark                                         | 
+|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| 00,01 | The IUA Authorization Client sends an HTTP GET request to the IUA Authorization Server endpoint.                                                                                       | See [Message Semantics](#message-semantics-1)  | 
+| 02,03 | The IUA Authorization Server performs an HTTP GET on the IUA Authorization Client redirect_uri conveying the authorization code.                                                       |                                                |
+| 04    | The IUA Authorization Client performs an HTTP POST with parameter as a form-encoded HTTP entity body, passing its client_id and client_secret as an HTTP authorization header field.   | See [Message Semantics](#message-semantics-1)  |
+| 05    | The IUA Authorization Server responds with the access token in the HTML body element.                                                                                                  | See [Message Semantics](#message-semantics-2)  |                                               |
 {:class="table table-bordered"}
 
 <figcaption ID="5">Table: Actions in the HTTP sequence of the transaction.</figcaption>
@@ -87,7 +86,7 @@ A clinical archive system aims to access the EPR to write documents.
 
 ###### Message Semantics
 
-The IUA Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization Request for the client credential grant
+The IUA Authorization Client SHALL send an IUA compliant Authorization Request for the client credential grant
 type with Swiss extensions:
 
 - grant_type (required): The value of the parameter shall be `client_credentials`.
@@ -104,35 +103,13 @@ The Authorization Request SHALL use the following Swiss extension:
 - person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority
   formatted in CX syntax, required for requesting extended access token.
 
-IUA Authorization Clients SHALL sent the scope values in the Authorization Request:
+IUA Authorization Clients SHALL sent the following scope values in the Authorization Request:
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Scope</th>
-      <th>Optionality (Basic/ Extended)</th>
-      <th>Type</th>
-      <th>Reference</th>
-      <th>Remark</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>purpose_of_use</td>
-      <td>R/R</td>
-      <td>token<sup><a href="#3">3</a></sup></td>
-      <td>See sections below.</td>
-      <td>Shall be AUTO as defined in the code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.</td>
-    </tr>
-    <tr>
-      <td>subject_role</td>
-      <td>R/R</td>
-      <td>token</td>
-      <td>See sections below.</td>
-      <td>Shall be the value TCU as defined in the code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH:EPR value set.</td>
-    </tr>
-  </tbody>
-</table>
+| Scope          | Optionality (Basic/ Extended) | Type                               | Reference           | Remark                                                                                                       |
+|----------------|-------------------------------|------------------------------------|---------------------|--------------------------------------------------------------------------------------------------------------|
+| purpose_of_use | R/R                           | token<sup><a href="#3">3</a></sup> | See sections below. | Shall be AUTO as defined in the code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.              |
+| subject_role   | R/R                           | token                              | See sections below. | Shall be the value TCU as defined in the code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH:EPR value set. |   
+{:class="table table-bordered"}
 
 <sup id="3">3</sup>Token format according FHIR [token type](https://www.hl7.org/fhir/search.html#token).
 
@@ -140,12 +117,11 @@ IUA Authorization Clients SHALL sent the scope values in the Authorization Reque
 
 ###### Expected Actions
 
-When receiving a Get Access Token Request with purpose of use set to AUTO and subject role set to TCU, the Authorization
+When receiving a Get Access Token Request with purpose_of_use set to AUTO and subject_role set to TCU, the Authorization
 Server SHALL:
 
-- identify and authenticate the IUA Authorization Client with the client_id and client_secret.
-- verify, that the IUA Authorization Client was registered during onboarding with the same client_id, client_secret and the
-  client's certificate of the TLS connection and is authorized to access the EPR.
+- identify the IUA Authorization Client with the client_id and client_secret.
+- verify, that the IUA Authorization Client was registered during onboarding with the same client_id and client_secret.
 - verify that the principal_id matches the GLN of the legal responsible healthcare professional the IUA Authorization Client
   was registered during onboarding.
 
@@ -183,7 +159,7 @@ A user launches a portal, primary system or a SMART on FHIR App to access data a
 
 ###### Message Semantics
 
-In the first step of the sequence the IUA Authorization Client SHALL send an IUA compliant OAuth 2.1 Authorization 
+In the first step of the sequence the IUA Authorization Client SHALL send an IUA compliant Authorization 
 Request for the authorization code grant type with the following Swiss extension:
 
 - response_type (required): The value of the parameter shall be code.
@@ -256,7 +232,7 @@ the CH:EPR value set. The value of the purpose_of_use scope SHALL be the code NO
 For representatives, the scope subject_role SHALL be the code REP from code system 2.16.756.5.30.1.127.3.10.6 and 
 the scope purpose_of_use SHALL be the code NORM from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.
 
-In the second step of the sequence the IUA Authorization Client SHALL perform an IUA compliant OAuth 2.1 Access 
+In the second step of the sequence the IUA Authorization Client SHALL perform an IUA compliant Access 
 Token Request for the authorization code grant type with the following Swiss extension:
 
 The POST request SHALL contain the following attributes:
@@ -273,7 +249,7 @@ The POST request SHALL contain the following attributes:
 
 ###### Expected Actions
 
-The IUA Authorization Client and IUA Authorization Server SHALL support the HTTP conversation of the OAuth 2.1 Authorization
+The IUA Authorization Client and IUA Authorization Server SHALL support the HTTP conversation of the Authorization
 Code grant type.
 
 When launched, the IUA Authorization Client SHALL send an HTTP GET request to the IUA Authorization Server authorization
