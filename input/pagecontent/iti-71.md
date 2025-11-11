@@ -201,6 +201,8 @@ be used by portals and primary systems.
 <div>{% include IUA_ActorDiagram_ITI-71.svg %}</div>
 <figcaption ID="1">Figure: Sequence diagram of the transaction.</figcaption>  
 
+||
+
 <table class="table table-bordered">
 
   <colgroup>
