@@ -48,6 +48,8 @@ be used by clinical archive systems to retrieve an Access Token.
 <div>{% include IUA_ActorDiagram_ITI-71-cc.svg %}</div>
 <figcaption ID="10">Figure: Sequence diagram of the transaction.</figcaption>  
 
+|| 
+
 <table class="table table-bordered">
 
   <colgroup>
@@ -188,6 +190,8 @@ be used by clinical archive systems to retrieve an Access Token.
  </table>
 
 <figcaption ID="11">Table: Description of the HTTP conversation of the transaction.</figcaption>  
+
+||
 
 #### Authorization Code Grant Type
 
@@ -578,6 +582,8 @@ Authorization Clients SHALL sent the following values in the scope attribute of 
 
 <figcaption ID="6">Table: Authorization Request’s scope parameter for the authorization code flow.</figcaption>  
 
+||
+
 The scope parameter of the request MAY claim the following attributes:
 
 - There MAY be a scope with name “launch”. If present, it indicates the permission of SMART on FHIR Apps to obtain
@@ -814,7 +820,7 @@ in the JWT access token of the Get Access Token Response. It's attributes are:
 - user_id (required): The EPR subject identifier as defined in the table below. 
 - user_id_(required): The subject identifier qualifier as defined in the table below.
 
-<br/>
+||
 
 | user role               | user_id  | user_id_qualifier                              | Remark |
 |-------------------------|----------|------------------------------------------------|--------|
@@ -828,7 +834,7 @@ in the JWT access token of the Get Access Token Response. It's attributes are:
 
 <figcaption>Table: user_id and user_id_qualifier of EPR user.</figcaption>
 
-<br/>
+||
 
 Note: This extension corresponds to the NameID element of SAML 2.0 formatted X-User Assertions described in
 Annex 5 E1, section 1.6.4.2.4.2.
