@@ -372,7 +372,7 @@ Annex 5 Addendum 1, section 1.6.4.2 Get X-User Assertion).
 ###### The JWT ch_epr extension
 
 The IUA Authorization Server and IUA Resource Server SHALL support this extension to convey the user's EPR identifier 
-in the JWT access token of the Get Access Token Response. It's attributes are: 
+in the JWT access token of the Get Access Token Response. Its attributes are: 
 
 - user_id (required): The EPR subject identifier as defined in the table below. 
 - user_id_(required): The subject identifier qualifier as defined in the table below.
@@ -420,7 +420,7 @@ Annex 5 Addendum 1, section 1.6.4.2.4.2.
 
 ###### The JWT ch_delegation extension
 
-Delegation is used used in the access management of the Swiss EPR to indicate that a user of role Assistant is acting on 
+Delegation is used in the access management of the Swiss EPR to indicate that a user of role Assistant is acting on 
 behalf of a healthcare professional. The IUA Authorization Server and IUA Resource Server SHALL support this extension in the 
 JWT access token to name the healthcare professional (principal) the assistant is acting on behalf of.
 
@@ -435,8 +435,8 @@ in the XUA specification in Annex 5 Addendum 1, section 1.6.4.2.4.2.2.
 
 ##### Expected Actions
 
-The business rules for the IUA Authorization Server for the Healthcare Professional, Assistant, Patient and
-Representative Extension SHALL be the same as for Annex 5 Addendum 1, section 1.6.4.2.4.4 Expected Actions X-Assertion Provider 
+The business rules for the IUA Authorization Server for healthcare professionals, assistants, patient and
+representative extension SHALL be the same as for Annex 5 Addendum 1, section 1.6.4.2.4.4 Expected Actions X-Assertion Provider 
 Extensions.
 
 ##### Message Example
@@ -465,8 +465,8 @@ A basic JWT access token returned by the IUA Authorization Server and to be used
 }
 ```
 
-An extended JWT access token to be used to access patient documents SHALL have the additional attributes of the purpose
-of use, subject role, the EPR-SPID of the patient and may look like:
+An extended JWT access token to be used to access patient documents SHALL have the additional attributes of 
+the_purpose_of_use, subject_role, the EPR-SPID of the patient and may look like:
 
 ```json
 {
@@ -513,7 +513,7 @@ of use, subject role, the EPR-SPID of the patient and may look like:
 }
 ```
 
-An extended JWT access token to be used to access by an assistant acting behalf on a healthcare professional for a
+An extended JWT access token to be used to access by an assistant acting behalf of a healthcare professional for a
 patient SHALL have the additional extension ch_delegation:
 
 ```json
