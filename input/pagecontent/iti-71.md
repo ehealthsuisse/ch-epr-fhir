@@ -71,8 +71,7 @@ be used by portals and primary systems.
 | 00,01 | The Authorization Client sends an HTTP GET request to the IUA Authorization Server endpoint.                                                                                     | See [Message Semantics](#message-semantics-1)  | 
 | 02,03 | The Authorization Server performs an HTTP GET on the Authorization Client redirect_uri conveying the authorization code.                                                         |                                                |
 | 04    | The Authorization Client performs an HTTP POST with parameter as a form-encoded HTTP entity body, passing its client_id and client_secret as an HTTP authorization header field. | See [Message Semantics](#message-semantics-1)  |
-| 05    | The Authorization Server responds with the access token in the HTML body element.                                                                                                | See [Message Semantics](#message-semantics-2)  |
-|       |                                                                                                                                                                                  |                                                |
+| 05    | The Authorization Server responds with the access token in the HTML body element.                                                                                                | See [Message Semantics](#message-semantics-2)  |                                               |
 {:class="table table-bordered"}
 
 <figcaption ID="5">Table: Actions in the HTTP sequence of the transaction.</figcaption>
