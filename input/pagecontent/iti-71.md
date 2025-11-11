@@ -5,7 +5,7 @@ User Authorization”.
 
 ### Scope
 
-The transaction is used by an IUA Authorization Client (e.g., portals and primary systems) to pass claims to the
+The transaction is used by an IUA Authorization Client (e.g., portal and primary system) to pass claims to the
 IUA Authorization Server and to retrieve an access token to be used for authorization of the access to protected
 resources of the Swiss EPR.
 
@@ -218,8 +218,9 @@ Authorization Clients SHALL send the following values in the scope attribute of 
 | subject_role   | O/R                           | token | See sections below.  | Value taken from code system 2.16.756.5.30.1.127.3.10.1.1.3 of the CH: EPR value set in [FHIR token type](https://www.hl7.org/fhir/search.html#token) format.  |
 {:class="table table-bordered"}
 
-<figcaption ID="6">Table: Authorization Request’s scope parameter for the authorization code flow.</figcaption>  
+<figcaption ID="6">Table: Authorization Request’s scope parameter for the authorization code flow.</figcaption>
 
+<br/>
 
 The scope parameter of the request MAY claim the following attributes:
 
@@ -276,16 +277,16 @@ The POST request SHALL contain the following attributes:
 The IUA Authorization Client and Authorization Server SHALL support the HTTP conversation of the OAuth 2.1 Authorization
 Code grant type.
 
-When launched, the IUA Authorization Client SHALL send an HTTP GET request to the Authorization Servers authorization
-endpoint with query parameter as defined in [Table](#5) and with the scope claims described in [Table](#6).
+When launched, the IUA Authorization Client SHALL send an HTTP GET request to the Authorization Server authorization
+endpoint with query parameter as defined in section [Message Semantics](#message-semantics-1).
 
 When receiving the request the Authorization Server
 
 - SHALL verify that the Authorization Client was registered during onboarding with the client_id and client secret
   presented in the request.
 - SHALL validate the requests parameter (i.e.: person_id). Depending on the parameter, the IUA Authorization Server
-  SHALL either build a Basic Access Token authorizing basic access to the EPR (i.e. PIXm), or an Extended Access Token
-  to authorize access to resources protected by the role and attribute based EPR authorization (i.e. read and write
+  SHALL either build a Basic Access Token authorizing basic access to the EPR (i.e., PIXm), or an Extended Access Token
+  to authorize access to resources protected by the role and attribute based EPR authorization (i.e., read and write
   documents).
 - SHALL validate the launch scope parameter. For SMART on FHIR Apps launched in an EPR Launch, the IUA Authorization
   Server SHALL verify that the portal or primary system which launched the SMART on FHIR App has been registered with
