@@ -47,6 +47,7 @@ be used by clinical archive systems to retrieve an Access Token.
 
 <div>{% include IUA_ActorDiagram_ITI-71-cc.svg %}</div>
 <figcaption ID="10">Figure: Sequence diagram of the transaction.</figcaption>
+<br/>>
 
 | Step | Action                                                                                           | Remark                                                  | 
 |------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------|
@@ -63,8 +64,7 @@ be used by portals and primary systems.
 
 <div>{% include IUA_ActorDiagram_ITI-71.svg %}</div>
 <figcaption ID="1">Figure: Sequence diagram of the transaction.</figcaption>  
-
-||
+<br/>
 
 | Step  | Action                                                                                                                                                                           | Remark                                         | 
 |-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
