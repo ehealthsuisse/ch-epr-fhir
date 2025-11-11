@@ -125,15 +125,15 @@ Server SHALL:
 - verify that the principal_id matches the GLN of the legal responsible healthcare professional the IUA Authorization Client
   was registered during onboarding.
 
-The IUA Authorization Server SHALL respond with the Get Access Token response as defined
-in [Get Access Token Response](#get-access-token-response) only if all checks are successful. If one of the above checks
-fails, the IUA Authorization Server SHALL respond with HTTP 401 (Unauthorized) error.
+The IUA Authorization Server SHALL respond with the Get Access Token Response only if all checks are successful. If one 
+of the above checks fails, the IUA Authorization Server SHALL respond with HTTP 401 (Unauthorized) error.
 
-The IUA Authorization Server SHALL respond with an Extended Access Token, only if the person_id is set in the request. The
-IUA Authorization Server SHALL respond with a Basic Access Token, if the person_id is not set.
+If the person_id is set in the request, the IUA Authorization Server SHALL respond with an Extended Access Token. 
+The IUA Authorization Server SHALL respond with a Basic Access Token, if the person_id is not set.
 
-The IUA Authorization Client SHALL use the access token as defined in IUA Incorporate Access Token transaction, when
-performing requests to resources of the Swiss EPR.
+The IUA Authorization Client SHALL use the IUA Access Token as defined in 
+[IUA Incorporate Access Token](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) 
+transaction, when performing requests to resources of the Swiss EPR.
 
 ###### Message Example
 
@@ -215,22 +215,13 @@ Note: The parameters need to be url encoded, see above message example.
 
 Additional scopes are required depending on the user's role:
 
-For healthcare professionals, the scope subject_role SHALL be the code HCP from code system
-2.16.756.5.30.1.127.3.10.6 of the CH:EPR value set.
-
-For assistants, the scope subject_role SHALL be the code ASS from code system 2.16.756.5.30.1.127.3.10.6 of
-the CH:EPR value set. There SHALL be a scope with name principal_id, the value of which SHALL be the GLN of the
+For assistants, there SHALL be a scope with name principal_id, the value of which SHALL be the GLN of the
 healthcare professional an assistant is acting on behalf of. There SHALL be a scope with name principal, the value of 
-which SHALL be the name of the healthcare professional an assistant is acting on behalf of. There MAY be one or more 
-pairs with name group_id and group, the value of which SHALL be the ID and name of the subject’s organization 
-or group as registered in the EPR HPD. The value of group_id SHALL be an OID in the format of a URN.
+which SHALL be the name of the healthcare professional an assistant is acting on behalf of. There MAY be a scope 
+with name group_id and group, the value of which SHALL be the ID and name of the organization or group the user is 
+acting on behalf of. The value of group_id SHALL be an OID in the format of a URN and the organization or group 
+shall be registered in the EPR HPD.
 
-For patients, the scope subject_role SHALL be the code PAT from code system 2.16.756.5.30.1.127.3.10.6 of
-the CH:EPR value set. The value of the purpose_of_use scope SHALL be the code NORM from code system
-2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set. 
-
-For representatives, the scope subject_role SHALL be the code REP from code system 2.16.756.5.30.1.127.3.10.6 and 
-the scope purpose_of_use SHALL be the code NORM from code system 2.16.756.5.30.1.127.3.10.5 of the CH:EPR value set.
 
 In the second step of the sequence the IUA Authorization Client SHALL perform an IUA compliant Access 
 Token Request for the authorization code grant type with the following Swiss extension:
@@ -284,8 +275,7 @@ When retrieving the token request, the IUA Authorization Server SHALL verify tha
 regulations of the Swiss EPR, either by validating the identity token send with the token request or by redirecting the
 IUA Authorization Client's user agent to an certified Identity Provider.
 
-The IUA Authorization Server SHALL respond with the Get Access Token response as defined
-in [Get Access Token Response](#get-access-token-response) only if all checks are successful.
+The IUA Authorization Server SHALL respond with the IUA Get Access Token Response only if all checks are successful.
 
 In case of failure, the IUA Authorization Server SHALL respond with HTTP error code 401 ‘Not authorized’.
 
