@@ -310,8 +310,7 @@ regulations of the Swiss EPR, either by validating the identity token send with 
 Authorization Client's user agent to an certified Identity Provider.
 
 The Authorization Server SHALL respond with the Get Access Token response as defined
-in [Get Access Token Response](#get-access-token-response)
-only if all checks are successful.
+in [Get Access Token Response](#get-access-token-response) only if all checks are successful.
 
 In case of failure, the IUA Authorization Server SHALL respond with HTTP error code 401 ‘Not authorized’.
 
