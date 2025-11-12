@@ -1,27 +1,27 @@
-This section specifies Swiss national extensions to Internet User Authorization (IUA) Profile, which
-is [published](https://profiles.ihe.net/ITI/IUA/index.html) as an IHE ITI Trial Implementation profile.
+This section specifies Swiss national extensions to Internet User Authorization (IUA) Profile [published](https://profiles.ihe.net/ITI/IUA/index.html) as 
+IHE ITI Trial Implementation.
 
 ### Scope
 
-This profile provides means to retrieve EPR compliant access token and to incorporate the access token to transactions
-to authorize client applications when accessing protected resources.
+This national extension provides means to retrieve EPR compliant access token and to incorporate them to transactions
+to authorize client applications and to evaluate user access rights when accessing protected resources. It adds certain 
+restrictions to the Internet User Authorization (IUA) Profile [published](https://profiles.ihe.net/ITI/IUA/index.html) to be compliant to the ordinances 
+of the Swiss EPR.
 
-This profile is based on the IUA Trial Implementation and adds certain restrictions to be compliant to the ordinances of
-the Swiss EPR.
-
-This national extension is scoped for client authorization for FHIR based interfaces for primary systems, portals and
-SMART on FHIR Apps launched from the portals or primary systems and to convey the information required to enforce the
-privacy policy settings when accessing protected resources from the EPR.
+This national extension is scoped for client authorization in FHIR based interfaces for primary systems, portals and
+SMART on FHIR Apps launched from the portals or primary systems. It is scoped to convey the information required to 
+identify and authenticate the clients an to enforce the privacy policy settings, when accessing protected resources 
+from the EPR.
 
 This national extension covers:
 
 - SMART on FHIR Apps launched from a portal or primary system, which require a launch context identifying the portal or
   primary system the app is launched from. This requires the portal or primary system to be registered with "client_id"
-  and "client-secret" during onboarding. This may require an user consent which authorizes the SMART on FHIR to act on
-  behalf for given scopes and the authentication of the user compliant to EPRO Annex 8.
+  and "client-secret" during onboarding and may require the user to authorize the SMART on FHIR App to act on
+  behalf for given scopes.
 
-- Portals and primary systems which shall be registered during onboarding, authenticate the user compliant to EPRO Annex
-  8 and provide the identity token in the access token request send to the IUA Authorization Server.
+- Portals and primary systems registered during onboarding, which authenticate the user compliant to EPRO Annex
+  8 and provide the identity token in the IUA Get Access Token Request send to the IUA Authorization Server.
 
 ### Use Cases
 
@@ -34,9 +34,8 @@ to retrieve an authorization token to access the EPR.
 
 The Authorization Server validates the claims together with the data from the identity token and resolves additional
 information required to access the EPR (e.g., resolve the digital identity to the EPR-SPID). The IUA Authorization
-Server
-responds an IUA Authorization Token the portal shall incorporate to any transaction to retrieve the data and documents
-from the patients EPR.
+Server responds an IUA Authorization Token the portal shall incorporate to any transaction to retrieve the data and 
+documents from the patients EPR.
 
 #### User Access from an integrated Primary System
 
@@ -108,9 +107,10 @@ Implementation to comply to the legal requirements of the Swiss EPR.
 This figure shows the actors directly involved in the _Internet User Authorization_ Profile and the relevant 
 transactions between them.
 
-The IUA Authorization Client SHALL use the Authenticate User transaction defined in Annex 5 EPRO-FDHA to pass identity claims to the User
-Authentication provider. The User Authentication Provider authenticates the user and returns a SAML 2 Authentication Assertion or an OpenID Connect ID Token. 
-For details of the transaction and message semantics see Annex 8 EPRO-FDHA.
+The IUA Authorization Client SHALL use the Authenticate User transaction defined in Annex 5 EPRO-FDHA to pass identity 
+claims to the User Authentication provider. The User Authentication Provider authenticates the user and returns a 
+SAML 2 Authentication Assertion or an OpenID Connect ID Token. For details of the transaction and message semantics 
+see Annex 8 EPRO-FDHA.
 
 ### Actor Options
 
@@ -136,101 +136,71 @@ data and documents, e.g. read or write documents from the EPR, which are trigger
 interaction. Actors SHALL implement the following required transactions (labelled "R") when claiming the
 Workflow Initiator option:
 
+| Actor                         | Transaction                       | Optionality |
+|-------------------------------|-----------------------------------|-------------|
+| Authorization Client          | CH:XUA Authenticate User          | R           |
+| Authorization Client          | Get Access Token                  | R           |
+| Authorization Client          | Get Authorization Server Metadata | O           |
+| Authorization Client          | Incorporate Access Token          | R           |
+| User Authentication Provider  | CH:XUA Authenticate User          | R           |
+| Authorization Server          | Get Access Token                  | R           |
+| Authorization Server          | Get Authorization Server Metadata | R           |
+| Resource Server               | Incorporate Access Token          | R           |
+| Resource Server               | Get Authorization Server Metadata | O           |
 {:class="table table-bordered"}
-| Actor                                         | Transaction                       | Optionality |
-|-----------------------------------------------|-----------------------------------|-------------|
-| Authorization Client                          | CH:XUA Authenticate User          | R           |
-| Authorization Client                          | Get Access Token                  | R           |
-| Authorization Client                          | Get Authorization Server Metadata | O           |
-| Authorization Client                          | Incorporate Access Token          | R           |
-| User Authentication Provider                  | CH:XUA Authenticate User          | R           |
-| Authorization Server                          | Get Access Token                  | R           |
-| Authorization Server                          | Get Authorization Server Metadata | R           |
-| Resource Server                               | Incorporate Access Token          | R           |
-| Resource Server                               | Get Authorization Server Metadata | O           |
-
 
 #### Technical User Option
 
-The Technical User option SHALL be claimed by all implementations, which do not require user
-authentication, but request to retrieve a EPR compliant access token, i.e. archive systems or other
-primary systems accessing EPR data and documents, which are not initiated by a user interaction.
-Actors SHALL perform the following required transactions (labelled "R") when claiming the Technical
-User option:
+The Technical User option SHALL be claimed by implementations, which do not require user authentication to 
+write documents to the EPR, i.e., archive systems or other primary systems storing EPR data and documents, 
+which are not initiated by a user interaction. Actors SHALL perform the following required transactions (labelled "R") 
+when claiming the Technical User option:
 
+
+| Actor                 | Transaction                       | Optionality |
+|-----------------------|-----------------------------------|-------------|
+| Authorization Client  | Get Access Token                  | R           |
+| Authorization Client  | Get Authorization Server Metadata | O           |
+| Authorization Client  | Incorporate Access Token          | R           |
+| Authorization Server  | Get Access Token                  | R           |
+| Authorization Server  | Get Authorization Server Metadata | R           |
+| Resource Server       | Incorporate Access Token          | R           |
+| Resource Server       | Get Authorization Server Metadata | O           |
 {:class="table table-bordered"}
-| Actor                                         | Transaction                       | Optionality |
-|-----------------------------------------------|-----------------------------------|-------------|
-| Authorization Client                          | Get Access Token                  | R           |
-| Authorization Client                          | Get Authorization Server Metadata | O           |
-| Authorization Client                          | Incorporate Access Token          | R           |
-| Authorization Server                          | Get Access Token                  | R           |
-| Authorization Server                          | Get Authorization Server Metadata | R           |
-| Resource Server                               | Incorporate Access Token          | R           |
-| Resource Server                               | Get Authorization Server Metadata | O           |
-
 
 #### Proxy Option
 
 The Proxy option SHALL be claimed by all implementations, which use EPR compliant access token from
 other transactions and use the access token when acting as an agent to request protected data
-from other actors, i.e. Document Source or Consumers with the Federated Cross Community Access Option.
+from other actors, i.e., Document Source or Consumers with the Federated Cross Community Access Option.
 Actors shall perform the following required transactions (labelled "R") when claiming the Proxy
 option:
 
+
+| Actor                 | Transaction                       | Optionality |
+|-----------------------|-----------------------------------|-------------|
+| Authorization Client  | Incorporate Access Token          | R           |
+| Authorization Client  | Get Authorization Server Metadata | O           |
+| Resource Server       | Incorporate Access Token          | R           |
+| Resource Server       | Get Authorization Server Metadata | O           |
 {:class="table table-bordered"}
-| Actor                                         | Transaction                       | Optionality |
-|-----------------------------------------------|-----------------------------------|-------------|
-| Authorization Client                          | Incorporate Access Token          | R           |
-| Authorization Client                          | Get Authorization Server Metadata | O           |
-| Resource Server                               | Incorporate Access Token          | R           |
-| Resource Server                               | Get Authorization Server Metadata | O           |
+
 
 ### Grouping
 
 The actors SHALL be grouped with other actors as follows:
 
-<table border="1" style="border: 1px solid black; border-collapse: collapse">
-    <thead>
-        <tr style="background: gray;" class="odd">
-            <td>Actor</td>
-            <td>Optionality</td>
-            <td>Actor to be grouped with</td>
-        </tr>
-    </thead>
-    <tbody>        
-        <tr>        
-            <td rowspan='2'>Authorization Client</td>       
-            <td>R</td>
-            <td>CT Time Client</td>
-            <tr>
-            <td>R</td>
-            <td>ATNA Secure Node with <a href="https://profiles.ihe.net/ITI/IUA/index.html#9267-stx-https-iua-option">STX:HTTPS IUA</a> <a href="https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html#9.2">Option</a></td>
-            </tr>
-        </tr>
-        <tr>        
-            <td rowspan='2'>Resource server</td>       
-            <td>R</td>
-            <td>CT Time Client</td>
-            <tr>
-            <td>R</td>
-            <td>ATNA Secure Node with <a href="https://profiles.ihe.net/ITI/IUA/index.html#9267-stx-https-iua-option">STX:HTTPS IUA</a> <a href="https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html#9.2">Option</a></td>
-            </tr>
-        </tr>
-        <tr>        
-            <td>Authorization Server</td>       
-            <td>R</td>
-            <td>CT Time Client</td>
-        </tr>
-        <tr>        
-            <td>User Authentication Provider</td>       
-            <td>R</td>
-            <td>CT Time Client</td>
-        </tr>
-    </tbody>
-</table>
 
-The grouping of actors of actors with IUA Authorization Client and Resource Server actor are defined in the respective profile sections.
+| Actor                         | Optionality | Actor to be grouped with |
+|-------------------------------|-------------|--------------------------|
+| Authorization Client          | R           | CT Time Client           |
+| Resource server               | R           | CT Time Client           |
+| Authorization Server          | R           | CT Time Client           |
+| User Authentication Provider  | R           | CT Time Client           |
+{:class="table table-bordered"}
+
+The grouping of actors with IUA Authorization Client and Resource Server actor are defined in the respective profile 
+sections.
 
 ### Process Flow
 
@@ -240,10 +210,7 @@ see [sequence diagrams](sequencediagrams.html).
 ### Security Consideration
 
 Portals and primary systems SHALL be identified by the client_id and client_secret registered during onboarding. All
-requests to the IUA Authorization Server SHALL be authenticated by the digital signatures of the messages.
-
-Implementers SHALL register the combination of the OAuth client ID, the URLs and the certificate used for message
-signatures during the onboarding process and keep the data up to date.
-
-Implementers shall verify the combination of the OAuth client ID, the URLs and the certificate of all requests
-against the registered values and shall reject requests in case of mismatch.
+requests to the IUA Authorization Server SHALL be authenticated by the digital signatures of the messages. Implementers 
+SHALL register the combination of the OAuth client ID, the URLs and the certificate used for message signatures during 
+the onboarding process and keep the data up to date. Implementers shall verify the combination of the OAuth client ID, 
+the URLs and the certificate of all requests against the registered values and shall reject requests in case of mismatch.
