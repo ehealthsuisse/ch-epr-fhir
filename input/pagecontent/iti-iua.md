@@ -212,6 +212,6 @@ see [sequence diagrams](sequencediagrams.html).
 
 Portals and primary systems SHALL be identified by the client_id and client_secret registered during onboarding. All
 requests to the IUA Authorization Server SHALL be authenticated by the digital signatures of the messages. Implementers 
-SHALL register the combination of the OAuth client ID, the URLs and the certificate used for message signatures during 
-the onboarding process and keep the data up to date. Implementers shall verify the combination of the OAuth client ID, 
-the URLs and the certificate of all requests against the registered values and shall reject requests in case of mismatch.
+SHALL register the combination of the OAuth client_id, the URLs and the public key used for message signatures during 
+the onboarding process and keep the data up to date. Implementers shall verify the combination of the OAuth client_id, 
+the URLs and the public key of all requests against the registered values and shall reject requests in case of mismatch.
