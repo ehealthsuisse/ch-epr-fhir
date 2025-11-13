@@ -16,8 +16,8 @@ from the EPR.
 This national extension covers:
 
 - SMART on FHIR Apps launched from a portal or primary system, which require a launch context identifying the portal or
-  primary system the app is launched from. This requires the portal or primary system to be registered with "client_id"
-  and "client-secret" during onboarding and may require the user to authorize the SMART on FHIR App to act on
+  primary system the app is launched from. This requires the portal or primary system to be registered with _client_id_
+  and _client-secret_ during onboarding and may require the user to authorize the SMART on FHIR App to act on
   behalf for given scopes.
 
 - Portals and primary systems registered during onboarding, which authenticate the user compliant to EPRO Annex
@@ -43,8 +43,7 @@ A healthcare professional uses a primary system which is integrated to the Swiss
 share data and documents with her patients or other healthcare professionals. To access documents from the EPR the
 healthcare professional authenticates at a certified identity provider from her primary system, selects the patient
 and switches to the user interface to display the patients documents. The primary system connects to the IUA
-Authorization
-Server and sends the identity token and the required claims to access the patients EPR.
+Authorization Server and sends the identity token and the required claims to access the patients EPR.
 
 The IUA Authorization Server verifies if the primary system is authorized to access the EPR on behalf of the user by
 checking that the primary system has been registered during the onboarding process.
@@ -98,7 +97,7 @@ the document in the patients EHR.
 
 ### Actors and Transactions
 
-This national extension enhance the requirements on transactions and the expected actions of the Actors of the IUA Trial
+This national extension enhances the requirements on transactions and the expected actions of the Actors of the IUA Trial
 Implementation to comply to the legal requirements of the Swiss EPR.
 
 <div>
@@ -210,8 +209,8 @@ see [sequence diagrams](sequencediagrams.html).
 
 ### Security Consideration
 
-Portals and primary systems SHALL be identified by the client_id and client_secret registered during onboarding. All
+Portals and primary systems SHALL be identified by the _client_id_ and _client_secret_ registered during onboarding. All
 requests to the IUA Authorization Server SHALL be authenticated by the digital signatures of the messages. Implementers 
-SHALL register the combination of the OAuth client_id, the URLs and the public key used for message signatures during 
-the onboarding process and keep the data up to date. Implementers shall verify the combination of the OAuth client_id, 
+SHALL register the combination of the OAuth _client_id_, the URLs and the public key used for message signatures during 
+the onboarding process and keep the data up to date. Implementers shall verify the combination of the OAuth _client_id_, 
 the URLs and the public key of all requests against the registered values and shall reject requests in case of mismatch.
