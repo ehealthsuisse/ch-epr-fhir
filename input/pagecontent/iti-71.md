@@ -46,7 +46,7 @@ be used by clinical archive systems to retrieve an Access Token.
 
 <div>{% include IUA_ActorDiagram_ITI-71-cc.svg %}</div>
 <figcaption ID="10">Figure: Sequence diagram of the transaction.</figcaption>
-<br/>>
+<br/>
 
 | Step | Action                                                                                                   | Remark                                                  | 
 |------|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
@@ -70,7 +70,7 @@ be used by portals and primary systems.
 | 00,01 | The IUA Authorization Client sends an HTTP GET request to the IUA Authorization Server endpoint.                                                                                       | See [Message Semantics](#message-semantics-1)  | 
 | 02,03 | The IUA Authorization Server performs an HTTP GET on the IUA Authorization Client redirect_uri conveying the authorization code.                                                       |                                                |
 | 04    | The IUA Authorization Client performs an HTTP POST with parameter as a form-encoded HTTP entity body, passing its client_id and client_secret as an HTTP authorization header field.   | See [Message Semantics](#message-semantics-1)  |
-| 05    | The IUA Authorization Server responds with the access token in the HTML body element.                                                                                                  | See [Message Semantics](#message-semantics-2)  |                                               |
+| 05    | The IUA Authorization Server responds with the access token in the HTML body element.                                                                                                  | See [Message Semantics](#message-semantics-2)  |
 {:class="table table-bordered"}
 
 <figcaption ID="5">Table: Actions in the HTTP sequence of the transaction.</figcaption>
@@ -379,14 +379,14 @@ in the JWT access token of the Get Access Token Response. Its attributes are:
 
 ||
 
-| user role               | user_id  | user_id_qualifier                              | Remark |
-|-------------------------|----------|------------------------------------------------|--------|
-| Patient                 | EPR-SPID | urn:e-health-suisse:2015:epr-spid              |        |
-| Healthcare Professional | GLN      | urn:gs1:gln                                    |        |
-| Assistent               | GLN      | urn:gs1:gln                                    |        |
-| Representative          | IdP-ID   | urn:e-health-suisse:representative-id          |        |
-| Document Administrator  | IdP-ID   | urn:e-health-suisse:policy-administrator-id    |        |
-| Policy Administrator    | IdP-ID   | urn:e-health-suisse:document-administrator-id  |        |
+| user role               | user_id  | user_id_qualifier                              |
+|-------------------------|----------|------------------------------------------------|
+| Patient                 | EPR-SPID | urn:e-health-suisse:2015:epr-spid              |        
+| Healthcare Professional | GLN      | urn:gs1:gln                                    |        
+| Assistent               | GLN      | urn:gs1:gln                                    |        
+| Representative          | IdP-ID   | urn:e-health-suisse:representative-id          |        
+| Document Administrator  | IdP-ID   | urn:e-health-suisse:policy-administrator-id    |        
+| Policy Administrator    | IdP-ID   | urn:e-health-suisse:document-administrator-id  |        
 {:class="table table-bordered"}
 
 <figcaption>Table: user_id and user_id_qualifier of EPR user.</figcaption>
