@@ -247,6 +247,7 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * extension 2..
 * extension contains $ch-ext-author-authorrole named authorAuthorRole 0..1 MS
 * extension[designationType].value[x] from $SubmissionSet.contentTypeCode (required)
+* extension[designationType].value[x] ^short = "Fixed code 'Procedure' by the Swiss EPR"
 * extension[designationType] ^sliceName = "designationType"
 * extension[designationType] ^mustSupport = true
 * extension[sourceId] ^sliceName = "sourceId"
