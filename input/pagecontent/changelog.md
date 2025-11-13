@@ -2,6 +2,7 @@
 
 #### Resolved Issues
 * Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
+* Remove Document Consumer page count request limit requirement from ITI-67 [#391](https://github.com/ehealthsuisse/ch-epr-fhir/issues/391)
 * MHD: Clarify that designationType must be fixed to 'Procedure' for Swiss EPR in CHMhdSubmissionSetComprehensive [#385](https://github.com/ehealthsuisse/ch-epr-fhir/issues/385)
 * Sequence Diagrams - mention mTLS for ITI-65, 67, 68 [#357](https://github.com/ehealthsuisse/ch-epr-fhir/issues/357)
 * On ITI-81 transaction description in Volume 2 [#322](https://github.com/ehealthsuisse/ch-epr-fhir/issues/322)
