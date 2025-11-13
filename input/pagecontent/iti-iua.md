@@ -89,11 +89,11 @@ To access the patient EHR the clinical archive system first request a basic acce
 credential flow and uses the basic access token in the PIXm or PDQm transactions used to retrieve the EHR-SPID
 and the XAD PID of the patient.
 
-The Authorization server returns the basic access token if the clinical archive systems is registered beforehand and is
+The Authorization server returns the basic access token if the clinical archive systems is registered and is
 authorized to access the Swiss EHR.
 
 The clinical archive system then requests an extended authorization token to be used with the MHD transaction to store
-the document in the patients EHR.
+the document in the patients' EHR.
 
 ### Actors and Transactions
 
@@ -113,11 +113,11 @@ see Annex 8 EPRO-FDHA.
 
 ### Actor Options
 
-This national extension restricts the Actor options of the IUA Trial Implementation to comply to the legal requirements
+This national extension restricts the Actor options of the IUA Trial Implementation to comply with the legal requirements
 of the Swiss EPR.
 
 The IUA Trial Implementation supports three options for the Authorization Token format; the JWT Token, the SAML Token
-and the Token Introspection option. Since this national extension will apply to cross community communication, the Token
+and the Token Introspection option. Since this national extension will apply to cross-community communication, the Token
 Introspection Option SHALL NOT be used. The SAML Token option is not specified in this profile. 
 The JWT Token option SHALL be supported by the Authorization Server and Resource Server.
 
@@ -131,8 +131,8 @@ to the legal requirements of the Swiss EPR.
 The Workflow Initiator option SHALL be claimed by all implementations, which require user
 authentication and requests to retrieve a EPR compliant access token, i.e., patient and healthcare
 professional portals, primary systems, etc. The implementations usually initiate workflows to access
-data and documents, e.g. read or write documents from the EPR, which are triggered by a user
-interaction. Actors SHALL implement the following required transactions (labelled "R") when claiming the
+data and documents (e.g., read or write documents from the EPR, which are triggered by a user
+interaction). Actors SHALL implement the following required transactions (labeled "R") when claiming the
 Workflow Initiator option:
 
 | Actor                         | Transaction                       | Optionality |
@@ -151,8 +151,8 @@ Workflow Initiator option:
 #### Technical User Option
 
 The Technical User option SHALL be claimed by implementations, which do not require user authentication to 
-write documents to the EPR, i.e., archive systems or other primary systems storing EPR data and documents, 
-which are not initiated by a user interaction. Actors SHALL perform the following required transactions (labelled "R") 
+write documents to the EPR (i.e.: archive systems or other primary systems storing EPR data and documents, 
+not initiated by a user interaction). Actors SHALL perform the following required transactions (labeled "R") 
 when claiming the Technical User option:
 
 
@@ -171,7 +171,7 @@ when claiming the Technical User option:
 
 The Proxy option SHALL be claimed by all implementations, which use EPR compliant access token from
 other transactions and use the access token when acting as an agent to request protected data
-from other actors, i.e., Document Source or Consumers with the Federated Cross Community Access Option.
+from other actors (i.e.: Document Source or Consumers with the Federated Cross Community Access Option).
 Actors shall perform the following required transactions (labelled "R") when claiming the Proxy
 option:
 
