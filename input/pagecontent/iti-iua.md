@@ -190,14 +190,14 @@ option:
 
 The actors SHALL be grouped with other actors as follows:
 
-| Actor                        | Optionality | Actor to be grouped with                                                                                               |
-|------------------------------|-------------|------------------------------------------------------------------------------------------------------------------------|
-| Authorization Client         | R           | CT Time Client                                                                                                         |
-|                              | R           | ATNA Secure Node with [STX:HTTPS IUA Option](https://profiles.ihe.net/ITI/IUA/index.html#9267-stx-https-iua-option )   | 
-| Resource server              | R           | CT Time Client                                                                                                         |
-|                              | R           | ATNA Secure Node with [STX:HTTPS IUA Option](https://profiles.ihe.net/ITI/IUA/index.html#9267-stx-https-iua-option)    |
-| Authorization Server         | R           | CT Time Client                                                                                                         |
-| User Authentication Provider | R           | CT Time Client                                                                                                         |
+| Actor                        | Actor to be grouped with                                                                                            | Optionality |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------|-------------|
+| Authorization Client         | CT Time Client                                                                                                      | R           |
+|                              | ATNA Secure Node with [STX:HTTPS IUA Option](https://profiles.ihe.net/ITI/IUA/index.html#9267-stx-https-iua-option) | R           |
+| Resource server              | CT Time Client                                                                                                      | R           |
+|                              | ATNA Secure Node with [STX:HTTPS IUA Option](https://profiles.ihe.net/ITI/IUA/index.html#9267-stx-https-iua-option) | R           |
+| Authorization Server         | CT Time Client                                                                                                      | R           |
+| User Authentication Provider | CT Time Client                                                                                                      | R           |
 {:class="table table-bordered"}
 
 The grouping of actors with IUA Authorization Client and Resource Server actor are defined in the respective profile 
