@@ -8,6 +8,7 @@
 * Updating MHD examples to PDF publication [#362](https://github.com/ehealthsuisse/ch-epr-fhir/issues/362) and [#364](https://github.com/ehealthsuisse/ch-epr-fhir/issues/364)
 * Update to Mobile Care Services Discovery (mCSD) to Release 4.0.0 [#346](https://github.com/ehealthsuisse/ch-epr-fhir/issues/346) and fix link [#352](https://github.com/ehealthsuisse/ch-epr-fhir/issues/352)
 * MHD: Remove authorOrg extension prohibition from CHMhdSubmissionSetComprehensive [#403](https://github.com/ehealthsuisse/ch-epr-fhir/issues/403)
+* Tracecontext: improve wording of the requirements [#393](https://github.com/ehealthsuisse/ch-epr-fhir/issues/393)
 
 ### DSTU5 Informative Ballot 2025 
 
