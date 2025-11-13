@@ -3,12 +3,14 @@
 #### Resolved Issues
 * Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
 * Remove Document Consumer page count request limit requirement from ITI-67 [#391](https://github.com/ehealthsuisse/ch-epr-fhir/issues/391)
+* MHD: Clarify that designationType must be fixed to 'Procedure' for Swiss EPR in CHMhdSubmissionSetComprehensive [#385](https://github.com/ehealthsuisse/ch-epr-fhir/issues/385)
 * Sequence Diagrams - mention mTLS for ITI-65, 67, 68 [#357](https://github.com/ehealthsuisse/ch-epr-fhir/issues/357)
 * On ITI-81 transaction description in Volume 2 [#322](https://github.com/ehealthsuisse/ch-epr-fhir/issues/322)
 * Bundle profile for updating multiple document references in CH:MHD-1 [#361](https://github.com/ehealthsuisse/ch-epr-fhir/issues/361) and [#351](https://github.com/ehealthsuisse/ch-epr-fhir/issues/351)
 * Updating MHD examples to PDF publication [#362](https://github.com/ehealthsuisse/ch-epr-fhir/issues/362) and [#364](https://github.com/ehealthsuisse/ch-epr-fhir/issues/364)
 * Update to Mobile Care Services Discovery (mCSD) to Release 4.0.0 [#346](https://github.com/ehealthsuisse/ch-epr-fhir/issues/346) and fix link [#352](https://github.com/ehealthsuisse/ch-epr-fhir/issues/352)
 * MHD: Remove authorOrg extension prohibition from CHMhdSubmissionSetComprehensive [#403](https://github.com/ehealthsuisse/ch-epr-fhir/issues/403)
+* Tracecontext: improve wording of the requirements [#393](https://github.com/ehealthsuisse/ch-epr-fhir/issues/393)
 
 ### DSTU5 Informative Ballot 2025 
 
