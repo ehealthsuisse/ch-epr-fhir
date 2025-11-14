@@ -30,5 +30,10 @@
 				<map value="XDSDocumentEntry.uniqueId"/>
 			</mapping>
         </element>
+        <element id="Identifier.use">
+            <path value="Identifier.use"/>
+            <min value="1"/>
+            <patternCode value="usual"/>
+        </element>
     </differential>
 </StructureDefinition>
