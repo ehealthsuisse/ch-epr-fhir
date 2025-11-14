@@ -9,12 +9,24 @@ Description: "CH mCSD profile on Practitioner"
 * identifier[LDAP] only LdapIdentifier
 * identifier[LDAP] ^short = "LDAP DN (Distinguished Name), if the practitioner is stored in an HPD"
 * identifier[LDAP] ^patternIdentifier.system = "urn:ietf:rfc:4514"
+* gender from CHmCSDPractitionerGenderVS (required)
+* gender ^short = "male | female"
 
 
 Invariant: ch-mcsd-practitioner-ihe-conformance
 Description: "The Practitioner needs to conform to IHE.mCSD.Practitioner"
 Expression: "conformsTo('https://profiles.ihe.net/ITI/mCSD/StructureDefinition/IHE.mCSD.Practitioner')"
 Severity: #error
+
+
+ValueSet: CHmCSDPractitionerGenderVS
+Id: ch-mcsd-practitioner-gender-vs
+Title: "CH mCSD Practitioner Administrative Gender Value Set"
+Description: """Value set for the administrative gender of a CH mCSD Practitioner. Only 'male' and 'female' values are
+allowed in the HPD context."""
+* ^experimental = false
+* include http://hl7.org/fhir/administrative-gender#male
+* include http://hl7.org/fhir/administrative-gender#female
 
 
 Mapping:  CHmCSDPractitionerToHCProfessional
