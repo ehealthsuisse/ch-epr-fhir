@@ -12,7 +12,8 @@ Description: "CH mCSD profile on Organization"
 * identifier[LDAP] only LdapIdentifier
 * identifier[LDAP] ^short = "LDAP DN (Distinguished Name), if the organization is stored in an HPD"
 * identifier[LDAP] ^patternIdentifier.system = "urn:ietf:rfc:4514"
-
+* type 1..
+* name 1..
 
 
 Invariant: ch-mcsd-organization-ihe-conformance
