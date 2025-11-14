@@ -73,4 +73,23 @@
       </role>
       <name value="Julia Helfe-Gern"></name>
    </entity>
+    <!--  TraceContext  -->
+    <entity>
+        <what>
+            <identifier>
+                <value value="00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00"/>
+            </identifier>
+        </what>
+        <type>
+            <system
+                    value="http://terminology.hl7.org/CodeSystem/audit-entity-type"/>
+            <code value="4"/>
+            <display value="Other"/>
+        </type>
+        <role>
+            <system value="http://terminology.hl7.org/CodeSystem/object-role"/>
+            <code value="26"/>
+            <display value="Processing Element"/>
+        </role>
+    </entity>
 </AuditEvent>
