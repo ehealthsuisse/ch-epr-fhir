@@ -271,7 +271,7 @@ resources:
   Organization/GruppenpraxisCH:
     name: PDQm Provider Organization Gruppenpraxis
     description: Example Organization
-    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-provider-organization
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-feed-organization
   Bundle/PDQm-QueryResponse:
     name: PDQm Match response message
     description: CH PDQm Match response message example result for Franz Muster, 27.1.1955

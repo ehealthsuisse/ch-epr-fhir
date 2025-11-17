@@ -1,3 +1,21 @@
+Profile: CHPIXmFeedOrganization
+Parent: http://fhir.ch/ig/ch-core/StructureDefinition/ch-core-organization-epr
+Id: ch-pixm-feed-organization
+Title: "CH PIXm Feed Organization"
+Description: "The organization information which can be provided in the PIXm Feed according to the EPR. The organization identifier SHALL be expressed as an ISO OID. The organization SHALL have at least one of telecom, address, or contact person to be present."
+* obeys ch-epr-fhir-org-1
+* . ^short = "CH PIXm Feed Organization"
+* identifier 1.. MS
+* identifier.system 1.. MS
+* identifier.system ^short = "The system SHALL be 'urn:ietf:rfc:3986' for OID identifiers"
+* identifier.value 1.. MS
+* identifier.value ^short = "The value SHALL be expressed as an ISO OID (e.g., 'urn:oid:2.999.1.2.3.4')"
+
+Invariant: ch-epr-fhir-org-1
+Description: "The organization SHALL have at least one of telecom, address, or contact person to be present."
+* severity = #error
+* expression = "(telecom.count() + address.count() + contact.name.count()) > 0"
+
 Profile: CHPIXmPatientFeed
 Parent: CHPDQmPatient
 Id: ch-pixm-patient-feed
@@ -5,6 +23,9 @@ Title: "CH PIXm Patient Feed"
 Description: "The patient demographics and identifier information which can be provided in the PIXm Feed according to the EPR. The EPR-SPID as an identifier SHALL be added. The birthname can be added with the ISO 21090 qualifier extension."
 * identifier 2..
 * identifier[LocalPid] ^sliceName = "LocalPid"
+* managingOrganization only Reference(CHPIXmFeedOrganization)
+* managingOrganization MS
+* managingOrganization ^short = "Provider organization of the patient"
 
 Profile: PIXm_IN_Parameters_CH
 Parent: $IHE.PIXm.Query.Parameters.In
