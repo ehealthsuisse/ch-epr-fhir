@@ -269,7 +269,7 @@ resources:
     description: Example Patient
     exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pdqm-patient
   Organization/GruppenpraxisCH:
-    name: PDQm Provider Organization Gruppenpraxis
+    name: PIXm Feed Provider Organization Gruppenpraxis
     description: Example Organization
     exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-pixm-feed-organization
   Bundle/PDQm-QueryResponse:
