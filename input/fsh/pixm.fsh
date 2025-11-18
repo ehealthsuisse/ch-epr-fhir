@@ -6,10 +6,12 @@ Description: "The organization information which can be provided in the PIXm Fee
 * obeys ch-epr-fhir-org-1
 * . ^short = "CH PIXm Feed Organization"
 * identifier 1.. MS
-* identifier.system 1.. MS
-* identifier.system ^short = "The system SHALL be 'urn:ietf:rfc:3986' for OID identifiers"
-* identifier.value 1.. MS
-* identifier.value ^short = "The value SHALL be expressed as an ISO OID (e.g., 'urn:oid:2.999.1.2.3.4')"
+* identifier contains
+    OID 0..1
+* identifier[OID].system 1..
+* identifier[OID] ^patternIdentifier.system = "urn:ietf:rfc:3986"
+* identifier[OID].value 1.. MS
+* identifier[OID].value ^short = "The value SHALL be expressed as an ISO OID (e.g., 'urn:oid:2.999.1.2.3.4')"
 
 Invariant: ch-epr-fhir-org-1
 Description: "The organization SHALL have at least one of telecom, address, or contact person to be present."
