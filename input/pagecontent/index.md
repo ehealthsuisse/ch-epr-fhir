@@ -8,6 +8,8 @@ regulations of the Ordinance on the Electronic Patient Record (EPRO, SR 816.11).
 EPRO-DFI are published in Official Compilation of Federal Legislation (AS) (available in [German](https://www.admin.ch/opc/de/classified-compilation/20111795/index.html), [French](https://www.admin.ch/opc/fr/classified-compilation/20111795/index.html)
 and [Italian](https://www.admin.ch/opc/it/classified-compilation/20111795/index.html)).
 
+For general information on the EPR and the system level architecture of how services in Switzerland are divided into different communities see the architecture page (available in [German](https://www.e-health-suisse.ch/technik/technische-interoperabilitaet/architektur-epd-schweiz), [French](https://www.e-health-suisse.ch/fr/technique/interoperabilite-technique/architecture-dep-suisse) and [Italian](https://www.e-health-suisse.ch/it/tecnica/collegamento-cip/collegamento-cip)) of [eHealth Suisse](https://www.e-health-suisse.ch/).
+
 <div markdown="1" class="stu-note">
 
 This implementation guide is under informative ballot by [HL7 Switzerland](https://www.hl7.ch/) until September 30th, 2025 midnight.   
