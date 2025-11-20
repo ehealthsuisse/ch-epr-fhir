@@ -282,7 +282,7 @@ Usage: #definition
     * versioning = #no-version
   * resource[+]
     * type = #Practitioner
-    * profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Practitioner"
+    * profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/CH.mCSD.Feed.Practitioner"
     * interaction[+].code = #create
     * interaction[+].code = #update
     * interaction[+].code = #delete
