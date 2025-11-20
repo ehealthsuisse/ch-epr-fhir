@@ -16,8 +16,8 @@ from the EPR.
 This national extension covers:
 
 - SMART on FHIR Apps launched from a portal or primary system, which require a launch context identifying the portal or
-  primary system the app is launched from. This requires the portal or primary system to be registered with "client_id"
-  and "client-secret" during onboarding and may require the user to authorize the SMART on FHIR App to act on
+  primary system the app is launched from. This requires the portal or primary system to be registered with _client_id_
+  and _client-secret_ during onboarding and may require the user to authorize the SMART on FHIR App to act on
   behalf for given scopes.
 
 - Portals and primary systems registered during onboarding, which authenticate the user compliant to EPRO Annex
@@ -43,8 +43,7 @@ A healthcare professional uses a primary system which is integrated to the Swiss
 share data and documents with her patients or other healthcare professionals. To access documents from the EPR the
 healthcare professional authenticates at a certified identity provider from her primary system, selects the patient
 and switches to the user interface to display the patients documents. The primary system connects to the IUA
-Authorization
-Server and sends the identity token and the required claims to access the patients EPR.
+Authorization Server and sends the identity token and the required claims to access the patients EPR.
 
 The IUA Authorization Server verifies if the primary system is authorized to access the EPR on behalf of the user by
 checking that the primary system has been registered during the onboarding process.
@@ -90,15 +89,15 @@ To access the patient EHR the clinical archive system first request a basic acce
 credential flow and uses the basic access token in the PIXm or PDQm transactions used to retrieve the EHR-SPID
 and the XAD PID of the patient.
 
-The Authorization server returns the basic access token if the clinical archive systems is registered beforehand and is
+The Authorization server returns the basic access token if the clinical archive systems is registered and is
 authorized to access the Swiss EHR.
 
 The clinical archive system then requests an extended authorization token to be used with the MHD transaction to store
-the document in the patients EHR.
+the document in the patients' EHR.
 
 ### Actors and Transactions
 
-This national extension enhance the requirements on transactions and the expected actions of the Actors of the IUA Trial
+This national extension enhances the requirements on transactions and the expected actions of the Actors of the IUA Trial
 Implementation to comply to the legal requirements of the Swiss EPR.
 
 <div>
@@ -114,11 +113,11 @@ see Annex 8 EPRO-FDHA.
 
 ### Actor Options
 
-This national extension restricts the Actor options of the IUA Trial Implementation to comply to the legal requirements
+This national extension restricts the Actor options of the IUA Trial Implementation to comply with the legal requirements
 of the Swiss EPR.
 
 The IUA Trial Implementation supports three options for the Authorization Token format; the JWT Token, the SAML Token
-and the Token Introspection option. Since this national extension will apply to cross community communication, the Token
+and the Token Introspection option. Since this national extension will apply to cross-community communication, the Token
 Introspection Option SHALL NOT be used. The SAML Token option is not specified in this profile. 
 The JWT Token option SHALL be supported by the Authorization Server and Resource Server.
 
@@ -132,8 +131,8 @@ to the legal requirements of the Swiss EPR.
 The Workflow Initiator option SHALL be claimed by all implementations, which require user
 authentication and requests to retrieve a EPR compliant access token, i.e., patient and healthcare
 professional portals, primary systems, etc. The implementations usually initiate workflows to access
-data and documents, e.g. read or write documents from the EPR, which are triggered by a user
-interaction. Actors SHALL implement the following required transactions (labelled "R") when claiming the
+data and documents (e.g., read or write documents from the EPR, which are triggered by a user
+interaction). Actors SHALL implement the following required transactions (labeled "R") when claiming the
 Workflow Initiator option:
 
 | Actor                         | Transaction                       | Optionality |
@@ -152,8 +151,8 @@ Workflow Initiator option:
 #### Technical User Option
 
 The Technical User option SHALL be claimed by implementations, which do not require user authentication to 
-write documents to the EPR, i.e., archive systems or other primary systems storing EPR data and documents, 
-which are not initiated by a user interaction. Actors SHALL perform the following required transactions (labelled "R") 
+write documents to the EPR (i.e.: archive systems or other primary systems storing EPR data and documents, 
+not initiated by a user interaction). Actors SHALL perform the following required transactions (labeled "R") 
 when claiming the Technical User option:
 
 
@@ -172,7 +171,7 @@ when claiming the Technical User option:
 
 The Proxy option SHALL be claimed by all implementations, which use EPR compliant access token from
 other transactions and use the access token when acting as an agent to request protected data
-from other actors, i.e., Document Source or Consumers with the Federated Cross Community Access Option.
+from other actors (i.e.: Document Source or Consumers with the Federated Cross Community Access Option).
 Actors shall perform the following required transactions (labelled "R") when claiming the Proxy
 option:
 
@@ -210,8 +209,8 @@ see [sequence diagrams](sequencediagrams.html).
 
 ### Security Consideration
 
-Portals and primary systems SHALL be identified by the client_id and client_secret registered during onboarding. All
+Portals and primary systems SHALL be identified by the _client_id_ and _client_secret_ registered during onboarding. All
 requests to the IUA Authorization Server SHALL be authenticated by the digital signatures of the messages. Implementers 
-SHALL register the combination of the OAuth client_id, the URLs and the public key used for message signatures during 
-the onboarding process and keep the data up to date. Implementers shall verify the combination of the OAuth client_id, 
+SHALL register the combination of the OAuth _client_id_, the URLs and the public key used for message signatures during 
+the onboarding process and keep the data up to date. Implementers shall verify the combination of the OAuth _client_id_, 
 the URLs and the public key of all requests against the registered values and shall reject requests in case of mismatch.

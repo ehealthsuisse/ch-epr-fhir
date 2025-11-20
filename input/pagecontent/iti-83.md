@@ -1,5 +1,5 @@
 This section describes the national extension for the Swiss EPR to the [Mobile Patient Identifier Cross-reference Query
-[ITI-83]](https://profiles.ihe.net/ITI/PIXm/ITI-83.html) transaction defined in the IUA profile published in the
+[ITI-83]](https://profiles.ihe.net/ITI/PIXm/ITI-83.html) transaction defined in the PIXm profile published in the
 IHE IT Infrastructure Technical Framework Trial Implementation “Patient Identifier Cross-referencing for mobile”.
 
 ### Scope

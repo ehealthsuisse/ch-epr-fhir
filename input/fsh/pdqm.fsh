@@ -1,18 +1,3 @@
-Profile: CHPDQmProviderOrganization
-Parent: Organization
-Id: ch-pdqm-provider-organization
-Title: "CH PDQm Provider Organization"
-Description: "Organization"
-* obeys ch-epr-fhir-org-1
-* . ^short = "CH PDQm Provider Organization"
-* identifier 1.. MS
-* identifier ^short = "The value shall be expressed as an ISO OID"
-
-Invariant: ch-epr-fhir-org-1
-Description: "The organization SHALL have at least one of telecom, address, or contact person to be present."
-* severity = #error
-* expression = "(telecom.count() + address.count() + contact.name.count()) > 0"
-
 Profile: CHPDQmPatient
 Parent: $ch-core-patient
 Id: ch-pdqm-patient
@@ -34,9 +19,6 @@ Description: "The patient demographics and identifier information which can be p
 * name[BirthName] ^short = "The birthname of the patient"
 * name[BirthName] ^comment = "The birthname is added with the ISO 21090 qualifier https://www.hl7.org/fhir/extension-iso21090-en-qualifier.html BR"
 * contact 0..0
-* managingOrganization only Reference(CHPDQmProviderOrganization)
-* managingOrganization MS
-* managingOrganization ^short = "Provider organization of the patient"
 
 // https://github.com/IHE/ITI.PDQm/blob/main/input/fsh/PDQmMatch.fsh
 Instance: CHPDQmMatch
@@ -284,7 +266,7 @@ Parent:      AuditPdqmMatchConsumer
 Title:       "CH Audit Event for [ITI-119] Patient Demographics Consumer"
 Description: "This profile is used to define the CH Audit Event for the [ITI-119] transaction and the actor 'Patient
               Demographics Consumer'."
-* insert ChAuditEventExtendedRules
+* insert ChAuditEventBasicRules
 * agent[client] ^short = "The 'Patient Demographics Consumer' actor (EPR application)"
 * agent[server] ^short = "The 'Patient Demographics Supplier' actor (EPR API)"
 * entity[patient].what.identifier 1..1
@@ -297,7 +279,7 @@ Parent:      AuditPdqmMatchSupplier
 Title:       "CH Audit Event for [ITI-119] Patient Demographics Supplier"
 Description: "This profile is used to define the CH Audit Event for the [ITI-119] transaction and the actor 'Patient
 Demographics Supplier'."
-* insert ChAuditEventExtendedRules
+* insert ChAuditEventBasicRules
 * agent[client] ^short = "The 'Patient Demographics Consumer' actor (EPR application)"
 * agent[server] ^short = "The 'Patient Demographics Supplier' actor (EPR API)"
 * entity[patient].what.identifier 1..1

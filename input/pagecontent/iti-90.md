@@ -1,5 +1,5 @@
 This section describes the national extension for the Swiss EPR to the [Find Matching Care Services
-[ITI-90]](https://profiles.ihe.net/ITI/mCSD/ITI-90.html) transaction defined in the IUA profile published in the
+[ITI-90]](https://profiles.ihe.net/ITI/mCSD/ITI-90.html) transaction defined in the mCSD profile published in the
 IHE IT Infrastructure Technical Framework Trial Implementation “Mobile Care Services Discovery”.
 
 ### Scope

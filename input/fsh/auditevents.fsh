@@ -59,11 +59,13 @@ RuleSet: ChAuditEventRules
   * role = $objectRole#26 "Processing Element"
 
 
+// Rule Sets for our AuditEvents with basic access tokens
 RuleSet: ChAuditEventBasicRules
 * agent contains mainUser 0..1 and delegatedUser 0..1
 * insert ChAuditEventRules
 
 
+// Rule Sets for our AuditEvents with extended access tokens
 RuleSet: ChAuditEventExtendedRules
 * agent contains mainUser 1..1 and delegatedUser 0..1
 * insert ChAuditEventRules
