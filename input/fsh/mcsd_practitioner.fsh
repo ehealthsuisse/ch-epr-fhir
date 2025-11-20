@@ -17,6 +17,25 @@ Expression: "conformsTo('https://profiles.ihe.net/ITI/mCSD/StructureDefinition/I
 Severity: #error
 
 
+Profile: CHmCSDFeedPractitioner
+Parent: CHmCSDPractitioner
+Id: CH.mCSD.Feed.Practitioner
+Title: "CH mCSD Feed Practitioner"
+Description: "CH mCSD profile on Practitioner Feed"
+* gender from CHmCSDPractitionerGenderVS (required)
+* gender ^short = "male | female"
+
+
+ValueSet: CHmCSDPractitionerGenderVS
+Id: ch-mcsd-practitioner-gender-vs
+Title: "CH mCSD Practitioner Administrative Gender Value Set"
+Description: """Value set for the administrative gender of a CH mCSD Practitioner. Only 'male' and 'female' values are
+allowed in the HPD context."""
+* ^experimental = false
+* include http://hl7.org/fhir/administrative-gender#male
+* include http://hl7.org/fhir/administrative-gender#female
+
+
 Mapping:  CHmCSDPractitionerToHCProfessional
 Source:   CHmCSDPractitioner
 Target:   "https://www.bag.admin.ch/epra"

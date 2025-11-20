@@ -4,6 +4,7 @@
 * Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
 * Remove Document Consumer page count request limit requirement from ITI-67 [#391](https://github.com/ehealthsuisse/ch-epr-fhir/issues/391)
 * MHD: Clarify that designationType must be fixed to 'Procedure' for Swiss EPR in CHMhdSubmissionSetComprehensive [#385](https://github.com/ehealthsuisse/ch-epr-fhir/issues/385)
+* PIXm: Clarify need for organization profile by renaming to CHPIXmFeedOrganization and moving from PDQm to PIXm Feed, changing examples from gln to oid [#392](https://github.com/ehealthsuisse/ch-epr-fhir/issues/392)
 * Sequence Diagrams - mention mTLS for ITI-65, 67, 68 [#357](https://github.com/ehealthsuisse/ch-epr-fhir/issues/357)
 * On ITI-81 transaction description in Volume 2 [#322](https://github.com/ehealthsuisse/ch-epr-fhir/issues/322)
 * Bundle profile for updating multiple document references in CH:MHD-1 [#361](https://github.com/ehealthsuisse/ch-epr-fhir/issues/361) and [#351](https://github.com/ehealthsuisse/ch-epr-fhir/issues/351)
@@ -12,6 +13,9 @@
 * MHD: Remove authorOrg extension prohibition from CHMhdSubmissionSetComprehensive [#403](https://github.com/ehealthsuisse/ch-epr-fhir/issues/403)
 * Tracecontext: improve wording of the requirements [#393](https://github.com/ehealthsuisse/ch-epr-fhir/issues/393)
 * PDQm: modify the ITI-119 AuditEvents to expect a Basic Token, not an Extended one [#350](https://github.com/ehealthsuisse/ch-epr-fhir/issues/350)
+* mCSD: restrict the Practitioner gender code feeding to male and female [#407](https://github.com/ehealthsuisse/ch-epr-fhir/issues/407)
+* ATNA: update RESTful ATNA profile to Rev. 3.5 [#406](https://github.com/ehealthsuisse/ch-epr-fhir/issues/406)
+* ATC: add Tracecontext values to ATC examples [#371](https://github.com/ehealthsuisse/ch-epr-fhir/issues/371)
 
 ### DSTU5 Informative Ballot 2025 
 
