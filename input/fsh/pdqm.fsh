@@ -266,7 +266,7 @@ Parent:      AuditPdqmMatchConsumer
 Title:       "CH Audit Event for [ITI-119] Patient Demographics Consumer"
 Description: "This profile is used to define the CH Audit Event for the [ITI-119] transaction and the actor 'Patient
               Demographics Consumer'."
-* insert ChAuditEventExtendedRules
+* insert ChAuditEventBasicRules
 * agent[client] ^short = "The 'Patient Demographics Consumer' actor (EPR application)"
 * agent[server] ^short = "The 'Patient Demographics Supplier' actor (EPR API)"
 * entity[patient].what.identifier 1..1
@@ -279,7 +279,7 @@ Parent:      AuditPdqmMatchSupplier
 Title:       "CH Audit Event for [ITI-119] Patient Demographics Supplier"
 Description: "This profile is used to define the CH Audit Event for the [ITI-119] transaction and the actor 'Patient
 Demographics Supplier'."
-* insert ChAuditEventExtendedRules
+* insert ChAuditEventBasicRules
 * agent[client] ^short = "The 'Patient Demographics Consumer' actor (EPR application)"
 * agent[server] ^short = "The 'Patient Demographics Supplier' actor (EPR API)"
 * entity[patient].what.identifier 1..1
