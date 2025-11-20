@@ -12,6 +12,7 @@
 * Update to Mobile Care Services Discovery (mCSD) to Release 4.0.0 [#346](https://github.com/ehealthsuisse/ch-epr-fhir/issues/346) and fix link [#352](https://github.com/ehealthsuisse/ch-epr-fhir/issues/352)
 * MHD: Remove authorOrg extension prohibition from CHMhdSubmissionSetComprehensive [#403](https://github.com/ehealthsuisse/ch-epr-fhir/issues/403)
 * Tracecontext: improve wording of the requirements [#393](https://github.com/ehealthsuisse/ch-epr-fhir/issues/393)
+* mCSD: increase min cardinality of Organization names and types [#387](https://github.com/ehealthsuisse/ch-epr-fhir/issues/387)
 * PDQm: modify the ITI-119 AuditEvents to expect a Basic Token, not an Extended one [#350](https://github.com/ehealthsuisse/ch-epr-fhir/issues/350)
 * mCSD: restrict the Practitioner gender code feeding to male and female [#407](https://github.com/ehealthsuisse/ch-epr-fhir/issues/407)
 * ATNA: update RESTful ATNA profile to Rev. 3.5 [#406](https://github.com/ehealthsuisse/ch-epr-fhir/issues/406)
