@@ -6,6 +6,12 @@
 * MHD: Clarify that designationType must be fixed to 'Procedure' for Swiss EPR in CHMhdSubmissionSetComprehensive [#385](https://github.com/ehealthsuisse/ch-epr-fhir/issues/385)
 * Add link to EPR architecture information in introduction [#394](https://github.com/ehealthsuisse/ch-epr-fhir/issues/394)
 * PIXm: Clarify need for organization profile by renaming to CHPIXmFeedOrganization and moving from PDQm to PIXm Feed, changing examples from gln to oid [#392](https://github.com/ehealthsuisse/ch-epr-fhir/issues/392)
+* IUA: Updated the reference to Annex 8 of the ordinances [395](https://github.com/ehealthsuisse/ch-epr-fhir/issues/395)
+* IUA: Refactored the text and tables to clarify how the identity token shall be supplied in ITI-71 requests [#402](https://github.com/ehealthsuisse/ch-epr-fhir/issues/402)
+* IUA: Added text descriptions explaining the context of use [401](https://github.com/ehealthsuisse/ch-epr-fhir/issues/401)
+* IUA: Clarified wording on how an optional field can have a mandatory value [#400](https://github.com/ehealthsuisse/ch-epr-fhir/issues/400)
+* IUA: Corrected the required grant type for authorization code flow [#397](https://github.com/ehealthsuisse/ch-epr-fhir/issues/397)
+* IUA: Removed mTLS requirement for technical user [#382](https://github.com/ehealthsuisse/ch-epr-fhir/issues/382)
 * Sequence Diagrams - mention mTLS for ITI-65, 67, 68 [#357](https://github.com/ehealthsuisse/ch-epr-fhir/issues/357)
 * On ITI-81 transaction description in Volume 2 [#322](https://github.com/ehealthsuisse/ch-epr-fhir/issues/322)
 * Bundle profile for updating multiple document references in CH:MHD-1 [#361](https://github.com/ehealthsuisse/ch-epr-fhir/issues/361) and [#351](https://github.com/ehealthsuisse/ch-epr-fhir/issues/351)
@@ -25,9 +31,11 @@
 #### Open Issues
 
 * Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
+* Interplay of IUA and MHD for DICOM decuments [#177](https://github.com/ehealthsuisse/ch-epr-fhir/issues/177) 
 
 #### Resolved Issues
 
+* TODO
 * CH:ATC: Updated references and minor textual corrections in CH:ATC, ITI-81 and Volume 3 [#323](https://github.com/ehealthsuisse/ch-epr-fhir/issues/323), [#324](https://github.com/ehealthsuisse/ch-epr-fhir/issues/324), [#326](https://github.com/ehealthsuisse/ch-epr-fhir/issues/326), [#327](https://github.com/ehealthsuisse/ch-epr-fhir/issues/327)
 * fix mCSD capability statement expected actions for update, delete [#310](https://github.com/ehealthsuisse/ch-epr-fhir/issues/310)
 * add SCT edition in the expansion parameters [#256](https://github.com/ehealthsuisse/ch-epr-fhir/issues/256)
