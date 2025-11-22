@@ -446,9 +446,9 @@ A basic JWT access token returned by the IUA Authorization Server and to be used
   "iss": "http://issuerAdress.ch",
   "sub": "UserId-bfe8a208-b9d0-4012-b2f5-168b949fc3cb",
   "aud": "http://pixmResourceServerURL.ch",
-  "exp": 1587294580000,
-  "nbf": 1587294460000,
-  "iat": 1587294460000,
+  "exp": 1587294580,
+  "nbf": 1587294460,
+  "iat": 1587294460,
   "jti": "c5436729-3f26-4dbf-abd3-2790dc7771a",
   "extensions": {
     "ihe_iua": {
@@ -471,9 +471,9 @@ the _purpose_of_use_, _subject_role_ and the EPR-SPID of the patient. It may loo
   "iss": "http://issuerAdress.ch",
   "sub": "UserId-bfe8a208-b9d0-4012-b2f5-168b949fc3cb",
   "aud": "http://mhdResourceServerURL.ch",
-  "exp": 1587294580000,
-  "nbf": 1587294460000,
-  "iat": 1587294460000,
+  "exp": 1587294580,
+  "nbf": 1587294460,
+  "iat": 1587294460,
   "jti": "c5436729-3f26-4dbf-abd3-2790dc7771a",
   "extensions": {
     "ihe_iua": {
@@ -519,9 +519,9 @@ patient SHALL have the additional extension _ch_delegation_:
   "iss": "http://issuerAdress.ch",
   "sub": "UserId-bfe8a208-b9d0-4012-b2f5-168b949fc3cb",
   "aud": "http://mhdResourceServerURL.ch",
-  "exp": 1587294580000,
-  "nbf": 1587294460000,
-  "iat": 1587294460000,
+  "exp": 1587294580,
+  "nbf": 1587294460,
+  "iat": 1587294460,
   "jti": "c5436729-3f26-4dbf-abd3-2790dc7771a",
   "extensions": {
     "ihe_iua": {
