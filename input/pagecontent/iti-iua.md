@@ -16,8 +16,8 @@ from the EPR.
 This national extension covers:
 
 - SMART on FHIR Apps launched from a portal or primary system, which require a launch context identifying the portal or
-  primary system the app is launched from. This requires the portal or primary system to be registered with _client_id_
-  and _client-secret_ during onboarding and may require the user to authorize the SMART on FHIR App to act on
+  primary system the app is launched from. This requires the portal or primary system to be registered with **client_id**
+  and **client-secret** during onboarding and may require the user to authorize the SMART on FHIR App to act on
   behalf for given scopes.
 
 - Portals and primary systems registered during onboarding, which authenticate the user compliant to EPRO Annex

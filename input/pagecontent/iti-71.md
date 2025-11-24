@@ -198,12 +198,12 @@ IUA Authorization Clients SHALL send the following values in the scope attribute
 
 The scope parameter of the request MAY claim the following attributes:
 
-- There MAY be a scope with name _launch_. If present, it indicates the permission of SMART on FHIR Apps to get
+- There MAY be a scope with name **launch**. If present, it indicates the permission of SMART on FHIR Apps to get
   launch context from a portal or primary system authorized to access the EPR.
-- There MAY be a scope with name _purpose_of_use_ in token format. If present, the token SHALL convey the coded value of the
+- There MAY be a scope with name **purpose_of_use** in token format. If present, the token SHALL convey the coded value of the
   current transaction’s purpose of use. Allowed values are `NORM` (normal access) and `EMER` (emergency access) from code
   system `2.16.756.5.30.1.127.3.10.5` of the CH:EPR value set (e.g.: `purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5\|NORM`).
-- There MAY be a scope with name _subject_role_ in token format. If present, the token SHALL convey the coded value of the
+- There MAY be a scope with name **subject_role** in token format. If present, the token SHALL convey the coded value of the
   subject’s role. The value SHALL be either `HCP` (healthcare professional), `ASS` (assistant), `REP` (representative) or
   `PAT` (patient) from code system `2.16.756.5.30.1.127.3.10.6` of the CH:EPR value set (e.g.: `subject_role=urn:oid:
   2.16.756.5.30.1.127.3.10.6\|HCP`).
@@ -211,11 +211,11 @@ The scope parameter of the request MAY claim the following attributes:
 
 Note: The parameters need to be url encoded, see above message example.
 
-Additional scopes are required depending on the user's role: For assistants, there SHALL be a scope with name _principal_id_, 
+Additional scopes are required depending on the user's role: For assistants, there SHALL be a scope with name **principal_id**, 
 the value of which SHALL be the GLN of the healthcare professional an assistant is acting on behalf of. There SHALL be 
-a scope with name _principal_, the value of which SHALL be the name of the healthcare professional an assistant is 
-acting on behalf of. There MAY be a scope with name _group_id_ and _group_, the value of which SHALL be the ID and name of 
-the organization or group the user is acting on behalf of. The value of _group_id_ SHALL be an OID in the format of a URN 
+a scope with name **principal**, the value of which SHALL be the name of the healthcare professional an assistant is 
+acting on behalf of. There MAY be a scope with name **group_id** and **group**, the value of which SHALL be the ID and name of 
+the organization or group the user is acting on behalf of. The value of **group_id** SHALL be an OID in the format of a URN 
 and the organization or group shall be registered in the EPR HPD.
 
 
@@ -244,13 +244,13 @@ endpoint with query parameters defined in section [Message Semantics](#message-s
 
 When receiving the request, the IUA Authorization Server
 
-- SHALL verify that the IUA Authorization Client was registered during onboarding with the _client_id_ and _client secret_
+- SHALL verify that the IUA Authorization Client was registered during onboarding with the **client_id** and **client secret**
   presented in the request.
-- SHALL validate the requests parameter (i.e.: _person_id_). Depending on the parameter, the IUA Authorization Server
+- SHALL validate the requests parameter (i.e.: **person_id**). Depending on the parameter, the IUA Authorization Server
   SHALL either build a Basic Access Token authorizing basic access to the EPR (i.e., PIXm), or an Extended Access Token
   to authorize access to resources protected by the role and attribute based EPR authorization (i.e., read and write
   documents).
-- SHALL validate the _launch_ scope parameter. For SMART on FHIR Apps launched in an EPR Launch, the IUA Authorization
+- SHALL validate the **launch** scope parameter. For SMART on FHIR Apps launched in an EPR Launch, the IUA Authorization
   Server SHALL verify that the portal or primary system which launched the SMART on FHIR App is registered with
   this launch parameter value by the community.
 - SHALL verify that the IUA Authorization Client is authorized to access the EPR on behalf of the user by community policy
@@ -265,7 +265,7 @@ In case of success, the IUA Authorization Server SHALL send the authorization co
 _redirect_uri_ via the user agent.
 
 The IUA Authorization Client SHALL perform the HTTP POST request to the Authorization token endpoint to resolve the
-authorization code to the access token, sending the _client_id_ and _client_secret_ in the HTTP authorization header field.
+authorization code to the access token, sending the **client_id** and **client_secret** in the HTTP authorization header field.
 
 When retrieving the token request, the IUA Authorization Server SHALL verify that the user is authenticated compliant to the
 regulations of the Swiss EPR, either by validating the identity token sent with the token request or by redirecting the
@@ -296,8 +296,8 @@ GET authorize?
     code_challenge_method=S256
 ```
 
-An extended access token where at least _purpose_of_use_ (e.g., `NORM`), _subject_role_ (e.g., `HCP`) and 
-_person_id_ are specified may look like:
+An extended access token where at least **purpose_of_use** (e.g., `NORM`), **subject_role** (e.g., `HCP`) and
+**person_id** are specified may look like:
 
 ```http
 GET authorize?
@@ -365,7 +365,7 @@ Annex 5 Addendum 1, section 1.6.4.2 Get X-User Assertion).
 | person_id               | O/R                           | urn:oasis:names:tc:xacml:2.0:resource:resource-id   | SHALL be the EPR-SPID of the patients EPR.                                |
 {:class="table table-bordered"}
 
-<figcaption id='jwttiua'>Table: Attributes of the IUA Get Access Token response in the JWT extension _ihe_iua_.</figcaption>  
+<figcaption id='jwttiua'>Table: Attributes of the IUA Get Access Token response in the JWT extension `ihe_iua`.</figcaption>  
 
 ###### The JWT ch_epr extension
 
@@ -387,11 +387,11 @@ in the JWT access token of the Get Access Token Response. Its attributes are:
 | Policy Administrator    | IdP-ID   | urn:e-health-suisse:document-administrator-id  |        
 {:class="table table-bordered"}
 
-<figcaption>Table: _user_id_ and _user_id_qualifier_ of EPR user.</figcaption>
+<figcaption>Table: **user_id** and **user_id_qualifier** of EPR user.</figcaption>
 
 ||
 
-Note: This extension corresponds to the _NameID_ element of SAML 2.0 formatted X-User Assertions described in
+Note: This extension corresponds to the **NameID** element of SAML 2.0 formatted X-User Assertions described in
 Annex 5 E1, section 1.6.4.2.4.2.
 
 ###### The JWT ch_group extension
@@ -404,7 +404,7 @@ The IUA Authorization Server and IUA Resource Server SHALL support this extensio
 a subject of role healthcare professional is a member of. For users of role assistant, the groups SHALL be the groups of 
 the healthcare professional the assistant is acting on behalf of.
 
-Groups SHALL be wrapped in an _extension_ object with key `ch_group` with a JSON array containing one JSON object 
+Groups SHALL be wrapped in an **extensions** object with key `ch_group` with a JSON array containing one JSON object 
 per group with the following attributes:
 
 - id (required): The id of the group. Required for users of role healthcare professional and assistant. 
@@ -412,8 +412,8 @@ per group with the following attributes:
 - name (required): Name of the group. Required for users of role healthcare professional and assistant.
   The name SHALL be a string.
 
-Note: This extension corresponds to the list of _urn:oasis:names:tc:xspa:1.0:subject:organization_ and 
-_urn:oasis:names:tc:xspa:1.0:subject:organization-id_ elements of SAML 2.0 formatted X-User Assertions described in
+Note: This extension corresponds to the list of **urn:oasis:names:tc:xspa:1.0:subject:organization** and 
+**urn:oasis:names:tc:xspa:1.0:subject:organization-id** elements of SAML 2.0 formatted X-User Assertions described in
 Annex 5 Addendum 1, section 1.6.4.2.4.2.
 
 ###### The JWT ch_delegation extension
@@ -422,13 +422,13 @@ Delegation is used in the access management of the Swiss EPR to indicate that a 
 behalf of a healthcare professional. The IUA Authorization Server and IUA Resource Server SHALL support this extension in the 
 JWT access token to identify the healthcare professional (principal) the assistant is acting on behalf of.
 
-Principals SHALL be wrapped in an _extensions_ object with key `ch_delegation` and a JSON value
+Principals SHALL be wrapped in an **extensions** object with key `ch_delegation` and a JSON value
 object with attributes:
 
 - principal (optional) Name of the healthcare professional an assistant is acting on behalf of.
 - principal_id (optional) GLN of the healthcare professional an assistant is acting on behalf of.
 
-Note: This extension corresponds to the attributes _urn:e-health-suisse:principal-name_ and _urn:e-health-suisse:principal-id_
+Note: This extension corresponds to the attributes **urn:e-health-suisse:principal-name** and **urn:e-health-suisse:principal-id**
 in the XUA specification in Annex 5 Addendum 1, section 1.6.4.2.4.2.2.
 
 ##### Expected Actions
@@ -464,7 +464,7 @@ A basic JWT access token returned by the IUA Authorization Server and to be used
 ```
 
 An extended JWT access token to be used to access patient documents SHALL have the additional attributes of 
-the _purpose_of_use_, _subject_role_ and the EPR-SPID of the patient. It may look like:
+the **purpose_of_use**, **subject_role** and the EPR-SPID of the patient. It may look like:
 
 ```json
 {
@@ -512,7 +512,7 @@ the _purpose_of_use_, _subject_role_ and the EPR-SPID of the patient. It may loo
 ```
 
 An extended JWT access token to be used to access by an assistant acting behalf of a healthcare professional for a
-patient SHALL have the additional extension _ch_delegation_:
+patient SHALL have the additional extension **ch_delegation**:
 
 ```json
 {
@@ -575,7 +575,7 @@ of the JWT token as specified in the IUA Trial Implementation. The JWE alternati
 When receiving requests of transactions where the EPR-SPID is provided in the IUA token and in the transaction body,
 the IUA Resource Servers SHALL verify that both are the same.
 
-The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
+The actors SHALL support the **traceparent** header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 #### Security Audit Considerations
 
