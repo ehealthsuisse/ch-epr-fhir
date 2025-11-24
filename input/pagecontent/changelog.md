@@ -26,6 +26,12 @@
 * ATNA: update RESTful ATNA profile to Rev. 3.5 [#406](https://github.com/ehealthsuisse/ch-epr-fhir/issues/406)
 * ATC: add Tracecontext values to ATC examples [#371](https://github.com/ehealthsuisse/ch-epr-fhir/issues/371)
 
+#### Closed Issues
+* IHE PCF not a replacement for CH:PPQ/CH:ADR [#388](https://github.com/ehealthsuisse/ch-epr-fhir/issues/388)
+* ATC_LOG_READ required by Annex 2 [#390](https://github.com/ehealthsuisse/ch-epr-fhir/issues/390)
+* Binding DocumentReference.securityLabel not changed sind binding in R5 less strict [#386](https://github.com/ehealthsuisse/ch-epr-fhir/issues/386)
+* No extended AuditEvent for CH:ADR decision logging [#356](https://github.com/ehealthsuisse/ch-epr-fhir/issues/356)
+
 ### DSTU5 Informative Ballot 2025 
 
 #### Open Issues
