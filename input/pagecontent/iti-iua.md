@@ -103,7 +103,7 @@ Implementation to comply to the legal requirements of the Swiss EPR.
 <div>
 {%include IUA_actor_diagram.svg %}
 </div>
-This figure shows the actors directly involved in the _Internet User Authorization_ Profile and the relevant 
+This figure shows the actors directly involved in the Internet User Authorization Profile and the relevant 
 transactions between them.
 
 The IUA Authorization Client SHALL use the Authenticate User transaction defined in Annex 5 EPRO-FDHA to pass identity 
@@ -209,8 +209,10 @@ see [sequence diagrams](sequencediagrams.html).
 
 ### Security Consideration
 
-Portals and primary systems SHALL be identified by the _client_id_ and _client_secret_ registered during onboarding. All
-requests to the IUA Authorization Server SHALL be authenticated by the digital signatures of the messages. Implementers 
-SHALL register the combination of the OAuth _client_id_, the URLs and the public key used for message signatures during 
-the onboarding process and keep the data up to date. Implementers shall verify the combination of the OAuth _client_id_, 
-the URLs and the public key of all requests against the registered values and shall reject requests in case of mismatch.
+Portals and primary systems SHALL be identified by the **client_id** and **client_secret** registered during onboarding. 
+All requests to the IUA Authorization Server SHALL be authenticated by the digital signatures of the messages. 
+
+Implementers SHALL register the combination of the OAuth **client_id**, the URLs and the public key used for message 
+signatures during the onboarding process and keep the data up to date. Implementers shall verify the combination of the 
+OAuth **client_id**, the URLs and the public key of all requests against the registered values and shall reject requests 
+in case of mismatch.
