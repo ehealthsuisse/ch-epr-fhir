@@ -262,7 +262,7 @@ When receiving the request, the IUA Authorization Server
 In case of failure, the IUA Authorization Server SHALL respond with HTTP error code `401 Not authorized`.
 
 In case of success, the IUA Authorization Server SHALL send the authorization code to the IUA Authorization Client
-_redirect_uri_ via the user agent.
+**redirect_uri** via the user agent.
 
 The IUA Authorization Client SHALL perform the HTTP POST request to the Authorization token endpoint to resolve the
 authorization code to the access token, sending the **client_id** and **client_secret** in the HTTP authorization header field.
@@ -365,7 +365,7 @@ Annex 5 Addendum 1, section 1.6.4.2 Get X-User Assertion).
 | person_id               | O/R                           | urn:oasis:names:tc:xacml:2.0:resource:resource-id   | SHALL be the EPR-SPID of the patients EPR.                                |
 {:class="table table-bordered"}
 
-<figcaption id='jwttiua'>Table: Attributes of the IUA Get Access Token response in the JWT extension `ihe_iua`.</figcaption>  
+<figcaption id='jwttiua'>Table: Attributes of the IUA Get Access Token response in the JWT extension ihe_iua.</figcaption>  
 
 ###### The JWT ch_epr extension
 
@@ -373,7 +373,7 @@ The IUA Authorization Server and IUA Resource Server SHALL support this extensio
 in the JWT access token of the Get Access Token Response. Its attributes are: 
 
 - user_id (required): The EPR subject identifier as defined in the table below. 
-- user_id_(required): The subject identifier qualifier as defined in the table below.
+- user_id_qualifier (required): The subject identifier qualifier as defined in the table below.
 
 ||
 
@@ -387,7 +387,7 @@ in the JWT access token of the Get Access Token Response. Its attributes are:
 | Policy Administrator    | IdP-ID   | urn:e-health-suisse:document-administrator-id  |        
 {:class="table table-bordered"}
 
-<figcaption>Table: **user_id** and **user_id_qualifier** of EPR user.</figcaption>
+<figcaption>Table: user_id and user_id_qualifier of EPR user.</figcaption>
 
 ||
 

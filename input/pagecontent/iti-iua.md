@@ -172,7 +172,7 @@ when claiming the Technical User option:
 The Proxy option SHALL be claimed by all implementations, which use EPR compliant access token from
 other transactions and use the access token when acting as an agent to request protected data
 from other actors (i.e.: Document Source or Consumers with the Federated Cross Community Access Option).
-Actors shall perform the following required transactions (labelled "R") when claiming the Proxy
+Actors shall perform the following required transactions (labeled "R") when claiming the Proxy
 option:
 
 
