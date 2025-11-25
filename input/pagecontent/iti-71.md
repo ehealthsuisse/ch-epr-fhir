@@ -562,8 +562,16 @@ There are no CapabilityStatement resources defined for this transaction.
 
 ### Security Consideration
 
-IUA Authorization Clients, IUA Authorization Servers and IUA Resource Server actors SHALL use the JWS (signed) alternative
-of the JWT token as specified in the IUA Trial Implementation. The JWE alternative SHALL not be used.
+IUA Authorization Clients, IUA Authorization Servers and IUA Resource Server actors SHALL support the JWS (signed) 
+alternative of the JWT token as specified in the IUA Trial Implementation. To ensure the authenticity and integrity 
+of the token, the IUA Authorization Server SHALL sign the JWT token with its private key and IUA Resource Servers 
+SHALL verify the signature of the JWT token with the Authorization Server's public key. The JWE alternative SHALL 
+not be used.
+
+IUA Authorization Clients SHALL sign the requests to the token endpoint of the IUA Authorization Server with the 
+private key of the client as defined in RFC 9421 `HTTP Message Signatures` to ensure the authenticity and integrity 
+of the request. The IUA Authorization Server SHALL verify the signature of the requests with the public key of the 
+client. The signature SHALL cover the entire request content.
 
 When receiving requests of transactions where the EPR-SPID is provided in the IUA token and in the transaction body,
 the IUA Resource Servers SHALL verify that both are the same.
