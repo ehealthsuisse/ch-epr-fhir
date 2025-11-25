@@ -85,7 +85,7 @@ A clinical archive system aims to access the EPR to write documents.
 
 ###### Message Semantics
 
-The IUA Authorization Client SHALL send an IUA compliant Authorization Request for the client credential grant
+The IUA Authorization Client SHALL send an IUA compliant OAuth Token Request for the client credential grant
 type with Swiss extensions:
 
 - grant_type (required): The value of the parameter shall be `client_credentials`.
@@ -102,7 +102,7 @@ The Authorization Request SHALL use the following Swiss extension:
 - person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority
   formatted in CX syntax, required for requesting extended access token.
 
-IUA Authorization Clients SHALL sent the following scope values in the Authorization Request:
+IUA Authorization Clients SHALL sent the following scope values in the Token Request:
 
 | Scope          | Optionality (Basic/ Extended) | Type                               | Reference           | Remark                                                                                                       |
 |----------------|-------------------------------|------------------------------------|---------------------|--------------------------------------------------------------------------------------------------------------|
@@ -116,7 +116,7 @@ IUA Authorization Clients SHALL sent the following scope values in the Authoriza
 
 ###### Expected Actions
 
-When receiving a Get Access Token Request with purpose_of_use set to AUTO and subject_role set to TCU, the Authorization
+When receiving a Token Request with purpose_of_use set to AUTO and subject_role set to TCU, the Authorization
 Server SHALL:
 
 - identify the IUA Authorization Client with the client_id and client_secret.
@@ -124,7 +124,7 @@ Server SHALL:
 - verify that the principal_id matches the GLN of the legal responsible healthcare professional the IUA Authorization Client
   was registered during onboarding.
 
-The IUA Authorization Server SHALL respond with the Get Access Token Response only if all checks are successful. If one 
+The IUA Authorization Server SHALL respond with the Token Response only if all checks are successful. If one 
 of the above checks fails, the IUA Authorization Server SHALL respond with HTTP 401 (Unauthorized) error.
 
 If the person_id is set in the request, the IUA Authorization Server SHALL respond with an Extended Access Token. 
@@ -158,7 +158,7 @@ A user launches a portal, primary system or a SMART on FHIR App to access data a
 
 ###### Message Semantics
 
-In the first step of the sequence the IUA Authorization Client SHALL send an IUA compliant Authorization 
+In the first step of the sequence the IUA Authorization Client SHALL send an OAuth Authorization 
 Request for the authorization code grant type with the following Swiss extension:
 
 - response_type (required): The value of the parameter shall be code.
@@ -218,11 +218,10 @@ acting on behalf of. There MAY be a scope with name **group_id** and **group**, 
 the organization or group the user is acting on behalf of. The value of **group_id** SHALL be an OID in the format of a URN 
 and the organization or group shall be registered in the EPR HPD.
 
+In the second step of the sequence the IUA Authorization Client SHALL perform an OAuth Token Request for the 
+authorization code grant type with the following Swiss extension:
 
-In the second step of the sequence the IUA Authorization Client SHALL perform an IUA compliant Access 
-Token Request for the authorization code grant type with the following Swiss extension:
-
-The IUA Access Token Request SHALL contain the following attributes:
+The Token Request SHALL contain the following attributes:
 - grant_type (required): The value of the parameter shall be `client_credentials`.
 - code (required): The authorization code received from the IUA Authorization Server in the authorization response.
 - code_verifier (required): The original code verifier string.
@@ -236,13 +235,7 @@ The IUA Access Token Request SHALL contain the following attributes:
 
 ###### Expected Actions
 
-The IUA Authorization Client and IUA Authorization Server SHALL support the HTTP conversation of the Authorization
-Code grant type.
-
-When launched, the IUA Authorization Client SHALL send an HTTP GET request to the IUA Authorization Server authorization
-endpoint with query parameters defined in section [Message Semantics](#message-semantics-1).
-
-When receiving the request, the IUA Authorization Server
+When receiving the Authorization Request, the IUA Authorization Server
 
 - SHALL verify that the IUA Authorization Client was registered during onboarding with the **client_id** and **client secret**
   presented in the request.
@@ -264,10 +257,10 @@ In case of failure, the IUA Authorization Server SHALL respond with HTTP error c
 In case of success, the IUA Authorization Server SHALL send the authorization code to the IUA Authorization Client
 **redirect_uri** via the user agent.
 
-The IUA Authorization Client SHALL perform the HTTP POST request to the Authorization token endpoint to resolve the
+The IUA Authorization Client SHALL perform the OAuth Token Request to the token endpoint to resolve the
 authorization code to the access token, sending the **client_id** and **client_secret** in the HTTP authorization header field.
 
-When retrieving the token request, the IUA Authorization Server SHALL verify that the user is authenticated compliant to the
+When retrieving the Token Request, the IUA Authorization Server SHALL verify that the user is authenticated compliant to the
 regulations of the Swiss EPR, either by validating the identity token sent with the token request or by redirecting the
 IUA Authorization Client's user agent to a certified Identity Provider.
 
