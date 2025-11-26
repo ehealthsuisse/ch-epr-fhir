@@ -25,6 +25,7 @@
 * mCSD: restrict the Practitioner gender code feeding to male and female [#407](https://github.com/ehealthsuisse/ch-epr-fhir/issues/407)
 * ATNA: update RESTful ATNA profile to Rev. 3.5 [#406](https://github.com/ehealthsuisse/ch-epr-fhir/issues/406)
 * ATC: add Tracecontext values to ATC examples [#371](https://github.com/ehealthsuisse/ch-epr-fhir/issues/371)
+* ATNA: created a profile for the ITI-81 AuditEvent [#426](https://github.com/ehealthsuisse/ch-epr-fhir/issues/426)
 
 ### DSTU5 Informative Ballot 2025 
 

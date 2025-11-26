@@ -57,4 +57,7 @@ The CH:ATC Patient Audit Record Repository shall be grouped with CH:ADR, i.e. th
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 
 #### Security Audit Considerations
+
+The Audit Consumer and Audit Record Repository SHALL record an audit event according to [ChAuditEventIti81](StructureDefinition-ChAuditEventIti81.html) ([example](AuditEvent-ChAuditEventIti81Example.html)).
+
 An audit event as specified in [Access Audit Trail Content Profile](volume3.html#access-audit-trail-content-profile) shall be returned by a query to Patient Audit Record Repository after the Patient Audit Record Repository has been queried by a Patient Audit Consumer.
