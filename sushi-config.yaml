@@ -471,6 +471,10 @@ resources:
     name: Example of audit event for a [ITI-130] delete transaction
     description: This example shows an AuditEvent made by the Directory for a ITI-130 transaction that deleted an Organization.
     exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti130Delete
+  AuditEvent/ChAuditEventIti81Example:
+    name: Example of audit event for a [ITI-81] transaction at Consumer
+    description: This example shows an AuditEvent made by the Audit Consumer for a ITI-81 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti81
   Organization/mCSD-Peer-to-peer-Organization-Auryn-Spital:
     name: mCSD-Peer-to-peer-Organization-Auryn-Spital
     description: Resource Organization Auryn-Spital

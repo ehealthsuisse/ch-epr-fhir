@@ -164,3 +164,62 @@ RuleSet: ChExampleAuditEventEntityPatientRules
     * system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
   * type = $auditEntityType#1 "Person"
   * role = $objectRole#1 "Patient"
+
+
+// Profile for the ITI-81 Audit Event
+Profile:     ChAuditEventIti81
+Parent:      IHE.BasicAudit.PatientQuery
+Title:       "CH Audit Event for [ITI-81]"
+Description: "This profile is used to define the CH Audit Event for the [ITI-81] transaction and all actors ('Audit
+Consumer' & 'Audit Record Repository')."
+* insert ChAuditEventExtendedRules
+* type = $auditEventType#rest
+* subtype ^slicing.discriminator.type = #value
+* subtype ^slicing.discriminator.path = "$this"
+* subtype ^slicing.rules = #open // allow other codes
+* subtype contains iti81 1..1
+* subtype[anySearch] = $restfulInteraction#search
+* subtype[iti81] = $eventTypeCode#ITI-81
+* agent[client] ^short = "The Audit Consumer involved in the ITI-81 transaction"
+* agent[server] ^short = "The Audit Record Repository involved in the ITI-81 transaction"
+* entity[query] ^short = "The search query used in the ITI-81 transaction"
+
+
+// Example for the ITI-81 Audit Event
+Instance:   ChAuditEventIti81Example
+InstanceOf: ChAuditEventIti81
+Usage:      #example
+* recorded = "2024-10-28T09:43:56Z"
+* outcome = #0
+* type = $auditEventType#rest "Restful Operation"
+* subtype[anySearch] = $restfulInteraction#search "search"
+* subtype[iti81] = $eventTypeCode#ITI-81 "Retrieve ATNA AuditEvent"
+* agent[client]
+  * type = DCM#110153 "Source Role ID"
+  * who.display = "Patient Web Portal"
+  * requestor = false
+  * network
+    * address = "10.0.0.0"
+    * type = #2
+* agent[server]
+  * type = DCM#110152 "Destination Role ID"
+  * who.display = "Community A"
+  * requestor = false
+  * network
+    * type = #5
+* agent[mainUser]
+  * role = $ehealthRole#PAT
+  * altId = "761322222222222222"
+  * name = "Jakob Wieder-Gesund"
+  * requestor = true
+  * purposeOfUse = $purposeOfUse#NORM "Normal Access"
+* insert ChExampleAuditEventClientRules
+* insert ChExampleAuditEventEntityPatientRules
+* entity[traceparent]
+  * what.identifier.value = "00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-00"
+  * type = $auditEntityType#4 "Other"
+  * role = $objectRole#26 "Processing Element"
+* entity[query]
+  * type = $auditEntityType#2 "System Object"
+  * role = $objectRole#24 "Query"
+  * query = "aHR0cDovL2V4YW1wbGUuY29tL0FSUnNlcnZpY2UvQXVkaXRFdmVudD9kYXRlPWdlMjAyMC0wMy0yMiZkYXRlPWxlMjAyNS0wMy0yMiZlbnRpdHkuaWRlbnRpZmllcj11cm46b2lkOjIuMTYuNzU2LjUuMzAuMS4xMjcuMy4xMC4zfDc2MTMyMjIyMjIyMjIyMjIyMg=="
