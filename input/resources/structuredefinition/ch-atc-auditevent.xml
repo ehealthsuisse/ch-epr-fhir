@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="ch-epr-fhir-auditevent"/>
-  <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-auditevent"/>
-  <name value="ChEprFhirAuditEvent"/>
-  <title value="CH EPR FHIR AuditEvent"/>
+  <id value="ch-atc-auditevent"/>
+  <url value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-atc-auditevent"/>
+  <name value="ChAtcAuditEvent"/>
+  <title value="CH ATC AuditEvent"/>
   <status value="active"/>
   <date value="2018-05-28"/>
   <publisher value="eHealth Suisse"/>
@@ -14,7 +14,7 @@
       <value value="https://www.e-health-suisse.ch/"/>
     </telecom>
   </contact>
-  <description value="CH EPR FHIR profile on AuditEvent"/>
+  <description value="CH ATC profile on AuditEvent"/>
   <fhirVersion value="4.0.1"/>
   <kind value="resource"/>
   <abstract value="false"/>
