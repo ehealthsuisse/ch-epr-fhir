@@ -144,7 +144,7 @@ Accept: application/json
 Content-type: application/x-www-form-urlencoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 Content-Digest: sha-512=:Lh6fzO9XALiY46o5xVyN9yZloKZ6pLJV0kz+VirU5b6rQd2ii7vrTt4gxe32HRuLtNYG2Kl7CnGwQjjDxQk4yA===:
-Signature-Input: sig1=("@method" "@target-uri" "authorization" "content-digest");created=1764073861;keyid="snIZq-_NvzkKV-IdiM348BCz_RKdwmufnrPubsKKyio";tag="fapi-2-request"
+Signature-Input: sig1=("@method" "@target-uri" "authorization" "content-digest");created=1764073861;expires=1764074161;keyid="snIZq-_NvzkKV-IdiM348BCz_RKdwmufnrPubsKKyio";tag="fapi-2-request"
 Signature: sig1=:9FaAZovdKmr9LVmwnzyfRED1ws1dX1mZLIgIPTOyBTNi0HkNoLxVipp8ZyGGx6+XP+7WVRh1wNQk9xjunHhZOw==:
 
 grant_type=client_credentials&
@@ -327,7 +327,7 @@ Accept: application/json
 Content-type: application/x-www-form-urlencoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
 Content-Digest: sha-512=:Lh6fzO9XALiY46o5xVyN9yZloKZ6pLJV0kz+VirU5b6rQd2ii7vrTt4gxe32HRuLtNYG2Kl7CnGwQjjDxQk4yA===:
-Signature-Input: sig1=("@method" "@target-uri" "authorization" "content-digest");created=1764073861;keyid="snIZq-_NvzkKV-IdiM348BCz_RKdwmufnrPubsKKyio";tag="fapi-2-request"
+Signature-Input: sig1=("@method" "@target-uri" "authorization" "content-digest");created=1764073861;expires=1764074161;keyid="snIZq-_NvzkKV-IdiM348BCz_RKdwmufnrPubsKKyio";tag="fapi-2-request"
 Signature: sig1=:9FaAZovdKmr9LVmwnzyfRED1ws1dX1mZLIgIPTOyBTNi0HkNoLxVipp8ZyGGx6+XP+7WVRh1wNQk9xjunHhZOw==:
 
 grant_type=authorization_code&
@@ -575,10 +575,43 @@ alternative of the JWT token as specified in the IUA Trial Implementation. To en
 the IUA Authorization Server SHALL sign the JWT token with its private key and IUA Resource Servers SHALL verify 
 the signature of the JWT token with the Authorization Server's public key. The JWE alternative SHALL not be used.
 
-To ensure the authenticity and integrity, IUA Authorization Clients SHALL sign requests to the token endpoint of 
-the IUA Authorization Server with the clients' private key as defined in RFC 9421 `HTTP Message Signatures`. 
+To ensure the authenticity and integrity of the token requests, IUA Authorization Clients SHALL sign requests to the 
+token endpoint of the IUA Authorization Server with the clients' private key as defined in `RFC 9421 HTTP Message Signatures`. 
 The signature SHALL cover the entire request content. The IUA Authorization Server SHALL verify the requests' 
 signature with the clients' public key exchanged during the client registration process. 
+
+The requests signature SHALL cover the following components of the http message as defined in `RFC 9421 HTTP Message Signatures`: 
+- method (required): The http protocol name the value of it SHALL be `POST`.
+- target-uri (required): The URI of the IUA Authorization server.
+- authorization (required): The value of the Authorization http header.
+- content-digest (required): The digest of the http message as defined in `RFC 9530 Digest Fields`.
+- created (required): Creation time as a UNIX timestamp value of type Integer. 
+- expires (required): Expiration time as a UNIX timestamp value of type Integer which SHALL be at max 60 seconds after the creation time.
+- keyid (optional): The identifier for the key material as a String value.
+- tag (optional): An application-specific tag for the signature as a String value which MAY be used to transfer additional information.
+
+Token requests SHALL use a http header with name `Signature-Input` the value of it SHALL be one or more metadata 
+sets with a key uniquely identifying the message signatures within the HTTP message as defined in `RFC 9421 HTTP Message Signatures`. 
+There SHALL be at least one signature metadata set created by the IUA Authorization Client, e.g.:
+```
+Signature-Input: sig1=("@method" "@target-uri" "authorization" "content-digest");created=1764073861;created=1764074161;keyid="snIZq-_NvzkKV-IdiM348BCz_RKdwmufnrPubsKKyio";tag="fapi-2-request"
+```
+
+Token requests SHALL use a http header with name `Signature` the value of it SHALL be one or more message signatures 
+generated from the signature context of the target message with a key which uniquely identify the message signature
+as defined in RFC 9421 `HTTP Message Signatures`. There SHALL be at least one signature created by the 
+IUA Authorization Client, e.g.:
+```
+Signature: sig1=:9FaAZovdKmr9LVmwnzyfRED1ws1dX1mZLIgIPTOyBTNi0HkNoLxVipp8ZyGGx6+XP+7WVRh1wNQk9xjunHhZOw==:
+```
+
+Token requests SHALL use a http header with name `Content-Digest` the value of it SHALL be the content digest of the 
+request message with a key indicating the algorithm used as defined in `RFC 9530 Digest Fields`, e.g.:
+```
+Content-Digest: sha-512=:Lh6fzO9XALiY46o5xVyN9yZloKZ6pLJV0kz+VirU5b6rQd2ii7vrTt4gxe32HRuLtNYG2Kl7CnGwQjjDxQk4yA===:
+```
+
+IUA Authorization Server SHALL verify the signature of the token requests as specified in `RFC 9421 HTTP Message Signatures`.
 
 When receiving requests of transactions where the EPR-SPID is provided in the IUA token and in the transaction body,
 the IUA Resource Servers SHALL verify that both are the same.
