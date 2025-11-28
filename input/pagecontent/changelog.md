@@ -25,6 +25,7 @@
 * mCSD: restrict the Practitioner gender code feeding to male and female [#407](https://github.com/ehealthsuisse/ch-epr-fhir/issues/407)
 * ATNA: update RESTful ATNA profile to Rev. 3.5 [#406](https://github.com/ehealthsuisse/ch-epr-fhir/issues/406)
 * ATC: add Tracecontext values to ATC examples [#371](https://github.com/ehealthsuisse/ch-epr-fhir/issues/371)
+* PPQm: describe the blocking option of EPR policy sets based on template 301 [#368](https://github.com/ehealthsuisse/ch-epr-fhir/issues/368)
 
 ### DSTU5 Informative Ballot 2025 
 
