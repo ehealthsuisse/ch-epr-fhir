@@ -85,7 +85,7 @@ A clinical archive system aims to access the EPR to write documents.
 
 ###### Message Semantics
 
-The IUA Authorization Client SHALL send an IUA compliant Authorization Request for the client credential grant
+The IUA Authorization Client SHALL send an IUA compliant OAuth Token Request for the client credential grant
 type with Swiss extensions:
 
 - grant_type (required): The value of the parameter shall be `client_credentials`.
@@ -102,7 +102,7 @@ The Authorization Request SHALL use the following Swiss extension:
 - person_id (optional/required): EPR-SPID identifier of the patient’s record and the patient assigning authority
   formatted in CX syntax, required for requesting extended access token.
 
-IUA Authorization Clients SHALL sent the following scope values in the Authorization Request:
+IUA Authorization Clients SHALL sent the following scope values in the Token Request:
 
 | Scope          | Optionality (Basic/ Extended) | Type                               | Reference           | Remark                                                                                                       |
 |----------------|-------------------------------|------------------------------------|---------------------|--------------------------------------------------------------------------------------------------------------|
@@ -116,7 +116,7 @@ IUA Authorization Clients SHALL sent the following scope values in the Authoriza
 
 ###### Expected Actions
 
-When receiving a Get Access Token Request with purpose_of_use set to AUTO and subject_role set to TCU, the Authorization
+When receiving a Token Request with purpose_of_use set to AUTO and subject_role set to TCU, the Authorization
 Server SHALL:
 
 - identify the IUA Authorization Client with the client_id and client_secret.
@@ -124,7 +124,7 @@ Server SHALL:
 - verify that the principal_id matches the GLN of the legal responsible healthcare professional the IUA Authorization Client
   was registered during onboarding.
 
-The IUA Authorization Server SHALL respond with the Get Access Token Response only if all checks are successful. If one 
+The IUA Authorization Server SHALL respond with the Token Response only if all checks are successful. If one 
 of the above checks fails, the IUA Authorization Server SHALL respond with HTTP 401 (Unauthorized) error.
 
 If the person_id is set in the request, the IUA Authorization Server SHALL respond with an Extended Access Token. 
@@ -143,6 +143,10 @@ Host: localhost:9001
 Accept: application/json
 Content-type: application/x-www-form-urlencoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
+Content-Digest: sha-512=:Lh6fzO9XALiY46o5xVyN9yZloKZ6pLJV0kz+VirU5b6rQd2ii7vrTt4gxe32HRuLtNYG2Kl7CnGwQjjDxQk4yA===:
+Signature-Input: sig1=("@method" "@target-uri" "authorization" "content-digest");created=1764073861;expires=1764073921;keyid="snIZq-_NvzkKV-IdiM348BCz_RKdwmufnrPubsKKyio";tag="fapi-2-request"
+Signature: sig1=:9FaAZovdKmr9LVmwnzyfRED1ws1dX1mZLIgIPTOyBTNi0HkNoLxVipp8ZyGGx6+XP+7WVRh1wNQk9xjunHhZOw==:
+
 grant_type=client_credentials&
 requested-token-type=urn:ietf:params:oauth:token-type:jwt&
 person_id=761337610411353650%5E%5E%5E%262.16.756.5.30.1.109.6.5.3.1.1%26ISO&
@@ -158,7 +162,7 @@ A user launches a portal, primary system or a SMART on FHIR App to access data a
 
 ###### Message Semantics
 
-In the first step of the sequence the IUA Authorization Client SHALL send an IUA compliant Authorization 
+In the first step of the sequence the IUA Authorization Client SHALL send an OAuth Authorization 
 Request for the authorization code grant type with the following Swiss extension:
 
 - response_type (required): The value of the parameter shall be code.
@@ -218,11 +222,10 @@ acting on behalf of. There MAY be a scope with name **group_id** and **group**, 
 the organization or group the user is acting on behalf of. The value of **group_id** SHALL be an OID in the format of a URN 
 and the organization or group shall be registered in the EPR HPD.
 
+In the second step of the sequence the IUA Authorization Client SHALL perform an OAuth Token Request for the 
+authorization code grant type with the following Swiss extension:
 
-In the second step of the sequence the IUA Authorization Client SHALL perform an IUA compliant Access 
-Token Request for the authorization code grant type with the following Swiss extension:
-
-The IUA Access Token Request SHALL contain the following attributes:
+The Token Request SHALL contain the following attributes:
 - grant_type (required): The value of the parameter shall be `client_credentials`.
 - code (required): The authorization code received from the IUA Authorization Server in the authorization response.
 - code_verifier (required): The original code verifier string.
@@ -236,13 +239,7 @@ The IUA Access Token Request SHALL contain the following attributes:
 
 ###### Expected Actions
 
-The IUA Authorization Client and IUA Authorization Server SHALL support the HTTP conversation of the Authorization
-Code grant type.
-
-When launched, the IUA Authorization Client SHALL send an HTTP GET request to the IUA Authorization Server authorization
-endpoint with query parameters defined in section [Message Semantics](#message-semantics-1).
-
-When receiving the request, the IUA Authorization Server
+When receiving the Authorization Request, the IUA Authorization Server
 
 - SHALL verify that the IUA Authorization Client was registered during onboarding with the **client_id** and **client secret**
   presented in the request.
@@ -262,12 +259,12 @@ When receiving the request, the IUA Authorization Server
 In case of failure, the IUA Authorization Server SHALL respond with HTTP error code `401 Not authorized`.
 
 In case of success, the IUA Authorization Server SHALL send the authorization code to the IUA Authorization Client
-_redirect_uri_ via the user agent.
+**redirect_uri** via the user agent.
 
-The IUA Authorization Client SHALL perform the HTTP POST request to the Authorization token endpoint to resolve the
+The IUA Authorization Client SHALL perform the OAuth Token Request to the token endpoint to resolve the
 authorization code to the access token, sending the **client_id** and **client_secret** in the HTTP authorization header field.
 
-When retrieving the token request, the IUA Authorization Server SHALL verify that the user is authenticated compliant to the
+When retrieving the Token Request, the IUA Authorization Server SHALL verify that the user is authenticated compliant to the
 regulations of the Swiss EPR, either by validating the identity token sent with the token request or by redirecting the
 IUA Authorization Client's user agent to a certified Identity Provider.
 
@@ -329,6 +326,10 @@ Host: localhost:9001
 Accept: application/json
 Content-type: application/x-www-form-urlencoded
 Authorization: Basic bXktYXBwOm15LWFwcC1zZWNyZXQtMTIz
+Content-Digest: sha-512=:Lh6fzO9XALiY46o5xVyN9yZloKZ6pLJV0kz+VirU5b6rQd2ii7vrTt4gxe32HRuLtNYG2Kl7CnGwQjjDxQk4yA===:
+Signature-Input: sig1=("@method" "@target-uri" "authorization" "content-digest");created=1764073861;expires=1764073921;keyid="snIZq-_NvzkKV-IdiM348BCz_RKdwmufnrPubsKKyio";tag="fapi-2-request"
+Signature: sig1=:9FaAZovdKmr9LVmwnzyfRED1ws1dX1mZLIgIPTOyBTNi0HkNoLxVipp8ZyGGx6+XP+7WVRh1wNQk9xjunHhZOw==:
+
 grant_type=authorization_code&
 code=98wrghuwuogerg97&
 code_verifier=qskt4342of74bkncmicdpv2qd143iqd822j41q2gupc5n3o6f1clxhpd2x11&
@@ -365,7 +366,7 @@ Annex 5 Addendum 1, section 1.6.4.2 Get X-User Assertion).
 | person_id               | O/R                           | urn:oasis:names:tc:xacml:2.0:resource:resource-id   | SHALL be the EPR-SPID of the patients EPR.                                |
 {:class="table table-bordered"}
 
-<figcaption id='jwttiua'>Table: Attributes of the IUA Get Access Token response in the JWT extension `ihe_iua`.</figcaption>  
+<figcaption id='jwttiua'>Table: Attributes of the IUA Get Access Token response in the JWT extension ihe_iua.</figcaption>  
 
 ###### The JWT ch_epr extension
 
@@ -373,7 +374,7 @@ The IUA Authorization Server and IUA Resource Server SHALL support this extensio
 in the JWT access token of the Get Access Token Response. Its attributes are: 
 
 - user_id (required): The EPR subject identifier as defined in the table below. 
-- user_id_(required): The subject identifier qualifier as defined in the table below.
+- user_id_qualifier (required): The subject identifier qualifier as defined in the table below.
 
 ||
 
@@ -387,7 +388,7 @@ in the JWT access token of the Get Access Token Response. Its attributes are:
 | Policy Administrator    | IdP-ID   | urn:e-health-suisse:document-administrator-id  |        
 {:class="table table-bordered"}
 
-<figcaption>Table: **user_id** and **user_id_qualifier** of EPR user.</figcaption>
+<figcaption>Table: user_id and user_id_qualifier of EPR user.</figcaption>
 
 ||
 
@@ -569,8 +570,48 @@ There are no CapabilityStatement resources defined for this transaction.
 
 ### Security Consideration
 
-IUA Authorization Clients, IUA Authorization Servers and IUA Resource Server actors SHALL use the JWS (signed) alternative
-of the JWT token as specified in the IUA Trial Implementation. The JWE alternative SHALL not be used.
+IUA Authorization Clients, IUA Authorization Servers and IUA Resource Server actors SHALL support the JWS (signed) 
+alternative of the JWT token as specified in the IUA Trial Implementation. To ensure the authenticity and integrity, 
+the IUA Authorization Server SHALL sign the JWT token with its private key and IUA Resource Servers SHALL verify 
+the signature of the JWT token with the Authorization Server's public key. The JWE alternative SHALL not be used.
+
+To ensure the authenticity and integrity of the token requests, IUA Authorization Clients SHALL sign requests to the 
+token endpoint of the IUA Authorization Server with the clients' private key as defined in `RFC 9421 HTTP Message Signatures`. 
+The signature SHALL cover the entire request content. The IUA Authorization Server SHALL verify the requests' 
+signature with the clients' public key exchanged during the client registration process. 
+
+The requests signature SHALL cover the following components of the http message as defined in `RFC 9421 HTTP Message Signatures`: 
+- method (required): The http protocol name the value of it SHALL be `POST`.
+- target-uri (required): The URI of the IUA Authorization server.
+- authorization (required): The value of the Authorization http header.
+- content-digest (required): The digest of the http message as defined in `RFC 9530 Digest Fields`.
+- created (required): Creation time as a UNIX timestamp value of type Integer. 
+- expires (required): Expiration time as a UNIX timestamp value of type Integer which SHALL be at max 60 seconds after the creation time.
+- keyid (optional): The identifier for the key material as a String value.
+- tag (optional): An application-specific tag for the signature as a String value which MAY be used to transfer additional information.
+
+Token requests SHALL use a http header with name `Signature-Input` the value of it SHALL be one or more metadata 
+sets with a key uniquely identifying the message signatures within the HTTP message as defined in `RFC 9421 HTTP Message Signatures`. 
+There SHALL be at least one signature metadata set created by the IUA Authorization Client, e.g.:
+```
+Signature-Input: sig1=("@method" "@target-uri" "authorization" "content-digest");created=1764073861;expires=1764073921;keyid="snIZq-_NvzkKV-IdiM348BCz_RKdwmufnrPubsKKyio";tag="fapi-2-request"
+```
+
+Token requests SHALL use a http header with name `Signature` the value of it SHALL be one or more message signatures 
+generated from the signature context of the target message with a key which uniquely identify the message signature
+as defined in RFC 9421 `HTTP Message Signatures`. There SHALL be at least one signature created by the 
+IUA Authorization Client, e.g.:
+```
+Signature: sig1=:9FaAZovdKmr9LVmwnzyfRED1ws1dX1mZLIgIPTOyBTNi0HkNoLxVipp8ZyGGx6+XP+7WVRh1wNQk9xjunHhZOw==:
+```
+
+Token requests SHALL use a http header with name `Content-Digest` the value of it SHALL be the content digest of the 
+request message with a key indicating the algorithm used as defined in `RFC 9530 Digest Fields`, e.g.:
+```
+Content-Digest: sha-512=:Lh6fzO9XALiY46o5xVyN9yZloKZ6pLJV0kz+VirU5b6rQd2ii7vrTt4gxe32HRuLtNYG2Kl7CnGwQjjDxQk4yA===:
+```
+
+IUA Authorization Server SHALL verify the signature of the token requests as specified in `RFC 9421 HTTP Message Signatures`.
 
 When receiving requests of transactions where the EPR-SPID is provided in the IUA token and in the transaction body,
 the IUA Resource Servers SHALL verify that both are the same.

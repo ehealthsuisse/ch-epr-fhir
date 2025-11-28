@@ -1,6 +1,7 @@
 ### DSTU5 Informative Ballot upcoming 2025 Release
 
 #### Resolved Issues
+* IUA: Specified the signature for the ITI-71 token requests [#419](https://github.com/ehealthsuisse/ch-epr-fhir/issues/419)
 * Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
 * Remove Document Consumer page count request limit requirement from ITI-67 [#391](https://github.com/ehealthsuisse/ch-epr-fhir/issues/391)
 * MHD: Clarify that designationType must be fixed to 'Procedure' for Swiss EPR in CHMhdSubmissionSetComprehensive [#385](https://github.com/ehealthsuisse/ch-epr-fhir/issues/385)
