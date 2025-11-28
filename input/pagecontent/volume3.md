@@ -498,10 +498,10 @@ This content profile describes Audit Events related to Policy Management. The fo
 
 _Table 8: Policy Audit Event Data Elements_
 
-This content profile defines the document audit events which a community has to provide for a patients audit trail. This profile builds on AuditEvent ([http://hl7.org/fhir/R4/auditevent.html](http://hl7.org/fhir/R4/auditevent.html)).   
+This content profile defines the policy audit events which a community has to provide for a patients audit trail. This profile builds on AuditEvent ([http://hl7.org/fhir/R4/auditevent.html](http://hl7.org/fhir/R4/auditevent.html)).   
 * [StructureDefinition for Policy Audit Event Profile](StructureDefinition-PolicyAuditEvent.html)
 
-The mapping from the Document Audit Event Resource to the Data Elements is as follows:   
+The mapping from the Policy Audit Event Resource to the Data Elements is as follows:   
 * [Mapping for Policy Audit Event Profile](StructureDefinition-PolicyAuditEvent-mappings.html#mappings-for-ch-atc-https-www-bag-admin-ch-bag-en-home-html)
 
 
