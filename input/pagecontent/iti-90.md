@@ -151,10 +151,10 @@ instance.
 #### CapabilityStatement Resource
 
 The CapabilityStatement resource for the **Query Client** is
-[mCSD Query Client](CapabilityStatement-CH.mCSD.QueryClient.html). TODO
+[mCSD Query Client](CapabilityStatement-CH.mCSD.QueryClient.html).
 
 The CapabilityStatement resource for the **Directory** is
-[mCSD Directory](CapabilityStatement-CH.mCSD.Directory.html). TODO
+[mCSD Directory](CapabilityStatement-CH.mCSD.Directory.html).
 
 ### Security Considerations
 

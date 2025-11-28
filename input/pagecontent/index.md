@@ -84,7 +84,7 @@ The Swiss EPR is a federated system with multiple communities publishing documen
 #### logical reference for patients and health care professionals, contained resources
 
 1. No addressable patient resources: All references to patients are made by the identifier EPR-SPID since there is no national master patient which could be referenced. This is the reason that IHE PIXm and PDQm with the $match transaction have been selected and not IHE MHDS/PMIR. Systems are not allowed to store the EPR-SPID, and need to feed their local identifier (localID) and EPR-SPID to the community to resolve the localID to the EPR-SPID later on. Therefore FHIR APIs require the support of the patient logical identifier as a query parameter (e.g. MHD, CH:PPQm) and the resources are profiled that a logical reference with the EPR-SPID identifier have to be provided.
-2. The same principle applies for health care professionals, they are identified by the GLN number and references to them need to include also the the logical reference from other resources (e.g. DocumentReference).
+2. The same principle applies for health care professionals, they are identified by the GLN number and references to them need to include also the logical reference from other resources (e.g. DocumentReference).
 3. Information which has to be provided and has no own identity in the Swiss EPR (e.g. as local patient demographics in document publishing) are represented as contained resources. 
 
 #### authentication and authorization
