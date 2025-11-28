@@ -30,7 +30,16 @@ to delegate the access rights.
 To authorize the healthcare professional, the patient portal adds the following policies to the policy repository with the 
 Mobile Privacy Policy Feed (PPQ-3) or Mobile Privacy Policy Bundle Feed (PPQ-4) transaction: 
 * [EPR policy set based on template 304](StructureDefinition-PpqmConsentTemplate304.html), if the healthcare professional is authorized to delegate the access rights,  
-* [EPR policy set based on template 301](StructureDefinition-PpqmConsentTemplate301.html), otherwise. 
+* [EPR policy set based on template 301](StructureDefinition-PpqmConsentTemplate301.html), otherwise.
+
+#### Patient blocks a healthcare professional
+A patient wants to block a healthcare professional from any access to the patient's EPR. The patient authenticates in
+the patient portal and opens the view to the access policy settings. The patient opens the form to block a healthcare professional and searches for the healthcare
+professional entry. The patient selects the healthcare professional to be blocked and optionally sets a block end date.
+
+To block the healthcare professional, the patient portal adds the following patient privacy policy to the policy repository
+with the Mobile Privacy Policy Feed (PPQ-3) or Mobile Privacy Policy Bundle Feed (PPQ-4) transaction:
+* [EPR policy set based on template 301](StructureDefinition-PpqmConsentTemplate301.html)
 
 #### Patient authorizes a group of healthcare professionals
 A patient wants to authorize a group of healthcare professionals to access the patient's EPR and to view the documents on a specific access level. 
