@@ -254,8 +254,7 @@ Profile: PpqmConsentTemplate301
 Parent: PpqmConsent
 Id: PpqmConsentTemplate301
 Title: "EPR policy set based on template 301"
-Description: "EPR policy set based on template 301 -- gives a particular healthcare professional read access to the
-patient's EPR, without delegation rights, or blocking them from any access (publication and read) to the patient's EPR."
+Description: "EPR policy set based on template 301 -- allowing a user (health professional) to access the patient's EPD according to the scope of the referenced access level (PolicySetIdReference below), without delegation."
 * identifier[templateId].value = "301"
 * policyRule.coding from PpqmReferencedPolicySetHcpWithoutDelegation (required)
 * provision.actor.role.coding = $ehealthRole#HCP
