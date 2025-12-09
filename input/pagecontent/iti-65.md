@@ -94,12 +94,12 @@ The actors SHALL support the _traceparent_ header handling, as defined in [Appen
 
 ##### Document Source Audit
 
-The **Document Source** shall record an
+The **Document Source** SHALL record an audit event according to
 [CH Audit Event for [ITI-65] Document Source](StructureDefinition-ChAuditEventIti65Source.html) 
 ([example](AuditEvent-ChAuditEventIti65SourceExample.html)).
 
 ##### Document Recipient Audit
 
-The **Document Recipient** shall record an
+The **Document Recipient** SHALL record an audit event according to
 [CH Audit Event for [ITI-65] Document Recipient](StructureDefinition-ChAuditEventIti65Recipient.html)
 ([example](AuditEvent-ChAuditEventIti65RecipientExample.html)).
