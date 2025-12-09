@@ -164,9 +164,9 @@ resources:
     name: Search Parameter AuditEvent entity.identifier
     description: Defines the IHE RESTFul ATNA Query Parameter entity.identifier for an AuditEvent.
     exampleBoolean: false
-  StructureDefinition/ch-epr-fhir-auditevent:
-    name: CH EPR FHIR AuditEvent
-    description: CH EPR FHIR profile on AuditEvent
+  StructureDefinition/ch-atc-auditevent:
+    name: CH ATC AuditEvent
+    description: CH ATC profile on AuditEvent
     exampleBoolean: false
   StructureDefinition/ch-epr-fhir-birthname:
     name: CH EPR FHIR BirthName

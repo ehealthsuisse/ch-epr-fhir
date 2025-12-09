@@ -42,7 +42,7 @@
    <kind value="resource"/>
    <abstract value="false"/>
    <type value="AuditEvent"/>
-   <baseDefinition value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-epr-fhir-auditevent"/>
+   <baseDefinition value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-atc-auditevent"/>
    <derivation value="constraint"/>
    <differential>
       <element id="AuditEvent">
