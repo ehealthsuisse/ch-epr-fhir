@@ -1,22 +1,34 @@
 
-There are four different categories of Audit Events in the context of the EPR:
+Annex 2 EPRO-FDHA, chapter 2.10 defines the audit requirements for the EPR.
+ 
+There are four different categories of Audit Events in the context of the EPR :
 
 <ol type="a">
     <li>
-        Document management (e.g. a document has been uploaded to the EPR of a patient or a list of document metadata has been retrieved)
+        Document management (e.g., a document has been uploaded to the EPR of a patient or a list of document metadata has been retrieved).
     </li>
     <li>
-        Policy management (e.g. a patient has given a healthcare professional access rights to his EPR)
+        Policy management (e.g., a patient has given a healthcare professional access rights to his EPR).
     </li>
     <li>
-        Access Patient Audit Record Repository by a patient or representative (a patient viewed the Audit Trail for the Audit Record Repository)
+        Access Patient Audit Record Repository by a patient or representative (a patient viewed the Audit Trail for the Audit Record Repository).
     </li>
     <li>
-        Notification of the patient about the entry of healthcare professionals into a group
+        Notification of the patient about the entry of healthcare professionals into a group.
     </li>
 </ol>
 
-Each category is described as a content profile. These content profiles are based on the AuditEvent Resource, [http://hl7.org/fhir/R4/auditevent.html](http://hl7.org/fhir/R4/auditevent.html).
+While the Access to the Audit Repository, Document and Policy management categories are self-explanatory, the notification 
+of the patient about the entry of healthcare professionals into a group may require some explanations. The access management 
+of the EPR is based on individuals and groups. Patients assign the access rights either to individual healthcare 
+professionals, or to groups of healthcare professionals. All healthcare professionals in a group inherit the 
+access rights of the group or of the parent groups, depending on the hierarchy of groups (see [examples](iti-mcsd.html#examples)).
+To ensure that patients are aware of the entry of healthcare professionals into a group, the communities shall provide 
+the notifications to patients. The notification mechanism is out of scope of this specification. This specification only 
+specifies the requirements for the audit trail of the event.
+
+Each category is described as a content profile. These content profiles are based on the AuditEvent Resource, 
+[http://hl7.org/fhir/R4/auditevent.html](http://hl7.org/fhir/R4/auditevent.html).
 
 The AuditEvent Resource has [mapping rules to the DICOM audit message format](http://hl7.org/fhir/R4/auditevent-mappings.html#dicom), which allows to map to ATNA.
 
