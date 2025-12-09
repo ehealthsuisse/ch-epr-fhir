@@ -1,5 +1,7 @@
 
-There are four different categories of Audit Events in the context of the EPR:
+Annex 2 EPRO-FDHA, chapter 2.10 defines the audit requirements for the EPR.
+ 
+There are four different categories of Audit Events in the context of the EPR :
 
 <ol type="a">
     <li>
