@@ -64,4 +64,3 @@ RuleSet: CH.ATNA.AuditRules
     * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq3Delete"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq5Consumer"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventPpq5Repository"
-    * supportedProfile[+] = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ChAuditEventIti81"

@@ -25,7 +25,6 @@
 * mCSD: restrict the Practitioner gender code feeding to male and female [#407](https://github.com/ehealthsuisse/ch-epr-fhir/issues/407)
 * ATNA: update RESTful ATNA profile to Rev. 3.5 [#406](https://github.com/ehealthsuisse/ch-epr-fhir/issues/406)
 * ATC: add Tracecontext values to ATC examples [#371](https://github.com/ehealthsuisse/ch-epr-fhir/issues/371)
-* ATNA: created a profile for the ITI-81 AuditEvent [#426](https://github.com/ehealthsuisse/ch-epr-fhir/issues/426)
 * MHD: Relax requirement on the DocumentReference.author [#347](https://github.com/ehealthsuisse/ch-epr-fhir/issues/347)
 
 #### Closed Issues
@@ -33,6 +32,7 @@
 * ATC: ATC_LOG_READ, ATC_DOC_* required by Annex 2 [#390](https://github.com/ehealthsuisse/ch-epr-fhir/issues/390), [#389](https://github.com/ehealthsuisse/ch-epr-fhir/issues/389)
 * ATC: No extended AuditEvent for CH:ADR decision logging [#356](https://github.com/ehealthsuisse/ch-epr-fhir/issues/356)
 * MHD: Binding DocumentReference.securityLabel not changed sind binding in R5 less strict [#386](https://github.com/ehealthsuisse/ch-epr-fhir/issues/386)
+* RESTFul ATNA: no special profile defined for AuditEvent (no requirement on client) [#426](https://github.com/ehealthsuisse/ch-epr-fhir/issues/426)
 
 ### DSTU5 Informative Ballot 2025 
 
