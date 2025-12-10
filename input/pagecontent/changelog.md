@@ -35,6 +35,7 @@
 * ATC: ATC_LOG_READ, ATC_DOC_* required by Annex 2 [#390](https://github.com/ehealthsuisse/ch-epr-fhir/issues/390), [#389](https://github.com/ehealthsuisse/ch-epr-fhir/issues/389)
 * ATC: No extended AuditEvent for CH:ADR decision logging [#356](https://github.com/ehealthsuisse/ch-epr-fhir/issues/356)
 * MHD: Binding DocumentReference.securityLabel not changed sind binding in R5 less strict [#386](https://github.com/ehealthsuisse/ch-epr-fhir/issues/386)
+* RESTFul ATNA: no special profile defined for AuditEvent (no requirement on client) [#426](https://github.com/ehealthsuisse/ch-epr-fhir/issues/426)
 
 ### DSTU5 Informative Ballot 2025 
 
