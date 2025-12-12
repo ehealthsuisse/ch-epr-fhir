@@ -95,14 +95,14 @@ The actors SHALL support the _traceparent_ header handling, as defined in [Appen
 
 ##### Document Source Audit
 
-The **Document Source** shall record an
+The **Document Source** SHALL record an audit event according to
 [CH Audit Event for [CH:MHD-1] Document Source](StructureDefinition-ch-mhd-updatedocumentmetadata-audit-source.html)
 ([example](AuditEvent-ChAuditEventChMhd1SourceExample.html)).
 
 ##### Document Responder Audit
 
-The **Document Responder** shall record an
+The **Document Responder** SHALL record an audit event according to
 [CH Audit Event for [CH:MHD-1] Document Responder](StructureDefinition-ch-mhd-updatedocumentmetadata-audit-responder.html)
 ([example](AuditEvent-ChAuditEventChMhd1ResponderExample.html)).
 
-For a [transaction](StructureDefinition-ch-mhd-1-updatedocumentmetadatatransactionrequest.html) instead of a direct PUT interaction, the actors shall also be able to record audit events for each Update Document Metadata Request Message in the Bundle.
+For a [transaction](StructureDefinition-ch-mhd-1-updatedocumentmetadatatransactionrequest.html) instead of a direct PUT interaction, the actors SHALL also be able to record audit events for each Update Document Metadata Request Message in the Bundle.

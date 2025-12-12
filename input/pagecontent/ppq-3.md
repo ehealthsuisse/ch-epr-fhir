@@ -115,7 +115,8 @@ The actors SHALL support the _traceparent_ header handling, as defined in [Appen
 
 #### Security Audit Considerations
 
-The **Policy Source** and **Policy Repository** SHALL record the right audit event for the operations:
+The **Policy Source** and **Policy Repository** SHALL record an audit event for each operation in the 
+transaction according to:
 
 - [CH Audit Event for [PPQ-3] **Create** Privacy Policy](StructureDefinition-ChAuditEventPpq3Create.html)
 - [CH Audit Event for [PPQ-3] **Update** Privacy Policy](StructureDefinition-ChAuditEventPpq3Update.html)
