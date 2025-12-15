@@ -91,12 +91,12 @@ The actors SHALL support the _traceparent_ header handling, as defined in [Appen
 
 ##### Document Consumer Audit
 
-The **Document Consumer** shall record a
+The **Document Consumer** SHALL record an audit event according to
 [CH Audit Event for [ITI-67] Document Consumer](StructureDefinition-ChAuditEventIti67Consumer.html) 
 ([example](AuditEvent-ChAuditEventIti67ConsumerExample.html)).
 
 ##### Document Responder Audit
 
-The **Document Responder** shall record a
+The **Document Responder** SHALL record an audit event according to
 [CH Audit Event for [ITI-67] Document Responder](StructureDefinition-ChAuditEventIti67Responder.html)
 ([example](AuditEvent-ChAuditEventIti67ResponderExample.html)).

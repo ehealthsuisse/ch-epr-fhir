@@ -121,12 +121,12 @@ The actors SHALL support the _traceparent_ header handling, as defined in [Appen
 
 ##### Patient Identifier Cross-reference Consumer Audit
 
-The **Patient Identifier Cross-reference Consumer** shall record a
+The **Patient Identifier Cross-reference Consumer** SHALL record an audit event according to
 [CH Audit Event for [ITI-83] Patient Identifier Cross-reference Consumer](StructureDefinition-ChAuditEventIti83Consumer.html)
 ([example](AuditEvent-ChAuditEventIti83ConsumerExample.html)).
 
 ##### Patient Identifier Cross-reference Manager Audit
 
-The **Patient Identifier Cross-reference Manager** shall record a
+The **Patient Identifier Cross-reference Manager** SHALL record an audit event according to
 [CH Audit Event for [ITI-83] Patient Identifier Cross-reference Manager](StructureDefinition-ChAuditEventIti83Manager.html)
 ([example](AuditEvent-ChAuditEventIti83ManagerExample.html)).

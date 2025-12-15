@@ -55,8 +55,8 @@ The actors SHALL support the _traceparent_ header handling, as defined in [Appen
 
 #### Security Audit Considerations
 
-The **Policy Consumer** shall record a
+The **Policy Consumer** SHALL record an audit event according to
 [CH Audit Event for [PPQ-5] Policy Consumer](StructureDefinition-ChAuditEventPpq5Consumer.html).
 
-The **Policy Repository** shall record a
+The **Policy Repository** SHALL record an audit event according to
 [CH Audit Event for [PPQ-5] Policy Repository](StructureDefinition-ChAuditEventPpq5Repository.html).
