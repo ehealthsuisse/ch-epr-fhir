@@ -38,7 +38,7 @@
 * MHD: Binding DocumentReference.securityLabel not changed sind binding in R5 less strict [#386](https://github.com/ehealthsuisse/ch-epr-fhir/issues/386)
 * RESTFul ATNA: no special profile defined for AuditEvent (no requirement on client) [#426](https://github.com/ehealthsuisse/ch-epr-fhir/issues/426)
 * PIXm: ITI-104: localID required in parameters [#380](https://github.com/ehealthsuisse/ch-epr-fhir/issues/380)
-* MHD: Usage of ADR in case of paging [#398](https://github.com/ehealthsuisse/ch-epr-fhir/issues/398)
+* MHD: Usage of ADR in case of paging [#399](https://github.com/ehealthsuisse/ch-epr-fhir/issues/399)
 
 
 
