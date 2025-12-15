@@ -1,5 +1,4 @@
-Sample sequence diagrams to illustrate the usage of the _generic EPR API_ and _SMART on FHIR_ options for reading 
-documents as a patient or healthcare professional:
+Sample sequence diagrams to illustrate the usage for reading documents as a patient or healthcare professional:
 
 ### Patient access from a portal
 
@@ -17,10 +16,10 @@ documents as a patient or healthcare professional:
 
 <div>{% include /3_02_write_tcu.svg %}</div>
 
-### Patient: get document – SMART on FHIR option (EHR Launch)
+### Patient: get document with a SMART on FHIR app
 
 <div>{% include /3_02_read_smartonfhir_pat_option.svg %}</div>
 
-### Healthcare professional: get document – SMART on FHIR option (EHR Launch)
+### Healthcare professional: get document with a SMART on FHIR app (EHR Launch)
 
 <div>{% include /3_02_read_smartonfhir_hcp_option.svg %}</div>
