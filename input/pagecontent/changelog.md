@@ -28,7 +28,7 @@
 * ATNA: update RESTful ATNA profile to Rev. 3.5 [#406](https://github.com/ehealthsuisse/ch-epr-fhir/issues/406)
 * ATC: add Tracecontext values to ATC examples [#371](https://github.com/ehealthsuisse/ch-epr-fhir/issues/371)
 * ATC: Use of group entry audit event [#404](https://github.com/ehealthsuisse/ch-epr-fhir/issues/404)
-
+* ATC: Updated examples [#440](https://github.com/ehealthsuisse/ch-epr-fhir/issues/440)
 * MHD: Relax requirement on the DocumentReference.author [#347](https://github.com/ehealthsuisse/ch-epr-fhir/issues/347)
 
 #### Closed Issues
