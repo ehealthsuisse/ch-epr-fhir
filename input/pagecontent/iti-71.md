@@ -613,6 +613,9 @@ Content-Digest: sha-512=:Lh6fzO9XALiY46o5xVyN9yZloKZ6pLJV0kz+VirU5b6rQd2ii7vrTt4
 
 IUA Authorization Server SHALL verify the signature of the token requests as specified in `RFC 9421 HTTP Message Signatures`.
 
+IUA Authorization Servers SHALL NOT implement any algorithm using a shared key (for example _HMAC_), and they SHALL 
+implement at least the algorithm 'RSASSA-PKCS1-v1_5 Using SHA-256'.
+
 When receiving requests of transactions where the EPR-SPID is provided in the IUA token and in the transaction body,
 the IUA Resource Servers SHALL verify that both are the same.
 
