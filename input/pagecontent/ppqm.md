@@ -32,12 +32,11 @@ Mobile Privacy Policy Feed (PPQ-3) or Mobile Privacy Policy Bundle Feed (PPQ-4) 
 * [EPR policy set based on template 304](StructureDefinition-PpqmConsentTemplate304.html), if the healthcare professional is authorized to delegate the access rights,  
 * [EPR policy set based on template 301](StructureDefinition-PpqmConsentTemplate301.html), otherwise.
 
-#### The patient wants to prohibit any access to his EPR by a particular healthcare professional
-A patient wants to block a healthcare professional from any access to the patient's EPR. The patient authenticates in
-the patient portal and opens the view to the access policy settings. The patient opens the form to block a healthcare professional and searches for the healthcare
-professional entry. The patient selects the healthcare professional to be blocked and optionally sets a block end date.
+#### Patient prohibits access by a healthcare professional
+A patient wants to prohibit any access by a healthcare professional. The patient authenticates in
+the patient portal and opens the view to the access policy settings. The patient opens the form to prohibit access and searches for the healthcare professional entry. The patient selects the healthcare professional to be prohibited and optionally sets a block end date.
 
-To block the healthcare professional, the patient portal adds the following patient privacy policy to the policy repository
+To prohibit access by the healthcare professional, the patient portal adds the following patient privacy policy to the policy repository
 with the Mobile Privacy Policy Feed (PPQ-3) or Mobile Privacy Policy Bundle Feed (PPQ-4) transaction:
 * [EPR policy set based on template 301](StructureDefinition-PpqmConsentTemplate301.html)
 
