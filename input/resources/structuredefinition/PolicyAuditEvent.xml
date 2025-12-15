@@ -212,7 +212,7 @@
 		<element id="AuditEvent.entity:Resource">
 			<path value="AuditEvent.entity"/>
 			<sliceName value="Resource"/>
-			<short value="Resource (HCP, Group, Representative of Patient)" />
+			<short value="Resource (HCP, Group, Representative of Patient, ProvideLevel)" />
 			<min value="0"/>
 			<max value="1"/>
 			<mapping>
@@ -255,7 +255,7 @@
 			</binding>
 			<mapping>
 				<identity value="ch-atc"/>
-				<map value="role (HCP, REP, GRP)"/>
+				<map value="role (PAT, REP, HCP, ASS, GRP, PADM)"/>
 			</mapping>
 		</element>
 		<element id="AuditEvent.entity:Resource.name">
