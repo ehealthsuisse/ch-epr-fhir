@@ -255,7 +255,7 @@
 			</binding>
 			<mapping>
 				<identity value="ch-atc"/>
-				<map value="role (PAT, REP, HCP, ASS, GRP, PADM)"/>
+				<map value="role (HCP, REP, GRP)"/>
 			</mapping>
 		</element>
 		<element id="AuditEvent.entity:Resource.name">
