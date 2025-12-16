@@ -30,7 +30,7 @@
 * ATC: Use of group entry audit event [#404](https://github.com/ehealthsuisse/ch-epr-fhir/issues/404)
 * MHD: Relax requirement on the DocumentReference.author [#347](https://github.com/ehealthsuisse/ch-epr-fhir/issues/347)
 * Clarify the meaning of "Actor" and "Options" [#379](https://github.com/ehealthsuisse/ch-epr-fhir/issues/379)
-
+* PPQm: describe the blocking option of EPR policy sets based on template 301 [#368](https://github.com/ehealthsuisse/ch-epr-fhir/issues/368)
 
 #### Closed Issues
 * CH:PPQ: IHE PCF not a replacement for CH:PPQ/CH:ADR [#388](https://github.com/ehealthsuisse/ch-epr-fhir/issues/388)
