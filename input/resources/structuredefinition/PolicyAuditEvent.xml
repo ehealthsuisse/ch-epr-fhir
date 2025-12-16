@@ -212,7 +212,7 @@
 		<element id="AuditEvent.entity:Resource">
 			<path value="AuditEvent.entity"/>
 			<sliceName value="Resource"/>
-			<short value="Resource (HCP, Group, Representative of Patient, ProvideLevel)" />
+			<short value="Resource (HCP, Group, Representative of Patient)" />
 			<min value="0"/>
 			<max value="1"/>
 			<mapping>
