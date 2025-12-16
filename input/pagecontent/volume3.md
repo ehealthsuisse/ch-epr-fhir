@@ -143,7 +143,7 @@ This content profile describes Audit Event related to Document Management. The f
 				<p>Assistant of a Healthcare Professional</p>
 			</td>
 			<td>
-				<p>Name<br />GLN</p>
+				<p>Name<br />GLN<sup><a name="_ftnref5.1" href="#_ftn5.1">[5.1]</a></sup></p>
 			</td>
 		</tr>
 		<tr>
@@ -164,7 +164,7 @@ This content profile describes Audit Event related to Document Management. The f
 		</tr>
 		<tr>
 			<td rowspan="2">
-				<p>Responsible<sup><a href="#_ftn5.1">[5.1]</a></sup></p>
+				<p>Responsible<sup><a name="_ftnref5.2" href="#_ftn5.2">[5.2]</a></sup></p>
 			</td>
 			<td>
 				<p>Patient</p>
@@ -216,13 +216,13 @@ This content profile describes Audit Event related to Document Management. The f
 		</tr>
 		<tr>
 			<td rowspan="3">
-				<p>Document<sup><a href="#_ftn5.2">[5.2]</a></sup></p>
+				<p>Document<sup><a name="_ftnref5.3" href="#_ftn5.3">[5.3]</a></sup></p>
 			</td>
 			<td>
 				<p>type of document</p>
 			</td>
 			<td>
-				<p>typeCode<sup><a href="#_ftn5.3">[5.3]</a></sup> (SNOMED CT code)</p>
+				<p>typeCode<sup><a name="_ftnref5.4" href="#_ftn5.4">[5.4]</a></sup> (SNOMED CT code)</p>
 			</td>
 		</tr>
 		<tr>
@@ -249,9 +249,10 @@ This content profile describes Audit Event related to Document Management. The f
 		</tr>
 	</tbody>
 </table>
-<p><sup><a href="#_ftnref5.1" name="_ftn5.1">[5.1]</a></sup> <small>If different from Initiator (Representative of patient acting on behalf of a patient then patient is responsible).</small></p>
-<p><sup><a href="#_ftnref5.2" name="_ftn5.2">[5.2]</a></sup> <small>Required for Document upload, Document retrieval, Document or Document Metadata update and Document removal but not for Document search.</small></p>
-<p><sup><a href="#_ftnref5.3" name="_ftn5.3">[5.3]</a></sup> <small>Annex 3 EPRO-FDHA, chapter 2.6 type of document (2.16.756.5.30.1.127.3.10.1.27).</small></p>
+<p><sup><a href="#_ftnref5.1" name="_ftn5.1">[5.1]</a></sup> if known, optional by XUA</p>
+<p><sup><a href="#_ftnref5.2" name="_ftn5.2">[5.2]</a></sup> If different from Initiator (Representative of patient acting on behalf of a patient then patient is responsible).</p>
+<p><sup><a href="#_ftnref5.3" name="_ftn5.3">[5.3]</a></sup> Required for Document upload, Document retrieval, Document or Document Metadata update and Document removal but not for Document search.</p>
+<p><sup><a href="#_ftnref5.4" name="_ftn5.4">[5.4]</a></sup> Annex 3 EPRO-FDHA, chapter 2.6 type of document (2.16.756.5.30.1.127.3.10.1.27).</p>
 
 _Table 5: Document Audit Event Data Elements_
 
@@ -259,7 +260,7 @@ This profile defines the content of the document audit events which a community 
 * [StructureDefinition for Document Audit Event Profile](StructureDefinition-DocumentAuditEvent.html)
 
 The mapping from the Document Audit Event Resource to the Data Elements is as follows:   
-* [Mapping for Document Audit Event Profile](StructureDefinition-DocumentAuditEvent-mappings.html#mappings-for-ch-atc-https-www-bag-admin-ch-bag-en-home-html)
+* [Mapping for Document Audit Event Profile](StructureDefinition-DocumentAuditEvent-mappings.html)
 
 
 #### Example of a Document Audit Event: Document upload
@@ -488,7 +489,7 @@ This content profile describes Audit Events related to Policy Management. The fo
 		</tr>
 		<tr>
 			<td>
-				<p>AccessLimitedToDate<sup><a href="#_ftn8.2" name="_ftnref8.2">[8.2]</a></sup></p>
+				<p>AccessLimitedToDate<sup><a href="#_ftn8.2">[8.2]</a></sup></p>
 			</td>
 			<td>
 				<p>Date</p>
@@ -504,9 +505,9 @@ This content profile describes Audit Events related to Policy Management. The fo
 		</tr>
 	</tbody>
 </table>
-<p><sup><a href="#_ftnref8.1" name="_ftn8.1">[8.1]</a></sup> <small>Healthcare Professional or Assistant of Healthcare Professional can only be a participant for the first Event Type (Authorize participants to access level).</small></p>
-<p><sup><a href="#_ftnref8.2" name="_ftn8.2">[8.2]</a></sup> <small>Access Level and the date if the access is limited (AccessLimitedToDate) are required for the first two Event Types (Authorize, update Authorization participants to access level/date), for the other Event Types these parameters do not need to be specified.</small></p>
-<p><sup><a href="#_ftnref8.3" name="_ftn8.3">[8.3]</a></sup> <small>Provide Level is only relevant for the Event Type Default Confidentiality Level for new Documents.</small></p>
+<p><sup><a href="#_ftnref8.1" name="_ftn8.1">[8.1]</a></sup> Healthcare Professional or Assistant of Healthcare Professional can only be a participant for the first Event Type (Authorize participants to access level).</p>
+<p><sup><a href="#_ftnref8.2" name="_ftn8.2">[8.2]</a></sup> Access Level and the date if the access is limited (AccessLimitedToDate) are required for the first two Event Types (Authorize, update Authorization participants to access level/date), for the other Event Types these parameters do not need to be specified.</p>
+<p><sup><a href="#_ftnref8.3" name="_ftn8.3">[8.3]</a></sup> Provide Level is only relevant for the Event Type Default Confidentiality Level for new Documents.</p>
 
 _Table 8: Policy Audit Event Data Elements_
 
@@ -514,7 +515,7 @@ This content profile defines the policy audit events which a community has to pr
 * [StructureDefinition for Policy Audit Event Profile](StructureDefinition-PolicyAuditEvent.html)
 
 The mapping from the Policy Audit Event Resource to the Data Elements is as follows:   
-* [Mapping for Policy Audit Event Profile](StructureDefinition-PolicyAuditEvent-mappings.html#mappings-for-ch-atc-https-www-bag-admin-ch-bag-en-home-html)
+* [Mapping for Policy Audit Event Profile](StructureDefinition-PolicyAuditEvent-mappings.html)
 
 
 #### Examples
@@ -641,7 +642,7 @@ This content profile defines the access audit trail event, which a community has
 * [StructureDefinition for Access Audit Trail Event Profile](StructureDefinition-AccessAuditTrailEvent.html)
 
 The mapping from the Access Audit Trail Event Resource to the Data Elements is as follows:   
-* [Mapping for Access Audit Trail Event Profile](StructureDefinition-AccessAuditTrailEvent-mappings.html#mappings-for-ch-atc-https-www-bag-admin-ch-bag-en-home-html)
+* [Mapping for Access Audit Trail Event Profile](StructureDefinition-AccessAuditTrailEvent-mappings.html)
 
 
 #### Example
@@ -747,7 +748,7 @@ This profile defines the content of the HPD group entry audit event. This profil
 * [StructureDefinition for HPD Group Entry Audit Event Profile](StructureDefinition-HpdAuditEvent.html)
 
 The mapping from the HPD Group Entry Audit Event Resource to the Data Elements is as follows:   
-* [Mapping for HPD Group Entry Audit Event Profile](StructureDefinition-HpdAuditEvent-mappings.html#mappings-for-ch-atc-https-www-bag-admin-ch-bag-en-home-html)
+* [Mapping for HPD Group Entry Audit Event Profile](StructureDefinition-HpdAuditEvent-mappings.html)
 
 
 #### Example
