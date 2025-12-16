@@ -41,15 +41,16 @@ The scope of this extension covers the following use cases:
 5.	Write logs to the EPR ATNA Audit Record Repository.
 6.  Read audit trails for a patient according the EPR requirements.
 
-This extension covers two options:
-1. Generic EPR API option – This option addresses primary systems or portals using the basic EPR flows replacing the XDS.b related and PIX/PDQ V3 profiles with the FHIR based profiles;
-2. SMART on FHIR – This option addresses modular portals or primary systems that want to connect to the Swiss EPR using SMART on FHIR.
+#### Profiles, grouped actors, actors and transactions
 
-#### Profiles, actors and transactions
-
-The following figure shows the profiles, actors and transactions specified or referenced in this national extension:
+The following figure shows the profiles, grouped actors, actors and transactions specified or referenced in this national extension:
 
 <div>{% include overview.svg %}</div>
+
+Two grouped actors are defined:
+
+EPR APP - An application that uses the client actors for connecting to the EPR through the FHIR API. This can be a portal, primary system or SMART on FHIR App.
+EPR API - The FHIR API a community offers for connecting clients to the EPR through the FHIR API
 
 ### Conformance Expectations
 

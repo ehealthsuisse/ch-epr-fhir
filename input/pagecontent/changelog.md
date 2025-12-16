@@ -30,6 +30,8 @@
 * ATC: Use of group entry audit event [#404](https://github.com/ehealthsuisse/ch-epr-fhir/issues/404)
 * ATC: Updated examples [#440](https://github.com/ehealthsuisse/ch-epr-fhir/issues/440)
 * MHD: Relax requirement on the DocumentReference.author [#347](https://github.com/ehealthsuisse/ch-epr-fhir/issues/347)
+* Clarify the meaning of "Actor" and "Options" [#379](https://github.com/ehealthsuisse/ch-epr-fhir/issues/379)
+* PPQm: describe the blocking option of EPR policy sets based on template 301 [#368](https://github.com/ehealthsuisse/ch-epr-fhir/issues/368)
 
 #### Closed Issues
 * CH:PPQ: IHE PCF not a replacement for CH:PPQ/CH:ADR [#388](https://github.com/ehealthsuisse/ch-epr-fhir/issues/388)
@@ -38,6 +40,10 @@
 * MHD: Binding DocumentReference.securityLabel not changed sind binding in R5 less strict [#386](https://github.com/ehealthsuisse/ch-epr-fhir/issues/386)
 * RESTFul ATNA: no special profile defined for AuditEvent (no requirement on client) [#426](https://github.com/ehealthsuisse/ch-epr-fhir/issues/426)
 * ATC: PolicyAuditEvent: fix mapping of entity:Resource [#373](https://github.com/ehealthsuisse/ch-epr-fhir/issues/373)
+* PIXm: ITI-104: localID required in parameters [#380](https://github.com/ehealthsuisse/ch-epr-fhir/issues/380)
+* MHD: Usage of ADR in case of paging [#399](https://github.com/ehealthsuisse/ch-epr-fhir/issues/399)
+
+
 
 ### DSTU5 Informative Ballot 2025 
 
