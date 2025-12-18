@@ -37,7 +37,7 @@ RuleSet: ChAuditEventPpq3Rules
     * system = "urn:ietf:rfc:3986"
   // About the role: the CH:PPQ-1 profile specifies the role as "Security Resource" (13), but BALP currently only
   // allows 3, 4 and 20 for that slice.
-  // https://profiles.ihe.net/ITI/BALP/1.1.3/ValueSet-RestObjectRoles.html
+  // https://profiles.ihe.net/ITI/BALP/1.1.4/ValueSet-RestObjectRoles.html
   * role = $objectRole#4 "Domain Resource"
 * entity[patient] ^short = "The patient whose privacy policies are being managed"
 

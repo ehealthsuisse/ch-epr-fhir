@@ -35,17 +35,7 @@ Id: ch-pixm-in-parameters
 Title: "CH PIXm IN Parameters"
 Description: "The StructureDefinition defines the Input Parameters for the $ihe-pix operation: - Input: sourceIdentifier, targetSystem"
 * parameter[sourceIdentifier] 1..1
-* parameter[sourceIdentifier] ^short = "sourceIdentifier"
-* parameter[sourceIdentifier].name = "sourceIdentifier" (exactly)
-* parameter[sourceIdentifier].valueIdentifier 1..
-* parameter[sourceIdentifier].valueIdentifier only Identifier
-* parameter[sourceIdentifier].valueIdentifier.system 1..
-* parameter[sourceIdentifier].valueIdentifier.value 1..
 * parameter[targetSystem] 1..2
-* parameter[targetSystem] ^short = "targetSystem"
-* parameter[targetSystem].name = "targetSystem" (exactly)
-* parameter[targetSystem].valueUri 1..
-* parameter[targetSystem].valueUri only uri
 
 Profile: IHE_PIXm_OUT_Parameters_CH
 Parent: $IHE.PIXm.Query.Parameters.Out

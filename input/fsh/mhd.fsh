@@ -332,6 +332,7 @@ Usage: #example
 * extension.valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.6#HCP "Healthcare professional"
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2951"
+* masterIdentifier.use = #usual
 * identifier.use = #official
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:7261fa25-b36d-4660-a58a-d9df4370e985"
@@ -441,6 +442,7 @@ Usage: #inline
 * extension.valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.6#HCP "Healthcare professional"
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2951"
+* masterIdentifier.use = #usual
 * identifier.use = #official
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:uuid:7261fa25-b36d-4660-a58a-d9df4370e985"

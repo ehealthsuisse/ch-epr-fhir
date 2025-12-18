@@ -13,7 +13,7 @@ The Update Document Metadata [CH:MHD-1] transaction is used to update document m
 
 ### Referenced Standards
 
-1. [Mobile access to Health Documents (MHD), Rev. 4.2.2 – Trial-Implementation, 2024-05-18](https://profiles.ihe.net/ITI/MHD/index.html) 
+1. [Mobile access to Health Documents (MHD), Rev. 4.2.3 – Trial-Implementation, 2025-10-31](https://profiles.ihe.net/ITI/MHD/index.html) 
 2. This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
 
 ### Messages
@@ -38,7 +38,7 @@ A Document Source initiates a FHIR request using Update as defined at [http://hl
 A Document Source shall send a request for either the JSON or the XML format as defined in FHIR. A Document Responder shall support the JSON and the XML format.
 
 The Document Source shall be capable of accepting elements specified in profile [CH MHD DocumentReference Comprehensive](StructureDefinition-ch-mhd-documentreference-comprehensive.html).
-The DocumentReference elements which are allowed to be updated are defined in Annex 5.1 1.12. The [Mappings tab](StructureDefinition-ch-mhd-documentreference-comprehensive-mappings.html#mappings-for-xds-metadata-equivalent-http-ihe-netxds), indicates the mapping between DocumentReference elements and the XDS elements defined in Annex 5.1 1.12.
+The DocumentReference elements which are allowed to be updated are defined in Annex 5.1 1.12. The [Mappings tab](StructureDefinition-ch-mhd-documentreference-comprehensive-mappings.html, indicates the mapping between DocumentReference elements and the XDS elements defined in Annex 5.1 1.12.
 
 ##### Example
 
