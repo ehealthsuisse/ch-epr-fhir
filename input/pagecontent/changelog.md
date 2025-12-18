@@ -1,4 +1,4 @@
-### DSTU5 Informative Ballot upcoming 2025 Release
+### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
 * IUA: Specified the signature for the ITI-71 token requests [#419](https://github.com/ehealthsuisse/ch-epr-fhir/issues/419)
