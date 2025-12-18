@@ -49,8 +49,8 @@ The following figure shows the profiles, grouped actors, actors and transactions
 
 Two grouped actors are defined:
 
-EPR APP - An application that uses the client actors for connecting to the EPR through the FHIR API. This can be a portal, primary system or SMART on FHIR App.
-EPR API - The FHIR API a community offers for connecting clients to the EPR through the FHIR API
+- EPR App - An application that uses the client actors for connecting to the EPR through the FHIR API. This can be a portal, primary system or SMART on FHIR App.
+- EPR API - The FHIR API a community offers for connecting clients to the EPR through the FHIR API
 
 ### Conformance Expectations
 
