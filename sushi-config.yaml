@@ -25,8 +25,8 @@ copyright: CC0-1.0
 jurisdiction: urn:iso:std:iso:3166#CH
 
 dependencies:
-  ch.fhir.ig.ch-term: 3.3.x # current
-  ch.fhir.ig.ch-core: 6.0.0 # current
+  ch.fhir.ig.ch-term: 3.3.x
+  ch.fhir.ig.ch-core: 6.0.0
   ihe.iti.pixm: 
     version: 3.1.0
     id: ihepixmfhir
@@ -104,6 +104,8 @@ pages:
     title: Mobile Privacy Policy Retrieve [PPQ-5]
   volume3.md:
     title: Volume 3 - CH:ATC Audit Event Content Profiles
+  openid-connect.md:
+    title: OpenID Connect
   appendix.md:
     title: Appendix
   profiles.md:
