@@ -22,7 +22,9 @@ Flows) SHALL not be supported.
 
 ### User Authentication
 
-![Figure 5: Authentication Sequence with OpenID Connect 1.0 Authorization Code Flow](media/image1.png)
+<div>{% include OpenID-Auth-code-flow.svg %}</div>
+
+Figure 1: Authentication Sequence with OpenID Connect 1.0 Authorization Code Flow
 
 | SEQ      | Description                                                                                                                                                                                                                                                                                                                         |
 |----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,7 +48,9 @@ Authorization Code Flow
 
 ### Logout
 
-![Figure 6: OpenID Connect Logout Sequence](media/image2.jpeg)
+<div>{% include OpenID-Logout.svg %}</div>
+
+Figure 2: OpenID Connect Logout Sequence
 
 | SEQ    | Description                                                                                                                                                                              |
 |--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

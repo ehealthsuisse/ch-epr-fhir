@@ -1,0 +1,29 @@
+@startuml
+skinparam responseMessageBelowArrow true
+hide footbox
+
+participant "Relying Party" as RP
+' participant "Other Session Participant" as RP2
+participant "Verifier (IdP)" as IdP
+
+autonumber 1 1 "<b>[00]"
+
+RP -> IdP: Logout Request [HTTP]
+
+' group Iterate session participants
+' IdP -> RP2: Logout Request [HTTP]
+' RP2 -> RP2: terminate user session
+' RP2 -> IdP: Logout Response [HTTP]
+' IdP -> RP: Logout Request [HTTP]
+' RP -> RP: terminate user session
+' RP -> IdP: Logout Response [HTTP]
+' end
+
+IdP -> IdP: terminate user session
+IdP -> RP: Logout Response [HTTP]
+
+RP -> RP: terminate user session
+
+autonumber stop
+
+@enduml

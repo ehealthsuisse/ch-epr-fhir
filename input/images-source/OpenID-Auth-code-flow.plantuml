@@ -1,0 +1,55 @@
+@startuml
+skinparam responseMessageBelowArrow true
+
+actor Claimant
+participant "User Agent" as UserAgent
+participant "Relying Party" as RP
+participant "Authenticator" as IDM
+participant "Verifier (IdP)" as IdP
+participant "Credential Service Provider (IdP)" as CSP
+
+autonumber 1 1 "<b>[00]"
+
+Claimant -> UserAgent: Access resource
+UserAgent -> RP: Request target ressource [HTTP]
+
+RP -> UserAgent: List supported IdP's
+Claimant -> UserAgent: Select IdP
+UserAgent -> RP: Select IdP [HTTP]
+
+|||
+RP -> UserAgent: Redirect with Authentication Request [HTTP]
+
+UserAgent -> IdP: Authentication Request [HTTP]
+
+IdP -> IdP: Validate Request
+
+IdP -> IDM: Authenticate Claimant
+Claimant -> IDM: Authenticate
+IDM -> IdP: Authenticate Claimant
+
+IdP --> IdP: Authorize Relying Party
+
+IdP -> UserAgent: Redirect with Authentication Response [HTTP]
+UserAgent -> RP: Authentication Response [HTTP]
+
+|||
+RP -> IdP: Access Token Request [HTTP]
+IdP -> RP: Access Token Response [HTTP]
+|||
+
+RP -> RP: Validate Access Token
+
+|||
+RP --> CSP: <i>UserInfo Request [HTTP]</i>
+CSP --> RP: <i>UserInfo Response [HTTP]</i>
+|||
+
+RP -> UserAgent: Redirect to target ressource [HTTP]
+UserAgent -> RP: Request target ressource [HTTP]
+
+RP -> UserAgent: Respond with target ressource [HTTP]
+|||
+autonumber stop
+
+@enduml
