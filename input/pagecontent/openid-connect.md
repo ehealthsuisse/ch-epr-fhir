@@ -22,41 +22,45 @@ Flows) SHALL not be supported.
 
 ### User Authentication
 
-<div>{% include OpenID-Auth-code-flow.svg %}</div>
-
+<div>
+{% include OpenID-Auth-code-flow.svg %}
+</div>
 Figure 1: Authentication Sequence with OpenID Connect 1.0 Authorization Code Flow
 
-| SEQ      | Description                                                                                                                                                                                                                                                                                                                         |
-|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 01,02    | The Claimant's user agent attempts to access a resource on the relying party.                                                                                                                                                                                                                                                       |
-| 03       | The Relying Party presents the list of supported Verifiers to the Claimant.                                                                                                                                                                                                                                                         |
-| 04,05    | The Claimant selects Verifier.                                                                                                                                                                                                                                                                                                      |
-| 06       | The Relying Party builds an Authentication Request containing the required request parameter and conveys it to the User Agent with a redirect to the authorization endpoint of the Verifier.                                                                                                                                        |
-| 07       | The User Agent sends the Authentication Request to the authorization endpoint via HTTP GET or POST protocol.                                                                                                                                                                                                                        |
-| 08       | The Verifier determines whether the Claimant has an existing logon security context that meets the default or requested authentication policy requirements. If not, the Verifier interacts with the browser to challenge the Claimant to provide valid credentials.                                                                 |
-| 09...11  | The Verifier communicates with the Authenticator(s) to authenticate the Claimant. The Claimant provides valid credentials and the Verifier creates a local logon security context for the Claimant.                                                                                                                                 |
-| 12       | The Verifier presents a screen for the Claimant to authorize the Relying Party to retrieve the identity data.This step MAY be omitted if the Relying Party application is a confidential client as defined in the OAuth specification and the Claimant/Subscriber consent is stored in a policy or after the initial authorization. |
-|13, 14    | The Verifier creates an Authentication Response conveying the Authorization Code and sends the Authorization Response to the User Agent with a redirect to the Relying Party.                                                                                                                                                       |
-| 15       | The Relying Party sends the Authentication Code to the Verifier in an Access Token Request using HTTP POST protocol and form serialization.                                                                                                                                                                                         |
-| 16       | The Verifier identifies the Relying Party and sends an Access Token Response to the Relying Parties Redirection URI registered beforehand. The Access Token Response conveys an ID and an Access Token.                                                                                                                             |
-| 17       | The Relying Party validates the ID Token and retrieves the Claimant's Subject Identifier.                                                                                                                                                                                                                                           |
-| 18,19    | Optionally the Relying Party uses the Access Token to retrieve user identity data using the OpenID Connect 1.0 UserInfo protocol.                                                                                                                                                                                                   |
-| 20...22  | The Relying Party returns the requested resource to the  Claimant's user agent.                                                                                                                                                                                                                                                     |
+| SEQ     | Description                                                                                                                                                                                                                                                                                                                         |
+|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 01,02   | The Claimant's user agent attempts to access a resource on the relying party.                                                                                                                                                                                                                                                       |
+| 03      | The Relying Party presents the list of supported Verifiers to the Claimant.                                                                                                                                                                                                                                                         |
+| 04,05   | The Claimant selects Verifier.                                                                                                                                                                                                                                                                                                      |
+| 06      | The Relying Party builds an Authentication Request containing the required request parameter and conveys it to the User Agent with a redirect to the authorization endpoint of the Verifier.                                                                                                                                        |
+| 07      | The User Agent sends the Authentication Request to the authorization endpoint via HTTP GET or POST protocol.                                                                                                                                                                                                                        |
+| 08      | The Verifier determines whether the Claimant has an existing logon security context that meets the default or requested authentication policy requirements. If not, the Verifier interacts with the browser to challenge the Claimant to provide valid credentials.                                                                 |
+| 09...11 | The Verifier communicates with the Authenticator(s) to authenticate the Claimant. The Claimant provides valid credentials and the Verifier creates a local logon security context for the Claimant.                                                                                                                                 |
+| 12      | The Verifier presents a screen for the Claimant to authorize the Relying Party to retrieve the identity data.This step MAY be omitted if the Relying Party application is a confidential client as defined in the OAuth specification and the Claimant/Subscriber consent is stored in a policy or after the initial authorization. |
+| 13, 14  | The Verifier creates an Authentication Response conveying the Authorization Code and sends the Authorization Response to the User Agent with a redirect to the Relying Party.                                                                                                                                                       |
+| 15      | The Relying Party sends the Authentication Code to the Verifier in an Access Token Request using HTTP POST protocol and form serialization.                                                                                                                                                                                         |
+| 16      | The Verifier identifies the Relying Party and sends an Access Token Response to the Relying Parties Redirection URI registered beforehand. The Access Token Response conveys an ID and an Access Token.                                                                                                                             |
+| 17      | The Relying Party validates the ID Token and retrieves the Claimant's Subject Identifier.                                                                                                                                                                                                                                           |
+| 18,19   | Optionally the Relying Party uses the Access Token to retrieve user identity data using the OpenID Connect 1.0 UserInfo protocol.                                                                                                                                                                                                   |
+| 20...22 | The Relying Party returns the requested resource to the  Claimant's user agent.                                                                                                                                                                                                                                                     |
+{:class="table table-bordered"}
 
-: Table 1: Authentication Sequence with OpenID Connect 1.0
+Table 1: Authentication Sequence with OpenID Connect 1.0
 Authorization Code Flow
 
 ### Logout
 
-<div>{% include OpenID-Logout.svg %}</div>
-
+<div>
+{% include OpenID-Logout.svg %}
+</div>
 Figure 2: OpenID Connect Logout Sequence
 
 | SEQ    | Description                                                                                                                                                                              |
 |--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 01     | The Claimant initiates a logout in the user agent of the Relying Party application. The Relying Party redirects the user agent with a Logout Request message to the Verifier Logout URI. |
 | 02, 03 | The Verifier terminates the IdP session and responds to the initial Logout Request with a Logout Response using HTTP.                                                                    |
-| 04     | The Relying Party application terminates the user session.|
+| 04     | The Relying Party application terminates the user session.                                                                                                                               |
+{:class="table table-bordered"}
 
 : Table 2: OpenID Connect Logout Sequence
 
