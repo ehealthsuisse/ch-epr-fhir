@@ -1,8 +1,9 @@
 
 Verifier and Credential Service Provider SHALL provide trusted endpoints
 for Relying Parties implementing the OpenID Connect 1.0 Authorization
-Code Flow fulfilling the requirements defined in this section. Other
-flows supported by OpenID Connect (i.e., Renew Flow, Hybrid or Implicit
+Code Flow fulfilling the requirements defined in this section. 
+
+Other flows supported by OpenID Connect (i.e., Renew Flow, Hybrid or Implicit
 Flows) SHALL not be supported.
 
 ## Referenced Standards
@@ -163,7 +164,7 @@ registered as a confidential client.
 3. Verify that a secure cryptographic algorithm is applied. 
 4. Authenticate the Relying Party, if the client application is
 registered as a confidential client. 
-5. Validate the signature according to JSON Web Signature (see fn. 22)
+5. Validate the signature according to JSON Web Signature
 using the algorithm specified in the JWT *alg* Header Parameter.
 
 ### Authentication Response
@@ -180,8 +181,7 @@ The Authentication Response SHALL contain the following parameters:
 Authentication Request.
 
 In case of an error the Verifier SHALL respond a HTTP Error as defined
-in Section 3.1.2.6 of the OpenID Connect Core 1.0 specification (see fn.
-20).
+in Section 3.1.2.6 of the OpenID Connect Core 1.0 specification.
 
 The authentication response message SHALL be signed using recommended
 cryptographic signature standards. The signature SHALL be validated by
@@ -199,8 +199,8 @@ Token Request message SHALL be compliant with an OAuth 2.0 Access Token
 Request message.
 
 Relying Parties which fulfill the requirements of confidential clients
-(see fn. 21) SHALL sign the Access Token Request message using JSON Web
-Signature (see fn. 22). The signature SHALL be asymmetric using X.509
+SHALL sign the Access Token Request message using JSON Web
+Signature. The signature SHALL be asymmetric using X.509
 certificates issued by a managed Certificate Authority (CA) that is
 operated according to documented processes detailed in a Certificate
 Policy (CP) and Certificate Practice Statement (CPS). The CA\'s
@@ -222,7 +222,7 @@ The Verifier SHALL validate the Access Token Request as follows:
 2. Verify the signature of the request, if the Relying Party is
 registered as a confidential client, i.e. verify that a secure
 cryptographic algorithm is applied compliant with the JSON Web
-Signature (see fn. 22) specification. 
+Signature specification. 
 3. Authenticate the Relying Party, if the client application is
 registered as a confidential client. 
 4. Verify that the authorization code was issued to the Relying Party
@@ -255,8 +255,7 @@ token.
 - *id_token*: The value shall be an Identity Token as defined below.
 
 In case of an error the Verifier SHALL respond a HTTP Error as defined
-in Section 3.1.3.4 of the OpenID Connect Core 1.0 specification (see fn.
-20).
+in Section 3.1.3.4 of the OpenID Connect Core 1.0 specification.
 
 The access token response message SHALL be signed using recommended
 cryptographic signature standards. The signature SHALL be validated by
@@ -269,11 +268,10 @@ Service (SAS).
 
 The Identity Token SHALL be used by the Verifier to convey the Subject
 Identifier to the Relying Party. The Identity Token SHALL be compliant
-with the JSON Web Token and OpenID Connect Core 1.0 specification
-(see fn. 20).
+with the JSON Web Token and OpenID Connect Core 1.0 specification.
 
 Identity Tokens SHALL be cryptographically signed using JSON Web
-Signature (see fn. 22) and the Relying Party SHALL validate the
+Signature and the Relying Party SHALL validate the
 signature. The X.509 certificate used for signatures by the Verifier
 SHALL be issued by a trusted certificate service provider according to
 ZertES; SR 943.03 and listed by the Swiss Accreditation Service (SAS).
@@ -309,7 +307,7 @@ The Relying Parties SHALL validate Identity Tokens as follows:
 registered for the Verifier. 
 2. Verify that the value of the *aud* parameter matches the Client
 Identifier of the Relying Party. 
-3. Validate the signature according to JSON Web Signature (see fn. 22)
+3. Validate the signature according to JSON Web Signature
 using the algorithm specified in the JWT *alg* Header Parameter. 
 4. Verify that the signature algorithm matches the algorithm configured
 for the Verifier. 
@@ -326,8 +324,8 @@ Service Provider via the backchannel. The UserInfo Request message SHALL
 be compliant to the OpenID Connect 1.0 UserInfo Request message.
 
 Relying Parties which fulfill the requirements of confidential clients
-(see fn. 21) SHALL sign the UserInfo Request message using JSON Web
-Signature (see fn. 22). The signature SHALL be asymmetric using X.509
+SHALL sign the UserInfo Request message using JSON Web
+Signature. The signature SHALL be asymmetric using X.509
 certificates issued by a managed Certificate Authority (CA) that is
 operated according to documented processes detailed in a Certificate
 Policy (CP) and Certificate Practice Statement (CPS). The CA\'s
@@ -340,7 +338,7 @@ Framework: Bearer Token Usage.
 
 The Credential Service Provider SHALL validate the User Info Request as
 follows:
-1. Validate the signature according to JSON Web Signature (see fn. 22)
+1. Validate the signature according to JSON Web Signature
 using the algorithm specified in the JWT *alg* Header Parameter. 
 2. Verify that the signature algorithm matches the algorithm configured
 for the Relying Party at the Credential Service Provider.
@@ -366,11 +364,11 @@ assistants, the UserInfo Response SHALL contain a *gln* parameter
 conveying the GLN of healthcare professionals and assistants.
 
 Credential Service Provider MAY provide other identity claims as defined
-in the OpenID Connect 1.0 Core specification (see fn. 20).
+in the OpenID Connect 1.0 Core specification.
 
 In case of an error the Credential Service Provider SHALL respond a HTTP
 Error as defined in Section 5.3.3 of the OpenID Connect Core 1.0
-specification (see fn. 2020).
+specification.
 
 The UserInfo response message SHALL be signed using recommended
 cryptographic signature standards. The signature SHALL be validated by
@@ -399,8 +397,8 @@ attacks.
 The JWT MAY contain other claims which SHALL be ignored by the Verifier.
 
 Relying Parties which fulfill the requirements of confidential clients
-(see fn. 21) SHALL sign the *LogoutRequest* message using JSON Web
-Signature (see fn. 22). The signature SHALL be asymmetric using X.509
+SHALL sign the *LogoutRequest* message using JSON Web
+Signature. The signature SHALL be asymmetric using X.509
 certificates issued by a managed Certificate Authority (CA) that is
 operated according to documented processes detailed in a Certificate
 Policy (CP) and Certificate Practice Statement (CPS). The CA\'s
@@ -420,9 +418,9 @@ The Relying Party SHALL validate *LogoutRequest* messages as follows:
 registered for the Verifier. 
 2. Verify that the value of the aud parameter matches the Client
 Identifier of the Relying Party. 
-3. Validate the signature according to JSON Web Signature (see fn. 22)
+3. Validate the signature according to JSON Web Signature
 using the algorithm specified in the JWT alg Header Parameter. 
-4. Verify that the current time is later or equal to the time the the
+4. Verify that the current time is later or equal to the time the
 Logout Request was issued by the Verifier.
 
 Relying Parties SHALL sign the *LogoutRequest* message using X.509
@@ -441,7 +439,7 @@ Relying Party to confirm session termination.
 
 The *LogoutResponse* message SHALL be compliant with Logout Response
 message defined in the OpenID Connect back-channel Logout specification
-(see fn. 20) with the requirements defined in this section.
+with the requirements defined in this section.
 
 The *LogoutResponse* message SHALL be signed using recommended
 cryptographic signature standards. The X.509 certificate used for
