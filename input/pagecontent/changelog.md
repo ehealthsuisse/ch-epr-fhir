@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* Move the dependencies to CH Core 7.0.0-ballot and align ch-term and hl7.terminology.r4 with it [#484](https://github.com/ehealthsuisse/ch-epr-fhir/issues/484)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues

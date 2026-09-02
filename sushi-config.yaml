@@ -25,8 +25,8 @@ copyright: CC0-1.0
 jurisdiction: urn:iso:std:iso:3166#CH
 
 dependencies:
-  ch.fhir.ig.ch-term: 3.3.x # current
-  ch.fhir.ig.ch-core: 6.0.0 # current
+  ch.fhir.ig.ch-term: 3.4.x # current
+  ch.fhir.ig.ch-core: 7.0.0-ballot # ballot, see #484
   ihe.iti.pixm: 
     version: 3.1.0
     id: ihepixmfhir
@@ -43,7 +43,7 @@ dependencies:
     version: 1.1.4
   hl7.terminology.r4: 
     uri: http://terminology.hl7.org/ImplementationGuide/hl7.terminology
-    version: 6.5.0  
+    version: 7.1.0
 
 pages:
   index.md:
