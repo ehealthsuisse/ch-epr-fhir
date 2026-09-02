@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* MHD: Fix the slice discriminator for the StudyInstanceUID in `DocumentReference.context.related`, which made the slicing impossible to evaluate for validators, and add an example of a DICOM KOS manifest [#455](https://github.com/ehealthsuisse/ch-epr-fhir/issues/455)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
