@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* Added CLAUDE.md documenting the build commands, the repository conventions and the known pitfalls [#468](https://github.com/ehealthsuisse/ch-epr-fhir/issues/468)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
