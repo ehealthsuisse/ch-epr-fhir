@@ -1,3 +1,15 @@
+### DSTU6 Informative Ballot 2026
+
+#### Open Issues
+
+* ATNA: ITI-81: missing minimum requirements for the ATNA Audit Record Repository (server): foreseen for the future EHR, see IHE CP-ITI-1334. For the EPR, consolidating the CH:ATC logs is the sole responsibility of the single remaining platform provider [#432](https://github.com/ehealthsuisse/ch-epr-fhir/issues/432)
+* SVCM: Add SVCM profile: relevant for the future EHR, currently optional for the EPR [#303](https://github.com/ehealthsuisse/ch-epr-fhir/issues/303)
+* MHD: Missing variant of CH MHD DocumentReference Comprehensive (UnContained): referenced resources are difficult to handle in the Swiss XDS infrastructure, foreseen for the future EHR, see PR [#297](https://github.com/ehealthsuisse/ch-epr-fhir/pull/297) [#279](https://github.com/ehealthsuisse/ch-epr-fhir/issues/279)
+* MHD: FHIR Documents Publish Option: considered nice to have, foreseen for the future EHR, deferred for the EPR [#457](https://github.com/ehealthsuisse/ch-epr-fhir/issues/457)
+* IUA and MHD: Image Sources as technical user: not relevant for the moment, since there are no radiology projects in the context of the EPR. To be kept open for later [#177](https://github.com/ehealthsuisse/ch-epr-fhir/issues/177)
+* mCSD: Allow better mapping between mCSD and HPD: left open and not pursued for this ballot cycle; the proposals in PR [#283](https://github.com/ehealthsuisse/ch-epr-fhir/pull/283) and PR [#453](https://github.com/ehealthsuisse/ch-epr-fhir/pull/453) were closed [#284](https://github.com/ehealthsuisse/ch-epr-fhir/issues/284)
+* mCSD: Limiting the number of ITI-90 AuditEvents: has to be addressed internationally, a change proposal will be submitted to the IHE ITI Technical Committee; a Swiss precision in this IG is not expected within this ballot cycle [#363](https://github.com/ehealthsuisse/ch-epr-fhir/issues/363)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
