@@ -1,7 +1,9 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
     <id value="PatientAuditRecordRepositoryCapabilityStatement"/>
-    <title value="CapabilityStatement for the Patient Audit Record Repository"/>
-    <status value="draft"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/PatientAuditRecordRepositoryCapabilityStatement"/>
+    <name value="CH_ATC_Patient_Audit_Record_Repository"/>
+    <title value="CH:ATC Patient Audit Record Repository (server)"/>
+    <status value="active"/>
     <date value="2024-11-19"/>
     <description value="Defines the CapabilityStatement for the Patient Audit Record Repository actor of ITI-81."/>
     <kind value="requirements"/>

@@ -86,6 +86,10 @@
             <a href="CapabilityStatement-CH.ATNA.AuditRecordRepository.html">ATNA Audit Record Repository (server)</a>
             <p>CapabilityStatement for Server Actor in the IHE IT Infrastructure Technical Framework Supplement Add RESTful ATNA.</p>
           </li>
+          <li>
+            <a href="CapabilityStatement-PatientAuditRecordRepositoryCapabilityStatement.html">CH:ATC Patient Audit Record Repository (server)</a>
+            <p>CapabilityStatement for the Patient Audit Record Repository actor of ITI-81 in the CH:ATC profile (server).</p>
+          </li>
         </ul>
       </li>
     </ul>

@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* ATC: Publish the CapabilityStatement of the Patient Audit Record Repository on the Capability Statements page and import it into the EPR API [#443](https://github.com/ehealthsuisse/ch-epr-fhir/issues/443)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
