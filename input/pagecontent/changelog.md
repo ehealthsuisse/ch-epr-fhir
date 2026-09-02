@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* ATC: Publish the CapabilityStatement of the Patient Audit Record Repository, and add the missing one for the Patient Audit Consumer, so both actors of ITI-81 are listed on the Capability Statements page and imported by the EPR API and the EPR App [#443](https://github.com/ehealthsuisse/ch-epr-fhir/issues/443), [#482](https://github.com/ehealthsuisse/ch-epr-fhir/issues/482)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues

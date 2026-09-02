@@ -24,6 +24,7 @@
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.mCSD.DataSource"/>
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.PPQm.PolicySourceConsumer"/>
     <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.ATNA.AuditCreator"/>
+    <imports value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.ATC.PatientAuditConsumer"/>
     <fhirVersion value="4.0.1" />
     <format value="application/fhir+xml" />
     <format value="application/fhir+json" />
