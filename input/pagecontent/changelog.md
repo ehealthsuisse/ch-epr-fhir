@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* mCSD: Require the attribute `active` in Practitioner, PractitionerRole and Organization [#451](https://github.com/ehealthsuisse/ch-epr-fhir/issues/451)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
