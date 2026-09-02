@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* MHD: Updated to IHE MHD 4.2.4, where the entryUUID and uniqueId identifiers are distinguished by Identifier.type instead of Identifier.use (CP-ITI-1328-01) [#462](https://github.com/ehealthsuisse/ch-epr-fhir/issues/462)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
