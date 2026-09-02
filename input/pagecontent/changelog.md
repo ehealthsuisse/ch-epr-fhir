@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* Added a CI workflow that runs SUSHI and a full IG Publisher build on every pull request and compares the QA error count against a committed baseline [#469](https://github.com/ehealthsuisse/ch-epr-fhir/issues/469)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
