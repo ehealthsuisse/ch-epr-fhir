@@ -57,7 +57,7 @@ Description: """
 Find patient matches using IHE-PIXm Profile
 """
 
-* base = "http://fhir.ch/ig/ch-epr-fhir/OperationDefinition/CH.PIXm"
+* base = "https://profiles.ihe.net/ITI/PIXm/OperationDefinition/IHE.PIXm.pix"
 * name = "CH_PIXm"
 * status = #active
 * kind = #operation
