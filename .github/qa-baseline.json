@@ -1,0 +1,4 @@
+{
+  "errors": 4,
+  "comment": "Maximum number of QA errors tolerated by CI. Measured on 2026-09-02: two duplicate PPQm titles (#460), menu.xml href='#', unresolved package.tgz link, circular OperationDefinition CH.PIXm. Lower this whenever a PR removes errors."
+}
