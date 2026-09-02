@@ -1,3 +1,13 @@
+### DSTU6 Informative Ballot 2026
+
+#### Open Issues
+
+* ATNA: ITI-81: missing minimum requirements for the ATNA Audit Record Repository (server): foreseen for the future E-GD, see IHE CP-ITI-1334. For the EPR, consolidating the CH:ATC logs is the sole responsibility of the single remaining platform provider [#432](https://github.com/ehealthsuisse/ch-epr-fhir/issues/432)
+* SVCM: Add SVCM profile: relevant for the future E-GD, currently optional for the EPR [#303](https://github.com/ehealthsuisse/ch-epr-fhir/issues/303)
+* MHD: Missing variant of CH MHD DocumentReference Comprehensive (UnContained): referenced resources are difficult to handle in the Swiss XDS infrastructure, foreseen for the future E-GD, see PR [#297](https://github.com/ehealthsuisse/ch-epr-fhir/pull/297) [#279](https://github.com/ehealthsuisse/ch-epr-fhir/issues/279)
+* MHD: FHIR Documents Publish Option: considered nice to have, foreseen for the future E-GD, deferred for the EPR [#457](https://github.com/ehealthsuisse/ch-epr-fhir/issues/457)
+* IUA and MHD: Image Sources as technical user: rejected internally on 2024-05-01, requires a commitment of the communities, to be discussed in the AG Steuerung Weiterentwicklung, to be reviewed for the future E-GD [#177](https://github.com/ehealthsuisse/ch-epr-fhir/issues/177)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
