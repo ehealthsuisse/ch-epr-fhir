@@ -9,6 +9,8 @@ Description: "CH mCSD profile on PractitionerRole"
 * organization only Reference(CHmCSDOrganization)
 * organization 1.. // From HPD
 * code 1.. // From mCSD
+* active 1..
+* active ^comment = "Required in the Swiss EPR: the corresponding attribute is mandatory in the IHE HPD profile, and a query using the search parameter 'active' returns different results for instances in which the element is absent."
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
