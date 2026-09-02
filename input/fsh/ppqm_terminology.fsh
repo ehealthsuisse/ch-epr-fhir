@@ -21,7 +21,7 @@ Description: "Code system for CH:PPQm Consent Identifier Types"
 
 
 ValueSet: PpqmConsentIdentifierType
-Title: "CH PPQm Consent Identifier Type"
+Title: "CH PPQm Consent Identifier Type Value Set"
 Description: "Value Set for CH:PPQm Consent Identifier Types"
 * ^experimental = false
 
@@ -55,7 +55,7 @@ Description: "Code system for Policy Set Template IDs"
 
 
 ValueSet: PpqmPolicySetTemplateId
-Title: "CH PPQm Policy Set Template ID"
+Title: "CH PPQm Policy Set Template ID Value Set"
 Description: "IDs of policy set templates"
 * ^experimental = false
 
