@@ -1,10 +1,16 @@
 
-Identity Provider SHALL provide trusted endpoints for Relying Parties implementing the OpenID Connect 1.0 Authorization
-Code Flow fulfilling the requirements defined in this section. 
 
-Other flows supported by OpenID Connect (i.e., Refresh Flow, Hybrid or Implicit Flows) SHALL not be supported.
+### Scope
 
-## Definition of terms 
+This national extension defines restrictions and extensions to the 
+[OpenID Connect 1.0](https://openid.net/specs/openid-connect-core-1_0-errata1.html) authorization code flow to 
+retrieve EPR compliant identity token used to identify and authenticate users. 
+
+Identity Provider SHALL provide trusted endpoints for Relying Parties implementing the OpenID Connect 1.0 authorization
+code flow fulfilling the requirements defined in this section. Other flows supported by OpenID Connect SHALL not be 
+supported.
+
+### Definition of terms 
 
 Relying Party - A Relying Party is understood as any actor that relies on an identity claim provided
 by an Identity Provider for user authentication. In the context of the EPR, Relying Parties are in
@@ -25,8 +31,15 @@ verifies and provides assertion attributes of users. The Credential Service Prov
 operates Registration and Local Registration Authorities, but may delegate the services to other
 provider on a contractual basis.
 
+Certificate Authority: Identity provider MAY operate a managed Certificate Authority (CA) that is 
+operated according to documented processes detailed in a Certificate Policy (CP) and Certificate Practice
+Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates defined within 
+the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). They MAY 
+use this Certificate Authority to issue Certificates for Relying Parties for message signatures. 
+Identity providers MAY may delegate the service to other provider on a contractual basis. 
 
-## Referenced Standards
+
+### Referenced Standards
 
 - [OpenID Connect Core 1.0 incorporating errata set 1](https://openid.net/specs/openid-connect-core-1_0-errata1.html), November 2014.
 - [The OAuth 2.0 Authorization Framework, RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749), October 2012
@@ -38,11 +51,11 @@ provider on a contractual basis.
 - [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html), September 2022.
 - [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0), November 2018.
 
-## Sequences
+### Sequences
 
-### User Authentication
+#### User Authentication
 
-<div>
+<div style="width: 80%;">
 {% include OpenID-Auth-code-flow.svg %}
 </div>
 Figure 1: Authentication Sequence with OpenID Connect 1.0 Authorization Code Flow
@@ -65,10 +78,9 @@ Figure 1: Authentication Sequence with OpenID Connect 1.0 Authorization Code Flo
 | 20...22 | The Relying Party returns the requested resource to the user agent.                                                                                                                                                                                                                                             |
 {:class="table table-bordered"}
 
-Table 1: Authentication Sequence with OpenID Connect 1.0
-Authorization Code Flow
+Table 1: Authentication Sequence with OpenID Connect 1.0 Authorization Code Flow
 
-### Logout
+#### Logout
 
 <div>
 {% include OpenID-Logout.svg %}
@@ -82,12 +94,12 @@ Figure 2: OpenID Connect Logout Sequence
 | 04     | The Relying Party application terminates the user session.                                                                                                                               |
 {:class="table table-bordered"}
 
-: Table 2: OpenID Connect Logout Sequence
+Table 2: OpenID Connect Logout Sequence
 
 
-## Protocol Requirements
+### Protocol Requirements
 
-### Front-channel Communication
+#### Front-channel Communication
 
 The User Agent and the Identity Provider SHALL communicate through an
 authenticated protected channel using TLS 1.2 or higher. The Identity Provider
@@ -97,20 +109,14 @@ service provider according to ZertES; SR 943.03 and listed by the Swiss
 Accreditation Service (SAS).
 
 Relying Parties and Authenticators which communicate with the Identity Provider
-through an intermediary user agent SHALL
-use digital signatures for message level authentication. The X.509
-certificates used for signatures SHALL be issued by a managed
-Certificate Authority (CA) that is operated according to documented
-processes detailed in a Certificate Policy (CP) and Certificate Practice
-Statement (CPS). The CA's processes SHALL meet the requirements of class
-1 certificates defined within the eCH-0048 PKI Certificate Classes
-standard (Version 2.0).
+through an intermediary user agent SHALL use digital signatures for message 
+level authentication.
 
 Relying Parties which fulfill the requirements of confidential clients
 of the OAuth 2.0 specification, SHALL use digital signatures for message
 level authentication.
 
-### Back-channel Communication
+#### Back-channel Communication
 
 The Identity Provider SHALL communicate with
 Relying Parties through an authenticated and protected back-channel
@@ -122,28 +128,22 @@ accreditation service (SAS).
 
 Relying Parties SHALL fulfill the requirements of OAuth 2.0 confidential
 clients and SHALL use message level authentication (e.g., digital
-signature) to authenticate. Relying Parties SHALL use X.509 certificates
-issued by a managed Certificate Authority (CA) that are operated
-according to documented processes detailed in a Certificate Policy (CP)
-and Certificate Practice Statement (CPS) to identify and authenticate
-themselves for access token and user info requests. The CA\'s processes
-should meet the requirements of class 1 certificates defined within the
-eCH-0048 PKI Certificate Classes standard (Version 2.0).
+signature) to authenticate.
 
 The Identity Provider SHALL NOT use redirects
 through an intermediary user agent (e.g., Web Browser) to send requests
 to Relying Parties.
 
-### Client Authentication
+#### Client Authentication
 
 If the Relying Parties provide confidential clients, the clients SHALL
 authenticate when performing Access Token Requests using the
 *private_key_jwt* option defined in Section 9 of the OpenID Connect Core
 1.0 specification.
 
-## Messages
+### Messages
 
-### Authentication Request
+#### Authentication Request
 
 The Authentication Request message SHALL be used by the Relying Party to
 initiate the authentication sequence. The Authentication Request message
@@ -151,12 +151,7 @@ SHALL be compliant with an OAuth 2.0 Authentication Request message.
 
 Relying Parties which fulfill the requirements of confidential
 clients SHALL sign the Authentication Request message using JSON Web
-Signature. The signature SHALL be asymmetric using X.509
-certificates issued by a managed Certificate Authority (CA) that is
-operated according to documented processes detailed in a Certificate
-Policy (CP) and Certificate Practice Statement (CPS). The CA\'s
-processes should meet the requirements of class 1 certificates defined
-within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
+Signature.
 
 The Authentication Request SHALL contain the following parameters:
 - *scope*: The value SHALL be *openid*.
@@ -186,7 +181,7 @@ The Identity Provider SHALL validate the Access Token Request as follows:
 5. Validate the signature according to JSON Web Signature
    using the algorithm specified in the JWT *alg* Header Parameter.
 
-### Authentication Response
+#### Authentication Response
 
 The Authentication Response message SHALL be used by the Identity Provider as
 response to the Authentication Request message to convey the
@@ -209,7 +204,7 @@ Identity Provider SHALL be issued by a trusted certificate service provider
 according to ZertES; SR 943.03 and listed by the Swiss Accreditation
 Service (SAS).
 
-### Access Token Request
+#### Access Token Request
 
 The Access Token Request message SHALL be used by the Relying Party to
 resolve the authorization code to the Access and ID Token. The Access
@@ -219,12 +214,7 @@ Request message.
 
 Relying Parties which fulfill the requirements of confidential clients
 SHALL sign the Access Token Request message using JSON Web
-Signature. The signature SHALL be asymmetric using X.509
-certificates issued by a managed Certificate Authority (CA) that is
-operated according to documented processes detailed in a Certificate
-Policy (CP) and Certificate Practice Statement (CPS). The CA\'s
-processes should meet the requirements of class 1 certificates defined
-within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
+Signature.
 
 The Access Token Request SHALL contain the following parameters:
 - *grant_type*: The value SHALL be authorization_code.
@@ -256,7 +246,7 @@ The Identity Provider SHALL validate the Access Token Request as follows:
    with the authentication request respecting the S256 code challenge
    method.
 
-### Access Token Response
+#### Access Token Response
 
 The Access Token Response message SHALL be used by the Identity Provider convey
 the Access Token and the ID Token to the Relying Party in response the
@@ -275,22 +265,16 @@ in Section 3.1.3.4 of the OpenID Connect Core 1.0 specification.
 
 The access token response message SHALL be signed using recommended
 cryptographic signature standards. The signature SHALL be validated by
-the relying party. The X.509 certificate used for signatures by the
-Identity Provider SHALL be issued by a trusted certificate service provider
-according to ZertES; SR 943.03 and listed by the Swiss Accreditation
-Service (SAS).
+the relying party.
 
-### Identity Token
+#### Identity Token
 
 The Identity Token SHALL be used by the Identity Provider to convey the Subject
 Identifier to the Relying Party. The Identity Token SHALL be compliant
 with the JSON Web Token and OpenID Connect Core 1.0 specification.
 
 Identity Tokens SHALL be cryptographically signed using JSON Web
-Signature and the Relying Party SHALL validate the
-signature. The X.509 certificate used for signatures by the Identity Provider
-SHALL be issued by a trusted certificate service provider according to
-ZertES; SR 943.03 and listed by the Swiss Accreditation Service (SAS).
+Signature and the Relying Party SHALL validate the signature. 
 
 The Identity Token SHALL contain the following parameters:
 - *iss*: The value SHALL be a unique identifier of the Identity Provider as URL.
@@ -322,7 +306,7 @@ The Relying Parties SHALL validate Identity Tokens as follows:
 5. Verify that the Identity Token is not expired and the current time is later or equal to the time the token was issued by the Identity Provider. 
 6. Verify that a *nonce* claim is present and its value matches the one that was sent in the Authentication Request.
 
-### UserInfo Request
+#### UserInfo Request
 
 The UserInfo Request message SHALL be used by the Relying Party to
 retrieve identity data of the user from the Credential
@@ -331,12 +315,7 @@ be compliant to the OpenID Connect 1.0 UserInfo Request message.
 
 Relying Parties which fulfill the requirements of confidential clients
 SHALL sign the UserInfo Request message using JSON Web
-Signature. The signature SHALL be asymmetric using X.509
-certificates issued by a managed Certificate Authority (CA) that is
-operated according to documented processes detailed in a Certificate
-Policy (CP) and Certificate Practice Statement (CPS). The CA\'s
-processes should meet the requirements of class 1 certificates defined
-within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
+Signature. 
 
 The Relying Party SHALL send the Access Token in the HTTP Authorization
 header field as Bearer Token as defined in The OAuth 2.0 Authorization
@@ -347,7 +326,7 @@ follows:
 1. Validate the signature according to JSON Web Signature using the algorithm specified in the JWT *alg* Header Parameter. 
 2. Verify that the signature algorithm matches the algorithm configured for the Relying Party at the Identity Provider.
 
-### UserInfo Response
+#### UserInfo Response
 
 The UserInfo Response message SHALL be used by the Credential Service
 Provider to respond with the identity data of the user to
@@ -379,7 +358,7 @@ Identity Provider SHALL be issued by a trusted certificate service provider
 according to ZertES; SR 943.03 and listed by the Swiss Accreditation
 Service (SAS).
 
-### Logout Request
+#### Logout Request
 
 The *LogoutRequest* message SHALL be used by the Relying Party to
 notify the Identity Provider that a user logged out in the Relying
@@ -398,12 +377,7 @@ The JWT MAY contain other claims which SHALL be ignored by the Identity Provider
 
 Relying Parties which fulfill the requirements of confidential clients
 SHALL sign the *LogoutRequest* message using JSON Web
-Signature. The signature SHALL be asymmetric using X.509
-certificates issued by a managed Certificate Authority (CA) that is
-operated according to documented processes detailed in a Certificate
-Policy (CP) and Certificate Practice Statement (CPS). The CA\'s
-processes should meet the requirements of class 1 certificates defined
-within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
+Signature.
 
 The Identity Provider SHALL validate *LogoutRequest* messages as follows:
 1. Verify that the Identity Token was issued by the Identity Provider for the requesting client and user. 
@@ -416,16 +390,12 @@ The Relying Party SHALL validate *LogoutRequest* messages as follows:
 3. Validate the signature according to JSON Web Signature using the algorithm specified in the JWT alg Header Parameter. 
 4. Verify that the current time is later or equal to the time the Logout Request was issued by the Identity Provider.
 
-Relying Parties SHALL sign the *LogoutRequest* message using X.509
-certificates issued by a managed Certificate Authority (CA) that is
-operated according to documented processes detailed in a Certificate
-Policy (CP) and a Certificate Practice Statement (CSP). The CA's process
-should meet the requirements of class 1 certificates defined within the
-eCH-0048 PKI Certificate Classes standard (Version 2.0).
+Relying Parties SHALL sign the *LogoutRequest* message 
 
-Identity Providers SHALL validate the signature of *LogoutRequest* messages.
+The *LogoutRequest* message SHALL be signed using recommended cryptographic signature standards. Identity 
+Providers SHALL validate the signature of *LogoutRequest* messages.
 
-### Logout Response
+#### Logout Response
 
 The *LogoutResponse* message SHALL be send by the Identity Provider to the
 Relying Party to confirm session termination.
