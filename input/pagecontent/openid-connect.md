@@ -35,8 +35,8 @@ Certificate Authority: Identity provider MAY operate a managed Certificate Autho
 operated according to documented processes detailed in a Certificate Policy (CP) and Certificate Practice
 Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates defined within 
 the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). They MAY 
-use this Certificate Authority to issue Certificates for Relying Parties for message signatures. 
-Identity providers MAY may delegate the service to other provider on a contractual basis. 
+use this Certificate Authority to issue client certificates (mTLS) for Relying Parties. Identity providers 
+MAY may delegate the service to other provider on a contractual basis. 
 
 
 ### Referenced Standards
@@ -95,51 +95,6 @@ Figure 2: OpenID Connect Logout Sequence
 {:class="table table-bordered"}
 
 Table 2: OpenID Connect Logout Sequence
-
-
-### Protocol Requirements
-
-#### Front-channel Communication
-
-The User Agent and the Identity Provider SHALL communicate through an
-authenticated protected channel using TLS 1.2 or higher. The Identity Provider
-SHALL identify and authenticate itself with X.509 certificates which are
-issued by a class 2 TLS certificate issued by a trusted certificate
-service provider according to ZertES; SR 943.03 and listed by the Swiss
-Accreditation Service (SAS).
-
-Relying Parties and Authenticators which communicate with the Identity Provider
-through an intermediary user agent SHALL use digital signatures for message 
-level authentication.
-
-Relying Parties which fulfill the requirements of confidential clients
-of the OAuth 2.0 specification, SHALL use digital signatures for message
-level authentication.
-
-#### Back-channel Communication
-
-The Identity Provider SHALL communicate with
-Relying Parties through an authenticated and protected back-channel
-using TLS 1.2 or higher for access token and user info requests and
-responses. The Identity Provider SHALL identify and authenticate itself with
-class 2 X.509 certificates issued by a trusted certificate service
-provider according to ZertES; SR 943.03 and listed by the Swiss
-accreditation service (SAS).
-
-Relying Parties SHALL fulfill the requirements of OAuth 2.0 confidential
-clients and SHALL use message level authentication (e.g., digital
-signature) to authenticate.
-
-The Identity Provider SHALL NOT use redirects
-through an intermediary user agent (e.g., Web Browser) to send requests
-to Relying Parties.
-
-#### Client Authentication
-
-If the Relying Parties provide confidential clients, the clients SHALL
-authenticate when performing Access Token Requests using the
-*private_key_jwt* option defined in Section 9 of the OpenID Connect Core
-1.0 specification.
 
 ### Messages
 
@@ -248,7 +203,7 @@ The Identity Provider SHALL validate the Access Token Request as follows:
 
 #### Access Token Response
 
-The Access Token Response message SHALL be used by the Identity Provider convey
+The Access Token Response message SHALL be used by the Identity Provider to convey
 the Access Token and the ID Token to the Relying Party in response the
 Access Token Request. The Access Token Response message SHALL be send
 via the backchannel. The Access Token Response message SHALL be
@@ -263,9 +218,9 @@ The Access Token Response SHALL contain the following parameters:
 In case of an error the Identity Provider SHALL respond a HTTP Error as defined
 in Section 3.1.3.4 of the OpenID Connect Core 1.0 specification.
 
-The access token response message SHALL be signed using recommended
-cryptographic signature standards. The signature SHALL be validated by
-the relying party.
+The id token SHALL be signed using recommended cryptographic signature standards. The signature SHALL be validated by
+the relying party. The X.509 certificate used for signatures by the Identity Provider SHALL be issued by a trusted 
+certificate service provider according to ZertES; SR 943.03 and listed by the Swiss Accreditation Service (SAS).
 
 #### Identity Token
 
@@ -344,16 +299,14 @@ If the Identity Provider delivers the GLN of healthcare professionals or
 assistants, the UserInfo Response SHALL contain a *gln* parameter
 conveying the GLN of healthcare professionals and assistants.
 
-Identity Provider MAY provide other identity claims as defined
-in the OpenID Connect 1.0 Core specification.
+Identity Provider MAY provide other identity claims as defined in the OpenID Connect 1.0 Core specification.
 
-In case of an error the Identity Provider SHALL respond a HTTP
-Error as defined in Section 5.3.3 of the OpenID Connect Core 1.0
-specification.
+In case of an error the Identity Provider SHALL respond a HTTP Error as defined in Section 5.3.3 of the 
+OpenID Connect Core 1.0 specification.
 
 The UserInfo response message SHALL be signed using recommended
 cryptographic signature standards. The signature SHALL be validated by
-the relying party. The X.509 certificate used for signatures by the
+the relying party. The X.509 certificate used for the signature by the
 Identity Provider SHALL be issued by a trusted certificate service provider
 according to ZertES; SR 943.03 and listed by the Swiss Accreditation
 Service (SAS).
@@ -390,26 +343,54 @@ The Relying Party SHALL validate *LogoutRequest* messages as follows:
 3. Validate the signature according to JSON Web Signature using the algorithm specified in the JWT alg Header Parameter. 
 4. Verify that the current time is later or equal to the time the Logout Request was issued by the Identity Provider.
 
-Relying Parties SHALL sign the *LogoutRequest* message 
-
-The *LogoutRequest* message SHALL be signed using recommended cryptographic signature standards. Identity 
-Providers SHALL validate the signature of *LogoutRequest* messages.
+Relying Parties SHALL sign the *LogoutRequest* message
 
 #### Logout Response
 
-The *LogoutResponse* message SHALL be send by the Identity Provider to the
-Relying Party to confirm session termination.
+The *LogoutResponse* message SHALL be send by the Identity Provider to the Relying Party to confirm session termination.
 
-The *LogoutResponse* message SHALL be compliant with Logout Response
-message defined in the OpenID Connect back-channel Logout specification
-with the requirements defined in this section.
+The *LogoutResponse* message SHALL be compliant with Logout Response message defined in the OpenID Connect back-channel 
+Logout specification with the requirements defined in this section.
 
-The *LogoutResponse* message SHALL be signed using recommended
-cryptographic signature standards. The X.509 certificate used for
-signatures by the Identity Provider SHALL be issued by a trusted certificate
-service provider according to ZertES; SR 943.03 and listed by the Swiss
-Accreditation Service (SAS).
+The *LogoutResponse* message SHALL be signed using recommended cryptographic signature standards and Relying Parties 
+SHALL validate the signature of *LogoutResponse* messages. The X.509 certificate used for signatures by the Identity 
+Provider SHALL be issued by a trusted certificate service provider according to ZertES; SR 943.03 and listed by the 
+Swiss Accreditation Service (SAS).
 
-Relying Parties SHALL validate the signature of *LogoutResponse*
-messages.
+### Security Considerations
+
+#### Front-channel Communication
+
+The User Agent and the Identity Provider SHALL communicate through an authenticated protected channel using 
+TLS 1.2 or higher. The Identity Provider SHALL identify and authenticate itself with X.509 certificates
+issued by a class 2 TLS certificate issued by a trusted certificate service provider according to ZertES; 
+SR 943.03 and listed by the Swiss Accreditation Service (SAS).
+
+#### Back-channel Communication
+
+The Identity Provider SHALL communicate with Relying Parties through an authenticated
+and protected back-channel using TLS 1.2 or higher for access token and user info requests and
+responses. 
+
+The Identity Provider SHALL NOT use redirects through an intermediary user agent (e.g., Web Browser) to send requests
+to Relying Parties.
+
+The Identity Provider SHALL identify and authenticate itself with class 2 X.509 certificates 
+issued by a trusted certificate service provider according to ZertES; SR 943.03 and listed by the Swiss
+accreditation service (SAS).
+
+Identity Provider SHALL identify and authenticate the Relying Party in all backchannel communication by using
+either mutual TLS (mTLS) or the *private_key_jwt* option defined in Section 9 of 
+the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0-errata1.html) specification.
+
+The Relying Party use certificate issued by a Certificate Authority (CA) that is operated according to 
+documented processes detailed in a Certificate Policy (CP) and Certificate Practice Statement (CPS) for 
+digital signatures or the mTLS client certifcate. 
+
+The CA's processes SHALL meet the requirements of class 1 certificates defined within 
+the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). This 
+Certificate Authority (CA) MAY be operated by the Identity Provider or MAY be delegated by the Identity Provider 
+to a provider on a contractual basis.
+
+
 
