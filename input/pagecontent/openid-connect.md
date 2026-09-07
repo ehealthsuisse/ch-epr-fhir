@@ -4,6 +4,28 @@ Code Flow fulfilling the requirements defined in this section.
 
 Other flows supported by OpenID Connect (i.e., Refresh Flow, Hybrid or Implicit Flows) SHALL not be supported.
 
+## Definition of terms 
+
+Relying Party - A Relying Party is understood as any actor that relies on an identity claim provided
+by an Identity Provider for user authentication. In the context of the EPR, Relying Parties are in
+particular medical information systems and portals for patients and healthcare professionals, which
+access data and documents from the EPR.
+
+Identity Provider: An Identity Provider is understood as a legal entity which manages the 
+user's primary authentication credentials and issues authenticators and assertions derived from
+those credentials. Identity Provider typically operate a Verifier and a Credential Service Provider,
+but may delegate the services to other provider on a contractual basis.
+
+Verifier: A verifier is understood as any Actor that corroborates identity information, by verifying the
+user's identity and by verifying the user’s possession and control of authenticators using an authentication 
+protocol.
+
+Credential Service Provider: A Credential Service Provider is understood as actor which registers,
+verifies and provides assertion attributes of users. The Credential Service Provider typically
+operates Registration and Local Registration Authorities, but may delegate the services to other
+provider on a contractual basis.
+
+
 ## Referenced Standards
 
 - [OpenID Connect Core 1.0 incorporating errata set 1](https://openid.net/specs/openid-connect-core-1_0-errata1.html), November 2014.
