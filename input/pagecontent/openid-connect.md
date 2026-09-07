@@ -25,22 +25,22 @@ Other flows supported by OpenID Connect (i.e., Refresh Flow, Hybrid or Implicit 
 </div>
 Figure 1: Authentication Sequence with OpenID Connect 1.0 Authorization Code Flow
 
-| SEQ     | Description                                                                                                                                                                                                                                                                                                                         |
-|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 01,02   | The Claimant's user agent attempts to access a resource on the relying party.                                                                                                                                                                                                                                                       |
-| 03      | The Relying Party presents the list of supported Identity Provider to the Claimant.                                                                                                                                                                                                                                                 |
-| 04,05   | The Claimant selects a Identity Provider.                                                                                                                                                                                                                                                                                           |
-| 06      | The Relying Party builds an Authentication Request containing the required request parameter and conveys it to the User Agent with a redirect to the authorization endpoint of the Identity Provider.                                                                                                                               |
-| 07      | The User Agent sends the Authentication Request to the authorization endpoint via HTTP GET or POST protocol.                                                                                                                                                                                                                        |
-| 08      | The Identity Provider determines whether the Claimant has an existing logon security context that meets the default or requested authentication policy requirements. If not, the Verifier interacts with the browser to challenge the Claimant to provide valid credentials.                                                        |
-| 09...11 | The Identity Provider communicates with the Authenticator(s) to authenticate the Claimant. The Claimant provides valid credentials and the Identity Provider creates a local logon security context for the Claimant.                                                                                                                                 |
-| 12      | The Identity Provider presents a screen for the Claimant to authorize the Relying Party to retrieve the identity data.This step MAY be omitted if the Relying Party application is a confidential client as defined in the OAuth specification and the Claimant/Subscriber consent is stored in a policy or after the initial authorization. |
-| 13, 14  | The Identity Provider creates an Authentication Response conveying the Authorization Code and sends the Authorization Response to the User Agent with a redirect to the Relying Party.                                                                                                                                                       |
-| 15      | The Relying Party sends the Authentication Code to the Identity Provider in an Access Token Request using HTTP POST protocol and form serialization.                                                                                                                                                                                         |
-| 16      | The Identity Provider identifies the Relying Party and sends an Access Token Response to the Relying Parties Redirection URI registered beforehand. The Access Token Response conveys an ID and an Access Token.                                                                                                                             |
-| 17      | The Relying Party validates the ID Token and retrieves the Claimant's Subject Identifier.                                                                                                                                                                                                                                           |
-| 18,19   | Optionally the Relying Party uses the Access Token to retrieve user identity data using the OpenID Connect 1.0 UserInfo protocol.                                                                                                                                                                                                   |
-| 20...22 | The Relying Party returns the requested resource to the  Claimant's user agent.                                                                                                                                                                                                                                                     |
+| SEQ     | Description                                                                                                                                                                                                                                                                                                     |
+|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 01,02   | The user agent attempts to access a resource on the relying party on behalf of the user.                                                                                                                                                                                                                        |
+| 03      | The Relying Party presents the list of supported Identity Provider to the user.                                                                                                                                                                                                                                 |
+| 04,05   | The user selects a Identity Provider.                                                                                                                                                                                                                                                                           |
+| 06      | The Relying Party builds an Authentication Request containing the required request parameter and conveys it to the User Agent with a redirect to the authorization endpoint of the Identity Provider.                                                                                                           |
+| 07      | The User Agent sends the Authentication Request to the authorization endpoint via HTTP GET or POST protocol.                                                                                                                                                                                                    |
+| 08      | The Identity Provider determines whether the user has a logon security context that meets the default or requested authentication policy requirements. If not, the Verifier interacts with the browser to challenge the user to provide valid credentials.                                                      |
+| 09...11 | The Identity Provider communicates with the Authenticator(s) to authenticate the user. The user provides valid credentials and the Identity Provider creates a local logon security context for the user.                                                                                                       |
+| 12      | The Identity Provider presents a screen for the user to authorize the Relying Party to retrieve the identity data.This step MAY be omitted if the Relying Party application is a confidential client as defined in the OAuth specification and the users consent is stored in a policy or after the initial authorization. |
+| 13, 14  | The Identity Provider creates an Authentication Response conveying the Authorization Code and sends the Authorization Response to the User Agent with a redirect to the Relying Party.                                                                                                                          |
+| 15      | The Relying Party sends the Authentication Code to the Identity Provider in an Access Token Request using HTTP POST protocol and form serialization.                                                                                                                                                            |
+| 16      | The Identity Provider identifies the Relying Party and sends an Access Token Response to the Relying Parties Redirection URI registered beforehand. The Access Token Response conveys an ID and an Access Token.                                                                                                |
+| 17      | The Relying Party validates the ID Token and retrieves the user's Subject Identifier.                                                                                                                                                                                                                           |
+| 18,19   | Optionally the Relying Party uses the Access Token to retrieve user identity data using the OpenID Connect 1.0 UserInfo protocol.                                                                                                                                                                               |
+| 20...22 | The Relying Party returns the requested resource to the user agent.                                                                                                                                                                                                                                             |
 {:class="table table-bordered"}
 
 Table 1: Authentication Sequence with OpenID Connect 1.0
@@ -55,7 +55,7 @@ Figure 2: OpenID Connect Logout Sequence
 
 | SEQ    | Description                                                                                                                                                                              |
 |--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 01     | The Claimant initiates a logout in the user agent of the Relying Party application. The Relying Party redirects the user agent with a Logout Request message to the Identity Provider Logout URI. |
+| 01     | The user initiates a logout in the user agent of the Relying Party application. The Relying Party redirects the user agent with a Logout Request message to the Identity Provider Logout URI. |
 | 02, 03 | The Identity Provider terminates the IdP session and responds to the initial Logout Request with a Logout Response using HTTP.                                                                    |
 | 04     | The Relying Party application terminates the user session.                                                                                                                               |
 {:class="table table-bordered"}
@@ -169,7 +169,7 @@ using the algorithm specified in the JWT *alg* Header Parameter.
 
 The Authentication Response message SHALL be used by the Identity Provider as
 response to the Authentication Request message to convey the
-authorization code after authenticating the Claimant/Subscriber. The
+authorization code after authenticating the user. The
 Authentication Response message SHALL be compliant with an OAuth 2.0
 Authentication Response message.
 
@@ -276,7 +276,7 @@ ZertES; SR 943.03 and listed by the Swiss Accreditation Service (SAS).
 
 The Identity Token SHALL contain the following parameters:
 - *iss*: The value SHALL be a unique identifier of the Identity Provider as URL.
-- *sub*: The Subject Identifier of the Claimant/Subscriber.
+- *sub*: The Subject Identifier of the user.
 - *aud*: The value SHALL be the Client Identifier the Relying Party
 is registered at the Identity Provider.
 - *exp*: The time restricting the lifetime of the token lifetime.
@@ -290,7 +290,7 @@ The Subject Identifier attribute SHALL be persistent and SHALL be unique
 for the combination of the Subscriber, the Community and the Identity
 Provider to reduce the risk of cross application identification. The
 Subject Identifier SHALL be confidential and never presented to the
-Claimant or third party systems.
+user or third party systems.
 
 The Identity Token MAY contain a session identifier in a *sid*
 attribute, if the Identity Provider supports per session logout.
@@ -316,7 +316,7 @@ that was sent in the Authentication Request.
 ### UserInfo Request
 
 The UserInfo Request message SHALL be used by the Relying Party to
-retrieve identity data of the Claimant/Subscriber from the Credential
+retrieve identity data of the user from the Credential
 Service Provider via the backchannel. The UserInfo Request message SHALL
 be compliant to the OpenID Connect 1.0 UserInfo Request message.
 
@@ -343,17 +343,17 @@ for the Relying Party at the Identity Provider.
 ### UserInfo Response
 
 The UserInfo Response message SHALL be used by the Credential Service
-Provider to respond with the identity data of the Claimant/Subscriber to
+Provider to respond with the identity data of the user to
 UserInfo Requests from the Relying Party using back-channel
 communication. The UserInfo Response message SHALL be a JSON Web Token
 (JWT) compliant to the OpenID Connect 1.0 UserInfo Response message.
 
 The UserInfo Response SHALL contain the following parameters:
-- *first_name*: The first name of the Claimant/Subscriber.
-- *family_name*: The family name of the Claimant/Subscriber.
-- *gender*: The Claimants/Subscribers coded gender with the value
+- *first_name*: The first name of the user.
+- *family_name*: The family name of the user.
+- *gender*: The users coded gender with the value
 from the value set EprGender (2.16.756.5.30.1.127.3.10.1.25).
-- *birthdate*: The Claimants/Subscribers date of birth as ISO
+- *birthdate*: The users date of birth as ISO
 8601-1:2019 formatted string.
 
 If the Identity Provider delivers the GLN of healthcare professionals or
@@ -377,7 +377,7 @@ Service (SAS).
 ### Logout Request
 
 The *LogoutRequest* message SHALL be used by the Relying Party to
-notify the Identity Provider that a Claimant/Subscriber logged out in the Relying
+notify the Identity Provider that a user logged out in the Relying
 Party application.
 
 *LogoutRequest* messages send by the Relying Party to the Identity Provider
