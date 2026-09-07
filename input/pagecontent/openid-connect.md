@@ -139,31 +139,30 @@ within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
 The Authentication Request SHALL contain the following parameters:
 - *scope*: The value SHALL be *openid*.
 - *response_type*: The value SHALL be *code*.
-- *client_id*: The value SHALL be the Client Identifier the Relying
-Party was registered with at the Identity Provider.
+- *client_id*: The value SHALL be the Client Identifier the Relying Party was registered with at the Identity Provider.
 - *redirect_uri*: SHALL convey the redirection URI the Access Token
-Response SHALL be sent to. Its value must match one of the
-redirection URI the Relying Party was registered at the Identity Provider.
+  Response SHALL be sent to. Its value must match one of the
+  redirection URI the Relying Party was registered at the Identity Provider.
 - *state*: SHALL convey an opaque value used to maintain the state
-between the request and the response to mitigate Cross-Site Forgery
-attacks.
+  between the request and the response to mitigate Cross-Site Forgery
+  attacks.
 - *nonce*: SHALL convey an opaque string passed through from the
-Authentication Request to the ID Token to mitigate replay attacks.
+  Authentication Request to the ID Token to mitigate replay attacks.
 - *code_challenge*: code challenge derived from the code Identity Provider
-using the code challenge method as defined in PKCE.
+  using the code challenge method as defined in PKCE.
 - *code_challenge_method*: code challenge method indicator defined
-in PKCE (fn. 23). Its value must be S256.
+  in PKCE (fn. 23). Its value must be S256.
 
 
 The Identity Provider SHALL validate the Access Token Request as follows:
 1. Identify the client using the *client_id*. 
 2. Verify the signature of the request if the Relying Party is
-registered as a confidential client. 
+   registered as a confidential client. 
 3. Verify that a secure cryptographic algorithm is applied. 
 4. Authenticate the Relying Party, if the client application is
-registered as a confidential client. 
+   registered as a confidential client. 
 5. Validate the signature according to JSON Web Signature
-using the algorithm specified in the JWT *alg* Header Parameter.
+   using the algorithm specified in the JWT *alg* Header Parameter.
 
 ### Authentication Response
 
@@ -176,7 +175,7 @@ Authentication Response message.
 The Authentication Response SHALL contain the following parameters:
 - *code*: SHALL be an OAuth 2.0 compliant authorization code.
 - *state*: SHALL match the state parameter value of the
-Authentication Request.
+  Authentication Request.
 
 In case of an error the Identity Provider SHALL respond a HTTP Error as defined
 in Section 3.1.2.6 of the OpenID Connect Core 1.0 specification.
@@ -208,33 +207,32 @@ within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
 The Access Token Request SHALL contain the following parameters:
 - *grant_type*: The value SHALL be authorization_code.
 - *code*: SHALL be the OAuth 2.0 compliant authorization code
-retrieved with the Authentication Response.
+  retrieved with the Authentication Response.
 - *redirect_uri*: SHALL convey the redirection URI the Access Token
-Response SHALL be sent to. Its value must match the redirection URI
-sent with the Authentication Request.
-- *code_Identity Provider*: The code Identity Provider value as defined in PKCE (fn.
-23).
+  Response SHALL be sent to. Its value must match the redirection URI
+  sent with the Authentication Request.
+- *code_Identity Provider*: The code Identity Provider value as defined in PKCE (fn. 23).
 
 The Identity Provider SHALL validate the Access Token Request as follows:
 1. Identify the client using the client_id. 
 2. Verify the signature of the request, if the Relying Party is
-registered as a confidential client, i.e. verify that a secure
-cryptographic algorithm is applied compliant with the JSON Web
-Signature specification. 
+   registered as a confidential client, i.e. verify that a secure
+   cryptographic algorithm is applied compliant with the JSON Web
+   Signature specification. 
 3. Authenticate the Relying Party, if the client application is
-registered as a confidential client. 
+   registered as a confidential client. 
 4. Verify that the authorization code was issued to the Relying Party
-in response to an Authentication Request. 
+   in response to an Authentication Request. 
 5. Verify that the authorization code was not used before. 
 6. Verify that the value of the *redirect_uri* parameter send with the
-Access Token Request matches the one sent with the Authentication
-Request. 
+   Access Token Request matches the one sent with the Authentication
+   Request. 
 7. Verify that the value of the *redirect_uri* parameter send with the
-Access Token Request matches one of the re-direct URIs registered
-for the Relying Party. 
+   Access Token Request matches one of the re-direct URIs registered
+   for the Relying Party. 
 8. Verify that the *code-Identity Provider* matches the *code_challenge* send
-with the authentication request respecting the S256 code challenge
-method.
+   with the authentication request respecting the S256 code challenge
+   method.
 
 ### Access Token Response
 
@@ -246,10 +244,8 @@ compliant with an OAuth 2.0 Access Token Response message.
 
 The Access Token Response SHALL contain the following parameters:
 - *token_type*: The value SHALL be *Bearer.*
-- *expires_in --* The Token lifetime in seconds. The value SHALL be
-equal to *300* (5 minutes).
-- *access_token*: The value SHALL be an OAuth 2.0 compliant access
-token.
+- *expires_in --* The Token lifetime in seconds. The value SHALL be equal to *300* (5 minutes).
+- *access_token*: The value SHALL be an OAuth 2.0 compliant access token.
 - *id_token*: The value shall be an Identity Token as defined below.
 
 In case of an error the Identity Provider SHALL respond a HTTP Error as defined
@@ -277,13 +273,10 @@ ZertES; SR 943.03 and listed by the Swiss Accreditation Service (SAS).
 The Identity Token SHALL contain the following parameters:
 - *iss*: The value SHALL be a unique identifier of the Identity Provider as URL.
 - *sub*: The Subject Identifier of the user.
-- *aud*: The value SHALL be the Client Identifier the Relying Party
-is registered at the Identity Provider.
-- *exp*: The time restricting the lifetime of the token lifetime.
-The value SHALL be equal to the current time plus 5 minutes.
+- *aud*: The value SHALL be the Client Identifier the Relying Party is registered at the Identity Provider.
+- *exp*: The time restricting the lifetime of the token lifetime. The value SHALL be equal to the current time plus 5 minutes.
 - *iat*: The time the token was issued by the Identity Provider.
-- *nonce*: The value SHALL match the *nonce* value of the
-Authentication Request.
+- *nonce*: The value SHALL match the *nonce* value of the Authentication Request.
 - *jti*: The value shall be a unique identifier of the ID Token.
 
 The Subject Identifier attribute SHALL be persistent and SHALL be unique
@@ -300,18 +293,12 @@ the Relying Party.
 
 The Relying Parties SHALL validate Identity Tokens as follows:
 
-1. Verify that the unique identifier of the Issuer matches the one
-registered for the Identity Provider. 
-2. Verify that the value of the *aud* parameter matches the Client
-Identifier of the Relying Party. 
-3. Validate the signature according to JSON Web Signature
-using the algorithm specified in the JWT *alg* Header Parameter. 
-4. Verify that the signature algorithm matches the algorithm configured
-for the Identity Provider. 
-5. Verify that the Identity Token is not expired and the current time
-is later or equal to the time the token was issued by the Identity Provider. 
-6. Verify that a *nonce* claim is present and its value matches the one
-that was sent in the Authentication Request.
+1. Verify that the unique identifier of the Issuer matches the one registered for the Identity Provider. 
+2. Verify that the value of the *aud* parameter matches the Client Identifier of the Relying Party. 
+3. Validate the signature according to JSON Web Signature using the algorithm specified in the JWT *alg* Header Parameter. 
+4. Verify that the signature algorithm matches the algorithm configured for the Identity Provider. 
+5. Verify that the Identity Token is not expired and the current time is later or equal to the time the token was issued by the Identity Provider. 
+6. Verify that a *nonce* claim is present and its value matches the one that was sent in the Authentication Request.
 
 ### UserInfo Request
 
@@ -335,10 +322,8 @@ Framework: Bearer Token Usage.
 
 The Identity Provider SHALL validate the User Info Request as
 follows:
-1. Validate the signature according to JSON Web Signature
-using the algorithm specified in the JWT *alg* Header Parameter. 
-2. Verify that the signature algorithm matches the algorithm configured
-for the Relying Party at the Identity Provider.
+1. Validate the signature according to JSON Web Signature using the algorithm specified in the JWT *alg* Header Parameter. 
+2. Verify that the signature algorithm matches the algorithm configured for the Relying Party at the Identity Provider.
 
 ### UserInfo Response
 
@@ -351,10 +336,8 @@ communication. The UserInfo Response message SHALL be a JSON Web Token
 The UserInfo Response SHALL contain the following parameters:
 - *first_name*: The first name of the user.
 - *family_name*: The family name of the user.
-- *gender*: The users coded gender with the value
-from the value set EprGender (2.16.756.5.30.1.127.3.10.1.25).
-- *birthdate*: The users date of birth as ISO
-8601-1:2019 formatted string.
+- *gender*: The users coded gender with the value from the value set EprGender (2.16.756.5.30.1.127.3.10.1.25).
+- *birthdate*: The users date of birth as ISO 8601-1:2019 formatted string.
 
 If the Identity Provider delivers the GLN of healthcare professionals or
 assistants, the UserInfo Response SHALL contain a *gln* parameter
@@ -385,11 +368,9 @@ SHALL be compliant with the OpenID Connect RP-Initiated Logout 1.0
 specification with the requirements defined in this section.
 
 *LogoutRequest* messages SHALL contain a JWT with the following parameters:
-- *id_token_hint*: SHALL convey the Identity Token previously issued
-by the Identity Provider.
+- *id_token_hint*: SHALL convey the Identity Token previously issued by the Identity Provider.
 - *state*: SHALL convey an opaque value used to maintain the state
-between the request and the response to mitigate Cross-Site Forgery
-attacks.
+   between the request and the response to mitigate Cross-Site Forgery attacks.
 
 The JWT MAY contain other claims which SHALL be ignored by the Identity Provider.
 
@@ -403,22 +384,15 @@ processes should meet the requirements of class 1 certificates defined
 within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
 
 The Identity Provider SHALL validate *LogoutRequest* messages as follows:
-1. Verify that the Identity Token was issued by the Identity Provider for the
-requesting client and user. 
-2. Verify the signature of the Request Message, if the Relying Party
-was registered as confidential client. 
-3. The JWT MAY contain other claims which SHALL be ignored by the Relying
-Party. 
+1. Verify that the Identity Token was issued by the Identity Provider for the requesting client and user. 
+2. Verify the signature of the Request Message, if the Relying Party was registered as confidential client. 
+3. The JWT MAY contain other claims which SHALL be ignored by the Relying Party. 
 
 The Relying Party SHALL validate *LogoutRequest* messages as follows:
-1. Verify that the unique identifier of the Issuer matches the one
-registered for the Identity Provider. 
-2. Verify that the value of the aud parameter matches the Client
-Identifier of the Relying Party. 
-3. Validate the signature according to JSON Web Signature
-using the algorithm specified in the JWT alg Header Parameter. 
-4. Verify that the current time is later or equal to the time the
-Logout Request was issued by the Identity Provider.
+1. Verify that the unique identifier of the Issuer matches the one registered for the Identity Provider. 
+2. Verify that the value of the aud parameter matches the Client Identifier of the Relying Party. 
+3. Validate the signature according to JSON Web Signature using the algorithm specified in the JWT alg Header Parameter. 
+4. Verify that the current time is later or equal to the time the Logout Request was issued by the Identity Provider.
 
 Relying Parties SHALL sign the *LogoutRequest* message using X.509
 certificates issued by a managed Certificate Authority (CA) that is
