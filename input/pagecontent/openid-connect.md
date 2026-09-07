@@ -379,11 +379,11 @@ The Identity Provider SHALL identify and authenticate itself with class 2 X.509 
 issued by a trusted certificate service provider according to ZertES; SR 943.03 and listed by the Swiss
 accreditation service (SAS).
 
-Identity Provider SHALL identify and authenticate the Relying Party in all backchannel communication by using
-either mutual TLS (mTLS) or the *private_key_jwt* option defined in Section 9 of 
+Identity Provider SHALL identify and authenticate the Relying Parties by using mutual TLS (mTLS) or the 
+*private_key_jwt* option defined in Section 9 of 
 the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0-errata1.html) specification.
 
-The Relying Party use certificate issued by a Certificate Authority (CA) that is operated according to 
+The Relying Party SHALL use a certificate issued by a Certificate Authority (CA) that is operated according to 
 documented processes detailed in a Certificate Policy (CP) and Certificate Practice Statement (CPS) for 
 digital signatures or the mTLS client certifcate. 
 
