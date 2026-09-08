@@ -17,21 +17,21 @@ by an Identity Provider for user authentication. In the context of the EPR, Rely
 particular medical information systems and portals for patients and healthcare professionals, which
 access data and documents from the EPR.
 
-Identity Provider: An Identity Provider is understood as a legal entity which manages the 
+Identity Provider - An Identity Provider is understood as a legal entity which manages the 
 user's primary authentication credentials and issues authenticators and assertions derived from
 those credentials. Identity Provider typically operate a Verifier and a Credential Service Provider,
 but may delegate the services to other provider on a contractual basis.
 
-Verifier: A verifier is understood as any Actor that corroborates identity information, by verifying the
+Verifier - A verifier is understood as any Actor that corroborates identity information, by verifying the
 user's identity and by verifying the user’s possession and control of authenticators using an authentication 
 protocol.
 
-Credential Service Provider: A Credential Service Provider is understood as actor which registers,
+Credential Service Provider - A Credential Service Provider is understood as actor which registers,
 verifies and provides assertion attributes of users. The Credential Service Provider typically
 operates Registration and Local Registration Authorities, but may delegate the services to other
 provider on a contractual basis.
 
-Certificate Authority: Identity provider MAY operate a managed Certificate Authority (CA) that is 
+Certificate Authority - Identity provider MAY operate a managed Certificate Authority (CA) that is 
 operated according to documented processes detailed in a Certificate Policy (CP) and Certificate Practice
 Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates defined within 
 the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). They MAY 
@@ -111,7 +111,8 @@ Signature.
 The Authentication Request SHALL contain the following parameters:
 - *scope*: The value SHALL be *openid*.
 - *response_type*: The value SHALL be *code*.
-- *client_id*: The value SHALL be the Client Identifier the Relying Party was registered with at the Identity Provider.
+- *client_id*: The value SHALL be the Client Identifier the Relying 
+  Party was registered with at the Identity Provider.
 - *redirect_uri*: SHALL convey the redirection URI the Access Token
   Response SHALL be sent to. Its value must match one of the
   redirection URI the Relying Party was registered at the Identity Provider.
@@ -133,7 +134,7 @@ The Identity Provider SHALL validate the Access Token Request as follows:
 3. Verify that a secure cryptographic algorithm is applied. 
 4. Authenticate the Relying Party, if the client application is
    registered as a confidential client. 
-5. Validate the signature according to JSON Web Signature
+5. Validate the signature according to [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/)
    using the algorithm specified in the JWT *alg* Header Parameter.
 
 #### Authentication Response
@@ -150,7 +151,7 @@ The Authentication Response SHALL contain the following parameters:
   Authentication Request.
 
 In case of an error the Identity Provider SHALL respond a HTTP Error as defined
-in Section 3.1.2.6 of the OpenID Connect Core 1.0 specification.
+in [Section 3.1.2.6 of the OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#AuthError) specification.
 
 The authentication response message SHALL be signed using recommended
 cryptographic signature standards and the signature SHALL be validated by
@@ -165,8 +166,7 @@ Token Request message SHALL be compliant with an OAuth 2.0 Access Token
 Request message.
 
 Relying Parties which fulfill the requirements of confidential clients
-SHALL sign the Access Token Request message using JSON Web
-Signature.
+SHALL sign the Access Token Request message using [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/).
 
 The Access Token Request SHALL contain the following parameters:
 - *grant_type*: The value SHALL be authorization_code.
@@ -213,19 +213,19 @@ The Access Token Response SHALL contain the following parameters:
 - *id_token*: The value shall be an Identity Token as defined below.
 
 In case of an error the Identity Provider SHALL respond a HTTP Error as defined
-in Section 3.1.3.4 of the OpenID Connect Core 1.0 specification.
+in [Section 3.1.3.4 of the OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#TokenErrorResponse) specification.
 
 The id token SHALL be signed using recommended cryptographic signature standards and the relying party SHALL 
 verify the signature.
 
 #### Identity Token
 
-The Identity Token SHALL be used by the Identity Provider to convey the Subject
-Identifier to the Relying Party. The Identity Token SHALL be compliant
-with the JSON Web Token and OpenID Connect Core 1.0 specification.
+The Identity Token SHALL be used by the Identity Provider to convey the Subject Identifier to the Relying 
+Party. The Identity Token SHALL be compliant with the JSON Web Token 
+and [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) specification.
 
-Identity Tokens SHALL be cryptographically signed using JSON Web
-Signature and the Relying Party SHALL validate the signature. 
+Identity Tokens SHALL be cryptographically signed 
+using [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/)and the Relying Party SHALL validate the signature. 
 
 The Identity Token SHALL contain the following parameters:
 - *iss*: The value SHALL be a unique identifier of the Identity Provider as URL.
@@ -252,29 +252,24 @@ The Relying Parties SHALL validate Identity Tokens as follows:
 
 1. Verify that the unique identifier of the Issuer matches the one registered for the Identity Provider. 
 2. Verify that the value of the *aud* parameter matches the Client Identifier of the Relying Party. 
-3. Validate the signature according to JSON Web Signature using the algorithm specified in the JWT *alg* Header Parameter. 
+3. Validate the signature according to [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/) using the algorithm specified in the JWT *alg* Header Parameter. 
 4. Verify that the signature algorithm matches the algorithm configured for the Identity Provider. 
 5. Verify that the Identity Token is not expired and the current time is later or equal to the time the token was issued by the Identity Provider. 
 6. Verify that a *nonce* claim is present and its value matches the one that was sent in the Authentication Request.
 
 #### UserInfo Request
 
-The UserInfo Request message SHALL be used by the Relying Party to
-retrieve identity data of the user from the Credential
+The UserInfo Request message SHALL be used by the Relying Party to retrieve identity data of the user from the Credential
 Service Provider via the backchannel. The UserInfo Request message SHALL
-be compliant to the OpenID Connect 1.0 UserInfo Request message.
+be compliant to the [OpenID Connect 1.0 UserInfo Request](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo) message.
 
-Relying Parties which fulfill the requirements of confidential clients
-SHALL sign the UserInfo Request message using JSON Web
-Signature. 
+Relying Parties SHALL sign the UserInfo Request message using [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/). 
 
-The Relying Party SHALL send the Access Token in the HTTP Authorization
-header field as Bearer Token as defined in The OAuth 2.0 Authorization
-Framework: Bearer Token Usage.
+The Relying Party SHALL send the Access Token in the HTTP Authorization header field as Bearer Token as defined 
+in [OAuth 2.0 Authorization Framework: Bearer Token Usage](https://www.rfc-editor.org/info/rfc6750/).
 
-The Identity Provider SHALL validate the User Info Request as
-follows:
-1. Validate the signature according to JSON Web Signature using the algorithm specified in the JWT *alg* Header Parameter. 
+The Identity Provider SHALL validate the User Info Request as follows:
+1. Validate the signature according to [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/) using the algorithm specified in the JWT *alg* Header Parameter. 
 2. Verify that the signature algorithm matches the algorithm configured for the Relying Party at the Identity Provider.
 
 #### UserInfo Response
@@ -283,7 +278,7 @@ The UserInfo Response message SHALL be used by the Credential Service
 Provider to respond with the identity data of the user to
 UserInfo Requests from the Relying Party using back-channel
 communication. The UserInfo Response message SHALL be a JSON Web Token
-(JWT) compliant to the OpenID Connect 1.0 UserInfo Response message.
+(JWT) compliant to the [OpenID Connect 1.0 UserInfo Response message](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo).
 
 The UserInfo Response SHALL contain the following parameters:
 - *first_name*: The first name of the user.
@@ -291,28 +286,25 @@ The UserInfo Response SHALL contain the following parameters:
 - *gender*: The users coded gender with the value from the value set EprGender (2.16.756.5.30.1.127.3.10.1.25).
 - *birthdate*: The users date of birth as ISO 8601-1:2019 formatted string.
 
-If the Identity Provider delivers the GLN of healthcare professionals or
-assistants, the UserInfo Response SHALL contain a *gln* parameter
-conveying the GLN of healthcare professionals and assistants.
+If the Identity Provider delivers the GLN of healthcare professionals or assistants, the UserInfo Response 
+SHALL contain a *gln* parameter conveying the GLN of healthcare professionals and assistants.
 
-Identity Provider MAY provide other identity claims as defined in the OpenID Connect 1.0 Core specification.
+Identity Provider MAY provide other identity claims as defined in 
+the [OpenID Connect 1.0 Core](https://openid.net/specs/openid-connect-core-1_0.html) specification.
 
-In case of an error the Identity Provider SHALL respond a HTTP Error as defined in Section 5.3.3 of the 
-OpenID Connect Core 1.0 specification.
+In case of an error the Identity Provider SHALL respond a HTTP Error as defined in [Section 5.3.3 of the 
+OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#UserInfoError) specification.
 
-The UserInfo response message SHALL be signed using recommended
-cryptographic signature standards. The signature SHALL be validated by
-the relying party.
+The UserInfo response message SHALL be signed using recommended cryptographic signature standards and the 
+signature SHALL be validated by the relying party.
 
 #### Logout Request
 
-The *LogoutRequest* message SHALL be used by the Relying Party to
-notify the Identity Provider that a user logged out in the Relying
-Party application.
+The *LogoutRequest* message SHALL be used by the Relying Party to notify the Identity Provider that a user logged 
+out in the Relying Party application.
 
-*LogoutRequest* messages send by the Relying Party to the Identity Provider
-SHALL be compliant with the OpenID Connect RP-Initiated Logout 1.0
-specification with the requirements defined in this section.
+*LogoutRequest* messages send by the Relying Party to the Identity Provider SHALL be compliant with the
+[OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) specification with the requirements defined in this section.
 
 *LogoutRequest* messages SHALL contain a JWT with the following parameters:
 - *id_token_hint*: SHALL convey the Identity Token previously issued by the Identity Provider.
@@ -321,9 +313,8 @@ specification with the requirements defined in this section.
 
 The JWT MAY contain other claims which SHALL be ignored by the Identity Provider.
 
-Relying Parties which fulfill the requirements of confidential clients
-SHALL sign the *LogoutRequest* message using JSON Web
-Signature.
+Relying Parties which fulfill the requirements of confidential clients SHALL sign the *LogoutRequest* message 
+using [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/).
 
 The Identity Provider SHALL validate *LogoutRequest* messages as follows:
 1. Verify that the Identity Token was issued by the Identity Provider for the requesting client and user. 
@@ -333,7 +324,7 @@ The Identity Provider SHALL validate *LogoutRequest* messages as follows:
 The Relying Party SHALL validate *LogoutRequest* messages as follows:
 1. Verify that the unique identifier of the Issuer matches the one registered for the Identity Provider. 
 2. Verify that the value of the aud parameter matches the Client Identifier of the Relying Party. 
-3. Validate the signature according to JSON Web Signature using the algorithm specified in the JWT alg Header Parameter. 
+3. Validate the signature according to [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/) using the algorithm specified in the JWT alg Header Parameter. 
 4. Verify that the current time is later or equal to the time the Logout Request was issued by the Identity Provider.
 
 Relying Parties SHALL sign the *LogoutRequest* message
@@ -342,8 +333,8 @@ Relying Parties SHALL sign the *LogoutRequest* message
 
 The *LogoutResponse* message SHALL be send by the Identity Provider to the Relying Party to confirm session termination.
 
-The *LogoutResponse* message SHALL be compliant with Logout Response message defined in the OpenID Connect back-channel 
-Logout specification with the requirements defined in this section.
+The *LogoutResponse* message SHALL be compliant with Logout Response message defined in the 
+[OpenID Connect Back-Channel Logout](https://openid.net/specs/openid-connect-backchannel-1_0.html) specification with the requirements defined in this section.
 
 The *LogoutResponse* message SHALL be signed using recommended cryptographic signature standards and Relying Parties 
 SHALL validate the signature of *LogoutResponse* messages.
