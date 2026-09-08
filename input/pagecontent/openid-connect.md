@@ -215,8 +215,18 @@ The Access Token Response SHALL contain the following parameters:
 In case of an error the Identity Provider SHALL respond a HTTP Error as defined
 in [Section 3.1.3.4 of the OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#TokenErrorResponse) specification.
 
-The id token SHALL be signed using recommended cryptographic signature standards and the relying party SHALL 
-verify the signature.
+##### Message Example
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+  "token_type": "Bearer",
+  "expires_in": 1788875107,
+  "access_token": "e4205d40-ac65-42b5-9327-4d7cecc08dd6",
+  "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc..."
+}
+```
 
 #### Identity Token
 
@@ -224,8 +234,8 @@ The Identity Token SHALL be used by the Identity Provider to convey the Subject 
 Party. The Identity Token SHALL be compliant with the JSON Web Token 
 and [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) specification.
 
-Identity Tokens SHALL be cryptographically signed 
-using [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/)and the Relying Party SHALL validate the signature. 
+Identity Tokens SHALL be cryptographically signed using [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/)and the Relying Party SHALL 
+validate the signature. 
 
 The Identity Token SHALL contain the following parameters:
 - *iss*: The value SHALL be a unique identifier of the Identity Provider as URL.
@@ -236,17 +246,14 @@ The Identity Token SHALL contain the following parameters:
 - *nonce*: The value SHALL match the *nonce* value of the Authentication Request.
 - *jti*: The value shall be a unique identifier of the ID Token.
 
-The Subject Identifier attribute SHALL be persistent and SHALL be unique
-for the combination of the Subscriber, the Community and the Identity
-Provider to reduce the risk of cross application identification. The
-Subject Identifier SHALL be confidential and never presented to the
-user or third party systems.
+The Subject Identifier attribute SHALL be persistent and SHALL be unique for the combination of the 
+Subscriber, the Community and the Identity Provider to reduce the risk of cross application identification. 
+The Subject Identifier SHALL be confidential and never presented to the user or third party systems.
 
-The Identity Token MAY contain a session identifier in a *sid*
-attribute, if the Identity Provider supports per session logout.
+The Identity Token MAY contain a session identifier in a *sid* attribute, if the Identity Provider 
+supports per session logout.
 
-The Identity Token MAY contain other claims which SHALL be ignored by
-the Relying Party.
+The Identity Token MAY contain other claims which SHALL be ignored by the Relying Party.
 
 The Relying Parties SHALL validate Identity Tokens as follows:
 
@@ -256,6 +263,20 @@ The Relying Parties SHALL validate Identity Tokens as follows:
 4. Verify that the signature algorithm matches the algorithm configured for the Identity Provider. 
 5. Verify that the Identity Token is not expired and the current time is later or equal to the time the token was issued by the Identity Provider. 
 6. Verify that a *nonce* claim is present and its value matches the one that was sent in the Authentication Request.
+
+##### Message Example
+
+```
+{
+  "iss": "http://client-simulator.org",
+  "sub": "16d83c5e85c3",
+  "aud": "rp-client-id",
+  "exp": 1788875295,
+  "iat": 1788874695,
+  "nonce": "n-0S6_WzA2Mj",
+  "jti": "ba43b960-ac25-437e-970a-f74031874c64"
+}
+```
 
 #### UserInfo Request
 
@@ -272,15 +293,25 @@ The Identity Provider SHALL validate the User Info Request as follows:
 1. Validate the signature according to [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/) using the algorithm specified in the JWT *alg* Header Parameter. 
 2. Verify that the signature algorithm matches the algorithm configured for the Relying Party at the Identity Provider.
 
+##### Message Example
+
+The following listing displays a non-normative example for a UserInfo request with the access token in the 
+http authorization header: 
+
+```
+ GET /userinfo HTTP/1.1
+  Host: server.example.com
+  Authorization: Bearer SlAV32hkKG
+```
+
 #### UserInfo Response
 
-The UserInfo Response message SHALL be used by the Credential Service
-Provider to respond with the identity data of the user to
-UserInfo Requests from the Relying Party using back-channel
-communication. The UserInfo Response message SHALL be a JSON Web Token
+The UserInfo Response message SHALL be used by the Credential Service Provider to respond with the identity data of the user to
+UserInfo Requests from the Relying Party using back-channel communication. The UserInfo Response message SHALL be a JSON Web Token
 (JWT) compliant to the [OpenID Connect 1.0 UserInfo Response message](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo).
 
 The UserInfo Response SHALL contain the following parameters:
+- *sub*: The subject identifier of the user.
 - *first_name*: The first name of the user.
 - *family_name*: The family name of the user.
 - *gender*: The users coded gender with the value from the value set EprGender (2.16.756.5.30.1.127.3.10.1.25).
@@ -297,6 +328,24 @@ OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#U
 
 The UserInfo response message SHALL be signed using recommended cryptographic signature standards and the 
 signature SHALL be validated by the relying party.
+
+##### Message Example
+
+The following listing displays a non-normative example for a UserInfo response with the required fields and 
+an optional GLN: 
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+  {
+   "sub": "248289761001",
+   "first_name": "Maria",
+   "family_name": "Mustermann",
+   "gender": "F", 
+   "birthdate": "25.07.1998", 
+   "gln": "9801000050702" 
+  }
+```
 
 #### Logout Request
 
@@ -327,7 +376,16 @@ The Relying Party SHALL validate *LogoutRequest* messages as follows:
 3. Validate the signature according to [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/) using the algorithm specified in the JWT alg Header Parameter. 
 4. Verify that the current time is later or equal to the time the Logout Request was issued by the Identity Provider.
 
-Relying Parties SHALL sign the *LogoutRequest* message
+Relying Parties SHALL sign the *LogoutRequest* message and Identity Provider SHALL verify the signature. 
+
+##### Message Example
+
+The following listing displays a non-normative example for a Logout Request send by the relying party as http 
+GET transaction with the recommended *id_token_hint* and an optional *post_logout_redirect_uri* :
+
+```
+https://idp.com/logout?id_token_hint=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&post_logout_redirect_uri=https://relying-party.com/redirect
+```
 
 #### Logout Response
 
@@ -368,7 +426,7 @@ the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0-e
 
 The Relying Party SHALL use a certificate issued by a Certificate Authority (CA) that is operated according to 
 documented processes detailed in a Certificate Policy (CP) and Certificate Practice Statement (CPS) for 
-digital signatures or the mTLS client certifcate. 
+digital signatures or the mTLS client certificate. 
 
 The CA's processes SHALL meet the requirements of class 1 certificates defined within 
 the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). This 
