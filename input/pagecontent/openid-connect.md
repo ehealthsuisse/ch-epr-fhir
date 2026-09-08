@@ -153,11 +153,8 @@ In case of an error the Identity Provider SHALL respond a HTTP Error as defined
 in Section 3.1.2.6 of the OpenID Connect Core 1.0 specification.
 
 The authentication response message SHALL be signed using recommended
-cryptographic signature standards. The signature SHALL be validated by
-the relying party. The X.509 certificate used for signatures by the
-Identity Provider SHALL be issued by a trusted certificate service provider
-according to ZertES; SR 943.03 and listed by the Swiss Accreditation
-Service (SAS).
+cryptographic signature standards and the signature SHALL be validated by
+the relying party.
 
 #### Access Token Request
 
@@ -218,9 +215,8 @@ The Access Token Response SHALL contain the following parameters:
 In case of an error the Identity Provider SHALL respond a HTTP Error as defined
 in Section 3.1.3.4 of the OpenID Connect Core 1.0 specification.
 
-The id token SHALL be signed using recommended cryptographic signature standards. The signature SHALL be validated by
-the relying party. The X.509 certificate used for signatures by the Identity Provider SHALL be issued by a trusted 
-certificate service provider according to ZertES; SR 943.03 and listed by the Swiss Accreditation Service (SAS).
+The id token SHALL be signed using recommended cryptographic signature standards and the relying party SHALL 
+verify the signature.
 
 #### Identity Token
 
@@ -306,10 +302,7 @@ OpenID Connect Core 1.0 specification.
 
 The UserInfo response message SHALL be signed using recommended
 cryptographic signature standards. The signature SHALL be validated by
-the relying party. The X.509 certificate used for the signature by the
-Identity Provider SHALL be issued by a trusted certificate service provider
-according to ZertES; SR 943.03 and listed by the Swiss Accreditation
-Service (SAS).
+the relying party.
 
 #### Logout Request
 
@@ -353,9 +346,8 @@ The *LogoutResponse* message SHALL be compliant with Logout Response message def
 Logout specification with the requirements defined in this section.
 
 The *LogoutResponse* message SHALL be signed using recommended cryptographic signature standards and Relying Parties 
-SHALL validate the signature of *LogoutResponse* messages. The X.509 certificate used for signatures by the Identity 
-Provider SHALL be issued by a trusted certificate service provider according to ZertES; SR 943.03 and listed by the 
-Swiss Accreditation Service (SAS).
+SHALL validate the signature of *LogoutResponse* messages.
+
 
 ### Security Considerations
 
