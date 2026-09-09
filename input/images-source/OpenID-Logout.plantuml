@@ -18,12 +18,7 @@ RP -> UI: Redirect with Logout Request [HTTP]
 UI -> IdP: http GET request 
 
 |||
-
-IdP -> UI: Present logout form
-User -> UI: Logout
-UI -> IdP: Logout
 IdP -> IdP: terminate user session
-
 |||
 
 IdP -> UI: Redirect to post logout url

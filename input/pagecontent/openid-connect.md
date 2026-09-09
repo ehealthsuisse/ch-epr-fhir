@@ -86,15 +86,13 @@ Table 1: Authentication Sequence with OpenID Connect 1.0 Authorization Code Flow
 </div>
 Figure 2: OpenID Connect Logout Sequence
 
-| SEQ    | Description |
-|--------|-------------|
-| 01, 02 | The user initiates a logout in the user agent of the Relying Party application. |
+| SEQ    | Description                                                                                                        |
+|--------|--------------------------------------------------------------------------------------------------------------------|
+| 01, 02 | The user initiates a logout in the user agent of the Relying Party application.                                    |
 | 03, 04 | The Relying Party redirects the user agent with a Logout Request message to the Identity Provider logout endpoint. |
-| 05     | The Identity Provider presents a logout form for the user. |
-| 06, 07 | The user logs out in the logout form. |
-| 08     | The Identity Provider terminates the IdP session. |
-| 09, 10 | The Identity Provider redirects the user agent to the relying party post logout url. |
-| 11     | The Relying Party application terminates the user session. |
+| 05     | The Identity Provider terminates the IdP session.                                                                  |
+| 06, 07 | The Identity Provider redirects the user agent to the relying party post logout url.                               |
+| 08     | The Relying Party application terminates the user session.                                                         |
 {:class="table table-bordered"}
 
 Table 2: OpenID Connect Logout Sequence
