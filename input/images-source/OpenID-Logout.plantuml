@@ -9,12 +9,17 @@ participant "Verifier (IdP)" as IdP
 
 autonumber 1 1 "<b>[00]"
 
+User -> UI: Initiate logout
+UI -> RP: Initiate logout
+
+|||
+
 RP -> UI: Redirect with Logout Request [HTTP]
 UI -> IdP: http GET request 
 
 |||
 
-IdP -> UI: Present logout screen
+IdP -> UI: Present logout form
 User -> UI: Logout
 UI -> IdP: Logout
 IdP -> IdP: terminate user session
