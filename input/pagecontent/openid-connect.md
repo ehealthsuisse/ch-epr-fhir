@@ -148,9 +148,6 @@ Token Request message SHALL be sent via the backchannel. The Access
 Token Request message SHALL be compliant with an OAuth 2.0 Access Token
 Request message.
 
-Relying Parties which fulfill the requirements of confidential clients
-SHALL sign the Access Token Request message using [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/).
-
 The Access Token Request SHALL contain the following parameters:
 - *grant_type*: The value SHALL be authorization_code.
 - *code*: SHALL be the OAuth 2.0 compliant authorization code
