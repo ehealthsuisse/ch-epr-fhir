@@ -104,10 +104,6 @@ The Authentication Request message SHALL be used by the Relying Party to
 initiate the authentication sequence. The Authentication Request message
 SHALL be compliant with an OAuth 2.0 Authentication Request message.
 
-Relying Parties which fulfill the requirements of confidential
-clients SHALL sign the Authentication Request message using JSON Web
-Signature.
-
 The Authentication Request SHALL contain the following parameters:
 - *scope*: The value SHALL be *openid*.
 - *response_type*: The value SHALL be *code*.
@@ -125,7 +121,6 @@ The Authentication Request SHALL contain the following parameters:
   using the code challenge method as defined in PKCE.
 - *code_challenge_method*: code challenge method indicator defined
   in PKCE (fn. 23). Its value must be S256.
-
 
 The Identity Provider SHALL validate the Access Token Request as specified in 
 the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html) specification.
