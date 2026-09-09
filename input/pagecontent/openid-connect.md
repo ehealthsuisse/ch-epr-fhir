@@ -47,7 +47,6 @@ MAY may delegate the service to other provider on a contractual basis.
 - [Proof Key for Code Exchange by OAuth Public Clients (PKCE), RFC 7636](https://www.rfc-editor.org/info/rfc7636/), September 2015
 - [JSON Web Token (JWT), RFC 7519](https://www.rfc-editor.org/info/rfc7519/), May 2015.
 - [The OAuth 2.0 Authorization Framework: Bearer Token Usage, RFC 6750](https://datatracker.ietf.org/doc/html/rfc6750), October 2012.
-- [OpenID Connect Back-Channel Logout 1.0 incorporating errata set 1](https://openid.net/specs/openid-connect-backchannel-1_0.html), October 2023.
 - [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html), September 2022.
 - [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0), November 2018.
 
@@ -340,13 +339,6 @@ GET transaction with the recommended *id_token_hint* and an optional *post_logou
 ```
 https://idp.com/logout?id_token_hint=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&post_logout_redirect_uri=https://relying-party.com/redirect
 ```
-
-#### Logout Response
-
-The *LogoutResponse* message SHALL be send by the Identity Provider to the Relying Party to confirm session termination.
-
-The *LogoutResponse* message SHALL be compliant with Logout Response message defined in the 
-[OpenID Connect Back-Channel Logout](https://openid.net/specs/openid-connect-backchannel-1_0.html) specification with the requirements defined in this section.
 
 ### Security Considerations
 
