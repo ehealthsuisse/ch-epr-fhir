@@ -3,7 +3,7 @@
 ### Scope
 
 This national extension defines restrictions and extensions to the 
-[OpenID Connect 1.0](https://openid.net/specs/openid-connect-core-1_0-errata1.html) authorization code flow to 
+[OpenID Connect 1.0](https://openid.net/specs/openid-connect-core-1_0.html) authorization code flow to 
 retrieve EPR compliant identity token used to identify and authenticate users. 
 
 Identity Provider SHALL provide trusted endpoints for Relying Parties implementing the OpenID Connect 1.0 authorization
@@ -41,7 +41,7 @@ MAY may delegate the service to other provider on a contractual basis.
 
 ### Referenced Standards
 
-- [OpenID Connect Core 1.0 incorporating errata set 1](https://openid.net/specs/openid-connect-core-1_0-errata1.html), November 2014.
+- [OpenID Connect Core 1.0 incorporating errata set 2](https://openid.net/specs/openid-connect-core-1_0.html), November 2014.
 - [The OAuth 2.0 Authorization Framework, RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749), October 2012
 - [JSON Web Signature (JWS), RFC 7515](https://www.rfc-editor.org/info/rfc7515/), May 2015.
 - [Proof Key for Code Exchange by OAuth Public Clients (PKCE), RFC 7636](https://www.rfc-editor.org/info/rfc7636/), September 2015
@@ -127,15 +127,8 @@ The Authentication Request SHALL contain the following parameters:
   in PKCE (fn. 23). Its value must be S256.
 
 
-The Identity Provider SHALL validate the Access Token Request as follows:
-1. Identify the client using the *client_id*. 
-2. Verify the signature of the request if the Relying Party is
-   registered as a confidential client. 
-3. Verify that a secure cryptographic algorithm is applied. 
-4. Authenticate the Relying Party, if the client application is
-   registered as a confidential client. 
-5. Validate the signature according to [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/)
-   using the algorithm specified in the JWT *alg* Header Parameter.
+The Identity Provider SHALL validate the Access Token Request as specified in 
+the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html) specification.
 
 #### Authentication Response
 
@@ -147,15 +140,10 @@ Authentication Response message.
 
 The Authentication Response SHALL contain the following parameters:
 - *code*: SHALL be an OAuth 2.0 compliant authorization code.
-- *state*: SHALL match the state parameter value of the
-  Authentication Request.
+- *state*: SHALL match the state parameter value of the Authentication Request.
 
 In case of an error the Identity Provider SHALL respond a HTTP Error as defined
-in [Section 3.1.2.6 of the OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#AuthError) specification.
-
-The authentication response message SHALL be signed using recommended
-cryptographic signature standards and the signature SHALL be validated by
-the relying party.
+in [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#AuthError) specification.
 
 #### Access Token Request
 
@@ -213,7 +201,7 @@ The Access Token Response SHALL contain the following parameters:
 - *id_token*: The value shall be an Identity Token as defined below.
 
 In case of an error the Identity Provider SHALL respond a HTTP Error as defined
-in [Section 3.1.3.4 of the OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#TokenErrorResponse) specification.
+in [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#TokenErrorResponse) specification.
 
 ##### Message Example
 
@@ -231,8 +219,7 @@ Content-Type: application/json
 #### Identity Token
 
 The Identity Token SHALL be used by the Identity Provider to convey the Subject Identifier to the Relying 
-Party. The Identity Token SHALL be compliant with the JSON Web Token 
-and [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) specification.
+Party. The Identity Token SHALL be compliant with the JSON Web Token and [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) specification.
 
 Identity Tokens SHALL be cryptographically signed using [JSON Web Signature](https://www.rfc-editor.org/info/rfc7515/)and the Relying Party SHALL 
 validate the signature. 
@@ -422,7 +409,7 @@ accreditation service (SAS).
 
 Identity Provider SHALL identify and authenticate the Relying Parties by using mutual TLS (mTLS) or the 
 *private_key_jwt* option defined in Section 9 of 
-the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0-errata1.html) specification.
+the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html) specification.
 
 The Relying Party SHALL use a certificate issued by a Certificate Authority (CA) that is operated according to 
 documented processes detailed in a Certificate Policy (CP) and Certificate Practice Statement (CPS) for 
