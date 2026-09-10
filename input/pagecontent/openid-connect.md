@@ -319,10 +319,9 @@ Content-Type: application/json
 The *LogoutRequest* message SHALL be used by the Relying Party to initiate a logout of the user at the 
 Identity Provider.
 
-*LogoutRequest* messages send by the Relying Party to the Identity Provider SHALL be compliant with the
-[OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) specification with the requirements defined in this section. 
-According to the specification ,the message SHALL redirect the user agent to the identity providers logout 
-URL.
+*LogoutRequest* messages SHALL be used by the Relying Party to redirect the User Agent to the Identity 
+Provider compliant with the [OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) specification and 
+the requirements defined in this section.
 
 A *LogoutRequest* message SHALL convey the following parameters:
 - *id_token_hint*: SHALL convey the Identity Token previously issued by the Identity Provider.
