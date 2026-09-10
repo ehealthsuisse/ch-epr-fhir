@@ -291,8 +291,7 @@ SHALL contain a *gln* parameter conveying the GLN of healthcare professionals an
 Identity Provider MAY provide other identity claims as defined in 
 the [OpenID Connect 1.0 Core](https://openid.net/specs/openid-connect-core-1_0.html) specification.
 
-In case of an error the Identity Provider SHALL respond a HTTP Error as defined in [Section 5.3.3 of the 
-OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#UserInfoError) specification.
+In case of an error the Identity Provider SHALL respond a HTTP Error as defined in [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#UserInfoError) specification.
 
 The UserInfo response message SHALL be signed using recommended cryptographic signature standards and the 
 signature SHALL be validated by the relying party.
@@ -370,7 +369,8 @@ accreditation service (SAS).
 
 Identity Provider SHALL identify and authenticate the Relying Parties by using mutual TLS (mTLS) or the 
 *private_key_jwt* option defined in Section 9 of 
-the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html) specification.
+the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.hthttps://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) 
+specification.
 
 The Relying Party SHALL use a certificate issued by a Certificate Authority (CA) that is operated according to 
 documented processes detailed in a Certificate Policy (CP) and Certificate Practice Statement (CPS) for 
