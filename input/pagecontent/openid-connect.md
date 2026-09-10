@@ -317,29 +317,33 @@ Content-Type: application/json
 
 #### Logout Request
 
-The *LogoutRequest* message SHALL be used by the Relying Party to notify the Identity Provider that a user logged 
-out in the Relying Party application.
+The *LogoutRequest* message SHALL be used by the Relying Party to initiate a logout of the user at the 
+Identity Provider.
 
 *LogoutRequest* messages send by the Relying Party to the Identity Provider SHALL be compliant with the
-[OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) specification with the requirements defined in this section.
+[OpenID Connect RP-Initiated Logout 1.0](https://openid.net/specs/openid-connect-rpinitiated-1_0.html) specification with the requirements defined in this section. 
+According to the specification ,the message SHALL redirect the user agent to the identity providers logout 
+URL.
 
-*LogoutRequest* messages SHALL convey the following parameters:
+A *LogoutRequest* message SHALL convey the following parameters:
 - *id_token_hint*: SHALL convey the Identity Token previously issued by the Identity Provider.
 - *state*: SHALL convey an opaque value used to maintain the state
    between the request and the response to mitigate Cross-Site Forgery attacks.
 
 The Logout Request MAY contain other claims which SHALL be ignored by the Identity Provider.
 
-The Identity Provider SHALL validate *LogoutRequest* messages as follows:
-1. Verify that the Identity Token was issued by the Identity Provider for the requesting client and user.
+The Identity Provider SHALL validate *LogoutRequest* messages by verifying that the Identity Token was 
+issued by the Identity Provider for the requesting Relying Party and the user.
 
 ##### Message Example
 
-The following listing displays a non-normative example for a Logout Request send by the relying party as http 
-GET transaction with the recommended *id_token_hint* and an optional *post_logout_redirect_uri* :
+The following listing displays a non-normative example for a Logout Request send by the Relying Party 
+to redirect the user agent to the logout URL of the Identity Provider with the required *id_token_hint* 
+and *state* and an optional *post_logout_redirect_uri*:
 
 ```
-https://idp.com/logout?id_token_hint=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&post_logout_redirect_uri=https://relying-party.com/redirect
+HTTP/1.1 301 Moved Permanently
+Location: https://idp.com/logout?id_token_hint=eyJhbGciOiJIUz...&state=14424&post_logout_redirect_uri=https://relying-party.com/redirect
 ```
 
 ### Security Considerations
