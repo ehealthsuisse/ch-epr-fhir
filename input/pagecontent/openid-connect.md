@@ -368,7 +368,7 @@ issued by a trusted certificate service provider according to ZertES; SR 943.03 
 accreditation service (SAS).
 
 Identity Provider SHALL identify and authenticate the Relying Parties by using mutual TLS (mTLS) or the 
-*private_key_jwt* option defined in Section 9 of 
+*private_key_jwt* option defined in 
 the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.hthttps://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) 
 specification.
 
