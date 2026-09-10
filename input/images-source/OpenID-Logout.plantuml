@@ -15,7 +15,7 @@ UI -> RP: Initiate logout
 |||
 
 RP -> UI: Redirect with Logout Request [HTTP]
-UI -> IdP: http GET request 
+UI -> IdP: Redirect
 
 |||
 IdP -> IdP: terminate user session
