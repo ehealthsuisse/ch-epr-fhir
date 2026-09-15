@@ -38,7 +38,7 @@ RP -> IdP: Access Token Request [HTTP]
 IdP -> RP: Access Token Response [HTTP]
 |||
 
-RP -> RP: Validate Access Token
+RP -> RP: Validate ID Token
 
 |||
 RP --> CSP: <i>UserInfo Request [HTTP]</i>
