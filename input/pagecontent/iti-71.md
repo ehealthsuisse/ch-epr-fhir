@@ -479,7 +479,7 @@ the **purpose_of_use**, **subject_role** and the EPR-SPID of the patient. It may
         "code": "HCP"
       },
       "purpose_of_use": {
-        "system": "urn:uuid:2.16.756.5.30.1.127.3.10.5",
+        "system": "urn:oid:2.16.756.5.30.1.127.3.10.5",
         "code": "NORM"
       }
     },
@@ -527,7 +527,7 @@ patient SHALL have the additional extension **ch_delegation**:
         "code": "HCP"
       },
       "purpose_of_use": {
-        "system": "urn:uuid:2.16.756.5.30.1.127.3.10.5",
+        "system": "urn:oid:2.16.756.5.30.1.127.3.10.5",
         "code": "NORM"
       }
     },
