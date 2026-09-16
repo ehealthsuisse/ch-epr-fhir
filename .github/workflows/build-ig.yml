@@ -1,0 +1,101 @@
+name: Build IG
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install Jekyll
+        run: gem install jekyll bundler
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      - name: Run SUSHI
+        run: sushi .
+
+      - name: Cache FHIR package cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.fhir/packages
+          key: fhir-packages-${{ hashFiles('sushi-config.yaml') }}
+          restore-keys: fhir-packages-
+
+      - name: Download IG Publisher
+        run: |
+          mkdir -p input-cache
+          curl -sSL -o input-cache/publisher.jar \
+            https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar
+          ls -la input-cache/publisher.jar
+
+      # The English locale is mandatory: input/ignoreWarnings.txt holds English message
+      # patterns, and a localised publisher emits messages that never match them.
+      - name: Run IG Publisher
+        env:
+          JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8 -Duser.language=en -Duser.country=US
+        run: java -jar input-cache/publisher.jar -ig .
+
+      - name: Upload QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-report
+          path: |
+            output/qa.txt
+            output/qa.html
+            output/qa.json
+          if-no-files-found: warn
+
+      - name: Compare against QA baseline
+        if: always()
+        run: |
+          if [ ! -f output/qa.json ]; then
+            echo "::error::No output/qa.json — the publisher did not get far enough to produce a QA report."
+            exit 1
+          fi
+          errs=$(jq -r '.errs' output/qa.json)
+          warns=$(jq -r '.warnings' output/qa.json)
+          baseline=$(jq -r '.errors' .github/qa-baseline.json)
+
+          {
+            echo "| Metric | Value |"
+            echo "|---|---|"
+            echo "| Errors | $errs (baseline $baseline) |"
+            echo "| Warnings | $warns |"
+            echo "| Suppressed warnings | $(jq -r '.["suppressed-warnings"]' output/qa.json) |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$errs" -gt "$baseline" ]; then
+            echo "::error::QA errors increased from $baseline to $errs. See the qa-report artifact."
+            grep '^ERROR:' output/qa.txt || true
+            exit 1
+          fi
+
+          if [ "$errs" -lt "$baseline" ]; then
+            echo "::notice::QA errors dropped from $baseline to $errs. Lower .github/qa-baseline.json to lock this in."
+          fi
