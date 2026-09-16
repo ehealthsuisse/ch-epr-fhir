@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* IUA: Updated to IUA Revision 2.5. The JWT claims subject_role and purpose_of_use of the ihe_iua extension are arrays of FHIR Coding (CP-ITI-1255); table and examples in ITI-71 adjusted. IUA no longer requires signed JWT tokens; signing remains required for the EPR, and the wording on unsigned (JWE) tokens in ITI-71 and ITI-72 was adapted [#466](https://github.com/ehealthsuisse/ch-epr-fhir/issues/466)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues

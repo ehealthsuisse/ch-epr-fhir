@@ -33,7 +33,7 @@ to the IUA Authorization Client to be incorporated into the transactions to acce
 
 ### Referenced Standards
 
-1. [IHE ITI Technical Framework Supplement Internet User Authorization (IUA) Revision 2.3](https://profiles.ihe.net/ITI/IUA/index.html)
+1. [IHE ITI Technical Framework Supplement Internet User Authorization (IUA) Revision 2.5](https://profiles.ihe.net/ITI/IUA/index.html)
 2. [SMART Application Launch Framework Implementation Guide Release 2.2.0](http://www.hl7.org/fhir/smart-app-launch/)
 
 ### Messages
@@ -353,8 +353,8 @@ Annex 5 Addendum 1, section 1.6.4.2 Get X-User Assertion).
 | subject_name            | R/R                           | urn:oasis:names:tc:xspa:1.0:subject:subject-id      | The username as text.                                                     | 
 | subject_organization    | O/O                           | urn:oasis:names:tc:xspa:1.0:subject:organization    | The name of the user’s organization or institution as text.               |
 | subject_organization_id | O/O                           | urn:oasis:names:tc:xspa:1.0:subject:organization-id | The OID of the user’s organization in URN notation.                       |
-| subject_role            | O/R                           | urn:oasis:names:tc:xacml:2.0:subject:role           | Code indicating the user role from the EPR Role Code Value Set.           |
-| purpose_of_use          | O/R                           | urn:oasis:names:tc:xspa:1.0:subject:purposeofuse    | Code indicating the purpose of use from the EPR Purpose Of Use Value Set. |
+| subject_role            | O/R                           | urn:oasis:names:tc:xacml:2.0:subject:role           | Array of FHIR Coding with the user role from the EPR Role Code Value Set. |
+| purpose_of_use          | O/R                           | urn:oasis:names:tc:xspa:1.0:subject:purposeofuse    | Array of FHIR Coding with the purpose of use from the EPR Purpose Of Use Value Set. |
 | home_community_id       | O/R                           | urn:ihe:iti:xca:2010:homeCommunityId                | OID of the user’s home community in URN notation.                         |
 | person_id               | O/R                           | urn:oasis:names:tc:xacml:2.0:resource:resource-id   | SHALL be the EPR-SPID of the patients EPR.                                |
 {:class="table table-bordered"}
@@ -474,14 +474,18 @@ the **purpose_of_use**, **subject_role** and the EPR-SPID of the patient. It may
       "subject_name": "Martina Musterarzt",
       "home_community_id": "urn:oid:1.2.3.4",
       "person_id": "761337610411353650^^^&2.16.756.5.30.1.127.3.10.3&ISO",
-      "subject_role": {
-        "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
-        "code": "HCP"
-      },
-      "purpose_of_use": {
-        "system": "urn:uuid:2.16.756.5.30.1.127.3.10.5",
-        "code": "NORM"
-      }
+      "subject_role": [
+        {
+          "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
+          "code": "HCP"
+        }
+      ],
+      "purpose_of_use": [
+        {
+          "system": "urn:uuid:2.16.756.5.30.1.127.3.10.5",
+          "code": "NORM"
+        }
+      ]
     },
     "ch_epr": {
       "user_id": "2000000090092",
@@ -522,14 +526,18 @@ patient SHALL have the additional extension **ch_delegation**:
       "subject_name": "Dagmar Musterassistent",
       "home_community_id": "urn:oid:1.2.3.4",
       "person_id": "761337610411353650^^^&2.16.756.5.30.1.127.3.10.3&ISO",
-      "subject_role": {
-        "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
-        "code": "HCP"
-      },
-      "purpose_of_use": {
-        "system": "urn:uuid:2.16.756.5.30.1.127.3.10.5",
-        "code": "NORM"
-      }
+      "subject_role": [
+        {
+          "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
+          "code": "HCP"
+        }
+      ],
+      "purpose_of_use": [
+        {
+          "system": "urn:uuid:2.16.756.5.30.1.127.3.10.5",
+          "code": "NORM"
+        }
+      ]
     },
     "ch_epr": {
       "user_id": "2000000090108",
@@ -563,10 +571,11 @@ There are no CapabilityStatement resources defined for this transaction.
 
 ### Security Consideration
 
-IUA Authorization Clients, IUA Authorization Servers and IUA Resource Server actors SHALL support the JWS (signed) 
-alternative of the JWT token as specified in the IUA Trial Implementation. To ensure the authenticity and integrity, 
+IUA Authorization Clients, IUA Authorization Servers and IUA Resource Server actors SHALL support signed JWT tokens (JWS) 
+as specified in the IUA Trial Implementation. To ensure the authenticity and integrity, 
 the IUA Authorization Server SHALL sign the JWT token with its private key and IUA Resource Servers SHALL verify 
-the signature of the JWT token with the Authorization Server's public key. The JWE alternative SHALL not be used.
+the signature of the JWT token with the Authorization Server's public key. Unsigned JWT tokens, including encrypted but 
+unsigned tokens (JWE), SHALL NOT be used. Since IUA Revision 2.5 the signature is optional in IUA; it remains required for the EPR.
 
 To ensure the authenticity and integrity of the token requests, IUA Authorization Clients SHALL sign requests to the 
 token endpoint of the IUA Authorization Server with the clients' private key as defined in `RFC 9421 HTTP Message Signatures`. 
