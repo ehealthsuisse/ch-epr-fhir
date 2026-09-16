@@ -2,6 +2,7 @@
 
 #### Resolved Issues
 
+* PPQm: Renamed the value set titles for the consent identifier type and the policy set template ID, so that they no longer collide with the titles of the corresponding code systems [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
 * Added CLAUDE.md documenting the build commands, the repository conventions and the known pitfalls [#468](https://github.com/ehealthsuisse/ch-epr-fhir/issues/468)
 
 ### DSTU5 Release 2025-12-18
