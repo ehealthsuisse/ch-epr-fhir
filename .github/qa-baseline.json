@@ -1,4 +1,4 @@
 {
-  "errors": 4,
-  "comment": "Maximum number of QA errors tolerated by CI. Measured on 2026-09-02: two duplicate PPQm titles (#460), menu.xml href='#', unresolved package.tgz link, circular OperationDefinition CH.PIXm. Lower this whenever a PR removes errors."
+  "errors": 2,
+  "comment": "Maximum number of QA errors tolerated by CI. Measured on master on 2026-09-16 after #464 and #461 (build.fhir.org: errs 2): menu.xml href='#', unresolved package.tgz link, circular OperationDefinition CH.PIXm. #483 fixes these; lower to 0 once it is merged. Lower this whenever a PR removes errors."
 }
