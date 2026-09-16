@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Open Issues
+
+* MHD: Target Communities Option of IHE MHD 4.2.4 (CP-ITI-1326-02): not profiled for now. Its relation to the Federated Cross Community Access Option of this IG depends on whether cross community access remains part of the EPR, which is to be re-assessed together with [#431](https://github.com/ehealthsuisse/ch-epr-fhir/issues/431) [#494](https://github.com/ehealthsuisse/ch-epr-fhir/issues/494)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
