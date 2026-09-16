@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* MHD: Aligned the ITI-67 search response requirements with IHE MHD (CP-ITI-1327-00): the response Bundle SHOULD instead of SHALL follow the CH MHD Find Document References Comprehensive Response message profile, and the MHD Document Consumer and Document Responder CapabilityStatements declare the CH profiles as supportedProfile instead of profile. The update of DocumentReference metadata [CH:MHD-1] still requires CH MHD DocumentReference Comprehensive [#492](https://github.com/ehealthsuisse/ch-epr-fhir/issues/492)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
