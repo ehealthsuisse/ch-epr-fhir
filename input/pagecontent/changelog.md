@@ -2,6 +2,7 @@
 
 #### Resolved Issues
 
+* PPQm: Renamed the value set titles for the consent identifier type and the policy set template ID, so that they no longer collide with the titles of the corresponding code systems [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
 * MHD: Fix the slice discriminator for the StudyInstanceUID in `DocumentReference.context.related`, which made the slicing impossible to evaluate for validators, and add an example of a DICOM KOS manifest [#455](https://github.com/ehealthsuisse/ch-epr-fhir/issues/455)
 
 ### DSTU5 Release 2025-12-18
