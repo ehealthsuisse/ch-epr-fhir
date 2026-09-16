@@ -139,7 +139,7 @@ be the the one to use in ITI-68 transactions to retrieve the document content."
 * context.sourcePatientInfo ^comment = "Contained Patient resource with Patient.identifier.use element set to ‘usual’.\r\n\r\nIndicates that the data within the XDS document entry be represented as a contained resource. See Section 4.5.4.4.7"
 * context.sourcePatientInfo ^type.aggregation = #contained
 * context.related ^slicing.discriminator.type = #value
-* context.related ^slicing.discriminator.path = "identifier"
+* context.related ^slicing.discriminator.path = "identifier.system"
 * context.related ^slicing.rules = #open
 * context.related ^comment = "May be filled with URL pointers to Resources or Identifiers found in referenceIdList"
 * context.related contains
@@ -361,6 +361,47 @@ Usage: #inline
 * identifier.type = $v2-0203#MR
 * identifier.system = "urn:oid:2.999.1.2.3.4"
 * identifier.value = "8734"
+
+Instance: DocRefKos
+InstanceOf: ch-mhd-documentreference-comprehensive
+Title: "Comprehensive DocumentReference for a DICOM KOS Manifest"
+Description: "Comprehensive DocumentReference for a DICOM KOS manifest, carrying the StudyInstanceUID of the imaging study in context.related as required for XDS-I.b in the Swiss EPR"
+Usage: #example
+* contained.resourceType = "Patient"
+* contained.id = "1"
+* contained.name.family = "Doe"
+* contained.name.given = "John"
+* contained.identifier.use = #usual
+* contained.identifier.type = $v2-0203#MR
+* contained.identifier.system = "urn:oid:2.999.1.2.3.4"
+* contained.identifier.value = "8734"
+* extension.url = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-author-authorrole"
+* extension.valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.6#HCP "Healthcare professional"
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2952"
+* masterIdentifier.use = #usual
+* identifier.use = #official
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:0e8a1c62-3f6d-4a9f-9a4b-1f0f4a0f2d18"
+* status = #current
+* type = $sct#900000000000471006 "Image reference"
+* category = $sct#371525003 "Clinical procedure report"
+* subject.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
+* subject.identifier.value = "761337610411353650"
+* date = "2025-09-24T12:01:30+00:00"
+* description = "Manifest of a radiology study"
+* securityLabel = $sct#17621005 "Normal (qualifier value)"
+* content.attachment.contentType = #application/dicom
+* content.attachment.language = #de-CH
+* content.attachment.url = "urn:uuid:9a1b6f30-27bd-4a0c-9a2f-6c8c2b0c1a77"
+* content.attachment.title = "Manifest of a radiology study"
+* content.attachment.creation = "2025-09-24T12:01:30+00:00"
+* content.format = urn:oid:1.2.840.10008.2.6.1#1.2.840.10008.5.1.4.1.1.88.59 "DICOM Manifest (DICOM KOS SOP Class UID)"
+* context.facilityType = $sct#722171005 "Diagnostic institution (environment)"
+* context.practiceSetting = $sct#394914008 "Radiology - specialty (qualifier value)"
+* context.sourcePatientInfo = Reference(1)
+* context.related[StudyInstanceUID].identifier.system = "urn:dicom:uid"
+* context.related[StudyInstanceUID].identifier.value = "urn:oid:2.25.254740554952681474007791839575354065445"
 
 Instance: CHMhd1UpdateDocumentMetadataTransactionRequestExample
 InstanceOf: CHMhd1UpdateDocumentMetadataTransactionRequest
