@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Closed Issues
+
+* PDQm and PIXm: The sex and gender extensions of IHE CP-ITI-1297-12 (genderIdentity, pronouns, recordedSexOrGender) are not profiled. The EPR uses administrative gender only, as defined exhaustively in Annex 3 EPRO-FDHA; the optional extensions remain available but unused [#493](https://github.com/ehealthsuisse/ch-epr-fhir/issues/493)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
