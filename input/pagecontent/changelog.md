@@ -10,6 +10,10 @@
 * mCSD: Allow better mapping between mCSD and HPD: left open and not pursued for this ballot cycle; the proposals in PR [#283](https://github.com/ehealthsuisse/ch-epr-fhir/pull/283) and PR [#453](https://github.com/ehealthsuisse/ch-epr-fhir/pull/453) were closed [#284](https://github.com/ehealthsuisse/ch-epr-fhir/issues/284)
 * mCSD: Limiting the number of ITI-90 AuditEvents: has to be addressed internationally, a change proposal will be submitted to the IHE ITI Technical Committee; a Swiss precision in this IG is not expected within this ballot cycle [#363](https://github.com/ehealthsuisse/ch-epr-fhir/issues/363)
 
+#### Resolved Issues
+
+* PPQm: Renamed the value set titles for the consent identifier type and the policy set template ID, so that they no longer collide with the titles of the corresponding code systems [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
