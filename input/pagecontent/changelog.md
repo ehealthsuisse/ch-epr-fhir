@@ -1,3 +1,9 @@
+### DSTU6 Informative Ballot 2026
+
+#### Resolved Issues
+
+* ATNA: Updated the reference to RESTful ATNA Rev. 3.6. The only change from Rev. 3.5 is a corrected JSON example for Retrieve Syslog Event [ITI-82] (CP-ITI-1320-02), which this IG does not use; ITI-20 and ITI-81 are unchanged [#467](https://github.com/ehealthsuisse/ch-epr-fhir/issues/467)
+
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
