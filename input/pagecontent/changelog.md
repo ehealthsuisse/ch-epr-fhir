@@ -7,6 +7,7 @@
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
+* IUA: Corrected the `purpose_of_use` system in the ITI-71 JWT examples from `urn:uuid:` to `urn:oid:`
 * IUA: Correct grant_type for authorization code flow token request [#458](https://github.com/ehealthsuisse/ch-epr-fhir/issues/458)
 * IUA: Remove misleading statement [#456](https://github.com/ehealthsuisse/ch-epr-fhir/issues/456) 
 * IUA: Specified the signature for the ITI-71 token requests [#419](https://github.com/ehealthsuisse/ch-epr-fhir/issues/419)
