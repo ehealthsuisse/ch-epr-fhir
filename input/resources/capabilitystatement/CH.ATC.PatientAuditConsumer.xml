@@ -1,23 +1,25 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-    <id value="PatientAuditRecordRepositoryCapabilityStatement"/>
-    <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/PatientAuditRecordRepositoryCapabilityStatement"/>
-    <name value="CH_ATC_Patient_Audit_Record_Repository"/>
-    <title value="CH:ATC Patient Audit Record Repository (server)"/>
+    <id value="CH.ATC.PatientAuditConsumer"/>
+    <url value="http://fhir.ch/ig/ch-epr-fhir/CapabilityStatement/CH.ATC.PatientAuditConsumer"/>
+    <name value="CH_ATC_Patient_Audit_Consumer"/>
+    <title value="CH:ATC Patient Audit Consumer (client)"/>
     <status value="active"/>
-    <date value="2024-11-19"/>
-    <description value="Defines the CapabilityStatement for the Patient Audit Record Repository actor of ITI-81."/>
+    <date value="2026-09-02"/>
+    <description value="Defines the CapabilityStatement for the Patient Audit Consumer actor of ITI-81."/>
     <kind value="requirements"/>
     <fhirVersion value="4.0.1"/>
     <format value="application/fhir+xml"/>
     <format value="application/fhir+json"/>
     <rest>
-        <mode value="server"/>
+        <mode value="client"/>
+        <documentation value="The Patient Audit Consumer initiates the Retrieve Audit Event [ITI-81] transaction and shall support the Retrieve Audit Message Option. A Patient Audit Consumer implementing the Aggregate Audit Message Option queries all Patient Audit Record Repositories and aggregates the results."/>
         <resource>
             <type value="AuditEvent"/>
             <supportedProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/AccessAuditTrailEvent"/>
             <supportedProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/DocumentAuditEvent"/>
             <supportedProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/HpdAuditEvent"/>
             <supportedProfile value="http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/PolicyAuditEvent"/>
+            <documentation value="The parameters address, patient.identifier, source, type and outcome shall not be used."/>
             <interaction>
                 <code value="search-type"/>
                 <documentation value="ITI-81"/>
@@ -33,6 +35,7 @@
             <searchParam>
                 <name value="entity.identifier"/>
                 <type value="token"/>
+                <documentation value="Shall be included in every query and shall carry the EPR-SPID."/>
             </searchParam>
             <searchParam>
                 <name value="entity-type"/>
