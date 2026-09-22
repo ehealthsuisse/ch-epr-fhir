@@ -1,4 +1,4 @@
 {
-  "errors": 2,
-  "comment": "Maximum number of QA errors tolerated by CI. Measured on master on 2026-09-16 after #464 and #461 (build.fhir.org: errs 2): menu.xml href='#', unresolved package.tgz link, circular OperationDefinition CH.PIXm. #483 fixes these; lower to 0 once it is merged. Lower this whenever a PR removes errors."
+  "errors": 0,
+  "comment": "Maximum number of QA errors tolerated by CI. #483 (merged 2026-09-22) fixed the last three pre-existing errors. Verified locally with a clean output/ directory on master at c6607a0: 0 errors, 53 warnings, 355 hints. Lower this further is not possible; raise it only if a genuinely unavoidable error is accepted deliberately, with the reason recorded here."
 }
