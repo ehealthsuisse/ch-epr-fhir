@@ -1,8 +1,14 @@
-### DSTU6 Informative Ballot 2026
+### DSTU6 (planned, not yet released)
 
-#### Resolved Issues
+Breaking changes collected here for the next major/balloted release. Nothing in this section
+ships in the DSTU5.1 minor release below.
 
-* IUA: Updated to IUA Revision 2.5. The JWT claims subject_role and purpose_of_use of the ihe_iua extension are arrays of FHIR Coding (CP-ITI-1255); table and examples in ITI-71 adjusted. IUA no longer requires signed JWT tokens; signing remains required for the EPR, and the wording on unsigned (JWE) tokens in ITI-71 and ITI-72 was adapted [#466](https://github.com/ehealthsuisse/ch-epr-fhir/issues/466)
+* IUA: Update to IUA Revision 2.5. The JWT claims subject_role and purpose_of_use of the ihe_iua extension become arrays of FHIR Coding instead of a single Coding (CP-ITI-1255) — breaking for clients that parse them as a single object; table and examples in ITI-71 adjusted. IUA no longer requires signed JWT tokens; signing remains required for the EPR, and the wording on unsigned (JWE) tokens in ITI-71 and ITI-72 was adapted [#466](https://github.com/ehealthsuisse/ch-epr-fhir/issues/466)
+
+### DSTU5.1 Release 2026-12-18
+
+2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
+non-breaking changes only, continuing the DSTU5 line.
 
 ### DSTU5 Release 2025-12-18
 
