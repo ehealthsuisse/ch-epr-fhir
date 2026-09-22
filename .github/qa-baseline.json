@@ -1,0 +1,4 @@
+{
+  "errors": 0,
+  "comment": "Maximum number of QA errors tolerated by CI. #483 (merged 2026-09-22) fixed the last three pre-existing errors. Verified locally with a clean output/ directory on master at c6607a0: 0 errors, 53 warnings, 355 hints. Lower this further is not possible; raise it only if a genuinely unavoidable error is accepted deliberately, with the reason recorded here."
+}
