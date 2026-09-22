@@ -1,9 +1,16 @@
-### DSTU6 Informative Ballot 2026
+### DSTU5.1 Release 2026-12-18
+
+2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
+non-breaking changes only, continuing the DSTU5 line.
 
 #### Resolved Issues
 
 * PPQm: Renamed the value set titles for the consent identifier type and the policy set template ID, so that they no longer collide with the titles of the corresponding code systems [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
 * Fix the remaining IG Publisher errors: the no longer allowed `href='#'` on the navigation dropdowns, the unresolvable `package.tgz` download link, and the PIXm OperationDefinition that declared itself as its own base [#479](https://github.com/ehealthsuisse/ch-epr-fhir/issues/479)
+
+#### Closed Issues
+
+* PDQm and PIXm: The sex and gender extensions of IHE CP-ITI-1297-12 (genderIdentity, pronouns, recordedSexOrGender) are not profiled. The EPR uses administrative gender only, as defined exhaustively in Annex 3 EPRO-FDHA; the optional extensions remain available but unused [#493](https://github.com/ehealthsuisse/ch-epr-fhir/issues/493)
 
 ### DSTU5 Release 2025-12-18
 
