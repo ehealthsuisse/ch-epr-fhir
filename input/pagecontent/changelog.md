@@ -1,9 +1,18 @@
-### DSTU6 Informative Ballot 2026
+### DSTU6 (planned, not yet released)
+
+Breaking changes collected here for the next major/balloted release. Nothing in this section
+ships in the DSTU5.1 minor release below.
+
+* MHD: Update to IHE MHD 4.2.4, where the entryUUID and uniqueId identifiers are distinguished by Identifier.type instead of Identifier.use (CP-ITI-1328-01) — breaking for validators/consumers relying on the previous Identifier.use-based discriminator [#462](https://github.com/ehealthsuisse/ch-epr-fhir/issues/462)
+
+### DSTU5.1 Release 2026-12-18
+
+2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
+non-breaking changes only, continuing the DSTU5 line.
 
 #### Resolved Issues
 
 * PPQm: Renamed the value set titles for the consent identifier type and the policy set template ID, so that they no longer collide with the titles of the corresponding code systems [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
-* MHD: Updated to IHE MHD 4.2.4, where the entryUUID and uniqueId identifiers are distinguished by Identifier.type instead of Identifier.use (CP-ITI-1328-01) [#462](https://github.com/ehealthsuisse/ch-epr-fhir/issues/462)
 * Fix the remaining IG Publisher errors: the no longer allowed `href='#'` on the navigation dropdowns, the unresolvable `package.tgz` download link, and the PIXm OperationDefinition that declared itself as its own base [#479](https://github.com/ehealthsuisse/ch-epr-fhir/issues/479)
 
 ### DSTU5 Release 2025-12-18
