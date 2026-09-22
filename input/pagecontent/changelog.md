@@ -2,7 +2,9 @@
 
 #### Resolved Issues
 
+* PPQm: Renamed the value set titles for the consent identifier type and the policy set template ID, so that they no longer collide with the titles of the corresponding code systems [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
 * IUA: Corrected the `purpose_of_use` system in the ITI-71 JWT examples from `urn:uuid:` to `urn:oid:` [#500](https://github.com/ehealthsuisse/ch-epr-fhir/issues/500)
+* Fix the remaining IG Publisher errors: the no longer allowed `href='#'` on the navigation dropdowns, the unresolvable `package.tgz` download link, and the PIXm OperationDefinition that declared itself as its own base [#479](https://github.com/ehealthsuisse/ch-epr-fhir/issues/479)
 
 ### DSTU5 Release 2025-12-18
 
