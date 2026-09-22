@@ -1,4 +1,12 @@
-### DSTU6 Informative Ballot 2026
+### DSTU6 (planned, not yet released)
+
+Breaking changes collected here for the next major/balloted release. Nothing in this section
+ships in the DSTU5.1 minor release below.
+
+### DSTU5.1 Release 2026-12-18
+
+2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
+non-breaking changes only, continuing the DSTU5 line.
 
 #### Resolved Issues
 
