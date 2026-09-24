@@ -14,6 +14,8 @@ Description: "CH mCSD profile on Organization"
 * identifier[LDAP] ^patternIdentifier.system = "urn:ietf:rfc:4514"
 * type 1..
 * name 1..
+* active 1..
+* active ^comment = "Required in the Swiss EPR: the corresponding attribute is mandatory in the IHE HPD profile, and a query using the search parameter 'active' returns different results for instances in which the element is absent."
 
 
 Invariant: ch-mcsd-organization-ihe-conformance
