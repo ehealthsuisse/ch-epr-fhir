@@ -1,4 +1,14 @@
-### DSTU6 Informative Ballot 2026
+### DSTU6 (planned, not yet released)
+
+Breaking changes collected here for the next major/balloted release. Nothing in this section
+ships in the DSTU5.1 minor release below.
+
+* MHD: Aligned the ITI-67 search response requirements with IHE MHD (CP-ITI-1327-00): the response Bundle SHOULD instead of SHALL follow the CH MHD Find Document References Comprehensive Response message profile, and the MHD Document Consumer and Document Responder CapabilityStatements declare the CH profiles as supportedProfile instead of profile. The update of DocumentReference metadata [CH:MHD-1] still requires CH MHD DocumentReference Comprehensive. This relaxation is not breaking on its own, but the wording it introduces presupposes MHD 4.2.4 (#462), which is itself deferred — shipping this while the IG still declares MHD 4.2.3 would describe behaviour from a version the IG does not reference [#492](https://github.com/ehealthsuisse/ch-epr-fhir/issues/492)
+
+### DSTU5.1 Release 2026-12-18
+
+2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
+non-breaking changes only, continuing the DSTU5 line.
 
 #### Resolved Issues
 

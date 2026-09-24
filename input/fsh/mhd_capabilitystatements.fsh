@@ -20,7 +20,7 @@ Usage: #definition
 * rest.security.cors = false
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.resource[0].type = #DocumentReference
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"
+* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].searchParam[0].name = "_id"
@@ -88,7 +88,7 @@ Usage: #definition
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Kind of document (LOINC if possible)"
 * rest.resource[+].type = #List
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-submissionset-comprehensive"
+* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-submissionset-comprehensive"
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].searchParam[0].name = "_id"
@@ -145,10 +145,11 @@ Usage: #definition
 * rest.security.cors = false
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.resource[0].type = #DocumentReference
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"
+* rest.resource[=].supportedProfile = "http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-mhd-documentreference-comprehensive"
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[+].code = #update
+* rest.resource[=].interaction[=].documentation = "Update Document Metadata [CH:MHD-1]: the updated DocumentReference SHALL conform to CH MHD DocumentReference Comprehensive."
 * rest.resource[=].searchParam[0].name = "_id"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
 * rest.resource[=].searchParam[=].type = #token
