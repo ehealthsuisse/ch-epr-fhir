@@ -1,11 +1,14 @@
+### DSTU6 (planned, not yet released)
+
+Breaking changes collected here for the next major/balloted release. Nothing in this section
+ships in the DSTU5.1 minor release below.
+
+* Move the dependencies to CH Core 7.0.0-ballot and align ch-term and hl7.terminology.r4 with it — the ch-term 3.4.x coupling exists mainly to support the MHD 4.2.4 identifier discriminator change (#462), which is itself deferred; the ballot-status dependency also should not stand in a release regardless [#484](https://github.com/ehealthsuisse/ch-epr-fhir/issues/484)
+
 ### DSTU5.1 Release 2026-12-18
 
 2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
 non-breaking changes only, continuing the DSTU5 line.
-
-#### Resolved Issues
-
-* Move the dependencies to CH Core 7.0.0-ballot and align ch-term and hl7.terminology.r4 with it [#484](https://github.com/ehealthsuisse/ch-epr-fhir/issues/484)
 
 ### DSTU5 Release 2025-12-18
 
