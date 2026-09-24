@@ -5,6 +5,7 @@ ships in the DSTU5.1 minor release below.
 
 * MHD: Update to IHE MHD 4.2.4, where the entryUUID and uniqueId identifiers are distinguished by Identifier.type instead of Identifier.use (CP-ITI-1328-01) — breaking for validators/consumers relying on the previous Identifier.use-based discriminator [#462](https://github.com/ehealthsuisse/ch-epr-fhir/issues/462)
 * IUA: Update to IUA Revision 2.5. The JWT claims subject_role and purpose_of_use of the ihe_iua extension become arrays of FHIR Coding instead of a single Coding (CP-ITI-1255) — breaking for clients that parse them as a single object; table and examples in ITI-71 adjusted. IUA no longer requires signed JWT tokens; signing remains required for the EPR, and the wording on unsigned (JWE) tokens in ITI-71 and ITI-72 was adapted [#466](https://github.com/ehealthsuisse/ch-epr-fhir/issues/466)
+* mCSD: Require the attribute `active` in Practitioner, PractitionerRole and Organization — breaking for existing instances that omit `active`, even though it is valid and conformant today [#451](https://github.com/ehealthsuisse/ch-epr-fhir/issues/451)
 
 ### DSTU5.1 Release 2026-12-18
 
