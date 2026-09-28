@@ -36,7 +36,7 @@ operated according to documented processes detailed in a Certificate Policy (CP)
 Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates defined within 
 the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). They MAY 
 use this Certificate Authority to issue client certificates (mTLS) for Relying Parties. Identity providers 
-MAY may delegate the service to other provider on a contractual basis. 
+MAY delegate the service to other provider on a contractual basis. 
 
 
 ### Referenced Standards
@@ -63,7 +63,7 @@ Figure 1: Authentication Sequence with OpenID Connect 1.0 Authorization Code Flo
 |---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 01,02   | The user agent attempts to access a resource on the relying party on behalf of the user.                                                                                                                                                                                                                        |
 | 03      | The Relying Party presents the list of supported Identity Provider to the user.                                                                                                                                                                                                                                 |
-| 04,05   | The user selects a Identity Provider.                                                                                                                                                                                                                                                                           |
+| 04,05   | The user selects an Identity Provider.                                                                                                                                                                                                                                                                          |
 | 06      | The Relying Party builds an Authentication Request containing the required request parameter and conveys it to the User Agent with a redirect to the authorization endpoint of the Identity Provider.                                                                                                           |
 | 07      | The User Agent sends the Authentication Request to the authorization endpoint via HTTP GET or POST protocol.                                                                                                                                                                                                    |
 | 08      | The Identity Provider determines whether the user has a logon security context that meets the default or requested authentication policy requirements. If not, the Verifier interacts with the browser to challenge the user to provide valid credentials.                                                      |
@@ -118,12 +118,12 @@ The Authentication Request SHALL contain the following parameters:
   attacks.
 - *nonce*: SHALL convey an opaque string passed through from the
   Authentication Request to the ID Token to mitigate replay attacks.
-- *code_challenge*: code challenge derived from the code Identity Provider
-  using the code challenge method as defined in PKCE.
+- *code_challenge*: code challenge derived from the code verifier
+  using the code challenge method as defined in [PKCE](https://www.rfc-editor.org/info/rfc7636/).
 - *code_challenge_method*: code challenge method indicator defined
-  in PKCE (fn. 23). Its value must be S256.
+  in [PKCE](https://www.rfc-editor.org/info/rfc7636/). Its value must be S256.
 
-The Identity Provider SHALL validate the Access Token Request as specified in 
+The Identity Provider SHALL validate the Authentication Request as specified in 
 the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html) specification.
 
 #### Authentication Response
@@ -156,7 +156,7 @@ The Access Token Request SHALL contain the following parameters:
 - *redirect_uri*: SHALL convey the redirection URI the Access Token
   Response SHALL be sent to. Its value must match the redirection URI
   sent with the Authentication Request.
-- *code_Identity Provider*: The code Identity Provider value as defined in PKCE (fn. 23).
+- *code_verifier*: The code verifier value as defined in [PKCE](https://www.rfc-editor.org/info/rfc7636/).
 
 The Identity Provider SHALL validate the Access Token Request as follows:
 1. Identify the client using the client_id. 
@@ -171,7 +171,7 @@ The Identity Provider SHALL validate the Access Token Request as follows:
 6. Verify that the value of the *redirect_uri* parameter send with the
    Access Token Request matches one of the re-direct URIs registered
    for the Relying Party. 
-7. Verify that the *code-Identity Provider* matches the *code_challenge* send
+7. Verify that the *code_verifier* matches the *code_challenge* send
    with the authentication request respecting the S256 code challenge
    method.
 
@@ -199,7 +199,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 {
   "token_type": "Bearer",
-  "expires_in": 1788875107,
+  "expires_in": 300,
   "access_token": "e4205d40-ac65-42b5-9327-4d7cecc08dd6",
   "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc..."
 }
@@ -309,7 +309,7 @@ Content-Type: application/json
    "first_name": "Maria",
    "family_name": "Mustermann",
    "gender": "F", 
-   "birthdate": "25.07.1998", 
+   "birthdate": "1998-07-25", 
    "gln": "9801000050702" 
   }
 ```
@@ -368,7 +368,7 @@ accreditation service (SAS).
 
 Identity Provider SHALL identify and authenticate the Relying Parties by using mutual TLS (mTLS) or the 
 *private_key_jwt* option defined in 
-the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.hthttps://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) 
+the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) 
 specification.
 
 The Relying Party SHALL use a certificate issued by a Certificate Authority (CA) that is operated according to 
