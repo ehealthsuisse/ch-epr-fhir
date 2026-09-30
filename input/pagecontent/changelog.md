@@ -3,7 +3,7 @@
 Breaking changes collected here for the next major/balloted release. Nothing in this section
 ships in the DSTU5.1 minor release below.
 
-* MHD: Target Communities Option of IHE MHD 4.2.4 (CP-ITI-1326-02): not profiled for now. Its relation to the Federated Cross Community Access Option of this IG depends on whether cross community access remains part of the EPR, which is to be re-assessed together with [#431](https://github.com/ehealthsuisse/ch-epr-fhir/issues/431). This entry only makes sense alongside MHD 4.2.4 (#462), which is itself deferred, so it moves here too rather than appearing as an open issue against a version (4.2.3) the IG does not reference [#494](https://github.com/ehealthsuisse/ch-epr-fhir/issues/494)
+* MHD: Target Communities Option of IHE MHD 4.2.4 (CP-ITI-1326-02): not profiled. With only one remaining EPR community (Cara, operated by BINT) and no cross community synchronization need, this option and this IG's own Federated Cross Community Access Option are both moot, see [#431](https://github.com/ehealthsuisse/ch-epr-fhir/issues/431). This entry stays under DSTU6 alongside MHD 4.2.4 (#462), which itself remains deferred [#494](https://github.com/ehealthsuisse/ch-epr-fhir/issues/494)
 
 ### DSTU5.1 Release 2026-12-18
 
