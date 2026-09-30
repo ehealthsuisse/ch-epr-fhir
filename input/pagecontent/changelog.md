@@ -3,7 +3,7 @@
 Breaking changes collected here for the next major/balloted release. Nothing in this section
 ships in the DSTU5.1 minor release below.
 
-* IUA: Update to IUA Revision 2.5. The JWT claims subject_role and purpose_of_use of the ihe_iua extension become arrays of FHIR Coding instead of a single Coding (CP-ITI-1255) — breaking for clients that parse them as a single object; table and examples in ITI-71 adjusted. IUA no longer requires signed JWT tokens; signing remains required for the EPR, and the wording on unsigned (JWE) tokens in ITI-71 and ITI-72 was adapted [#466](https://github.com/ehealthsuisse/ch-epr-fhir/issues/466)
+* IUA: Update to Revision 2.5; subject_role/purpose_of_use become arrays (CP-ITI-1255), ITI-71/72 examples adjusted [#466](https://github.com/ehealthsuisse/ch-epr-fhir/issues/466)
 
 ### DSTU5.1 Release 2026-12-18
 
