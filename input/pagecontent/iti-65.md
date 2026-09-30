@@ -57,7 +57,7 @@ Example: [Provide Document Bundle for a FHIR document](Bundle-BundleProvideFhirD
 
 ##### Correction of a published document
 
-To correct a document with incorrect data (see the use case [Correction of a published document by a healthcare
+To correct a document (see the use case [Correction of a published document by a healthcare
 professional](iti-mhd.html#use-cases)), the Document Source publishes the corrected document and points with
 `DocumentReference.relatesTo` of type `replaces` to the document it corrects. The Document Recipient SHALL set the
 `status` of the replaced document to `superseded` and SHALL keep it accessible: a superseded document is no longer

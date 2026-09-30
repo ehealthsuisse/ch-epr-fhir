@@ -47,6 +47,8 @@ Therefore, actors of this profile must be grouped with actors of other profiles 
 
 <figcaption ID="1">Table 1: Grouping of mCSD actors required by this national extension.</figcaption>
 
+<br/>
+
 ### Security Consideration
 
 This national extension enforces authentication and authorization of access to the _Care Services Selective Supplier_

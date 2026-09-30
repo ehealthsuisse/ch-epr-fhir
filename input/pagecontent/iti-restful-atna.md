@@ -30,6 +30,8 @@ This national extension enforces authentication and authorization for access con
 
 <figcaption ID="1">Table 1: Grouping of actors required by this national extension. </figcaption>
 
+<br/>
+
 ### Security Consideration
 This national extension enforces authentication and authorization of access to the Patient Identifier Cross-reference
 Manager using the IUA profile as described in [IUA](iti-71.html).

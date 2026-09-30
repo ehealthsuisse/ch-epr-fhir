@@ -32,7 +32,7 @@ The Purge Document Request Message is triggered when a document has to be delete
 
 - a healthcare professional or a health institution has published the document in the health dossier of the wrong
   person (see the use case [Healthcare professional deletes a document published for the wrong person](iti-mhd.html#use-cases));
-- the patient, or a person acting on their behalf, has the document deleted (see the use case
+- the patient, or a person acting on their behalf, deletes a document (see the use case
   [Patient deletes a document](iti-mhd.html#use-cases)).
 
 ##### Message Semantics
@@ -58,6 +58,8 @@ The operation SHALL be invoked as a standalone HTTP request, it SHALL NOT be par
 | `HCP`, `ASS`, `TCU`            | The documents published by the healthcare professional, or by the health institution, on whose behalf the request is made (`DocumentReference.author`) |
 
 <figcaption ID="1">Table 1: Roles which may purge a document.</figcaption>
+
+<br/>
 
 The roles are the ones of the [CH Health Dossier Role](CodeSystem-HealthDossierRole.html) code system, conveyed in the
 access token of the requester (see [Get Access Token [ITI-71]](iti-71.html)).

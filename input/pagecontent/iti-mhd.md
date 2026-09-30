@@ -10,25 +10,25 @@ An Health App can update the metadata of a published document and purge a publis
 The national extension supports the following Use Cases:
 
 #### Publication of documents
-A patient, a healthcare professional or a health institution publishes a document in the health dossier of the patient. The Health App submits the document together with its metadata through the Health Dossier API. How the document is published is described in [ITI-65](iti-65.html).
+A patient, a healthcare professional, an assistant acting on behalf of a healthcare professional, or a technical user (e.g. the clinical archive system of a health institution) publishes a document in the health dossier of the patient. The Health App submits the document together with its metadata through the Health Dossier API. How the document is published is described in [ITI-65](iti-65.html).
 
 #### Search and download of documents
-A patient, a healthcare professional or a health institution searches the health dossier of the patient for documents, e.g. by type, date or with a full-text search, and downloads a document found. The result only contains the documents the requester is authorized to access. How documents are searched is described in [ITI-67](iti-67.html) and how a document is downloaded in [ITI-68](iti-68.html).
+A patient, a healthcare professional, an assistant acting on behalf of a healthcare professional searches the health dossier of the patient for documents, e.g. by type, date or with a full-text search, and downloads a document found. The result only contains the documents the requester is authorized to access. How documents are searched is described in [ITI-67](iti-67.html) and how a document is downloaded in [ITI-68](iti-68.html).
 
 #### Healthcare professional corrects a published document
-A healthcare professional or a health institution has published a document that contains incorrect data. The correction is made by publishing a new version of the document with the correct data; the incorrect document is neither overwritten nor removed, it remains accessible in the health dossier so that the correction stays traceable for the patient. How the corrected document is published is described in [ITI-65](iti-65.html#correction-of-a-published-document).
+A patient, a healthcare professional, an assistant acting on behalf of a healthcare professional, or a technical user (e.g. the clinical archive system of a health institution) has published a document that contains incorrect data. The correction is made by publishing a new version of the document with the correct data; the incorrect document is neither overwritten nor removed, it remains accessible in the health dossier so that the correction stays traceable for the patient. How the corrected document is published is described in [ITI-65](iti-65.html#correction-of-a-published-document).
 
 #### Healthcare professional deletes a document published for the wrong person
-A healthcare professional or a health institution has published a document in the health dossier of the wrong person. Such a document is not corrected by a new version but has to be deleted, and the healthcare professional or the health institution which published it has to delete it itself. How the document is deleted is described in [CH:MHD-2](ch-mhd-2.html).
+A patient, a healthcare professional, an assistant acting on behalf of a healthcare professional, or a technical user (e.g. the clinical archive system of a health institution) has published a document in the health dossier of the wrong person. Such a document is not corrected by a new version but has to be deleted, and the healthcare professional which published it has to delete it itself. How the document is deleted is described in [CH:MHD-2](ch-mhd-2.html).
 
 #### Patient changes confidentiality code of a document
 A patient wants to change the confidentiality code of one of his documents. The patient updates the confidentiality code in the Health App and the Health App submits the updated metadata through the Health API. How the confidentiality code is updated is described in [CH:MHD-1](ch-mhd-1.html#metadata-which-may-be-updated).
 
 #### Patient adds a personal note to a document
-A patient and the healthcare professional or the health institution which published a document do not agree on the correctness of the data in that document, or the healthcare professional or the health institution which published it is no longer practising. The patient can then record a personal note on the document. The note is recorded with the metadata of the document, the document itself and its data stay unchanged and no new version of the document is published. How the note is recorded is described in [CH:MHD-1](ch-mhd-1.html#recording-a-personal-note).
+A patient and the healthcare professional which published a document do not agree on the correctness of the data in that document. The patient can then record a personal note on the document. The note is recorded with the metadata of the document, the document itself and its data stay unchanged and no new version of the document is published. How the note is recorded is described in [CH:MHD-1](ch-mhd-1.html#recording-a-personal-note).
 
 #### Patient deletes a document
-A patient wants a document of their health dossier to be deleted. The patient can have any document deleted, the ones they recorded themselves as well as the ones a healthcare professional or a health institution published, and a deleted document is irrevocably removed and afterwards no longer accessible in the health dossier. How the document is deleted is described in [CH:MHD-2](ch-mhd-2.html).
+A patient wants to delete a document of their health dossier. How the document is deleted is described in [CH:MHD-2](ch-mhd-2.html).
 
 ###	Actors and Transactions  
 
@@ -54,6 +54,8 @@ Options that can be selected for each actor in this profile, are listed in the t
 
 <figcaption ID="1">Table 1: Actor options.</figcaption>
 
+<br/>
+
 
 #### Health Dossier Metadata Option
 
@@ -61,7 +63,7 @@ Metadata as defined in [CH MHD DocumentReference](StructureDefinition-ch-mhd-doc
 
 #### ITI-65 FHIR Documents Publish Option
 
-The [ITI-65 FHIR Documents Publish Option](https://profiles.ihe.net/ITI/MHD/index.html) SHALL be supported by the Document Source and Document Recipient, so that a FHIR document can be published as a FHIR document Bundle resource and does not have to be converted to a base64 encoded Binary resource. How a FHIR document is published is described in [ITI-65](iti-65.html#publishing-a-fhir-document).
+The [ITI-65 FHIR Documents Publish Option](https://profiles.ihe.net/ITI/MHD/index.html) SHALL be supported by the Document Source and Document Recipient, so that a FHIR document can be published as a Document Bundle resource in raw format without converting to a base64 encoded binary. How a FHIR document is published is described in [ITI-65](iti-65.html#publishing-a-fhir-document).
 
 #### Full-Text Search Option
 
@@ -76,10 +78,12 @@ This national extension enforces authentication and authorization for access con
 |-----------------------------------------------|---------------------------|-------------|--------------------------------------------------------------------|
 | Document Recipient                            | IUA Resource Server       | R           | -                                                                  |
 | Document Responder                            | IUA Resource Server       | R           | -                                                                  |
-| Document Source                               | IUA Authorization Client  | R           | `TCU` allowed for [ITI-65](iti-65.html) and [CH:MHD-2](ch-mhd-2.html) |
+| Document Source                               | IUA Authorization Client  | R           | `TCU` allowed for [ITI-65](iti-65.html)  |
 | Document Consumer                             | IUA Authorization Client  | R           | `TCU` not allowed |
 
 <figcaption ID="2">Table 2: Grouping of MHD actors required by this national extension.</figcaption>
+
+<br/>
 
 ###	Process Flow
 For the process flow of this profile and its interplay with the other profiles see [sequence diagrams](sequencediagrams.html). 

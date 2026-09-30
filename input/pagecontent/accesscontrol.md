@@ -10,9 +10,6 @@ outside the Health Dossier system, the health professional or health institution
 in the health dossier. In medical emergencies, health professionals and health institutions may access the health dossier 
 without a granted right, unless the holder has excluded emergency access.
 
-Health professionals and health institutions record treatment relevant data in the health dossier, unless the holder
-has declared that the data of a specific treatment shall not be recorded.
-
 Every actor serving a request of the Health Dossier API SHALL evaluate and enforce these rules individually for each
 request, before any data is created, updated, returned or otherwise disclosed. The decision SHALL take into account:
 

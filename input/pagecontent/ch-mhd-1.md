@@ -44,8 +44,7 @@ The [Mappings tab](StructureDefinition-ch-mhd-documentreference-mappings.html) i
 
 Only the metadata listed below may be updated with this transaction, and only by the roles listed for it. Every other
 change of the metadata requires a new version of the document to be published with
-[ITI-65](iti-65.html#correction-of-a-published-document). A document is deleted with
-[Purge Document [CH:MHD-2]](ch-mhd-2.html).
+[ITI-65](iti-65.html#correction-of-a-published-document).
 
 {:class="table table-bordered"}
 | Metadata            | Element                                                              | Roles                             |
@@ -63,9 +62,7 @@ OperationOutcome with the error code
 
 ##### Recording a personal note
 
-A patient can record a personal note on a document where they do not agree with the author on the correctness of its
-data, or where the author is no longer practising (see the use case
-[Patient adds a personal note to a document](iti-mhd.html#use-cases)). The Document Source records the note by updating
+A patient can record a personal note on a document (see use case [Patient adds a personal note to a document](iti-mhd.html#use-cases)). The Document Source records the note by updating
 the metadata of the document and adding a [PersonalNote](StructureDefinition-ch-ext-personalnote.html) extension, which
 carries the text of the note, the patient it belongs to and the time it was recorded. The document itself and its data
 stay unchanged and no new version of the document is published. 
