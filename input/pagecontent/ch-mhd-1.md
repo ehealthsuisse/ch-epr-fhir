@@ -13,7 +13,7 @@ The Update Document Metadata [CH:MHD-1] transaction is used to update document m
 
 ### Referenced Standards
 
-1. [Mobile access to Health Documents (MHD), Rev. 4.2.3 – Trial-Implementation, 2025-10-31](https://profiles.ihe.net/ITI/MHD/index.html) 
+1. [Mobile access to Health Documents (MHD), Rev. 4.2.4 – Trial-Implementation, 2026-06-15](https://profiles.ihe.net/ITI/MHD/4.2.4/index.html) 
 2. This MHD Profile is based on Release 4 of the [HL7® FHIR®](https://hl7.org/fhir/R4/index.html) standard.
 
 ### Messages

@@ -24,6 +24,7 @@ Alias: $ch-ext-deletionstatus = http://fhir.ch/ig/ch-epr-fhir/StructureDefinitio
 Alias: $ch-ext-patient-religion = http://hl7.org/fhir/StructureDefinition/patient-religion
 Alias: $ch-ext-author-authorrole = http://fhir.ch/ig/ch-epr-fhir/StructureDefinition/ch-ext-author-authorrole
 Alias: $IHE.MHD.UniqueIdIdentifier = https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UniqueIdIdentifier
+Alias: $IHE.MHD.MHDIdentifierType = https://profiles.ihe.net/ITI/MHD/CodeSystem/IHE.MHD.MHDIdentifierType
 Alias: $IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage = https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.FindDocumentReferencesComprehensiveResponseMessage
 Alias: $IHE.MHD.Comprehensive.ProvideBundle = https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle
 Alias: $IHE.MHD.UnContained.Comprehensive.SubmissionSet = https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.UnContained.Comprehensive.SubmissionSet

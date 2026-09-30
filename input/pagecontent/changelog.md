@@ -1,4 +1,14 @@
-### DSTU6 Informative Ballot 2026
+### DSTU6 (planned, not yet released)
+
+Breaking changes collected here for the next major/balloted release. Nothing in this section
+ships in the DSTU5.1 minor release below.
+
+* MHD: Update to 4.2.4; entryUUID/uniqueId now distinguished by Identifier.type instead of .use (CP-ITI-1328-01) [#462](https://github.com/ehealthsuisse/ch-epr-fhir/issues/462)
+
+### DSTU5.1 Release 2026-12-18
+
+2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
+non-breaking changes only, continuing the DSTU5 line.
 
 #### Resolved Issues
 
