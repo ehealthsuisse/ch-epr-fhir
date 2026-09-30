@@ -3,7 +3,7 @@
 Breaking changes collected here for the next major/balloted release. Nothing in this section
 ships in the DSTU5.1 minor release below.
 
-* MHD: Update to IHE MHD 4.2.4, where the entryUUID and uniqueId identifiers are distinguished by Identifier.type instead of Identifier.use (CP-ITI-1328-01) — breaking for validators/consumers relying on the previous Identifier.use-based discriminator [#462](https://github.com/ehealthsuisse/ch-epr-fhir/issues/462)
+* MHD: Update to 4.2.4; entryUUID/uniqueId now distinguished by Identifier.type instead of .use (CP-ITI-1328-01) [#462](https://github.com/ehealthsuisse/ch-epr-fhir/issues/462)
 
 ### DSTU5.1 Release 2026-12-18
 
