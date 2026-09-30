@@ -25,18 +25,6 @@ Usage: #example
 * issue[=].code = #processing
 * issue[=].details.text = "UnmodifiableMetadataError"
 
-Extension: ChExtDeletionStatus
-Id: ch-ext-deletionstatus
-Title: "CH Extension Deletion Status"
-Description: "Extension Deletion Status for DocumentReference"
-Context: DocumentReference
-* url only uri
-* url MS
-* valueCoding 1.. MS
-* valueCoding only Coding
-* valueCoding from $DocumentEntry.Ext.EprDeletionStatus (required)
-* valueCoding ^short = "Value of extension"
-
 Extension: ChExtAuthorAuthorRole
 Id: ch-ext-author-authorrole
 Title: "CH Extension Author AuthorRole"
@@ -83,10 +71,8 @@ Title: "CH MHD DocumentReference"
 Description: "CH MHD Profile on CH Core DocumentReference"
 * obeys ch-mhd
 * extension contains
-     ChExtDeletionStatus named deletionStatus 0..1 MS and
      ChExtAuthorAuthorRole named originalProviderRole 1..1 MS and
      ChExtPersonalNote named personalNote 0..1 MS
-* extension[deletionStatus] ^short = "Deletion status of the document"
 * extension[personalNote] ^short = "Personal note of the patient on the document"
 * extension[personalNote] ^comment = "The patient can record a personal note on a document where they do not agree with
 the author on the correctness of its data, or where the author is no longer practising. The note is recorded with the

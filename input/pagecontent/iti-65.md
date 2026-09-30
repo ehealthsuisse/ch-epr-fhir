@@ -30,7 +30,6 @@ The FHIR `Bundle.meta.profile` shall have the following value:
 
 The additional Swiss EPR metadata is defined with:
 
-* [DeletionStatus](#deletionstatus) (Annex 5.1 1.2.4.1)
 * [SubmissionSet.Author.AuthorRole](#submissionsetauthorauthorrole) (Annex 5.1 1.2.4.3)
 * [DocumentEntry.originalProviderRole ](#documententryoriginalproviderrole) (Annex 5.1 1.2.4.4)
 
@@ -68,12 +67,6 @@ Examples: [Provide Document Bundle for a corrected document](Bundle-BundleProvid
 replaces the document [DocRefPdf](DocumentReference-DocRefPdf.html), and the replaced document
 [as returned by the Document Responder after the correction](DocumentReference-DocRefPdfSuperseded.html), with the
 `status` `superseded`.
-
-##### DeletionStatus
-
-The optional metadata about the DeletionStatus of the document is represented in the DocumentReference using the
-extension with the URL [http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-ext-deletionstatus](StructureDefinition-ch-ext-deletionstatus.html).
-The values are defined in the ValueSet [DocumentEntry.Ext.EprDeletionStatus](http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.Ext.EprDeletionStatus).
 
 ##### SubmissionSet.Author.AuthorRole
 
