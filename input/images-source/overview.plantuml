@@ -30,7 +30,7 @@ component "Health App" {
 
 component "IdP" {
   [User Authentication Provider] as UAProvider
-  IUAClient --> UAProvider : CH:XUA Authenticate User
+  IUAClient --> UAProvider : OpenID Connect Authentication
 }
 
 component "Health Dossier API" {
@@ -49,7 +49,7 @@ component "Health Dossier API" {
   [MHD Document Responder] as MHDResponder
   MHDSource --> MHDRecipient : Provide Document Bundle [ITI-65]
 
-  MHDSource --> MHDResponder : Update Document Metadata [CH:MHD-1]
+  MHDSource --> MHDResponder : Update Document Metadata [CH:MHD-1], \nPurge Document [CH:MHD-2]
 
   MHDConsumer --> MHDResponder : Find Document References [ITI-67], \nRetrieve Document [ITI-68]
 

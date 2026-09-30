@@ -1,3 +1,7 @@
+<div markdown="1" class="dragon">
+This part of the specification is subject to change and has not yet been adapted to the proposed [EGDG legislation](index.html#introduction).
+</div>
+
 ### Overview
 
 This profile defines the audit trail consumption requirements a community has to provide for a patient’s audit trail.

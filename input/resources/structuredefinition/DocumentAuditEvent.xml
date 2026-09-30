@@ -152,11 +152,11 @@
 				</extension>
 				<strength value="required"/>
 				<description value="EPR Participant"/>
-				<valueSet value="http://fhir.ch/ig/ch-health-dossier/ValueSet/EprParticipant"/>
+				<valueSet value="http://fhir.ch/ig/ch-health-dossier/ValueSet/HealthDossierParticipant"/>
 			</binding>
 			<mapping>
 				<identity value="ch-atc"/>
-				<map value="role (PAT, HCP, ASS, REP, TCU, DADM, GRP)"/>
+				<map value="role (PAT, HCP, ASS, REP, LEGREP, TCU, ADM, GRP)"/>
 			</mapping>
 		</element>
 		<element id="AuditEvent.agent.who">

@@ -25,18 +25,6 @@ Usage: #example
 * issue[=].code = #processing
 * issue[=].details.text = "UnmodifiableMetadataError"
 
-Extension: ChExtDeletionStatus
-Id: ch-ext-deletionstatus
-Title: "CH Extension Deletion Status"
-Description: "Extension Deletion Status for DocumentReference"
-Context: DocumentReference
-* url only uri
-* url MS
-* valueCoding 1.. MS
-* valueCoding only Coding
-* valueCoding from $DocumentEntry.Ext.EprDeletionStatus (required)
-* valueCoding ^short = "Value of extension"
-
 Extension: ChExtAuthorAuthorRole
 Id: ch-ext-author-authorrole
 Title: "CH Extension Author AuthorRole"
@@ -46,20 +34,55 @@ Context: List, DocumentReference
 * url MS
 * valueCoding 1.. MS
 * valueCoding only Coding
-* valueCoding from $DocumentEntry.originalProviderRole (required)
+* valueCoding from HealthDossierAuthorRole (required)
+* valueCoding ^comment = "Bound to the roles of the electronic health dossier instead of the CH Term value sets
+DocumentEntry.originalProviderRole and SubmissionSet.Author.AuthorRole, which still carry the Document Administrator
+(`DADM`) and have no code for the legal representative."
 * valueCoding ^short = "Value of extension"
 
-Profile: CHMhdDocumentReferenceComprehensive
+Extension: ChExtPersonalNote
+Id: ch-ext-personalnote
+Title: "CH Extension Personal Note"
+Description: "Extension Personal Note of the patient on a document"
+Context: DocumentReference
+* url only uri
+* url MS
+* value[x] 1.. MS
+* value[x] only Annotation
+* value[x] ^short = "Personal note of the patient on the document"
+* valueAnnotation.author[x] 1..1 MS
+* valueAnnotation.author[x] only Reference($ch-core-patient)
+* valueAnnotation.author[x] ^short = "The patient the note belongs to"
+* valueAnnotation.author[x] ^comment = "The note is the note of the patient, also when a representative, a legal
+representative or the administration records it on behalf of the patient: who recorded it is visible in the audit
+record. The patient is identified by a logical reference carrying the EPR-SPID in `author.identifier`, analogous to
+`DocumentReference.subject`."
+* valueAnnotation.time 1..1 MS
+* valueAnnotation.time ^short = "When the note was recorded"
+* valueAnnotation.time ^comment = "The time SHALL be set by the Document Source, `DocumentReference.date` is the time the
+document reference was created and `meta.lastUpdated` changes with every metadata update."
+* valueAnnotation.text 1..1 MS
+* valueAnnotation.text ^short = "The text of the note"
+
+Profile: CHMhdDocumentReference
 Parent: $ch-core-documentreference
-Id: ch-mhd-documentreference-comprehensive
-Title: "CH MHD DocumentReference Comprehensive"
+Id: ch-mhd-documentreference
+Title: "CH MHD DocumentReference"
 Description: "CH MHD Profile on CH Core DocumentReference"
 * obeys ch-mhd
 * extension contains
-     ChExtDeletionStatus named deletionStatus 0..1 MS and
-     ChExtAuthorAuthorRole named originalProviderRole 1..1 MS
-* extension[deletionStatus] ^short = "Deletion status of the document"
-* extension[originalProviderRole] ^short = "Original ProviderRole: This extra metadata attribute SHALL be set by the Document Source actor to the role value of the current user and SHALL NOT be updated by Update Initiator or Document Administrator actors."
+     ChExtAuthorAuthorRole named originalProviderRole 1..1 MS and
+     ChExtPersonalNote named personalNote 0..1 MS
+* extension[personalNote] ^short = "Personal note of the patient on the document"
+* extension[personalNote] ^comment = "The patient can record a personal note on a document where they do not agree with
+the author on the correctness of its data, or where the author is no longer practising. The note is recorded with the
+metadata of the document, the document itself and its data stay unchanged. A document carries at most one personal
+note: recording a note on a document which already has one replaces the existing note. The note is not part of
+`DocumentReference.description`, which carries the comment of the author of the document."
+* extension[originalProviderRole] ^short = "Original ProviderRole: role of the user who originally provided the document"
+* extension[originalProviderRole] ^comment = "This extra metadata attribute SHALL be set by the Document Source actor to
+the role value of the current user. It SHALL NOT be changed with Update Document Metadata [CH:MHD-1], the Document
+Responder rejects such a request with an UnmodifiableMetadataError."
 * masterIdentifier 1.. MS
 * masterIdentifier only $IHE.MHD.UniqueIdIdentifier
 * identifier MS
@@ -76,12 +99,22 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * subject.identifier 1..1
 * subject.identifier only EPRSPIDIdentifier
 * subject ^comment = "Not a contained resource. The identifier points to an existing patient in the XDS Affinity Domain."
-* author only Reference
-* author MS
-* author ^comment = "Contained resource."
-* author ^type.aggregation = #contained
-* authenticator only Reference
-* authenticator ^type.aggregation = #contained
+* author 1.. MS
+* author only Reference($ch-core-practitioner or $ch-core-practitionerrole or $ch-core-organization or Device or $ch-core-patient or $ch-core-relatedperson)
+* author obeys ch-mhd-author-1
+* author ^short = "Who and/or what authored the document"
+* author ^comment = "The author SHALL be identified, either by a logical reference or by a reference to a resource.
+
+A logical reference carries the identifier of the authoring person or institution in `author.identifier`, analogous to
+`subject.identifier` carrying the EPR-SPID. The identifier is not constrained to a single system: a health professional
+or institution is normally identified by its GLN (`urn:oid:2.51.1.3`) and is then resolvable through mCSD, a patient by
+the EPR-SPID (`urn:oid:2.16.756.5.30.1.127.3.10.3`).
+
+A reference to a resource may point to a resource contained in the DocumentReference — use a contained PractitionerRole,
+which in turn references a contained Practitioner and/or Organization, when both the authoring person and the authoring
+institution are known — or to a resource held elsewhere, for example in the mCSD directory."
+* author.type ^short = "The type of the referenced author, e.g. Practitioner or Organization. SHALL be present when a logical reference is used."
+* authenticator only Reference($ch-core-practitioner or $ch-core-practitionerrole or $ch-core-organization)
 * custodian ..0
 * relatesTo MS
 * relatesTo ^comment = "See ITI TF-2c: 3.65.4.1.2.3"
@@ -98,10 +131,14 @@ Description: "CH MHD Profile on CH Core DocumentReference"
 * content.attachment.data ..0
 * content.attachment.data ^comment = "These HL7 FHIR elements are not used in XDS, therefore would not be present. Document Consumers should be robust to these elements holding values."
 * content.attachment.url 1..1 MS
-* content.attachment.url ^short = "The ITI-68 endpoint to use, or a reference to the Binary resource in the Bundle."
-* content.attachment.url ^comment = "When providing the document, this URL SHALL point to the Binary resource wrapping
-the document content (which SHALL be included in the Bundle). When retrieving the DocumentReference, this URL SHALL
-be the the one to use in ITI-68 transactions to retrieve the document content."
+* content.attachment.url ^short = "The ITI-68 endpoint to use, or a reference to the Binary or the FHIR document Bundle resource in the Bundle."
+* content.attachment.url ^comment = "When providing the document, this URL SHALL point to the resource carrying the
+document content, which SHALL be included in the Bundle: a Binary resource wrapping the document content, or, for a
+FHIR document published with the FHIR Documents Publish Option, the FHIR document Bundle resource itself. When
+retrieving the DocumentReference, this URL SHALL be the the one to use in ITI-68 transactions to retrieve the document
+content."
+* content.attachment.size ^comment = "SHALL be absent where the document content is a FHIR document Bundle resource."
+* content.attachment.hash ^comment = "SHALL be absent where the document content is a FHIR document Bundle resource."
 * content.attachment.size MS
 * content.attachment.hash MS
 * content.attachment.title 1..1 MS
@@ -123,10 +160,6 @@ be the the one to use in ITI-68 transactions to retrieve the document content."
 * context.practiceSetting ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * context.practiceSetting ^binding.extension.valueString = "DocumentC80PracticeSetting"
 * context.practiceSetting ^binding.description = "Additional details about where the content was created (e.g. clinical specialty)."
-* context.sourcePatientInfo 1.. MS
-* context.sourcePatientInfo only Reference($ch-core-patient)
-* context.sourcePatientInfo ^comment = "Contained Patient resource with Patient.identifier.use element set to ‘usual’.\r\n\r\nIndicates that the data within the XDS document entry be represented as a contained resource. See Section 4.5.4.4.7"
-* context.sourcePatientInfo ^type.aggregation = #contained
 * context.related ^slicing.discriminator.type = #value
 * context.related ^slicing.discriminator.path = "identifier"
 * context.related ^slicing.rules = #open
@@ -138,16 +171,21 @@ be the the one to use in ITI-68 transactions to retrieve the document content."
 * context.related[StudyInstanceUID].identifier ^short = "Requirements on XDS-I.b (Swiss context): When a Imaging Document Source provides a document to the Document Repository, it must provide the StudyInstanceUID, found in the to be registered KOS object, in the referenceIdList (urn:ihe:iti:xds:2013:referenceIdList) attribute of the documentEntry metadata."
 
 Invariant: ch-mhd
-Description: "The DocumentReference needs to conform to IHE.MHD.Comprehensive.DocumentReference"
+Description: "The DocumentReference needs to conform to IHE.MHD.Minimal.DocumentReference"
 * severity = #error
-* expression = "conformsTo('https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.DocumentReference')"
+* expression = "conformsTo('https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference')"
+
+Invariant: ch-mhd-author-1
+Description: "The author is identified either by a logical reference (identifier) or by a reference to a resource"
+* severity = #error
+* expression = "identifier.exists() or reference.exists()"
 
 
-Profile: ChFindDocumentReferencesComprehensiveResponse
+Profile: ChFindDocumentReferencesResponse
 Parent: Bundle
-Id: ch-mhd-documentreference-comprehensive-bundle
-Title: "CH MHD Find Document References Comprehensive Response message"
-Description: "A profile on the Find Document References Comprehensive Response message for ITI-68"
+Id: ch-mhd-documentreference-bundle
+Title: "CH MHD Find Document References Minimal Response message"
+Description: "A profile on the Find Document References Minimal Response message for ITI-68"
 * type = #searchset (exactly)
 * total 1..
 * entry ^slicing.discriminator.type = #profile
@@ -161,7 +199,7 @@ Description: "A profile on the Find Document References Comprehensive Response m
     OperationOutcome 0..1
 * entry[DocumentReference] ^short = "DocumentReference"
 * entry[DocumentReference].resource 1.. MS
-* entry[DocumentReference].resource only CHMhdDocumentReferenceComprehensive
+* entry[DocumentReference].resource only CHMhdDocumentReference
 
 * entry[OperationOutcome] ^short = "OperationOutcome"
 * entry[OperationOutcome].resource 1..
@@ -173,30 +211,30 @@ Description: "The fullUrl must be an absolute URL server address or an URI for U
 * severity = #error
 * expression = "startsWith('http') or startsWith('urn:uuid:') = true"
 
-Profile: CHMhdProvideDocumentBundleComprehensive
-Parent: $IHE.MHD.Comprehensive.ProvideBundle
-Id: ch-mhd-providedocumentbundle-comprehensive
-Title: "CH MHD Provide Document Bundle Comprehensive"
-Description: "IHE MHD profile on Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata for the Swiss EPR."
+Profile: CHMhdProvideDocumentBundle
+Parent: $IHE.MHD.Minimal.ProvideBundle
+Id: ch-mhd-providedocumentbundle
+Title: "CH MHD Provide Document Bundle"
+Description: "IHE MHD profile on Provide Document Bundle (ITI-65) transaction for the Swiss EPR."
 * meta 1..
 * meta.profile MS
 * meta.profile ^slicing.discriminator.type = #value
 * meta.profile ^slicing.discriminator.path = "$this"
 * meta.profile ^slicing.rules = #open
-* meta.profile contains comprehensiveMetadata 1..1 MS
-* meta.profile[comprehensiveMetadata] = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
+* meta.profile contains minimalMetadata 1..1 MS
+* meta.profile[minimalMetadata] = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
 * entry 3..
 * entry[SubmissionSet] ^sliceName = "SubmissionSet"
 * entry[SubmissionSet] ^mustSupport = true
 * entry[SubmissionSet].resource 1.. MS
-* entry[SubmissionSet].resource ^type.profile = $ch-mhd-submissionset-comprehensive
+* entry[SubmissionSet].resource ^type.profile = $ch-mhd-submissionset
 * entry[SubmissionSet].request 1.. MS
 * entry[SubmissionSet].request.method = #POST
 * entry[SubmissionSet].request.method MS
 * entry[DocumentRefs] ^sliceName = "DocumentRefs"
 * entry[DocumentRefs] ^mustSupport = true
 * entry[DocumentRefs].resource 1.. MS
-* entry[DocumentRefs].resource ^type.profile = Canonical(CHMhdDocumentReferenceComprehensive)
+* entry[DocumentRefs].resource ^type.profile = Canonical(CHMhdDocumentReference)
 * entry[DocumentRefs].request MS
 * entry[DocumentRefs].request.method = #POST
 * entry[DocumentRefs].request.method MS
@@ -207,14 +245,22 @@ Description: "IHE MHD profile on Provide Document Bundle (ITI-65) transaction wi
 * entry[Documents].request 1.. MS
 * entry[Documents].request.method = #POST
 * entry[Documents].request.method MS
+* entry[FhirDocuments] ^sliceName = "FhirDocuments"
+* entry[FhirDocuments] ^mustSupport = true
+* entry[FhirDocuments] ^short = "A FHIR document, published with the ITI-65 FHIR Documents Publish Option"
+* entry[FhirDocuments].resource 1.. MS
+* entry[FhirDocuments].resource only Bundle
+* entry[FhirDocuments].request 1.. MS
+* entry[FhirDocuments].request.method = #POST
+* entry[FhirDocuments].request.method MS
 * entry[Folders] 0..0 
 * entry[Patient] 0..0
 
-Profile: IHE_MHD_ProvideDocumentBundle_Comprehensive_Response_CH
+Profile: IHE_MHD_ProvideDocumentBundle_Response
 Parent: Bundle
-Id: ch-mhd-providedocumentbundle-comprehensive-response
-Title: "CH MHD Provide Document Bundle Comprehensive Response"
-Description: "IHE MHD profile on Response of Provide Document Bundle (ITI-65) transaction with Comprehensive Metadata."
+Id: ch-mhd-providedocumentbundle-response
+Title: "CH MHD Provide Document Bundle Response"
+Description: "IHE MHD profile on Response of Provide Document Bundle (ITI-65) transaction."
 * type = #transaction-response (exactly)
 * type MS
 * link MS
@@ -228,11 +274,11 @@ Description: "IHE MHD profile on Response of Provide Document Bundle (ITI-65) tr
 * entry.response.etag MS
 * entry.response.outcome MS
 
-Profile: CHMhdSubmissionSetComprehensive
-Parent: $IHE.MHD.UnContained.Comprehensive.SubmissionSet
-Id: ch-mhd-submissionset-comprehensive
-Title: "CH MHD SubmissionSet Comprehensive"
-Description: "CH MHD SubmissionSet Comprehensive"
+Profile: CHMhdSubmissionSet
+Parent: $IHE.MHD.Minimal.SubmissionSet 
+Id: ch-mhd-submissionset
+Title: "CH MHD SubmissionSet"
+Description: "CH MHD SubmissionSet"
 * extension 2..
 * extension contains $ch-ext-author-authorrole named authorAuthorRole 0..1 MS
 * extension[designationType].value[x] from $SubmissionSet.contentTypeCode (required)
@@ -254,7 +300,7 @@ Description: "CH MHD SubmissionSet Comprehensive"
 * subject ^comment = "Not a contained resource. The identifier points to an existing patient in the XDS Affinity Domain."
 * date MS
 * entry 1.. MS
-* entry.item only Reference($ch-mhd-documentreference-comprehensive)
+* entry.item only Reference($ch-mhd-documentreference)
 * entry.item MS
 * entry.item ^type.aggregation[0] = #referenced
 * entry.item ^type.aggregation[+] = #bundled
@@ -276,7 +322,7 @@ Description: "A profile for Update Document Metadata (CH:MHD-1) transaction requ
 * entry contains 
     DocumentReference 1..* MS 
 * entry[DocumentReference] ^short = "DocumentReference"
-* entry[DocumentReference].resource only CHMhdDocumentReferenceComprehensive
+* entry[DocumentReference].resource only CHMhdDocumentReference
 
 Profile: CHMhd1UpdateDocumentMetadataTransactionResponse
 Id: ch-mhd-1-updatedocumentmetadatatransactionresponse
@@ -296,7 +342,7 @@ Description: "A profile for Update Document Metadata (CH:MHD-1) transaction resp
  
 * entry[DocumentReference] ^short = "DocumentReference"
 * entry[DocumentReference].resource 1.. MS
-* entry[DocumentReference].resource only CHMhdDocumentReferenceComprehensive
+* entry[DocumentReference].resource only CHMhdDocumentReference
 
 * entry[OperationOutcome] ^short = "OperationOutcome"
 * entry[OperationOutcome].resource 1..
@@ -305,20 +351,12 @@ Description: "A profile for Update Document Metadata (CH:MHD-1) transaction resp
 
 
 Instance: DocRefPdf
-InstanceOf: ch-mhd-documentreference-comprehensive
-Title: "Comprehensive DocumentReference for a PDF Document"
-Description: "Comprehensive DocumentReference for a PDF Document"
+InstanceOf: ch-mhd-documentreference
+Title: "DocumentReference for a PDF Document"
+Description: "DocumentReference for a PDF Document"
 Usage: #example
-* contained.resourceType = "Patient"
-* contained.id = "1"
-* contained.name.family = "Doe"
-* contained.name.given = "John"
-* contained.identifier.use = #usual
-* contained.identifier.type = $v2-0203#MR
-* contained.identifier.system = "urn:oid:2.999.1.2.3.4"
-* contained.identifier.value = "8734"
 * extension.url = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-ext-author-authorrole"
-* extension.valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.6#HCP "Healthcare professional"
+* extension.valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.19#HCP "Healthcare professional"
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2951"
 * masterIdentifier.use = #usual
@@ -331,6 +369,9 @@ Usage: #example
 * subject.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
 * subject.identifier.value = "761337610411353650"
 * date = "2025-09-24T12:01:30+00:00"
+* author.type = "Practitioner"
+* author.identifier.system = "urn:oid:2.51.1.3"
+* author.identifier.value = "7601000201041"
 * description = "Test PDF"
 * securityLabel = $sct#17621005 "Normal (qualifier value)"
 * content.attachment.contentType = #application/pdf
@@ -341,15 +382,6 @@ Usage: #example
 * content.format = urn:oid:2.16.756.5.30.1.127.3.10.10#urn:che:epr:EPR_Unstructured_Document "Unstructured EPR document"
 * context.facilityType = $sct#264358009 "General practice premises (environment)"
 * context.practiceSetting = $sct#394802001 "General medicine (qualifier value)"
-* context.sourcePatientInfo = Reference(1)
-
-Instance: 1
-InstanceOf: Patient
-Usage: #inline
-* identifier.use = #usual
-* identifier.type = $v2-0203#MR
-* identifier.system = "urn:oid:2.999.1.2.3.4"
-* identifier.value = "8734"
 
 Instance: CHMhd1UpdateDocumentMetadataTransactionRequestExample
 InstanceOf: CHMhd1UpdateDocumentMetadataTransactionRequest
@@ -375,12 +407,10 @@ Usage: #example
 * entry.response.etag = "2"
 
 Instance: BundleProvideDocument
-InstanceOf: CHMhdProvideDocumentBundleComprehensive
+InstanceOf: CHMhdProvideDocumentBundle
 Title: "MHD Provide Document Bundle for a PDF Document"
 Description: "MHD Provide Document Bundle for a PDF Document"
-Usage: #example
-* meta.profile[0] = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"
-* meta.profile[+] = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Comprehensive.ProvideBundle"
+* meta.profile[0] = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
 * type = #transaction
 * entry[SubmissionSet].fullUrl = "urn:uuid:68a928c0-df48-4743-a291-bfb0609bbddc"
 * entry[SubmissionSet].resource = Inline-Instance-for-BundleProvideDocument-1
@@ -404,7 +434,7 @@ Usage: #inline
 * extension[=].valueIdentifier.system = "urn:ietf:rfc:3986"
 * extension[=].valueIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.5"
 * extension[+].url = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-ext-author-authorrole"
-* extension[=].valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.6#HCP "Healthcare professional"
+* extension[=].valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.19#HCP "Healthcare professional"
 * identifier.use = #usual
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.6.2949"
@@ -419,16 +449,8 @@ Usage: #inline
 Instance: Inline-Instance-for-BundleProvideDocument-2
 InstanceOf: DocumentReference
 Usage: #inline
-* contained.resourceType = "Patient"
-* contained.id = "1"
-* contained.name.family = "Doe"
-* contained.name.given = "John"
-* contained.identifier.use = #usual
-* contained.identifier.type = $v2-0203#MR
-* contained.identifier.system = "urn:oid:2.999.1.2.3.4"
-* contained.identifier.value = "8734"
 * extension.url = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-ext-author-authorrole"
-* extension.valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.6#HCP "Healthcare professional"
+* extension.valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.19#HCP "Healthcare professional"
 * masterIdentifier.system = "urn:ietf:rfc:3986"
 * masterIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2951"
 * masterIdentifier.use = #usual
@@ -441,6 +463,9 @@ Usage: #inline
 * subject.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
 * subject.identifier.value = "761337610411353650"
 * date = "2025-09-24T12:01:30+00:00"
+* author.type = "Practitioner"
+* author.identifier.system = "urn:oid:2.51.1.3"
+* author.identifier.value = "7601000201041"
 * description = "Test PDF"
 * securityLabel = $sct#17621005 "Normal (qualifier value)"
 * content.attachment.contentType = #application/pdf
@@ -451,7 +476,6 @@ Usage: #inline
 * content.format = urn:oid:2.16.756.5.30.1.127.3.10.10#urn:che:epr:EPR_Unstructured_Document "Unstructured EPR document"
 * context.facilityType = $sct#264358009 "General practice premises (environment)"
 * context.practiceSetting = $sct#394802001 "General medicine (qualifier value)"
-* context.sourcePatientInfo = Reference(1)
 
 Instance: Inline-Instance-for-BundleProvideDocument-3
 InstanceOf: Binary
@@ -464,7 +488,7 @@ InstanceOf: Bundle
 Title: "MHD Provide Document Bundle Response for PDF publication"
 Description: "MHD Provide Document Bundle Response for PDF publication"
 Usage: #example
-* meta.profile = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive-response"
+* meta.profile = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-providedocumentbundle-response"
 * type = #transaction-response
 * link.relation = "self"
 * link.url = "http://example.org"
@@ -479,14 +503,348 @@ Usage: #example
 * entry[=].response.lastModified = "2020-10-02T11:56:15.101+00:00"
 
 Instance: Bundle-FindDocumentReferences
-InstanceOf: ChFindDocumentReferencesComprehensiveResponse
+InstanceOf: ChFindDocumentReferencesResponse
 Title: "MHD Find DocumentReferences"
 Description: "MHD Find DocumentReferences - Bundle as Response"
 Usage: #example
-* meta.profile = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-documentreference-comprehensive-bundle"
+* meta.profile = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-documentreference-bundle"
 * type = #searchset
 * total = 1
 * link.relation = "self"
 * link.url = "http://example.org/DocumentReference?patient.identifier=urn:oid:2.16.756.5.30.1.127.3.10.3|761337610411353650&status=current"
 * entry.fullUrl = "http://example.org/DocumentReference/DocRefPdf"
 * entry.resource = DocRefPdf
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Personal note of the patient [CH:MHD-1]
+
+Instance: DocRefPdfPersonalNote
+InstanceOf: ch-mhd-documentreference
+Title: "DocumentReference with a personal note of the patient"
+Description: "The DocumentReference DocRefPdf as submitted with Update Document Metadata [CH:MHD-1] by the patient to
+record a personal note on the document: the patient does not agree with the author on the correctness of the data. The
+note is carried in the extension CH Extension Personal Note, the document itself is unchanged."
+Usage: #example
+* extension[originalProviderRole].valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.19#HCP "Healthcare professional"
+* extension[personalNote].valueAnnotation.authorReference.type = "Patient"
+* extension[personalNote].valueAnnotation.authorReference.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
+* extension[personalNote].valueAnnotation.authorReference.identifier.value = "761337610411353650"
+* extension[personalNote].valueAnnotation.time = "2025-10-03T09:15:00+02:00"
+* extension[personalNote].valueAnnotation.text = "Die im Bericht genannte Penicillin-Allergie ist nicht korrekt, ich habe keine bekannte Allergie. Die Praxis wurde am 2.10.2025 informiert."
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2951"
+* masterIdentifier.use = #usual
+* identifier.use = #official
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:7261fa25-b36d-4660-a58a-d9df4370e985"
+* status = #current
+* type = $sct#419891008 "Record artifact"
+* category = $sct#405624007 "Administrative documentation"
+* subject.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
+* subject.identifier.value = "761337610411353650"
+* date = "2025-09-24T12:01:30+00:00"
+* author.type = "Practitioner"
+* author.identifier.system = "urn:oid:2.51.1.3"
+* author.identifier.value = "7601000201041"
+* description = "Test PDF"
+* securityLabel = $sct#17621005 "Normal (qualifier value)"
+* content.attachment.contentType = #application/pdf
+* content.attachment.language = #de-CH
+* content.attachment.url = "urn:uuid:d8d1fe44-07e9-4a84-985f-fde97d77d54b"
+* content.attachment.title = "Test PDF"
+* content.attachment.creation = "2025-09-24T12:01:30+00:00"
+* content.format = urn:oid:2.16.756.5.30.1.127.3.10.10#urn:che:epr:EPR_Unstructured_Document "Unstructured EPR document"
+* context.facilityType = $sct#264358009 "General practice premises (environment)"
+* context.practiceSetting = $sct#394802001 "General medicine (qualifier value)"
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Correction of a published document [ITI-65]
+
+Instance: BundleProvideDocumentCorrection
+InstanceOf: CHMhdProvideDocumentBundle
+Title: "MHD Provide Document Bundle for a corrected document"
+Description: "Provide Document Bundle [ITI-65] with which a healthcare professional publishes the corrected version of
+the document DocRefPdf. The new DocumentReference points with relatesTo of type replaces to the DocumentReference of
+the document it corrects; the Document Recipient sets the status of the replaced document to superseded (see
+DocRefPdfSuperseded) and keeps it accessible."
+Usage: #example
+* meta.profile[0] = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
+* type = #transaction
+* entry[SubmissionSet].fullUrl = "urn:uuid:3f1a7d2e-8c4b-4e7a-9d21-5b6c0e8f1a44"
+* entry[SubmissionSet].resource = Inline-Instance-for-BundleProvideDocumentCorrection-1
+* entry[SubmissionSet].request.method = #POST
+* entry[SubmissionSet].request.url = "List"
+* entry[DocumentRefs].fullUrl = "urn:uuid:9b2e4c61-0d7f-4a3b-8e15-2c4f6a8d0b73"
+* entry[DocumentRefs].resource = Inline-Instance-for-BundleProvideDocumentCorrection-2
+* entry[DocumentRefs].request.method = #POST
+* entry[DocumentRefs].request.url = "DocumentReference"
+* entry[Documents].fullUrl = "urn:uuid:c7d3e9f0-5a1b-4c2d-9e8f-7a6b5c4d3e21"
+* entry[Documents].resource = Inline-Instance-for-BundleProvideDocumentCorrection-3
+* entry[Documents].request.method = #POST
+* entry[Documents].request.url = "Binary"
+
+Instance: Inline-Instance-for-BundleProvideDocumentCorrection-1
+InstanceOf: List
+Usage: #inline
+* extension[0].url = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-designationType"
+* extension[=].valueCodeableConcept = $sct#71388002 "Procedure (procedure)"
+* extension[+].url = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-sourceId"
+* extension[=].valueIdentifier.system = "urn:ietf:rfc:3986"
+* extension[=].valueIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.5"
+* extension[+].url = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-ext-author-authorrole"
+* extension[=].valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.19#HCP "Healthcare professional"
+* identifier.use = #usual
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.6.2953"
+* status = #current
+* mode = #working
+* code = $MHDlistTypes#submissionset "SubmissionSet as a FHIR List"
+* subject.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
+* subject.identifier.value = "761337610411353650"
+* date = "2025-10-01T08:30:00+02:00"
+* entry.item = Reference(urn:uuid:9b2e4c61-0d7f-4a3b-8e15-2c4f6a8d0b73)
+
+Instance: Inline-Instance-for-BundleProvideDocumentCorrection-2
+InstanceOf: DocumentReference
+Usage: #inline
+* extension.url = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-ext-author-authorrole"
+* extension.valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.19#HCP "Healthcare professional"
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2952"
+* masterIdentifier.use = #usual
+* identifier.use = #official
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:a4c8e2f6-1b3d-4e5f-8a9c-0d1e2f3a4b5c"
+* status = #current
+* type = $sct#419891008 "Record artifact"
+* category = $sct#405624007 "Administrative documentation"
+* subject.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
+* subject.identifier.value = "761337610411353650"
+* date = "2025-10-01T08:30:00+02:00"
+* author.type = "Practitioner"
+* author.identifier.system = "urn:oid:2.51.1.3"
+* author.identifier.value = "7601000201041"
+* relatesTo.code = #replaces
+* relatesTo.target = Reference(DocumentReference/DocRefPdf)
+* description = "Test PDF, corrected version"
+* securityLabel = $sct#17621005 "Normal (qualifier value)"
+* content.attachment.contentType = #application/pdf
+* content.attachment.language = #de-CH
+* content.attachment.url = "urn:uuid:c7d3e9f0-5a1b-4c2d-9e8f-7a6b5c4d3e21"
+* content.attachment.title = "Test PDF, corrected version"
+* content.attachment.creation = "2025-10-01T08:30:00+02:00"
+* content.format = urn:oid:2.16.756.5.30.1.127.3.10.10#urn:che:epr:EPR_Unstructured_Document "Unstructured EPR document"
+* context.facilityType = $sct#264358009 "General practice premises (environment)"
+* context.practiceSetting = $sct#394802001 "General medicine (qualifier value)"
+
+Instance: Inline-Instance-for-BundleProvideDocumentCorrection-3
+InstanceOf: Binary
+Usage: #inline
+* contentType = #application/pdf
+* data = "JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA1OTUgODQyXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4gPj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA0OSA+PnN0cmVhbQpCVCAvRjEgMTIgVGYgNzIgNzcwIFRkIChDb3JyZWN0ZWQgZG9jdW1lbnQpIFRqIEVUCmVuZHN0cmVhbQplbmRvYmoKNSAwIG9iago8PCAvVHlwZSAvRm9udCAvU3VidHlwZSAvVHlwZTEgL0Jhc2VGb250IC9IZWx2ZXRpY2EgPj4KZW5kb2JqCnhyZWYKMCA2CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAwOSAwMDAwMCBuIAowMDAwMDAwMDU4IDAwMDAwIG4gCjAwMDAwMDAxMTUgMDAwMDAgbiAKMDAwMDAwMDI0MSAwMDAwMCBuIAowMDAwMDAwMzM5IDAwMDAwIG4gCnRyYWlsZXIKPDwgL1NpemUgNiAvUm9vdCAxIDAgUiA+PgpzdGFydHhyZWYKNDA5CiUlRU9GCg=="
+
+Instance: DocRefPdfSuperseded
+InstanceOf: ch-mhd-documentreference
+Title: "DocumentReference of a replaced document (superseded)"
+Description: "The DocumentReference DocRefPdf as returned by the Document Responder after the corrected version of the
+document was published with BundleProvideDocumentCorrection: the status is superseded, the document stays accessible
+and can be found with the status search parameter of Find Document References [ITI-67]."
+Usage: #example
+* extension[originalProviderRole].valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.19#HCP "Healthcare professional"
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2951"
+* masterIdentifier.use = #usual
+* identifier.use = #official
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:7261fa25-b36d-4660-a58a-d9df4370e985"
+* status = #superseded
+* type = $sct#419891008 "Record artifact"
+* category = $sct#405624007 "Administrative documentation"
+* subject.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
+* subject.identifier.value = "761337610411353650"
+* date = "2025-09-24T12:01:30+00:00"
+* author.type = "Practitioner"
+* author.identifier.system = "urn:oid:2.51.1.3"
+* author.identifier.value = "7601000201041"
+* description = "Test PDF"
+* securityLabel = $sct#17621005 "Normal (qualifier value)"
+* content.attachment.contentType = #application/pdf
+* content.attachment.language = #de-CH
+* content.attachment.url = "http://example.org/fhir/Binary/d8d1fe44-07e9-4a84-985f-fde97d77d54b"
+* content.attachment.title = "Test PDF"
+* content.attachment.creation = "2025-09-24T12:01:30+00:00"
+* content.format = urn:oid:2.16.756.5.30.1.127.3.10.10#urn:che:epr:EPR_Unstructured_Document "Unstructured EPR document"
+* context.facilityType = $sct#264358009 "General practice premises (environment)"
+* context.practiceSetting = $sct#394802001 "General medicine (qualifier value)"
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Publishing a FHIR document [ITI-65], FHIR Documents Publish Option
+
+Instance: BundleProvideFhirDocument
+InstanceOf: CHMhdProvideDocumentBundle
+Title: "MHD Provide Document Bundle for a FHIR document"
+Description: "Provide Document Bundle [ITI-65] publishing a FHIR document with the ITI-65 FHIR Documents Publish
+Option: the FHIR document Bundle is carried as a resource in the FhirDocuments entry and is not converted to a base64
+encoded Binary resource. DocumentReference.content.attachment.url points to the Bundle entry, contentType is
+application/fhir+json, size and hash are absent."
+Usage: #example
+* meta.profile[0] = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle"
+* type = #transaction
+* entry[SubmissionSet].fullUrl = "urn:uuid:5e8b1c2d-3f4a-4b5c-8d6e-7f8a9b0c1d2e"
+* entry[SubmissionSet].resource = Inline-Instance-for-BundleProvideFhirDocument-1
+* entry[SubmissionSet].request.method = #POST
+* entry[SubmissionSet].request.url = "List"
+* entry[DocumentRefs].fullUrl = "urn:uuid:6a9c2d3e-4f5b-4c6d-9e7f-8a9b0c1d2e3f"
+* entry[DocumentRefs].resource = Inline-Instance-for-BundleProvideFhirDocument-2
+* entry[DocumentRefs].request.method = #POST
+* entry[DocumentRefs].request.url = "DocumentReference"
+* entry[FhirDocuments].fullUrl = "urn:uuid:7b0d3e4f-5a6c-4d7e-8f9a-9b0c1d2e3f4a"
+* entry[FhirDocuments].resource = Inline-Instance-for-BundleProvideFhirDocument-3
+* entry[FhirDocuments].request.method = #POST
+* entry[FhirDocuments].request.url = "Bundle"
+
+Instance: Inline-Instance-for-BundleProvideFhirDocument-1
+InstanceOf: List
+Usage: #inline
+* extension[0].url = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-designationType"
+* extension[=].valueCodeableConcept = $sct#71388002 "Procedure (procedure)"
+* extension[+].url = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/ihe-sourceId"
+* extension[=].valueIdentifier.system = "urn:ietf:rfc:3986"
+* extension[=].valueIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.5"
+* extension[+].url = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-ext-author-authorrole"
+* extension[=].valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.19#HCP "Healthcare professional"
+* identifier.use = #usual
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.6.2954"
+* status = #current
+* mode = #working
+* code = $MHDlistTypes#submissionset "SubmissionSet as a FHIR List"
+* subject.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
+* subject.identifier.value = "761337610411353650"
+* date = "2025-10-02T14:20:00+02:00"
+* entry.item = Reference(urn:uuid:6a9c2d3e-4f5b-4c6d-9e7f-8a9b0c1d2e3f)
+
+Instance: Inline-Instance-for-BundleProvideFhirDocument-2
+InstanceOf: DocumentReference
+Usage: #inline
+* extension.url = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-ext-author-authorrole"
+* extension.valueCoding = urn:oid:2.16.756.5.30.1.127.3.10.19#HCP "Healthcare professional"
+* masterIdentifier.system = "urn:ietf:rfc:3986"
+* masterIdentifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2955"
+* masterIdentifier.use = #usual
+* identifier.use = #official
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:b5d9f3a7-2c4e-4f6a-9b0d-1e2f3a4b5c6d"
+* status = #current
+* type = $sct#419891008 "Record artifact"
+* category = $sct#405624007 "Administrative documentation"
+* subject.identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
+* subject.identifier.value = "761337610411353650"
+* date = "2025-10-02T14:20:00+02:00"
+* author.type = "Practitioner"
+* author.identifier.system = "urn:oid:2.51.1.3"
+* author.identifier.value = "7601000201041"
+* description = "Konsultationsbericht als FHIR Dokument"
+* securityLabel = $sct#17621005 "Normal (qualifier value)"
+* content.attachment.contentType = #application/fhir+json
+* content.attachment.language = #de-CH
+* content.attachment.url = "urn:uuid:7b0d3e4f-5a6c-4d7e-8f9a-9b0c1d2e3f4a"
+* content.attachment.title = "Konsultationsbericht"
+* content.attachment.creation = "2025-10-02T14:20:00+02:00"
+* content.format = http://ihe.net/fhir/ihe.formatcode.fhir/CodeSystem/formatcode#urn:ihe:iti:xds:2017:mimeTypeSufficient "MimeType sufficient"
+* context.facilityType = $sct#264358009 "General practice premises (environment)"
+* context.practiceSetting = $sct#394802001 "General medicine (qualifier value)"
+
+Instance: Inline-Instance-for-BundleProvideFhirDocument-3
+InstanceOf: Bundle
+Usage: #inline
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2955"
+* type = #document
+* timestamp = "2025-10-02T14:20:00+02:00"
+* entry[0].fullUrl = "urn:uuid:8c1e4f5a-6b7d-4e8f-9a0b-0c1d2e3f4a5b"
+* entry[=].resource = Inline-Instance-for-BundleProvideFhirDocument-Composition
+* entry[+].fullUrl = "urn:uuid:9d2f5a6b-7c8e-4f9a-8b1c-1d2e3f4a5b6c"
+* entry[=].resource = Inline-Instance-for-BundleProvideFhirDocument-Patient
+* entry[+].fullUrl = "urn:uuid:ae3a6b7c-8d9f-4a0b-9c2d-2e3f4a5b6c7d"
+* entry[=].resource = Inline-Instance-for-BundleProvideFhirDocument-Practitioner
+
+Instance: Inline-Instance-for-BundleProvideFhirDocument-Composition
+InstanceOf: Composition
+Usage: #inline
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:oid:1.3.6.1.4.1.12559.11.13.2.1.2955"
+* status = #final
+* type = $sct#371530004 "Clinical consultation report (record artifact)"
+* subject = Reference(urn:uuid:9d2f5a6b-7c8e-4f9a-8b1c-1d2e3f4a5b6c)
+* date = "2025-10-02T14:20:00+02:00"
+* author = Reference(urn:uuid:ae3a6b7c-8d9f-4a0b-9c2d-2e3f4a5b6c7d)
+* title = "Konsultationsbericht"
+* confidentiality = #N
+* section.title = "Beurteilung"
+* section.text.status = #generated
+* section.text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Kontrolle nach Sturz, keine Fraktur, Weiterbehandlung symptomatisch.</p></div>"
+
+Instance: Inline-Instance-for-BundleProvideFhirDocument-Patient
+InstanceOf: Patient
+Usage: #inline
+* identifier.system = "urn:oid:2.16.756.5.30.1.127.3.10.3"
+* identifier.value = "761337610411353650"
+* name.family = "Muster"
+* name.given = "Franziska"
+* gender = #female
+* birthDate = "1980-03-15"
+
+Instance: Inline-Instance-for-BundleProvideFhirDocument-Practitioner
+InstanceOf: Practitioner
+Usage: #inline
+* identifier.system = "urn:oid:2.51.1.3"
+* identifier.value = "7601000201041"
+* name.family = "Musterarzt"
+* name.given = "Martina"
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Purge Document [CH:MHD-2]
+Instance: CHMhdPurge
+InstanceOf: OperationDefinition
+Title: "CH MHD $purge"
+Usage: #definition
+Description: """
+This operation implements the [Purge Document \[CH:MHD-2\]](ch-mhd-2.html) transaction. It irrevocably removes a
+document, the DocumentReference with all its versions and the document it references, from the health dossier of a
+patient. The operation is synchronous.
+"""
+* name = "CHMhdPurge"
+* status = #active
+* kind = #operation
+* affectsState = true
+* resource = #DocumentReference
+* system = false
+* type = false
+* instance = true
+* code = #purge
+* parameter[+]
+  * name = #return
+  * use = #out
+  * min = 1
+  * max = "1"
+  * documentation = "Outcome of the purge. On success an issue with severity information and code informational, otherwise the error which caused the purge to fail."
+  * type = #OperationOutcome
+
+Instance: MhdOperationOutcomePurgeSuccess
+InstanceOf: OperationOutcome
+Title: "MHD OperationOutcome purge success"
+Description: "OperationOutcome that the document has been purged"
+Usage: #example
+* issue[0].severity = #information
+* issue[=].code = #informational
+* issue[=].details.text = "The document and all versions of its metadata have been purged"
+
+Instance: MhdOperationOutcomeErrorPurgeForbidden
+InstanceOf: OperationOutcome
+Title: "MHD OperationOutcome purge error forbidden"
+Description: "Error OperationOutcome that the requester is not allowed to purge the document"
+Usage: #example
+* issue[0].severity = #error
+* issue[=].code = #forbidden
+* issue[=].details.text = "The requester is not allowed to purge the document"

@@ -11,7 +11,7 @@ Description: "Actor Identifier Types for CH:PPQm"
 
 CodeSystem: PpqmConsentIdentifierType
 Id: PpqmConsentIdentifierType
-Title: "CH PPQm Consent Identifier Type"
+Title: "CH PPQm Consent Identifier Type Code System"
 Description: "Code system for CH:PPQm Consent Identifier Types"
 * ^caseSensitive = true
 * ^experimental = false
@@ -40,7 +40,7 @@ Description: "HTTP methods allowed in CH:PPQm Feed requests"
 
 CodeSystem: PpqmPolicySetTemplateId
 Id: PpqmPolicySetTemplateId
-Title: "CH PPQm Policy Set Template ID"
+Title: "CH PPQm Policy Set Template ID Code System"
 Description: "Code system for Policy Set Template IDs"
 * ^caseSensitive = true
 * ^experimental = false

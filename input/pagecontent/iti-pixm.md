@@ -27,13 +27,12 @@ This national extension enforces authentication and authorization for access con
 | Actor                                         |Required Grouping                                                 | Optionality | Remark |
 |-----------------------------------------------|------------------------------------------------------------------|-------------|--------|
 | Patient Identifier   Cross-reference Manager  |[IUA Resource Server](iti-iua.html#actors-and-transactions)       | R           | -      |
-| Patient Identity Source                       |[IUA Authorization Client](iti-iua.html#actors-and-transactions)  | R           | -      |
+| Patient Identity Source                       |[IUA Authorization Client](iti-iua.html#actors-and-transactions)  | R           | `TCU` not allowed |
 {:class="table table-bordered"}
 
 <figcaption ID="1">Table 1: Grouping of PIXm actors required by this national extension. </figcaption>
 
-###	Process Flow
-For the process flow of this profile and its interplay with the other profiles see [sequence diagrams](sequencediagrams.html). 
+<br/>
 
 ###	Security Consideration
 This national extension enforces authentication and authorization of access to the Patient Identifier Cross-reference 

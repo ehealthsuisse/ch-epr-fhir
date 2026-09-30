@@ -88,6 +88,8 @@ pages:
     title: Retrieve ATNA Audit Event [ITI-81]
   ch-mhd-1.md:
     title: Update Document Metadata [CH:MHD-1]
+  ch-mhd-2.md:
+    title: Purge Document [CH:MHD-2]
   iti-20.md:
     title: Record Audit Event [ITI-20]
   iti-90.md:
@@ -104,6 +106,8 @@ pages:
     title: Volume 3 - CH:ATC Audit Event Content Profiles
   openid-connect.md:
     title: OpenID Connect
+  client-registration.md:
+    title: Client Registration
   appendix.md:
     title: Appendix
   profiles.md:
@@ -116,10 +120,57 @@ pages:
     title: Capability Statements
   sequencediagrams.md:
     title: Sequence Diagrams
+  accesscontrol.md:
+    title: Enforcement of Access Rules
   tracecontext.md:
     title: Trace Context
   changelog.md:
     title: Open Issues / Change Log
+
+menu:
+  Home: index.html
+  Volume 1:
+    Internet User Authorization (IUA): iti-iua.html
+    Patient Demographics Query for mobile (PDQm): iti-pdqm.html
+    Patient Identifier Cross-referencing for mobile (PIXm): iti-pixm.html
+    Mobile Access to Health Documents (MHD): iti-mhd.html
+    RESTful ATNA: iti-restful-atna.html
+    Mobile Care Services Discovery (mCSD): iti-mcsd.html
+    Privacy Policy Query for Mobile (CH:PPQm): ppqm.html
+    Audit Trail Consumption (CH:ATC): ch-atc.html
+  Volume 2:
+    Get Authorization Server Metadata [ITI-103]: iti-103.html
+    Get Access Token [ITI-71]: iti-71.html
+    Incorporate Access Token [ITI-72]: iti-72.html
+    Patient Identity Feed FHIR [ITI-104]: iti-104.html
+    Patient Demographics Match [ITI-119]: iti-119.html
+    Provide Document Bundle [ITI-65]: iti-65.html
+    Find Document References [ITI-67]: iti-67.html
+    Retrieve Document [ITI-68]: iti-68.html
+    Update Document Metadata [CH:MHD-1]: ch-mhd-1.html
+    Purge Document [CH:MHD-2]: ch-mhd-2.html
+    Record Audit Event [ITI-20]: iti-20.html
+    Find Matching Care Services [ITI-90]: iti-90.html
+    Care Services Feed [ITI-130]: iti-130.html
+    Mobile Privacy Policy Feed [PPQ-3]: ppq-3.html
+    Mobile Privacy Policy Bundle Feed [PPQ-4]: ppq-4.html
+    Mobile Privacy Policy Retrieve [PPQ-5]: ppq-5.html
+    Retrieve Audit Event [ITI-81]: iti-81.html
+  Volume 3:
+    CH:ATC Audit Event Content Profiles: volume3.html
+    DocumentReference: StructureDefinition-ch-mhd-documentreference.html
+  Appendix:
+    OpenID Connect: openid-connect.html
+    Client Registration: client-registration.html
+    Profiles: profiles.html
+    Extensions: extensions.html
+    Terminology: terminology.html
+    Capability Statements: capstatements.html
+    Sequence diagrams: sequencediagrams.html
+    Enforcement of Access Rules: accesscontrol.html
+    Trace Context: tracecontext.html
+    Open Issues / Change Log: changelog.html
+  Artifacts: artifacts.html
 
 resources:
   CapabilityStatement/CH.EPR.App:
@@ -195,10 +246,6 @@ resources:
   StructureDefinition/ch-atc-uniqueid-identifier:
     name: Identifier for XDSDocumentEntry.uniqueId
     description: Identifier for XDSDocumentEntry.uniqueId
-    exampleBoolean: false
-  ValueSet/EprParticipant:
-    name: EprParticipant
-    description: EprParticipant
     exampleBoolean: false
   ValueSet/DocumentAuditEventType:
     name: DocumentAuditEventType
@@ -283,31 +330,27 @@ resources:
     exampleBoolean: true
   Practitioner/DrPeterPan:
     name: mCSD Practitioner Dr. Peter Pan
-    description: An example of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples (uid=CommunityA:00000003002,OU=HCProfessional,DC=HPD,O=BAG,C=ch)
+    description: An example of CHmCSDPractitioner that contains the same information as Dr. Peter Pan in the Swiss examples
     exampleCanonical: http://fhir.ch/ig/ch-health-dossier/StructureDefinition/CH.mCSD.Practitioner
-  Organization/CommunityA:
-    name: mCSD Organization Community A
-    description: An example of CHmCSDOrganization that contains the same information as Community A in the Swiss examples (uid=CommunityA,OU=CHCommunity,DC=CPI,O=BAG,C=ch)
-    exampleCanonical: http://fhir.ch/ig/ch-health-dossier/StructureDefinition/CH.mCSD.Organization
   Organization/SpitalX:
     name: mCSD Organization Spital X
-    description: An example of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples (uid=CommunityA:00000001000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)
+    description: An example of CHmCSDOrganization that contains the same information as Spital X in the Swiss examples
     exampleCanonical: http://fhir.ch/ig/ch-health-dossier/StructureDefinition/CH.mCSD.Organization
   Organization/SpitalXDept3:
     name: mCSD Organization Spital X Dept. 3
-    description: An example of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss examples (uid=CommunityA:00000001004,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)
+    description: An example of CHmCSDOrganization that contains the same information as Spital X, Dept. 3 in the Swiss examples
     exampleCanonical: http://fhir.ch/ig/ch-health-dossier/StructureDefinition/CH.mCSD.Organization
   Organization/PraxisP:
     name: mCSD Organization Praxis P
-    description: An example of CHmCSDOrganization that contains the same information as Praxis P in the Swiss examples (uid=CommunityA:00000001001,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch)
+    description: An example of CHmCSDOrganization that contains the same information as Praxis P in the Swiss examples
     exampleCanonical: http://fhir.ch/ig/ch-health-dossier/StructureDefinition/CH.mCSD.Organization
   PractitionerRole/PeterPanSpitalXDept3:
     name: mCSD PractitionerRole Dr. Peter Pan at Spital X Dept. 3
-    description: An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Spital X, Dept. 3 Relationship in the Swiss examples (CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch)
+    description: An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Spital X, Dept. 3 Relationship in the Swiss examples
     exampleCanonical: http://fhir.ch/ig/ch-health-dossier/StructureDefinition/CH.mCSD.PractitionerRole
   PractitionerRole/PeterPanPraxisP:
     name: mCSD PractitionerRole Dr. Peter Pan at Praxis P
-    description: An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Praxis P Relationship in the Swiss examples (CN=CommunityA:00000001001,OU=Relationship,DC=HPD,O=BAG,C=ch)
+    description: An example of CHmCSDPractitionerRole that contains the same information as Dr. Peter Pan - Praxis P Relationship in the Swiss examples
     exampleCanonical: http://fhir.ch/ig/ch-health-dossier/StructureDefinition/CH.mCSD.PractitionerRole
   Bundle/FindMatchingCareServicesResponse:
     name: mCSD Find Matching Care Services Response Bundle
@@ -382,6 +425,14 @@ resources:
     name: Example of audit event for a [CH:MHD-1] transaction at Responder
     description: This example shows an  made by the Document Responder for a CH:MHD-1 transaction.
     exampleCanonical: http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-responder
+  AuditEvent/ChAuditEventChMhd2SourceExample:
+    name: Example of audit event for a [CH:MHD-2] transaction at Source
+    description: This example shows an audit event made by the Document Source for a CH:MHD-2 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-purgedocument-audit-source
+  AuditEvent/ChAuditEventChMhd2ResponderExample:
+    name: Example of audit event for a [CH:MHD-2] transaction at Responder
+    description: This example shows an audit event made by the Document Responder for a CH:MHD-2 transaction.
+    exampleCanonical: http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-purgedocument-audit-responder
   AuditEvent/ChAuditEventIti104SourceExample:
     name: Example of audit event for an [ITI-104] transaction at Source
     description: This example shows an  made by the Patient Identity Source for an ITI-104 transaction.
@@ -498,6 +549,7 @@ parameters:
   excludettl: true
   special-url:
     - urn:oid:2.16.756.5.30.1.127.3.10.17 # CH Codesystem PDQ More Attributes Requested
+    - urn:oid:2.16.756.5.30.1.127.3.10.19 # CH Health Dossier Role, OID still to be registered
     - urn:oid:1.3.6.1.4.1.19376.1.2.27.1 # IHE XCPD Codesystem more attributes requested
   allow-extensible-warnings: true
   display-warnings: true  

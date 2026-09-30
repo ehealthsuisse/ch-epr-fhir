@@ -47,7 +47,7 @@ InstanceOf: ChAuditEventPpq3Create
 Usage:      #example
 * insert ChAuditEventPpq3ExampleRules
 * insert ChExampleAuditEventClientRules
-* insert ChExampleAuditEventBaseRules(client, server)
+* insert ChExampleAuditEventBaseRules(client, server, Policy Repository)
 * subtype[anyCreate] = $restfulInteraction#create "create"
 
 
@@ -56,8 +56,8 @@ Instance:   ChAuditEventPpq3UpdateExample
 InstanceOf: ChAuditEventPpq3Update
 Usage:      #example
 * insert ChAuditEventPpq3ExampleRules
-* insert ChExampleAuditEventServerRules
-* insert ChExampleAuditEventBaseRules(client, server)
+* insert ChExampleAuditEventServerRules(Policy Repository)
+* insert ChExampleAuditEventBaseRules(client, server, Policy Repository)
 * subtype[anyUpdate] = $restfulInteraction#update "update"
 
 
@@ -78,7 +78,7 @@ Usage:      #example
     * type = #2
 * agent[server]
   * type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#custodian "Custodian"
-  * who.display = "Community A"
+  * who.display = "Policy Repository"
   * requestor = false
   * network.type = #5 // The address needs to be define in each example (transaction specific)
 * entity[traceparent]
@@ -157,16 +157,16 @@ Instance:   ChAuditEventPpq5ConsumerExample
 InstanceOf: ChAuditEventPpq5Consumer
 Usage:      #example
 * insert ChAuditEventPpq5ExampleRules
-* insert ChExampleAuditEventServerRules
-* insert ChExampleAuditEventBaseRules(client, server)
+* insert ChExampleAuditEventServerRules(Policy Repository)
+* insert ChExampleAuditEventBaseRules(client, server, Policy Repository)
 
 
 Instance:   ChAuditEventPpq5RepositoryExample
 InstanceOf: ChAuditEventPpq5Repository
 Usage:      #example
 * insert ChAuditEventPpq5ExampleRules
-* insert ChExampleAuditEventServerRules
-* insert ChExampleAuditEventBaseRules(client, server)
+* insert ChExampleAuditEventServerRules(Policy Repository)
+* insert ChExampleAuditEventBaseRules(client, server, Policy Repository)
 
 
 RuleSet: ChAuditEventPpq5ExampleRules

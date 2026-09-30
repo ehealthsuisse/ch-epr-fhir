@@ -137,7 +137,7 @@ Description: "A profile on the Query Patient Resource Response message for ITI-1
 * entry[OperationOutcome].resource only OperationOutcome
 // * entry[OperationOutcome].resource ^type.code = "OperationOutcome"
 // * entry[OperationOutcome].resource ^type.profile = Canonical(OperationOutcome)
-// * entry[OperationOutcome].resource only ch-pdqm-moreattributesrequested
+// * entry[OperationOutcome].resource only ch-pdqm-toomanyresults
 
 Profile: CHPDQmMatchInput
 Parent: https://profiles.ihe.net/ITI/PDQm/StructureDefinition/IHE.PDQm.MatchInputPatient
@@ -285,12 +285,12 @@ Instance:   ChAuditEventIti119SupplierExample
 InstanceOf: ChAuditEventIti119Supplier
 Usage:      #example
 * insert ChAuditEventIti119ExampleRules
-* insert ChExampleAuditEventServerRules
+* insert ChExampleAuditEventServerRules(MPI)
 * insert ChExampleAuditEventEntityPatientRules
 
 
 RuleSet: ChAuditEventIti119ExampleRules
-* insert ChExampleAuditEventBaseRules(client, server)
+* insert ChExampleAuditEventBaseRules(client, server, MPI)
 * insert ChExampleAuditEventHcpRules
 * type = $auditEventType#rest
 * subtype[anySearch] = $restfulInteraction#search "search"

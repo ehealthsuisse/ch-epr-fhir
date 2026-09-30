@@ -56,12 +56,12 @@ Instance:   ChAuditEventIti104ManagerUpdateExample
 InstanceOf: ChAuditEventIti104ManagerUpdate
 Usage:      #example
 * insert ChAuditEventIti104ExampleRules
-* insert ChExampleAuditEventServerRules
+* insert ChExampleAuditEventServerRules(MPI)
 * subtype[anyUpdate] = $restfulInteraction#update "update"
 
 
 RuleSet: ChAuditEventIti104ExampleRules
-* insert ChExampleAuditEventBaseRules(client, server)
+* insert ChExampleAuditEventBaseRules(client, server, MPI)
 * insert ChExampleAuditEventHcpRules
 * insert ChExampleAuditEventEntityPatientRules
 * type = $auditEventType#rest

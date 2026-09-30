@@ -37,10 +37,12 @@ This national extension enforces authentication and authorization for access con
 | Actor                                         | Required Grouping                                                 | Optionality | Remark |
 |-----------------------------------------------|-------------------------------------------------------------------|-------------|--------|
 | Patient Demographics Supplier                 | [IUA Resource Server](iti-iua.html#actors-and-transactions)       | R           | -      |  
-| Patient Demographics Consumer                 | [IUA Authorization Client](iti-iua.html#actors-and-transactions)  | R           | -      |
+| Patient Demographics Consumer                 | [IUA Authorization Client](iti-iua.html#actors-and-transactions)  | R           | `TCU` not allowed |
 {:class="table table-bordered"}
 
 <figcaption ID="1">Table 1: Grouping of PDQm actors required by this national extension. </figcaption>
+
+<br/>
 
 ###	Security Consideration
 This national extension enforces authentication and authorization of access to the Patient Demographics Supplier using 

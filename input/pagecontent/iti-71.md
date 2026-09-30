@@ -45,8 +45,8 @@ This section specifies the national extensions for the client credential grant f
 
 | Step | Action                                                                                                   | Remark                      | 
 |------|----------------------------------------------------------------------------------------------------------|-----------------------------|
-| 00   | The IUA Authorization Client sends an Get Access Token Request to the IUA Authorization Server endpoint. | See [MessageSemantics](#client-credential-grant-type-1) | 
-| 01   | The IUA Authorization Server responds with the access token in the HTML body element.                    | See [Message Semantics](#message-semantics-2)|
+| 00   | The IUA Authorization Client sends an Get Access Token Request to the IUA Authorization Server endpoint. | See [Message Semantics](#message-semantics) | 
+| 01   | The IUA Authorization Server responds with the access token in the HTML body element.                    | See [Message Semantics](#message-semantics-1)|
 {:class="table table-bordered"}
 
 <figcaption ID="11">Table: Actions in the HTTP sequence of the transaction.</figcaption>
@@ -83,7 +83,8 @@ The Token Request SHALL use the following Swiss extension:
 - principal_id (optional/required): The GLN of the healthcare professional an assistant or a clinical archive system may act on behalf of.
 - group (optional): The name of the organization or group a healthcare professional or assistant may act on behalf of.
 - group_id (optional): The OID of the organization or group a healthcare professional or assistant is acting on behalf of.
-- id_token (optional/required): Signed JWT associated with the current user's authenticated session at the Identity Provider. 
+- id_token (optional/required): Signed JWT associated with the current user's authenticated session at the Identity Provider,
+  the [Identity Token](openid-connect.html#identity-token) as specified in [OpenID Connect](openid-connect.html). 
 <br/>
 
 The scope parameter of the request MAY claim the following attributes:
@@ -93,11 +94,12 @@ The scope parameter of the request MAY claim the following attributes:
   `EMER` (emergency access) from code system `2.16.756.5.30.1.127.3.10.5` of the CH:EPR value set 
   (e.g.: `purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5|NORM`).
 - There SHALL be a scope with name `subject_role` in FHIR [token format](https://www.hl7.org/fhir/search.html#token)). 
-  The token SHALL convey the coded value of the subject’s role. Allowed values are `HCP` (healthcare professional), 
-  `ASS` (assistant), `REP` (representative), `PAT` (patient) or `TCU` (clinical archive) from code system 
-  `2.16.756.5.30.1.127.3.10.6` of the CH:EPR value set (e.g.: `subject_role=urn:oid: 2.16.756.5.30.1.127.3.10.6|HCP`).
+  The token SHALL convey the coded value of the subject’s role. Allowed values are `PAT` (patient), `REP` (representative),
+  `LEGREP` (legal representative), `HCP` (healthcare professional), `ASS` (assistant), `TCU` (technical user, clinical
+  archive) or `ADM` (administration) from the code system [CH Health Dossier Role](CodeSystem-HealthDossierRole.html)
+  `2.16.756.5.30.1.127.3.10.19` (e.g.: `subject_role=urn:oid:2.16.756.5.30.1.127.3.10.19|HCP`).
 - IUA Authorization Clients may claim other scopes as defined in the 
-  [SMART on FHIR specification](https://https://www.hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html).
+  [SMART on FHIR specification](https://www.hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html).
 
 Note: The parameters need to be url encoded, see message examples.
 
@@ -121,7 +123,7 @@ When receiving a Token Request with `subject_role` set to `PAT`, the IUA Authori
 - read the subject identifier `sub` of the id token and resolve it to the SPID of the patient.
 
 ###### Representatives
-When receiving a Token Request with `subject_role` set to `REP` or `LREP`, the IUA Authorization Server SHALL:
+When receiving a Token Request with `subject_role` set to `REP` or `LEGREP`, the IUA Authorization Server SHALL:
 - validate the identity token send in the `id_token` claim as described in
   OpenID Connect [ID token validation](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation).
 - verify that the identity token is signed by one of the identity provider accepted for the EPR.
@@ -187,7 +189,7 @@ grant_type=client_credentials
 &client_id=<client_id>
 &client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
 &client_assertion=<signed JWT>
-&scope=purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5|NORM subject_role=urn:oid:2.16.756.5.30.1.127.3.10.6|PAT
+&scope=purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5|NORM subject_role=urn:oid:2.16.756.5.30.1.127.3.10.19|PAT
 &id_token=<signed identity token>
 ```
 
@@ -207,11 +209,11 @@ grant_type=client_credentials
 &client_assertion_type=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
 &client_assertion=<signed JWT>
 &id_token=<signed identity token>
-&scope=purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5|NORM subject_role=urn:oid:2.16.756.5.30.1.127.3.10.6|HCP
+&scope=purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5|NORM subject_role=urn:oid:2.16.756.5.30.1.127.3.10.19|HCP
 &person_id=761337610411353650^^^&2.16.756.5.30.1.127.3.10.3&ISO 
 ```
 
-A token request of a clinical archive system for a basic access token may look like:
+A token request of a clinical archive system for an extended access token may look like:
 
 ```
 POST /token HTTP/1.1
@@ -228,7 +230,8 @@ grant_type=client_credentials
 &client_assertion=<signed JWT>
 &principal=<the-principal-name>
 &principal_id=<the-principal-id>
-&scope=purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5|NORM subject_role=urn:oid:2.16.756.5.30.1.127.3.10.6|TCU
+&scope=purpose_of_use=urn:oid:2.16.756.5.30.1.127.3.10.5|NORM subject_role=urn:oid:2.16.756.5.30.1.127.3.10.19|TCU
+&person_id=761337610411353650^^^&2.16.756.5.30.1.127.3.10.3&ISO
 ```
 
 
@@ -250,7 +253,7 @@ the following table:
 | subject_name            | R/R                             | The username as text.                                                     | 
 | subject_organization    | O/O                             | The name of the user’s organization or institution as text.               |
 | subject_organization_id | O/O                             | The OID of the user’s organization in URN notation.                       |
-| subject_role            | O/R                             | Code indicating the user role from the EPR Role Code Value Set.           |
+| subject_role            | O/R                             | Code indicating the user role from the [CH Health Dossier Role](CodeSystem-HealthDossierRole.html) code system. |
 | purpose_of_use          | O/R                             | Code indicating the purpose of use from the EPR Purpose Of Use Value Set. |
 | person_id               | O/R                             | SHALL be the EPR-SPID of the patients EPR.                                |
 {:class="table table-bordered"}
@@ -269,12 +272,12 @@ in the JWT access token of the Get Access Token Response. It's attributes are:
 
 | user role               | user_id  | user_id_qualifier                             |
 |-------------------------|----------|-----------------------------------------------|
-| Patient                 | EPR-SPID | urn:e-health-suisse:2015:epr-spid             |        
-| Healthcare Professional | GLN      | urn:gs1:gln                                   |        
-| Assistent               | GLN      | urn:gs1:gln                                   |        
-| Representative          | IdP-ID   | urn:e-health-suisse:representative-id         |        
-| Document Administrator  | IdP-ID   | urn:e-health-suisse:policy-administrator-id   |        
-| Policy Administrator    | IdP-ID   | urn:e-health-suisse:document-administrator-id |        
+| Patient (`PAT`)                   | EPR-SPID | urn:e-health-suisse:2015:epr-spid             |
+| Healthcare Professional (`HCP`)   | GLN      | urn:gs1:gln                                   |
+| Assistant (`ASS`)                 | GLN      | urn:gs1:gln                                   |
+| Representative (`REP`)            | IdP-ID   | urn:e-health-suisse:representative-id         |
+| Legal Representative (`LEGREP`)   | IdP-ID   | urn:e-health-suisse:representative-id         |
+| Administration (`ADM`)            | IdP-ID   | urn:e-health-suisse:administrator-id          |
 {:class="table table-bordered"}
 
 <figcaption>Table: user_id and user_id_qualifier of EPR user.</figcaption>
@@ -357,11 +360,11 @@ the `purpose_of_use`, `subject_role` and the EPR-SPID of the patient. It may loo
       "subject_name": "Martina Musterarzt",
       "person_id": "761337610411353650^^^&2.16.756.5.30.1.127.3.10.3&ISO",
       "subject_role": {
-        "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
+        "system": "urn:oid:2.16.756.5.30.1.127.3.10.19",
         "code": "HCP"
       },
       "purpose_of_use": {
-        "system": "urn:uuid:2.16.756.5.30.1.127.3.10.5",
+        "system": "urn:oid:2.16.756.5.30.1.127.3.10.5",
         "code": "NORM"
       }
     },
@@ -404,11 +407,11 @@ patient SHALL have the additional extension `ch_delegation`:
       "subject_name": "Dagmar Musterassistent",
       "person_id": "761337610411353650^^^&2.16.756.5.30.1.127.3.10.3&ISO",
       "subject_role": {
-        "system": "urn:oid:2.16.756.5.30.1.127.3.10.6",
-        "code": "HCP"
+        "system": "urn:oid:2.16.756.5.30.1.127.3.10.19",
+        "code": "ASS"
       },
       "purpose_of_use": {
-        "system": "urn:uuid:2.16.756.5.30.1.127.3.10.5",
+        "system": "urn:oid:2.16.756.5.30.1.127.3.10.5",
         "code": "NORM"
       }
     },

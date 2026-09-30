@@ -47,6 +47,8 @@ RuleSet: CH.ATNA.AuditRules
     * supportedProfile[+] = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ChAuditEventIti68Responder"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-responder"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-updatedocumentmetadata-audit-source"
+    * supportedProfile[+] = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-purgedocument-audit-responder"
+    * supportedProfile[+] = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-purgedocument-audit-source"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ChAuditEventIti104Source"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ChAuditEventIti104ManagerCreate"
     * supportedProfile[+] = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ChAuditEventIti104ManagerUpdate"

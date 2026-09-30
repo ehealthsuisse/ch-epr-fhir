@@ -8,10 +8,6 @@
         <system value="urn:oid:2.51.1.3"/>
         <value value="7601002467377"/>
     </identifier>
-    <identifier>
-        <system value="urn:ietf:rfc:4514"/>
-        <value value="uid=CommunityA:00000000103,OU=HCProfessional,DC=HPD,O=BAG,C=ch"/>
-    </identifier>
     <active value="true"/>
     <name>
         <text value="Richard Reynolds"/>

@@ -20,7 +20,7 @@ Usage: #definition
 * rest.security.cors = false
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.resource[0].type = #DocumentReference
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-documentreference-comprehensive"
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-documentreference"
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].searchParam[0].name = "_id"
@@ -55,6 +55,10 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-format"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Format/content rules for the document"
+* rest.resource[=].searchParam[+].name = "full-text"
+* rest.resource[=].searchParam[=].definition = "https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Full-Text-Search"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].documentation = "Searches the textual content of the document (Full-Text Search Option)"
 * rest.resource[=].searchParam[+].name = "identifier"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-identifier"
 * rest.resource[=].searchParam[=].type = #token
@@ -87,38 +91,6 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-type"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Kind of document (LOINC if possible)"
-* rest.resource[+].type = #List
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-submissionset-comprehensive"
-* rest.resource[=].interaction[0].code = #read
-* rest.resource[=].interaction[+].code = #search-type
-* rest.resource[=].searchParam[0].name = "_id"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[=].documentation = "Logical id of this artifact"
-* rest.resource[=].searchParam[+].name = "_lastupdated"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated"
-* rest.resource[=].searchParam[=].type = #date
-* rest.resource[=].searchParam[=].documentation = "When the resource version last changed"
-* rest.resource[=].searchParam[+].name = "code"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-code"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[=].documentation = "This parameter, of type token, specifies the code.coding value supplied in the List Resource. The value of the code element indicates the List of type SubmissionSet or Folder as indicated."
-* rest.resource[=].searchParam[+].name = "creation"
-* rest.resource[=].searchParam[=].definition = "https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"
-* rest.resource[=].searchParam[=].type = #date
-* rest.resource[=].searchParam[=].documentation = "When this document was created"
-* rest.resource[=].searchParam[+].name = "date"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-date"
-* rest.resource[=].searchParam[=].type = #date
-* rest.resource[=].searchParam[=].documentation = "This parameter, of type date, specifies the time when the List was created."
-* rest.resource[=].searchParam[+].name = "identifier"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-identifier"
-* rest.resource[=].searchParam[=].type = #token
-* rest.resource[=].searchParam[=].documentation = "This parameter, of type token, specifies an identifier for this List. The search results represent the results of a search on List.masterIdentifier and List.identifier. See ITI TF-2: Appendix Z.2 for additional constraints on the use of the token search parameter type."
-* rest.resource[=].searchParam[+].name = "subject"
-* rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/clinical-patient"
-* rest.resource[=].searchParam[=].type = #reference
-* rest.resource[=].searchParam[=].documentation = "This parameter is of type Reference(Patient). The Document Consumer may get this reference through the use of the PDQm or PIXm Profiles, or by some other method. When the patient parameter is used, the Patient reference would need to be accessible to both the Document Consumer and the Document Responder."
 * rest.resource[+].type = #Binary
 * rest.resource[=].interaction.code = #read
 * rest.interaction.code = #search-system
@@ -141,14 +113,17 @@ Usage: #definition
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * rest.mode = #server
-* rest.documentation = "MHD server returns DocumentReference Resources that match the search criteria provided by the Document Consumer [ITI-67]. MHD supports update of DocumentReference Resources by the Document Source [CH:MHD-1]. MHD server serves the document to the Document Consumer [ITI-68]."
+* rest.documentation = "MHD server returns DocumentReference Resources that match the search criteria provided by the Document Consumer [ITI-67]. MHD supports update of DocumentReference Resources by the Document Source [CH:MHD-1] and the purge of documents by the Document Source [CH:MHD-2]. MHD server serves the document to the Document Consumer [ITI-68]."
 * rest.security.cors = false
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.resource[0].type = #DocumentReference
-* rest.resource[=].profile = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-documentreference-comprehensive"
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-documentreference"
 * rest.resource[=].interaction[0].code = #read
 * rest.resource[=].interaction[+].code = #search-type
 * rest.resource[=].interaction[+].code = #update
+* rest.resource[=].operation[0].name = "purge"
+* rest.resource[=].operation[=].definition = "http://fhir.ch/ig/ch-health-dossier/OperationDefinition/CHMhdPurge"
+* rest.resource[=].operation[=].documentation = "Purge Document [CH:MHD-2]"
 * rest.resource[=].searchParam[0].name = "_id"
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/Resource-id"
 * rest.resource[=].searchParam[=].type = #token
@@ -177,6 +152,10 @@ Usage: #definition
 * rest.resource[=].searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/DocumentReference-format"
 * rest.resource[=].searchParam[=].type = #token
 * rest.resource[=].searchParam[=].documentation = "Format/content rules for the document"
+* rest.resource[=].searchParam[+].name = "full-text"
+* rest.resource[=].searchParam[=].definition = "https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Full-Text-Search"
+* rest.resource[=].searchParam[=].type = #string
+* rest.resource[=].searchParam[=].documentation = "Searches the textual content of the document (Full-Text Search Option)"
 * rest.resource[=].searchParam[+].name = "creation"
 * rest.resource[=].searchParam[=].definition = "https://profiles.ihe.net/ITI/MHD/SearchParameter/DocumentReference-Creation"
 * rest.resource[=].searchParam[=].type = #date
@@ -244,7 +223,7 @@ Usage: #definition
 * rest.security.cors = false
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.interaction.code = #transaction
-* rest.interaction.documentation = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"
+* rest.interaction.documentation = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-providedocumentbundle"
 
 Instance: CH.MHD.DocumentSource
 InstanceOf: CapabilityStatement
@@ -264,8 +243,15 @@ Usage: #definition
 * format[0] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * rest.mode = #client
-* rest.documentation = "MHD client sends documents and metadata to the Document Recipient [ITI-65]."
+* rest.documentation = "MHD client sends documents and metadata to the Document Recipient [ITI-65]. MHD client updates document metadata [CH:MHD-1] and purges documents [CH:MHD-2] at the Document Responder."
 * rest.security.cors = false
 * rest.security.description = "TLS SHALL be used together with IUA extended access token"
 * rest.interaction.code = #transaction
-* rest.interaction.documentation = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-providedocumentbundle-comprehensive"
+* rest.interaction.documentation = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-providedocumentbundle"
+* rest.resource[0].type = #DocumentReference
+* rest.resource[=].profile = "http://fhir.ch/ig/ch-health-dossier/StructureDefinition/ch-mhd-documentreference"
+* rest.resource[=].interaction[0].code = #update
+* rest.resource[=].interaction[=].documentation = "Update Document Metadata [CH:MHD-1]"
+* rest.resource[=].operation[0].name = "purge"
+* rest.resource[=].operation[=].definition = "http://fhir.ch/ig/ch-health-dossier/OperationDefinition/CHMhdPurge"
+* rest.resource[=].operation[=].documentation = "Purge Document [CH:MHD-2]"

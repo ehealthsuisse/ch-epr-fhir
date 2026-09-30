@@ -23,7 +23,7 @@
    <agent>
       <role>
          <coding>
-            <system value="urn:oid:2.16.756.5.30.1.127.3.10.6"></system>
+            <system value="urn:oid:2.16.756.5.30.1.127.3.10.19"></system>
             <code value="PAT"></code>
             <display value="Patient"></display>
          </coding>
@@ -67,7 +67,7 @@
          <display value="System Object"></display>
       </type>
       <role>
-         <system value="urn:oid:2.16.756.5.30.1.127.3.10.6"></system>
+         <system value="urn:oid:2.16.756.5.30.1.127.3.10.19"></system>
          <code value="REP"></code>
          <display value="Representative"></display>
       </role>

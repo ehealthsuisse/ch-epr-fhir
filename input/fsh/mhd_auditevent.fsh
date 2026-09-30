@@ -39,12 +39,12 @@ Instance:   ChAuditEventIti65RecipientExample
 InstanceOf: ChAuditEventIti65Recipient
 Usage:      #example
 * insert ChAuditEventIti65ExampleRules
-* insert ChExampleAuditEventServerRules
+* insert ChExampleAuditEventServerRules(Health Dossier)
 * type = DCM#110107 "Import"
 
 
 RuleSet: ChAuditEventIti65ExampleRules
-* insert ChExampleAuditEventBaseRules(documentSource, documentRecipient)
+* insert ChExampleAuditEventBaseRules(documentSource, documentRecipient, Health Dossier)
 * insert ChExampleAuditEventHcpRules
 * insert ChExampleAuditEventEntityPatientRules
 * subtype[iti65] = $eventTypeCode#ITI-65 "Provide Document Bundle"
@@ -90,11 +90,11 @@ Instance:   ChAuditEventIti67ResponderExample
 InstanceOf: ChAuditEventIti67Responder
 Usage:      #example
 * insert ChAuditEventIti67ExampleRules
-* insert ChExampleAuditEventServerRules
+* insert ChExampleAuditEventServerRules(Health Dossier)
 
 
 RuleSet: ChAuditEventIti67ExampleRules
-* insert ChExampleAuditEventBaseRules(client, server)
+* insert ChExampleAuditEventBaseRules(client, server, Health Dossier)
 * insert ChExampleAuditEventHcpRules
 * insert ChExampleAuditEventEntityPatientRules
 * type = $auditEventType#rest
@@ -148,7 +148,7 @@ Instance:   ChAuditEventIti68ResponderExample
 InstanceOf: ChAuditEventIti68Responder
 Usage:      #example
 * insert ChAuditEventIti68ExampleRules
-* insert ChExampleAuditEventServerRules
+* insert ChExampleAuditEventServerRules(Health Dossier)
 
 
 RuleSet: ChAuditEventIti68ExampleRules
@@ -157,7 +157,7 @@ RuleSet: ChAuditEventIti68ExampleRules
 * outcome = #0
 * agent[server]
   * type = DCM#110153 "Source Role ID"
-  * who.display = "Community A"
+  * who.display = "Health Dossier"
   * requestor = false
   * network
     * address = "https://example.org/blah/blah.pdf"
@@ -327,15 +327,119 @@ Instance:   ChAuditEventChMhd1ResponderExample
 InstanceOf: ChAuditEventChMhd1Responder
 Usage:      #example
 * insert ChAuditEventChMhd1ExampleRules
-* insert ChExampleAuditEventServerRules
+* insert ChExampleAuditEventServerRules(Health Dossier)
 * type = DCM#110107 "Import"
 
 
 RuleSet: ChAuditEventChMhd1ExampleRules
-* insert ChExampleAuditEventBaseRules(documentSource, documentResponder)
+* insert ChExampleAuditEventBaseRules(documentSource, documentResponder, Health Dossier)
 * insert ChExampleAuditEventHcpRules
 * insert ChExampleAuditEventEntityPatientRules
 * subtype[chmhd1] = urn:e-health-suisse:event-type-code#CH-MHD-1 "Update Document Metadata"
+* agent[documentResponder].network.address = "http://example.org"
+* entity[documentReference]
+  * what.reference = "http://example.org/DocumentReference/DocRefPdf"
+  * type = $auditEntityType#2 "System Object"
+  * role = $objectRole#20 "Job"
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Audit events [CH:MHD-2]
+RuleSet: ChAuditEventChMhd2Rules
+* modifierExtension 0..0
+* action = #D
+* subtype ^slicing.discriminator.type = #value
+* subtype ^slicing.discriminator.path = "$this"
+* subtype ^slicing.rules = #open // allow other codes
+* subtype 1..
+* subtype contains chmhd2 1..1
+* subtype[chmhd2] = urn:e-health-suisse:event-type-code#CH-MHD-2 "Purge Document"
+// * severity in R5
+* recorded 1..1 // already required
+* outcome 1..1
+* outcomeDesc MS // encouraged
+// source is already required, see invariant val-audit-source use
+* agent ^slicing.discriminator.type = #value
+* agent ^slicing.discriminator.path = "type"
+* agent ^slicing.rules = #open
+* agent ^slicing.description = "source, responder, and possibly the user who participated"
+* agent contains
+	documentSource 1..1 and
+	documentResponder 1..1
+	// may be many including app identity, user identity, etc
+* agent[documentSource].type = DCM#110153 "Source Role ID"
+* agent[documentSource].who 1..1
+* agent[documentSource].network 1..1
+* agent[documentResponder].type = DCM#110152 "Destination Role ID"
+* agent[documentResponder].who 1..1
+* agent[documentResponder].network 1..1
+* entity ^slicing.discriminator.type = #value
+* entity ^slicing.discriminator.path = "type"
+* entity ^slicing.rules = #closed
+* entity ^slicing.description = "patient and purged document involved"
+* entity contains
+	patient 1..1 and
+	documentReference 1..1
+* entity[patient].type = $auditEntityType#1 "Person"
+* entity[patient].role = $objectRole#1 "Patient"
+* entity[patient].what 1..1
+* entity[patient].what only Reference(Patient)
+* entity[documentReference].type = $auditEntityType#2 "System Object"
+* entity[documentReference].role = $objectRole#20 "Job"
+* entity[documentReference].what 1..1
+* entity[documentReference].what only Reference(DocumentReference)
+* entity[documentReference].what.reference 1..1
+* entity[patient] ^short = "Patient"
+* entity[documentReference] ^short = "DocumentReference of the purged document"
+* insert ChAuditEventExtendedRules
+* agent[documentSource] ^short = "The 'Document Source' actor (EPR application)"
+* agent[documentResponder] ^short = "The 'Document Responder' actor (Health Dossier API)"
+
+
+Profile:     ChAuditEventChMhd2Source
+Parent:      AuditEvent
+Id:          ch-mhd-purgedocument-audit-source
+Title:       "CH Audit Event for [CH:MHD-2] Document Source"
+Description: "This profile is used to define the CH Audit Event for the [CH:MHD-2] transaction and the actor 'Document
+Source'."
+* insert ChAuditEventChMhd2Rules
+* type = DCM#110106 "Export"
+* agent[documentSource] obeys val-audit-source
+
+
+Profile:     ChAuditEventChMhd2Responder
+Parent:      AuditEvent
+Id:          ch-mhd-purgedocument-audit-responder
+Title:       "CH Audit Event for [CH:MHD-2] Document Responder"
+Description: "This profile is used to define the CH Audit Event for the [CH:MHD-2] transaction and the actor 'Document
+Responder'."
+* insert ChAuditEventChMhd2Rules
+* type = DCM#110107 "Import"
+* agent[documentResponder] obeys val-audit-source
+
+
+Instance:   ChAuditEventChMhd2SourceExample
+InstanceOf: ChAuditEventChMhd2Source
+Usage:      #example
+* insert ChAuditEventChMhd2ExampleRules
+* insert ChExampleAuditEventClientRules
+* type = DCM#110106 "Export"
+
+
+Instance:   ChAuditEventChMhd2ResponderExample
+InstanceOf: ChAuditEventChMhd2Responder
+Usage:      #example
+* insert ChAuditEventChMhd2ExampleRules
+* insert ChExampleAuditEventServerRules(Health Dossier)
+* type = DCM#110107 "Import"
+
+
+RuleSet: ChAuditEventChMhd2ExampleRules
+* insert ChExampleAuditEventBaseRules(documentSource, documentResponder, Health Dossier)
+* insert ChExampleAuditEventHcpRules
+* insert ChExampleAuditEventEntityPatientRules
+* action = #D
+* subtype[chmhd2] = urn:e-health-suisse:event-type-code#CH-MHD-2 "Purge Document"
 * agent[documentResponder].network.address = "http://example.org"
 * entity[documentReference]
   * what.reference = "http://example.org/DocumentReference/DocRefPdf"

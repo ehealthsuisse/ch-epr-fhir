@@ -1,0 +1,14 @@
+@startuml
+
+title Interaction Diagram for [CH:MHD-2]
+
+hide footbox
+autoactivate on
+
+participant "Document Source" as DocumentSource
+participant "Document Responder" as DocumentResponder
+
+"DocumentSource" -> "DocumentResponder" : Purge Document Request
+"DocumentResponder" --> "DocumentSource" : Purge Document Response (OperationOutcome)
+
+@enduml

@@ -1,9 +1,0 @@
-app -[#black]> pixmconsumer: query EPR-SPID\nfrom MPI using local\nID and access token
-activate pixmconsumer
-pixmconsumer -> mp_pix_x_ref_mgr: [ITI-83] Mobile Patient Identifier Cross-reference\nQuery [local ID] together with access token
-activate mp_pix_x_ref_mgr
-
-pixmconsumer <- mp_pix_x_ref_mgr: [ITI-83] Mobile Patient Identifier Cross-reference\nQuery Response [EPR-SPID]
-deactivate mp_pix_x_ref_mgr
-app <[#black]- pixmconsumer: 
-deactivate pixmconsumer

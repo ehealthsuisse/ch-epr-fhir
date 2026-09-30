@@ -5,10 +5,6 @@
     "profile" : ["http://fhir.ch/ig/ch-health-dossier/StructureDefinition/CH.mCSD.Organization"]
   },
   "identifier" : [{
-    "system" :  "urn:ietf:rfc:4514",
-    "value" : "uid=CommunityA:00000001007,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"
-  },
-  {
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:2.16.10.89.202"
   }],

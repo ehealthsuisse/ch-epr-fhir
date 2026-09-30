@@ -13,8 +13,7 @@ For general information about the revision from the EPDG to the EGDG see [de](ht
 
 </div>
 
-**Download**: You can download this implementation guide
-in [NPM format](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification) from [here](package.tgz).
+**Download**: You can download this implementation guide in [NPM format](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification) from [here](../package.tgz).
 
 ### Overview
 

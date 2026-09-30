@@ -1,17 +1,3 @@
-Instance: Ldap
-InstanceOf: NamingSystem
-Usage: #definition
-* name = "LDAP"
-* status = #active
-* kind = #identifier // codesystem | identifier | root
-* date = "2025-05-13"
-* responsible = "IETF"
-* description = "NamingSystem for Lightweight Directory Access Protocol (LDAP); [https://www.ietf.org/rfc/rfc4514.html](https://www.ietf.org/rfc/rfc4514.html)."
-* uniqueId.type = #uri // oid | uuid | uri | other
-* uniqueId.value = "urn:ietf:rfc:4514" 
-* uniqueId.preferred = true
-
-
 Instance: EhsEventTypeCode
 InstanceOf: NamingSystem
 Usage: #definition

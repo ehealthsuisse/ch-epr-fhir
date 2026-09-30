@@ -31,7 +31,7 @@
     <agent>
         <role>
             <coding>
-                <system value="urn:oid:2.16.756.5.30.1.127.3.10.6"/>
+                <system value="urn:oid:2.16.756.5.30.1.127.3.10.19"/>
                 <code value="HCP"/>
                 <display value="Healthcare professional"/>
             </coding>

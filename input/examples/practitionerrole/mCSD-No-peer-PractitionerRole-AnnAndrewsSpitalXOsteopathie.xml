@@ -4,10 +4,6 @@
     <meta>
         <profile value="http://fhir.ch/ig/ch-health-dossier/StructureDefinition/CH.mCSD.PractitionerRole"/>
     </meta>
-    <identifier>
-        <system value="urn:ietf:rfc:4514"></system>
-        <value value="CN=CommunityA:00000001004,OU=Relationship,DC=HPD,O=BAG,C=ch"/>
-    </identifier>
     <active value="true"/>
     <practitioner>
         <reference value="Practitioner/mCSD-No-peer-Practitioner-DrAndrews"/>

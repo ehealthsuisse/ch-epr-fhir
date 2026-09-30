@@ -5,10 +5,6 @@
         <profile value="http://fhir.ch/ig/ch-health-dossier/StructureDefinition/CH.mCSD.Organization"/>
     </meta>
     <identifier>
-        <system value="urn:ietf:rfc:4514"/>
-        <value value="uid=CommunityA:00000003000,OU=HCRegulatedOrganization,DC=HPD,O=BAG,C=ch"/>
-    </identifier>
-    <identifier>
         <system value="urn:ietf:rfc:3986"/>
         <value value="urn:oid:2.16.10.89.201"/>
     </identifier>

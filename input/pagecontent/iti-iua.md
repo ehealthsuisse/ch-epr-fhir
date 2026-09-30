@@ -76,13 +76,17 @@ to retrieve the data and documents from the patients EPR.
 This national extension enhances the requirements on transactions and the expected actions of the Actors of the IUA Trial
 Implementation to comply to the legal requirements of the Health Dossier.
 
-<!-- TODO: update image to use OpenID Connect only -->
-
 <div>
 {%include IUA_actor_diagram.svg %}
 </div>
 This figure shows the actors directly involved in the Internet User Authorization Profile and the relevant 
 transactions between them.
+
+The IUA Authorization Client SHALL authenticate the user at the User Authentication Provider, the Identity Provider, as
+specified in [OpenID Connect](openid-connect.html), acting as Relying Party. The IUA Authorization Client SHALL convey the
+resulting identity token in the `id_token` parameter of the [Get Access Token [ITI-71]](iti-71.html) request. Technical
+users (`TCU`), e.g. clinical archive systems, request access tokens without an authenticated user and do not use
+OpenID Connect.
 
 ### Actor Options
 

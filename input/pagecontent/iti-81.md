@@ -52,7 +52,9 @@ The transaction SHALL use client authentication and authorization using one of t
 1. Use an extended access token defined in [IUA](iti-iua.html) conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
 2. or, use mutual authentication (mTLS) on the transport layer in combination with a XUA token for authorization from the Get X-User Assertion transaction (Annex 5.1 1.6.4.2). The XUA token SHALL be conveyed as defined in the [Incorporate Access Token [ITI-72]](https://profiles.ihe.net/ITI/IUA/index.html#372-incorporate-access-token-iti-72) transaction.
 
-The CH:ATC Patient Audit Record Repository shall be grouped with CH:ADR, i.e. the CH:ATC Patient Audit Record Repository shall use the CH:ADR Authorization Decision Request transaction to authorize the transaction and enforce the authorization decision retrieved from CH:ADR Authorization Decision Response.
+For every Retrieve ATNA Audit Event [ITI-81] request, the Patient Audit Record Repository SHALL enforce the access
+rules as described in [Appendix: Enforcement of Access Rules](accesscontrol.html).
+Audit records the requester is not authorized to see SHALL NOT be included in the response.
 
 The actors SHALL support the _traceparent_ header handling, as defined in [Appendix: Trace Context](tracecontext.html).
 

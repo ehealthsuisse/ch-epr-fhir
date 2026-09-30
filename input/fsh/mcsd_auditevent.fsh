@@ -29,7 +29,7 @@ Instance:   ChAuditEventIti90ReadExample
 InstanceOf: ChAuditEventIti90Read
 Usage:      #example
 * insert ChAuditEventIti90ExampleRules
-* insert ChExampleAuditEventBaseRules(server, client)
+* insert ChExampleAuditEventBaseRules(server, client, HPD)
 * insert ChExampleAuditEventClientRules
 * subtype[anyRead] = $restfulInteraction#read "read"
 * agent[client].network.address = "https://example.com"
@@ -47,8 +47,8 @@ Instance:   ChAuditEventIti90QueryExample
 InstanceOf: ChAuditEventIti90Query
 Usage:      #example
 * insert ChAuditEventIti90ExampleRules
-* insert ChExampleAuditEventBaseRules(client, server)
-* insert ChExampleAuditEventServerRules
+* insert ChExampleAuditEventBaseRules(client, server, HPD)
+* insert ChExampleAuditEventServerRules(HPD)
 * subtype[anySearch] = $restfulInteraction#search "search"
 * agent[server].network.address = "https://example.com"
 * entity[query]
@@ -111,7 +111,7 @@ Instance:   ChAuditEventIti130UpdateExample
 InstanceOf: ChAuditEventIti130Update
 Usage:      #example
 * insert ChAuditEventIti130ExampleRules
-* insert ChExampleAuditEventServerRules
+* insert ChExampleAuditEventServerRules(HPD)
 * subtype[anyUpdate] = $restfulInteraction#update "update"
 * agent[server].network.address = "https://example.com"
 * entity[data].what.reference = "Practitioner/DrPeterPan"
@@ -123,7 +123,7 @@ Instance:   ChAuditEventIti130DeleteExample
 InstanceOf: ChAuditEventIti130Delete
 Usage:      #example
 * insert ChAuditEventIti130ExampleRules
-* insert ChExampleAuditEventServerRules
+* insert ChExampleAuditEventServerRules(HPD)
 * subtype[anyDelete] = $restfulInteraction#delete "delete"
 * agent[server].network.address = "https://example.com"
 * entity[data].what.reference = "Organization/SpitalX"
@@ -142,7 +142,7 @@ RuleSet: ChAuditEventIti130ExampleRules
     * address = "192.168.1.1"
     * type = #2
 * agent[server]
-  * who.display = "Community A"
+  * who.display = "HPD"
   * requestor = false
   * network
     * type = #5 // The address needs to be define in each example (transaction specific)

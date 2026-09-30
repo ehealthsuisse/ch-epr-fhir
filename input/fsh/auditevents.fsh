@@ -111,7 +111,7 @@ Title:   "CH JWT Basic/Extended Token"
 // Base rules for all examples
 // Also update the copy of this rule set in ChAuditEventIti130ExampleRules (mcsd_auditevent.fsh)
 // Also update the copy of this rule set in ChAuditEventIti68ExampleRules (mhd_auditevent.fsh)
-RuleSet: ChExampleAuditEventBaseRules(sourceSlice, destinationSlice)
+RuleSet: ChExampleAuditEventBaseRules(sourceSlice, destinationSlice, server)
 * recorded = "2024-10-28T09:43:56Z"
 * outcome = #0
 * agent[{sourceSlice}]
@@ -123,7 +123,7 @@ RuleSet: ChExampleAuditEventBaseRules(sourceSlice, destinationSlice)
     * type = #2
 * agent[{destinationSlice}]
   * type = DCM#110152 "Destination Role ID"
-  * who.display = "Community A"
+  * who.display = "{server}"
   * requestor = false
   * network.type = #5 // The address needs to be define in each example (transaction specific)
 * entity[traceparent]
@@ -139,17 +139,17 @@ RuleSet: ChExampleAuditEventClientRules
   * observer.display = "My e-Health App"
 
 
-// Rules for audit on the community (server) side
-RuleSet: ChExampleAuditEventServerRules
+// Rules for audit on the server side, the server label names the serving system (Health Dossier, MPI, HPD)
+RuleSet: ChExampleAuditEventServerRules(server)
 * source
   * site = "2.16.756.4.5.6"
-  * observer.display = "Community A"
+  * observer.display = "{server}"
 
 
 // Rules for an extended token for an healthcare professional
 RuleSet: ChExampleAuditEventHcpRules
 * agent[mainUser]
-  * role = $ehealthRole#HCP
+  * role = $healthDossierRole#HCP "Healthcare professional"
   * altId = "2000000090092"
   * name = "Martina Musterarzt"
   * requestor = true

@@ -1,10 +1,8 @@
-opt IUA with JWT option
 app -[#black]> AuthorizationClient: Get Access Token
 activate AuthorizationClient
 AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Access Token\n[Extended access token]
 activate mp_AuthorizationServer
 AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Access Token Response\n[Extended access token]
 deactivate mp_AuthorizationServer
-app <[#black]- AuthorizationClient: 
+app <[#black]- AuthorizationClient:
 deactivate AuthorizationClient
-end

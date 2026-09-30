@@ -2,10 +2,10 @@
 title IUA Actor Diagram
 agent "Authorization Client" as Client
 agent "Resource Server" as ResourceServer
-agent "User Authentication Provider" as UAProvider
+agent "User Authentication Provider\n(Identity Provider)" as UAProvider
 agent "Authorization Server" as Server
 
-Client -> UAProvider: "CH:XUA Authenticate User"
+Client -> UAProvider: "[[openid-connect.html OpenID Connect Authentication]]"
 Client -down-> Server : "[[iti-71.html ITI-71 Get Access Token]]\n[[iti-103.html ITI-103 Get Authorization Server Metadata]]"
 Client -down-> ResourceServer: "[[iti-72.html ITI-72 Incorporate Access Token]]"
 ResourceServer -> Server : "[[iti-103.html ITI-103 Get Authorization Server Metadata]]"

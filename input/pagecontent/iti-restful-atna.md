@@ -25,10 +25,12 @@ This national extension enforces authentication and authorization for access con
 | Actor                                                     | Required Grouping                                                | Optionality | Remark |
 |-----------------------------------------------------------|------------------------------------------------------------------|-------------|--------|
 | Audit Record Repository                                   |[IUA Resource Server](iti-iua.html#actors-and-transactions)       | R           | -      |
-| Any Actor grouped with Secure Node or Secure Application  |[IUA Authorization Client](iti-iua.html#actors-and-transactions)  | R           | -      |
+| Any Actor grouped with Secure Node or Secure Application  |[IUA Authorization Client](iti-iua.html#actors-and-transactions)  | R           | `TCU` allowed |
 {:class="table table-bordered"}
 
 <figcaption ID="1">Table 1: Grouping of actors required by this national extension. </figcaption>
+
+<br/>
 
 ### Security Consideration
 This national extension enforces authentication and authorization of access to the Patient Identifier Cross-reference
