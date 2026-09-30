@@ -5,6 +5,8 @@ Title: "CH mCSD Practitioner"
 Description: "CH mCSD profile on Practitioner"
 * obeys ch-mcsd-practitioner-ihe-conformance
 * qualification 1.. // hcProfession is required
+* active 1..
+* active ^comment = "Required in the Swiss EPR: the corresponding attribute is mandatory in the IHE HPD profile, and a query using the search parameter 'active' returns different results for instances in which the element is absent."
 * identifier contains LDAP 0..1
 * identifier[LDAP] only LdapIdentifier
 * identifier[LDAP] ^short = "LDAP DN (Distinguished Name), if the practitioner is stored in an HPD"
