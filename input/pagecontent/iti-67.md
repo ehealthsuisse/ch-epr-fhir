@@ -57,8 +57,11 @@ Subsequent query to an individual result by the Document Consumer SHALL return t
 
 #### Find Document References Response Message
 
-The response Bundle SHALL follow the [CH MHD Find Document References Comprehensive Response message](StructureDefinition-ch-mhd-documentreference-comprehensive-bundle.html)
+The response Bundle SHOULD follow the [CH MHD Find Document References Comprehensive Response message](StructureDefinition-ch-mhd-documentreference-comprehensive-bundle.html)
 Profile ([example: MHD Find DocumentReferences](Bundle-Bundle-FindDocumentReferences.html)).
+In line with IHE MHD (CP-ITI-1327-00), the response is not constrained to this profile: it may contain DocumentReference
+Resources that match the query parameters but do not conform to [CH MHD DocumentReference Comprehensive](StructureDefinition-ch-mhd-documentreference-comprehensive.html).
+The Document Consumer should be robust against such Resources.
 
 ##### Federated Cross Community Access Option
 
