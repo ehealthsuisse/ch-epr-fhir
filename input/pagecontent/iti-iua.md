@@ -109,7 +109,9 @@ transactions between them.
 The IUA Authorization Client SHALL use the Authenticate User transaction defined in Annex 5 EPRO-FDHA to pass identity 
 claims to the User Authentication provider. The User Authentication Provider authenticates the user and returns a 
 SAML 2 Authentication Assertion or an OpenID Connect ID Token. For details of the transaction and message semantics 
-see Annex 8 EPRO-FDHA.
+see Annex 8 EPRO-FDHA. The OpenID Connect
+authentication is specified in [OpenID Connect](openid-connect.html), where the IUA Authorization Client acts as Relying
+Party and the User Authentication Provider as Identity Provider.
 
 ### Actor Options
 
