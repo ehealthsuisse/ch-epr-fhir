@@ -8,6 +8,7 @@ ships in the DSTU5.1 minor release below.
 * mCSD: Require the attribute `active` in Practitioner, PractitionerRole and Organization — breaking for existing instances that omit `active`, even though it is valid and conformant today [#451](https://github.com/ehealthsuisse/ch-epr-fhir/issues/451)
 * Move the dependencies to CH Core 7.0.0-ballot and align ch-term and hl7.terminology.r4 with it — the ch-term 3.4.x coupling exists mainly to support the MHD 4.2.4 identifier discriminator change (#462), which is itself deferred; the ballot-status dependency also should not stand in a release regardless [#484](https://github.com/ehealthsuisse/ch-epr-fhir/issues/484)
 * MHD: Aligned the ITI-67 search response requirements with IHE MHD (CP-ITI-1327-00): the response Bundle SHOULD instead of SHALL follow the CH MHD Find Document References Comprehensive Response message profile, and the MHD Document Consumer and Document Responder CapabilityStatements declare the CH profiles as supportedProfile instead of profile. The update of DocumentReference metadata [CH:MHD-1] still requires CH MHD DocumentReference Comprehensive. This relaxation is not breaking on its own, but the wording it introduces presupposes MHD 4.2.4 (#462), which is itself deferred — shipping this while the IG still declares MHD 4.2.3 would describe behaviour from a version the IG does not reference [#492](https://github.com/ehealthsuisse/ch-epr-fhir/issues/492)
+* MHD: Target Communities Option (CP-ITI-1326-02) not profiled — cross community access is dropped for the EPR [#494](https://github.com/ehealthsuisse/ch-epr-fhir/issues/494)
 
 ### DSTU5.1 Release 2026-12-18
 
@@ -18,10 +19,6 @@ non-breaking changes only, continuing the DSTU5 line.
 
 * PPQm: Renamed the value set titles for the consent identifier type and the policy set template ID, so that they no longer collide with the titles of the corresponding code systems [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
 * Fix the remaining IG Publisher errors: the no longer allowed `href='#'` on the navigation dropdowns, the unresolvable `package.tgz` download link, and the PIXm OperationDefinition that declared itself as its own base [#479](https://github.com/ehealthsuisse/ch-epr-fhir/issues/479)
-
-#### Closed Issues
-
-* MHD: Target Communities Option (CP-ITI-1326-02) not profiled — cross community access is dropped for the EPR [#494](https://github.com/ehealthsuisse/ch-epr-fhir/issues/494)
 
 ### DSTU5 Release 2025-12-18
 
