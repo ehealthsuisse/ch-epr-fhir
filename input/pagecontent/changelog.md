@@ -1,4 +1,19 @@
-### DSTU6 Informative Ballot 2026
+### DSTU6 (planned, not yet released)
+
+Breaking changes collected here for the next major/balloted release. Nothing in this section
+ships in the DSTU5.1 minor release below.
+
+* MHD: Update to IHE MHD 4.2.4, where the entryUUID and uniqueId identifiers are distinguished by Identifier.type instead of Identifier.use (CP-ITI-1328-01) — breaking for validators/consumers relying on the previous Identifier.use-based discriminator [#462](https://github.com/ehealthsuisse/ch-epr-fhir/issues/462)
+* IUA: Update to IUA Revision 2.5. The JWT claims subject_role and purpose_of_use of the ihe_iua extension become arrays of FHIR Coding instead of a single Coding (CP-ITI-1255) — breaking for clients that parse them as a single object; table and examples in ITI-71 adjusted. IUA no longer requires signed JWT tokens; signing remains required for the EPR, and the wording on unsigned (JWE) tokens in ITI-71 and ITI-72 was adapted [#466](https://github.com/ehealthsuisse/ch-epr-fhir/issues/466)
+* mCSD: Require the attribute `active` in Practitioner, PractitionerRole and Organization — breaking for existing instances that omit `active`, even though it is valid and conformant today [#451](https://github.com/ehealthsuisse/ch-epr-fhir/issues/451)
+* Move the dependencies to CH Core 7.0.0-ballot and align ch-term and hl7.terminology.r4 with it — the ch-term 3.4.x coupling exists mainly to support the MHD 4.2.4 identifier discriminator change (#462), which is itself deferred; the ballot-status dependency also should not stand in a release regardless [#484](https://github.com/ehealthsuisse/ch-epr-fhir/issues/484)
+* MHD: Aligned the ITI-67 search response requirements with IHE MHD (CP-ITI-1327-00): the response Bundle SHOULD instead of SHALL follow the CH MHD Find Document References Comprehensive Response message profile, and the MHD Document Consumer and Document Responder CapabilityStatements declare the CH profiles as supportedProfile instead of profile. The update of DocumentReference metadata [CH:MHD-1] still requires CH MHD DocumentReference Comprehensive. This relaxation is not breaking on its own, but the wording it introduces presupposes MHD 4.2.4 (#462), which is itself deferred — shipping this while the IG still declares MHD 4.2.3 would describe behaviour from a version the IG does not reference [#492](https://github.com/ehealthsuisse/ch-epr-fhir/issues/492)
+* MHD: Target Communities Option (CP-ITI-1326-02) not profiled — cross community access is dropped for the EPR [#494](https://github.com/ehealthsuisse/ch-epr-fhir/issues/494)
+
+### DSTU5.1 Release 2026-12-18
+
+2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
+non-breaking changes only, continuing the DSTU5 line.
 
 #### Resolved Issues
 
