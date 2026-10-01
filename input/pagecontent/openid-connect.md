@@ -71,7 +71,7 @@ Figure 1: Authentication Sequence with OpenID Connect 1.0 Authorization Code Flo
 | 12      | The Identity Provider presents a screen for the user to authorize the Relying Party to retrieve the identity data.This step MAY be omitted if the Relying Party application is a confidential client as defined in the OAuth specification and the users consent is stored in a policy or after the initial authorization. |
 | 13, 14  | The Identity Provider creates an Authentication Response conveying the Authorization Code and sends the Authorization Response to the User Agent with a redirect to the Relying Party.                                                                                                                          |
 | 15      | The Relying Party sends the Authentication Code to the Identity Provider in an Access Token Request using HTTP POST protocol and form serialization.                                                                                                                                                            |
-| 16      | The Identity Provider identifies the Relying Party and sends an Access Token Response to the Relying Parties Redirection URI registered beforehand. The Access Token Response conveys an ID and an Access Token.                                                                                                |
+| 16      | The Identity Provider validates the request and responds with the Access Token Response conveying the Access and the ID Token.                                                                                                |
 | 17      | The Relying Party validates the ID Token and retrieves the user's Subject Identifier.                                                                                                                                                                                                                           |
 | 18,19   | Optionally the Relying Party uses the Access Token to retrieve user identity data using the OpenID Connect 1.0 UserInfo protocol.                                                                                                                                                                               |
 | 20...22 | The Relying Party returns the requested resource to the user agent.                                                                                                                                                                                                                                             |
@@ -153,6 +153,8 @@ The Access Token Request SHALL contain the following parameters:
 - *grant_type*: The value SHALL be authorization_code.
 - *code*: SHALL be the OAuth 2.0 compliant authorization code
   retrieved with the Authentication Response.
+- *client_id*: SHALL be the Client Identifier the Relying
+  Party was registered with at the Identity Provider.
 - *redirect_uri*: SHALL convey the redirection URI the Access Token
   Response SHALL be sent to. Its value must match the redirection URI
   sent with the Authentication Request.
@@ -298,12 +300,8 @@ signature SHALL be validated by the relying party.
 
 ##### Message Example
 
-The following listing displays a non-normative example for a UserInfo response with the required fields and 
-an optional GLN: 
-
+The following listing displays a (non-normative) example for the payload conveyed with the UserInfo response as signed JWT:
 ```
-HTTP/1.1 200 OK
-Content-Type: application/json
   {
    "sub": "248289761001",
    "first_name": "Maria",
