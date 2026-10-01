@@ -270,14 +270,15 @@ in the JWT access token of the Get Access Token Response. It's attributes are:
 
 <br/>
 
-| user role               | user_id  | user_id_qualifier                             |
-|-------------------------|----------|-----------------------------------------------|
-| Patient (`PAT`)                   | EPR-SPID | urn:e-health-suisse:2015:epr-spid             |
-| Healthcare Professional (`HCP`)   | GLN      | urn:gs1:gln                                   |
-| Assistant (`ASS`)                 | GLN      | urn:gs1:gln                                   |
-| Representative (`REP`)            | IdP-ID   | urn:e-health-suisse:representative-id         |
-| Legal Representative (`LEGREP`)   | IdP-ID   | urn:e-health-suisse:representative-id         |
-| Administration (`ADM`)            | IdP-ID   | urn:e-health-suisse:administrator-id          |
+| user role                       | user_id  | user_id_qualifier                     | Remark                                                               |
+|---------------------------------|----------|---------------------------------------|----------------------------------------------------------------------|
+| Patient (`PAT`)                 | EPR-SPID | urn:e-health-suisse:2015:epr-spid     |                                                                      |
+| Healthcare Professional (`HCP`) | GLN      | urn:gs1:gln                           |                                                                      |
+| Assistant (`ASS`)               | GLN      | urn:gs1:gln                           |                                                                      |
+| Representative (`REP`)          | IdP-ID   | urn:e-health-suisse:representative-id |                                                                      |
+| Legal Representative (`LEGREP`) | IdP-ID   | urn:e-health-suisse:representative-id |                                                                      |
+| Administration (`ADM`)          | IdP-ID   | urn:e-health-suisse:administrator-id  |                                                                      |
+| Clinical Archive System (`TCU`) | GLN      | urn:gs1:gln                           | The GLN of the legal responsible person registered during onboarding |
 {:class="table table-bordered"}
 
 <figcaption>Table: user_id and user_id_qualifier of EPR user.</figcaption>
