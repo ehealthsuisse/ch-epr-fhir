@@ -1,4 +1,14 @@
-### DSTU6 Informative Ballot 2026
+### DSTU6 (planned, not yet released)
+
+Breaking changes collected here for the next major/balloted release. Nothing in this section
+ships in the DSTU5.1 minor release below.
+
+* PDQm and PIXm: Exclude the optional sex and gender extensions of IHE CP-ITI-1297-12 (genderIdentity, pronouns, recordedSexOrGender) for the EPR, the handling for the EHR and SwissHDS is tracked in [#505](https://github.com/ehealthsuisse/ch-epr-fhir/issues/505) [#493](https://github.com/ehealthsuisse/ch-epr-fhir/issues/493)
+
+### DSTU5.1 Release 2026-12-18
+
+2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
+non-breaking changes only, continuing the DSTU5 line.
 
 #### Resolved Issues
 

@@ -2,8 +2,12 @@ Profile: CHPDQmPatient
 Parent: $ch-core-patient
 Id: ch-pdqm-patient
 Title: "CH PDQm Patient"
-Description: "The patient demographics and identifier information which can be provided in the PDQm response according to the EPR. If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID as an identifier MAY be added. The birthname can be added with the ISO 21090 qualifier extension."
+Description: "The patient demographics and identifier information which can be provided in the PDQm response according to the EPR. If the patient is already registered in a community, the MPI-PID SHALL be provided as an identifier. The EPR-SPID as an identifier MAY be added. The birthname can be added with the ISO 21090 qualifier extension. The optional sex and gender extensions of IHE PDQm and PIXm (`genderIdentity`, `pronouns`, `recordedSexOrGender`) SHALL NOT be used: administrative gender is defined exhaustively in Annex 3 EPRO-FDHA, chapter 2.10."
 * extension[religion] 0..0
+* extension contains
+    $individual-genderIdentity named genderIdentity 0..0 and
+    $individual-pronouns named pronouns 0..0 and
+    $individual-recordedSexOrGender named recordedSexOrGender 0..0
 * identifier[EPR-SPID] 1..1 MS
 * identifier[LocalPid] 0..* MS
 * name MS
@@ -123,7 +127,11 @@ The PDQm Patient Profile for $match Input SHALL be provided as input to the ITI-
 - While it is not REQUIRED that the input to $match be a valid FHIR instance, it is RECOMMENDED to supply as many elements as possible to facilitate matching.
 - modifierExtension and implicitRules SHALL not be specified.
 - The ChEprFhirBirthName profile is available to hold the mother's maiden name
+- The optional sex and gender extensions (`genderIdentity`, `pronouns`, `recordedSexOrGender`) SHALL NOT be specified: administrative gender is defined exhaustively in Annex 3 EPRO-FDHA, chapter 2.10.
 """
+* extension[genderIdentity] 0..0
+* extension[pronouns] 0..0
+* extension[recordedSexOrGender] 0..0
 * name ^slicing.discriminator.type = #profile
 * name ^slicing.discriminator.path = "$this"
 * name ^slicing.rules = #open

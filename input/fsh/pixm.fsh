@@ -22,7 +22,7 @@ Profile: CHPIXmPatientFeed
 Parent: CHPDQmPatient
 Id: ch-pixm-patient-feed
 Title: "CH PIXm Patient Feed"
-Description: "The patient demographics and identifier information which can be provided in the PIXm Feed according to the EPR. The EPR-SPID as an identifier SHALL be added. The birthname can be added with the ISO 21090 qualifier extension."
+Description: "The patient demographics and identifier information which can be provided in the PIXm Feed according to the EPR. The EPR-SPID as an identifier SHALL be added. The birthname can be added with the ISO 21090 qualifier extension. The optional sex and gender extensions of IHE PDQm and PIXm (`genderIdentity`, `pronouns`, `recordedSexOrGender`) SHALL NOT be used: administrative gender is defined exhaustively in Annex 3 EPRO-FDHA, chapter 2.10."
 * identifier 2..
 * identifier[LocalPid] ^sliceName = "LocalPid"
 * managingOrganization only Reference(CHPIXmFeedOrganization)
