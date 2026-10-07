@@ -9,6 +9,7 @@ ships in the DSTU5.1 minor release below.
 * Move dependencies to CH Core 7.0.0-ballot, ch-term 3.4.x and hl7.terminology.r4 aligned [#484](https://github.com/ehealthsuisse/ch-epr-fhir/issues/484)
 * MHD: Relax ITI-67 response conformance to SHOULD instead of SHALL (CP-ITI-1327-00); CapabilityStatements use supportedProfile [#492](https://github.com/ehealthsuisse/ch-epr-fhir/issues/492)
 * MHD: Target Communities Option (CP-ITI-1326-02) not profiled — the cross community profiles remain but are no longer developed further [#494](https://github.com/ehealthsuisse/ch-epr-fhir/issues/494)
+* PDQm and PIXm: Exclude the optional sex and gender extensions of IHE CP-ITI-1297-12 (genderIdentity, pronouns, recordedSexOrGender) for the EPR, the handling for the EHR and SwissHDS is tracked in [#505](https://github.com/ehealthsuisse/ch-epr-fhir/issues/505) [#493](https://github.com/ehealthsuisse/ch-epr-fhir/issues/493)
 
 ### DSTU5.1 Release 2026-12-18
 
