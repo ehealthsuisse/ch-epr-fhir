@@ -5,7 +5,7 @@ non-breaking changes only, continuing the DSTU5 line.
 
 #### Open Issues
 
-* PDQm and PIXm: The sex and gender extensions of IHE CP-ITI-1297-12 are not profiled for the EPR, which uses administrative gender only (Annex 3 EPRO-FDHA); how to handle them for the EHR and SwissHDS is still to be clarified [#493](https://github.com/ehealthsuisse/ch-epr-fhir/issues/493)
+* PDQm and PIXm: The sex and gender extensions of IHE CP-ITI-1297-12 are not profiled; a restriction for the EPR is proposed for 6.0.0 [#493](https://github.com/ehealthsuisse/ch-epr-fhir/issues/493), their handling for the EHR and SwissHDS is still to be clarified [#505](https://github.com/ehealthsuisse/ch-epr-fhir/issues/505)
 
 #### Resolved Issues
 
