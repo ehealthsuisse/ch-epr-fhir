@@ -3,13 +3,13 @@
 2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
 non-breaking changes only, continuing the DSTU5 line.
 
+#### Open Issues
+
+* PDQm and PIXm: The sex and gender extensions of IHE CP-ITI-1297-12 are not profiled for the EPR, which uses administrative gender only (Annex 3 EPRO-FDHA); how to handle them for the EHR and SwissHDS is still to be clarified [#493](https://github.com/ehealthsuisse/ch-epr-fhir/issues/493)
+
 #### Resolved Issues
 
 * PPQm: Renamed the value set titles for the consent identifier type and the policy set template ID, so that they no longer collide with the titles of the corresponding code systems [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
-
-#### Closed Issues
-
-* PDQm and PIXm: The sex and gender extensions of IHE CP-ITI-1297-12 (genderIdentity, pronouns, recordedSexOrGender) are not profiled. The EPR uses administrative gender only, as defined exhaustively in Annex 3 EPRO-FDHA; the optional extensions remain available but unused [#493](https://github.com/ehealthsuisse/ch-epr-fhir/issues/493)
 
 ### DSTU5 Release 2025-12-18
 
