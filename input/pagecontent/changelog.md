@@ -6,6 +6,7 @@
 * Fix the remaining IG Publisher errors: the no longer allowed `href='#'` on the navigation dropdowns, the unresolvable `package.tgz` download link, and the PIXm OperationDefinition that declared itself as its own base [#479](https://github.com/ehealthsuisse/ch-epr-fhir/issues/479)
 * ATC: Corrected the `value[x]` paths and element ids of the detail slices in the PolicyAuditEvent profile, which the IG Publisher 3.0.0 rejects
 * ATC: Corrected the `value[x]` paths and element ids of the detail slices in the DocumentAuditEvent profile, which the IG Publisher 3.0.0 rejects [#508](https://github.com/ehealthsuisse/ch-epr-fhir/issues/508)
+* Trace Context: Corrected the heading level of the section on the audit event requirements [#511](https://github.com/ehealthsuisse/ch-epr-fhir/issues/511)
 
 ### DSTU5 Release 2025-12-18
 
