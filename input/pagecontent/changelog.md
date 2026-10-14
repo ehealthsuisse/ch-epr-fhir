@@ -10,14 +10,15 @@ non-breaking changes only, continuing the DSTU5 line.
 
 #### Resolved Issues
 
-* PPQm: Renamed the value set titles for the consent identifier type and the policy set template ID, so that they no longer collide with the titles of the corresponding code systems [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
-* Fix the remaining IG Publisher errors: the no longer allowed `href='#'` on the navigation dropdowns, the unresolvable `package.tgz` download link, and the PIXm OperationDefinition that declared itself as its own base [#479](https://github.com/ehealthsuisse/ch-epr-fhir/issues/479)
+* IUA: Remove misleading statement [#456](https://github.com/ehealthsuisse/ch-epr-fhir/issues/456)
+* IUA: Correct grant_type for authorization code flow token request [#458](https://github.com/ehealthsuisse/ch-epr-fhir/issues/458)
+* PPQm: Distinguished the value set titles from the code system titles [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
+* IG Publisher: Fixed the crash on inline comments in the dependencies of `sushi-config.yaml` [#463](https://github.com/ehealthsuisse/ch-epr-fhir/issues/463)
+* IG Publisher: Fixed the remaining errors (navigation links, package download link, PIXm OperationDefinition) [#479](https://github.com/ehealthsuisse/ch-epr-fhir/issues/479)
 
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
-* IUA: Correct grant_type for authorization code flow token request [#458](https://github.com/ehealthsuisse/ch-epr-fhir/issues/458)
-* IUA: Remove misleading statement [#456](https://github.com/ehealthsuisse/ch-epr-fhir/issues/456) 
 * IUA: Specified the signature for the ITI-71 token requests [#419](https://github.com/ehealthsuisse/ch-epr-fhir/issues/419)
 * Unknown code '26' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/object-role' version '1.0.0': waiting to be added, see [#190](https://github.com/ehealthsuisse/ch-epr-fhir/issues/190)
 * Security Audit Considerations: Clarify that audit events can be recorded via syslog or FHIR [#436](https://github.com/ehealthsuisse/ch-epr-fhir/issues/436)
