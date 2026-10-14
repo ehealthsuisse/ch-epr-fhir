@@ -294,12 +294,12 @@
 				<map value="repositoryUniqueId"/>
 			</mapping>
 		</element>
-		<element id="AuditEvent.entity:Document.detail.type:repositoryUniqueId">
+		<element id="AuditEvent.entity:Document.detail:repositoryUniqueId.type">
 			<path value="AuditEvent.entity.detail.type"/>
 			<fixedString value="Repository Unique Id"/>
 		</element>
-		<element id="AuditEvent.entity.detail.value:repositoryUniqueId">
-			<path value="AuditEvent.entity.detail.value"/>
+		<element id="AuditEvent.entity:Document.detail:repositoryUniqueId.value[x]">
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
 			<type>
@@ -319,12 +319,12 @@
 				<map value="homeCommunityID"/>
 			</mapping>
 		</element>
-		<element id="AuditEvent.entity:Document.detail.type:homeCommunityID">
+		<element id="AuditEvent.entity:Document.detail:homeCommunityID.type">
 			<path value="AuditEvent.entity.detail.type"/>
 			<fixedString value="homeCommunityID"/>
 		</element>
-		<element id="AuditEvent.entity.detail.value:homeCommunityID">
-			<path value="AuditEvent.entity.detail.value"/>
+		<element id="AuditEvent.entity:Document.detail:homeCommunityID.value[x]">
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
 			<type>
@@ -344,12 +344,12 @@
 				<map value="typeCode"/>
 			</mapping>
 		</element>
-		<element id="AuditEvent.entity:Document.detail.type:EprDocumentTypeCode">
+		<element id="AuditEvent.entity:Document.detail:EprDocumentTypeCode.type">
 			<path value="AuditEvent.entity.detail.type"/>
 			<fixedString value="EprDocumentTypeCode"/>
 		</element>
-		<element id="AuditEvent.entity.detail.value:EprDocumentTypeCode">
-			<path value="AuditEvent.entity.detail.value"/>
+		<element id="AuditEvent.entity:Document.detail:EprDocumentTypeCode.value[x]">
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
 			<type>
@@ -368,12 +368,12 @@
 				<map value="title"/>
 			</mapping>
 		</element>
-		<element id="AuditEvent.entity:Document.detail.type:title">
+		<element id="AuditEvent.entity:Document.detail:title.type">
 			<path value="AuditEvent.entity.detail.type"/>
 			<fixedString value="title"/>
 		</element>
-		<element id="AuditEvent.entity.detail.value:title">
-			<path value="AuditEvent.entity.detail.value"/>
+		<element id="AuditEvent.entity:Document.detail:title.value[x]">
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
 			<type>
