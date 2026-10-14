@@ -188,6 +188,7 @@
 				</discriminator>
 				<rules value="open"/>
 			</slicing>
+			<min value="1"/>
 		</element>
 
 		<!-- Slice Patient -->
@@ -289,13 +290,13 @@
 				<map value="AccessLevel"/>
 			</mapping>
 		</element>
-		<element id="AuditEvent.entity:Resource.detail.type:AccessLevel">
+		<element id="AuditEvent.entity:Resource.detail:AccessLevel.type">
 			<path value="AuditEvent.entity.detail.type"/>
 			<short value="The type of extra detail provided in the value"/>
 			<fixedString value="AccessLevel"/>
 		</element>
-		<element id="AuditEvent.entity:Resource.detail.value:AccessLevel">
-			<path value="AuditEvent.entity.detail.value"/>
+		<element id="AuditEvent.entity:Resource.detail:AccessLevel.value[x]">
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<short value="one of urn:e-health-suisse:2015:policies:access-level: normal, restricted, delegation-and-restricted, delegation-and-normal or full"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
@@ -315,12 +316,12 @@
 				<map value="AccessLimitedToDate"/>
 			</mapping>
 		</element>
-		<element id="AuditEvent.entity:Resource.detail.type:AccessLimitedToDate">
+		<element id="AuditEvent.entity:Resource.detail:AccessLimitedToDate.type">
 			<path value="AuditEvent.entity.detail.type"/>
 			<fixedString value="AccessLimitedToDate"/>
 		</element>
-		<element id="AuditEvent.entity:Resource.detail.value:AccessLimitedToDate">
-			<path value="AuditEvent.entity.detail.value"/>
+		<element id="AuditEvent.entity:Resource.detail:AccessLimitedToDate.value[x]">
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<short value="Date in property value"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
@@ -340,12 +341,12 @@
 				<map value="ProvideLevel"/>
 			</mapping>
 		</element>
-		<element id="AuditEvent.entity:Resource.detail.type:ProvideLevel">
+		<element id="AuditEvent.entity:Resource.detail:ProvideLevel.type">
 			<path value="AuditEvent.entity.detail.type"/>
 			<fixedString value="ProvideLevel"/>
 		</element>
-		<element id="AuditEvent.entity.detail.value:ProvideLevel">
-			<path value="AuditEvent.entity.detail.value"/>
+		<element id="AuditEvent.entity:Resource.detail:ProvideLevel.value[x]">
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<short value="one of urn:e-health-suisse:2015:policies:provide-level: normal, restricted or secret"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>

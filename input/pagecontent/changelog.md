@@ -4,6 +4,9 @@
 
 * PPQm: Renamed the value set titles for the consent identifier type and the policy set template ID, so that they no longer collide with the titles of the corresponding code systems [#460](https://github.com/ehealthsuisse/ch-epr-fhir/issues/460)
 * Fix the remaining IG Publisher errors: the no longer allowed `href='#'` on the navigation dropdowns, the unresolvable `package.tgz` download link, and the PIXm OperationDefinition that declared itself as its own base [#479](https://github.com/ehealthsuisse/ch-epr-fhir/issues/479)
+* ATC: Corrected the `value[x]` paths and element ids of the detail slices in the PolicyAuditEvent profile, which the IG Publisher 3.0.0 rejects
+* ATC: Corrected the `value[x]` paths and element ids of the detail slices in the DocumentAuditEvent profile, which the IG Publisher 3.0.0 rejects [#508](https://github.com/ehealthsuisse/ch-epr-fhir/issues/508)
+* ATC: Set the minimum cardinality of `AuditEvent.entity` to the sum of its required slices in the AccessAuditTrailEvent, DocumentAuditEvent, HpdAuditEvent and PolicyAuditEvent profiles [#510](https://github.com/ehealthsuisse/ch-epr-fhir/issues/510)
 
 ### DSTU5 Release 2025-12-18
 
