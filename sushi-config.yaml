@@ -25,6 +25,7 @@ copyright: CC0-1.0
 jurisdiction: urn:iso:std:iso:3166#CH
 
 dependencies:
+  # current releases
   ch.fhir.ig.ch-term: 3.3.x
   ch.fhir.ig.ch-core: 6.0.0
   ihe.iti.pixm: 

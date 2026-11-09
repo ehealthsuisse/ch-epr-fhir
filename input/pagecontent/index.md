@@ -16,7 +16,7 @@ For general information on the EPR and the system level architecture of how serv
 
 </div>
 
-**Download**: You can download this implementation guide in [NPM format](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification) from [here](package.tgz).
+**Download**: You can download this implementation guide in [NPM format](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification) from [here](../package.tgz).
 
 ### Overview
 
