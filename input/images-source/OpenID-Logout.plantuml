@@ -1,0 +1,31 @@
+@startuml
+skinparam responseMessageBelowArrow true
+hide footbox
+
+actor User 
+participant "User Agent" as UI
+participant "Relying Party" as RP
+participant "Verifier (IdP)" as IdP
+
+autonumber 1 1 "<b>[00]"
+
+User -> UI: Initiate logout
+UI -> RP: Initiate logout
+
+|||
+
+RP -> UI: Redirect with Logout Request [HTTP]
+UI -> IdP: Redirect
+
+|||
+IdP -> IdP: terminate user session
+|||
+
+IdP -> UI: Redirect to post logout url
+UI -> RP: Redirect
+
+RP -> RP: terminate user session
+
+autonumber stop
+
+@enduml

@@ -3,7 +3,7 @@
         <a href="index.html">Home</a>
     </li>
     <li class="Profiles">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 1
+        <a data-toggle="dropdown" href="index.html" class="dropdown-toggle">Volume 1
             <b class="caret">
             </b>
         </a>
@@ -35,7 +35,7 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 2
+        <a data-toggle="dropdown" href="index.html" class="dropdown-toggle">Volume 2
             <b class="caret">
             </b>
         </a>
@@ -94,7 +94,7 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Volume 3
+        <a data-toggle="dropdown" href="index.html" class="dropdown-toggle">Volume 3
             <b class="caret">
             </b>
         </a>
@@ -105,7 +105,7 @@
         </ul>
     </li>
     <li class="dropdown">
-        <a data-toggle="dropdown" href="#" class="dropdown-toggle">Appendix
+        <a data-toggle="dropdown" href="index.html" class="dropdown-toggle">Appendix
             <b class="caret">
             </b>
         </a>
@@ -130,6 +130,9 @@
             </li>
             <li>
                 <a href="tracecontext.html">Trace Context</a>
+            </li>
+            <li>
+                <a href="openid-connect.html">OpenID Connect</a>
             </li>
             <li>
                 <a href="changelog.html">Open Issues / Change Log</a>
