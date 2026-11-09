@@ -8,6 +8,12 @@ an EPR-compliant identity token used to identify and authenticate users.
 The Verifier SHALL provide trusted endpoints for Relying Parties implementing the SAML 2.0 Artifact Binding with Artifact
 Resolution Protocol via SOAP back-channel, fulfilling the requirements defined in this section.
 
+### TODO 
+
+- Several class 1 certificate rules say “should meet” while others say “SHALL meet”.
+- The back-channel section requires a class 2 TLS certificate, while elsewhere the requirement is class 1 certificates.
+
+
 ### Definition of terms
 
 Relying Party - A Relying Party is any actor that relies on an identity claim provided
@@ -55,19 +61,19 @@ MAY delegate the service to another provider on a contractual basis.
 
 Figure 1: Authentication sequence with SAML 2.0 Artifact Binding
 
-| SEQ   | Description |
-|-------|-------------|
-| 01,02 | The Claimant's user agent attempts to access a resource on the Relying Party. |
-| 03    | The Relying Party presents the list of supported Verifiers to the Claimant. |
-| 04,05 | The Claimant selects a Verifier. |
-| 06,07 | The Relying Party sends an HTML form back to the browser in the HTTP response (HTTP status 200). The HTML form contains a SAML `<AuthnRequest>` message encoded as the value of a hidden form control named `SAMLRequest`. |
-| 08    | The Verifier determines whether the Claimant has an existing logon security context that meets the default or requested authentication policy requirements. If not, the Verifier interacts with the browser to challenge the Claimant to provide valid credentials. |
-| 09…11 | The Verifier communicates with the Authenticator(s) to authenticate the Claimant. The Claimant provides valid credentials and the Verifier creates a local logon security context for the Claimant. |
+| SEQ   | Description                                                                                                                                                                                                                                                                                                                                               |
+|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 01,02 | The Claimant's user agent attempts to access a resource on the Relying Party.                                                                                                                                                                                                                                                                             |
+| 03    | The Relying Party presents the list of supported Verifiers to the Claimant.                                                                                                                                                                                                                                                                               |
+| 04,05 | The Claimant selects a Verifier.                                                                                                                                                                                                                                                                                                                          |
+| 06,07 | The Relying Party sends an HTML form back to the browser in the HTTP response (HTTP status 200). The HTML form contains a SAML `<AuthnRequest>` message encoded as the value of a hidden form control named `SAMLRequest`.                                                                                                                                |
+| 08    | The Verifier determines whether the Claimant has an existing logon security context that meets the default or requested authentication policy requirements. If not, the Verifier interacts with the browser to challenge the Claimant to provide valid credentials.                                                                                       |
+| 09…11 | The Verifier communicates with the Authenticator(s) to authenticate the Claimant. The Claimant provides valid credentials and the Verifier creates a local logon security context for the Claimant.                                                                                                                                                       |
 | 12,13 | The Verifier creates an artifact containing the source ID for the Relying Party site and a reference to the `<Response>` message (the MessageHandle). The HTTP Artifact binding allows the choice of either HTTP redirection or an HTML form POST as the mechanism to deliver the artifact to the Relying Party. The figure shows the use of redirection. |
-| 14    | The Relying Party determines the SAML requester by examining the artifact (the exact process depends on the type of artifact) and issues and sends an `<ArtifactResolve>` request containing the artifact to the Verifier. This exchange is performed using a synchronous SOAP message exchange over the back-channel. |
-| 15,16 | The Verifier extracts the MessageHandle from the artifact and requests the assertion or assertion attributes message associated with the artifact. |
-| 17    | The Verifier returns the assertion in a SAML `<ArtifactResponse>` message as a SOAP message via the back-channel to the Relying Party. |
-| 18…21 | The Relying Party verifies the identity assertion retrieved with the `<ArtifactResponse>`. If the assertion is valid and the Claimant is authenticated, the Relying Party returns the requested resource to the Claimant's user agent. |
+| 14    | The Relying Party determines the SAML requester by examining the artifact (the exact process depends on the type of artifact) and issues and sends an `<ArtifactResolve>` request containing the artifact to the Verifier. This exchange is performed using a synchronous SOAP message exchange over the back-channel.                                    |
+| 15,16 | The Verifier extracts the MessageHandle from the artifact and requests the assertion or assertion attributes message associated with the artifact.                                                                                                                                                                                                        |
+| 17    | The Verifier returns the assertion in a SAML `<ArtifactResponse>` message as a SOAP message via the back-channel to the Relying Party.                                                                                                                                                                                                                    |
+| 18…21 | The Relying Party verifies the identity assertion retrieved with the `<ArtifactResponse>`. If the assertion is valid and the Claimant is authenticated, the Relying Party returns the requested resource to the Claimant's user agent.                                                                                                                    |
 
 Table 3: Authentication sequence with SAML 2.0 Artifact Binding
 
@@ -84,12 +90,12 @@ Verifier SHALL publish a web service endpoint, which implements a Security Token
 
 Figure 2: Renewal of a SAML assertion
 
-| SEQ | Description |
-|-----|-------------|
+| SEQ | Description                                                                                                                                                                                                    |
+|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 01  | The Relying Party uses the Identity Assertion of the Claimant in a `RequestSecurityToken` request as defined in the WS-Trust standard and sends it to the Verifier as a SOAP 1.1 request via the back-channel. |
-| 02  | The Verifier validates the signature of the request and the signature of the assertion conveyed in the request. |
-| 03  | The Verifier generates a new SAML Identity Assertion with new expiration semantics, as defined in the Assertion section. |
-| 04  | The Verifier embeds the generated SAML Identity Assertion in the `RequestSecurityTokenResponse`. Subsequently, the Verifier sends this token as a SOAP 1.1 response message via the back-channel. |
+| 02  | The Verifier validates the signature of the request and the signature of the assertion conveyed in the request.                                                                                                |
+| 03  | The Verifier generates a new SAML Identity Assertion with new expiration semantics, as defined in the Assertion section.                                                                                       |
+| 04  | The Verifier embeds the generated SAML Identity Assertion in the `RequestSecurityTokenResponse`. Subsequently, the Verifier sends this token as a SOAP 1.1 response message via the back-channel.              |
 
 Table 4: Renewal of a SAML response assertion with new expiration semantics
 
