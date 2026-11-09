@@ -13,6 +13,8 @@ non-breaking changes only, continuing the DSTU5 line.
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
+* OpenId Connect: Added optional `post_logout_redirect_uri` to logout request.
+* OpenId Connect: Fix typos and wording. 
 * IUA: Link the OpenID Connect page from the Authenticate User description in the IUA profile
 * IUA: Correct grant_type for authorization code flow token request [#458](https://github.com/ehealthsuisse/ch-epr-fhir/issues/458)
 * IUA: Remove misleading statement [#456](https://github.com/ehealthsuisse/ch-epr-fhir/issues/456) 
