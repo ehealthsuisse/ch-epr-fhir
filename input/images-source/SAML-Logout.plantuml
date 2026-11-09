@@ -1,0 +1,24 @@
+@startuml
+
+participant "Relying Party" as RP
+' participant "Other Session Participant" as RP2
+participant "Verifier (IdP)" as IdP
+
+autonumber 1 1 "<b>[00]"
+
+RP -> IdP: SAML 2.0 Logout Request [SOAP or HTTP POST]
+
+' group Iterate session participants
+' IdP -> RP2: SAML 2.0 Logout Request [SOAP]
+' RP2 -> RP2: terminate user session
+' RP2 -> IdP: SAML 2.0 Logout Response [SOAP]
+' end
+
+IdP -> IdP: terminate user session
+IdP -> RP: SAML 2.0 Logout Response [SOAP or HTTP POST]
+
+RP -> RP: terminate user session
+
+autonumber stop
+
+@enduml
