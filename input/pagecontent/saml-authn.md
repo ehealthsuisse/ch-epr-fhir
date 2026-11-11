@@ -68,6 +68,7 @@ Figure 1: Authentication sequence with SAML 2.0 Artifact Binding
 | 15,16 | The Verifier extracts the MessageHandle from the artifact and requests the assertion or assertion attributes message associated with the artifact.                                                                                                                                                                                                        |
 | 17    | The Verifier returns the assertion in a SAML `<ArtifactResponse>` message as a SOAP message via the back-channel to the Relying Party.                                                                                                                                                                                                                    |
 | 18…21 | The Relying Party verifies the identity assertion retrieved with the `<ArtifactResponse>`. If the assertion is valid and the Claimant is authenticated, the Relying Party returns the requested resource to the Claimant's user agent.                                                                                                                    |
+{:class="table table-bordered"}
 
 Table 3: Authentication sequence with SAML 2.0 Artifact Binding
 
@@ -90,6 +91,7 @@ Figure 2: Renewal of a SAML assertion
 | 02  | The Verifier validates the signature of the request and the signature of the assertion conveyed in the request.                                                                                                |
 | 03  | The Verifier generates a new SAML Identity Assertion with new expiration semantics, as defined in the Assertion section.                                                                                       |
 | 04  | The Verifier embeds the generated SAML Identity Assertion in the `RequestSecurityTokenResponse`. Subsequently, the Verifier sends this token as a SOAP 1.1 response message via the back-channel.              |
+{:class="table table-bordered"}
 
 Table 4: Renewal of a SAML response assertion with new expiration semantics
 
@@ -106,6 +108,7 @@ Figure 3: SAML 2.0 logout sequence
 | 01    | The Claimant initiates a logout in the user agent of the Relying Party application. The Relying Party sends a SAML 2.0 `LogoutRequest` message to the Verifier using the SAML 2.0 HTTP POST or SOAP binding. |
 | 02,03 | The Verifier terminates the session and responds to the initial `LogoutRequest` with a `LogoutResponse` using the SAML 2.0 HTTP POST or SOAP binding.                                                        |
 | 04    | The Relying Party terminates the user session.                                                                                                                                                               |
+{:class="table table-bordered"}
 
 Table 5: SSO logout sequence
 
