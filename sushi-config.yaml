@@ -105,8 +105,6 @@ pages:
     title: Mobile Privacy Policy Retrieve [PPQ-5]
   volume3.md:
     title: Volume 3 - CH:ATC Audit Event Content Profiles
-  openid-connect.md:
-    title: OpenID Connect
   appendix.md:
     title: Appendix
   profiles.md:
@@ -123,6 +121,8 @@ pages:
     title: Sequence Diagrams
   tracecontext.md:
     title: Trace Context
+  openid-connect.md:
+    title: OpenID Connect
   changelog.md:
     title: Open Issues / Change Log
 
