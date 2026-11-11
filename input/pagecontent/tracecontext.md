@@ -36,7 +36,7 @@ Federated Cross Community Access) will need to query all other communities.
 For each of these queries, the Document Recipient actor sets the `traceparent` header with the same **trace-id**
 value and generate a new **parent-id** value.
 
-##### Audit event requirements
+#### Audit event requirements
 
 The `traceparent` header value of a transaction SHALL be added to the generated Audit Event: for the client,
 the header value of the request; for the responder, the header value of the response.
