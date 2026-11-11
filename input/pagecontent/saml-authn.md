@@ -8,12 +8,6 @@ an EPR-compliant identity token used to identify and authenticate users.
 The Verifier SHALL provide trusted endpoints for Relying Parties implementing the SAML 2.0 Artifact Binding with Artifact
 Resolution Protocol via SOAP back-channel, fulfilling the requirements defined in this section.
 
-### TODO 
-
-- Several class 1 certificate rules say “should meet” while others say “SHALL meet”.
-- The back-channel section requires a class 2 TLS certificate, while elsewhere the requirement is class 1 certificates.
-
-
 ### Definition of terms
 
 Relying Party - A Relying Party is any actor that relies on an identity claim provided
@@ -122,45 +116,10 @@ The Verifier and Relying Parties SHALL fulfill the following requirements:
 
 - Relying Parties SHALL cryptographically sign the `LogoutRequest` messages, and the Verifier SHALL validate the
   signature with the public key of a pre-registered X.509 certificate.
-
 - The X.509 certificate used by Relying Parties to sign the `LogoutRequest` message SHALL be issued by a
   managed Certificate Authority (CA) that is operated according to documented processes detailed in a Certificate Policy
-  (CP) and Certification Practice Statement (CPS). The CA's processes should meet the requirements of class 1 certificates
+  (CP) and Certification Practice Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates
   defined within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
-
-### Protocol Requirements
-
-#### Front-channel Communication
-
-The User Agent and the Verifier SHALL communicate through an authenticated, protected channel using TLS 1.2 or higher.
-The User Agent can either authenticate itself with TLS client authentication or use digital signature mechanisms at the
-message level.
-
-The Verifier SHALL identify and authenticate itself with X.509 certificates issued by a trusted certificate
-service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
-
-Relying Parties and Authenticators that communicate with the Verifier through an intermediary user agent SHALL use
-digital signatures for message-level authentication. The X.509 certificates used for signatures SHALL be issued by a
-managed Certificate Authority (CA) that is operated according to documented processes detailed in a Certificate Policy
-(CP) and Certification Practice Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates
-defined within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
-
-#### Back-channel Communication
-
-The Verifier SHALL communicate with Relying Parties through an authenticated and protected back-channel (e.g., IPsec,
-TLS 1.2 or higher) for artifact resolution, token renewal and logout. The Verifier SHALL identify and authenticate itself
-with TLS authentication or, when sending logout requests, with message-level authentication using X.509 certificates.
-These certificates SHALL be class 2 TLS certificates issued by a trusted certificate service provider according to
-ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
-
-The Verifier SHALL NOT use redirects through an intermediary user agent (e.g., a web browser) to communicate with Relying
-Parties for artifact resolution, token renewal and logout.
-
-Relying Parties SHALL use message-level authentication (e.g., digital signature) to identify and authenticate themselves.
-Relying Parties SHALL use X.509 certificates issued by a managed Certificate Authority (CA) that is operated according to
-documented processes detailed in a Certificate Policy (CP) and Certification Practice Statement (CPS) to identify and
-authenticate themselves for artifact resolution, token renewal and logout. The CA's processes SHALL meet the requirements
-of class 1 certificates defined within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
 
 ### Messages
 
@@ -169,10 +128,7 @@ of class 1 certificates defined within the eCH-0048 PKI Certificate Classes stan
 The `AuthnRequest` message SHALL be used by the Relying Party to initiate the authentication sequence.
 
 The `AuthnRequest` message SHALL be cryptographically signed by the Relying Party, and the Verifier SHALL validate the
-signature. The signature SHALL be asymmetric, using X.509 certificates issued by a managed Certificate Authority (CA)
-that is operated according to documented processes detailed in a Certificate Policy (CP) and Certification Practice
-Statement (CPS). The CA's processes should meet the requirements of class 1 of the eCH-0048 PKI Certificate Classes
-standard (Version 2.0).
+signature.
 
 The signature SHALL be validated either with the public key of a pre-registered X.509 certificate or with the embedded
 certificate. If the public key of the embedded certificate is used, the Verifier SHALL verify that the certificate
@@ -202,10 +158,7 @@ The `ArtifactResolve` message SHALL be used by the Relying Party to resolve the 
 Authentication Response message to the SAML 2.0 Identity Assertion via the back-channel.
 
 The `ArtifactResolve` message SHALL be cryptographically signed by the Relying Party, and the Verifier SHALL validate
-the signature. The signature SHALL be asymmetric, using X.509 certificates issued by a managed Certificate Authority (CA)
-that is operated according to documented processes detailed in a Certificate Policy (CP) and Certification Practice
-Statement (CPS). The CA's processes should meet the requirements of class 1 certificates defined within the eCH-0048 PKI
-Certificate Classes standard (Version 2.0).
+the signature.
 
 The signature SHALL be validated either with the public key of a pre-registered X.509 certificate or with the embedded
 certificate. If the public key of the embedded certificate is used, the Verifier SHALL verify that the
@@ -278,19 +231,14 @@ The security timestamp element SHALL also contain an `Expires` element as descri
 [Web Services Security specification](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf).
 
 The Web Service security header of the SOAP envelope SHALL contain a binary token element as described in chapter 6.3 of
-the
-[Web Services Security specification](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf).
+the [Web Services Security specification](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf).
 The binary token element SHALL have an encoding type attribute set
 to `EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"`. The
 binary token element SHALL have a value type attribute set to
 `ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"`. The binary token
 element MAY have an `Id` attribute.
 
-The Renew Request SHALL be cryptographically signed, and the Verifier SHALL validate the signature. The signature SHALL
-be asymmetric, using X.509 certificates issued by a managed Certificate Authority (CA) that is operated according to
-documented processes detailed in a Certificate Policy (CP) and Certification Practice Statement (CPS). The CA's processes
-should meet the requirements of class 1 certificates defined within the eCH-0048 PKI Certificate Classes standard
-(Version 2.0).
+The Renew Request SHALL be cryptographically signed, and the Verifier SHALL validate the signature.
 
 The Web Service security header of the SOAP envelope SHALL contain a signature element compliant with the XML signature
 specification and described in chapter 8 of the
@@ -336,7 +284,7 @@ signature. The signature SHALL be validated either with the public key of a pre-
 embedded certificate. If the public key of the embedded certificate is used, the Verifier SHALL verify that the
 certificate matches the pre-registered one. The X.509 certificates used for signatures SHALL be issued by a managed
 Certificate Authority (CA) that is operated according to documented processes detailed in a Certificate Policy (CP) and
-Certification Practice Statement (CPS). The CA's processes should meet the requirements of class 1 certificates defined
+Certification Practice Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates defined
 within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
 
 Relying Parties SHALL sign `LogoutRequest` messages using X.509 certificates issued by a managed Certificate Authority
@@ -356,3 +304,28 @@ recommended cryptographic standards and SHALL follow certificate lifecycle best 
 policy and certification practice statement.
 
 The Relying Party SHALL verify the signature of `LogoutResponse` messages.
+
+### Security Considerations
+
+#### Front-channel Communication
+
+The User Agent and the Verifier SHALL communicate through an authenticated, protected channel using TLS 1.2 or higher. 
+The Verifier SHALL identify and authenticate itself with X.509 certificates issued by a trusted certificate
+service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
+
+Relying Parties and Authenticators that communicate with the Verifier through an intermediary user agent SHALL use
+digital signatures for message-level authentication.
+
+#### Back-channel Communication
+
+The Verifier SHALL communicate with Relying Parties through an authenticated and protected back-channel using 
+TLS 1.2 or higher for artifact resolution, token renewal and logout. 
+
+The Verifier SHALL identify and authenticate itself with TLS authentication or with message-level authentication 
+using X.509 certificates. These certificates SHALL be class 2 TLS certificates issued by a trusted certificate 
+service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
+
+The Verifier SHALL NOT use redirects through an intermediary user agent (e.g., a web browser) to communicate with Relying
+Parties for artifact resolution, token renewal and logout.
+
+Relying Parties SHALL use message-level authentication (e.g., digital signature) to identify and authenticate themselves.
