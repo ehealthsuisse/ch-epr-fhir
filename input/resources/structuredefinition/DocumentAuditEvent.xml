@@ -299,7 +299,7 @@
 			<fixedString value="Repository Unique Id"/>
 		</element>
 		<element id="AuditEvent.entity.detail.value:repositoryUniqueId">
-			<path value="AuditEvent.entity.detail.value"/>
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
 			<type>
@@ -324,7 +324,7 @@
 			<fixedString value="homeCommunityID"/>
 		</element>
 		<element id="AuditEvent.entity.detail.value:homeCommunityID">
-			<path value="AuditEvent.entity.detail.value"/>
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
 			<type>
@@ -349,7 +349,7 @@
 			<fixedString value="EprDocumentTypeCode"/>
 		</element>
 		<element id="AuditEvent.entity.detail.value:EprDocumentTypeCode">
-			<path value="AuditEvent.entity.detail.value"/>
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
 			<type>
@@ -373,7 +373,7 @@
 			<fixedString value="title"/>
 		</element>
 		<element id="AuditEvent.entity.detail.value:title">
-			<path value="AuditEvent.entity.detail.value"/>
+			<path value="AuditEvent.entity.detail.value[x]"/>
 			<definition value="The details, base64 encoded. Used to carry bulk information."/>
 			<comment value="The value is base64 encoded to enable various encodings or binary content."/>
 			<type>
