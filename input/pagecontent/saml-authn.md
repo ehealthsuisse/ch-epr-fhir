@@ -55,19 +55,19 @@ MAY delegate the service to another provider on a contractual basis.
 
 Figure 1: Authentication sequence with SAML 2.0 Artifact Binding
 
-| SEQ   | Description                                                                                                                                                                                                                                                                                                                                               |
-|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 01,02 | The Claimant's user agent attempts to access a resource on the Relying Party.                                                                                                                                                                                                                                                                             |
-| 03    | The Relying Party presents the list of supported Verifiers to the Claimant.                                                                                                                                                                                                                                                                               |
-| 04,05 | The Claimant selects a Verifier.                                                                                                                                                                                                                                                                                                                          |
-| 06,07 | The Relying Party sends an HTML form back to the browser in the HTTP response (HTTP status 200). The HTML form contains a SAML `<AuthnRequest>` message encoded as the value of a hidden form control named `SAMLRequest`.                                                                                                                                |
-| 08    | The Verifier determines whether the Claimant has an existing logon security context that meets the default or requested authentication policy requirements. If not, the Verifier interacts with the browser to challenge the Claimant to provide valid credentials.                                                                                       |
-| 09…11 | The Verifier communicates with the Authenticator(s) to authenticate the Claimant. The Claimant provides valid credentials and the Verifier creates a local logon security context for the Claimant.                                                                                                                                                       |
-| 12,13 | The Verifier creates an artifact containing the source ID for the Relying Party site and a reference to the `<Response>` message (the MessageHandle). The HTTP Artifact binding allows the choice of either HTTP redirection or an HTML form POST as the mechanism to deliver the artifact to the Relying Party. The figure shows the use of redirection. |
-| 14    | The Relying Party determines the SAML requester by examining the artifact (the exact process depends on the type of artifact) and issues and sends an `<ArtifactResolve>` request containing the artifact to the Verifier. This exchange is performed using a synchronous SOAP message exchange over the back-channel.                                    |
-| 15,16 | The Verifier extracts the MessageHandle from the artifact and requests the assertion or assertion attributes message associated with the artifact.                                                                                                                                                                                                        |
-| 17    | The Verifier returns the assertion in a SAML `<ArtifactResponse>` message as a SOAP message via the back-channel to the Relying Party.                                                                                                                                                                                                                    |
-| 18…21 | The Relying Party verifies the identity assertion retrieved with the `<ArtifactResponse>`. If the assertion is valid and the Claimant is authenticated, the Relying Party returns the requested resource to the Claimant's user agent.                                                                                                                    |
+| SEQ   | Description                                                                                                                                                                                                                                                                                                                                           |
+|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 01,02 | The Claimant's user agent attempts to access a resource on the Relying Party.                                                                                                                                                                                                                                                                         |
+| 03    | The Relying Party presents the list of supported Verifiers to the Claimant.                                                                                                                                                                                                                                                                           |
+| 04,05 | The Claimant selects a Verifier.                                                                                                                                                                                                                                                                                                                      |
+| 06,07 | The Relying Party sends an HTML form back to the browser in the HTTP response (HTTP status 200). The HTML form contains a SAML AuthnRequest message encoded as the value of a hidden form control named SAMLRequest.                                                                                                                                  |
+| 08    | The Verifier determines whether the Claimant has an existing logon security context that meets the default or requested authentication policy requirements. If not, the Verifier interacts with the browser to challenge the Claimant to provide valid credentials.                                                                                   |
+| 09…11 | The Verifier communicates with the Authenticator(s) to authenticate the Claimant. The Claimant provides valid credentials and the Verifier creates a local logon security context for the Claimant.                                                                                                                                                   |
+| 12,13 | The Verifier creates an artifact containing the source ID for the Relying Party site and a reference to the Response message (the MessageHandle). The HTTP Artifact binding allows the choice of either HTTP redirection or an HTML form POST as the mechanism to deliver the artifact to the Relying Party. The figure shows the use of redirection. |
+| 14    | The Relying Party determines the SAML requester by examining the artifact (the exact process depends on the type of artifact) and issues and sends an ArtifactResolve request containing the artifact to the Verifier. This exchange is performed using a synchronous SOAP message exchange over the back-channel.                                    |
+| 15,16 | The Verifier extracts the MessageHandle from the artifact and requests the assertion or assertion attributes message associated with the artifact.                                                                                                                                                                                                    |
+| 17    | The Verifier returns the assertion in a SAML ArtifactResponse message as a SOAP message via the back-channel to the Relying Party.                                                                                                                                                                                                                    |
+| 18…21 | The Relying Party verifies the identity assertion retrieved with the ArtifactResponse message. If the assertion is valid and the Claimant is authenticated, the Relying Party returns the requested resource to the Claimant's user agent.                                                                                                            |
 {:class="table table-bordered"}
 
 Table 3: Authentication sequence with SAML 2.0 Artifact Binding
@@ -85,12 +85,12 @@ Verifier SHALL publish a web service endpoint, which implements a Security Token
 
 Figure 2: Renewal of a SAML assertion
 
-| SEQ | Description                                                                                                                                                                                                    |
-|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 01  | The Relying Party uses the Identity Assertion of the Claimant in a `RequestSecurityToken` request as defined in the WS-Trust standard and sends it to the Verifier as a SOAP 1.1 request via the back-channel. |
-| 02  | The Verifier validates the signature of the request and the signature of the assertion conveyed in the request.                                                                                                |
-| 03  | The Verifier generates a new SAML Identity Assertion with new expiration semantics, as defined in the Assertion section.                                                                                       |
-| 04  | The Verifier embeds the generated SAML Identity Assertion in the `RequestSecurityTokenResponse`. Subsequently, the Verifier sends this token as a SOAP 1.1 response message via the back-channel.              |
+| SEQ | Description                                                                                                                                                                                                          |
+|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 01  | The Relying Party uses the Identity Assertion of the Claimant in a RequestSecurityToken request message as defined in the WS-Trust standard and sends it to the Verifier as a SOAP 1.1 request via the back-channel. |
+| 02  | The Verifier validates the signature of the request and the signature of the assertion conveyed in the request.                                                                                                      |
+| 03  | The Verifier generates a new SAML Identity Assertion with new expiration semantics, as defined in the Assertion section.                                                                                             |
+| 04  | The Verifier embeds the generated SAML Identity Assertion in the RequestSecurityTokenResponse message. Subsequently, the Verifier sends this token as a SOAP 1.1 response message via the back-channel.              |
 {:class="table table-bordered"}
 
 Table 4: Renewal of a SAML response assertion with new expiration semantics
@@ -103,23 +103,23 @@ Table 4: Renewal of a SAML response assertion with new expiration semantics
 
 Figure 3: SAML 2.0 logout sequence
 
-| SEQ   | Description                                                                                                                                                                                                  |
-|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 01    | The Claimant initiates a logout in the user agent of the Relying Party application. The Relying Party sends a SAML 2.0 `LogoutRequest` message to the Verifier using the SAML 2.0 HTTP POST or SOAP binding. |
-| 02,03 | The Verifier terminates the session and responds to the initial `LogoutRequest` with a `LogoutResponse` using the SAML 2.0 HTTP POST or SOAP binding.                                                        |
-| 04    | The Relying Party terminates the user session.                                                                                                                                                               |
+| SEQ   | Description                                                                                                                                                                                                |
+|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 01    | The Claimant initiates a logout in the user agent of the Relying Party application. The Relying Party sends a SAML 2.0 LogoutRequest message to the Verifier using the SAML 2.0 HTTP POST or SOAP binding. |
+| 02,03 | The Verifier terminates the session and responds to the initial LogoutRequest message with a LogoutResponse message using the SAML 2.0 HTTP POST or SOAP binding.                                          |
+| 04    | The Relying Party terminates the user session.                                                                                                                                                             |
 {:class="table table-bordered"}
 
 Table 5: SSO logout sequence
 
 The following requirements are based upon [SAML Profiles 2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf), Chapter 4.4, and are customized for the Swiss EPR.
 
-The `LogoutRequest` and `LogoutResponse` transactions SHALL be protected to prevent unauthorized use by attackers.
+The LogoutRequest and LogoutResponse transactions SHALL be protected to prevent unauthorized use by attackers.
 The Verifier and Relying Parties SHALL fulfill the following requirements:
 
-- Relying Parties SHALL cryptographically sign the `LogoutRequest` messages, and the Verifier SHALL validate the
+- Relying Parties SHALL cryptographically sign the LogoutRequest messages, and the Verifier SHALL validate the
   signature with the public key of a pre-registered X.509 certificate.
-- The X.509 certificate used by Relying Parties to sign the `LogoutRequest` message SHALL be issued by a
+- The X.509 certificate used by Relying Parties to sign the LogoutRequest message SHALL be issued by a
   managed Certificate Authority (CA) that is operated according to documented processes detailed in a Certificate Policy
   (CP) and Certification Practice Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates
   defined within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
@@ -128,9 +128,9 @@ The Verifier and Relying Parties SHALL fulfill the following requirements:
 
 #### Authentication Request
 
-The `AuthnRequest` message SHALL be used by the Relying Party to initiate the authentication sequence.
+The AuthnRequest message SHALL be used by the Relying Party to initiate the authentication sequence.
 
-The `AuthnRequest` message SHALL be cryptographically signed by the Relying Party, and the Verifier SHALL validate the
+The AuthnRequest message SHALL be cryptographically signed by the Relying Party, and the Verifier SHALL validate the
 signature.
 
 The signature SHALL be validated either with the public key of a pre-registered X.509 certificate or with the embedded
@@ -139,7 +139,7 @@ matches the pre-registered one.
 
 #### Authentication Response
 
-The Authentication Response message SHALL be used by the Verifier as the response to the `AuthnRequest` message to convey
+The Authentication Response message SHALL be used by the Verifier as the response to the AuthnRequest message to convey
 the artifact after authenticating the Claimant/Subscriber.
 
 The artifact conveyed with the Authentication Response message SHALL
@@ -157,10 +157,10 @@ trusted certificate service provider according to ZertES (SR 943.03) and listed 
 
 #### Artifact Resolve
 
-The `ArtifactResolve` message SHALL be used by the Relying Party to resolve the artifact received with the
+The ArtifactResolve message SHALL be used by the Relying Party to resolve the artifact received with the
 Authentication Response message to the SAML 2.0 Identity Assertion via the back-channel.
 
-The `ArtifactResolve` message SHALL be cryptographically signed by the Relying Party, and the Verifier SHALL validate
+The ArtifactResolve message SHALL be cryptographically signed by the Relying Party, and the Verifier SHALL validate
 the signature.
 
 The signature SHALL be validated either with the public key of a pre-registered X.509 certificate or with the embedded
@@ -169,8 +169,8 @@ certificate matches the pre-registered one.
 
 #### Artifact Response
 
-The `ArtifactResponse` message SHALL be used by the Verifier or Credential Service Provider to resolve the artifact
-received with the `ArtifactResolve` message to the SAML 2.0 Identity Assertion.
+The ArtifactResponse message SHALL be used by the Verifier or Credential Service Provider to resolve the artifact
+received with the ArtifactResolve message to the SAML 2.0 Identity Assertion.
 
 The Artifact Response message SHALL be signed using recommended cryptographic signature standards. The signature SHALL
 be validated by the Relying Party. The X.509 certificate used for signatures by the Verifier SHALL be issued by a
@@ -218,7 +218,7 @@ lifetime has expired, without requiring a new authentication of the Claimant. To
 SHALL publish a web service compliant with the
 [WS-Trust standard](https://docs.oasis-open.org/ws-sx/ws-trust/200512/ws-trust-1.3-os.html).
 
-Relying Parties SHALL use an Identity Assertion of the Claimant in a `RequestSecurityToken` request as defined in the
+Relying Parties SHALL use an Identity Assertion of the Claimant in a RequestSecurityToken request as defined in the
 [WS-Trust standard](https://docs.oasis-open.org/ws-sx/ws-trust/200512/ws-trust-1.3-os.html)
 and send it to the Verifier as a SOAP 1.1 request via the back-channel.
 
@@ -261,52 +261,39 @@ The Verifier SHALL
   with a fault code (`MessageExpired`);
 - verify the digest algorithm used with the request, and SHALL NOT accept deprecated digest algorithms that
   do not resist current attacks; and
-- validate the signature of the previous Identity Assertion conveyed with the `RequestSecurityToken` request.
+- validate the signature of the previous Identity Assertion conveyed with the RequestSecurityToken request.
 
 #### Renew Response
 
 The Renew Response message SHALL be used by the Verifier or Credential Service Provider to convey an updated SAML
-Identity Assertion in the `RequestSecurityTokenResponse` according to the
+Identity Assertion in the RequestSecurityTokenResponse message according to the
 [WS-Trust standard](https://docs.oasis-open.org/ws-sx/ws-trust/200512/ws-trust-1.3-os.html) and the
 [WS-Security standard](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf), using SOAP 1.1.
 
-The Renew Response message SHALL be signed using recommended cryptographic signature standards. The signature SHALL be
+The RenewResponse message SHALL be signed using recommended cryptographic signature standards. The signature SHALL be
 validated by the Relying Party. The X.509 certificate used for signatures by the Verifier SHALL be issued by a trusted
 certificate service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
 
 #### Logout Request
 
-The `LogoutRequest` message SHALL be used by the Relying Party to notify the Verifier that a Claimant/Subscriber
+The LogoutRequest message SHALL be used by the Relying Party to notify the Verifier that a Claimant/Subscriber
 has logged out of the Relying Party application.
 
-SAML `LogoutRequest` messages SHALL include at least one `SessionIndex` as defined in Section 4.4.3.1 of the SAML
+SAML LogoutRequest messages SHALL include at least one `SessionIndex` as defined in Section 4.4.3.1 of the SAML
 Profiles 2.0 specification.
 
-The `LogoutRequest` message SHALL be cryptographically signed by the sender, and the receiver SHALL validate the
-signature. The signature SHALL be validated either with the public key of a pre-registered X.509 certificate or with the
-embedded certificate. If the public key of the embedded certificate is used, the Verifier SHALL verify that the
-certificate matches the pre-registered one. The X.509 certificates used for signatures SHALL be issued by a managed
-Certificate Authority (CA) that is operated according to documented processes detailed in a Certificate Policy (CP) and
-Certification Practice Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates defined
-within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
-
-Relying Parties SHALL sign `LogoutRequest` messages using X.509 certificates issued by a managed Certificate Authority
-(CA) that is operated according to documented processes detailed in a Certificate Policy (CP) and a Certification Practice
-Statement (CPS). The CA's processes should meet the requirements of class 1 certificates defined within the eCH-0048 PKI
-Certificate Classes standard (Version 2.0).
-
-The Verifier SHALL validate the signature of `LogoutRequest` messages.
+The LogoutRequest message SHALL be cryptographically signed by the Relying Party and the Verifier SHALL validate the 
+signature.
 
 #### Logout Response
 
-The `LogoutResponse` message SHALL be used by the Verifier to confirm session termination to the initiating Relying
+The LogoutResponse message SHALL be used by the Verifier to confirm session termination to the initiating Relying
 Party.
 
-The Verifier SHALL sign `LogoutResponse` messages. The X.509 certificate used for signatures by the Verifier SHALL meet
-recommended cryptographic standards and SHALL follow certificate lifecycle best practices detailed in a certificate
-policy and certification practice statement.
+The Verifier SHALL sign LogoutResponse messages. These certificates SHALL be class 2 TLS certificates issued by a trusted certificate
+service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
 
-The Relying Party SHALL verify the signature of `LogoutResponse` messages.
+The Relying Party SHALL verify the signature of LogoutResponse messages.
 
 ### Security Considerations
 
@@ -324,7 +311,7 @@ digital signatures for message-level authentication.
 The Verifier SHALL communicate with Relying Parties through an authenticated and protected back-channel using 
 TLS 1.2 or higher for artifact resolution, token renewal and logout. 
 
-The Verifier SHALL identify and authenticate itself with TLS authentication or with message-level authentication 
+The Verifier SHALL identify and authenticate itself with TLS authentication and with message-level authentication 
 using X.509 certificates. These certificates SHALL be class 2 TLS certificates issued by a trusted certificate 
 service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
 
