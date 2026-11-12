@@ -172,6 +172,7 @@
 				</discriminator>
 				<rules value="open"/>
 			</slicing>
+			<min value="3"/>
 		</element>
 
 		<!-- Slice Patient -->
