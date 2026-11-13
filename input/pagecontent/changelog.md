@@ -13,6 +13,8 @@ non-breaking changes only, continuing the DSTU5 line.
 ### DSTU5 Release 2025-12-18
 
 #### Resolved Issues
+* Harmonize wording between SAML 2 and OpenID signature requirements.  
+* Add SAML 2 Authentication specification from Annex 8 to appendix.  
 * OpenId Connect: Added optional `post_logout_redirect_uri` to logout request.
 * OpenId Connect: Fix typos and wording. 
 * IUA: Link the OpenID Connect page from the Authenticate User description in the IUA profile
