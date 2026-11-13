@@ -9,7 +9,7 @@ The Identity Provider SHALL provide trusted endpoints for Relying Parties implem
 Binding with Artifact Resolution Protocol via SOAP back-channel, fulfilling the requirements defined in this section.
 
 Please note that the ordinances of the Swiss EPR reference this specification for use with the Swiss extension of the 
-XUA profile, but not with the profiles specified in this implementation guide.
+XUA profile, but not with the other profiles specified in this implementation guide.
 
 ### Definition of terms
 
