@@ -8,6 +8,8 @@ an EPR-compliant identity token used to identify and authenticate users.
 The Verifier SHALL provide trusted endpoints for Relying Parties implementing the SAML 2.0 Artifact Binding with Artifact
 Resolution Protocol via SOAP back-channel, fulfilling the requirements defined in this section.
 
+
+
 ### Definition of terms
 
 Relying Party - A Relying Party is any actor that relies on an identity claim provided
@@ -29,12 +31,10 @@ verify and provide assertion attributes of users. A Credential Service Provider 
 operates Registration and Local Registration Authorities, but may delegate the services to other
 providers on a contractual basis.
 
-Certificate Authority - An Identity Provider MAY operate a managed Certificate Authority (CA) that is
+Certificate Authority - Identity Provider MAY operate a managed Certificate Authority (CA) that is
 operated according to documented processes detailed in a Certificate Policy (CP) and Certification Practice
 Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates defined within
-the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). The Identity Provider MAY
-use this Certificate Authority to issue client certificates (mTLS) for Relying Parties. Identity Providers
-MAY delegate the service to another provider on a contractual basis.
+the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). 
 
 ### Referenced Standards
 
@@ -64,18 +64,13 @@ Figure 1: Authentication sequence with SAML 2.0 Artifact Binding
 | 08    | The Verifier determines whether the Claimant has an existing logon security context that meets the default or requested authentication policy requirements. If not, the Verifier interacts with the browser to challenge the Claimant to provide valid credentials.                                                                                   |
 | 09…11 | The Verifier communicates with the Authenticator(s) to authenticate the Claimant. The Claimant provides valid credentials and the Verifier creates a local logon security context for the Claimant.                                                                                                                                                   |
 | 12,13 | The Verifier creates an artifact containing the source ID for the Relying Party site and a reference to the Response message (the MessageHandle). The HTTP Artifact binding allows the choice of either HTTP redirection or an HTML form POST as the mechanism to deliver the artifact to the Relying Party. The figure shows the use of redirection. |
-| 14    | The Relying Party determines the SAML requester by examining the artifact (the exact process depends on the type of artifact) and issues and sends an ArtifactResolve request containing the artifact to the Verifier. This exchange is performed using a synchronous SOAP message exchange over the back-channel.                                    |
+| 14    | The Relying Party determines the SAML responder by examining the artifact (the exact process depends on the type of artifact) and issues and sends an ArtifactResolve request containing the artifact to the Verifier. This exchange is performed using a synchronous SOAP message exchange over the back-channel.                                    |
 | 15,16 | The Verifier extracts the MessageHandle from the artifact and requests the assertion or assertion attributes message associated with the artifact.                                                                                                                                                                                                    |
 | 17    | The Verifier returns the assertion in a SAML ArtifactResponse message as a SOAP message via the back-channel to the Relying Party.                                                                                                                                                                                                                    |
 | 18…21 | The Relying Party verifies the identity assertion retrieved with the ArtifactResponse message. If the assertion is valid and the Claimant is authenticated, the Relying Party returns the requested resource to the Claimant's user agent.                                                                                                            |
 {:class="table table-bordered"}
 
-Table 3: Authentication sequence with SAML 2.0 Artifact Binding
-
-Relying Parties MAY renew SAML Identity Assertions for the duration of the Verifier's idle time of 2 hours after the
-assertion lifetime has expired, without requiring a new authentication of the Claimant. To fulfill this requirement, the
-Verifier SHALL publish a web service endpoint, which implements a Security Token Service as defined in the
-[WS-Trust standard](https://docs.oasis-open.org/ws-sx/ws-trust/200512/ws-trust-1.3-os.html).
+Table 1: Authentication sequence with SAML 2.0 Artifact Binding
 
 #### Renew
 
@@ -93,7 +88,7 @@ Figure 2: Renewal of a SAML assertion
 | 04  | The Verifier embeds the generated SAML Identity Assertion in the RequestSecurityTokenResponse message. Subsequently, the Verifier sends this token as a SOAP 1.1 response message via the back-channel.              |
 {:class="table table-bordered"}
 
-Table 4: Renewal of a SAML response assertion with new expiration semantics
+Table 2: Renewal of a SAML response assertion with new expiration semantics
 
 #### Logout
 
@@ -110,19 +105,7 @@ Figure 3: SAML 2.0 logout sequence
 | 04    | The Relying Party terminates the user session.                                                                                                                                                             |
 {:class="table table-bordered"}
 
-Table 5: SSO logout sequence
-
-The following requirements are based upon [SAML Profiles 2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf), Chapter 4.4, and are customized for the Swiss EPR.
-
-The LogoutRequest and LogoutResponse transactions SHALL be protected to prevent unauthorized use by attackers.
-The Verifier and Relying Parties SHALL fulfill the following requirements:
-
-- Relying Parties SHALL cryptographically sign the LogoutRequest messages, and the Verifier SHALL validate the
-  signature with the public key of a pre-registered X.509 certificate.
-- The X.509 certificate used by Relying Parties to sign the LogoutRequest message SHALL be issued by a
-  managed Certificate Authority (CA) that is operated according to documented processes detailed in a Certificate Policy
-  (CP) and Certification Practice Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates
-  defined within the eCH-0048 PKI Certificate Classes standard (Version 2.0).
+Table 3: SAML 2.0 logout sequence
 
 ### Messages
 
@@ -130,12 +113,8 @@ The Verifier and Relying Parties SHALL fulfill the following requirements:
 
 The AuthnRequest message SHALL be used by the Relying Party to initiate the authentication sequence.
 
-The AuthnRequest message SHALL be cryptographically signed by the Relying Party, and the Verifier SHALL validate the
-signature.
-
-The signature SHALL be validated either with the public key of a pre-registered X.509 certificate or with the embedded
-certificate. If the public key of the embedded certificate is used, the Verifier SHALL verify that the certificate
-matches the pre-registered one.
+The AuthnRequest message SHALL be cryptographically signed by the Relying Party, and the Verifier SHALL validate the 
+signature with the public key of a pre-registered certificate.
 
 #### Authentication Response
 
@@ -145,15 +124,15 @@ the artifact after authenticating the Claimant/Subscriber.
 The artifact conveyed with the Authentication Response message SHALL
 
 - be for one-time use only,
-- comply with [saml-core-2.0-os, chapter 3.5](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf), and
-- comply with [saml-profiles-2.0-os, chapter 5](https://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf).
+- comply with [saml-core-2.0-os](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf), and
+- comply with [saml-profiles-2.0-os](https://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf).
 
 The *SourceID* of the artifact SHALL be the cryptographic hash of the *entityID* declared in the metadata made
 available by the Identity Provider. The cryptographic hash function SHALL be known to resist current attacks.
 
-The Authentication Response message SHALL be signed using recommended cryptographic signature standards. The signature
-SHALL be validated by the Relying Party. The X.509 certificate used for signatures by the Verifier SHALL be issued by a
-trusted certificate service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
+The Authentication Response message SHALL be signed by the Verifier, and the signature SHALL be validated by 
+the Relying Party. The X.509 certificate used for signatures by the Verifier SHALL be issued by a trusted certificate 
+service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
 
 #### Artifact Resolve
 
@@ -161,19 +140,15 @@ The ArtifactResolve message SHALL be used by the Relying Party to resolve the ar
 Authentication Response message to the SAML 2.0 Identity Assertion via the back-channel.
 
 The ArtifactResolve message SHALL be cryptographically signed by the Relying Party, and the Verifier SHALL validate
-the signature.
-
-The signature SHALL be validated either with the public key of a pre-registered X.509 certificate or with the embedded
-certificate. If the public key of the embedded certificate is used, the Verifier SHALL verify that the
-certificate matches the pre-registered one.
+the signature with the public key of a pre-registered certificate.
 
 #### Artifact Response
 
 The ArtifactResponse message SHALL be used by the Verifier or Credential Service Provider to resolve the artifact
 received with the ArtifactResolve message to the SAML 2.0 Identity Assertion.
 
-The Artifact Response message SHALL be signed using recommended cryptographic signature standards. The signature SHALL
-be validated by the Relying Party. The X.509 certificate used for signatures by the Verifier SHALL be issued by a
+The Artifact Response message SHALL be cryptographically signed by the Verifier and the signature SHALL
+be validated by the Relying Party. The certificate used for signatures by the Verifier SHALL be issued by a
 trusted certificate service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
 
 #### Assertion
@@ -196,7 +171,7 @@ the Community and the Identity Provider to reduce the risk of cross-application 
 confidential and never presented to the Claimant, the User Agent or third-party systems.
 
 SAML 2.0 Assertions SHALL include a `SessionIndex` as part of the `AuthnStatement` to enable per-session
-logout requests as defined in Section 4.1.4.2 of the
+logout requests as defined in
 [SAML Profiles 2.0 specification](https://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf).
 
 SAML 2.0 Assertions SHALL be considered valid only within the time limits specified in the `NotBefore` and
@@ -204,12 +179,12 @@ SAML 2.0 Assertions SHALL be considered valid only within the time limits specif
 
 The data types used in SAML 2.0 Assertions SHALL conform to W3C XML Schema 1.0.
 
-SAML 2.0 Assertions SHOULD use audience restriction techniques to allow a Relying Party to recognize whether or not it
+SAML 2.0 Assertions SHALL use audience restriction techniques to allow a Relying Party to recognize whether it
 is the intended target of an issued assertion.
 
-SAML 2.0 Assertions SHALL be cryptographically signed, and the Relying Party SHALL validate the signature. The
-signature SHALL be asymmetric, using X.509 certificates issued by a trusted certificate service provider according to
-ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
+SAML 2.0 Assertions SHALL be cryptographically signed, and the Relying Party SHALL validate the signature. The 
+certificate used for signatures by the Verifier SHALL be issued by a trusted certificate service provider according 
+to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
 
 #### Renew Request
 
@@ -222,18 +197,17 @@ Relying Parties SHALL use an Identity Assertion of the Claimant in a RequestSecu
 [WS-Trust standard](https://docs.oasis-open.org/ws-sx/ws-trust/200512/ws-trust-1.3-os.html)
 and send it to the Verifier as a SOAP 1.1 request via the back-channel.
 
-The Web Service security header of the SOAP envelope SHALL contain a security timestamp element as described in chapter
-10 of the
+The Web Service security header of the SOAP envelope SHALL contain a security timestamp element as described in the
 [Web Services Security specification](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf).
 The security timestamp element SHALL be covered by the XML signature.
 
 The security timestamp element SHALL contain a `Created` element whose value SHALL be the instant at which the renew
-request is serialized for transmission, as described in chapter 10 of the
+request is serialized for transmission, as described in
 [Web Services Security specification](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf).
-The security timestamp element SHALL also contain an `Expires` element as described in chapter 10 of the
+The security timestamp element SHALL also contain an `Expires` element as described in
 [Web Services Security specification](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf).
 
-The Web Service security header of the SOAP envelope SHALL contain a binary token element as described in chapter 6.3 of
+The Web Service security header of the SOAP envelope SHALL contain a binary token element as described in
 the [Web Services Security specification](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf).
 The binary token element SHALL have an encoding type attribute set
 to `EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary"`. The
@@ -241,14 +215,15 @@ binary token element SHALL have a value type attribute set to
 `ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"`. The binary token
 element MAY have an `Id` attribute.
 
-The Renew Request SHALL be cryptographically signed, and the Verifier SHALL validate the signature.
+The Renew Request SHALL be cryptographically signed, and the Verifier SHALL validate the signature with the public key 
+of a pre-registered certificate.
 
 The Web Service security header of the SOAP envelope SHALL contain a signature element compliant with the XML signature
-specification and described in chapter 8 of the
+specification and described in the 
 [Web Services Security specification](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf).
 The signature method element SHALL reference a digest algorithm known to resist current attacks. The signature
 element SHALL contain a key info element with one child element conveying a security token reference conforming to the
-XML signature specification and described in chapter 7 of the
+XML signature specification and described in the
 [Web Services Security specification](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf).
 The security token reference element SHALL convey the issuer name and serial number to identify the certificate. The
 SOAP body element of the request SHALL have an `Id` attribute, which is referenced in the key info element of the SOAP
@@ -268,32 +243,32 @@ The Verifier SHALL
 The Renew Response message SHALL be used by the Verifier or Credential Service Provider to convey an updated SAML
 Identity Assertion in the RequestSecurityTokenResponse message according to the
 [WS-Trust standard](https://docs.oasis-open.org/ws-sx/ws-trust/200512/ws-trust-1.3-os.html) and the
-[WS-Security standard](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf), using SOAP 1.1.
+[WS-Security standard](https://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.pdf), 
+using SOAP 1.1.
 
-The RenewResponse message SHALL be signed using recommended cryptographic signature standards. The signature SHALL be
-validated by the Relying Party. The X.509 certificate used for signatures by the Verifier SHALL be issued by a trusted
-certificate service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
+The RenewResponse message SHALL be cryptographically signed, and the Relying Party SHALL validate the signature. The
+certificate used for signatures by the Verifier SHALL be issued by a trusted certificate service provider according
+to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
 
 #### Logout Request
 
 The LogoutRequest message SHALL be used by the Relying Party to notify the Verifier that a Claimant/Subscriber
 has logged out of the Relying Party application.
 
-SAML LogoutRequest messages SHALL include at least one `SessionIndex` as defined in Section 4.4.3.1 of the SAML
-Profiles 2.0 specification.
+SAML LogoutRequest messages SHALL include at least one `SessionIndex` as defined the 
+[SAML Profiles 2.0 specification](https://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf).
 
 The LogoutRequest message SHALL be cryptographically signed by the Relying Party and the Verifier SHALL validate the 
-signature.
+signature with the public key of a pre-registered certificate.
 
 #### Logout Response
 
 The LogoutResponse message SHALL be used by the Verifier to confirm session termination to the initiating Relying
 Party.
 
-The Verifier SHALL sign LogoutResponse messages. These certificates SHALL be class 2 TLS certificates issued by a trusted certificate
-service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
-
-The Relying Party SHALL verify the signature of LogoutResponse messages.
+LogoutResponse messages SHALL be cryptographically signed, and the Relying Party SHALL validate the signature. The
+certificate used for signatures by the Verifier SHALL be issued by a trusted certificate service provider according
+to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
 
 ### Security Considerations
 
@@ -303,19 +278,22 @@ The User Agent and the Verifier SHALL communicate through an authenticated, prot
 The Verifier SHALL identify and authenticate itself with X.509 certificates issued by a trusted certificate
 service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
 
-Relying Parties and Authenticators that communicate with the Verifier through an intermediary user agent SHALL use
-digital signatures for message-level authentication.
-
 #### Back-channel Communication
 
-The Verifier SHALL communicate with Relying Parties through an authenticated and protected back-channel using 
-TLS 1.2 or higher for artifact resolution, token renewal and logout. 
+The Verifier SHALL communicate with Relying Parties through a protected back-channel using TLS 1.2 or higher for 
+artifact resolution, token renewal and logout. 
 
 The Verifier SHALL identify and authenticate itself with TLS authentication and with message-level authentication 
-using X.509 certificates. These certificates SHALL be class 2 TLS certificates issued by a trusted certificate 
+using X.509 certificates. These certificates SHALL be class 2 certificates issued by a trusted certificate 
 service provider according to ZertES (SR 943.03) and listed by the Swiss Accreditation Service (SAS).
 
 The Verifier SHALL NOT use redirects through an intermediary user agent (e.g., a web browser) to communicate with Relying
 Parties for artifact resolution, token renewal and logout.
 
-Relying Parties SHALL use message-level authentication (e.g., digital signature) to identify and authenticate themselves.
+The Relying Party SHALL use a certificate issued by a Certificate Authority (CA) that is operated according to
+documented processes detailed in a Certificate Policy (CP) and Certification Practice Statement (CPS) for
+digital signatures or for the mTLS client authentication. The CA's processes SHALL meet the requirements of
+class 1 certificates defined within the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0).
+
+The Certificate Authority (CA) MAY be operated by the Identity Provider or MAY be delegated by the Identity Provider
+to a provider on a contractual basis.
