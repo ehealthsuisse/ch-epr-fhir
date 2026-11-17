@@ -1,3 +1,10 @@
+### DSTU6 (planned, not yet released)
+
+Breaking changes collected here for the next major/balloted release. Nothing in this section
+ships in the DSTU5.1 minor release below.
+
+* IUA: Update to Revision 2.5; subject_role/purpose_of_use become arrays (CP-ITI-1255), ITI-71/72 examples adjusted [#466](https://github.com/ehealthsuisse/ch-epr-fhir/issues/466)
+
 ### DSTU5.1 Release 2026-12-18
 
 2026 has no official HL7 CH informative ballot for this IG. This is a minor release with
@@ -74,7 +81,6 @@ non-breaking changes only, continuing the DSTU5 line.
 
 #### Resolved Issues
 
-* TODO
 * CH:ATC: Updated references and minor textual corrections in CH:ATC, ITI-81 and Volume 3 [#323](https://github.com/ehealthsuisse/ch-epr-fhir/issues/323), [#324](https://github.com/ehealthsuisse/ch-epr-fhir/issues/324), [#326](https://github.com/ehealthsuisse/ch-epr-fhir/issues/326), [#327](https://github.com/ehealthsuisse/ch-epr-fhir/issues/327)
 * fix mCSD capability statement expected actions for update, delete [#310](https://github.com/ehealthsuisse/ch-epr-fhir/issues/310)
 * add SCT edition in the expansion parameters [#256](https://github.com/ehealthsuisse/ch-epr-fhir/issues/256)

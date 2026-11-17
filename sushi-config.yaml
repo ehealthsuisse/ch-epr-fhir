@@ -105,10 +105,6 @@ pages:
     title: Mobile Privacy Policy Retrieve [PPQ-5]
   volume3.md:
     title: Volume 3 - CH:ATC Audit Event Content Profiles
-  openid-connect.md:
-    title: OpenID Connect
-  saml-authn.md:
-    title: SAML 2 Authentication
   appendix.md:
     title: Appendix
   profiles.md:
@@ -125,6 +121,10 @@ pages:
     title: Sequence Diagrams
   tracecontext.md:
     title: Trace Context
+  openid-connect.md:
+    title: OpenID Connect
+  saml-authn.md:
+    title: SAML 2 Authentication  
   changelog.md:
     title: Open Issues / Change Log
 
