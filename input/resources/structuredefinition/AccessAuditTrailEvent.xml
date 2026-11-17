@@ -166,6 +166,7 @@
             </discriminator>
             <rules value="open"/>
          </slicing>
+         <min value="1"/>
       </element>
       <!-- Slice Patient -->
 		<element id="AuditEvent.entity:Patient">

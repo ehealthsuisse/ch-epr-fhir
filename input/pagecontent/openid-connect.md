@@ -32,9 +32,7 @@ providers on a contractual basis.
 Certificate Authority - Identity Provider MAY operate a managed Certificate Authority (CA) that is
 operated according to documented processes detailed in a Certificate Policy (CP) and Certification Practice
 Statement (CPS). The CA's processes SHALL meet the requirements of class 1 certificates defined within
-the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). The Identity Provider MAY
-use this Certificate Authority to issue client certificates (mTLS) for Relying Parties. Identity Providers
-MAY delegate the service to another provider on a contractual basis.
+the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0).
 
 
 ### Referenced Standards
@@ -344,23 +342,17 @@ The Identity Provider SHALL communicate with Relying Parties through an authenti
 and protected back-channel using TLS 1.2 or higher for access token and user info requests and
 responses.
 
-The Identity Provider SHALL NOT use redirects through an intermediary user agent (e.g., a web browser) to send requests
-to Relying Parties.
-
 The Identity Provider SHALL identify and authenticate itself with class 2 X.509 certificates
 issued by a trusted certificate service provider according to ZertES (SR 943.03) and listed by the Swiss
 Accreditation Service (SAS).
 
 The Identity Provider SHALL identify and authenticate the Relying Parties by using mutual TLS (mTLS) or the
-*private_key_jwt* option defined in
-the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)
-specification.
+*private_key_jwt* option defined in the [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) specification.
 
 The Relying Party SHALL use a certificate issued by a Certificate Authority (CA) that is operated according to
 documented processes detailed in a Certificate Policy (CP) and Certification Practice Statement (CPS) for
-digital signatures or for the mTLS client certificate.
+digital signatures or for the mTLS client authentication. The CA's processes SHALL meet the requirements of 
+class 1 certificates defined within the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). 
 
-The CA's processes SHALL meet the requirements of class 1 certificates defined within
-the [eCH-0048 PKI Certificate Classes standard Version 2.0](https://www.ech.ch/de/ech/ech-0048/2.0). This
-Certificate Authority (CA) MAY be operated by the Identity Provider or MAY be delegated by the Identity Provider
+The Certificate Authority (CA) MAY be operated by the Identity Provider or MAY be delegated by the Identity Provider
 to a provider on a contractual basis.

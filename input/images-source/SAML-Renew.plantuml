@@ -1,0 +1,15 @@
+@startuml
+
+participant "Relying Party" as RP
+participant "Verifier (IdP)" as IdP
+
+autonumber 1 1 "<b>[00]"
+
+RP -> IdP: <wst:RequestSecurityToken/Renew> [SOAP]
+IdP -> IdP: Check previous SAML token
+IdP -> IdP: Generate new SAML token
+IdP -> RP: <wst:RequestSecurityTokenResponse> [SOAP]
+
+autonumber stop
+
+@enduml

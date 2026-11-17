@@ -1,0 +1,49 @@
+@startuml
+
+actor Claimant
+participant "User Agent" as UserAgent
+participant "Relying Party" as RP
+participant "Authenticator" as IDM
+participant "Verifier (IdP)" as IdP
+participant "Credential Service Provider (IdP)" as CSP
+
+
+autonumber 1 1 "<b>[00]"
+
+Claimant -> UserAgent: Access resource
+UserAgent -> RP: Request target ressource [HTTP]
+
+RP -> UserAgent: List supported IdP's
+Claimant -> UserAgent: Select IdP
+UserAgent -> RP: Select IdP [HTTP]
+
+RP -> UserAgent: Redirect with <AuthnRequest> [HTTP POST]
+
+UserAgent -> IdP: Get <AuthnRequest> [HTTP]
+
+IdP -> IdP: Validate Request
+
+IdP -> IDM: Authenticate Claimant
+Claimant -> IDM: Authenticate
+IDM -> IdP: Authenticate Claimant
+
+IdP -> UserAgent: Redirect with SAML artifact [HTTP]
+UserAgent -> RP: Get SAML artifact [HTTP]
+
+RP -> IdP: <ArtifactResolve> [SOAP]
+
+IdP -> CSP: Get assertion attributes
+CSP -> IdP: Assertion attributes
+
+IdP -> RP: <ArtifactResponse> [SOAP]
+
+RP -> RP: Validate SAML Assertion
+
+RP -> UserAgent: Redirect to target ressource [HTTP]
+UserAgent -> RP: Request target ressource [HTTP]
+
+RP -> UserAgent: Respond with target ressource [HTTP]
+
+autonumber stop
+
+@enduml
