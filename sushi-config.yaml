@@ -6,11 +6,11 @@ title: CH EPR FHIR (R4)
 description: FHIR implementation guide to the Swiss EPR (Electronic Patient Record)
 status: active
 experimental: false
-date: 2025-12-18
-version: 5.0.0
+date: 2026-11-18
+version: 6.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2020+
-releaselabel: trial-use # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+releaselabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 publisher:
   name: eHealth Suisse
   url: https://www.e-health-suisse.ch
